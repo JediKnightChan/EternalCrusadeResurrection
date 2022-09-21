@@ -5,6 +5,7 @@
 
 #include "CustomizationElementaryModule.h"
 #include "CustomizationLoaderAsset.h"
+#include "CustomizationMaterialAsset.h"
 #include "CustomizationMaterialNameSpace.h"
 #include "CustomizationUtilsLibrary.h"
 #include "AssetRegistry/AssetRegistryModule.h"
@@ -27,33 +28,29 @@ void UCustomizationSavingNameSpace::SaveLoadout(const bool bDoOverwrite)
 	TArray<USceneComponent*> AllChildren;
 	GetChildrenComponents(true, AllChildren);
 
-	// Saving child component if customization component that can be saved
+	// Saving customization elementary modules among children
 	TArray<UCustomizationElementaryAsset*> Assets;
 	for (USceneComponent* Child : AllChildren)
 	{
-		// Saving if it's CustomizationElementaryModule
+		// Check if it's CustomizationElementaryModule
 		if (const UCustomizationElementaryModule* ChildCustomizationElementaryModule = Cast<
 			UCustomizationElementaryModule>(Child))
 		{
-			if (UCustomizationElementaryAsset* Asset = ChildCustomizationElementaryModule->SaveToDataAsset(bDoOverwrite))
+			if (UCustomizationElementaryAsset* Asset = ChildCustomizationElementaryModule->
+				SaveToDataAsset(bDoOverwrite))
 			{
 				Assets.AddUnique(Asset);
 			}
-			
-		}
-
-		// Saving if it's CustomizationElementaryModule
-		if (const UCustomizationMaterialNameSpace* ChildCustomizationMaterialNameSpace = Cast<
-			UCustomizationMaterialNameSpace>(Child))
-		{
-			ChildCustomizationMaterialNameSpace->SaveToDataAsset(bDoOverwrite);
 		}
 	}
+	
+	// Saving material customization assets
+	SaveMaterialCustomizationData(bDoOverwrite);
 
 	const FString SaveDestinationFilename = "CLA_" + UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
 	const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(
 		SaveDestinationRootDirectory, "CLA/" + SaveDestinationFilename);
-	
+
 
 	// Creating package for saving data
 	UPackage* NewPackage = CreatePackage(*SaveDestinationPackagePath);
@@ -90,4 +87,70 @@ void UCustomizationSavingNameSpace::SaveLoadoutOverwritingExistingModules()
 void UCustomizationSavingNameSpace::SaveLoadoutSkippingExistingModules()
 {
 	SaveLoadout(false);
+}
+
+
+void UCustomizationSavingNameSpace::SaveMaterialCustomizationData(bool bDoOverwrite) const
+{
+	for (auto [Namespace, CustomizationData] : MaterialCustomizationData)
+	{
+		// Getting direct children components
+		TArray<TObjectPtr<USceneComponent>> DirectChildren;
+		GetChildrenComponents(false, DirectChildren);
+
+		const FString SaveDestinationFilename = UCustomizationUtilsLibrary::GetFilenameFromRelativePath(
+			CustomizationData.RelativeSavePath);
+		const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(
+			SaveDestinationRootDirectory, CustomizationData.RelativeSavePath);
+
+		// Return if invalid package path
+		if (CustomizationData.RelativeSavePath == "" || !FPackageName::IsValidLongPackageName(
+			SaveDestinationPackagePath))
+		{
+			UE_LOG(LogTemp, Error,
+			       TEXT("SaveDestinationRootDirectory of CustomizationSavingNameSpace and relative path property of"
+				       " materials namespace give invalid save package path: %s or "
+				       "one of them is empty string"), *(SaveDestinationPackagePath));
+			return;
+		}
+
+		// Return if overwriting disabled, but package already exists
+		if (!bDoOverwrite && FPackageName::DoesPackageExist(SaveDestinationPackagePath))
+		{
+			UE_LOG(LogTemp, Error,
+			       TEXT("Package %s already exists and overwriting not requested, not saving"),
+			       *(SaveDestinationPackagePath));
+			return;
+		}
+
+		// Creating package for saving data
+		UPackage* NewPackage = CreatePackage(*SaveDestinationPackagePath);
+		UCustomizationMaterialAsset* DataAssetSave = NewObject<UCustomizationMaterialAsset>(
+			NewPackage, *SaveDestinationFilename,
+			EObjectFlags::RF_Public |
+			EObjectFlags::RF_Standalone |
+			RF_MarkAsRootSet);
+
+		// Setting material namespace
+		DataAssetSave->MaterialNamespace = Namespace;
+
+		// Setting parameters
+		DataAssetSave->ScalarParameters = CustomizationData.ScalarParameters;
+		DataAssetSave->VectorParameters = CustomizationData.VectorParameters;
+		DataAssetSave->TextureParameters = CustomizationData.TextureParameters;
+
+
+		// Saving package
+		FString const PackageName = NewPackage->GetName();
+		FString const PackageFileName = FPackageName::LongPackageNameToFilename(
+			PackageName, FPackageName::GetAssetPackageExtension());
+
+		// NewPackage->SetDirtyFlag(true);
+		FAssetRegistryModule::AssetCreated(DataAssetSave);
+
+		FSavePackageArgs SavePackageArgs;
+		SavePackageArgs.TopLevelFlags = RF_Public | RF_Standalone;
+		SavePackageArgs.SaveFlags = SAVE_NoError;
+		UPackage::SavePackage(NewPackage, DataAssetSave, *PackageFileName, SavePackageArgs);
+	}
 }

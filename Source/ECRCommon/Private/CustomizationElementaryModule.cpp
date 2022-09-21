@@ -33,6 +33,68 @@ void UCustomizationElementaryModule::OnRegister()
 	InheritAnimationsIfNeeded();
 }
 
+void UCustomizationElementaryModule::OnChildAttached(USceneComponent* ChildComponent)
+{
+	Super::OnChildAttached(ChildComponent);
+
+	if (IsGarbageCollecting())
+	{
+		return;
+	}
+
+	// Get material customization data for child
+	const FString AttachmentMaterialNamespace = GetAttachmentMaterialCustomizationNamespace(ChildComponent);
+	const FCustomizationMaterialNamespaceData MaterialData = GetMaterialCustomizationData(
+		AttachmentMaterialNamespace);
+
+	// Apply material customization data to child
+	UCustomizationMaterialNameSpace::ApplyMaterialChanges(ChildComponent, MaterialData.ScalarParameters,
+	                                                      MaterialData.VectorParameters,
+	                                                      MaterialData.TextureParameters, {});
+}
+
+FString UCustomizationElementaryModule::GetAttachmentMaterialCustomizationNamespace(
+	const USceneComponent* ChildComponent)
+{
+	const FString ChildComponentName = UCustomizationUtilsLibrary::GetDisplayNameEnd(ChildComponent);
+	FString AttachmentName, AttachmentMaterialNamespace;
+
+	// No CustomizationMaterialNamespace as no name part after '_'
+	if (!ChildComponentName.Split("_", &AttachmentName, &AttachmentMaterialNamespace))
+	{
+		return "";
+	}
+	return AttachmentMaterialNamespace;
+}
+
+
+FCustomizationMaterialNamespaceData UCustomizationElementaryModule::GetMaterialCustomizationData(
+	const FString MaterialNamespace) const
+{
+	// No namespace specified
+	if (MaterialNamespace == "")
+	{
+		return {};
+	}
+
+	const UCustomizationSavingNameSpace* SavingNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfType<
+		UCustomizationSavingNameSpace>(this);
+
+	// No CustomizationSavingNamespace in parents
+	if (!SavingNamespace)
+	{
+		return {};
+	}
+
+	if (SavingNamespace->MaterialCustomizationData.Contains(MaterialNamespace))
+	{
+		return SavingNamespace->MaterialCustomizationData[MaterialNamespace];
+	}
+
+	// No data about the specified namespace
+	return {};
+}
+
 
 void UCustomizationElementaryModule::InheritAnimationsIfNeeded()
 {
@@ -50,14 +112,14 @@ void UCustomizationElementaryModule::InheritAnimationsIfNeeded()
 }
 
 
-template <class Component>
-FString UCustomizationElementaryModule::GetFirstMaterialNameSpaceRaw(Component* GivenComponent) const
+FString UCustomizationElementaryModule::GetFirstMaterialNameSpaceRaw(const USceneComponent* GivenComponent) const
 {
 	FString ChildStaticMeshComponentMaterialNamespace =
 		UCustomizationUtilsLibrary::GetFirstParentComponentOfTypeDisplayNameEnd<
 			UCustomizationMaterialNameSpace>(GivenComponent, true);
 	return ChildStaticMeshComponentMaterialNamespace;
 }
+
 
 UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(bool bDoOverwrite) const
 {
@@ -163,8 +225,8 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 	}
 
 	// Setting material customization namespace
-	FString MaterialCustomizationNamespace = UCustomizationUtilsLibrary::GetMaterialNameSpaceReal(
-		GetFirstMaterialNameSpaceRaw(this));
+	FString MaterialCustomizationNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfTypeDisplayNameEnd<
+		UCustomizationMaterialNameSpace>(this);
 	DataAssetSave->MaterialCustomizationNamespace = MaterialCustomizationNamespace;
 
 	// Setting material customization slot names
@@ -179,8 +241,18 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 		if (ChildStaticMeshComponent != nullptr)
 		{
 			// Getting material namespace for child, if '_' in it, consider part before it
-			FString ChildStaticMeshComponentMaterialNamespace = UCustomizationUtilsLibrary::GetMaterialNameSpaceReal(
-				GetFirstMaterialNameSpaceRaw(ChildStaticMeshComponent));
+			FString ChildStaticMeshComponentMaterialNamespace = GetAttachmentMaterialCustomizationNamespace(
+				ChildStaticMeshComponent);
+
+			if (GetMaterialCustomizationData(ChildStaticMeshComponentMaterialNamespace).IsEmpty())
+			{
+				UE_LOG(LogTemp, Warning,
+				       TEXT(
+					       "Material namespace of component %s isn't present in SavingNamespace or"
+					       " doesn't contain any parameters, it will be set to None"
+				       ), *(UKismetSystemLibrary::GetDisplayName(this)))
+				ChildStaticMeshComponentMaterialNamespace = "";
+			}
 
 			FName SocketName = ChildStaticMeshComponent->GetAttachSocketName();
 			SocketName = SocketName == NAME_None ? "" : SocketName;
@@ -197,8 +269,19 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 			USkeletalMeshComponent>(ChildComponent);
 		if (ChildSkeletalMeshComponent != nullptr)
 		{
-			FString ChildSkeletalMeshComponentMaterialNamespace = UCustomizationUtilsLibrary::GetMaterialNameSpaceReal(
-				GetFirstMaterialNameSpaceRaw(ChildSkeletalMeshComponent));
+			// Getting material namespace for child, if '_' in it, consider part before it
+			FString ChildSkeletalMeshComponentMaterialNamespace = GetAttachmentMaterialCustomizationNamespace(
+				ChildSkeletalMeshComponent);
+
+			if (GetMaterialCustomizationData(ChildSkeletalMeshComponentMaterialNamespace).IsEmpty())
+			{
+				UE_LOG(LogTemp, Warning,
+				       TEXT(
+					       "Material namespace of component %s isn't present in SavingNamespace or"
+					       " doesn't contain any parameters, it will be set to None"
+				       ), *(UKismetSystemLibrary::GetDisplayName(this)))
+				ChildSkeletalMeshComponentMaterialNamespace = "";
+			}
 
 			FName SocketName = ChildSkeletalMeshComponent->GetAttachSocketName();
 			SocketName = SocketName == NAME_None ? "" : SocketName;

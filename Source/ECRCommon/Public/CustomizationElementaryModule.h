@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "CustomizationElementaryAsset.h"
+#include "CustomizationSavingNameSpace.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "CustomizationElementaryModule.generated.h"
 
@@ -24,14 +25,24 @@ class ECRCOMMON_API UCustomizationElementaryModule : public USkeletalMeshCompone
 	FString MeshMergerNamespace;
 
 protected:
-	virtual void OnRegister() override;
-
 	/* Inheriting animations from first SkeletalMeshComponent parent if requested */
 	void InheritAnimationsIfNeeded();
 
 	/** Get material namespace for given component */
-	template <class Component>
-	FString GetFirstMaterialNameSpaceRaw(Component* GivenComponent) const;
+	FString GetFirstMaterialNameSpaceRaw(const USceneComponent* GivenComponent) const;
+
+	/** Get child (attachment) material customization namespace: split by '_' and return second part */
+	static FString GetAttachmentMaterialCustomizationNamespace(const USceneComponent* ChildComponent);
+
+	/** Get material customization data for given material namespace */
+	FCustomizationMaterialNamespaceData GetMaterialCustomizationData(FString MaterialNamespace) const;
+
+	/** Inherit animations on register */
+	virtual void OnRegister() override;
+
+	/** Apply material changes on child attached */
+	virtual void OnChildAttached(USceneComponent* ChildComponent) override;
+
 
 public:
 	UCustomizationElementaryModule();

@@ -35,12 +35,12 @@ SceneComponentClass* UCustomizationLoaderComponent::SpawnChildComponent(USkeleta
 	ChildComponent->RegisterComponent();
 	if (SocketName != "" && SocketName != "None")
 	{
-		ChildComponent->AttachToComponent(Component, FAttachmentTransformRules::SnapToTargetNotIncludingScale,
+		ChildComponent->AttachToComponent(Component, FAttachmentTransformRules::SnapToTargetIncludingScale,
 		                                  SocketName);
 	}
 	else
 	{
-		ChildComponent->AttachToComponent(Component, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		ChildComponent->AttachToComponent(Component, FAttachmentTransformRules::SnapToTargetIncludingScale);
 	}
 	ChildComponent->CreationMethod = EComponentCreationMethod::Instance;
 	return ChildComponent;

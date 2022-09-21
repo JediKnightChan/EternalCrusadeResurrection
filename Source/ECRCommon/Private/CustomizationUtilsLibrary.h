@@ -67,8 +67,7 @@ public:
 
 
 	/** Get display name of component like in the BlueprintEditor */
-	template <class ComponentType>
-	FORCEINLINE static FString GetDisplayNameEnd(const ComponentType* Component)
+	FORCEINLINE static FString GetDisplayNameEnd(const USceneComponent* Component)
 	{
 		FString DisplayName{""};
 		if (Component)
@@ -97,17 +96,6 @@ public:
 	{
 		const ComponentType* FirstParentComponentOfType = GetFirstParentComponentOfType<ComponentType>(
 			BaseComponent, AllowFirstOnly);
-		return GetDisplayNameEnd<ComponentType>(FirstParentComponentOfType);
-	}
-
-	/** Get real material namespace from raw by separating by underscore and returning left part */
-	FORCEINLINE static FString GetMaterialNameSpaceReal(FString MaterialNamespaceRaw)
-	{
-		FString Left, Right;
-		if (MaterialNamespaceRaw.Split("_", &Left, &Right))
-		{
-			MaterialNamespaceRaw = Left;
-		}
-		return MaterialNamespaceRaw;
+		return GetDisplayNameEnd(FirstParentComponentOfType);
 	}
 };
