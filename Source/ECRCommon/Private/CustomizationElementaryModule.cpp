@@ -4,11 +4,10 @@
 #include "CustomizationElementaryModule.h"
 
 #include "CustomizationMaterialNameSpace.h"
-#include "CustomizationMeshMergerNameSpace.h"
 #include "CustomizationSavingNameSpace.h"
 #include "CustomizationUtilsLibrary.h"
 #include "CustomizationElementaryAsset.h"
-#include "MaterialCustomizationComponent.h"
+#include "UObject/Package.h"
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Engine/StaticMesh.h"
 #include "Kismet/KismetSystemLibrary.h"
@@ -17,9 +16,8 @@
 
 UCustomizationElementaryModule::UCustomizationElementaryModule()
 {
-	bWantsSave = true;
 	bInheritAnimations = true;
-	bAllowSaveWithoutChildren = true;
+	MeshMergerNamespace = "";
 }
 
 
@@ -29,22 +27,10 @@ void UCustomizationElementaryModule::OnRegister()
 
 	if (IsGarbageCollecting())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Garbage collecting"))
 		return;
 	}
 
-	if (IsCompiling())
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Compiling"))
-	}
-
-	if (IsBeingDestroyed())
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Destroyed"));
-	}
-
 	InheritAnimationsIfNeeded();
-	SaveToDataAsset();
 }
 
 
@@ -55,7 +41,8 @@ void UCustomizationElementaryModule::InheritAnimationsIfNeeded()
 	// Find first parent skeletal mesh, as we want to inherit animations from it
 	if (bInheritAnimations)
 	{
-		FirstParentSkeletalMeshComponent = UCustomizationUtilsLibrary::GetFirstParentComponentOfType<USkeletalMeshComponent>(this);
+		FirstParentSkeletalMeshComponent = UCustomizationUtilsLibrary::GetFirstParentComponentOfType<
+			USkeletalMeshComponent>(this);
 	}
 
 	// Inheriting animations or resetting them
@@ -63,16 +50,25 @@ void UCustomizationElementaryModule::InheritAnimationsIfNeeded()
 }
 
 
-void UCustomizationElementaryModule::SaveToDataAsset() const
+template <class Component>
+FString UCustomizationElementaryModule::GetFirstMaterialNameSpaceRaw(Component* GivenComponent) const
+{
+	FString ChildStaticMeshComponentMaterialNamespace =
+		UCustomizationUtilsLibrary::GetFirstParentComponentOfTypeDisplayNameEnd<
+			UCustomizationMaterialNameSpace>(GivenComponent, true);
+	return ChildStaticMeshComponentMaterialNamespace;
+}
+
+UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(bool bDoOverwrite) const
 {
 	// Getting all children components
 	TArray<TObjectPtr<USceneComponent>> AllChildren;
 	GetChildrenComponents(true, AllChildren);
 
-	// Return if no skeletal mesh or children amount is 0 without permission or doesn't want to be saved
-	if (SkeletalMesh == nullptr || (AllChildren.Num() == 0 && !bAllowSaveWithoutChildren) || !bWantsSave)
+	// Return if no skeletal mesh
+	if (SkeletalMesh == nullptr)
 	{
-		return;
+		return nullptr;
 	}
 
 	// Return if any of parents is same class (ElementaryCustomizableModule)
@@ -80,25 +76,36 @@ void UCustomizationElementaryModule::SaveToDataAsset() const
 	{
 		UE_LOG(LogTemp, Error, TEXT("ElementaryCustomizableModule %s has parent of same class and won't be saved"),
 		       *(UKismetSystemLibrary::GetDisplayName(this)));
-		return;
+		return nullptr;
 	}
 
 	// Get saving namespace, return if none
-	const UCustomizationSavingNameSpace* CustomizationSavingNameSpace = UCustomizationUtilsLibrary::GetFirstParentComponentOfType<
-		UCustomizationSavingNameSpace>(this);
+	const UCustomizationSavingNameSpace* CustomizationSavingNameSpace =
+		UCustomizationUtilsLibrary::GetFirstParentComponentOfType<
+			UCustomizationSavingNameSpace>(this);
 	if (CustomizationSavingNameSpace == nullptr)
 	{
 		UE_LOG(LogTemp, Error, TEXT("ElementaryCustomizableModule %s has no parent of class"
 			       " CustomizationSavingNameSpace and won't be saved"),
 		       *(UKismetSystemLibrary::GetDisplayName(this)));
-		return;
+		return nullptr;
 	}
 
 	const FString SaveRootDir = CustomizationSavingNameSpace->SaveDestinationRootDirectory;
-	const FString SaveDestinationFilename = UCustomizationUtilsLibrary::GetDisplayNameEnd(CustomizationSavingNameSpace);
-	const FString SaveRelativePath = UCustomizationUtilsLibrary::GetDisplayNameEnd(this) + "/" + SaveDestinationFilename;
-	
-	const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(SaveRootDir, SaveRelativePath);
+	const FString ComponentName = UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
+
+	FString ModuleTypeName, ModuleCustomizationName;
+	if (!ComponentName.Split("_", &ModuleTypeName, &ModuleCustomizationName))
+	{
+		ModuleTypeName = ComponentName;
+		ModuleCustomizationName = UCustomizationUtilsLibrary::GetDisplayNameEnd(CustomizationSavingNameSpace);
+	}
+
+	const FString SaveDestinationFilename = "CEA_" + ModuleCustomizationName + "_" + ModuleTypeName;
+	const FString SaveRelativePath = "Modules/" + ModuleTypeName + "/" + SaveDestinationFilename;
+
+	const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(
+		SaveRootDir, SaveRelativePath);
 
 	// Return if invalid package path
 	if (!FPackageName::IsValidLongPackageName(SaveDestinationPackagePath))
@@ -107,7 +114,22 @@ void UCustomizationElementaryModule::SaveToDataAsset() const
 		       TEXT("SaveDestinationRootDirectory of CustomizationSavingNameSpace and display names of elementary"
 			       " module and CustomizationSavingNameSpace give invalid save package path: %s or"
 			       " one of them is empty string"), *(SaveDestinationPackagePath));
-		return;
+		return nullptr;
+	}
+
+	// Return if overwriting disabled, but package already exists
+	if (!bDoOverwrite && FPackageName::DoesPackageExist(SaveDestinationPackagePath))
+	{
+		UE_LOG(LogTemp, Warning,
+		       TEXT("Package %s already exists and overwriting not requested, not saving"),
+		       *(SaveDestinationPackagePath));
+
+		FPackagePath MyPackagePath;
+		FPackagePath::TryFromPackageName(FName{SaveDestinationPackagePath}, MyPackagePath);
+		UPackage* Package = LoadPackage(nullptr, MyPackagePath, ELoadFlags::LOAD_EditorOnly);
+		UCustomizationElementaryAsset* CustomizationElementaryAsset = FindObjectFast<UCustomizationElementaryAsset>(
+			Package, FName{SaveDestinationFilename});
+		return CustomizationElementaryAsset;
 	}
 
 	// Creating package for saving data
@@ -117,42 +139,75 @@ void UCustomizationElementaryModule::SaveToDataAsset() const
 		EObjectFlags::RF_Public |
 		EObjectFlags::RF_Standalone |
 		RF_MarkAsRootSet);
-	
+
 	// Setting base mesh
 	DataAssetSave->BaseSkeletalMesh = SkeletalMesh;
 
+	// Setting merging namespace
+	DataAssetSave->MeshMergeNamespace = MeshMergerNamespace;
+
 	// Setting attach socket name
-	DataAssetSave->ParentAttachName = GetAttachSocketName();
-
-	// Setting mesh merge namespace
-	DataAssetSave->MeshMergeNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfTypeDisplayNameEnd<
-		UCustomizationMeshMergerNameSpace>(this);
-
-	FString MaterialCustomizationNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfTypeDisplayNameEnd<
-		UCustomizationMaterialNameSpace>(this);
+	FName ParentAttachSocketName = GetAttachSocketName();
+	if (ParentAttachSocketName != NAME_None)
+	{
+		if (DataAssetSave->MeshMergeNamespace == "")
+		{
+			DataAssetSave->ParentAttachName = ParentAttachSocketName;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning,
+			       TEXT("CustomizationElementaryAsset %s has set CustomizationMeshMergerNamepace,"
+				       " attach socket name will be ignored"), *(UKismetSystemLibrary::GetDisplayName(this)));
+		}
+	}
 
 	// Setting material customization namespace
+	FString MaterialCustomizationNamespace = UCustomizationUtilsLibrary::GetMaterialNameSpaceReal(
+		GetFirstMaterialNameSpaceRaw(this));
 	DataAssetSave->MaterialCustomizationNamespace = MaterialCustomizationNamespace;
+
+	// Setting material customization slot names
+	DataAssetSave->MaterialCustomizationSlotNames = GetMaterialSlotNames();
 
 	// Processing children
 	for (TObjectPtr<USceneComponent> ChildComponent : AllChildren)
 	{
 		// Checking if it's static mesh
-		const TObjectPtr<UStaticMeshComponent> ChildStaticMeshComponent = Cast<
+		UStaticMeshComponent* ChildStaticMeshComponent = Cast<
 			UStaticMeshComponent>(ChildComponent);
 		if (ChildStaticMeshComponent != nullptr)
 		{
-			DataAssetSave->StaticMeshesToSocketNames.Add(ChildStaticMeshComponent->GetStaticMesh(),
-			                                             ChildStaticMeshComponent->GetAttachSocketName());
+			// Getting material namespace for child, if '_' in it, consider part before it
+			FString ChildStaticMeshComponentMaterialNamespace = UCustomizationUtilsLibrary::GetMaterialNameSpaceReal(
+				GetFirstMaterialNameSpaceRaw(ChildStaticMeshComponent));
+
+			FName SocketName = ChildStaticMeshComponent->GetAttachSocketName();
+			SocketName = SocketName == NAME_None ? "" : SocketName;
+
+			FCustomizationElementarySubmoduleStatic StaticData{
+				ChildStaticMeshComponent->GetStaticMesh(), SocketName,
+				ChildStaticMeshComponentMaterialNamespace
+			};
+			DataAssetSave->StaticAttachments.Add(StaticData);
 		}
 
 		// Checking if it's skeletal mesh
-		const TObjectPtr<USkeletalMeshComponent> ChildSkeletalMeshComponent = Cast<
+		USkeletalMeshComponent* ChildSkeletalMeshComponent = Cast<
 			USkeletalMeshComponent>(ChildComponent);
 		if (ChildSkeletalMeshComponent != nullptr)
 		{
-			DataAssetSave->SkeletalMeshesToSocketNames.Add(ChildSkeletalMeshComponent->SkeletalMesh,
-			                                               ChildSkeletalMeshComponent->GetAttachSocketName());
+			FString ChildSkeletalMeshComponentMaterialNamespace = UCustomizationUtilsLibrary::GetMaterialNameSpaceReal(
+				GetFirstMaterialNameSpaceRaw(ChildSkeletalMeshComponent));
+
+			FName SocketName = ChildSkeletalMeshComponent->GetAttachSocketName();
+			SocketName = SocketName == NAME_None ? "" : SocketName;
+
+			FCustomizationElementarySubmoduleSkeletal SkeletalData{
+				ChildSkeletalMeshComponent->SkeletalMesh, SocketName,
+				ChildSkeletalMeshComponentMaterialNamespace
+			};
+			DataAssetSave->SkeletalAttachments.Add(SkeletalData);
 		}
 	}
 
@@ -160,7 +215,7 @@ void UCustomizationElementaryModule::SaveToDataAsset() const
 	FString const PackageName = NewPackage->GetName();
 	FString const PackageFileName = FPackageName::LongPackageNameToFilename(
 		PackageName, FPackageName::GetAssetPackageExtension());
-	
+
 	// NewPackage->SetDirtyFlag(true);
 	FAssetRegistryModule::AssetCreated(DataAssetSave);
 
@@ -168,4 +223,11 @@ void UCustomizationElementaryModule::SaveToDataAsset() const
 	SavePackageArgs.TopLevelFlags = RF_Public | RF_Standalone;
 	SavePackageArgs.SaveFlags = SAVE_NoError;
 	UPackage::SavePackage(NewPackage, DataAssetSave, *PackageFileName, SavePackageArgs);
+
+	return DataAssetSave;
+}
+
+void UCustomizationElementaryModule::SaveToDataAsset() const
+{
+	UCustomizationElementaryAsset* CustomizationElementaryAsset = SaveToDataAsset(true);
 }

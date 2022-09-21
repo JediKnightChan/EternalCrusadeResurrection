@@ -6,11 +6,52 @@
 #include "Engine/DataAsset.h"
 #include "CustomizationElementaryAsset.generated.h"
 
+
+/** Container to store static mesh component attached to UCustomizationElementaryModel */
+USTRUCT(BlueprintType)
+struct ECRCOMMON_API FCustomizationElementarySubmoduleStatic
+{
+	GENERATED_BODY()
+
+	/** Static mesh */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class UStaticMesh* StaticMesh;
+
+	/** Socket name on UCustomizationElementaryModel to attach mesh to */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FName SocketName;
+
+	/** Static mesh */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString CustomizationNamespace;
+};
+
+
+/** Container to store skeletal mesh component attached to UCustomizationElementaryModel */
+USTRUCT(BlueprintType)
+struct ECRCOMMON_API FCustomizationElementarySubmoduleSkeletal
+{
+	GENERATED_BODY()
+
+	/** Static mesh */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class USkeletalMesh* SkeletalMesh;
+
+	/** Socket name on UCustomizationElementaryModel to attach mesh to */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FName SocketName;
+
+	/** Static mesh */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString CustomizationNamespace;
+};
+
+
 /**
  * 
  */
 UCLASS()
-class ECRCOMMON_API UCustomizationElementaryAsset : public UDataAsset
+class ECRCOMMON_API UCustomizationElementaryAsset : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 
@@ -31,11 +72,15 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	FString MaterialCustomizationNamespace;
 
-	/* Map of static meshes to their socket names to attach to the base skeletal mesh */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	TMap<class UStaticMesh*, FName> StaticMeshesToSocketNames;
+	/** Slot names that will be used for applying materials if this mesh is going to be merged with others */
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	TArray<FName> MaterialCustomizationSlotNames;
 
-	/* Map of skeletal meshes to their socket names to attach to the base skeletal mesh */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	TMap<class USkeletalMesh*, FName> SkeletalMeshesToSocketNames;
+	/** Array of static attachments */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	TArray<FCustomizationElementarySubmoduleStatic> StaticAttachments;
+
+	/** Array of skeletal attachments */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	TArray<FCustomizationElementarySubmoduleSkeletal> SkeletalAttachments;
 };

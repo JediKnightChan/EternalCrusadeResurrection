@@ -7,7 +7,6 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Misc/Paths.h"
-#include "UObject/Object.h"
 #include "CustomizationUtilsLibrary.generated.h"
 
 /**
@@ -38,7 +37,8 @@ public:
 
 	/** Among parent components of given component, find first with type ComponentType */
 	template <class ComponentType>
-	FORCEINLINE static ComponentType* GetFirstParentComponentOfType(const USceneComponent* BaseComponent)
+	FORCEINLINE static ComponentType* GetFirstParentComponentOfType(const USceneComponent* BaseComponent,
+	                                                                const bool AllowFirstOnly = false)
 	{
 		ComponentType* FirstParentSkeletalMeshComponent = nullptr;
 
@@ -53,6 +53,11 @@ public:
 				ComponentType>(ParentComponent))
 			{
 				FirstParentSkeletalMeshComponent = ParentSkeletalMeshComponent;
+				break;
+			}
+
+			if (AllowFirstOnly)
+			{
 				break;
 			}
 		}
@@ -87,9 +92,22 @@ public:
 
 	/** Get display name of component like in the BlueprintEditor of the first parent component with type ComponentType */
 	template <class ComponentType>
-	FORCEINLINE static FString GetFirstParentComponentOfTypeDisplayNameEnd(const USceneComponent* BaseComponent)
+	FORCEINLINE static FString GetFirstParentComponentOfTypeDisplayNameEnd(
+		const USceneComponent* BaseComponent, const bool AllowFirstOnly = false)
 	{
-		const ComponentType* FirstParentComponentOfType = GetFirstParentComponentOfType<ComponentType>(BaseComponent);
+		const ComponentType* FirstParentComponentOfType = GetFirstParentComponentOfType<ComponentType>(
+			BaseComponent, AllowFirstOnly);
 		return GetDisplayNameEnd<ComponentType>(FirstParentComponentOfType);
+	}
+
+	/** Get real material namespace from raw by separating by underscore and returning left part */
+	FORCEINLINE static FString GetMaterialNameSpaceReal(FString MaterialNamespaceRaw)
+	{
+		FString Left, Right;
+		if (MaterialNamespaceRaw.Split("_", &Left, &Right))
+		{
+			MaterialNamespaceRaw = Left;
+		}
+		return MaterialNamespaceRaw;
 	}
 };
