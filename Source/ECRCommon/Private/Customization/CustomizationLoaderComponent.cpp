@@ -1,12 +1,12 @@
 // Copyleft: All rights reversed
 
 
-#include "CustomizationLoaderComponent.h"
+#include "Customization/CustomizationLoaderComponent.h"
 
-#include "CustomizationElementaryAsset.h"
-#include "CustomizationLoaderAsset.h"
-#include "CustomizationMaterialAsset.h"
-#include "CustomizationMaterialNameSpace.h"
+#include "Customization/CustomizationElementaryAsset.h"
+#include "Customization/CustomizationLoaderAsset.h"
+#include "Customization/CustomizationMaterialAsset.h"
+#include "Customization/CustomizationMaterialNameSpace.h"
 #include "CustomizationUtilsLibrary.h"
 #include "MeshMergeFunctionLibrary.h"
 #include "Kismet/KismetSystemLibrary.h"
@@ -239,6 +239,12 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 		SkeletalMeshParentComponent, Namespace);
 	ChildComponent->SetSkeletalMesh(MergedSkeletalMesh);
 
+	TArray<FName> Names = ChildComponent->GetMaterialSlotNames();
+	for (FName Name : Names)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Merge Slot Name is %s"), *(Name.ToString()));
+	}
+	
 	// Inheriting animations if needed
 	if (bInheritParentAnimations)
 	{

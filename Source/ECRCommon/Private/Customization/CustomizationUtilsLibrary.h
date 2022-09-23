@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
+#include "Engine/StaticMesh.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Misc/Paths.h"
@@ -97,5 +98,36 @@ public:
 		const ComponentType* FirstParentComponentOfType = GetFirstParentComponentOfType<ComponentType>(
 			BaseComponent, AllowFirstOnly);
 		return GetDisplayNameEnd(FirstParentComponentOfType);
+	}
+
+	/** Among given array of Skeletal Materials, get indices of materials with given MaterialSlotName */
+	FORCEINLINE static TArray<int32> GetMaterialIndices(TArray<FSkeletalMaterial>& SkeletalMeshMaterials,
+	                                        const FName MaterialSlotName)
+	{
+		TArray<int32> MaterialIndices;
+		for (int32 MaterialIndex = 0; MaterialIndex < SkeletalMeshMaterials.Num(); ++MaterialIndex)
+		{
+			const FSkeletalMaterial& SkeletalMaterial = SkeletalMeshMaterials[MaterialIndex];
+			if (SkeletalMaterial.MaterialSlotName == MaterialSlotName)
+			{
+				MaterialIndices.Add(MaterialIndex);
+			}
+		}
+		return MaterialIndices;
+	}
+
+	/** Among given array of Static Materials, get indices of materials with given MaterialSlotName */
+	FORCEINLINE static TArray<int32> GetMaterialIndices(TArray<FStaticMaterial>& StaticMaterials, const FName MaterialSlotName)
+	{
+		TArray<int32> MaterialIndices;
+		for (int32 MaterialIndex = 0; MaterialIndex < StaticMaterials.Num(); ++MaterialIndex)
+		{
+			const FStaticMaterial& StaticMaterial = StaticMaterials[MaterialIndex];
+			if (StaticMaterial.MaterialSlotName == MaterialSlotName)
+			{
+				MaterialIndices.Add(MaterialIndex);
+			}
+		}
+		return MaterialIndices;
 	}
 };

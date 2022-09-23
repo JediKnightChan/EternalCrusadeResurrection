@@ -1,10 +1,10 @@
 // Copyleft: All rights reversed
 
 
-#include "CustomizationAssetUtilities.h"
+#include "Customization/CustomizationAssetUtilities.h"
 
 #include "ContentBrowserModule.h"
-#include "CustomizationElementaryBundle.h"
+#include "Customization/CustomizationElementaryBundle.h"
 #include "IContentBrowserSingleton.h"
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Kismet/KismetSystemLibrary.h"

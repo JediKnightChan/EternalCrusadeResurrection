@@ -23,9 +23,6 @@ class ECRCOMMON_API UCustomizationLoaderComponent : public USceneComponent
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	bool bUseParentSkeleton;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
-	FName AttachSocketNameOverride;
-
 	/** Modular mesh customization config we want to load */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	class UCustomizationLoaderAsset* AssetConfig;
@@ -34,6 +31,7 @@ class ECRCOMMON_API UCustomizationLoaderComponent : public USceneComponent
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TArray<class UCustomizationMaterialAsset*> MaterialConfigs;
 
+protected:
 	/** Spawn child component for Component and attach to it */
 	template <class SceneComponentClass>
 	SceneComponentClass* SpawnChildComponent(USkeletalMeshComponent* Component, const FString Name,
@@ -66,12 +64,13 @@ class ECRCOMMON_API UCustomizationLoaderComponent : public USceneComponent
 	/** Check if socket exists, if it does, return socket name, else return NAME_None and print warning */
 	template <class ComponentClass>
 	static FName GetExistingSocketNameOrNameNone(const ComponentClass* Component, FName SocketName);
-protected:
+
 	/** Load CustomizationLoaderAsset */
 	void LoadFromAsset();
 
-
 public:
 	UCustomizationLoaderComponent();
+
+	/** LoadFromAsset on BeginPlay */
 	virtual void BeginPlay() override;
 };

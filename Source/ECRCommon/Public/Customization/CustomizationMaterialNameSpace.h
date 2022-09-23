@@ -15,9 +15,6 @@ class ECRCOMMON_API UCustomizationMaterialNameSpace : public USceneComponent
 	GENERATED_BODY()
 
 protected:
-	/** Get first parent of component */
-	USceneComponent* GetFirstParent() const;
-
 	/** Check if the parameter of the specified type and name exists on material */
 	static bool CheckIfMaterialContainsParameter(const UMaterialInstance* MaterialInstance, FName ParameterName,
 	                                             EMaterialParameterType ParameterType);

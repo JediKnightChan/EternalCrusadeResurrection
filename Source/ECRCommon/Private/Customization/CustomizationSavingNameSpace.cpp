@@ -1,12 +1,12 @@
 // Copyleft: All rights reversed
 
 
-#include "CustomizationSavingNameSpace.h"
+#include "Customization/CustomizationSavingNameSpace.h"
 
-#include "CustomizationElementaryModule.h"
-#include "CustomizationLoaderAsset.h"
-#include "CustomizationMaterialAsset.h"
-#include "CustomizationMaterialNameSpace.h"
+#include "Customization/CustomizationElementaryModule.h"
+#include "Customization/CustomizationLoaderAsset.h"
+#include "Customization/CustomizationMaterialAsset.h"
+#include "Customization/CustomizationMaterialNameSpace.h"
 #include "CustomizationUtilsLibrary.h"
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "UObject/SavePackage.h"

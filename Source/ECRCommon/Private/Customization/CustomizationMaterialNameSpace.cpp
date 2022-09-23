@@ -1,10 +1,10 @@
 // Copyleft: All rights reversed
 
 
-#include "CustomizationMaterialNameSpace.h"
+#include "Customization/CustomizationMaterialNameSpace.h"
 
-#include "CustomizationMaterialAsset.h"
-#include "CustomizationSavingNameSpace.h"
+#include "Customization/CustomizationMaterialAsset.h"
+#include "Customization/CustomizationSavingNameSpace.h"
 #include "CustomizationUtilsLibrary.h"
 #include "Components/MeshComponent.h"
 #include "Materials/MaterialInstanceDynamic.h"
@@ -74,6 +74,9 @@ void UCustomizationMaterialNameSpace::ApplyMaterialChanges(USceneComponent* Chil
 	{
 		TArray<FName> MaterialNames = MeshChildComponent->GetMaterialSlotNames();
 
+		const USkinnedMeshComponent* SkinnedMeshComponent = Cast<USkinnedMeshComponent>(MeshChildComponent);
+		const UStaticMeshComponent* StaticMeshComponent = Cast<UStaticMeshComponent>(MeshChildComponent);
+
 		for (const FName MaterialName : MaterialNames)
 		{
 			// Continue if SlotNames non empty and doesn't contain material name we got
@@ -82,41 +85,70 @@ void UCustomizationMaterialNameSpace::ApplyMaterialChanges(USceneComponent* Chil
 				continue;
 			}
 
-			const int32 MaterialIndex = MeshChildComponent->GetMaterialIndex(MaterialName);
-			UMaterialInterface* MaterialInterface = MeshChildComponent->GetMaterial(MaterialIndex);
+			// Getting material indices corresponding to one material slot name
+			TArray<int32> MaterialIndices = {};
 
-			if (const UMaterialInstance* MaterialInstance = Cast<UMaterialInstance>(MaterialInterface))
+			if (SkinnedMeshComponent)
 			{
-				UMaterialInstanceDynamic* MaterialInstanceDynamic = MeshChildComponent->CreateDynamicMaterialInstance(
-					MaterialIndex, MaterialInterface);
-
-				for (const TTuple<FName, float> NameAndScalarValue : GivenScalarParameters)
+				if (SkinnedMeshComponent->SkeletalMesh)
 				{
-					if (CheckIfMaterialContainsParameter(MaterialInstance, NameAndScalarValue.Key,
-					                                     EMaterialParameterType::Scalar))
-					{
-						MaterialInstanceDynamic->SetScalarParameterValue(
-							NameAndScalarValue.Key, NameAndScalarValue.Value);
-					}
+					TArray<FSkeletalMaterial> SkeletalMaterials = SkinnedMeshComponent->SkeletalMesh->GetMaterials();
+					MaterialIndices = UCustomizationUtilsLibrary::GetMaterialIndices(SkeletalMaterials, MaterialName);
 				}
-
-				for (const TTuple<FName, FLinearColor> NameAndVectorValue : GivenVectorParameters)
+			}
+			else if (StaticMeshComponent)
+			{
+				if (StaticMeshComponent->GetStaticMesh())
 				{
-					if (CheckIfMaterialContainsParameter(MaterialInstance, NameAndVectorValue.Key,
-					                                     EMaterialParameterType::Vector))
-					{
-						MaterialInstanceDynamic->SetVectorParameterValue(
-							NameAndVectorValue.Key, NameAndVectorValue.Value);
-					}
+					TArray<FStaticMaterial> StaticMaterials = StaticMeshComponent->GetStaticMesh()->
+						GetStaticMaterials();
+					MaterialIndices = UCustomizationUtilsLibrary::GetMaterialIndices(StaticMaterials, MaterialName);
 				}
+			}
+			else
+			{
+				// Not static or skeletal mesh component, can't get materials
+				continue;
+			}
 
-				for (const TTuple<FName, UTexture*> NameAndTextureValue : GivenTextureParameters)
+			for (const int32 MaterialIndex : MaterialIndices)
+			{
+				UMaterialInterface* MaterialInterface = MeshChildComponent->GetMaterial(MaterialIndex);
+
+				if (const UMaterialInstance* MaterialInstance = Cast<UMaterialInstance>(MaterialInterface))
 				{
-					if (CheckIfMaterialContainsParameter(MaterialInstance, NameAndTextureValue.Key,
-					                                     EMaterialParameterType::Texture))
+					UMaterialInstanceDynamic* MaterialInstanceDynamic = MeshChildComponent->
+						CreateDynamicMaterialInstance(
+							MaterialIndex, MaterialInterface);
+
+					for (const TTuple<FName, float> NameAndScalarValue : GivenScalarParameters)
 					{
-						MaterialInstanceDynamic->SetTextureParameterValue(
-							NameAndTextureValue.Key, NameAndTextureValue.Value);
+						if (CheckIfMaterialContainsParameter(MaterialInstance, NameAndScalarValue.Key,
+						                                     EMaterialParameterType::Scalar))
+						{
+							MaterialInstanceDynamic->SetScalarParameterValue(
+								NameAndScalarValue.Key, NameAndScalarValue.Value);
+						}
+					}
+
+					for (const TTuple<FName, FLinearColor> NameAndVectorValue : GivenVectorParameters)
+					{
+						if (CheckIfMaterialContainsParameter(MaterialInstance, NameAndVectorValue.Key,
+						                                     EMaterialParameterType::Vector))
+						{
+							MaterialInstanceDynamic->SetVectorParameterValue(
+								NameAndVectorValue.Key, NameAndVectorValue.Value);
+						}
+					}
+
+					for (const TTuple<FName, UTexture*> NameAndTextureValue : GivenTextureParameters)
+					{
+						if (CheckIfMaterialContainsParameter(MaterialInstance, NameAndTextureValue.Key,
+						                                     EMaterialParameterType::Texture))
+						{
+							MaterialInstanceDynamic->SetTextureParameterValue(
+								NameAndTextureValue.Key, NameAndTextureValue.Value);
+						}
 					}
 				}
 			}
