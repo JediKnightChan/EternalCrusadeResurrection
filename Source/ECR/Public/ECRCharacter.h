@@ -7,6 +7,7 @@
 #include "ECRCharacter.generated.h"
 
 UCLASS(config=Game)
+// ReSharper disable once CppUE4CodingStandardNamingViolationWarning
 class AECRCharacter : public ACharacter
 {
 	GENERATED_BODY()

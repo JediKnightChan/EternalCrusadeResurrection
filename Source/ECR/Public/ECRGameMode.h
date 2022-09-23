@@ -7,6 +7,7 @@
 #include "ECRGameMode.generated.h"
 
 UCLASS(minimalapi)
+// ReSharper disable once CppUE4CodingStandardNamingViolationWarning
 class AECRGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
