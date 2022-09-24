@@ -13,7 +13,7 @@ This project can be used as a template for creating a similar genre game, and EC
 that may be useful for a wide range of games.
 
 ## Features
-  - C++ Unreal Engine 5 project
-  - Customization system for modular characters (material customization, mesh customization)
-  - Epic Online Services P2P matchmaking (users can create their own matches)
-  - 3rd person multiplayer shooter and melee combat system
+-   C++ Unreal Engine 5 project
+-   Customization system for modular characters (material customization, mesh customization)
+-   Epic Online Services P2P matchmaking (users can create their own matches)
+-   3rd person multiplayer shooter and melee combat system
