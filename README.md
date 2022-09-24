@@ -11,8 +11,8 @@ ECR is an attempt of resurrection of an online third-person shooter video game E
 
 This template can be used as a starting point for creating a similar genre game.
 
-## Features:
-- C++ Unreal Engine 5 project
-- Customization system for modular characters (material customization, mesh customization)
-- Epic Online Services P2P matchmaking (users can create their own matches)
-- 3rd person multiplayer shooter and melee combat system
+## Features
+-  C++ Unreal Engine 5 project
+-  Customization system for modular characters (material customization, mesh customization)
+-  Epic Online Services P2P matchmaking (users can create their own matches)
+-  3rd person multiplayer shooter and melee combat system

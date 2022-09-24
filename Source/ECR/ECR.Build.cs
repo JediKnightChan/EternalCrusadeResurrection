@@ -9,6 +9,7 @@ public class ECR : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
 		PublicDependencyModuleNames.AddRange(new string[]
-			{ "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "ECRCommon" });
+			{ "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "ECRCommon", "OnlineSubsystem", 
+				"OnlineSubsystemEOS" });
 	}
 }
