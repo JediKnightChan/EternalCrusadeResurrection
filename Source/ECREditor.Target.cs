@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
 using UnrealBuildTool;
 using System.Collections.Generic;
@@ -15,6 +15,6 @@ public class ECREditorTarget : TargetRules
 
 	private void RegisterModulesCreatedByRider()
 	{
-		ExtraModuleNames.AddRange(new string[] { "ECRVehicles", "ECRCommon" });
+		ExtraModuleNames.AddRange(new string[] { "ECRVehicles", "ECRCommon", "ECREditorModifications" });
 	}
 }

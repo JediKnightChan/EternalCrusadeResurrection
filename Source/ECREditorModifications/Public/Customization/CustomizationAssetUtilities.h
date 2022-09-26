@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "AssetActionUtility.h"
+#include "Blutility/Classes/AssetActionUtility.h"
 #include "CustomizationAssetUtilities.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class ECRCOMMON_API UCustomizationAssetUtilities : public UAssetActionUtility
+class ECREDITORMODIFICATIONS_API UCustomizationAssetUtilities : public UAssetActionUtility
 {
 	GENERATED_BODY()
 

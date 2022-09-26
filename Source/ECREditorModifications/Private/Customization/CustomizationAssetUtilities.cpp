@@ -4,7 +4,7 @@
 #include "Customization/CustomizationAssetUtilities.h"
 
 #include "ContentBrowserModule.h"
-#include "Customization/CustomizationElementaryBundle.h"
+#include "ECRCommon/Public/Customization/CustomizationElementaryBundle.h"
 #include "IContentBrowserSingleton.h"
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Kismet/KismetSystemLibrary.h"

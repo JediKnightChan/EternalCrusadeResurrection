@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{21F30927-4A93-2544-0E74-10841FF0D88E}",
+	"EngineAssociation": "{8205E915-4ED1-3500-65FC-489334230252}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -20,11 +20,12 @@
 		{
 			"Name": "ECRCommon",
 			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"AdditionalDependencies": [
-				"Engine",
-				"Blutility"
-			]
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "ECREditorModifications",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
 		}
 	],
 	"Plugins": [

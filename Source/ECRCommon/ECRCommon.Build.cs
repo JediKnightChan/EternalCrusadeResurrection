@@ -22,8 +22,5 @@ public class ECRCommon : ModuleRules
 				"SlateCore"
 			}
 		);
-
-		PrivateIncludePaths.AddRange(new string[]
-			{ System.IO.Path.GetFullPath(Target.RelativeEnginePath) + "Source/Editor/Blutility/Private" });
 	}
 }
