@@ -10,6 +10,6 @@ public class ECR : ModuleRules
 
 		PublicDependencyModuleNames.AddRange(new string[]
 			{ "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "ECRCommon", "OnlineSubsystem", 
-				"OnlineSubsystemEOS" });
+				"OnlineSubsystemEOS", "OnlineSubsystemUtils" });
 	}
 }
