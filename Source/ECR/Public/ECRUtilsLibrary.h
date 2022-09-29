@@ -16,6 +16,5 @@ class ECR_API UECRUtilsLibrary : public UBlueprintFunctionLibrary
 	
 public:
 	/** Get GUI Supervisor for World, call like: UECRUtilsLibrary::GetGUISupervisor(GetWorld()) */
-	UFUNCTION(BlueprintCallable)
 	static class AECRGUIPlayerController* GetGUISupervisor(const UWorld* World);
 };
