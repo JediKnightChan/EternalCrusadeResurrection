@@ -21,7 +21,10 @@
 		{
 			"Name": "ECRCommon",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		},
 		{
 			"Name": "ECREditorModifications",
