@@ -4,7 +4,39 @@
 
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "FindSessionsCallbackProxy.h"
 #include "ECROnlineSubsystem.generated.h"
+
+
+USTRUCT(BlueprintType)
+// ReSharper disable once CppUE4CodingStandardNamingViolationWarning
+struct FECRSessionResult
+{
+	GENERATED_BODY()
+
+	/** Default constructor */
+	FECRSessionResult()
+	{
+	};
+
+	/** Real constructor */
+	explicit FECRSessionResult(const FBlueprintSessionResult BlueprintSessionIn);
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FBlueprintSessionResult BlueprintSession;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString MapName;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString MatchType;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString MatchMode;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString UserDisplayName;
+};
 
 /**
  * GameInstance Subsystem handling online functionality (logging in, match creation and joining, ...)
@@ -26,7 +58,7 @@ class ECR_API UECROnlineSubsystem : public UGameInstanceSubsystem
 
 	/** Name assigned to player that will be shown in matches */
 	FString UserDisplayName;
-	
+
 protected:
 	/** Login via selected login type */
 	void Login(FString PlayerName, FString LoginType);
@@ -38,11 +70,11 @@ protected:
 	void OnCreateMatchComplete(FName SessionName, bool bWasSuccessful);
 
 	/** Clear OnFindSessionsComplete delegates when OnFindSessionsComplete fires */
-	void OnFindSessionsComplete(bool bWasSuccessful);
+	void OnFindMatchesComplete(bool bWasSuccessful);
 
 public:
 	UECROnlineSubsystem();
-	
+
 	/** Login user via Epic Account */
 	UFUNCTION(BlueprintCallable)
 	void LoginViaEpic(FString PlayerName);

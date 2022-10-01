@@ -13,6 +13,18 @@
 #define SEARCH_USER_DISPLAY_NAME FName(TEXT("USERDISPLAYNAME"))
 
 
+FECRSessionResult::FECRSessionResult(const FBlueprintSessionResult BlueprintSessionIn)
+{
+	BlueprintSession = BlueprintSessionIn;
+
+	// Retrieving match data into this struct
+	BlueprintSessionIn.OnlineResult.Session.SessionSettings.Get(SETTING_MAPNAME, MapName);
+	BlueprintSessionIn.OnlineResult.Session.SessionSettings.Get(SETTING_GAMETYPE, MatchType);
+	BlueprintSessionIn.OnlineResult.Session.SessionSettings.Get(SETTING_GAMEMODE, MatchMode);
+	BlueprintSessionIn.OnlineResult.Session.SessionSettings.Get(SEARCH_USER_DISPLAY_NAME, UserDisplayName);
+}
+
+
 UECROnlineSubsystem::UECROnlineSubsystem()
 {
 	bIsLoggedIn = false;
@@ -148,7 +160,7 @@ void UECROnlineSubsystem::FindMatches(const FString MatchType, const FString Mat
 					SETTING_MAPNAME, MapName, EOnlineComparisonOp::Equals);
 
 			OnlineSessionPtr->OnFindSessionsCompleteDelegates.AddUObject(
-				this, &UECROnlineSubsystem::OnFindSessionsComplete);
+				this, &UECROnlineSubsystem::OnFindMatchesComplete);
 			OnlineSessionPtr->FindSessions(0, SessionSearchSettings.ToSharedRef());
 		}
 	}
@@ -183,7 +195,7 @@ void UECROnlineSubsystem::OnCreateMatchComplete(FName SessionName, const bool bW
 }
 
 
-void UECROnlineSubsystem::OnFindSessionsComplete(const bool bWasSuccessful)
+void UECROnlineSubsystem::OnFindMatchesComplete(const bool bWasSuccessful)
 {
 	if (OnlineSubsystem)
 	{
@@ -197,10 +209,10 @@ void UECROnlineSubsystem::OnFindSessionsComplete(const bool bWasSuccessful)
 	{
 		if (bWasSuccessful)
 		{
-			TArray<FBlueprintSessionResult> SessionResults;
+			TArray<FECRSessionResult> SessionResults;
 			for (const FOnlineSessionSearchResult SessionResult : SessionSearchSettings->SearchResults)
 			{
-				SessionResults.Add(FBlueprintSessionResult{SessionResult});
+				SessionResults.Add(FECRSessionResult{FBlueprintSessionResult{SessionResult}});
 			}
 			GUISupervisor->HandleFindMatchesSuccess(SessionResults);
 		}

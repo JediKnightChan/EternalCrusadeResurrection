@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "FindSessionsCallbackProxy.h"
+#include "ECROnlineSubsystem.h"
 #include "GameFramework/PlayerController.h"
 #include "ECRGUIPlayerController.generated.h"
 
@@ -41,7 +41,7 @@ public:
 
 	/** Handle success of FindMatches */
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	void HandleFindMatchesSuccess(const TArray<FBlueprintSessionResult>& Results);
+	void HandleFindMatchesSuccess(const TArray<FECRSessionResult>& Results);
 
 	/** Handle error of FindMatches */
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
