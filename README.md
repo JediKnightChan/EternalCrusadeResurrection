@@ -17,3 +17,4 @@ that may be useful for a wide range of games.
 -   Customization system for modular characters (material customization, mesh customization)
 -   Epic Online Services P2P matchmaking (users can create their own matches)
 -   3rd person multiplayer shooter and melee combat system
+-   Python Scripts for automation of restoring non-exportable or hardly-exportable data for an unpacked UE4 game (socket data, maps data, materials, references to materials within meshes)
