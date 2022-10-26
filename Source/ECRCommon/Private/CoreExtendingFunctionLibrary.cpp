@@ -24,3 +24,13 @@ TMap<UObject*, int32> UCoreExtendingFunctionLibrary::SortUObjectToIntMap(TMap<UO
 	});
 	return MapToSort;
 }
+
+int32 UCoreExtendingFunctionLibrary::LeastCommonMultiple(TArray<int32> NumberArray)
+{
+	int32 LeastCommonMultiple = 1;
+	for (const int32 Number : NumberArray)
+	{
+		LeastCommonMultiple = FMath::LeastCommonMultiplier(Number, LeastCommonMultiple);
+	}
+	return LeastCommonMultiple;
+}

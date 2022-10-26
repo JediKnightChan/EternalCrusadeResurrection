@@ -41,7 +41,7 @@ public:
 
 	/** Handle success of FindMatches */
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	void HandleFindMatchesSuccess(const TArray<FECRSessionResult>& Results);
+	void HandleFindMatchesSuccess(const TArray<FECRMatchResult>& Results);
 
 	/** Handle error of FindMatches */
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
