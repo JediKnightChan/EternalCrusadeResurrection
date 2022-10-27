@@ -1,5 +1,9 @@
 # Should be used with UE 4.12 version of EC with the plugin: https://github.com/20tab/UnrealEnginePython
 
+"""
+For selected actors on the map, collect their position data (location, rotation, scale) and save it to .json file
+"""
+
 import unreal_engine as ue
 import json
 

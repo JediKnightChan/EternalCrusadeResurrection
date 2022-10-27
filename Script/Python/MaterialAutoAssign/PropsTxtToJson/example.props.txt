@@ -1,0 +1,52 @@
+ScalarParameterValues[1] =
+{
+    ScalarParameterValues[0] =
+    {
+        ParameterName = RefractionDepthBias
+        ParameterValue = 0
+        ParameterInfo = { Name=None }
+    }
+}
+TextureParameterValues[4] =
+{
+    TextureParameterValues[0] =
+    {
+        ParameterName = Base Color
+        ParameterValue = Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC.T_Bundle_A_var1_BC'
+        ParameterInfo = { Name=None }
+    }
+    TextureParameterValues[1] =
+    {
+        ParameterName = Metallic Map
+        ParameterValue = Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M.T_Bundle_A_var1_M'
+        ParameterInfo = { Name=None }
+    }
+    TextureParameterValues[2] =
+    {
+        ParameterName = Normal Map
+        ParameterValue = Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N.T_Bundle_A_var1_N'
+        ParameterInfo = { Name=None }
+    }
+    TextureParameterValues[3] =
+    {
+        ParameterName = Roughness Map
+        ParameterValue = Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R.T_Bundle_A_var1_R'
+        ParameterInfo = { Name=None }
+    }
+}
+VectorParameterValues[0] = {}
+Parent = Material3'/EternalCrusade/Content/Materials/Templates/M_Opaque.M_Opaque'
+BasePropertyOverrides =
+{
+    bOverride_BlendMode = false
+    BlendMode = BLEND_Opaque (0)
+    bOverride_TwoSided = false
+    TwoSided = false
+}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None

@@ -1,5 +1,8 @@
 # Should be used with internal UE API in later versions of UE
 
+"""
+Auto create materials of Layout System based on data from materials_layout.json
+"""
 
 import unreal
 import os

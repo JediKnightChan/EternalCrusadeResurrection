@@ -1,3 +1,10 @@
+# Should be used with internal UE API in later versions of UE
+
+"""
+Auto assign materials to the corresponding meshes according to data from materials_props.json,
+which was collected by MaterialReferencesCollector.py
+"""
+
 import unreal
 import json
 import os

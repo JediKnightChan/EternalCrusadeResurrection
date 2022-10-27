@@ -1,5 +1,10 @@
 # Should be used with internal UE API in later versions of UE
 
+"""
+Automatically create material instances based on texture names
+(as they are similar to material names)
+"""
+
 import unreal
 import os
 

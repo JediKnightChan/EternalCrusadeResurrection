@@ -1,5 +1,7 @@
 # Should be used with internal UE API in later versions of UE
 
+"""Spawn actors on the map based on map export data produced by MapExport.py"""
+
 import unreal
 import json
 import re
