@@ -25,7 +25,8 @@ def collect_material_references_for_directory(root_dir):
                 filepath = os.path.join(root, filename)
                 print(filepath)
                 material_data = get_material_references_for_uasset(filepath)
-                in_game_filepath = re.sub(r".+/Content/", "/Game/Content/", filepath).replace("\\", "/")
+                in_game_filepath = re.sub(r".+/Content/", "/Game/", filepath).replace("\\", "/").replace(
+                    ".uasset", "")
                 total_material_data[in_game_filepath] = material_data
     return total_material_data
 
@@ -33,7 +34,7 @@ def collect_material_references_for_directory(root_dir):
 if __name__ == '__main__':
     """Collect material references from meshes in this directory and save them to json file"""
 
-    root_dir = "D:/MyProjects/eternal_crusade/Extracted/EternalCrusade_uasset/Content/Buildings/"
+    root_dir = "D:/MyProjects/eternal_crusade/umodel_needed/EternalCrusade_dup/Content/PROPS/"
     data = collect_material_references_for_directory(root_dir)
-    with open("buildings_material_data.json", "w") as f:
+    with open("props_material_references.json", "w") as f:
         json.dump(data, f, indent=4)

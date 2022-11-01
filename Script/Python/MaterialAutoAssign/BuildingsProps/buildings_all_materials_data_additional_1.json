@@ -1,0 +1,2140 @@
+{
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/MI_Bundle_A_var2_Trim6A_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var2_BC_Trim6A.T_Bundle_A_var2_BC_Trim6A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var2_M_Trim6A.T_Bundle_A_var2_M_Trim6A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var2_N_Trim6A.T_Bundle_A_var2_N_Trim6A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var2_R_Trim6A.T_Bundle_A_var2_R_Trim6A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/MI_Bundle_E_var2_Trim3a_VB1.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_BC_Trim3a_VB1.T_Bundle_E_var2_BC_Trim3a_VB1'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_BC_Trim3a.T_Bundle_E_var2_BC_Trim3a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_M_Trim3a_VB1.T_Bundle_E_var2_M_Trim3a_VB1'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_M_Trim3a.T_Bundle_E_var2_M_Trim3a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_N_Trim3a_VB1.T_Bundle_E_var2_N_Trim3a_VB1'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_N_Trim3a.T_Bundle_E_var2_N_Trim3a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_R_Trim3a_VB1.T_Bundle_E_var2_R_Trim3a_VB1'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_R_Trim3a.T_Bundle_E_var2_R_Trim3a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/MI_Bundle_E_var2_Trim7a_VB1.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_BC_Trim7a_VB1.T_Bundle_E_var2_BC_Trim7a_VB1'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_BC_Trim7a.T_Bundle_E_var2_BC_Trim7a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_M_Trim7a_VB1.T_Bundle_E_var2_M_Trim7a_VB1'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_M_Trim7a.T_Bundle_E_var2_M_Trim7a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_N_Trim7a_VB1.T_Bundle_E_var2_N_Trim7a_VB1'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_N_Trim7a.T_Bundle_E_var2_N_Trim7a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_R_Trim7a_VB1.T_Bundle_E_var2_R_Trim7a_VB1'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var2_R_Trim7a.T_Bundle_E_var2_R_Trim7a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/MI_Bundle_H_var2.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[4]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var2_BC.T_Bundle_H_var2_BC'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Metallic Map",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var2_M.T_Bundle_H_var2_M'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Normal Map",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var2_N.T_Bundle_H_var2_N'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Roughness Map",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var2_R.T_Bundle_H_var2_R'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_Opaque.M_Opaque'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/MI_Bundle_H_var2_Trim5a.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[4]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var2_BC_Trim5A.T_Bundle_H_var2_BC_Trim5A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Metallic Map",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var2_M_Trim5A.T_Bundle_H_var2_M_Trim5A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Normal Map",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var2_N_Trim5A.T_Bundle_H_var2_N_Trim5A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Roughness Map",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var2_R_Trim5A.T_Bundle_H_var2_R_Trim5A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_Opaque.M_Opaque'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_A_var2_Trim1a_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_BC_Trim1a_VB3.T_Bundle_A_var2_BC_Trim1a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim1A.T_Bundle_A_var1A_BC_Trim1'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_M_Trim1a_VB3.T_Bundle_A_var2_M_Trim1a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim2A.T_Bundle_A_var1_M_Trim2A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_N_Trim1a_VB3.T_Bundle_A_var2_N_Trim1a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim1A.T_Bundle_A_var1_N_Trim1A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_R_Trim1a_VB3.T_Bundle_A_var2_R_Trim1a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim1A.T_Bundle_A_var1A_R_Trim1'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_A_var2_Trim2_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_BC_Trim2a_VB3.T_Bundle_A_var2_BC_Trim2a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim2A.T_Bundle_A_var1A_BC_Trim2'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_M_Trim2a_VB3.T_Bundle_A_var2_M_Trim2a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim2A.T_Bundle_A_var1A_M_Trim2'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_N_Trim2a_VB3.T_Bundle_A_var2_N_Trim2a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim2A.T_Bundle_A_var1A_N_Trim2'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_R_Trim2a_VB3.T_Bundle_A_var2_R_Trim2a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim2A.T_Bundle_A_var1A_R_Trim2'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_A_var2_Trim6A_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_BC_Trim6A_VB3.T_Bundle_A_var2_BC_Trim6A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_M_Trim6A_VB3.T_Bundle_A_var2_M_Trim6A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_N_Trim6A_VB3.T_Bundle_A_var2_N_Trim6A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_R_Trim6A_VB3.T_Bundle_A_var2_R_Trim6A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_A_var2_Trim6A_VB5.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_BC_Trim6A_VB3.T_Bundle_A_var2_BC_Trim6A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_M_Trim6A_VB3.T_Bundle_A_var2_M_Trim6A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_N_Trim6A_VB3.T_Bundle_A_var2_N_Trim6A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var2_R_Trim6A_VB3.T_Bundle_A_var2_R_Trim6A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_A_var5_Trim1a_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var5_BC_Trim1A_VB3.T_Bundle_A_var5_BC_Trim1A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var5_BC_Trim1A.T_Bundle_A_var5_BC_Trim1A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var5_M_Trim1A_VB3.T_Bundle_A_var5_M_Trim1A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var5_M_Trim1A.T_Bundle_A_var5_M_Trim1A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var5_N_Trim1A_VB3.T_Bundle_A_var5_N_Trim1A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var5_N_Trim1A.T_Bundle_A_var5_N_Trim1A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_A_var5_R_Trim1A_VB3.T_Bundle_A_var5_R_Trim1A_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var5_R_Trim1A.T_Bundle_A_var5_R_Trim1A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_B_var2_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_B_var2_BC_VB3.T_Bundle_B_var2_BC_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_B_var1_BC.T_Bundle_B_var1_BC'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_B_var2_BC_VB3.T_Bundle_B_var2_BC_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_B_var1_M.T_Bundle_B_var1_M'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_B_var2_N_VB3.T_Bundle_B_var2_N_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_B_var1_N.T_Bundle_B_var1_N'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_B_var2_R_VB3.T_Bundle_B_var2_R_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_B_var1_R.T_Bundle_B_var1_R'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_C_var2_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_C_var2_BC_VB3.T_Bundle_C_var2_BC_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_C_var1_BC.T_Bundle_C_var1_BC'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_C_var2_M_VB3.T_Bundle_C_var2_M_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_C_var1_M.T_Bundle_C_var1_M'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_C_var2_N_VB3.T_Bundle_C_var2_N_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_C_var1_N.T_Bundle_C_var1_N'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_C_var2_R_VB3.T_Bundle_C_var2_R_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_C_var1_R.T_Bundle_C_var1_R'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_D_var2_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_D_var2_BC_VB3.T_Bundle_D_var2_BC_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_D_var2_BC.T_Bundle_D_var2_BC'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_D_var2_M_VB3.T_Bundle_D_var2_M_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_D_var2_M.T_Bundle_D_var2_M'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_D_var2_N_VB3.T_Bundle_D_var2_N_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_D_var2_N.T_Bundle_D_var2_N'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_D_var2_R_VB3.T_Bundle_D_var2_R_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_D_var2_R.T_Bundle_D_var2_R'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_E_var2_Trim6a_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_BC_Trim6a_VB3.T_Bundle_E_var2_BC_Trim6a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_BC_Trim6a.T_Bundle_E_var1_BC_Trim6a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_M_Trim6a_VB3.T_Bundle_E_var2_M_Trim6a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_M_Trim6a.T_Bundle_E_var1_M_Trim6a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_N_Trim6a_VB3.T_Bundle_E_var2_N_Trim6a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_N_Trim6a.T_Bundle_E_var1_N_Trim6a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_R_Trim6a_VB3.T_Bundle_E_var2_R_Trim6a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_R_Trim6a.T_Bundle_E_var1_R_Trim6a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_E_var2_Trim7a_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_BC_Trim7a_VB3.T_Bundle_E_var2_BC_Trim7a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_BC_Trim7a.T_Bundle_E_var1_BC_Trim7a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_M_Trim7a_VB3.T_Bundle_E_var2_M_Trim7a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_M_Trim7a.T_Bundle_E_var1_M_Trim7a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_N_Trim7a_VB3.T_Bundle_E_var2_N_Trim7a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_N_Trim7a.T_Bundle_E_var1_N_Trim7a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_R_Trim7a_VB3.T_Bundle_E_var2_R_Trim7a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_R_Trim7a.T_Bundle_E_var1_R_Trim7a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_E_var2_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_BC_VB3.T_Bundle_E_var2_BC_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_BC.T_Bundle_E_var1_BC'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_M_VB3.T_Bundle_E_var2_M_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_M.T_Bundle_E_var1_M'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_N_VB3.T_Bundle_E_var2_N_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_N.T_Bundle_E_var1_N'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_E_var2_R_VB3.T_Bundle_E_var2_R_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_E_var1_R.T_Bundle_E_var1_R'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_F_var2_trim8a_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_F_var2_BC_Trim8a_VB3.T_Bundle_F_var2_BC_Trim8a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim8a.T_Bundle_F_var1_BC_Trim8a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_F_var2_M_Trim8a_VB3.T_Bundle_F_var2_M_Trim8a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim8a.T_Bundle_F_var1_M_Trim8a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_F_var2_N_Trim8a_VB3.T_Bundle_F_var2_N_Trim8a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim8a.T_Bundle_F_var1_N_Trim8a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_F_var2_R_Trim8a_VB3.T_Bundle_F_var2_R_Trim8a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim8a.T_Bundle_F_var1_R_Trim8a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_G_var2_Trim2a_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_G_var2_BC_Trim2a_VB3.T_Bundle_G_var2_BC_Trim2a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_G_var1_BC_Trim2a.T_Bundle_G_var1_BC_Trim2a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_G_var2_M_Trim2a_VB3.T_Bundle_G_var2_M_Trim2a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_G_var1_M_Trim2a.T_Bundle_G_var1_M_Trim2a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_G_var2_N_Trim2a_VB3.T_Bundle_G_var2_N_Trim2a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_G_var1_N_Trim2a.T_Bundle_G_var1_N_Trim2a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_G_var2_R_Trim2a_VB3.T_Bundle_G_var2_R_Trim2a_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_G_var1_R_Trim2a.T_Bundle_G_var1_R_Trim2a'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Bundle_H_var2_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_H_var2_BC_VB3.T_Bundle_H_var2_BC_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var1_BC.T_Bundle_H_var1_BC'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_H_var2_M_VB3.T_Bundle_H_var2_M_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var1_M.T_Bundle_H_var1_M'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_H_var2_N_VB3.T_Bundle_H_var2_N_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var1_N.T_Bundle_H_var1_N'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Bundle_H_var2_R_VB3.T_Bundle_H_var2_R_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_H_var1_R.T_Bundle_H_var1_R'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Pipe_A_var1_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Pipe_A_var1_BC_VB3.T_Pipe_A_var1_BC_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Pipe_A_var1_BC.T_Pipe_A_var1_BC'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Pipe_A_var1_M_VB3.T_Pipe_A_var1_M_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Pipe_A_var1_M.T_Pipe_A_var1_M'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Pipe_A_var1_N_VB3.T_Pipe_A_var1_N_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Pipe_A_var1_N.T_Pipe_A_var1_N'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Pipe_A_var1_R_VB3.T_Pipe_A_var1_R_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Pipe_A_var1_R.T_Pipe_A_var1_R'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/LayoutSystem/SandVB/MI_Pipe_A_var2_Trim7A_VB3.json": {
+        "ScalarParameterValues[1]": {
+            "ScalarParameterValues[0]": {
+                "ParameterName": "RefractionDepthBias",
+                "ParameterValue": 0,
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "TextureParameterValues[8]": {
+            "TextureParameterValues[0]": {
+                "ParameterName": "Base Color_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Pipe_A_var1_Trim7A_BC_VB3.T_Pipe_A_var1_Trim7A_BC_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[1]": {
+                "ParameterName": "Base Color_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Pipe_A_var1_BC_Trim7A.T_Pipe_A_var1_BC_Trim7A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[2]": {
+                "ParameterName": "Metallic_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Pipe_A_var1_Trim7A_M_VB3.T_Pipe_A_var1_Trim7A_M_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[3]": {
+                "ParameterName": "Metallic_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Pipe_A_var1_M_Trim7A.T_Pipe_A_var1_M_Trim7A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[4]": {
+                "ParameterName": "Normal_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Pipe_A_var1_Trim7A_N_VB3.T_Pipe_A_var1_Trim7A_N_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[5]": {
+                "ParameterName": "Normal_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Pipe_A_var1_N_Trim7A.T_Pipe_A_var1_N_Trim7A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[6]": {
+                "ParameterName": "R_A",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/SandVB/T_Pipe_A_var1_Trim7A_R_VB3.T_Pipe_A_var1_Trim7A_R_VB3'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            },
+            "TextureParameterValues[7]": {
+                "ParameterName": "R_B",
+                "ParameterValue": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Pipe_A_var1_R_Trim7A.T_Pipe_A_var1_R_Trim7A'",
+                "ParameterInfo": {
+                    "Name": null
+                }
+            }
+        },
+        "VectorParameterValues[0]": {},
+        "Parent": "Material3'/EternalCrusade/Content/Materials/Templates/M_VertexBlend_2way.M_VertexBlend_2way'",
+        "BasePropertyOverrides": {
+            "BlendMode": "BLEND_Opaque (0)",
+            "TwoSided": false
+        },
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_Opaque.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[4]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/Metal/T_Metal_01_BC.T_Metal_01_BC'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/Metal/T_Metal_01_M.T_Metal_01_M'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/Metal/T_Metal_01_N.T_Metal_01_N'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/Metal/T_Metal_01_R.T_Metal_01_R'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_Opaque_2.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[4]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/Metal/T_Metal_01_BC.T_Metal_01_BC'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/Metal/T_Metal_01_M.T_Metal_01_M'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/Metal/T_Metal_01_N.T_Metal_01_N'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/Metal/T_Metal_01_R.T_Metal_01_R'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_10.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_11.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_12.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_13.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_14.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_15.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_16.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_17.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_18.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_2.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_3.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_4.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_5.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_6.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_7.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_8.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    },
+    "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Materials/Templates/M_VertexBlend_2way_9.json": {
+        "TwoSided": false,
+        "bDisableDepthTest": false,
+        "bIsMasked": false,
+        "ReferencedTextures[8]": {
+            "ReferencedTextures[0]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_BC_Trim6A.T_Bundle_A_var1A_BC_Trim6'",
+            "ReferencedTextures[1]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_M_Trim6A.T_Bundle_A_var1A_M_Trim6'",
+            "ReferencedTextures[2]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_N_Trim6A.T_Bundle_A_var1A_N_Trim6'",
+            "ReferencedTextures[3]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_A_var1_R_Trim6A.T_Bundle_A_var1A_R_Trim6'",
+            "ReferencedTextures[4]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_BC_Trim5a.T_Bundle_F_var1_BC_Trim5a'",
+            "ReferencedTextures[5]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_M_Trim5a.T_Bundle_F_var1_M_Trim5a'",
+            "ReferencedTextures[6]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_N_Trim5a.T_Bundle_F_var1_N_Trim5a'",
+            "ReferencedTextures[7]": "Texture2D'/EternalCrusade/Content/Textures/LayoutSystem/T_Bundle_F_var1_R_Trim5a.T_Bundle_F_var1_R_Trim5a'"
+        },
+        "BlendMode": "BLEND_Opaque (0)",
+        "OpacityMaskClipValue": 0.333,
+        "FlattenedTexture": null,
+        "MobileBaseTexture": null,
+        "MobileNormalTexture": null,
+        "bUseMobileSpecular": false,
+        "MobileSpecularPower": 16,
+        "MobileSpecularMask": "MSM_Constant (0)",
+        "MobileMaskTexture": null
+    }
+}
