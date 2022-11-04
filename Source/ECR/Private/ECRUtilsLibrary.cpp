@@ -3,7 +3,7 @@
 
 #include "ECRUtilsLibrary.h"
 
-#include "ECRGUIPlayerController.h"
+#include "GUI/ECRGUIPlayerController.h"
 #include "Kismet/GameplayStatics.h"
 
 AECRGUIPlayerController* UECRUtilsLibrary::GetGUISupervisor(const UWorld* World)

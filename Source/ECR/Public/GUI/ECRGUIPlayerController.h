@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "ECROnlineSubsystem.h"
+#include "Online/ECROnlineSubsystem.h"
 #include "GameFramework/PlayerController.h"
 #include "ECRGUIPlayerController.generated.h"
 

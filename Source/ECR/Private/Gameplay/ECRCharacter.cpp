@@ -1,12 +1,16 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRCharacter.h"
+#include "Gameplay/ECRCharacter.h"
+
+#include "Gameplay/ECRCharacterAttributesAsset.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Gameplay/ActorAttributeComponent.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AECRCharacter
@@ -44,9 +48,37 @@ AECRCharacter::AECRCharacter()
 
 	// Create a follow camera
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
-	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName); // Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
+	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
+	// Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
-	
+
+	// Create health component
+	HealthComponent = CreateDefaultSubobject<UActorAttributeComponent>(TEXT("Health"));
+	HealthComponent->SetIsReplicated(true);
+	HealthComponent->ProcessPlayerParameterChanged.BindUObject(this, &AECRCharacter::ProcessHealthChange);
+}
+
+void AECRCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (AttributesAsset)
+	{
+		if (HasAuthority())
+		{
+			FString Message = FString::Printf(TEXT("new max value is %f"), AttributesAsset->DefaultMaxHealth);
+			HealthComponent->SetMaxValue(AttributesAsset->DefaultMaxHealth);
+			HealthComponent->ResetCurrentValueToMax();
+		} else
+		{
+			UE_LOG(LogTemp, Error, TEXT("No authority"))
+		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("ECRCharacter %s doesn't have attributes asset"),
+		       *(UKismetSystemLibrary::GetDisplayName(this)))
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -76,7 +108,8 @@ void AECRCharacter::SetupControllerBehaviour(const float Speed, const bool bIsFa
 	if (Speed > 0 && !bIsFalling && !bMontageIsPlaying)
 	{
 		bUseControllerRotationYaw = true;
-	} else
+	}
+	else
 	{
 		bUseControllerRotationYaw = false;
 	}
@@ -110,15 +143,25 @@ void AECRCharacter::MoveForward(float Value)
 
 void AECRCharacter::MoveRight(float Value)
 {
-	if ( (Controller != nullptr) && (Value != 0.0f) )
+	if ((Controller != nullptr) && (Value != 0.0f))
 	{
 		// find out which way is right
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
-	
+
 		// get right vector 
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+
+
+void AECRCharacter::ProcessHealthChange(const float NewHealth, const float MaxHealth)
+{
+	if (NewHealth < 0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Dead"))
+	}
+	GUIProcessHealthChange(NewHealth, MaxHealth);
 }

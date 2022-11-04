@@ -1,9 +1,9 @@
 // Copyleft: All rights reversed
 
 
-#include "ECROnlineSubsystem.h"
+#include "Online/ECROnlineSubsystem.h"
 
-#include "ECRGUIPlayerController.h"
+#include "GUI/ECRGUIPlayerController.h"
 #include "ECRUtilsLibrary.h"
 #include "OnlineSubsystem.h"
 #include "Algo/Accumulate.h"

@@ -1,7 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "ECRGameMode.h"
-#include "ECRCharacter.h"
+#include "Gameplay/ECRCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
 AECRGameMode::AECRGameMode()
