@@ -56,7 +56,11 @@ AECRCharacter::AECRCharacter()
 	HealthComponent = CreateDefaultSubobject<UActorAttributeComponent>(TEXT("Health"));
 	HealthComponent->SetIsReplicated(true);
 	HealthComponent->ProcessPlayerParameterChanged.BindUObject(this, &AECRCharacter::ProcessHealthChange);
+	
+	// Bind damage events
+	OnTakeRadialDamage.AddDynamic(this, &AECRCharacter::OnReceiveAnyRadialDamage);
 }
+
 
 void AECRCharacter::BeginPlay()
 {
@@ -69,7 +73,8 @@ void AECRCharacter::BeginPlay()
 			FString Message = FString::Printf(TEXT("new max value is %f"), AttributesAsset->DefaultMaxHealth);
 			HealthComponent->SetMaxValue(AttributesAsset->DefaultMaxHealth);
 			HealthComponent->ResetCurrentValueToMax();
-		} else
+		}
+		else
 		{
 			UE_LOG(LogTemp, Error, TEXT("No authority"))
 		}
@@ -164,4 +169,15 @@ void AECRCharacter::ProcessHealthChange(const float NewHealth, const float MaxHe
 		UE_LOG(LogTemp, Warning, TEXT("Dead"))
 	}
 	GUIProcessHealthChange(NewHealth, MaxHealth);
+}
+
+
+// ReSharper disable once CppMemberFunctionMayBeConst
+void AECRCharacter::OnReceiveAnyRadialDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
+                                             FVector Origin, FHitResult HitInfo, AController* InstigatedBy,
+                                             AActor* DamageCauser)
+{
+	GEngine->AddOnScreenDebugMessage(3, 5, {255, 0, 0},
+	                                 FString::Printf(TEXT("C Received damage %f"), Damage));
+	HealthComponent->ApplyDamage(Damage);
 }

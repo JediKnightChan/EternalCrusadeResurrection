@@ -28,17 +28,20 @@ FECRMatchResult::FECRMatchResult(const FBlueprintSessionResult BlueprintSessionI
 	// Retrieving match data into this struct
 	FString StringBuffer;
 
-	BlueprintSessionIn.OnlineResult.Session.SessionSettings.Get(SETTING_MAPNAME, StringBuffer);
-	Map = FName{StringBuffer};
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_MAPNAME, StringBuffer);
+	UE_LOG(LogTemp, Warning, TEXT("C++ MAP is %s"), *(StringBuffer));
+	Map = FName{*StringBuffer};
 
-	BlueprintSessionIn.OnlineResult.Session.SessionSettings.Get(SETTING_GAMEMISSION, StringBuffer);
-	Mission = FName{StringBuffer};
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_GAMEMISSION, StringBuffer);
+	UE_LOG(LogTemp, Warning, TEXT("C++ Mission is %s"), *(StringBuffer));
+	Mission = FName{*StringBuffer};
 
-	BlueprintSessionIn.OnlineResult.Session.SessionSettings.Get(SETTING_GAMEMODE, StringBuffer);
-	Mode = FName{StringBuffer};
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_GAMEMODE, StringBuffer);
+	UE_LOG(LogTemp, Warning, TEXT("C++ Mode is %s"), *(StringBuffer));
+	Mode = FName{*StringBuffer};
 
-	BlueprintSessionIn.OnlineResult.Session.SessionSettings.Get(SETTING_FACTIONS, FactionsString);
-	BlueprintSessionIn.OnlineResult.Session.SessionSettings.Get(SEARCH_USER_DISPLAY_NAME, UserDisplayName);
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_FACTIONS, FactionsString);
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SEARCH_USER_DISPLAY_NAME, UserDisplayName);
 }
 
 
@@ -94,7 +97,7 @@ void UECROnlineSubsystem::OnLoginComplete(int32 LocalUserNum, const bool bWasSuc
                                           const FString& Error)
 {
 	bIsLoggedIn = bWasSuccessful;
-
+	UE_LOG(LogTemp, Warning, TEXT("Player id is %s"), *(UserId.ToString()));
 	if (OnlineSubsystem)
 	{
 		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
@@ -177,21 +180,21 @@ void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName,
 			SessionSettings.bUsesPresence = true;
 
 			/** Custom settings **/
-			SessionSettings.Settings.Add(SETTING_GAMEMODE, ModeName.ToString());
-			SessionSettings.Settings.Add(SETTING_MAPNAME, MapName.ToString());
-			SessionSettings.Settings.Add(SETTING_GAMEMISSION, MissionName.ToString());
+			SessionSettings.Set(SETTING_GAMEMODE, ModeName.ToString(), EOnlineDataAdvertisementType::ViaOnlineService);
+			SessionSettings.Set(SETTING_MAPNAME, MapName.ToString(), EOnlineDataAdvertisementType::ViaOnlineService);
+			SessionSettings.Set(SETTING_GAMEMISSION, MissionName.ToString(), EOnlineDataAdvertisementType::ViaOnlineService);
 
 			// Set boolean flags for filtering by participating factions, set string flag for info about sides
 			for (TTuple<FName, int> FactionNameAndSide : FactionNamesToSides)
 			{
 				FName FactionName = FactionNameAndSide.Key;
-				SessionSettings.Settings.Add(FName{SETTING_FACTION_PREFIX.ToString() + FactionName.ToString()}, true);
+				SessionSettings.Set(FName{SETTING_FACTION_PREFIX.ToString() + FactionName.ToString()}, true, EOnlineDataAdvertisementType::ViaOnlineService);
 			}
 
 			FString FactionsString = GetMatchFactionString(FactionNamesToSides, FactionNamesToShortTexts);
-			SessionSettings.Settings.Add(SETTING_FACTIONS, FactionsString);
+			SessionSettings.Set(SETTING_FACTIONS, FactionsString, EOnlineDataAdvertisementType::ViaOnlineService);
 
-			SessionSettings.Settings.Add(SEARCH_USER_DISPLAY_NAME, UserDisplayName);
+			SessionSettings.Set(SEARCH_USER_DISPLAY_NAME, UserDisplayName, EOnlineDataAdvertisementType::ViaOnlineService);
 
 			/** Custom settings end */
 
@@ -208,8 +211,7 @@ void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName,
 }
 
 
-void UECROnlineSubsystem::FindMatches(const TArray<int32> FractionCombinations, const FString MatchType,
-                                      const FString MatchMode, const FString MapName)
+void UECROnlineSubsystem::FindMatches(const FString MatchType, const FString MatchMode, const FString MapName)
 {
 	if (OnlineSubsystem)
 	{

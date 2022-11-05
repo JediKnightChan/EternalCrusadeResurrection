@@ -39,6 +39,8 @@ void UActorAttributeComponent::SetMaxValue(const float NewMaximumValue)
 void UActorAttributeComponent::ApplyDamage(const float Damage)
 {
 	CurrentValue = FMath::Max(CurrentValue - Damage, 0.0f);
+	// Call OnRep on server for processing changes
+	OnRep_CurrentValue();
 }
 
 

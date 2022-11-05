@@ -142,6 +142,6 @@ public:
 
 	/** Create match, by player (P2P) or dedicated server */
 	UFUNCTION(BlueprintCallable)
-	void FindMatches(const TArray<int32> FractionCombinations, const FString MatchType = "",
+	void FindMatches(const FString MatchType = "",
 	                 const FString MatchMode = "", const FString MapName = "");
 };

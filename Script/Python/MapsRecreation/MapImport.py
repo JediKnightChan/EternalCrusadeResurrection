@@ -9,7 +9,7 @@ import re
 
 map_data_filepath = "zedek1_main.json"
 level_library = unreal.EditorLevelLibrary
-editor_asset_library = unreal.editor_asset_library
+editor_asset_library = unreal.EditorAssetLibrary
 
 
 with open(map_data_filepath, "rb") as f:

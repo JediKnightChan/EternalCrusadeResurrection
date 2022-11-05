@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Gameplay/ActorAttributeComponent.h"
 #include "ECRCharacter.generated.h"
 
 UCLASS(config=Game)
@@ -28,6 +29,11 @@ class AECRCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
 
+	/** Server - Process receiving any radial damage */
+	UFUNCTION()
+	void OnReceiveAnyRadialDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType,
+	                              FVector Origin, FHitResult HitInfo, class AController* InstigatedBy,
+	                              AActor* DamageCauser);
 protected:
 	/** Called for forwards/backward input */
 	void MoveForward(float Value);
