@@ -29,15 +29,12 @@ FECRMatchResult::FECRMatchResult(const FBlueprintSessionResult BlueprintSessionI
 	FString StringBuffer;
 
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_MAPNAME, StringBuffer);
-	UE_LOG(LogTemp, Warning, TEXT("C++ MAP is %s"), *(StringBuffer));
 	Map = FName{*StringBuffer};
 
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_GAMEMISSION, StringBuffer);
-	UE_LOG(LogTemp, Warning, TEXT("C++ Mission is %s"), *(StringBuffer));
 	Mission = FName{*StringBuffer};
 
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_GAMEMODE, StringBuffer);
-	UE_LOG(LogTemp, Warning, TEXT("C++ Mode is %s"), *(StringBuffer));
 	Mode = FName{*StringBuffer};
 
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_FACTIONS, FactionsString);
@@ -97,7 +94,7 @@ void UECROnlineSubsystem::OnLoginComplete(int32 LocalUserNum, const bool bWasSuc
                                           const FString& Error)
 {
 	bIsLoggedIn = bWasSuccessful;
-	UE_LOG(LogTemp, Warning, TEXT("Player id is %s"), *(UserId.ToString()));
+
 	if (OnlineSubsystem)
 	{
 		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
@@ -107,9 +104,6 @@ void UECROnlineSubsystem::OnLoginComplete(int32 LocalUserNum, const bool bWasSuc
 	}
 
 	const FString SuccessLogin = bWasSuccessful ? "true" : "false";
-
-	UE_LOG(LogTemp, Warning, TEXT("Login successful: %s %s"), *(SuccessLogin), *(Error));
-
 
 	if (AECRGUIPlayerController* GUISupervisor = UECRUtilsLibrary::GetGUISupervisor(GetWorld()))
 	{
@@ -158,7 +152,7 @@ void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName,
 	// Check if logged in
 	if (!bIsLoggedIn)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Attempt to create match, but not logged in!"));
+		UE_LOG(LogTemp, Error, TEXT("Attempt to create match, but not logged in!"));
 		return;
 	}
 
@@ -257,7 +251,6 @@ void UECROnlineSubsystem::OnCreateMatchComplete(FName SessionName, const bool bW
 			// Display loading screen as loading map
 			GUISupervisor->ShowLoadingScreen(LoadingMap);
 			// Load map with listen parameter
-			UE_LOG(LogTemp, Warning, TEXT("Loading map %s"), *(MatchCreationSettings.MapPath));
 			const FString MapPathListen = MatchCreationSettings.MapPath + "?listen";
 			GetWorld()->ServerTravel(MapPathListen);
 		}

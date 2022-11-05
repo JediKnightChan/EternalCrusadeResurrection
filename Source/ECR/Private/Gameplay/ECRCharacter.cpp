@@ -74,10 +74,6 @@ void AECRCharacter::BeginPlay()
 			HealthComponent->SetMaxValue(AttributesAsset->DefaultMaxHealth);
 			HealthComponent->ResetCurrentValueToMax();
 		}
-		else
-		{
-			UE_LOG(LogTemp, Error, TEXT("No authority"))
-		}
 	}
 	else
 	{

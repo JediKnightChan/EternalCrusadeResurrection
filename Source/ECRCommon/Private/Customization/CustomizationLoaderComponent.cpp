@@ -240,10 +240,6 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 	ChildComponent->SetSkeletalMesh(MergedSkeletalMesh);
 
 	TArray<FName> Names = ChildComponent->GetMaterialSlotNames();
-	for (FName Name : Names)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Merge Slot Name is %s"), *(Name.ToString()));
-	}
 	
 	// Inheriting animations if needed
 	if (bInheritParentAnimations)
