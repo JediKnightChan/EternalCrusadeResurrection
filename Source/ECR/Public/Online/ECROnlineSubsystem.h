@@ -111,7 +111,7 @@ class ECR_API UECROnlineSubsystem : public UGameInstanceSubsystem
 	                                     const TMap<FName, FText>& FactionNamesToShortTexts);
 protected:
 	/** Login via selected login type */
-	void Login(FString PlayerName, FString LoginType);
+	void Login(FString PlayerName, FString LoginType, FString Id = "", FString Token = "");
 
 	/** When OnLoginComplete fires, show main menu if success, or show error with GUISupervisor */
 	void OnLoginComplete(int32 LocalUserNum, bool bWasSuccessful, const FUniqueNetId& UserId, const FString& Error);
@@ -136,6 +136,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void LoginViaDevice(FString PlayerName);
 
+	/** Login user via DevTool */
+	UFUNCTION(BlueprintCallable)
+	void LoginViaDevTool(FString PlayerName, FString Address, FString CredName);
+
 	/** Create match, by player (P2P) */
 	UFUNCTION(BlueprintCallable)
 	void CreateMatch(const FName ModeName,
@@ -147,8 +151,16 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void FindMatches(const FString MatchType = "",
 	                 const FString MatchMode = "", const FString MapName = "");
-	
+
 	/** Join match */
 	UFUNCTION(BlueprintCallable)
 	void JoinMatch(FBlueprintSessionResult Session);
+
+	/** Get whether the player is logged in */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FORCEINLINE bool GetIsLoggedIn() const { return bIsLoggedIn; }
+
+	/** Get player nickname */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FString GetPlayerNickname();
 };

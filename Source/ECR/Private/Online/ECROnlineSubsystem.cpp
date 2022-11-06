@@ -69,8 +69,13 @@ void UECROnlineSubsystem::LoginViaDevice(const FString PlayerName)
 	Login(PlayerName, "persistentauth");
 }
 
+void UECROnlineSubsystem::LoginViaDevTool(const FString PlayerName, const FString Address, const FString CredName)
+{
+	Login(PlayerName, "developer", Address, CredName);
+}
 
-void UECROnlineSubsystem::Login(FString PlayerName, FString LoginType)
+
+void UECROnlineSubsystem::Login(FString PlayerName, FString LoginType, FString Id, FString Token)
 {
 	// Setting player display name
 	UserDisplayName = PlayerName;
@@ -81,8 +86,8 @@ void UECROnlineSubsystem::Login(FString PlayerName, FString LoginType)
 		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
 		{
 			FOnlineAccountCredentials OnlineAccountCredentials;
-			OnlineAccountCredentials.Id = "";
-			OnlineAccountCredentials.Token = "";
+			OnlineAccountCredentials.Id = Id;
+			OnlineAccountCredentials.Token = Token;
 			OnlineAccountCredentials.Type = LoginType;
 
 			OnlineIdentityPtr->OnLoginCompleteDelegates->AddUObject(this, &UECROnlineSubsystem::OnLoginComplete);
@@ -243,7 +248,7 @@ void UECROnlineSubsystem::JoinMatch(const FBlueprintSessionResult Session)
 		{
 			// Remove all previous delegates
 			OnlineSessionPtr->ClearOnCreateSessionCompleteDelegates(this);
-			
+
 			OnlineSessionPtr->OnJoinSessionCompleteDelegates.AddUObject(
 				this, &UECROnlineSubsystem::OnJoinSessionComplete);
 
@@ -351,4 +356,20 @@ void UECROnlineSubsystem::OnJoinSessionComplete(const FName SessionName,
 			}
 		}
 	}
+}
+
+
+FString UECROnlineSubsystem::GetPlayerNickname()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (bIsLoggedIn)
+			{
+				return OnlineIdentityPtr->GetPlayerNickname(0);
+			}
+		}
+	}
+	return "";
 }
