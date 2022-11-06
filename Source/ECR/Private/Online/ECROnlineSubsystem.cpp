@@ -240,6 +240,7 @@ void UECROnlineSubsystem::FindMatches(const FString MatchType, const FString Mat
 	}
 }
 
+
 void UECROnlineSubsystem::JoinMatch(const FBlueprintSessionResult Session)
 {
 	if (OnlineSubsystem)
@@ -253,6 +254,21 @@ void UECROnlineSubsystem::JoinMatch(const FBlueprintSessionResult Session)
 				this, &UECROnlineSubsystem::OnJoinSessionComplete);
 
 			OnlineSessionPtr->JoinSession(0, DEFAULT_SESSION_NAME, Session.OnlineResult);
+		}
+	}
+}
+
+
+void UECROnlineSubsystem::DestroySession()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
+		{
+			OnlineSessionPtr->OnDestroySessionCompleteDelegates.AddUObject(
+				this, &UECROnlineSubsystem::OnDestroySessionComplete);
+			UE_LOG(LogTemp, Display, TEXT("Destroying session"));
+			OnlineSessionPtr->DestroySession(DEFAULT_SESSION_NAME);
 		}
 	}
 }
@@ -354,6 +370,17 @@ void UECROnlineSubsystem::OnJoinSessionComplete(const FName SessionName,
 					break;
 				}
 			}
+		}
+	}
+}
+
+void UECROnlineSubsystem::OnDestroySessionComplete(FName SessionName, bool bWasSuccessful)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
+		{
+			OnlineSessionPtr->ClearOnDestroySessionCompleteDelegates(this);
 		}
 	}
 }

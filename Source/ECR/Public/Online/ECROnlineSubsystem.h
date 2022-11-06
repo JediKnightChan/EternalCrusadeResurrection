@@ -125,6 +125,8 @@ protected:
 	/** When OnJoinSessionComplete fires, travel to the session map */
 	void OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
 
+	/** When OnDestroySessionComplete fires, clear other delegates */
+	void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
 public:
 	UECROnlineSubsystem();
 
@@ -155,6 +157,10 @@ public:
 	/** Join match */
 	UFUNCTION(BlueprintCallable)
 	void JoinMatch(FBlueprintSessionResult Session);
+
+	/** Leave match */
+	UFUNCTION(BlueprintCallable)
+	void DestroySession();
 
 	/** Get whether the player is logged in */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
