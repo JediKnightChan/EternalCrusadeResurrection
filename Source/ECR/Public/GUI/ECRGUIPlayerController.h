@@ -47,6 +47,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void HandleFindMatchesFailed();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void HandleJoinMatchFailed(bool bSessionIsFull, bool bSessionDoesNotExist);
+
 	// Interface actions - blueprint implementable
 
 	/** Show Main menu - need to override in blueprints */

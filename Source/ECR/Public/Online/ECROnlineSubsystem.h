@@ -113,14 +113,17 @@ protected:
 	/** Login via selected login type */
 	void Login(FString PlayerName, FString LoginType);
 
-	/** Clear OnLoginComplete delegates and show main menu if success when OnLoginComplete fires */
+	/** When OnLoginComplete fires, show main menu if success, or show error with GUISupervisor */
 	void OnLoginComplete(int32 LocalUserNum, bool bWasSuccessful, const FUniqueNetId& UserId, const FString& Error);
 
-	/** Clear OnCreateMatchComplete delegates when OnCreateMatchComplete fires */
+	/** When OnCreateMatchComplete fires, save match creation parameters and travel to match map */
 	void OnCreateMatchComplete(FName SessionName, bool bWasSuccessful);
 
-	/** Clear OnFindSessionsComplete delegates when OnFindSessionsComplete fires */
+	/** When OnFindSessionsComplete fires, pass matches data to GUISupervisor */
 	void OnFindMatchesComplete(bool bWasSuccessful);
+
+	/** When OnJoinSessionComplete fires, travel to the session map */
+	void OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
 
 public:
 	UECROnlineSubsystem();
@@ -133,7 +136,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void LoginViaDevice(FString PlayerName);
 
-	/** Create match, by player (P2P) or dedicated server */
+	/** Create match, by player (P2P) */
 	UFUNCTION(BlueprintCallable)
 	void CreateMatch(const FName ModeName,
 	                 const FName MapName, const FString MapPath, const FName MissionName,
@@ -144,4 +147,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void FindMatches(const FString MatchType = "",
 	                 const FString MatchMode = "", const FString MapName = "");
+	
+	/** Join match */
+	UFUNCTION(BlueprintCallable)
+	void JoinMatch(FBlueprintSessionResult Session);
 };
