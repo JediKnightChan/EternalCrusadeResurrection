@@ -124,20 +124,14 @@ void UECROnlineSubsystem::OnLoginComplete(int32 LocalUserNum, const bool bWasSuc
 }
 
 
-FString UECROnlineSubsystem::GetMatchFactionString(const TMap<FName, int32>& FactionNamesToSides,
-                                                   const TMap<FName, FText>& FactionNamesToShortTexts)
+FString UECROnlineSubsystem::GetMatchFactionString(
+	const TArray<FFactionAlliance>& FactionAlliances, const TMap<FName, FText>& FactionNamesToShortTexts)
 {
-	TMap<int32, TArray<FName>> GroupedFactions;
-	for (TTuple<FName, int> FactionNameAndSide : FactionNamesToSides)
-	{
-		GroupedFactions.FindOrAdd(FactionNameAndSide.Value).Add(FactionNameAndSide.Key);
-	}
 	TArray<FString> Sides;
-	for (const TTuple<int, TArray<FName>> SideAndFactions : GroupedFactions)
+	for (FFactionAlliance Alliance : FactionAlliances)
 	{
 		TArray<FString> SideFactions;
-		TArray<FName> FactionNames = SideAndFactions.Value;
-		for (FName FactionName : FactionNames)
+		for (FName FactionName : Alliance.FactionNames)
 		{
 			const FText* FactionShortNameText = FactionNamesToShortTexts.Find(FactionName);
 			SideFactions.Add(FactionShortNameText->ToString());
@@ -150,7 +144,7 @@ FString UECROnlineSubsystem::GetMatchFactionString(const TMap<FName, int32>& Fac
 
 void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName, const FString MapPath,
                                       const FName MissionName,
-                                      const TMap<FName, int32> FactionNamesToSides,
+                                      const TArray<FFactionAlliance> Alliances,
                                       const TMap<FName, int32> FactionNamesToCapacities,
                                       const TMap<FName, FText> FactionNamesToShortTexts)
 {
@@ -185,14 +179,16 @@ void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName,
 			                    EOnlineDataAdvertisementType::ViaOnlineService);
 
 			// Set boolean flags for filtering by participating factions, set string flag for info about sides
-			for (TTuple<FName, int> FactionNameAndSide : FactionNamesToSides)
+			for (auto [FactionNames, Strength] : Alliances)
 			{
-				FName FactionName = FactionNameAndSide.Key;
-				SessionSettings.Set(FName{SETTING_FACTION_PREFIX.ToString() + FactionName.ToString()}, true,
-				                    EOnlineDataAdvertisementType::ViaOnlineService);
+				for (FName FactionName : FactionNames)
+				{
+					SessionSettings.Set(FName{SETTING_FACTION_PREFIX.ToString() + FactionName.ToString()}, true,
+					                    EOnlineDataAdvertisementType::ViaOnlineService);
+				}
 			}
 
-			FString FactionsString = GetMatchFactionString(FactionNamesToSides, FactionNamesToShortTexts);
+			FString FactionsString = GetMatchFactionString(Alliances, FactionNamesToShortTexts);
 			SessionSettings.Set(SETTING_FACTIONS, FactionsString, EOnlineDataAdvertisementType::ViaOnlineService);
 
 			SessionSettings.Set(SEARCH_USER_DISPLAY_NAME, UserDisplayName,
@@ -202,7 +198,7 @@ void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName,
 
 			// Saving match creation settings for use in delegate and after map load
 			MatchCreationSettings = FECRMatchSettings{
-				ModeName, MapName, MapPath, MissionName, FactionNamesToSides, FactionNamesToCapacities
+				ModeName, MapName, MapPath, MissionName, Alliances, FactionNamesToCapacities
 			};
 
 			OnlineSessionPtr->OnCreateSessionCompleteDelegates.AddUObject(
@@ -292,8 +288,9 @@ void UECROnlineSubsystem::OnCreateMatchComplete(FName SessionName, const bool bW
 			// Display loading screen as loading map
 			GUISupervisor->ShowLoadingScreen(LoadingMap);
 			// Load map with listen parameter
-			const FString MapPathListen = MatchCreationSettings.MapPath + "?listen";
-			GetWorld()->ServerTravel(MapPathListen);
+			const FString Address = FString::Printf(TEXT("%s?listen?DisplayName=%s"),
+			                                        *(MatchCreationSettings.MapPath), *(UserDisplayName));
+			GetWorld()->ServerTravel(Address);
 		}
 		else
 		{
@@ -350,8 +347,10 @@ void UECROnlineSubsystem::OnJoinSessionComplete(const FName SessionName,
 				case EOnJoinSessionCompleteResult::Type::Success:
 					if (!ConnectionString.IsEmpty())
 					{
-						UE_LOG(LogTemp, Error, TEXT("Connection string is %s"), *(ConnectionString));
-						GUISupervisor->ClientTravel(ConnectionString, ETravelType::TRAVEL_Absolute);
+						const FString Address = FString::Printf(
+							TEXT("%s?DisplayName=%s"), *(ConnectionString), *(UserDisplayName));
+						UE_LOG(LogTemp, Error, TEXT("Connection string is %s"), *(Address));
+						GUISupervisor->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
 					}
 					else
 					{
@@ -399,4 +398,9 @@ FString UECROnlineSubsystem::GetPlayerNickname()
 		}
 	}
 	return "";
+}
+
+FString UECROnlineSubsystem::NetIdToString(const FUniqueNetIdRepl NetId)
+{
+	return NetId.ToString();
 }

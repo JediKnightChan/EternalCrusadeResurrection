@@ -8,6 +8,20 @@
 #include "ECROnlineSubsystem.generated.h"
 
 
+/** Alliance of factions (eg LSM & Eldar) */
+USTRUCT(BlueprintType)
+struct FFactionAlliance
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<FName> FactionNames;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Strength;
+};
+
+
 USTRUCT(BlueprintType)
 // ReSharper disable once CppUE4CodingStandardNamingViolationWarning
 struct FECRMatchResult
@@ -51,12 +65,12 @@ struct FECRMatchSettings
 
 	// Real constructor
 	FECRMatchSettings(const FName& GameMode, const FName& MapName, const FString& MapPath, const FName& GameMission,
-	                  const TMap<FName, int32>& FactionNamesToSides, const TMap<FName, int32>& FactionNamesToCapacities)
+	                  const TArray<FFactionAlliance>& Alliances, const TMap<FName, int32>& FactionNamesToCapacities)
 		: GameMode(GameMode),
 		  MapName(MapName),
 		  MapPath(MapPath),
 		  GameMission(GameMission),
-		  FactionNamesToSides(FactionNamesToSides),
+		  Alliances(Alliances),
 		  FactionNamesToCapacities(FactionNamesToCapacities)
 	{
 	}
@@ -74,7 +88,7 @@ struct FECRMatchSettings
 	FName GameMission;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	TMap<FName, int32> FactionNamesToSides;
+	TArray<FFactionAlliance> Alliances;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TMap<FName, int32> FactionNamesToCapacities;
@@ -107,7 +121,7 @@ class ECR_API UECROnlineSubsystem : public UGameInstanceSubsystem
 	TSharedPtr<class FOnlineSessionSearch> SessionSearchSettings;
 
 	/** Get factions string (like "SM, Eldar vs CSM") **/
-	static FString GetMatchFactionString(const TMap<FName, int32>& FactionNamesToSides,
+	static FString GetMatchFactionString(const TArray<FFactionAlliance>& FactionAlliances,
 	                                     const TMap<FName, FText>& FactionNamesToShortTexts);
 protected:
 	/** Login via selected login type */
@@ -146,7 +160,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void CreateMatch(const FName ModeName,
 	                 const FName MapName, const FString MapPath, const FName MissionName,
-	                 const TMap<FName, int32> FactionNamesToSides, const TMap<FName, int32>
+	                 const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
 	                 FactionNamesToCapacities, const TMap<FName, FText> FactionNamesToShortTexts);
 
 	/** Create match, by player (P2P) or dedicated server */
@@ -169,4 +183,8 @@ public:
 	/** Get player nickname */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetPlayerNickname();
+
+	/** Convert NetID to string */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static FString NetIdToString(FUniqueNetIdRepl NetId);
 };
