@@ -25,10 +25,7 @@ FString AECRGameMode::InitNewPlayer(APlayerController* NewPlayerController, cons
 	// Setting player display name according to options
 	const FString PlayerName = UGameplayStatics::ParseOption(Options, TEXT("DisplayName"));
 	UE_LOG(LogTemp, Warning, TEXT("New player name is %s"), *(PlayerName))
-	if (AECRMatchPlayerState* PlayerState = Cast<AECRMatchPlayerState>(NewPlayerController->PlayerState))
-	{
-		PlayerState->DisplayName = PlayerName;
-	}
-	
+	ControllersToDisplayNames.Add(NewPlayerController, PlayerName);
+
 	return Super::InitNewPlayer(NewPlayerController, UniqueId, Options, Portal);
 }
