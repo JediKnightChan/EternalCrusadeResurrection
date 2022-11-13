@@ -15,6 +15,6 @@ public class ECRTarget : TargetRules
 
 	private void RegisterModulesCreatedByRider()
 	{
-		ExtraModuleNames.AddRange(new string[] { "ECRVehicles", "ECRCommon" });
+		ExtraModuleNames.AddRange(new string[] { "ECRVehicles", "ECRCommon", "ECRWeapons" });
 	}
 }
