@@ -3,6 +3,15 @@
 
 #include "CoreExtendingFunctionLibrary.h"
 
+#include "Kismet/KismetMathLibrary.h"
+
+
+int64 UCoreExtendingFunctionLibrary::GetCurrentTimeInSeconds()
+{
+	const FDateTime CurrentTime = UKismetMathLibrary::UtcNow();
+	return CurrentTime.ToUnixTimestamp();
+}
+
 
 TMap<UObject*, FString> UCoreExtendingFunctionLibrary::SortUObjectToStringMap(TMap<UObject*, FString> MapToSort)
 {

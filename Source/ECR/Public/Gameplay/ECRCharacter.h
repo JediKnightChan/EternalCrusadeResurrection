@@ -19,7 +19,7 @@ class AECRCharacter : public ACharacter
 
 	/** Health component */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
-	class UActorAttributeComponent* HealthComponent;
+	class UActorAttributeComponent* ParameterHealthComponent;
 
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))

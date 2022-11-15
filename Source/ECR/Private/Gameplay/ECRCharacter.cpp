@@ -53,10 +53,10 @@ AECRCharacter::AECRCharacter()
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
 	// Create health component
-	HealthComponent = CreateDefaultSubobject<UActorAttributeComponent>(TEXT("Health"));
-	HealthComponent->SetIsReplicated(true);
-	HealthComponent->ProcessPlayerParameterChanged.BindUObject(this, &AECRCharacter::ProcessHealthChange);
-	
+	ParameterHealthComponent = CreateDefaultSubobject<UActorAttributeComponent>(TEXT("Health"));
+	ParameterHealthComponent->SetIsReplicated(true);
+	ParameterHealthComponent->ProcessPlayerParameterChanged.BindUObject(this, &AECRCharacter::ProcessHealthChange);
+
 	// Bind damage events
 	OnTakeRadialDamage.AddDynamic(this, &AECRCharacter::OnReceiveAnyRadialDamage);
 }
@@ -70,9 +70,17 @@ void AECRCharacter::BeginPlay()
 	{
 		if (HasAuthority())
 		{
-			FString Message = FString::Printf(TEXT("new max value is %f"), AttributesAsset->DefaultMaxHealth);
-			HealthComponent->SetMaxValue(AttributesAsset->DefaultMaxHealth);
-			HealthComponent->ResetCurrentValueToMax();
+			if (ParameterHealthComponent)
+			{
+				FString Message = FString::Printf(TEXT("new max value is %f"), AttributesAsset->DefaultMaxHealth);
+				ParameterHealthComponent->SetMaxValue(AttributesAsset->DefaultMaxHealth);
+				ParameterHealthComponent->ResetCurrentValueToMax();
+			}
+			else
+			{
+				UE_LOG(LogTemp, Error, TEXT("ECRCharacter %s has not initialized health component"),
+				       *(UKismetSystemLibrary::GetDisplayName(this)))
+			}
 		}
 	}
 	else
@@ -175,5 +183,13 @@ void AECRCharacter::OnReceiveAnyRadialDamage(AActor* DamagedActor, float Damage,
 {
 	GEngine->AddOnScreenDebugMessage(3, 5, {255, 0, 0},
 	                                 FString::Printf(TEXT("C Received damage %f"), Damage));
-	HealthComponent->ApplyDamage(Damage);
+	if (ParameterHealthComponent)
+	{
+		ParameterHealthComponent->ApplyDamage(Damage);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("ECRCharacter %s has not initialized health component"),
+		       *(UKismetSystemLibrary::GetDisplayName(this)))
+	}
 }

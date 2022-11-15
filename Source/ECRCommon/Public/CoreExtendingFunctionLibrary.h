@@ -13,7 +13,7 @@ UCLASS()
 class ECRCOMMON_API UCoreExtendingFunctionLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
-
+	
 	// Sorting
 
 	/** Sort UObjects according to their string parameter exposed as value in map - without changing original map */
@@ -33,4 +33,8 @@ class ECRCOMMON_API UCoreExtendingFunctionLibrary : public UBlueprintFunctionLib
 	/** Get random name item according to weights */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static FName GetRandomName(TMap<FName, float> NamesToWeights);
+
+	/** Get current UTC time in seconds (unix timestamp) */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static int64 GetCurrentTimeInSeconds();
 };
