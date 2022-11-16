@@ -6,10 +6,13 @@
 #include "Kismet/KismetMathLibrary.h"
 
 
-int64 UCoreExtendingFunctionLibrary::GetCurrentTimeInSeconds()
+double UCoreExtendingFunctionLibrary::GetCurrentTimeInSeconds()
 {
 	const FDateTime CurrentTime = UKismetMathLibrary::UtcNow();
-	return CurrentTime.ToUnixTimestamp();
+	const double SecondsSinceUnix = static_cast<double>(CurrentTime.ToUnixTimestamp());
+	const int32 Millisecond = CurrentTime.GetMillisecond();
+	const double Result = SecondsSinceUnix + Millisecond / 1000.0f;
+	return Result;
 }
 
 

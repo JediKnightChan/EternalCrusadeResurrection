@@ -36,5 +36,5 @@ class ECRCOMMON_API UCoreExtendingFunctionLibrary : public UBlueprintFunctionLib
 
 	/** Get current UTC time in seconds (unix timestamp) */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	static int64 GetCurrentTimeInSeconds();
+	static double GetCurrentTimeInSeconds();
 };
