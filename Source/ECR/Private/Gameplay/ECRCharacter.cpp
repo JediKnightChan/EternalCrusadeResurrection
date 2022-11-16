@@ -172,7 +172,6 @@ void AECRCharacter::ProcessHealthChange(const float NewHealth, const float MaxHe
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Dead"))
 	}
-	GUIProcessHealthChange(NewHealth, MaxHealth);
 }
 
 

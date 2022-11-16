@@ -60,11 +60,6 @@ protected:
 	/** Process health change of character */
 	void ProcessHealthChange(const float NewHealth, const float MaxHealth);
 
-	// GUI Blueprint Implementable Events
-	UFUNCTION(BlueprintImplementableEvent)
-	void GUIProcessHealthChange(float NewHealth, float MaxHealth);
-
-
 public:
 	AECRCharacter();
 
