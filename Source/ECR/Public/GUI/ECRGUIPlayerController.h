@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ECRPlayerController.h"
 #include "Online/ECROnlineSubsystem.h"
 #include "GameFramework/PlayerController.h"
 #include "ECRGUIPlayerController.generated.h"
@@ -21,7 +22,7 @@ enum ELoadingScreenType
  * 
  */
 UCLASS()
-class ECR_API AECRGUIPlayerController : public APlayerController
+class ECR_API AECRGUIPlayerController : public AECRPlayerController
 {
 	GENERATED_BODY()
 
