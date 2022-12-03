@@ -11,7 +11,8 @@
 			"AdditionalDependencies": [
 				"Engine",
 				"CoreUObject",
-				"UMG"
+				"UMG",
+				"GameplayAbilities"
 			]
 		},
 		{
@@ -64,6 +65,10 @@
 		},
 		{
 			"Name": "EOSShared",
+			"Enabled": true
+		},
+		{
+			"Name": "GameplayAbilities",
 			"Enabled": true
 		}
 	]
