@@ -3,23 +3,32 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AbilitySystemInterface.h"
+#include "ECRGameplayAbility.h"
 #include "GameFramework/Character.h"
 #include "Gameplay/ActorAttributeComponent.h"
 #include "ECRCharacter.generated.h"
 
 UCLASS(config=Game)
-// ReSharper disable once CppUE4CodingStandardNamingViolationWarning
-class AECRCharacter : public ACharacter
+class AECRCharacter : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
-	/** Attributes asset */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
-	class UECRCharacterAttributesAsset* AttributesAsset;
-
-	/** Health component */
+	/** GAS AbilitySystemComponent */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
-	class UActorAttributeComponent* ParameterHealthComponent;
+	class UECRAbilitySystemComponent* AbilitySystemComponent;
+
+	/** GAS AttributeSet */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
+	class UECRCharacterAttributeSet* AttributeSet;
+
+	/** Default attributes for the character (GAS Gameplay Effect) */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class UGameplayEffect> DefaultAttributeEffect;
+
+	/** Default abilities for the character (GAS Gameplay Abilities) */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
+	TArray<TSubclassOf<UECRGameplayAbility>> DefaultAbilities;
 
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -29,11 +38,6 @@ class AECRCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
 
-	/** Server - Process receiving any radial damage */
-	UFUNCTION()
-	void OnReceiveAnyRadialDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType,
-	                              FVector Origin, FHitResult HitInfo, class AController* InstigatedBy,
-	                              AActor* DamageCauser);
 protected:
 	/** Called for forwards/backward input */
 	void MoveForward(float Value);
@@ -56,18 +60,32 @@ protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
+	
+	/** Initializes GAS attributes for the character */
+	virtual void InitializeAttributes();
 
-	/** Process health change of character */
-	void ProcessHealthChange(const float NewHealth, const float MaxHealth);
-
+	/** Initializes GAS abilities for the character */
+	virtual void InitializeAbilities();
+	
 public:
 	AECRCharacter();
-
-	virtual void BeginPlay() override;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
 	float TurnRateGamepad;
+
+	/** Initialize Ability Actor Info - workaround AbilitySystemComponent->InitAbilityActorInfo(this, this)
+	 * not working and causing game crash */
+	void InitAbilityActorInfo();
+
+	/** Initialize GAS on server in PossessedBy */
+	virtual void PossessedBy(AController* NewController) override;
+
+	/** Initialize GAS on client in OnRep_PlayerState */
+	virtual void OnRep_PlayerState() override;
+
+	/** Returns AbilitySystemComponent subobject */
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }

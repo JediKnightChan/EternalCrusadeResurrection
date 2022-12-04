@@ -9,7 +9,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "Gameplay/ActorAttributeComponent.h"
+#include "Gameplay/ECRAbilitySystemComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 //////////////////////////////////////////////////////////////////////////
@@ -52,42 +52,54 @@ AECRCharacter::AECRCharacter()
 	// Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
-	// Create health component
-	ParameterHealthComponent = CreateDefaultSubobject<UActorAttributeComponent>(TEXT("Health"));
-	ParameterHealthComponent->SetIsReplicated(true);
-	ParameterHealthComponent->ProcessPlayerParameterChanged.BindUObject(this, &AECRCharacter::ProcessHealthChange);
+	AbilitySystemComponent = CreateDefaultSubobject<UECRAbilitySystemComponent>(TEXT("AbilitySystemC"));
+	AbilitySystemComponent->SetIsReplicated(true);
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
-	// Bind damage events
-	OnTakeRadialDamage.AddDynamic(this, &AECRCharacter::OnReceiveAnyRadialDamage);
+	AttributeSet = CreateDefaultSubobject<UECRCharacterAttributeSet>(TEXT("Attributes"));
 }
 
 
-void AECRCharacter::BeginPlay()
+void AECRCharacter::InitAbilityActorInfo()
 {
-	Super::BeginPlay();
-
-	if (AttributesAsset)
+	if (AbilitySystemComponent)
 	{
-		if (HasAuthority())
-		{
-			if (ParameterHealthComponent)
-			{
-				FString Message = FString::Printf(TEXT("new max value is %f"), AttributesAsset->DefaultMaxHealth);
-				ParameterHealthComponent->SetMaxValue(AttributesAsset->DefaultMaxHealth);
-				ParameterHealthComponent->ResetCurrentValueToMax();
-			}
-			else
-			{
-				UE_LOG(LogTemp, Error, TEXT("ECRCharacter %s has not initialized health component"),
-				       *(UKismetSystemLibrary::GetDisplayName(this)))
-			}
-		}
+		FGameplayAbilityActorInfo* ActorInfo = new FGameplayAbilityActorInfo();
+		ActorInfo->InitFromActor(this, this, AbilitySystemComponent);
+		AbilitySystemComponent->AbilityActorInfo = TSharedPtr<FGameplayAbilityActorInfo>(ActorInfo);
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("ECRCharacter %s doesn't have attributes asset"),
-		       *(UKismetSystemLibrary::GetDisplayName(this)))
+		UE_LOG(LogTemp, Error, TEXT("Initializing ability actor info for character %s failed: "
+			       "AbilitySystemComponent is invalid"), *UKismetSystemLibrary::GetDisplayName(this));
 	}
+}
+
+
+void AECRCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	// On server init GAS: attributes and abilities
+	InitAbilityActorInfo();
+	InitializeAttributes();
+	InitializeAbilities();
+}
+
+
+void AECRCharacter::OnRep_PlayerState()
+{
+	Super::OnRep_PlayerState();
+
+	// On client init GAS: only abilities
+	InitAbilityActorInfo();
+	InitializeAbilities();
+}
+
+
+UAbilitySystemComponent* AECRCharacter::GetAbilitySystemComponent() const
+{
+	return AbilitySystemComponent;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -110,7 +122,25 @@ void AECRCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInput
 	PlayerInputComponent->BindAxis("Turn Right / Left Gamepad", this, &AECRCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("Look Up / Down Mouse", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis("Look Up / Down Gamepad", this, &AECRCharacter::LookUpAtRate);
+
+	if (AbilitySystemComponent)
+	{
+		// Binding GAS input
+		const FGameplayAbilityInputBinds InputBinds{
+			"Confirm", "Cancel", "EECRAbilityInputID",
+			static_cast<int32>(EECRAbilityInputID::Confirm),
+			static_cast<int32>(EECRAbilityInputID::Cancel)
+		};
+		AbilitySystemComponent->BindAbilityActivationToInputComponent(InputComponent, InputBinds);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Binding GAS input for character %s failed:"
+			       "AbilitySystemComponent is invalid"),
+		       *UKismetSystemLibrary::GetDisplayName(this));
+	}
 }
+
 
 void AECRCharacter::SetupControllerBehaviour(const float Speed, const bool bIsFalling, const bool bMontageIsPlaying)
 {
@@ -166,29 +196,45 @@ void AECRCharacter::MoveRight(float Value)
 }
 
 
-void AECRCharacter::ProcessHealthChange(const float NewHealth, const float MaxHealth)
+void AECRCharacter::InitializeAttributes()
 {
-	if (NewHealth < 0)
+	if (AbilitySystemComponent && DefaultAttributeEffect)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Dead"))
-	}
-}
+		FGameplayEffectContextHandle EffectContext = AbilitySystemComponent->MakeEffectContext();
+		EffectContext.AddSourceObject(this);
 
+		const FGameplayEffectSpecHandle SpecHandle = AbilitySystemComponent->MakeOutgoingSpec(
+			DefaultAttributeEffect, 1, EffectContext);
 
-// ReSharper disable once CppMemberFunctionMayBeConst
-void AECRCharacter::OnReceiveAnyRadialDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
-                                             FVector Origin, FHitResult HitInfo, AController* InstigatedBy,
-                                             AActor* DamageCauser)
-{
-	GEngine->AddOnScreenDebugMessage(3, 5, {255, 0, 0},
-	                                 FString::Printf(TEXT("C Received damage %f"), Damage));
-	if (ParameterHealthComponent)
-	{
-		ParameterHealthComponent->ApplyDamage(Damage);
+		if (SpecHandle.IsValid())
+		{
+			FActiveGameplayEffectHandle GEHandle = AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(
+				*SpecHandle.Data.Get());
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("Initializing attributes for character %s failed:"
+				       "SpecHandle is invalid"),
+			       *UKismetSystemLibrary::GetDisplayName(this));
+		}
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("ECRCharacter %s has not initialized health component"),
-		       *(UKismetSystemLibrary::GetDisplayName(this)))
+		UE_LOG(LogTemp, Error, TEXT("Initializing attributes for character %s failed:"
+			       "AbilitySystemComponent or DefaultAttributeEffect is invalid"),
+		       *UKismetSystemLibrary::GetDisplayName(this));
+	}
+}
+
+void AECRCharacter::InitializeAbilities()
+{
+	if (HasAuthority() && AbilitySystemComponent)
+	{
+		for (TSubclassOf<UECRGameplayAbility> Ability : DefaultAbilities)
+		{
+			AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec{
+				Ability, 1, static_cast<int32>(Ability.GetDefaultObject()->AbilityInputID), this
+			});
+		}
 	}
 }
