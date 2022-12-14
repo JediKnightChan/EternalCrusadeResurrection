@@ -4,45 +4,68 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
-#include "AttributeSet.h"
+#include "ECRHealthSet.h"
 #include "ECRCharacterAttributeSet.generated.h"
-
-#define ATTRIBUTE_ACCESSORS(ClassName, PropertyName) \
-	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, PropertyName) \
-	GAMEPLAYATTRIBUTE_VALUE_GETTER(PropertyName) \
-	GAMEPLAYATTRIBUTE_VALUE_SETTER(PropertyName) \
-	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
 
 /**
  * 
  */
 UCLASS()
-class ECR_API UECRCharacterAttributeSet : public UAttributeSet
+class ECR_API UECRCharacterAttributeSet : public UECRHealthSet
 {
 	GENERATED_BODY()
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_Shield,
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData Shield;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_MaxShield,
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData MaxShield;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_Stamina,
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData Stamina;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_MaxStamina,
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData MaxStamina;
+
+protected:
+	/** Check for damage immunity for shield in PreGameplayEffectExecute */
+	virtual bool PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data) override;
+	
+	/** Clamp attribute base value in PreAttributeBaseChange */
+	virtual void PreAttributeBaseChange(const FGameplayAttribute& Attribute, float& NewValue) const override;
+
+	/** Clamp attribute current value in PreAttributeChange */
+	virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
+
+	/** React to MaxShield and MaxStamina change by clamping Shield and Stamina in PostAttributeChange */
+	virtual void PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue) override;
+
+	/** Clamp attributes Shield, Stamina [0, MaxShield/MaxStamina], MaxShield, MaxStamina [1, inf] */
+	virtual void ClampAttribute(const FGameplayAttribute& Attribute, float& NewValue) const override;
+
+	// RepNotifies
+
+	UFUNCTION()
+	void OnRep_Shield(const FGameplayAttributeData& OldValue) const;
+
+	UFUNCTION()
+	void OnRep_MaxShield(const FGameplayAttributeData& OldValue) const;
+
+	UFUNCTION()
+	void OnRep_Stamina(const FGameplayAttributeData& OldValue) const;
+
+	UFUNCTION()
+	void OnRep_MaxStamina(const FGameplayAttributeData& OldValue) const;
 
 public:
-	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	UECRCharacterAttributeSet();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_Shield)
-	FGameplayAttributeData Shield;
-	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, Shield)
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_Health)
-	FGameplayAttributeData Health;
-	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, Health)
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_Stamina)
-	FGameplayAttributeData Stamina;
-	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, Stamina)
-
-	UFUNCTION()
-	void OnRep_Shield(const FGameplayAttributeData& OldShield) const;
-
-	UFUNCTION()
-	void OnRep_Health(const FGameplayAttributeData& OldHealth) const;
-
-	UFUNCTION()
-	void OnRep_Stamina(const FGameplayAttributeData& OldStamina) const;
+	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, Shield);
+	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, MaxShield);
+	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, Stamina);
+	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, MaxStamina);
 };

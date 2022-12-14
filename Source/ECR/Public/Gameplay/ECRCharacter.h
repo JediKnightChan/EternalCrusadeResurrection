@@ -14,6 +14,10 @@ class AECRCharacter : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
+	// -------------------------------------------------------------------
+	//	GAS
+	// -------------------------------------------------------------------
+
 	/** GAS AbilitySystemComponent */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
 	class UECRAbilitySystemComponent* AbilitySystemComponent;
@@ -29,6 +33,10 @@ class AECRCharacter : public ACharacter, public IAbilitySystemInterface
 	/** Default abilities for the character (GAS Gameplay Abilities) */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
 	TArray<TSubclassOf<UECRGameplayAbility>> DefaultAbilities;
+
+	// -------------------------------------------------------------------
+	//	Cameras
+	// -------------------------------------------------------------------
 
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -60,13 +68,13 @@ protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
-	
+
 	/** Initializes GAS attributes for the character */
 	virtual void InitializeAttributes();
 
 	/** Initializes GAS abilities for the character */
 	virtual void InitializeAbilities();
-	
+
 public:
 	AECRCharacter();
 
