@@ -1,12 +1,12 @@
 // Copyleft: All rights reversed
 
 
-#include "Gameplay/GAS/Attributes/ECRCharacterAttributeSet.h"
+#include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
 
 
-UECRCharacterAttributeSet::UECRCharacterAttributeSet()
+UECRCharacterHealthSet::UECRCharacterHealthSet()
 	: Shield(100.0f),
 	  MaxShield(100.0f),
 	  Stamina(100.0f),
@@ -15,7 +15,7 @@ UECRCharacterAttributeSet::UECRCharacterAttributeSet()
 }
 
 
-bool UECRCharacterAttributeSet::PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data)
+bool UECRCharacterHealthSet::PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data)
 {
 	if (!Super::PreGameplayEffectExecute(Data))
 	{
@@ -42,7 +42,7 @@ bool UECRCharacterAttributeSet::PreGameplayEffectExecute(FGameplayEffectModCallb
 }
 
 
-void UECRCharacterAttributeSet::PreAttributeBaseChange(const FGameplayAttribute& Attribute, float& NewValue) const
+void UECRCharacterHealthSet::PreAttributeBaseChange(const FGameplayAttribute& Attribute, float& NewValue) const
 {
 	Super::PreAttributeBaseChange(Attribute, NewValue);
 
@@ -50,14 +50,14 @@ void UECRCharacterAttributeSet::PreAttributeBaseChange(const FGameplayAttribute&
 }
 
 
-void UECRCharacterAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
+void UECRCharacterHealthSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
 {
 	Super::PreAttributeChange(Attribute, NewValue);
 
 	ClampAttribute(Attribute, NewValue);
 }
 
-void UECRCharacterAttributeSet::PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue)
+void UECRCharacterHealthSet::PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue)
 {
 	Super::PostAttributeChange(Attribute, OldValue, NewValue);
 
@@ -71,7 +71,7 @@ void UECRCharacterAttributeSet::PostAttributeChange(const FGameplayAttribute& At
 }
 
 
-void UECRCharacterAttributeSet::ClampAttribute(const FGameplayAttribute& Attribute, float& NewValue) const
+void UECRCharacterHealthSet::ClampAttribute(const FGameplayAttribute& Attribute, float& NewValue) const
 {
 	Super::ClampAttribute(Attribute, NewValue);
 
@@ -98,36 +98,36 @@ void UECRCharacterAttributeSet::ClampAttribute(const FGameplayAttribute& Attribu
 }
 
 
-void UECRCharacterAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterAttributeSet, Shield, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterAttributeSet, MaxShield, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterAttributeSet, Stamina, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterAttributeSet, MaxStamina, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Shield, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxShield, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Stamina, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxStamina, COND_None, REPNOTIFY_Always);
 }
 
 
-void UECRCharacterAttributeSet::OnRep_Shield(const FGameplayAttributeData& OldValue) const
+void UECRCharacterHealthSet::OnRep_Shield(const FGameplayAttributeData& OldValue) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterAttributeSet, Shield, OldValue)
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, Shield, OldValue)
 }
 
 
-void UECRCharacterAttributeSet::OnRep_MaxShield(const FGameplayAttributeData& OldValue) const
+void UECRCharacterHealthSet::OnRep_MaxShield(const FGameplayAttributeData& OldValue) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterAttributeSet, MaxShield, OldValue)
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxShield, OldValue)
 }
 
 
-void UECRCharacterAttributeSet::OnRep_Stamina(const FGameplayAttributeData& OldValue) const
+void UECRCharacterHealthSet::OnRep_Stamina(const FGameplayAttributeData& OldValue) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterAttributeSet, Stamina, OldValue)
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, Stamina, OldValue)
 }
 
 
-void UECRCharacterAttributeSet::OnRep_MaxStamina(const FGameplayAttributeData& OldValue) const
+void UECRCharacterHealthSet::OnRep_MaxStamina(const FGameplayAttributeData& OldValue) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterAttributeSet, MaxStamina, OldValue)
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxStamina, OldValue)
 }

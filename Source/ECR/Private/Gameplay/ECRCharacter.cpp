@@ -2,7 +2,6 @@
 
 #include "Gameplay/ECRCharacter.h"
 
-#include "Gameplay/ECRCharacterAttributesAsset.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
@@ -10,7 +9,7 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
-#include "Gameplay/GAS/Attributes/ECRCharacterAttributeSet.h"
+#include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 //////////////////////////////////////////////////////////////////////////
@@ -57,7 +56,7 @@ AECRCharacter::AECRCharacter()
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
-	AttributeSet = CreateDefaultSubobject<UECRCharacterAttributeSet>(TEXT("Attributes"));
+	AttributeSet = CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("Attributes"));
 }
 
 

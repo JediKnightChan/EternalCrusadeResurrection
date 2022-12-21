@@ -16,7 +16,8 @@ UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Lyra_Damage_Message);
 
 
 /**
- * 
+ * Basic class for taking damage.
+ * Characters take damage via ECRCharacterHealthSet, which extends this class.
  */
 UCLASS()
 class ECR_API UECRHealthSet : public UECRAttributeSet

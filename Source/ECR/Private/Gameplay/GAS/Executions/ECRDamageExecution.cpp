@@ -3,7 +3,7 @@
 #include "Gameplay/GAS/Executions/ECRDamageExecution.h"
 #include "GameplayEffectTypes.h"
 #include "Gameplay/GAS/Attributes/ECRHealthSet.h"
-#include "Gameplay/GAS/Attributes/ECRCharacterAttributeSet.h"
+#include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Gameplay/GAS/ECRGameplayEffectContext.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
 

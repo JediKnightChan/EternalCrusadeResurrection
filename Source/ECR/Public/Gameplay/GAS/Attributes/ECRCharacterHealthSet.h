@@ -5,13 +5,15 @@
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
 #include "ECRHealthSet.h"
-#include "ECRCharacterAttributeSet.generated.h"
+#include "ECRCharacterHealthSet.generated.h"
 
 /**
- * 
+ * Character defensive attributes set
+ * (shield reacts to damage before health,
+ * stamina reacts to consuming actions).
  */
 UCLASS()
-class ECR_API UECRCharacterAttributeSet : public UECRHealthSet
+class ECR_API UECRCharacterHealthSet : public UECRHealthSet
 {
 	GENERATED_BODY()
 
@@ -62,10 +64,10 @@ protected:
 	void OnRep_MaxStamina(const FGameplayAttributeData& OldValue) const;
 
 public:
-	UECRCharacterAttributeSet();
+	UECRCharacterHealthSet();
 
-	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, Shield);
-	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, MaxShield);
-	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, Stamina);
-	ATTRIBUTE_ACCESSORS(UECRCharacterAttributeSet, MaxStamina);
+	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, Shield);
+	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxShield);
+	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, Stamina);
+	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxStamina);
 };
