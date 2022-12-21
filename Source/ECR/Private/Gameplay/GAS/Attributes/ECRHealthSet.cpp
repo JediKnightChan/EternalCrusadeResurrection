@@ -1,7 +1,7 @@
 // Copyleft: All rights reversed
 
 
-#include "Gameplay/ECRHealthSet.h"
+#include "Gameplay/GAS/Attributes/ECRHealthSet.h"
 
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"

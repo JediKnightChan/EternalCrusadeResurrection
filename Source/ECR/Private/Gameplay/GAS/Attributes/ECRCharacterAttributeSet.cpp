@@ -1,7 +1,7 @@
 // Copyleft: All rights reversed
 
 
-#include "Gameplay/ECRCharacterAttributeSet.h"
+#include "Gameplay/GAS/Attributes/ECRCharacterAttributeSet.h"
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
 

@@ -1,7 +1,7 @@
 // Copyleft: All rights reversed
 
 
-#include "Gameplay/ECRAttributeSet.h"
+#include "Gameplay/GAS/Attributes/ECRAttributeSet.h"
 
 void UECRAttributeSet::ClampCurrentAttributeOnMaxChange(const FGameplayAttribute& ChangedAttribute,
                                                         const float ChangedAttributeNewValue,

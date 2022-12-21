@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "ECR.h"
-#include "ECRCharacterAttributeSet.h"
 #include "Abilities/GameplayAbility.h"
 #include "ECRGameplayAbility.generated.h"
 

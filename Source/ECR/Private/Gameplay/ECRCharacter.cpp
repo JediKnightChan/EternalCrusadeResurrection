@@ -9,7 +9,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "Gameplay/ECRAbilitySystemComponent.h"
+#include "Gameplay/GAS/ECRAbilitySystemComponent.h"
+#include "Gameplay/GAS/Attributes/ECRCharacterAttributeSet.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 //////////////////////////////////////////////////////////////////////////

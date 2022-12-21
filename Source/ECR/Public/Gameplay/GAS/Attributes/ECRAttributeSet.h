@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
 #include "AttributeSet.h"
-#include "ECRAbilitySystemComponent.h"
+#include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 #include "ECRAttributeSet.generated.h"
 
 /**

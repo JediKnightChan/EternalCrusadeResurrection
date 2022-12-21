@@ -1,7 +1,7 @@
 // Copyleft: All rights reversed
 
 
-#include "Gameplay/ECRGameplayAbility.h"
+#include "Gameplay/GAS/ECRGameplayAbility.h"
 
 UECRGameplayAbility::UECRGameplayAbility()
 {

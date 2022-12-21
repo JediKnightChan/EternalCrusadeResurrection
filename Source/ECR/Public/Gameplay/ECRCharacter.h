@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemInterface.h"
-#include "ECRGameplayAbility.h"
+#include "Gameplay/GAS/ECRGameplayAbility.h"
 #include "GameFramework/Character.h"
 #include "Gameplay/ActorAttributeComponent.h"
 #include "ECRCharacter.generated.h"
