@@ -22,9 +22,13 @@ class AECRCharacter : public ACharacter, public IAbilitySystemInterface
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
 	class UECRAbilitySystemComponent* AbilitySystemComponent;
 
-	/** GAS AttributeSet */
+	/** GAS HealthSet */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
-	class UECRCharacterHealthSet* AttributeSet;
+	class UECRCharacterHealthSet* HealthSet;
+
+	/** GAS HealthSet */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
+	class UECRCombatSet* CombatSet;
 
 	/** Default attributes for the character (GAS Gameplay Effect) */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))

@@ -10,6 +10,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
+#include "Gameplay/GAS/Attributes/ECRCombatSet.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 //////////////////////////////////////////////////////////////////////////
@@ -56,7 +57,8 @@ AECRCharacter::AECRCharacter()
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
-	AttributeSet = CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("Attributes"));
+	HealthSet = CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("HealthAttributes"));
+	CombatSet = CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatAttributes"));
 }
 
 
