@@ -1,7 +1,7 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRGameData.h"
-#include "ECRAssetManager.h"
+#include "System/ECRGameData.h"
+#include "System/ECRAssetManager.h"
 
 UECRGameData::UECRGameData()
 {

@@ -1,10 +1,10 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRCameraMode_ThirdPerson.h"
+#include "Gameplay/Camera/ECRCameraMode_ThirdPerson.h"
 #include "Curves/CurveVector.h"
 #include "Engine/Canvas.h"
 #include "GameFramework/CameraBlockingVolume.h"
-#include "ECRCameraAssistInterface.h"
+#include "Gameplay/Camera/ECRCameraAssistInterface.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/Character.h"
 

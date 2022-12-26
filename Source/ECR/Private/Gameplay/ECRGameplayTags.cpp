@@ -1,7 +1,7 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRGameplayTags.h"
-#include "ECRLogChannels.h"
+#include "Gameplay/ECRGameplayTags.h"
+#include "System/ECRLogChannels.h"
 #include "GameplayTagsManager.h"
 #include "Engine/EngineTypes.h"
 

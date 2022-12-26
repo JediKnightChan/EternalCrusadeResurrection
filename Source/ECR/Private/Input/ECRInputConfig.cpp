@@ -1,7 +1,7 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRInputConfig.h"
-#include "ECRLogChannels.h"
+#include "Input/ECRInputConfig.h"
+#include "System/ECRLogChannels.h"
 #include "InputMappingContext.h"
 
 

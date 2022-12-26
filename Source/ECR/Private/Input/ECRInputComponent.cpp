@@ -1,6 +1,6 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRInputComponent.h"
+#include "Input/ECRInputComponent.h"
 #include "System/ECRLocalPlayer.h"
 #include "EnhancedInputSubsystems.h"
 #include "Settings/ECRSettingsLocal.h"

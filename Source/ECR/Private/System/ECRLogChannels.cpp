@@ -1,6 +1,6 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRLogChannels.h"
+#include "System/ECRLogChannels.h"
 #include "GameFramework/Actor.h"
 
 DEFINE_LOG_CATEGORY(LogECR);

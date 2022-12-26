@@ -1,9 +1,9 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRGameMode.h"
+#include "Gameplay/ECRGameMode.h"
 
 #include "GameFramework/PlayerState.h"
-#include "Gameplay/ECRCharacter.h"
+#include "Gameplay/Character/ECRCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "UObject/ConstructorHelpers.h"
 

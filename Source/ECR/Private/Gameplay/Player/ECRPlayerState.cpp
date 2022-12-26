@@ -1,7 +1,7 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRPlayerState.h"
-#include "ECRLogChannels.h"
+#include "Gameplay/Player/ECRPlayerState.h"
+#include "System/ECRLogChannels.h"
 #include "Net/UnrealNetwork.h"
 #include "Gameplay/Character/ECRPawnExtensionComponent.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"

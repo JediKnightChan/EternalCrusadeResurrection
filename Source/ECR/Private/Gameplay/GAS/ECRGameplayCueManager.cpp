@@ -1,7 +1,7 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRGameplayCueManager.h"
-#include "ECRLogChannels.h"
+#include "Gameplay/GAS/ECRGameplayCueManager.h"
+#include "System/ECRLogChannels.h"
 #include "GameplayCueSet.h"
 #include "AbilitySystemGlobals.h"
 #include "HAL/IConsoleManager.h"

@@ -1,8 +1,8 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "System/ECRAssetManager.h"
-#include "ECRLogChannels.h"
-#include "ECRGameplayTags.h"
+#include "System/ECRLogChannels.h"
+#include "Gameplay/ECRGameplayTags.h"
 #include "System/ECRGameData.h"
 #include "AbilitySystemGlobals.h"
 #include "Gameplay/Character/ECRPawnData.h"

@@ -1,9 +1,9 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRAnimInstance.h"
+#include "Animation/ECRAnimInstance.h"
 #include "AbilitySystemComponent.h"
 #include "AbilitySystemGlobals.h"
-#include "Gameplay/ECRCharacter.h"
+#include "Gameplay/Character/ECRCharacter.h"
 #include "Gameplay/Character/ECRCharacterMovementComponent.h"
 
 

@@ -1,6 +1,6 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRUICameraManagerComponent.h"
+#include "Gameplay/Camera/ECRUICameraManagerComponent.h"
 #include "EngineUtils.h"
 #include "Algo/Transform.h"
 #include "DrawDebugHelpers.h"
@@ -12,8 +12,8 @@
 #include "GameFramework/HUD.h"
 #include "Engine/Engine.h"
 
-#include "ECRCameraMode.h"
-#include "ECRPlayerCameraManager.h"
+#include "Gameplay/Camera/ECRCameraMode.h"
+#include "Gameplay/Camera/ECRPlayerCameraManager.h"
 
 UECRUICameraManagerComponent* UECRUICameraManagerComponent::GetComponent(APlayerController* PC)
 {

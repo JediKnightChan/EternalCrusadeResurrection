@@ -1,7 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
-#include "ECRLogChannels.h"
+#include "System/ECRLogChannels.h"
 #include "System/ECRGameData.h"
 #include "System/ECRAssetManager.h"
 #include "Gameplay/GAS/ECRGlobalAbilitySystem.h"

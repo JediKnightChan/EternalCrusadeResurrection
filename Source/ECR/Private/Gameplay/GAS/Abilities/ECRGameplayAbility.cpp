@@ -1,11 +1,11 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "Gameplay/GAS/Abilities/ECRGameplayAbility.h"
-#include "ECRLogChannels.h"
+#include "System/ECRLogChannels.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
-#include "ECRPlayerController.h"
-#include "Gameplay/ECRCharacter.h"
-#include "ECRGameplayTags.h"
+#include "Gameplay/Player/ECRPlayerController.h"
+#include "Gameplay/Character/ECRCharacter.h"
+#include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/GAS/Abilities/ECRAbilityCost.h"
 #include "Gameplay/Character/ECRHeroComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"

@@ -1,6 +1,6 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRSettingsLocal.h"
+#include "Settings/ECRSettingsLocal.h"
 #include "CommonInputBaseTypes.h"
 #include "PlayerMappableInputConfig.h"
 #include "EnhancedInputSubsystems.h"

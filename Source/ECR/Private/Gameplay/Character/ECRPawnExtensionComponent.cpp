@@ -1,7 +1,7 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRPawnExtensionComponent.h"
-#include "ECRLogChannels.h"
+#include "Gameplay/Character/ECRPawnExtensionComponent.h"
+#include "System/ECRLogChannels.h"
 #include "Net/UnrealNetwork.h"
 #include "GameFramework/Pawn.h"
 #include "GameFramework/Controller.h"

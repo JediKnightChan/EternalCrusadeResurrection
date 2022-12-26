@@ -1,6 +1,6 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRCameraComponent.h"
+#include "Gameplay/Camera/ECRCameraComponent.h"
 #include "Gameplay/Camera/ECRCameraMode.h"
 #include "GameFramework/Pawn.h"
 #include "GameFramework/PlayerController.h"

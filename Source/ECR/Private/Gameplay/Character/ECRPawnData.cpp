@@ -1,6 +1,6 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRPawnData.h"
+#include "Gameplay/Character/ECRPawnData.h"
 #include "GameFramework/Pawn.h"
 #include "Gameplay/Character/ECRPawnExtensionComponent.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"

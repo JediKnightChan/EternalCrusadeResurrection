@@ -1,9 +1,9 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRPlayerCameraManager.h"
-#include "ECRCameraComponent.h"
+#include "Gameplay/Camera/ECRPlayerCameraManager.h"
+#include "Gameplay/Camera/ECRCameraComponent.h"
 #include "Engine/Canvas.h"
-#include "ECRUICameraManagerComponent.h"
+#include "Gameplay/Camera/ECRUICameraManagerComponent.h"
 #include "GameFramework/PlayerController.h"
 
 static FName UICameraComponentName(TEXT("UICamera"));

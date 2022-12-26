@@ -1,10 +1,10 @@
 // Copyleft: All rights reversed
 
 
-#include "ECRPlayerController.h"
+#include "Gameplay/Player/ECRPlayerController.h"
 
 #include "AbilitySystemGlobals.h"
-#include "ECRGameplayTags.h"
+#include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 #include "Framework/Application/NavigationConfig.h"
 #include "Gameplay/Camera/ECRPlayerCameraManager.h"

@@ -1,7 +1,7 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRAssetManagerStartupJob.h"
-#include "ECRLogChannels.h"
+#include "System/ECRAssetManagerStartupJob.h"
+#include "System/ECRLogChannels.h"
 
 TSharedPtr<FStreamableHandle> FECRAssetManagerStartupJob::DoJob() const
 {

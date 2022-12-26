@@ -1,6 +1,6 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRGlobalAbilitySystem.h"
+#include "Gameplay/GAS/ECRGlobalAbilitySystem.h"
 #include "Net/UnrealNetwork.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 
