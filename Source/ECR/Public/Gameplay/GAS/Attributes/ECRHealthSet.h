@@ -12,7 +12,7 @@ UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_Damage);
 UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_DamageImmunity);
 UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_DamageSelfDestruct);
 UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_FellOutOfWorld);
-UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Lyra_Damage_Message);
+UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_ECR_Damage_Message);
 
 
 /**
@@ -40,11 +40,11 @@ class ECR_API UECRHealthSet : public UECRAttributeSet
 	// -------------------------------------------------------------------
 
 	// Incoming healing. This is mapped directly to +Health
-	UPROPERTY(BlueprintReadOnly, Category="Lyra|Health", Meta=(AllowPrivateAccess=true))
+	UPROPERTY(BlueprintReadOnly, Category="ECR|Health", Meta=(AllowPrivateAccess=true))
 	FGameplayAttributeData Healing;
 
 	// Incoming damage. This is mapped directly to -Health
-	UPROPERTY(BlueprintReadOnly, Category="Lyra|Health", Meta=(HideFromModifiers, AllowPrivateAccess=true))
+	UPROPERTY(BlueprintReadOnly, Category="ECR|Health", Meta=(HideFromModifiers, AllowPrivateAccess=true))
 	FGameplayAttributeData Damage;
 
 protected:

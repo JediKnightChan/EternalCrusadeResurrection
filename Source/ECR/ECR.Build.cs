@@ -8,12 +8,34 @@ public class ECR : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[]
-		{
-			"Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "ECRCommon", "OnlineSubsystem",
-			"OnlineSubsystemEOS", "OnlineSubsystemUtils", "Slate"
+		PublicDependencyModuleNames.AddRange(new string[] {
+			"Core", 
+			"CoreUObject", 
+			"Engine",
+			"PhysicsCore",
+			"HeadMountedDisplay", 
+			"ECRCommon", 
+			"OnlineSubsystem",
+			"OnlineSubsystemEOS", 
+			"OnlineSubsystemUtils",
+			"ModularGameplay",
+			"ModularGameplayActors",
 		});
-		PrivateDependencyModuleNames.AddRange(new string[]
-			{ "GameplayAbilities", "GameplayTags", "GameplayTasks" });
+		
+		PrivateDependencyModuleNames.AddRange(new string[] {
+			"InputCore",
+			"Slate",
+			"NetCore",
+			"GameplayAbilities", 
+			"GameplayTags", 
+			"GameplayTasks", 
+			"GameplayMessageRuntime",
+			"EnhancedInput", 
+			"CommonUI",
+			"CommonInput", 
+			"CommonGame",
+			"CommonUser",
+			"AudioMixer"
+		});
 	}
 }

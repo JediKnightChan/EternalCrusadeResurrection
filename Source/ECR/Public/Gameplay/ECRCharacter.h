@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemInterface.h"
-#include "Gameplay/GAS/ECRGameplayAbility.h"
+#include "Gameplay/GAS/Abilities/ECRGameplayAbility.h"
 #include "GameFramework/Character.h"
 #include "Gameplay/ActorAttributeComponent.h"
 #include "ECRCharacter.generated.h"
@@ -73,28 +73,14 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
 
-	/** Initializes GAS attributes for the character */
-	virtual void InitializeAttributes();
-
-	/** Initializes GAS abilities for the character */
-	virtual void InitializeAbilities();
-
 public:
-	AECRCharacter();
+	AECRCharacter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
+	void ToggleCrouch();
+	
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
 	float TurnRateGamepad;
-
-	/** Initialize Ability Actor Info - workaround AbilitySystemComponent->InitAbilityActorInfo(this, this)
-	 * not working and causing game crash */
-	void InitAbilityActorInfo();
-
-	/** Initialize GAS on server in PossessedBy */
-	virtual void PossessedBy(AController* NewController) override;
-
-	/** Initialize GAS on client in OnRep_PlayerState */
-	virtual void OnRep_PlayerState() override;
 
 	/** Returns AbilitySystemComponent subobject */
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;

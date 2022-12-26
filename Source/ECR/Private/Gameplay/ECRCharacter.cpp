@@ -8,6 +8,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Gameplay/Character/ECRCharacterMovementComponent.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
@@ -16,7 +17,9 @@
 //////////////////////////////////////////////////////////////////////////
 // AECRCharacter
 
-AECRCharacter::AECRCharacter()
+AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer.SetDefaultSubobjectClass<UECRCharacterMovementComponent>(
+		ACharacter::CharacterMovementComponentName))
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -61,43 +64,19 @@ AECRCharacter::AECRCharacter()
 	CombatSet = CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatAttributes"));
 }
 
-
-void AECRCharacter::InitAbilityActorInfo()
+void AECRCharacter::ToggleCrouch()
 {
-	if (AbilitySystemComponent)
+	const UECRCharacterMovementComponent* ECRMoveComp = CastChecked<UECRCharacterMovementComponent>(GetCharacterMovement());
+
+	if (bIsCrouched || ECRMoveComp->bWantsToCrouch)
 	{
-		FGameplayAbilityActorInfo* ActorInfo = new FGameplayAbilityActorInfo();
-		ActorInfo->InitFromActor(this, this, AbilitySystemComponent);
-		AbilitySystemComponent->AbilityActorInfo = TSharedPtr<FGameplayAbilityActorInfo>(ActorInfo);
+		UnCrouch();
 	}
-	else
+	else if (ECRMoveComp->IsMovingOnGround())
 	{
-		UE_LOG(LogTemp, Error, TEXT("Initializing ability actor info for character %s failed: "
-			       "AbilitySystemComponent is invalid"), *UKismetSystemLibrary::GetDisplayName(this));
+		Crouch();
 	}
 }
-
-
-void AECRCharacter::PossessedBy(AController* NewController)
-{
-	Super::PossessedBy(NewController);
-
-	// On server init GAS: attributes and abilities
-	InitAbilityActorInfo();
-	InitializeAttributes();
-	InitializeAbilities();
-}
-
-
-void AECRCharacter::OnRep_PlayerState()
-{
-	Super::OnRep_PlayerState();
-
-	// On client init GAS: only abilities
-	InitAbilityActorInfo();
-	InitializeAbilities();
-}
-
 
 UAbilitySystemComponent* AECRCharacter::GetAbilitySystemComponent() const
 {
@@ -124,23 +103,6 @@ void AECRCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInput
 	PlayerInputComponent->BindAxis("Turn Right / Left Gamepad", this, &AECRCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("Look Up / Down Mouse", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis("Look Up / Down Gamepad", this, &AECRCharacter::LookUpAtRate);
-
-	if (AbilitySystemComponent)
-	{
-		// Binding GAS input
-		const FGameplayAbilityInputBinds InputBinds{
-			"Confirm", "Cancel", "EECRAbilityInputID",
-			static_cast<int32>(EECRAbilityInputID::Confirm),
-			static_cast<int32>(EECRAbilityInputID::Cancel)
-		};
-		AbilitySystemComponent->BindAbilityActivationToInputComponent(InputComponent, InputBinds);
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Binding GAS input for character %s failed:"
-			       "AbilitySystemComponent is invalid"),
-		       *UKismetSystemLibrary::GetDisplayName(this));
-	}
 }
 
 
@@ -194,49 +156,5 @@ void AECRCharacter::MoveRight(float Value)
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
-	}
-}
-
-
-void AECRCharacter::InitializeAttributes()
-{
-	if (AbilitySystemComponent && DefaultAttributeEffect)
-	{
-		FGameplayEffectContextHandle EffectContext = AbilitySystemComponent->MakeEffectContext();
-		EffectContext.AddSourceObject(this);
-
-		const FGameplayEffectSpecHandle SpecHandle = AbilitySystemComponent->MakeOutgoingSpec(
-			DefaultAttributeEffect, 1, EffectContext);
-
-		if (SpecHandle.IsValid())
-		{
-			FActiveGameplayEffectHandle GEHandle = AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(
-				*SpecHandle.Data.Get());
-		}
-		else
-		{
-			UE_LOG(LogTemp, Error, TEXT("Initializing attributes for character %s failed:"
-				       "SpecHandle is invalid"),
-			       *UKismetSystemLibrary::GetDisplayName(this));
-		}
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Initializing attributes for character %s failed:"
-			       "AbilitySystemComponent or DefaultAttributeEffect is invalid"),
-		       *UKismetSystemLibrary::GetDisplayName(this));
-	}
-}
-
-void AECRCharacter::InitializeAbilities()
-{
-	if (HasAuthority() && AbilitySystemComponent)
-	{
-		for (TSubclassOf<UECRGameplayAbility> Ability : DefaultAbilities)
-		{
-			AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec{
-				Ability, 1, static_cast<int32>(Ability.GetDefaultObject()->AbilityInputID), this
-			});
-		}
 	}
 }
