@@ -4,95 +4,139 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemInterface.h"
-#include "Gameplay/GAS/Abilities/ECRGameplayAbility.h"
+#include "GameplayCueInterface.h"
+#include "GameplayTagAssetInterface.h"
 #include "GameFramework/Character.h"
-#include "Gameplay/ActorAttributeComponent.h"
+
 #include "ECRCharacter.generated.h"
 
-UCLASS(config=Game)
-class AECRCharacter : public ACharacter, public IAbilitySystemInterface
+
+class AECRPlayerController;
+class AECRPlayerState;
+class UECRAbilitySystemComponent;
+class UAbilitySystemComponent;
+class UECRPawnExtensionComponent;
+class UECRHealthComponent;
+class UECRCameraComponent;
+
+
+/**
+ * FECRReplicatedAcceleration: Compressed representation of acceleration
+ */
+USTRUCT()
+struct FECRReplicatedAcceleration
 {
 	GENERATED_BODY()
 
-	// -------------------------------------------------------------------
-	//	GAS
-	// -------------------------------------------------------------------
+	UPROPERTY()
+	uint8 AccelXYRadians = 0;	// Direction of XY accel component, quantized to represent [0, 2*pi]
 
-	/** GAS AbilitySystemComponent */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
-	class UECRAbilitySystemComponent* AbilitySystemComponent;
+	UPROPERTY()
+	uint8 AccelXYMagnitude = 0;	//Accel rate of XY component, quantized to represent [0, MaxAcceleration]
 
-	/** GAS HealthSet */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
-	class UECRCharacterHealthSet* HealthSet;
+	UPROPERTY()
+	int8 AccelZ = 0;	// Raw Z accel rate component, quantized to represent [-MaxAcceleration, MaxAcceleration]
+};
 
-	/** GAS HealthSet */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
-	class UECRCombatSet* CombatSet;
 
-	/** Default attributes for the character (GAS Gameplay Effect) */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
-	TSubclassOf<class UGameplayEffect> DefaultAttributeEffect;
-
-	/** Default abilities for the character (GAS Gameplay Abilities) */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Gameplay, meta = (AllowPrivateAccess = "true"))
-	TArray<TSubclassOf<UECRGameplayAbility>> DefaultAbilities;
-
-	// -------------------------------------------------------------------
-	//	Cameras
-	// -------------------------------------------------------------------
-
-	/** Camera boom positioning the camera behind the character */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* CameraBoom;
-
-	/** Follow camera */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* FollowCamera;
-
-protected:
-	/** Called for forwards/backward input */
-	void MoveForward(float Value);
-
-	/** Called for side to side input */
-	void MoveRight(float Value);
-
-	/** 
-	 * Called via input to turn at a given rate. 
-	 * @param Rate	This is a normalized rate, i.e. 1.0 means 100% of desired turn rate
-	 */
-	void TurnAtRate(float Rate);
-
-	/**
-	 * Called via input to turn look up/down at a given rate. 
-	 * @param Rate	This is a normalized rate, i.e. 1.0 means 100% of desired turn rate
-	 */
-	void LookUpAtRate(float Rate);
-
-	// APawn interface
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	// End of APawn interface
+/**
+ * AECRCharacter
+ *
+ *	The base character pawn class used by this project.
+ *	Responsible for sending events to pawn components.
+ *	New behavior should be added via pawn components when possible.
+ */
+UCLASS(Config = Game, Meta = (ShortTooltip = "The base character pawn class used by this project."))
+class AECRCharacter : public ACharacter, public IAbilitySystemInterface, public IGameplayCueInterface, public IGameplayTagAssetInterface
+{
+	GENERATED_BODY()
 
 public:
+
 	AECRCharacter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
-	void ToggleCrouch();
-	
-	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
-	float TurnRateGamepad;
+	UFUNCTION(BlueprintCallable, Category = "ECR|Character")
+	AECRPlayerController* GetECRPlayerController() const;
 
-	/** Returns AbilitySystemComponent subobject */
+	UFUNCTION(BlueprintCallable, Category = "ECR|Character")
+	AECRPlayerState* GetECRPlayerState() const;
+
+	UFUNCTION(BlueprintCallable, Category = "ECR|Character")
+	UECRAbilitySystemComponent* GetECRAbilitySystemComponent() const;
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
-	/** Returns CameraBoom subobject **/
-	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+	virtual void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override;
+	virtual bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const override;
+	virtual bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override;
+	virtual bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override;
 
-	/** Returns FollowCamera subobject **/
-	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+	void ToggleCrouch();
 
-	/** Setup Controller behaviour (rotate FollowCamera around ECRCharacter or change movement direction).
-	 * Called from Animation Blueprint. */
-	UFUNCTION(BlueprintCallable)
-	void SetupControllerBehaviour(float Speed, bool bIsFalling, bool bMontageIsPlaying);
+	//~AActor interface
+	virtual void PreInitializeComponents() override;
+	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+	virtual void Reset() override;
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	virtual void PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker) override;
+	//~End of AActor interface
+
+protected:
+
+	virtual void OnAbilitySystemInitialized();
+	virtual void OnAbilitySystemUninitialized();
+
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void UnPossessed() override;
+
+	virtual void OnRep_Controller() override;
+	virtual void OnRep_PlayerState() override;
+
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+	void InitializeGameplayTags();
+
+	virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
+
+	// Begins the death sequence for the character (disables collision, disables movement, etc...)
+	UFUNCTION()
+	virtual void OnDeathStarted(AActor* OwningActor);
+
+	// Ends the death sequence for the character (detaches controller, destroys pawn, etc...)
+	UFUNCTION()
+	virtual void OnDeathFinished(AActor* OwningActor);
+
+	void DisableMovementAndCollision();
+	void DestroyDueToDeath();
+	void UninitAndDestroy();
+
+	// Called when the death sequence for the character has completed
+	UFUNCTION(BlueprintImplementableEvent, meta=(DisplayName="OnDeathFinished"))
+	void K2_OnDeathFinished();
+
+	virtual void OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 PreviousCustomMode) override;
+	void SetMovementModeTag(EMovementMode MovementMode, uint8 CustomMovementMode, bool bTagEnabled);
+
+	virtual void OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust) override;
+	virtual void OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust) override;
+
+	virtual bool CanJumpInternal_Implementation() const;
+
+private:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
+	UECRPawnExtensionComponent* PawnExtComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
+	UECRHealthComponent* HealthComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
+	UECRCameraComponent* CameraComponent;
+
+	UPROPERTY(Transient, ReplicatedUsing = OnRep_ReplicatedAcceleration)
+	FECRReplicatedAcceleration ReplicatedAcceleration;
+private:
+
+	UFUNCTION()
+	void OnRep_ReplicatedAcceleration();
 };

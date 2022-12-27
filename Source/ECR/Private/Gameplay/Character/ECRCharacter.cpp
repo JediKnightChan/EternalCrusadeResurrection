@@ -1,72 +1,393 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "Gameplay/Character/ECRCharacter.h"
-
-#include "Camera/CameraComponent.h"
-#include "Components/CapsuleComponent.h"
-#include "Components/InputComponent.h"
-#include "GameFramework/CharacterMovementComponent.h"
-#include "GameFramework/Controller.h"
-#include "GameFramework/SpringArmComponent.h"
 #include "Gameplay/Character/ECRCharacterMovementComponent.h"
+#include "System/ECRLogChannels.h"
+#include "Gameplay/ECRGameplayTags.h"
+#include "Gameplay/Character/ECRPawnExtensionComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "System/ECRSignificanceManager.h"
+#include "Components/InputComponent.h"
+#include "Gameplay/Camera/ECRCameraComponent.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
-#include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
-#include "Gameplay/GAS/Attributes/ECRCombatSet.h"
-#include "Kismet/KismetSystemLibrary.h"
+#include "Gameplay/Character/ECRHealthComponent.h"
+#include "Gameplay/Player/ECRPlayerController.h"
+#include "Gameplay/Player/ECRPlayerState.h"
+#include "Net/UnrealNetwork.h"
+#include "TimerManager.h"
 
-//////////////////////////////////////////////////////////////////////////
-// AECRCharacter
+static FName NAME_ECRCharacterCollisionProfile_Capsule(TEXT("ECRPawnCapsule"));
+static FName NAME_ECRCharacterCollisionProfile_Mesh(TEXT("ECRPawnMesh"));
 
 AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer.SetDefaultSubobjectClass<UECRCharacterMovementComponent>(
 		ACharacter::CharacterMovementComponentName))
 {
-	// Set size for collision capsule
-	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
+	// Avoid ticking characters if possible.
+	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bStartWithTickEnabled = false;
 
-	// set our turn rate for input
-	TurnRateGamepad = 50.f;
+	NetCullDistanceSquared = 900000000.0f;
 
-	// Rotate when the controller rotates in yaw. Let that just affect the camera.
+	UCapsuleComponent* CapsuleComp = GetCapsuleComponent();
+	check(CapsuleComp);
+	CapsuleComp->InitCapsuleSize(40.0f, 90.0f);
+	CapsuleComp->SetCollisionProfileName(NAME_ECRCharacterCollisionProfile_Capsule);
+
+	USkeletalMeshComponent* MeshComp = GetMesh();
+	check(MeshComp);
+	MeshComp->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+	// Rotate mesh to be X forward since it is exported as Y forward.
+	MeshComp->SetCollisionProfileName(NAME_ECRCharacterCollisionProfile_Mesh);
+
+	UECRCharacterMovementComponent* ECRMoveComp = CastChecked<UECRCharacterMovementComponent>(GetCharacterMovement());
+	ECRMoveComp->GravityScale = 1.0f;
+	ECRMoveComp->MaxAcceleration = 2400.0f;
+	ECRMoveComp->BrakingFrictionFactor = 1.0f;
+	ECRMoveComp->BrakingFriction = 6.0f;
+	ECRMoveComp->GroundFriction = 8.0f;
+	ECRMoveComp->BrakingDecelerationWalking = 1400.0f;
+	ECRMoveComp->bUseControllerDesiredRotation = false;
+	ECRMoveComp->bOrientRotationToMovement = false;
+	ECRMoveComp->RotationRate = FRotator(0.0f, 720.0f, 0.0f);
+	ECRMoveComp->bAllowPhysicsRotationDuringAnimRootMotion = false;
+	ECRMoveComp->GetNavAgentPropertiesRef().bCanCrouch = true;
+	ECRMoveComp->bCanWalkOffLedgesWhenCrouching = true;
+	ECRMoveComp->SetCrouchedHalfHeight(65.0f);
+
+	PawnExtComponent = CreateDefaultSubobject<UECRPawnExtensionComponent>(TEXT("PawnExtensionComponent"));
+	PawnExtComponent->OnAbilitySystemInitialized_RegisterAndCall(
+		FSimpleMulticastDelegate::FDelegate::CreateUObject(this, &ThisClass::OnAbilitySystemInitialized));
+	PawnExtComponent->OnAbilitySystemUninitialized_Register(
+		FSimpleMulticastDelegate::FDelegate::CreateUObject(this, &ThisClass::OnAbilitySystemUninitialized));
+
+	HealthComponent = CreateDefaultSubobject<UECRHealthComponent>(TEXT("HealthComponent"));
+	HealthComponent->OnDeathStarted.AddDynamic(this, &ThisClass::OnDeathStarted);
+	HealthComponent->OnDeathFinished.AddDynamic(this, &ThisClass::OnDeathFinished);
+
+	CameraComponent = CreateDefaultSubobject<UECRCameraComponent>(TEXT("CameraComponent"));
+	CameraComponent->SetRelativeLocation(FVector(-300.0f, 0.0f, 75.0f));
+
 	bUseControllerRotationPitch = false;
-	bUseControllerRotationYaw = false;
+	bUseControllerRotationYaw = true;
 	bUseControllerRotationRoll = false;
 
-	// Configure character movement
-	GetCharacterMovement()->bOrientRotationToMovement = true; // Character doesn't move in the direction of input...	
-	GetCharacterMovement()->RotationRate = FRotator(0.0f, 0.0f, 360.0f); // ...at this rotation rate
+	BaseEyeHeight = 80.0f;
+	CrouchedEyeHeight = 50.0f;
+}
 
-	// Note: For faster iteration times these variables, and many more, can be tweaked in the Character Blueprint
-	// instead of recompiling to adjust them
-	GetCharacterMovement()->JumpZVelocity = 420.f;
-	GetCharacterMovement()->AirControl = 0.05f;
-	GetCharacterMovement()->MaxWalkSpeed = 600.f;
-	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
-	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
+void AECRCharacter::PreInitializeComponents()
+{
+	Super::PreInitializeComponents();
+}
 
-	// Create a camera boom (pulls in towards the player if there is a collision)
-	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
-	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->TargetArmLength = 450.0f; // The camera follows at this distance behind the character	
-	CameraBoom->bUsePawnControlRotation = true; // Rotate the arm based on the controller
+void AECRCharacter::BeginPlay()
+{
+	Super::BeginPlay();
 
-	// Create a follow camera
-	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
-	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
-	// Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
-	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
+	UWorld* World = GetWorld();
 
-	AbilitySystemComponent = CreateDefaultSubobject<UECRAbilitySystemComponent>(TEXT("AbilitySystemC"));
-	AbilitySystemComponent->SetIsReplicated(true);
-	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
+	const bool bRegisterWithSignificanceManager = !IsNetMode(NM_DedicatedServer);
+	if (bRegisterWithSignificanceManager)
+	{
+		if (UECRSignificanceManager* SignificanceManager = USignificanceManager::Get<UECRSignificanceManager>(World))
+		{
+			//@TODO: SignificanceManager->RegisterObject(this, (EFortSignificanceType)SignificanceType);
+		}
+	}
+}
 
-	HealthSet = CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("HealthAttributes"));
-	CombatSet = CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatAttributes"));
+void AECRCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+
+	UWorld* World = GetWorld();
+
+	const bool bRegisterWithSignificanceManager = !IsNetMode(NM_DedicatedServer);
+	if (bRegisterWithSignificanceManager)
+	{
+		if (UECRSignificanceManager* SignificanceManager = USignificanceManager::Get<UECRSignificanceManager>(World))
+		{
+			SignificanceManager->UnregisterObject(this);
+		}
+	}
+}
+
+void AECRCharacter::Reset()
+{
+	DisableMovementAndCollision();
+
+	K2_OnReset();
+
+	UninitAndDestroy();
+}
+
+void AECRCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME_CONDITION(ThisClass, ReplicatedAcceleration, COND_SimulatedOnly);
+}
+
+void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker)
+{
+	Super::PreReplication(ChangedPropertyTracker);
+
+	if (UCharacterMovementComponent* MovementComponent = GetCharacterMovement())
+	{
+		// Compress Acceleration: XY components as direction + magnitude, Z component as direct value
+		const double MaxAccel = MovementComponent->MaxAcceleration;
+		const FVector CurrentAccel = MovementComponent->GetCurrentAcceleration();
+		double AccelXYRadians, AccelXYMagnitude;
+		FMath::CartesianToPolar(CurrentAccel.X, CurrentAccel.Y, AccelXYMagnitude, AccelXYRadians);
+
+		ReplicatedAcceleration.AccelXYRadians = FMath::FloorToInt((AccelXYRadians / TWO_PI) * 255.0);
+		// [0, 2PI] -> [0, 255]
+		ReplicatedAcceleration.AccelXYMagnitude = FMath::FloorToInt((AccelXYMagnitude / MaxAccel) * 255.0);
+		// [0, MaxAccel] -> [0, 255]
+		ReplicatedAcceleration.AccelZ = FMath::FloorToInt((CurrentAccel.Z / MaxAccel) * 127.0);
+		// [-MaxAccel, MaxAccel] -> [-127, 127]
+	}
+}
+
+AECRPlayerController* AECRCharacter::GetECRPlayerController() const
+{
+	return CastChecked<AECRPlayerController>(Controller, ECastCheckedType::NullAllowed);
+}
+
+AECRPlayerState* AECRCharacter::GetECRPlayerState() const
+{
+	return CastChecked<AECRPlayerState>(GetPlayerState(), ECastCheckedType::NullAllowed);
+}
+
+UECRAbilitySystemComponent* AECRCharacter::GetECRAbilitySystemComponent() const
+{
+	return Cast<UECRAbilitySystemComponent>(GetAbilitySystemComponent());
+}
+
+UAbilitySystemComponent* AECRCharacter::GetAbilitySystemComponent() const
+{
+	return PawnExtComponent->GetECRAbilitySystemComponent();
+}
+
+void AECRCharacter::OnAbilitySystemInitialized()
+{
+	UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent();
+	check(ECRASC);
+
+	HealthComponent->InitializeWithAbilitySystem(ECRASC);
+
+	InitializeGameplayTags();
+}
+
+void AECRCharacter::OnAbilitySystemUninitialized()
+{
+	HealthComponent->UninitializeFromAbilitySystem();
+}
+
+void AECRCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	PawnExtComponent->HandleControllerChanged();
+}
+
+void AECRCharacter::UnPossessed()
+{
+	AController* const OldController = Controller;
+	
+	Super::UnPossessed();
+
+	PawnExtComponent->HandleControllerChanged();
+}
+
+void AECRCharacter::OnRep_Controller()
+{
+	Super::OnRep_Controller();
+
+	PawnExtComponent->HandleControllerChanged();
+}
+
+void AECRCharacter::OnRep_PlayerState()
+{
+	Super::OnRep_PlayerState();
+
+	PawnExtComponent->HandlePlayerStateReplicated();
+}
+
+void AECRCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	PawnExtComponent->SetupPlayerInputComponent();
+}
+
+void AECRCharacter::InitializeGameplayTags()
+{
+	// Clear tags that may be lingering on the ability system from the previous pawn.
+	if (UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
+	{
+		const FECRGameplayTags& GameplayTags = FECRGameplayTags::Get();
+
+		for (const TPair<uint8, FGameplayTag>& TagMapping : GameplayTags.MovementModeTagMap)
+		{
+			if (TagMapping.Value.IsValid())
+			{
+				ECRASC->SetLooseGameplayTagCount(TagMapping.Value, 0);
+			}
+		}
+
+		for (const TPair<uint8, FGameplayTag>& TagMapping : GameplayTags.CustomMovementModeTagMap)
+		{
+			if (TagMapping.Value.IsValid())
+			{
+				ECRASC->SetLooseGameplayTagCount(TagMapping.Value, 0);
+			}
+		}
+
+		UECRCharacterMovementComponent* ECRMoveComp = CastChecked<UECRCharacterMovementComponent>(
+			GetCharacterMovement());
+		SetMovementModeTag(ECRMoveComp->MovementMode, ECRMoveComp->CustomMovementMode, true);
+	}
+}
+
+void AECRCharacter::GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const
+{
+	if (const UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
+	{
+		ECRASC->GetOwnedGameplayTags(TagContainer);
+	}
+}
+
+bool AECRCharacter::HasMatchingGameplayTag(FGameplayTag TagToCheck) const
+{
+	if (const UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
+	{
+		return ECRASC->HasMatchingGameplayTag(TagToCheck);
+	}
+
+	return false;
+}
+
+bool AECRCharacter::HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const
+{
+	if (const UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
+	{
+		return ECRASC->HasAllMatchingGameplayTags(TagContainer);
+	}
+
+	return false;
+}
+
+bool AECRCharacter::HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const
+{
+	if (const UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
+	{
+		return ECRASC->HasAnyMatchingGameplayTags(TagContainer);
+	}
+
+	return false;
+}
+
+void AECRCharacter::FellOutOfWorld(const class UDamageType& dmgType)
+{
+	HealthComponent->DamageSelfDestruct(/*bFellOutOfWorld=*/ true);
+}
+
+void AECRCharacter::OnDeathStarted(AActor*)
+{
+	DisableMovementAndCollision();
+}
+
+void AECRCharacter::OnDeathFinished(AActor*)
+{
+	GetWorld()->GetTimerManager().SetTimerForNextTick(this, &ThisClass::DestroyDueToDeath);
+}
+
+
+void AECRCharacter::DisableMovementAndCollision()
+{
+	if (Controller)
+	{
+		Controller->SetIgnoreMoveInput(true);
+	}
+
+	UCapsuleComponent* CapsuleComp = GetCapsuleComponent();
+	check(CapsuleComp);
+	CapsuleComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	CapsuleComp->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+	UECRCharacterMovementComponent* ECRMoveComp = CastChecked<UECRCharacterMovementComponent>(GetCharacterMovement());
+	ECRMoveComp->StopMovementImmediately();
+	ECRMoveComp->DisableMovement();
+}
+
+void AECRCharacter::DestroyDueToDeath()
+{
+	K2_OnDeathFinished();
+
+	UninitAndDestroy();
+}
+
+
+void AECRCharacter::UninitAndDestroy()
+{
+	if (GetLocalRole() == ROLE_Authority)
+	{
+		DetachFromControllerPendingDestroy();
+		SetLifeSpan(0.1f);
+	}
+
+	// Uninitialize the ASC if we're still the avatar actor (otherwise another pawn already did it when they became the avatar actor)
+	if (UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
+	{
+		if (ECRASC->GetAvatarActor() == this)
+		{
+			PawnExtComponent->UninitializeAbilitySystem();
+		}
+	}
+
+	SetActorHiddenInGame(true);
+}
+
+void AECRCharacter::OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 PreviousCustomMode)
+{
+	Super::OnMovementModeChanged(PrevMovementMode, PreviousCustomMode);
+
+	UECRCharacterMovementComponent* ECRMoveComp = CastChecked<UECRCharacterMovementComponent>(GetCharacterMovement());
+
+	SetMovementModeTag(PrevMovementMode, PreviousCustomMode, false);
+	SetMovementModeTag(ECRMoveComp->MovementMode, ECRMoveComp->CustomMovementMode, true);
+}
+
+void AECRCharacter::SetMovementModeTag(EMovementMode MovementMode, uint8 CustomMovementMode, bool bTagEnabled)
+{
+	if (UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
+	{
+		const FECRGameplayTags& GameplayTags = FECRGameplayTags::Get();
+		const FGameplayTag* MovementModeTag = nullptr;
+
+		if (MovementMode == MOVE_Custom)
+		{
+			MovementModeTag = GameplayTags.CustomMovementModeTagMap.Find(CustomMovementMode);
+		}
+		else
+		{
+			MovementModeTag = GameplayTags.MovementModeTagMap.Find(MovementMode);
+		}
+
+		if (MovementModeTag && MovementModeTag->IsValid())
+		{
+			ECRASC->SetLooseGameplayTagCount(*MovementModeTag, (bTagEnabled ? 1 : 0));
+		}
+	}
 }
 
 void AECRCharacter::ToggleCrouch()
 {
-	const UECRCharacterMovementComponent* ECRMoveComp = CastChecked<UECRCharacterMovementComponent>(GetCharacterMovement());
+	const UECRCharacterMovementComponent* ECRMoveComp = CastChecked<UECRCharacterMovementComponent>(
+		GetCharacterMovement());
 
 	if (bIsCrouched || ECRMoveComp->bWantsToCrouch)
 	{
@@ -78,83 +399,50 @@ void AECRCharacter::ToggleCrouch()
 	}
 }
 
-UAbilitySystemComponent* AECRCharacter::GetAbilitySystemComponent() const
+void AECRCharacter::OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
 {
-	return AbilitySystemComponent;
-}
-
-//////////////////////////////////////////////////////////////////////////
-// Input
-
-void AECRCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
-{
-	// Set up gameplay key bindings
-	check(PlayerInputComponent);
-	// PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-	// PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
-
-	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &AECRCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("Move Right / Left", this, &AECRCharacter::MoveRight);
-
-	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
-	// "turn" handles devices that provide an absolute delta, such as a mouse.
-	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
-	PlayerInputComponent->BindAxis("Turn Right / Left Mouse", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("Turn Right / Left Gamepad", this, &AECRCharacter::TurnAtRate);
-	PlayerInputComponent->BindAxis("Look Up / Down Mouse", this, &APawn::AddControllerPitchInput);
-	PlayerInputComponent->BindAxis("Look Up / Down Gamepad", this, &AECRCharacter::LookUpAtRate);
-}
-
-
-void AECRCharacter::SetupControllerBehaviour(const float Speed, const bool bIsFalling, const bool bMontageIsPlaying)
-{
-	if (Speed > 0 && !bIsFalling && !bMontageIsPlaying)
+	if (UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
 	{
-		bUseControllerRotationYaw = true;
+		ECRASC->SetLooseGameplayTagCount(FECRGameplayTags::Get().Status_Crouching, 1);
 	}
-	else
+
+
+	Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
+}
+
+void AECRCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
+{
+	if (UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
 	{
-		bUseControllerRotationYaw = false;
+		ECRASC->SetLooseGameplayTagCount(FECRGameplayTags::Get().Status_Crouching, 0);
 	}
+
+	Super::OnEndCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
 }
 
-void AECRCharacter::TurnAtRate(float Rate)
+bool AECRCharacter::CanJumpInternal_Implementation() const
 {
-	// calculate delta for this frame from the rate information
-	AddControllerYawInput(Rate * TurnRateGamepad * GetWorld()->GetDeltaSeconds());
+	// same as ACharacter's implementation but without the crouch check
+	return JumpIsAllowedInternal();
 }
 
-void AECRCharacter::LookUpAtRate(float Rate)
+void AECRCharacter::OnRep_ReplicatedAcceleration()
 {
-	// calculate delta for this frame from the rate information
-	AddControllerPitchInput(Rate * TurnRateGamepad * GetWorld()->GetDeltaSeconds());
-}
-
-void AECRCharacter::MoveForward(float Value)
-{
-	if ((Controller != nullptr) && (Value != 0.0f))
+	if (UECRCharacterMovementComponent* ECRMovementComponent = Cast<UECRCharacterMovementComponent>(
+		GetCharacterMovement()))
 	{
-		// find out which way is forward
-		const FRotator Rotation = Controller->GetControlRotation();
-		const FRotator YawRotation(0, Rotation.Yaw, 0);
+		// Decompress Acceleration
+		const double MaxAccel = ECRMovementComponent->MaxAcceleration;
+		const double AccelXYMagnitude = double(ReplicatedAcceleration.AccelXYMagnitude) * MaxAccel / 255.0;
+		// [0, 255] -> [0, MaxAccel]
+		const double AccelXYRadians = double(ReplicatedAcceleration.AccelXYRadians) * TWO_PI / 255.0;
+		// [0, 255] -> [0, 2PI]
 
-		// get forward vector
-		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
-		AddMovementInput(Direction, Value);
-	}
-}
+		FVector UnpackedAcceleration(FVector::ZeroVector);
+		FMath::PolarToCartesian(AccelXYMagnitude, AccelXYRadians, UnpackedAcceleration.X, UnpackedAcceleration.Y);
+		UnpackedAcceleration.Z = double(ReplicatedAcceleration.AccelZ) * MaxAccel / 127.0;
+		// [-127, 127] -> [-MaxAccel, MaxAccel]
 
-void AECRCharacter::MoveRight(float Value)
-{
-	if ((Controller != nullptr) && (Value != 0.0f))
-	{
-		// find out which way is right
-		const FRotator Rotation = Controller->GetControlRotation();
-		const FRotator YawRotation(0, Rotation.Yaw, 0);
-
-		// get right vector 
-		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
-		// add movement in that direction
-		AddMovementInput(Direction, Value);
+		ECRMovementComponent->SetReplicatedAcceleration(UnpackedAcceleration);
 	}
 }

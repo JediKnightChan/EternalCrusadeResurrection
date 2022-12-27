@@ -20,6 +20,7 @@ public class ECR : ModuleRules
 			"OnlineSubsystemUtils",
 			"ModularGameplay",
 			"ModularGameplayActors",
+			"SignificanceManager"
 		});
 		
 		PrivateDependencyModuleNames.AddRange(new string[] {
