@@ -178,6 +178,7 @@ void UECRPawnExtensionComponent::SetupPlayerInputComponent()
 
 bool UECRPawnExtensionComponent::CheckPawnReadyToInitialize()
 {
+	UE_LOG(LogTemp, Warning, TEXT("Checking pawn ready"));
 	if (bPawnReadyToInitialize)
 	{
 		return true;
@@ -186,6 +187,7 @@ bool UECRPawnExtensionComponent::CheckPawnReadyToInitialize()
 	// Pawn data is required.
 	if (!PawnData)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Checking pawn ready failed: no pawn data"));
 		return false;
 	}
 
@@ -199,6 +201,7 @@ bool UECRPawnExtensionComponent::CheckPawnReadyToInitialize()
 		// Check for being possessed by a controller.
 		if (!GetController<AController>())
 		{
+			UE_LOG(LogTemp, Warning, TEXT("Checking pawn ready failed: no controller"));
 			return false;
 		}
 	}
@@ -210,10 +213,13 @@ bool UECRPawnExtensionComponent::CheckPawnReadyToInitialize()
 		const IECRReadyInterface* Ready = CastChecked<IECRReadyInterface>(InteractableComponent);
 		if (!Ready->IsPawnComponentReadyToInitialize())
 		{
+			UE_LOG(LogTemp, Warning, TEXT("Checking pawn ready failed: one of pawn comps not ready"));
 			return false;
 		}
 	}
 
+	UE_LOG(LogTemp, Warning, TEXT("Checking pawn ready success"));
+	
 	// Pawn is ready to initialize.
 	bPawnReadyToInitialize = true;
 	OnPawnReadyToInitialize.Broadcast();

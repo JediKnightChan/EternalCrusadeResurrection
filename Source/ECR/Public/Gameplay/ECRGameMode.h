@@ -15,10 +15,11 @@ class AECRGameMode : public AGameMode
 	/** Storage for display names passed via map parameters */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	TMap<AController*, FString> ControllersToDisplayNames;
-	
+
 protected:
 	virtual FString InitNewPlayer(APlayerController* NewPlayerController, const FUniqueNetIdRepl& UniqueId,
 	                              const FString& Options, const FString& Portal) override;
+
 public:
 	AECRGameMode();
 };

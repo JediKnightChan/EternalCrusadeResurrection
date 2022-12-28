@@ -18,6 +18,8 @@ class UAbilitySystemComponent;
 class UECRPawnExtensionComponent;
 class UECRHealthComponent;
 class UECRCameraComponent;
+class UECRPawnData;
+class UECRAbilitySet;
 
 
 /**
@@ -29,13 +31,13 @@ struct FECRReplicatedAcceleration
 	GENERATED_BODY()
 
 	UPROPERTY()
-	uint8 AccelXYRadians = 0;	// Direction of XY accel component, quantized to represent [0, 2*pi]
+	uint8 AccelXYRadians = 0; // Direction of XY accel component, quantized to represent [0, 2*pi]
 
 	UPROPERTY()
-	uint8 AccelXYMagnitude = 0;	//Accel rate of XY component, quantized to represent [0, MaxAcceleration]
+	uint8 AccelXYMagnitude = 0; //Accel rate of XY component, quantized to represent [0, MaxAcceleration]
 
 	UPROPERTY()
-	int8 AccelZ = 0;	// Raw Z accel rate component, quantized to represent [-MaxAcceleration, MaxAcceleration]
+	int8 AccelZ = 0; // Raw Z accel rate component, quantized to represent [-MaxAcceleration, MaxAcceleration]
 };
 
 
@@ -47,13 +49,16 @@ struct FECRReplicatedAcceleration
  *	New behavior should be added via pawn components when possible.
  */
 UCLASS(Config = Game, Meta = (ShortTooltip = "The base character pawn class used by this project."))
-class AECRCharacter : public ACharacter, public IAbilitySystemInterface, public IGameplayCueInterface, public IGameplayTagAssetInterface
+class AECRCharacter : public ACharacter, public IAbilitySystemInterface, public IGameplayCueInterface,
+                      public IGameplayTagAssetInterface
 {
 	GENERATED_BODY()
 
 public:
-
 	AECRCharacter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
+
+	template <class T>
+	const T* GetPawnData() const { return Cast<T>(PawnData); }
 
 	UFUNCTION(BlueprintCallable, Category = "ECR|Character")
 	AECRPlayerController* GetECRPlayerController() const;
@@ -82,7 +87,6 @@ public:
 	//~End of AActor interface
 
 protected:
-
 	virtual void OnAbilitySystemInitialized();
 	virtual void OnAbilitySystemUninitialized();
 
@@ -122,8 +126,9 @@ protected:
 
 	virtual bool CanJumpInternal_Implementation() const;
 
-private:
+	void InitPawnData();
 
+private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
 	UECRPawnExtensionComponent* PawnExtComponent;
 
@@ -135,7 +140,16 @@ private:
 
 	UPROPERTY(Transient, ReplicatedUsing = OnRep_ReplicatedAcceleration)
 	FECRReplicatedAcceleration ReplicatedAcceleration;
+
+	static const FName NAME_ECRAbilityReady;
+
+	UPROPERTY(ReplicatedUsing = OnRep_PawnData, EditAnywhere, BlueprintReadOnly,
+		meta=(AllowPrivateAccess="true", ExposeOnSpawn="true"))
+	const UECRPawnData* PawnData;
+
 private:
+	UFUNCTION()
+	void OnRep_PawnData();
 
 	UFUNCTION()
 	void OnRep_ReplicatedAcceleration();

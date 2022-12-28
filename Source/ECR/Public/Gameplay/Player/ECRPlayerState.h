@@ -10,7 +10,6 @@
 
 class UECRAbilitySystemComponent;
 class UAbilitySystemComponent;
-class UECRPawnData;
 
 
 /**
@@ -31,11 +30,6 @@ public:
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
-	template <class T>
-	const T* GetPawnData() const { return Cast<T>(PawnData); }
-
-	void SetPawnData(const UECRPawnData* InPawnData);
-
 	//~AActor interface
 	virtual void PreInitializeComponents() override;
 	virtual void PostInitializeComponents() override;
@@ -45,16 +39,6 @@ public:
 	virtual void Reset() override;
 	virtual void ClientInitialize(AController* C) override;
 	//~End of APlayerState interface
-
-	static const FName NAME_ECRAbilityReady;
-protected:
-	UFUNCTION()
-	void OnRep_PawnData();
-
-protected:
-
-	UPROPERTY(ReplicatedUsing = OnRep_PawnData)
-	const UECRPawnData* PawnData;
 
 private:
 

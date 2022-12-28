@@ -16,9 +16,15 @@
 #include "Gameplay/Player/ECRPlayerState.h"
 #include "Net/UnrealNetwork.h"
 #include "TimerManager.h"
+#include "Components/GameFrameworkComponentManager.h"
+#include "Gameplay/Character/ECRPawnData.h"
+#include "Gameplay/GAS/ECRAbilitySet.h"
 
 static FName NAME_ECRCharacterCollisionProfile_Capsule(TEXT("ECRPawnCapsule"));
 static FName NAME_ECRCharacterCollisionProfile_Mesh(TEXT("ECRPawnMesh"));
+
+const FName AECRCharacter::NAME_ECRAbilityReady("ECRAbilitiesReady");
+
 
 AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer.SetDefaultSubobjectClass<UECRCharacterMovementComponent>(
@@ -128,6 +134,10 @@ void AECRCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME_CONDITION(ThisClass, ReplicatedAcceleration, COND_SimulatedOnly);
+
+	FDoRepLifetimeParams SharedParams;
+	SharedParams.bIsPushBased = true;
+	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, PawnData, SharedParams);
 }
 
 void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker)
@@ -191,12 +201,21 @@ void AECRCharacter::PossessedBy(AController* NewController)
 	Super::PossessedBy(NewController);
 
 	PawnExtComponent->HandleControllerChanged();
+
+	UE_LOG(LogTemp, Warning, TEXT("Pawn data is %s"), *(GetNameSafe(PawnData)));
+
+	if (GetWorld()->GetNetMode() < NM_Client)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Initting pawn data as server"));
+		PawnExtComponent->SetPawnData(PawnData);
+		InitPawnData();
+	}
 }
 
 void AECRCharacter::UnPossessed()
 {
 	AController* const OldController = Controller;
-	
+
 	Super::UnPossessed();
 
 	PawnExtComponent->HandleControllerChanged();
@@ -424,6 +443,37 @@ bool AECRCharacter::CanJumpInternal_Implementation() const
 {
 	// same as ACharacter's implementation but without the crouch check
 	return JumpIsAllowedInternal();
+}
+
+
+void AECRCharacter::InitPawnData()
+{
+	ensureMsgf(PawnData, TEXT("ECRCharacter [%s] pawn data is empty"), *(GetNameSafe(this)));
+
+	UE_LOG(LogTemp, Warning, TEXT("InitPawnData called"))
+	if (GetLocalRole() != ROLE_Authority)
+	{
+		return;
+	}
+
+	MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, PawnData, this);
+
+	for (const UECRAbilitySet* AbilitySet : PawnData->AbilitySets)
+	{
+		if (AbilitySet)
+		{
+			UECRAbilitySystemComponent* ECRAbilitySystemComponent = GetECRAbilitySystemComponent();
+			AbilitySet->GiveToAbilitySystem(ECRAbilitySystemComponent, nullptr);
+		}
+	}
+
+	UGameFrameworkComponentManager::SendGameFrameworkComponentExtensionEvent(this, NAME_ECRAbilityReady);
+
+	ForceNetUpdate();
+}
+
+void AECRCharacter::OnRep_PawnData()
+{
 }
 
 void AECRCharacter::OnRep_ReplicatedAcceleration()
