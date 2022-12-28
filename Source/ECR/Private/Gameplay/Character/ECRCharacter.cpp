@@ -445,7 +445,7 @@ bool AECRCharacter::CanJumpInternal_Implementation() const
 
 void AECRCharacter::InitPawnData()
 {
-	ensureMsgf(PawnData, TEXT("ECRCharacter [%s] pawn data is empty"), *(GetNameSafe(this)));
+	ensureMsgf(PawnData, TEXT("ECRCharacter [%s] pawn data is not specified"), *(GetNameSafe(this)));
 
 	if (GetLocalRole() != ROLE_Authority)
 	{
@@ -458,7 +458,7 @@ void AECRCharacter::InitPawnData()
 	{
 		if (AbilitySet)
 		{
-			UECRAbilitySystemComponent* ECRAbilitySystemComponent = GetECRAbilitySystemComponent();
+			UECRAbilitySystemComponent* ECRAbilitySystemComponent = GetECRPlayerState()->GetECRAbilitySystemComponent();
 			AbilitySet->GiveToAbilitySystem(ECRAbilitySystemComponent, nullptr);
 		}
 	}
