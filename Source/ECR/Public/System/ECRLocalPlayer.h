@@ -8,6 +8,7 @@
 #include "ECRLocalPlayer.generated.h"
 
 class UECRSettingsLocal;
+class UECRSettingsShared;
 class UInputMappingContext;
 
 /**
@@ -19,7 +20,6 @@ class ECR_API UECRLocalPlayer : public UCommonLocalPlayer
 	GENERATED_BODY()
 
 public:
-
 	UECRLocalPlayer();
 
 	//~UObject interface
@@ -30,13 +30,19 @@ public:
 	UFUNCTION()
 	UECRSettingsLocal* GetLocalSettings() const;
 
+	UFUNCTION()
+	UECRSettingsShared* GetSharedSettings() const;
+
 protected:
 	void OnAudioOutputDeviceChanged(const FString& InAudioOutputDeviceId);
-	
+
 	UFUNCTION()
 	void OnCompletedAudioDeviceSwap(const FSwapAudioOutputResult& SwapResult);
 
 private:
+	UPROPERTY(Transient)
+	mutable UECRSettingsShared* SharedSettings;
+
 	UPROPERTY(Transient)
 	mutable const UInputMappingContext* InputMappingContext;
 

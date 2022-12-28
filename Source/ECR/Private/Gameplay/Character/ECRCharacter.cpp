@@ -202,11 +202,8 @@ void AECRCharacter::PossessedBy(AController* NewController)
 
 	PawnExtComponent->HandleControllerChanged();
 
-	UE_LOG(LogTemp, Warning, TEXT("Pawn data is %s"), *(GetNameSafe(PawnData)));
-
 	if (GetWorld()->GetNetMode() < NM_Client)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Initting pawn data as server"));
 		PawnExtComponent->SetPawnData(PawnData);
 		InitPawnData();
 	}
@@ -450,7 +447,6 @@ void AECRCharacter::InitPawnData()
 {
 	ensureMsgf(PawnData, TEXT("ECRCharacter [%s] pawn data is empty"), *(GetNameSafe(this)));
 
-	UE_LOG(LogTemp, Warning, TEXT("InitPawnData called"))
 	if (GetLocalRole() != ROLE_Authority)
 	{
 		return;

@@ -2,6 +2,7 @@
 
 #include "System/ECRLocalPlayer.h"
 #include "Settings/ECRSettingsLocal.h"
+#include "Settings/ECRSettingsShared.h"
 #include "AudioMixerBlueprintLibrary.h"
 #include "GameFramework/PlayerController.h"
 
@@ -23,6 +24,16 @@ void UECRLocalPlayer::PostInitProperties()
 UECRSettingsLocal* UECRLocalPlayer::GetLocalSettings() const
 {
 	return UECRSettingsLocal::Get();
+}
+
+UECRSettingsShared* UECRLocalPlayer::GetSharedSettings() const
+{
+	if (!SharedSettings)
+	{
+		SharedSettings = UECRSettingsShared::LoadOrCreateSettings(this);
+	}
+
+	return SharedSettings;
 }
 
 

@@ -18,8 +18,8 @@
 #include "Engine/LocalPlayer.h"
 #include "Components/GameFrameworkComponentManager.h"
 #include "Settings/ECRSettingsLocal.h"
-#include "System/ECRAssetManager.h"
 #include "PlayerMappableInputConfig.h"
+#include "Gameplay/Camera/ECRCameraMode.h"
 
 #if WITH_EDITOR
 #include "Misc/UObjectToken.h"
@@ -44,14 +44,11 @@ UECRHeroComponent::UECRHeroComponent(const FObjectInitializer& ObjectInitializer
 void UECRHeroComponent::OnRegister()
 {
 	Super::OnRegister();
-
-	UE_LOG(LogTemp, Warning, TEXT("Hero registering"))
 	
 	if (const APawn* Pawn = GetPawn<APawn>())
 	{
 		if (UECRPawnExtensionComponent* PawnExtComp = UECRPawnExtensionComponent::FindPawnExtensionComponent(Pawn))
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Hero ready to get in"))
 			PawnExtComp->OnPawnReadyToInitialize_RegisterAndCall(FSimpleMulticastDelegate::FDelegate::CreateUObject(this, &ThisClass::OnPawnReadyToInitialize));
 		}
 	}
@@ -128,7 +125,7 @@ void UECRHeroComponent::OnPawnReadyToInitialize()
 		// Don't initialize twice
 		return;
 	}
-	UE_LOG(LogTemp, Warning, TEXT("Hero initing"));
+
 	APawn* Pawn = GetPawn<APawn>();
 	if (!Pawn)
 	{
@@ -143,7 +140,6 @@ void UECRHeroComponent::OnPawnReadyToInitialize()
 
 	if (UECRPawnExtensionComponent* PawnExtComp = UECRPawnExtensionComponent::FindPawnExtensionComponent(Pawn))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Hero initing as"));
 		PawnData = PawnExtComp->GetPawnData<UECRPawnData>();
 
 		// The player state holds the persistent data for this player (state that persists across deaths and multiple pawns).
@@ -155,7 +151,6 @@ void UECRHeroComponent::OnPawnReadyToInitialize()
 	{
 		if (Pawn->InputComponent != nullptr)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Hero initing input"));
 			InitializePlayerInput(Pawn->InputComponent);
 		}
 	}
@@ -164,7 +159,6 @@ void UECRHeroComponent::OnPawnReadyToInitialize()
 	{
 		if (UECRCameraComponent* CameraComponent = UECRCameraComponent::FindCameraComponent(Pawn))
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Hero initing camera"));
 			CameraComponent->DetermineCameraModeDelegate.BindUObject(this, &ThisClass::DetermineCameraMode);
 		}
 	}
@@ -237,7 +231,7 @@ void UECRHeroComponent::InitializePlayerInput(UInputComponent* PlayerInputCompon
 				ECRIC->BindAbilityActions(InputConfig, this, &ThisClass::Input_AbilityInputTagPressed, &ThisClass::Input_AbilityInputTagReleased, /*out*/ BindHandles);
 
 				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Move, ETriggerEvent::Triggered, this, &ThisClass::Input_Move, /*bLogIfNotFound=*/ false);
-				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Look_Mouse, ETriggerEvent::Triggered, this, &ThisClass::Input_LookMouse, /*bLogIfNotFound=*/ false);
+				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Look_Mouse, ETriggerEvent::Triggered, this, &ThisClass::Input_LookMouse, /*bLogIfNotFound=*/ true);
 				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Look_Stick, ETriggerEvent::Triggered, this, &ThisClass::Input_LookStick, /*bLogIfNotFound=*/ false);
 				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Crouch, ETriggerEvent::Triggered, this, &ThisClass::Input_Crouch, /*bLogIfNotFound=*/ false);
 				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_AutoRun, ETriggerEvent::Triggered, this, &ThisClass::Input_AutoRun, /*bLogIfNotFound=*/ false);
