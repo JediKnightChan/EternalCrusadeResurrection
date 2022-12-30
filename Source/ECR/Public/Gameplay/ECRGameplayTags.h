@@ -15,7 +15,6 @@ class UGameplayTagsManager;
 struct FECRGameplayTags
 {
 public:
-
 	static const FECRGameplayTags& Get() { return GameplayTags; }
 
 	static void InitializeNativeTags();
@@ -23,7 +22,6 @@ public:
 	static FGameplayTag FindTagByString(FString TagString, bool bMatchPartialString = false);
 
 public:
-
 	FGameplayTag Ability_ActivateFail_IsDead;
 	FGameplayTag Ability_ActivateFail_Cooldown;
 	FGameplayTag Ability_ActivateFail_Cost;
@@ -44,11 +42,11 @@ public:
 	FGameplayTag GameplayEvent_Reset;
 	FGameplayTag GameplayEvent_RequestReset;
 
-	FGameplayTag SetByCaller_Damage;
-	FGameplayTag SetByCaller_Heal;
-
 	FGameplayTag Cheat_GodMode;
 	FGameplayTag Cheat_UnlimitedHealth;
+
+	FGameplayTag SetByCaller_Damage;
+	FGameplayTag SetByCaller_Heal;
 
 	FGameplayTag Status_Crouching;
 	FGameplayTag Status_AutoRunning;
@@ -67,13 +65,11 @@ public:
 	TMap<uint8, FGameplayTag> CustomMovementModeTagMap;
 
 protected:
-
 	void AddAllTags(UGameplayTagsManager& Manager);
 	void AddTag(FGameplayTag& OutTag, const ANSICHAR* TagName, const ANSICHAR* TagComment);
 	void AddMovementModeTag(FGameplayTag& OutTag, const ANSICHAR* TagName, uint8 MovementMode);
 	void AddCustomMovementModeTag(FGameplayTag& OutTag, const ANSICHAR* TagName, uint8 CustomMovementMode);
 
 private:
-
 	static FECRGameplayTags GameplayTags;
 };
