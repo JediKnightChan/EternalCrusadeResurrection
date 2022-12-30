@@ -99,7 +99,8 @@ protected:
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
 	void InitializeGameplayTags();
-
+	void GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySets) const;
+	
 	virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
 
 	// Begins the death sequence for the character (disables collision, disables movement, etc...)
@@ -126,7 +127,7 @@ protected:
 
 	virtual bool CanJumpInternal_Implementation() const;
 
-	void InitPawnData();
+	void InitPawnDataAndAbilities();
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))

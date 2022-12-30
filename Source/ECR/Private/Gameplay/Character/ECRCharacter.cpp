@@ -17,6 +17,7 @@
 #include "Net/UnrealNetwork.h"
 #include "TimerManager.h"
 #include "Components/GameFrameworkComponentManager.h"
+#include "Gameplay/ECRGameState.h"
 #include "Gameplay/Character/ECRPawnData.h"
 #include "Gameplay/GAS/ECRAbilitySet.h"
 
@@ -205,7 +206,7 @@ void AECRCharacter::PossessedBy(AController* NewController)
 	if (GetWorld()->GetNetMode() < NM_Client)
 	{
 		PawnExtComponent->SetPawnData(PawnData);
-		InitPawnData();
+		InitPawnDataAndAbilities();
 	}
 }
 
@@ -443,7 +444,19 @@ bool AECRCharacter::CanJumpInternal_Implementation() const
 }
 
 
-void AECRCharacter::InitPawnData()
+void AECRCharacter::GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySets) const
+{
+	for (const UECRAbilitySet* AbilitySet : AbilitySets)
+	{
+		if (AbilitySet)
+		{
+			UECRAbilitySystemComponent* ECRAbilitySystemComponent = GetECRPlayerState()->GetECRAbilitySystemComponent();
+			AbilitySet->GiveToAbilitySystem(ECRAbilitySystemComponent, nullptr);
+		}
+	}
+}
+
+void AECRCharacter::InitPawnDataAndAbilities()
 {
 	ensureMsgf(PawnData, TEXT("ECRCharacter [%s] pawn data is not specified"), *(GetNameSafe(this)));
 
@@ -452,16 +465,17 @@ void AECRCharacter::InitPawnData()
 		return;
 	}
 
-	MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, PawnData, this);
+	MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, PawnData, this);	
 
-	for (const UECRAbilitySet* AbilitySet : PawnData->AbilitySets)
+	// Granting common ability sets from game state
+	if (AECRGameState* GameState = Cast<AECRGameState>(GetWorld()->GetGameState()))
 	{
-		if (AbilitySet)
-		{
-			UECRAbilitySystemComponent* ECRAbilitySystemComponent = GetECRPlayerState()->GetECRAbilitySystemComponent();
-			AbilitySet->GiveToAbilitySystem(ECRAbilitySystemComponent, nullptr);
-		}
+		const TArray<UECRAbilitySet*> CommonCharacterAbilitySets = GameState->GetCommonCharacterAbilitySets();
+		GrantAbilitySets(CommonCharacterAbilitySets);
 	}
+
+	// Granting this character ability sets
+	GrantAbilitySets(PawnData->AbilitySets);
 
 	UGameFrameworkComponentManager::SendGameFrameworkComponentExtensionEvent(this, NAME_ECRAbilityReady);
 

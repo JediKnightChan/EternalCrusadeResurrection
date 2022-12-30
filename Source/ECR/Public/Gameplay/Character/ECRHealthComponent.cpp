@@ -78,9 +78,6 @@ void UECRHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystemComponent
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRHealthSet::GetMaxHealthAttribute()).AddUObject(this, &ThisClass::HandleMaxHealthChanged);
 	HealthSet->OnOutOfHealth.AddUObject(this, &ThisClass::HandleOutOfHealth);
 
-	// TEMP: Reset attributes to default values.  Eventually this will be driven by a spread sheet.
-	AbilitySystemComponent->SetNumericAttributeBase(UECRHealthSet::GetHealthAttribute(), HealthSet->GetMaxHealth());
-
 	ClearGameplayTags();
 
 	OnHealthChanged.Broadcast(this, HealthSet->GetHealth(), HealthSet->GetHealth(), nullptr);

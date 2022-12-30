@@ -9,6 +9,7 @@
 #include "Gameplay/GAS/Attributes/ECRHealthSet.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
 #include "Components/GameFrameworkComponentManager.h"
+#include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 
 
 AECRPlayerState::AECRPlayerState(const FObjectInitializer& ObjectInitializer)
@@ -18,7 +19,7 @@ AECRPlayerState::AECRPlayerState(const FObjectInitializer& ObjectInitializer)
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
-	CreateDefaultSubobject<UECRHealthSet>(TEXT("HealthSet"));
+	CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("CharacterHealthSet"));
 	CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatSet"));
 
 	// AbilitySystemComponent needs to be updated at a high frequency.

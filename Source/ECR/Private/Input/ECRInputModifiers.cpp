@@ -182,7 +182,7 @@ FInputActionValue UECRInputModifierAimInversion::ModifyRaw_Implementation(const 
 	ensure(Settings);
 
 	FVector NewValue = CurrentValue.Get<FVector>();
-	UE_LOG(LogTemp, Warning, TEXT("Current value is %s"), *(NewValue.ToString()));
+
 	if (Settings->GetInvertVerticalAxis())
 	{
 		NewValue.Y *= -1.0f;
@@ -192,6 +192,6 @@ FInputActionValue UECRInputModifierAimInversion::ModifyRaw_Implementation(const 
 	{
 		NewValue.X *= -1.0f;
 	}
-	UE_LOG(LogTemp, Warning, TEXT("New value is %s"), *(NewValue.ToString()));
+
 	return NewValue;
 }

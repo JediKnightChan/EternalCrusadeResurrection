@@ -6,6 +6,8 @@
 #include "GameFramework/GameState.h"
 #include "ECRGameState.generated.h"
 
+class UECRAbilitySet;
+
 /**
  * 
  */
@@ -14,6 +16,9 @@ UCLASS()
 class ECR_API AECRGameState : public AGameState
 {
 	GENERATED_BODY()
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
+	TArray<UECRAbilitySet*> CommonCharacterAbilitySets;
 
 protected:
 	virtual void HandleMatchHasStarted() override;
@@ -31,4 +36,8 @@ protected:
 	/** Handle match end in blueprints */
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnMatchEnded();
+
+public:
+	/** Get CommonCharacterAbilitySets */
+	FORCEINLINE TArray<UECRAbilitySet*> GetCommonCharacterAbilitySets() { return CommonCharacterAbilitySets; }
 };
