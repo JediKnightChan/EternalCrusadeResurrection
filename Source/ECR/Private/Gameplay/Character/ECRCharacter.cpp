@@ -11,7 +11,6 @@
 #include "Components/InputComponent.h"
 #include "Gameplay/Camera/ECRCameraComponent.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
-#include "Gameplay/Character/ECRHealthComponent.h"
 #include "Gameplay/Player/ECRPlayerController.h"
 #include "Gameplay/Player/ECRPlayerState.h"
 #include "Net/UnrealNetwork.h"
@@ -20,6 +19,7 @@
 #include "Gameplay/ECRGameState.h"
 #include "Gameplay/Character/ECRPawnData.h"
 #include "Gameplay/GAS/ECRAbilitySet.h"
+#include "Gameplay/GAS/Components/ECRCharacterHealthComponent.h"
 
 static FName NAME_ECRCharacterCollisionProfile_Capsule(TEXT("ECRPawnCapsule"));
 static FName NAME_ECRCharacterCollisionProfile_Mesh(TEXT("ECRPawnMesh"));
@@ -69,7 +69,7 @@ AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 	PawnExtComponent->OnAbilitySystemUninitialized_Register(
 		FSimpleMulticastDelegate::FDelegate::CreateUObject(this, &ThisClass::OnAbilitySystemUninitialized));
 
-	HealthComponent = CreateDefaultSubobject<UECRHealthComponent>(TEXT("HealthComponent"));
+	HealthComponent = CreateDefaultSubobject<UECRCharacterHealthComponent>(TEXT("HealthComponent"));
 	HealthComponent->OnDeathStarted.AddDynamic(this, &ThisClass::OnDeathStarted);
 	HealthComponent->OnDeathFinished.AddDynamic(this, &ThisClass::OnDeathFinished);
 

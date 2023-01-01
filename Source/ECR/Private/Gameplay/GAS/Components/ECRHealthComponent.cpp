@@ -1,6 +1,6 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRHealthComponent.h"
+#include "Gameplay/GAS/Components/ECRHealthComponent.h"
 #include "System/ECRLogChannels.h"
 #include "System/ECRAssetManager.h"
 #include "System/ECRGameData.h"
@@ -55,30 +55,40 @@ void UECRHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystemComponent
 
 	if (AbilitySystemComponent)
 	{
-		UE_LOG(LogECR, Error, TEXT("ECRHealthComponent: Health component for owner [%s] has already been initialized with an ability system."), *GetNameSafe(Owner));
+		UE_LOG(LogECR, Error,
+		       TEXT(
+			       "ECRHealthComponent: Health component for owner [%s] has already been initialized with an ability system."
+		       ), *GetNameSafe(Owner));
 		return;
 	}
 
 	AbilitySystemComponent = InASC;
 	if (!AbilitySystemComponent)
 	{
-		UE_LOG(LogECR, Error, TEXT("ECRHealthComponent: Cannot initialize health component for owner [%s] with NULL ability system."), *GetNameSafe(Owner));
+		UE_LOG(LogECR, Error,
+		       TEXT("ECRHealthComponent: Cannot initialize health component for owner [%s] with NULL ability system."),
+		       *GetNameSafe(Owner));
 		return;
 	}
+
+	ClearGameplayTags();
 
 	HealthSet = AbilitySystemComponent->GetSet<UECRHealthSet>();
 	if (!HealthSet)
 	{
-		UE_LOG(LogECR, Error, TEXT("ECRHealthComponent: Cannot initialize health component for owner [%s] with NULL health set on the ability system."), *GetNameSafe(Owner));
+		UE_LOG(LogECR, Error,
+		       TEXT(
+			       "ECRHealthComponent: Cannot initialize health component for owner [%s] with NULL health set on the ability system."
+		       ), *GetNameSafe(Owner));
 		return;
 	}
 
 	// Register to listen for attribute changes.
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRHealthSet::GetHealthAttribute()).AddUObject(this, &ThisClass::HandleHealthChanged);
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRHealthSet::GetMaxHealthAttribute()).AddUObject(this, &ThisClass::HandleMaxHealthChanged);
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRHealthSet::GetHealthAttribute()).AddUObject(
+		this, &ThisClass::HandleHealthChanged);
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRHealthSet::GetMaxHealthAttribute()).AddUObject(
+		this, &ThisClass::HandleMaxHealthChanged);
 	HealthSet->OnOutOfHealth.AddUObject(this, &ThisClass::HandleOutOfHealth);
-
-	ClearGameplayTags();
 
 	OnHealthChanged.Broadcast(this, HealthSet->GetHealth(), HealthSet->GetHealth(), nullptr);
 	OnMaxHealthChanged.Broadcast(this, HealthSet->GetHealth(), HealthSet->GetHealth(), nullptr);
@@ -133,7 +143,7 @@ float UECRHealthComponent::GetHealthNormalized() const
 	return 0.0f;
 }
 
-static AActor* GetInstigatorFromAttrChangeData(const FOnAttributeChangeData& ChangeData)
+AActor* UECRHealthComponent::GetInstigatorFromAttrChangeData(const FOnAttributeChangeData& ChangeData)
 {
 	if (ChangeData.GEModData != nullptr)
 	{
@@ -141,20 +151,23 @@ static AActor* GetInstigatorFromAttrChangeData(const FOnAttributeChangeData& Cha
 		return EffectContext.GetOriginalInstigator();
 	}
 
-    return nullptr;
+	return nullptr;
 }
 
 void UECRHealthComponent::HandleHealthChanged(const FOnAttributeChangeData& ChangeData)
 {
-	OnHealthChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue, GetInstigatorFromAttrChangeData(ChangeData));
+	OnHealthChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
+	                          GetInstigatorFromAttrChangeData(ChangeData));
 }
 
 void UECRHealthComponent::HandleMaxHealthChanged(const FOnAttributeChangeData& ChangeData)
 {
-	OnMaxHealthChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue, GetInstigatorFromAttrChangeData(ChangeData));
+	OnMaxHealthChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
+	                             GetInstigatorFromAttrChangeData(ChangeData));
 }
 
-void UECRHealthComponent::HandleOutOfHealth(AActor* DamageInstigator, AActor* DamageCauser, const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude)
+void UECRHealthComponent::HandleOutOfHealth(AActor* DamageInstigator, AActor* DamageCauser,
+                                            const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude)
 {
 #if WITH_SERVER_CODE
 	if (AbilitySystemComponent)
@@ -206,7 +219,9 @@ void UECRHealthComponent::OnRep_DeathState(EECRDeathState OldDeathState)
 	if (OldDeathState > NewDeathState)
 	{
 		// The server is trying to set us back but we've already predicted past the server state.
-		UE_LOG(LogECR, Warning, TEXT("ECRHealthComponent: Predicted past server death state [%d] -> [%d] for owner [%s]."), (uint8)OldDeathState, (uint8)NewDeathState, *GetNameSafe(GetOwner()));
+		UE_LOG(LogECR, Warning,
+		       TEXT("ECRHealthComponent: Predicted past server death state [%d] -> [%d] for owner [%s]."),
+		       (uint8)OldDeathState, (uint8)NewDeathState, *GetNameSafe(GetOwner()));
 		return;
 	}
 
@@ -223,7 +238,8 @@ void UECRHealthComponent::OnRep_DeathState(EECRDeathState OldDeathState)
 		}
 		else
 		{
-			UE_LOG(LogECR, Error, TEXT("ECRHealthComponent: Invalid death transition [%d] -> [%d] for owner [%s]."), (uint8)OldDeathState, (uint8)NewDeathState, *GetNameSafe(GetOwner()));
+			UE_LOG(LogECR, Error, TEXT("ECRHealthComponent: Invalid death transition [%d] -> [%d] for owner [%s]."),
+			       (uint8)OldDeathState, (uint8)NewDeathState, *GetNameSafe(GetOwner()));
 		}
 	}
 	else if (OldDeathState == EECRDeathState::DeathStarted)
@@ -234,11 +250,14 @@ void UECRHealthComponent::OnRep_DeathState(EECRDeathState OldDeathState)
 		}
 		else
 		{
-			UE_LOG(LogECR, Error, TEXT("ECRHealthComponent: Invalid death transition [%d] -> [%d] for owner [%s]."), (uint8)OldDeathState, (uint8)NewDeathState, *GetNameSafe(GetOwner()));
+			UE_LOG(LogECR, Error, TEXT("ECRHealthComponent: Invalid death transition [%d] -> [%d] for owner [%s]."),
+			       (uint8)OldDeathState, (uint8)NewDeathState, *GetNameSafe(GetOwner()));
 		}
 	}
 
-	ensureMsgf((DeathState == NewDeathState), TEXT("ECRHealthComponent: Death transition failed [%d] -> [%d] for owner [%s]."), (uint8)OldDeathState, (uint8)NewDeathState, *GetNameSafe(GetOwner()));
+	ensureMsgf((DeathState == NewDeathState),
+	           TEXT("ECRHealthComponent: Death transition failed [%d] -> [%d] for owner [%s]."), (uint8)OldDeathState,
+	           (uint8)NewDeathState, *GetNameSafe(GetOwner()));
 }
 
 void UECRHealthComponent::StartDeath()
@@ -289,19 +308,27 @@ void UECRHealthComponent::DamageSelfDestruct(bool bFellOutOfWorld)
 {
 	if ((DeathState == EECRDeathState::NotDead) && AbilitySystemComponent)
 	{
-		const TSubclassOf<UGameplayEffect> DamageGE = UECRAssetManager::GetSubclass(UECRGameData::Get().DamageGameplayEffect_SetByCaller);
+		const TSubclassOf<UGameplayEffect> DamageGE = UECRAssetManager::GetSubclass(
+			UECRGameData::Get().DamageGameplayEffect_SetByCaller);
 		if (!DamageGE)
 		{
-			UE_LOG(LogECR, Error, TEXT("ECRHealthComponent: DamageSelfDestruct failed for owner [%s]. Unable to find gameplay effect [%s]."), *GetNameSafe(GetOwner()), *UECRGameData::Get().DamageGameplayEffect_SetByCaller.GetAssetName());
+			UE_LOG(LogECR, Error,
+			       TEXT(
+				       "ECRHealthComponent: DamageSelfDestruct failed for owner [%s]. Unable to find gameplay effect [%s]."
+			       ), *GetNameSafe(GetOwner()), *UECRGameData::Get().DamageGameplayEffect_SetByCaller.GetAssetName());
 			return;
 		}
 
-		FGameplayEffectSpecHandle SpecHandle = AbilitySystemComponent->MakeOutgoingSpec(DamageGE, 1.0f, AbilitySystemComponent->MakeEffectContext());
+		FGameplayEffectSpecHandle SpecHandle = AbilitySystemComponent->MakeOutgoingSpec(
+			DamageGE, 1.0f, AbilitySystemComponent->MakeEffectContext());
 		FGameplayEffectSpec* Spec = SpecHandle.Data.Get();
 
 		if (!Spec)
 		{
-			UE_LOG(LogECR, Error, TEXT("ECRHealthComponent: DamageSelfDestruct failed for owner [%s]. Unable to make outgoing spec for [%s]."), *GetNameSafe(GetOwner()), *GetNameSafe(DamageGE));
+			UE_LOG(LogECR, Error,
+			       TEXT(
+				       "ECRHealthComponent: DamageSelfDestruct failed for owner [%s]. Unable to make outgoing spec for [%s]."
+			       ), *GetNameSafe(GetOwner()), *GetNameSafe(DamageGE));
 			return;
 		}
 

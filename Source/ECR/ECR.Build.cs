@@ -20,12 +20,14 @@ public class ECR : ModuleRules
 			"OnlineSubsystemUtils",
 			"ModularGameplay",
 			"ModularGameplayActors",
-			"SignificanceManager"
+			"SignificanceManager",
+			"Niagara"
 		});
 		
 		PrivateDependencyModuleNames.AddRange(new string[] {
 			"InputCore",
 			"Slate",
+			"SlateCore",
 			"NetCore",
 			"GameplayAbilities", 
 			"GameplayTags", 
@@ -36,7 +38,7 @@ public class ECR : ModuleRules
 			"CommonInput", 
 			"CommonGame",
 			"CommonUser",
-			"AudioMixer"
+			"AudioMixer", "Networking"
 		});
 	}
 }

@@ -173,7 +173,6 @@ void UECRDamageExecution::ApplyDamageToCharacter(const FGameplayEffectCustomExec
                                                  const FAggregatorEvaluateParameters EvaluateParameters,
                                                  const float AttenuatedDamage) const
 {
-	UE_LOG(LogTemp, Warning, TEXT("APplying damage to character"))
 	float CurrentHealth = 0.0f;
 	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().CharacterHealthDef, EvaluateParameters,
 	                                                           CurrentHealth);

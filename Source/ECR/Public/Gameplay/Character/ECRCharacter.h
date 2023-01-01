@@ -16,7 +16,7 @@ class AECRPlayerState;
 class UECRAbilitySystemComponent;
 class UAbilitySystemComponent;
 class UECRPawnExtensionComponent;
-class UECRHealthComponent;
+class UECRCharacterHealthComponent;
 class UECRCameraComponent;
 class UECRPawnData;
 class UECRAbilitySet;
@@ -134,7 +134,7 @@ private:
 	UECRPawnExtensionComponent* PawnExtComponent;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
-	UECRHealthComponent* HealthComponent;
+	UECRCharacterHealthComponent* HealthComponent;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
 	UECRCameraComponent* CameraComponent;

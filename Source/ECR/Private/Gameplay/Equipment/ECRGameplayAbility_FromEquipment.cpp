@@ -1,0 +1,46 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+#include "Gameplay/Equipment/ECRGameplayAbility_FromEquipment.h"
+#include "Gameplay/Equipment/ECREquipmentInstance.h"
+#include "Gameplay/Inventory/ECRInventoryItemInstance.h"
+
+UECRGameplayAbility_FromEquipment::UECRGameplayAbility_FromEquipment(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
+{
+}
+
+UECREquipmentInstance* UECRGameplayAbility_FromEquipment::GetAssociatedEquipment() const
+{
+	if (FGameplayAbilitySpec* Spec = UGameplayAbility::GetCurrentAbilitySpec())
+	{
+		return Cast<UECREquipmentInstance>(Spec->SourceObject);
+	}
+
+	return nullptr;
+}
+
+UECRInventoryItemInstance* UECRGameplayAbility_FromEquipment::GetAssociatedItem() const
+{
+	if (UECREquipmentInstance* Equipment = GetAssociatedEquipment())
+	{
+		return Cast<UECRInventoryItemInstance>(Equipment->GetInstigator());
+	}
+	return nullptr;
+}
+
+
+#if WITH_EDITOR
+EDataValidationResult UECRGameplayAbility_FromEquipment::IsDataValid(TArray<FText>& ValidationErrors)
+{
+	EDataValidationResult Result = Super::IsDataValid(ValidationErrors);
+
+	if (InstancingPolicy == EGameplayAbilityInstancingPolicy::NonInstanced)
+	{
+		ValidationErrors.Add(NSLOCTEXT("ECR", "EquipmentAbilityMustBeInstanced", "Equipment ability must be instanced"));
+		Result = EDataValidationResult::Invalid;
+	}
+
+	return Result;
+}
+
+#endif

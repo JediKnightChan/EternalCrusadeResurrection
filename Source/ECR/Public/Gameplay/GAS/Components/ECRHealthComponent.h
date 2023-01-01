@@ -14,7 +14,9 @@ struct FOnAttributeChangeData;
 
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FECRHealth_DeathEvent, AActor*, OwningActor);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FECRHealth_AttributeChanged, UECRHealthComponent*, HealthComponent, float, OldValue, float, NewValue, AActor*, Instigator);
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FECRHealth_AttributeChanged, UECRHealthComponent*, HealthComponent, float,
+                                              OldValue, float, NewValue, AActor*, Instigator);
 
 
 /**
@@ -42,20 +44,24 @@ class ECR_API UECRHealthComponent : public UGameFrameworkComponent
 	GENERATED_BODY()
 
 public:
-
 	UECRHealthComponent(const FObjectInitializer& ObjectInitializer);
+
+	static AActor* GetInstigatorFromAttrChangeData(const FOnAttributeChangeData& ChangeData);
 
 	// Returns the health component if one exists on the specified actor.
 	UFUNCTION(BlueprintPure, Category = "ECR|Health")
-	static UECRHealthComponent* FindHealthComponent(const AActor* Actor) { return (Actor ? Actor->FindComponentByClass<UECRHealthComponent>() : nullptr); }
+	static UECRHealthComponent* FindHealthComponent(const AActor* Actor)
+	{
+		return (Actor ? Actor->FindComponentByClass<UECRHealthComponent>() : nullptr);
+	}
 
 	// Initialize the component using an ability system component.
 	UFUNCTION(BlueprintCallable, Category = "ECR|Health")
-	void InitializeWithAbilitySystem(UECRAbilitySystemComponent* InASC);
+	virtual void InitializeWithAbilitySystem(UECRAbilitySystemComponent* InASC);
 
 	// Uninitialize the component, clearing any references to the ability system.
 	UFUNCTION(BlueprintCallable, Category = "ECR|Health")
-	void UninitializeFromAbilitySystem();
+	virtual void UninitializeFromAbilitySystem();
 
 	// Returns the current health value.
 	UFUNCTION(BlueprintCallable, Category = "ECR|Health")
@@ -72,7 +78,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "ECR|Health")
 	EECRDeathState GetDeathState() const { return DeathState; }
 
-	UFUNCTION(BlueprintCallable, BlueprintPure = false, Category = "ECR|Health", Meta = (ExpandBoolAsExecs = "ReturnValue"))
+	UFUNCTION(BlueprintCallable, BlueprintPure = false, Category = "ECR|Health",
+		Meta = (ExpandBoolAsExecs = "ReturnValue"))
 	bool IsDeadOrDying() const { return (DeathState > EECRDeathState::NotDead); }
 
 	// Begins the death sequence for the owner.
@@ -85,7 +92,6 @@ public:
 	virtual void DamageSelfDestruct(bool bFellOutOfWorld = false);
 
 public:
-
 	// Delegate fired when the health value has changed.
 	UPROPERTY(BlueprintAssignable)
 	FECRHealth_AttributeChanged OnHealthChanged;
@@ -103,20 +109,19 @@ public:
 	FECRHealth_DeathEvent OnDeathFinished;
 
 protected:
-
 	virtual void OnUnregister() override;
 
 	void ClearGameplayTags();
 
 	virtual void HandleHealthChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleMaxHealthChanged(const FOnAttributeChangeData& ChangeData);
-	virtual void HandleOutOfHealth(AActor* DamageInstigator, AActor* DamageCauser, const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude);
+	virtual void HandleOutOfHealth(AActor* DamageInstigator, AActor* DamageCauser,
+	                               const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude);
 
 	UFUNCTION()
 	virtual void OnRep_DeathState(EECRDeathState OldDeathState);
 
 protected:
-
 	// Ability system used by this component.
 	UPROPERTY()
 	UECRAbilitySystemComponent* AbilitySystemComponent;
