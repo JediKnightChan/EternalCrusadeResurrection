@@ -36,7 +36,7 @@ struct FECRServerSideHitMarkerBatch
 };
 
 // Tracks weapon state and recent confirmed hit markers to display on screen
-UCLASS()
+UCLASS(BlueprintType, Meta=(BlueprintSpawnableComponent))
 class UECRWeaponStateComponent : public UControllerComponent
 {
 	GENERATED_BODY()

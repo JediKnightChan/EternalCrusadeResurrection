@@ -105,7 +105,7 @@ struct TStructOpsTypeTraits<FECREquipmentList> : public TStructOpsTypeTraitsBase
 /**
  * Manages equipment applied to a pawn
  */
-UCLASS(BlueprintType, Const)
+UCLASS(BlueprintType, Const, Meta=(BlueprintSpawnableComponent))
 class UECREquipmentManagerComponent : public UPawnComponent
 {
 	GENERATED_BODY()

@@ -118,7 +118,7 @@ struct TStructOpsTypeTraits<FECRInventoryList> : public TStructOpsTypeTraitsBase
 /**
  * Manages an inventory
  */
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, Meta=(BlueprintSpawnableComponent))
 class UECRInventoryManagerComponent : public UActorComponent
 {
 	GENERATED_BODY()
