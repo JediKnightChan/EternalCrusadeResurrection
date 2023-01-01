@@ -2,14 +2,16 @@
 
 
 #include "Gameplay/GAS/Attributes/ECRHealthSet.h"
-
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
+#include "System/Messages/ECRVerbMessage.h"
+#include "GameFramework/GameplayMessageSubsystem.h"
 
 UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_Damage, "Gameplay.Damage");
 UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_DamageImmunity, "Gameplay.DamageImmunity");
 UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_DamageSelfDestruct, "Gameplay.Damage.Reason.SelfDestruct");
 UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_FellOutOfWorld, "Gameplay.Damage.Reason.FellOutOfWorld");
+UE_DEFINE_GAMEPLAY_TAG(TAG_ECR_Damage_Message, "ECR.Damage.Message");
 
 
 UECRHealthSet::UECRHealthSet()
@@ -53,6 +55,23 @@ void UECRHealthSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackDa
 
 	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
 	{
+		// Send a standardized verb message that other systems can observe
+		if (Data.EvaluatedData.Magnitude < 0.0f)
+		{
+			FECRVerbMessage Message;
+			Message.Verb = TAG_ECR_Damage_Message;
+			Message.Instigator = Data.EffectSpec.GetEffectContext().GetEffectCauser();
+			Message.InstigatorTags = *Data.EffectSpec.CapturedSourceTags.GetAggregatedTags();
+			Message.Target = GetOwningActor();
+			Message.TargetTags = *Data.EffectSpec.CapturedTargetTags.GetAggregatedTags();
+			//@TODO: Fill out context tags, and any non-ability-system source/instigator tags
+			//@TODO: Determine if it's an opposing team kill, self-own, team kill, etc...
+			Message.Magnitude = Data.EvaluatedData.Magnitude;
+
+			UGameplayMessageSubsystem& MessageSystem = UGameplayMessageSubsystem::Get(GetWorld());
+			MessageSystem.BroadcastMessage(Message.Verb, Message);
+		}
+
 		if ((GetHealth() <= 0.0f) && !bOutOfHealth)
 		{
 			if (OnOutOfHealth.IsBound())
@@ -95,7 +114,7 @@ void UECRHealthSet::PreAttributeChange(const FGameplayAttribute& Attribute, floa
 void UECRHealthSet::PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue)
 {
 	Super::PostAttributeChange(Attribute, OldValue, NewValue);
-	
+
 	// Make sure current health is not greater than the new max health.
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxHealthAttribute(),
 	                                 GetHealthAttribute(), GetHealth());
