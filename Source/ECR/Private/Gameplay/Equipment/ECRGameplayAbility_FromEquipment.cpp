@@ -9,20 +9,23 @@ UECRGameplayAbility_FromEquipment::UECRGameplayAbility_FromEquipment(const FObje
 {
 }
 
-UECREquipmentInstance* UECRGameplayAbility_FromEquipment::GetAssociatedEquipment() const
+UECREquipmentInstance* UECRGameplayAbility_FromEquipment::GetAssociatedEquipment(UObject* SourceObject) const
 {
-	UE_LOG(LogTemp, Warning, TEXT("Eq ability policy is %i"), static_cast<int>(InstancingPolicy))
+	if (SourceObject)
+	{
+		return Cast<UECREquipmentInstance>(SourceObject);
+	}
 	if (FGameplayAbilitySpec* Spec = GetCurrentAbilitySpec())
 	{
 		return Cast<UECREquipmentInstance>(Spec->SourceObject);
 	}
-
 	return nullptr;
 }
 
-UECRInventoryItemInstance* UECRGameplayAbility_FromEquipment::GetAssociatedItem() const
+UECRInventoryItemInstance* UECRGameplayAbility_FromEquipment::GetAssociatedItem(UObject* SourceObject) const
 {
-	if (UECREquipmentInstance* Equipment = GetAssociatedEquipment())
+	UE_LOG(LogTemp, Warning, TEXT("GAI called"));
+	if (UECREquipmentInstance* Equipment = GetAssociatedEquipment(SourceObject))
 	{
 		return Cast<UECRInventoryItemInstance>(Equipment->GetInstigator());
 	}
@@ -37,7 +40,8 @@ EDataValidationResult UECRGameplayAbility_FromEquipment::IsDataValid(TArray<FTex
 
 	if (InstancingPolicy == EGameplayAbilityInstancingPolicy::NonInstanced)
 	{
-		ValidationErrors.Add(NSLOCTEXT("ECR", "EquipmentAbilityMustBeInstanced", "Equipment ability must be instanced"));
+		ValidationErrors.Add(NSLOCTEXT("ECR", "EquipmentAbilityMustBeInstanced",
+		                               "Equipment ability must be instanced"));
 		Result = EDataValidationResult::Invalid;
 	}
 

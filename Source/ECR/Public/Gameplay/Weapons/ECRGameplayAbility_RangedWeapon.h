@@ -45,7 +45,7 @@ public:
 	UECRGameplayAbility_RangedWeapon(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
 	UFUNCTION(BlueprintCallable, Category="ECR|Ability")
-	UECRRangedWeaponInstance* GetWeaponInstance() const;
+	UECRRangedWeaponInstance* GetWeaponInstance(UObject* SourceObject = nullptr) const;
 
 	//~UGameplayAbility interface
 	virtual bool CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayTagContainer* SourceTags = nullptr, const FGameplayTagContainer* TargetTags = nullptr, OUT FGameplayTagContainer* OptionalRelevantTags = nullptr) const override;

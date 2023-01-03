@@ -35,7 +35,8 @@ namespace ECRConsoleVariables
 	static FAutoConsoleVariableRef CVarDrawBulletHitRadius(
 		TEXT("ECR.Weapon.DrawBulletHitRadius"),
 		DrawBulletHitRadius,
-		TEXT("When bullet hit debug drawing is enabled (see DrawBulletHitDuration), how big should the hit radius be? (in uu)"),
+		TEXT(
+			"When bullet hit debug drawing is enabled (see DrawBulletHitDuration), how big should the hit radius be? (in uu)"),
 		ECVF_Default);
 }
 
@@ -78,23 +79,33 @@ UECRGameplayAbility_RangedWeapon::UECRGameplayAbility_RangedWeapon(const FObject
 	SourceBlockedTags.AddTag(TAG_WeaponFireBlocked);
 }
 
-UECRRangedWeaponInstance* UECRGameplayAbility_RangedWeapon::GetWeaponInstance() const
+UECRRangedWeaponInstance* UECRGameplayAbility_RangedWeapon::GetWeaponInstance(UObject* SourceObject) const
 {
-	return Cast<UECRRangedWeaponInstance>(GetAssociatedEquipment());
+	UE_LOG(LogTemp, Warning, TEXT("GWI called"))
+	return Cast<UECRRangedWeaponInstance>(GetAssociatedEquipment(SourceObject));
 }
 
-bool UECRGameplayAbility_RangedWeapon::CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags, FGameplayTagContainer* OptionalRelevantTags) const
+bool UECRGameplayAbility_RangedWeapon::CanActivateAbility(const FGameplayAbilitySpecHandle Handle,
+                                                          const FGameplayAbilityActorInfo* ActorInfo,
+                                                          const FGameplayTagContainer* SourceTags,
+                                                          const FGameplayTagContainer* TargetTags,
+                                                          FGameplayTagContainer* OptionalRelevantTags) const
 {
 	bool bResult = Super::CanActivateAbility(Handle, ActorInfo, SourceTags, TargetTags, OptionalRelevantTags);
 
+	UE_LOG(LogTemp, Warning, TEXT("Can activated called"))
 	if (bResult)
 	{
-		if (GetWeaponInstance() == nullptr)
+		FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->FindAbilitySpecFromHandle(Handle);
+		if (GetWeaponInstance(AbilitySpec->SourceObject) == nullptr)
 		{
-			UE_LOG(LogECRAbilitySystem, Error, TEXT("Weapon ability %s cannot be activated because there is no associated ranged weapon (equipment instance=%s but needs to be derived from %s)"),
-				*GetPathName(),
-				*GetPathNameSafe(GetAssociatedEquipment()),
-				*UECRRangedWeaponInstance::StaticClass()->GetName());
+			UE_LOG(LogECRAbilitySystem, Error,
+			       TEXT(
+				       "Weapon ability %s cannot be activated because there is no associated ranged weapon (equipment instance=%s but needs to be derived from %s)"
+			       ),
+			       *GetPathName(),
+			       *GetPathNameSafe(GetAssociatedEquipment()),
+			       *UECRRangedWeaponInstance::StaticClass()->GetName());
 			bResult = false;
 		}
 	}
@@ -115,7 +126,8 @@ int32 UECRGameplayAbility_RangedWeapon::FindFirstPawnHitResult(const TArray<FHit
 		else
 		{
 			AActor* HitActor = CurHitResult.HitObjectHandle.FetchActor();
-			if ((HitActor != nullptr) && (HitActor->GetAttachParentActor() != nullptr) && (Cast<APawn>(HitActor->GetAttachParentActor()) != nullptr))
+			if ((HitActor != nullptr) && (HitActor->GetAttachParentActor() != nullptr) && (Cast<APawn>(
+				HitActor->GetAttachParentActor()) != nullptr))
 			{
 				// If we hit something attached to a pawn, we're good
 				return Idx;
@@ -137,16 +149,20 @@ void UECRGameplayAbility_RangedWeapon::AddAdditionalTraceIgnoreActors(FCollision
 	}
 }
 
-ECollisionChannel UECRGameplayAbility_RangedWeapon::DetermineTraceChannel(FCollisionQueryParams& TraceParams, bool bIsSimulated) const
+ECollisionChannel UECRGameplayAbility_RangedWeapon::DetermineTraceChannel(
+	FCollisionQueryParams& TraceParams, bool bIsSimulated) const
 {
 	return ECR_TraceChannel_Weapon;
 }
 
-FHitResult UECRGameplayAbility_RangedWeapon::WeaponTrace(const FVector& StartTrace, const FVector& EndTrace, float SweepRadius, bool bIsSimulated, OUT TArray<FHitResult>& OutHitResults) const
+FHitResult UECRGameplayAbility_RangedWeapon::WeaponTrace(const FVector& StartTrace, const FVector& EndTrace,
+                                                         float SweepRadius, bool bIsSimulated,
+                                                         OUT TArray<FHitResult>& OutHitResults) const
 {
 	TArray<FHitResult> HitResults;
-	
-	FCollisionQueryParams TraceParams(SCENE_QUERY_STAT(WeaponTrace), /*bTraceComplex=*/ true, /*IgnoreActor=*/ GetAvatarActorFromActorInfo());
+
+	FCollisionQueryParams TraceParams(SCENE_QUERY_STAT(WeaponTrace), /*bTraceComplex=*/ true, /*IgnoreActor=*/
+	                                  GetAvatarActorFromActorInfo());
 	TraceParams.bReturnPhysicalMaterial = true;
 	AddAdditionalTraceIgnoreActors(TraceParams);
 	//TraceParams.bDebugQuery = true;
@@ -155,7 +171,8 @@ FHitResult UECRGameplayAbility_RangedWeapon::WeaponTrace(const FVector& StartTra
 
 	if (SweepRadius > 0.0f)
 	{
-		GetWorld()->SweepMultiByChannel(HitResults, StartTrace, EndTrace, FQuat::Identity, TraceChannel, FCollisionShape::MakeSphere(SweepRadius), TraceParams);
+		GetWorld()->SweepMultiByChannel(HitResults, StartTrace, EndTrace, FQuat::Identity, TraceChannel,
+		                                FCollisionShape::MakeSphere(SweepRadius), TraceParams);
 	}
 	else
 	{
@@ -208,11 +225,15 @@ FVector UECRGameplayAbility_RangedWeapon::GetWeaponTargetingSourceLocation() con
 	return TargetingSourceLocation;
 }
 
-FTransform UECRGameplayAbility_RangedWeapon::GetTargetingTransform(APawn* SourcePawn, EECRAbilityTargetingSource Source) const
+FTransform UECRGameplayAbility_RangedWeapon::GetTargetingTransform(APawn* SourcePawn,
+                                                                   EECRAbilityTargetingSource Source) const
 {
 	check(SourcePawn);
-	AController* SourcePawnController = SourcePawn->GetController(); 
-	UECRWeaponStateComponent* WeaponStateComponent = (SourcePawnController != nullptr) ? SourcePawnController->FindComponentByClass<UECRWeaponStateComponent>() : nullptr;
+	AController* SourcePawnController = SourcePawn->GetController();
+	UECRWeaponStateComponent* WeaponStateComponent = (SourcePawnController != nullptr)
+		                                                 ? SourcePawnController->FindComponentByClass<
+			                                                 UECRWeaponStateComponent>()
+		                                                 : nullptr;
 
 	// The caller should determine the transform without calling this if the mode is custom!
 	check(Source != EECRAbilityTargetingSource::Custom);
@@ -230,7 +251,8 @@ FTransform UECRGameplayAbility_RangedWeapon::GetTargetingTransform(APawn* Source
 	bool bFoundFocus = false;
 
 
-	if ((Controller != nullptr) && ((Source == EECRAbilityTargetingSource::CameraTowardsFocus) || (Source == EECRAbilityTargetingSource::PawnTowardsFocus) || (Source == EECRAbilityTargetingSource::WeaponTowardsFocus)))
+	if ((Controller != nullptr) && ((Source == EECRAbilityTargetingSource::CameraTowardsFocus) || (Source ==
+		EECRAbilityTargetingSource::PawnTowardsFocus) || (Source == EECRAbilityTargetingSource::WeaponTowardsFocus)))
 	{
 		// Get camera position for later
 		bFoundFocus = true;
@@ -271,7 +293,8 @@ FTransform UECRGameplayAbility_RangedWeapon::GetTargetingTransform(APawn* Source
 		}
 	}
 
-	if ((Source == EECRAbilityTargetingSource::WeaponForward) || (Source == EECRAbilityTargetingSource::WeaponTowardsFocus))
+	if ((Source == EECRAbilityTargetingSource::WeaponForward) || (Source ==
+		EECRAbilityTargetingSource::WeaponTowardsFocus))
 	{
 		SourceLoc = GetWeaponTargetingSourceLocation();
 	}
@@ -281,7 +304,8 @@ FTransform UECRGameplayAbility_RangedWeapon::GetTargetingTransform(APawn* Source
 		SourceLoc = ActorLoc;
 	}
 
-	if (bFoundFocus && ((Source == EECRAbilityTargetingSource::PawnTowardsFocus) || (Source == EECRAbilityTargetingSource::WeaponTowardsFocus)))
+	if (bFoundFocus && ((Source == EECRAbilityTargetingSource::PawnTowardsFocus) || (Source ==
+		EECRAbilityTargetingSource::WeaponTowardsFocus)))
 	{
 		// Return a rotator pointing at the focal point from the source
 		return FTransform((FocalLoc - SourceLoc).Rotation(), SourceLoc);
@@ -291,13 +315,16 @@ FTransform UECRGameplayAbility_RangedWeapon::GetTargetingTransform(APawn* Source
 	return FTransform(AimQuat, SourceLoc);
 }
 
-FHitResult UECRGameplayAbility_RangedWeapon::DoSingleBulletTrace(const FVector& StartTrace, const FVector& EndTrace, float SweepRadius, bool bIsSimulated, OUT TArray<FHitResult>& OutHits) const
+FHitResult UECRGameplayAbility_RangedWeapon::DoSingleBulletTrace(const FVector& StartTrace, const FVector& EndTrace,
+                                                                 float SweepRadius, bool bIsSimulated,
+                                                                 OUT TArray<FHitResult>& OutHits) const
 {
 #if ENABLE_DRAW_DEBUG
 	if (ECRConsoleVariables::DrawBulletTracesDuration > 0.0f)
 	{
 		static float DebugThickness = 1.0f;
-		DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Red, false, ECRConsoleVariables::DrawBulletTracesDuration, 0, DebugThickness);
+		DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Red, false,
+		              ECRConsoleVariables::DrawBulletTracesDuration, 0, DebugThickness);
 	}
 #endif // ENABLE_DRAW_DEBUG
 
@@ -363,7 +390,8 @@ void UECRGameplayAbility_RangedWeapon::PerformLocalTargeting(OUT TArray<FHitResu
 		InputData.bCanPlayBulletFX = (AvatarPawn->GetNetMode() != NM_DedicatedServer);
 
 		//@TODO: Should do more complicated logic here when the player is close to a wall, etc...
-		const FTransform TargetTransform = GetTargetingTransform(AvatarPawn, EECRAbilityTargetingSource::CameraTowardsFocus);
+		const FTransform TargetTransform = GetTargetingTransform(
+			AvatarPawn, EECRAbilityTargetingSource::CameraTowardsFocus);
 		InputData.AimDir = TargetTransform.GetUnitAxis(EAxis::X);
 		InputData.StartTrace = TargetTransform.GetTranslation();
 
@@ -373,7 +401,8 @@ void UECRGameplayAbility_RangedWeapon::PerformLocalTargeting(OUT TArray<FHitResu
 		if (ECRConsoleVariables::DrawBulletTracesDuration > 0.0f)
 		{
 			static float DebugThickness = 2.0f;
-			DrawDebugLine(GetWorld(), InputData.StartTrace, InputData.StartTrace + (InputData.AimDir * 100.0f), FColor::Yellow, false, ECRConsoleVariables::DrawBulletTracesDuration, 0, DebugThickness);
+			DrawDebugLine(GetWorld(), InputData.StartTrace, InputData.StartTrace + (InputData.AimDir * 100.0f),
+			              FColor::Yellow, false, ECRConsoleVariables::DrawBulletTracesDuration, 0, DebugThickness);
 		}
 #endif
 
@@ -381,7 +410,8 @@ void UECRGameplayAbility_RangedWeapon::PerformLocalTargeting(OUT TArray<FHitResu
 	}
 }
 
-void UECRGameplayAbility_RangedWeapon::TraceBulletsInCartridge(const FRangedWeaponFiringInput& InputData, OUT TArray<FHitResult>& OutHits)
+void UECRGameplayAbility_RangedWeapon::TraceBulletsInCartridge(const FRangedWeaponFiringInput& InputData,
+                                                               OUT TArray<FHitResult>& OutHits)
 {
 	UECRRangedWeaponInstance* WeaponData = InputData.WeaponData;
 	check(WeaponData);
@@ -396,14 +426,16 @@ void UECRGameplayAbility_RangedWeapon::TraceBulletsInCartridge(const FRangedWeap
 
 		const float HalfSpreadAngleInRadians = FMath::DegreesToRadians(ActualSpreadAngle * 0.5f);
 
-		const FVector BulletDir = VRandConeNormalDistribution(InputData.AimDir, HalfSpreadAngleInRadians, WeaponData->GetSpreadExponent());
+		const FVector BulletDir = VRandConeNormalDistribution(InputData.AimDir, HalfSpreadAngleInRadians,
+		                                                      WeaponData->GetSpreadExponent());
 
 		const FVector EndTrace = InputData.StartTrace + (BulletDir * WeaponData->GetMaxDamageRange());
 		FVector HitLocation = EndTrace;
 
 		TArray<FHitResult> AllImpacts;
 
-		FHitResult Impact = DoSingleBulletTrace(InputData.StartTrace, EndTrace, WeaponData->GetBulletTraceSweepRadius(), /*bIsSimulated=*/ false, /*out*/ AllImpacts);
+		FHitResult Impact = DoSingleBulletTrace(InputData.StartTrace, EndTrace, WeaponData->GetBulletTraceSweepRadius(),
+		                                        /*bIsSimulated=*/ false, /*out*/ AllImpacts);
 
 		const AActor* HitActor = Impact.GetActor();
 
@@ -412,7 +444,8 @@ void UECRGameplayAbility_RangedWeapon::TraceBulletsInCartridge(const FRangedWeap
 #if ENABLE_DRAW_DEBUG
 			if (ECRConsoleVariables::DrawBulletHitDuration > 0.0f)
 			{
-				DrawDebugPoint(GetWorld(), Impact.ImpactPoint, ECRConsoleVariables::DrawBulletHitRadius, FColor::Red, false, ECRConsoleVariables::DrawBulletHitRadius);
+				DrawDebugPoint(GetWorld(), Impact.ImpactPoint, ECRConsoleVariables::DrawBulletHitRadius, FColor::Red,
+				               false, ECRConsoleVariables::DrawBulletHitRadius);
 			}
 #endif
 
@@ -439,13 +472,18 @@ void UECRGameplayAbility_RangedWeapon::TraceBulletsInCartridge(const FRangedWeap
 	}
 }
 
-void UECRGameplayAbility_RangedWeapon::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
+void UECRGameplayAbility_RangedWeapon::ActivateAbility(const FGameplayAbilitySpecHandle Handle,
+                                                       const FGameplayAbilityActorInfo* ActorInfo,
+                                                       const FGameplayAbilityActivationInfo ActivationInfo,
+                                                       const FGameplayEventData* TriggerEventData)
 {
 	// Bind target data callback
 	UAbilitySystemComponent* MyAbilityComponent = CurrentActorInfo->AbilitySystemComponent.Get();
 	check(MyAbilityComponent);
 
-	OnTargetDataReadyCallbackDelegateHandle = MyAbilityComponent->AbilityTargetDataSetDelegate(CurrentSpecHandle, CurrentActivationInfo.GetActivationPredictionKey()).AddUObject(this, &ThisClass::OnTargetDataReadyCallback);
+	OnTargetDataReadyCallbackDelegateHandle = MyAbilityComponent->AbilityTargetDataSetDelegate(
+		CurrentSpecHandle, CurrentActivationInfo.GetActivationPredictionKey()).AddUObject(
+		this, &ThisClass::OnTargetDataReadyCallback);
 
 	// Update the last firing time
 	UECRRangedWeaponInstance* WeaponData = GetWeaponInstance();
@@ -455,13 +493,17 @@ void UECRGameplayAbility_RangedWeapon::ActivateAbility(const FGameplayAbilitySpe
 	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 }
 
-void UECRGameplayAbility_RangedWeapon::EndAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateEndAbility, bool bWasCancelled)
+void UECRGameplayAbility_RangedWeapon::EndAbility(const FGameplayAbilitySpecHandle Handle,
+                                                  const FGameplayAbilityActorInfo* ActorInfo,
+                                                  const FGameplayAbilityActivationInfo ActivationInfo,
+                                                  bool bReplicateEndAbility, bool bWasCancelled)
 {
 	if (IsEndAbilityValid(Handle, ActorInfo))
 	{
 		if (ScopeLockCount > 0)
 		{
-			WaitingToExecute.Add(FPostLockDelegate::CreateUObject(this, &ThisClass::EndAbility, Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled));
+			WaitingToExecute.Add(FPostLockDelegate::CreateUObject(this, &ThisClass::EndAbility, Handle, ActorInfo,
+			                                                      ActivationInfo, bReplicateEndAbility, bWasCancelled));
 			return;
 		}
 
@@ -469,29 +511,37 @@ void UECRGameplayAbility_RangedWeapon::EndAbility(const FGameplayAbilitySpecHand
 		check(MyAbilityComponent);
 
 		// When ability ends, consume target data and remove delegate
-		MyAbilityComponent->AbilityTargetDataSetDelegate(CurrentSpecHandle, CurrentActivationInfo.GetActivationPredictionKey()).Remove(OnTargetDataReadyCallbackDelegateHandle);
-		MyAbilityComponent->ConsumeClientReplicatedTargetData(CurrentSpecHandle, CurrentActivationInfo.GetActivationPredictionKey());
+		MyAbilityComponent->AbilityTargetDataSetDelegate(CurrentSpecHandle,
+		                                                 CurrentActivationInfo.GetActivationPredictionKey()).Remove(
+			OnTargetDataReadyCallbackDelegateHandle);
+		MyAbilityComponent->ConsumeClientReplicatedTargetData(CurrentSpecHandle,
+		                                                      CurrentActivationInfo.GetActivationPredictionKey());
 
 		Super::EndAbility(Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled);
 	}
 }
 
-void UECRGameplayAbility_RangedWeapon::OnTargetDataReadyCallback(const FGameplayAbilityTargetDataHandle& InData, FGameplayTag ApplicationTag)
+void UECRGameplayAbility_RangedWeapon::OnTargetDataReadyCallback(const FGameplayAbilityTargetDataHandle& InData,
+                                                                 FGameplayTag ApplicationTag)
 {
 	UAbilitySystemComponent* MyAbilityComponent = CurrentActorInfo->AbilitySystemComponent.Get();
 	check(MyAbilityComponent);
 
 	if (const FGameplayAbilitySpec* AbilitySpec = MyAbilityComponent->FindAbilitySpecFromHandle(CurrentSpecHandle))
 	{
-		FScopedPredictionWindow	ScopedPrediction(MyAbilityComponent);
+		FScopedPredictionWindow ScopedPrediction(MyAbilityComponent);
 
 		// Take ownership of the target data to make sure no callbacks into game code invalidate it out from under us
-		FGameplayAbilityTargetDataHandle LocalTargetDataHandle(MoveTemp(const_cast<FGameplayAbilityTargetDataHandle&>(InData)));
+		FGameplayAbilityTargetDataHandle LocalTargetDataHandle(
+			MoveTemp(const_cast<FGameplayAbilityTargetDataHandle&>(InData)));
 
 		const bool bShouldNotifyServer = CurrentActorInfo->IsLocallyControlled() && !CurrentActorInfo->IsNetAuthority();
 		if (bShouldNotifyServer)
 		{
-			MyAbilityComponent->CallServerSetReplicatedTargetData(CurrentSpecHandle, CurrentActivationInfo.GetActivationPredictionKey(), LocalTargetDataHandle, ApplicationTag, MyAbilityComponent->ScopedPredictionKey);
+			MyAbilityComponent->CallServerSetReplicatedTargetData(CurrentSpecHandle,
+			                                                      CurrentActivationInfo.GetActivationPredictionKey(),
+			                                                      LocalTargetDataHandle, ApplicationTag,
+			                                                      MyAbilityComponent->ScopedPredictionKey);
 		}
 
 		const bool bIsTargetDataValid = true;
@@ -506,12 +556,14 @@ void UECRGameplayAbility_RangedWeapon::OnTargetDataReadyCallback(const FGameplay
 				if (Controller->GetLocalRole() == ROLE_Authority)
 				{
 					// Confirm hit markers
-					if (UECRWeaponStateComponent* WeaponStateComponent = Controller->FindComponentByClass<UECRWeaponStateComponent>())
+					if (UECRWeaponStateComponent* WeaponStateComponent = Controller->FindComponentByClass<
+						UECRWeaponStateComponent>())
 					{
 						TArray<uint8> HitReplaces;
 						for (uint8 i = 0; (i < LocalTargetDataHandle.Num()) && (i < 255); ++i)
 						{
-							if (FGameplayAbilityTargetData_SingleTargetHit* SingleTargetHit = static_cast<FGameplayAbilityTargetData_SingleTargetHit*>(LocalTargetDataHandle.Get(i)))
+							if (FGameplayAbilityTargetData_SingleTargetHit* SingleTargetHit = static_cast<
+								FGameplayAbilityTargetData_SingleTargetHit*>(LocalTargetDataHandle.Get(i)))
 							{
 								if (SingleTargetHit->bHitReplaced)
 								{
@@ -520,9 +572,9 @@ void UECRGameplayAbility_RangedWeapon::OnTargetDataReadyCallback(const FGameplay
 							}
 						}
 
-						WeaponStateComponent->ClientConfirmTargetData(LocalTargetDataHandle.UniqueId, bIsTargetDataValid, HitReplaces);
+						WeaponStateComponent->ClientConfirmTargetData(LocalTargetDataHandle.UniqueId,
+						                                              bIsTargetDataValid, HitReplaces);
 					}
-
 				}
 			}
 		}
@@ -542,13 +594,15 @@ void UECRGameplayAbility_RangedWeapon::OnTargetDataReadyCallback(const FGameplay
 		}
 		else
 		{
-			UE_LOG(LogECRAbilitySystem, Warning, TEXT("Weapon ability %s failed to commit (bIsTargetDataValid=%d)"), *GetPathName(), bIsTargetDataValid ? 1 : 0);
+			UE_LOG(LogECRAbilitySystem, Warning, TEXT("Weapon ability %s failed to commit (bIsTargetDataValid=%d)"),
+			       *GetPathName(), bIsTargetDataValid ? 1 : 0);
 			K2_EndAbility();
 		}
 	}
 
 	// We've processed the data
-	MyAbilityComponent->ConsumeClientReplicatedTargetData(CurrentSpecHandle, CurrentActivationInfo.GetActivationPredictionKey());
+	MyAbilityComponent->ConsumeClientReplicatedTargetData(CurrentSpecHandle,
+	                                                      CurrentActivationInfo.GetActivationPredictionKey());
 }
 
 void UECRGameplayAbility_RangedWeapon::StartRangedWeaponTargeting()
@@ -580,7 +634,8 @@ void UECRGameplayAbility_RangedWeapon::StartRangedWeaponTargeting()
 
 		for (const FHitResult& FoundHit : FoundHits)
 		{
-			FECRGameplayAbilityTargetData_SingleTargetHit* NewTargetData = new FECRGameplayAbilityTargetData_SingleTargetHit();
+			FECRGameplayAbilityTargetData_SingleTargetHit* NewTargetData = new
+				FECRGameplayAbilityTargetData_SingleTargetHit();
 			NewTargetData->HitResult = FoundHit;
 			NewTargetData->CartridgeID = CartridgeID;
 

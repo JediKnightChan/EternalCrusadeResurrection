@@ -24,10 +24,10 @@ public:
 	UECRGameplayAbility_FromEquipment(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
 	UFUNCTION(BlueprintCallable, Category="ECR|Ability")
-	UECREquipmentInstance* GetAssociatedEquipment() const;
+	UECREquipmentInstance* GetAssociatedEquipment(UObject* SourceObject = nullptr) const;
 
 	UFUNCTION(BlueprintCallable, Category = "ECR|Ability")
-	UECRInventoryItemInstance* GetAssociatedItem() const;
+	UECRInventoryItemInstance* GetAssociatedItem(UObject* SourceObject = nullptr) const;
 
 #if WITH_EDITOR
 	virtual EDataValidationResult IsDataValid(TArray<FText>& ValidationErrors) override;

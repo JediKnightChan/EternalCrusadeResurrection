@@ -1,6 +1,8 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "Gameplay/GAS/Abilities/ECRAbilityCost_ItemTagStack.h"
+
+#include "AbilitySystemComponent.h"
 #include "Gameplay/Equipment/ECREquipmentInstance.h"
 #include "Gameplay/Inventory/ECRInventoryItemInstance.h"
 #include "Gameplay/Equipment/ECRGameplayAbility_FromEquipment.h"
@@ -16,9 +18,11 @@ UECRAbilityCost_ItemTagStack::UECRAbilityCost_ItemTagStack()
 
 bool UECRAbilityCost_ItemTagStack::CheckCost(const UECRGameplayAbility* Ability, const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, FGameplayTagContainer* OptionalRelevantTags) const
 {
+	UE_LOG(LogTemp, Warning, TEXT("CC caled"))
 	if (const UECRGameplayAbility_FromEquipment* EquipmentAbility = Cast<const UECRGameplayAbility_FromEquipment>(Ability))
 	{
-		if (UECRInventoryItemInstance* ItemInstance = EquipmentAbility->GetAssociatedItem())
+		const FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->FindAbilitySpecFromHandle(Handle);
+		if (const UECRInventoryItemInstance* ItemInstance = EquipmentAbility->GetAssociatedItem(AbilitySpec->SourceObject))
 		{
 			const int32 AbilityLevel = Ability->GetAbilityLevel(Handle, ActorInfo);
 
