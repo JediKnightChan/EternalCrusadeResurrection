@@ -11,7 +11,8 @@ UECRGameplayAbility_FromEquipment::UECRGameplayAbility_FromEquipment(const FObje
 
 UECREquipmentInstance* UECRGameplayAbility_FromEquipment::GetAssociatedEquipment() const
 {
-	if (FGameplayAbilitySpec* Spec = UGameplayAbility::GetCurrentAbilitySpec())
+	UE_LOG(LogTemp, Warning, TEXT("Eq ability policy is %i"), static_cast<int>(InstancingPolicy))
+	if (FGameplayAbilitySpec* Spec = GetCurrentAbilitySpec())
 	{
 		return Cast<UECREquipmentInstance>(Spec->SourceObject);
 	}

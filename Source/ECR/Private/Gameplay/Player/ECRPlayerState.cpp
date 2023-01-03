@@ -27,6 +27,16 @@ AECRPlayerState::AECRPlayerState(const FObjectInitializer& ObjectInitializer)
 }
 
 
+void AECRPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	// FDoRepLifetimeParams SharedParams;
+	// SharedParams.bIsPushBased = true;
+
+	DOREPLIFETIME(ThisClass, StatTags);
+}
+
 void AECRPlayerState::PreInitializeComponents()
 {
 	Super::PreInitializeComponents();
@@ -45,6 +55,21 @@ void AECRPlayerState::ClientInitialize(AController* C)
 	{
 		PawnExtComp->CheckPawnReadyToInitialize();
 	}
+}
+
+void AECRPlayerState::AddStatTagStack(FGameplayTag Tag, int32 StackCount)
+{
+	StatTags.AddStack(Tag, StackCount);
+}
+
+void AECRPlayerState::RemoveStatTagStack(FGameplayTag Tag, int32 StackCount)
+{
+	StatTags.RemoveStack(Tag, StackCount);
+}
+
+int32 AECRPlayerState::GetStatTagStackCount(FGameplayTag Tag) const
+{
+	return StatTags.GetStackCount(Tag);
 }
 
 UAbilitySystemComponent* AECRPlayerState::GetAbilitySystemComponent() const
