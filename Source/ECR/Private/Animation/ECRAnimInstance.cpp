@@ -53,7 +53,17 @@ void UECRAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 		return;
 	}
 
-	UECRCharacterMovementComponent* CharMoveComp = CastChecked<UECRCharacterMovementComponent>(Character->GetCharacterMovement());
+	UECRCharacterMovementComponent* CharMoveComp = CastChecked<UECRCharacterMovementComponent>(
+		Character->GetCharacterMovement());
 	const FECRCharacterGroundInfo& GroundInfo = CharMoveComp->GetGroundInfo();
 	GroundDistance = GroundInfo.GroundDistance;
+}
+
+void UECRAnimInstance::SetPawnUseControllerRotationYaw(APawn* Pawn,
+                                                       const bool bUseControllerRotationYaw)
+{
+	if (Pawn)
+	{
+		Pawn->bUseControllerRotationYaw = bUseControllerRotationYaw;
+	}
 }
