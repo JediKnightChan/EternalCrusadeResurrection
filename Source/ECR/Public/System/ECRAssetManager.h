@@ -75,6 +75,7 @@ protected:
 #if WITH_EDITOR
 	virtual void PreBeginPIE(bool bStartSimulate) override;
 #endif
+	
 	//~End of UAssetManager interface
 
 	UPrimaryDataAsset* LoadGameDataOfClass(TSubclassOf<UPrimaryDataAsset> DataClass, const TSoftObjectPtr<UPrimaryDataAsset>& DataClassPath, FPrimaryAssetType PrimaryAssetType);
@@ -89,7 +90,7 @@ protected:
 	UPROPERTY(Transient)
 	TMap<UClass*, UPrimaryDataAsset*> GameDataMap;
 
-	// Pawn data used when spawning player pawns if there isn't one set on the player state.
+	// Pawn data used when spawning player pawns if there isn't one set on the character
 	UPROPERTY(Config)
 	TSoftObjectPtr<UECRPawnData> DefaultPawnData;
 
