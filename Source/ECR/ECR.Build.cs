@@ -10,10 +10,42 @@ public class ECR : ModuleRules
 
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
-			"Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "ECRCommon", "OnlineSubsystem",
-			"OnlineSubsystemEOS", "OnlineSubsystemUtils", "Slate"
+			"Core", 
+			"CoreUObject", 
+			"ECRCommon", 
+			"Engine", 
+			"HeadMountedDisplay", 
+			"ModularGameplay", 
+			"ModularGameplayActors", 
+			"Niagara", 
+			"OnlineSubsystem", 
+			"OnlineSubsystemEOS", 
+			"OnlineSubsystemUtils", 
+			"PhysicsCore", 
+			"SignificanceManager"
 		});
+
 		PrivateDependencyModuleNames.AddRange(new string[]
-			{ "GameplayAbilities", "GameplayTags", "GameplayTasks" });
+		{
+			"AIModule", 
+			"AudioMixer", 
+			"CommonGame", 
+			"CommonInput", 
+			"CommonUI",
+			"CommonUser", 
+			"DeveloperSettings",
+			"EnhancedInput", 
+			"GameplayAbilities", 
+			"GameplayMessageRuntime", 
+			"GameplayTags", 
+			"GameplayTags",
+			"GameplayTasks", 
+			"GameplayTasks", 
+			"InputCore", 
+			"NetCore", 
+			"Networking", 
+			"Slate", 
+			"SlateCore"
+		});
 	}
 }
