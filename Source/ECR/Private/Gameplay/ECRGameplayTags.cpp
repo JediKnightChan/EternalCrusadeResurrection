@@ -51,6 +51,8 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddTag(GameplayEvent_Reset, "GameplayEvent.Reset", "Event that fires once a player reset is executed.");
 	AddTag(GameplayEvent_RequestReset, "GameplayEvent.RequestReset",
 	       "Event to request a player's pawn to be instantly replaced with a new one at a valid spawn location.");
+	AddTag(GameplayEvent_MovementModeChanged, "GameplayEvent.MovementModeChanged",
+		   "Event that fires when character movement mode changes.");
 
 	AddTag(SetByCaller_Damage, "SetByCaller.Damage", "SetByCaller tag used by damage gameplay effects.");
 	AddTag(SetByCaller_Heal, "SetByCaller.Heal", "SetByCaller tag used by healing gameplay effects.");

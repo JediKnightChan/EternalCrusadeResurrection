@@ -41,6 +41,7 @@ public:
 	FGameplayTag GameplayEvent_Death;
 	FGameplayTag GameplayEvent_Reset;
 	FGameplayTag GameplayEvent_RequestReset;
+	FGameplayTag GameplayEvent_MovementModeChanged;
 
 	FGameplayTag Cheat_GodMode;
 	FGameplayTag Cheat_UnlimitedHealth;

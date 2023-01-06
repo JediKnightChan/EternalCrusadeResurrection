@@ -1,6 +1,8 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "Gameplay/Character/ECRCharacter.h"
+
+#include "AbilitySystemBlueprintLibrary.h"
 #include "Gameplay/Character/ECRCharacterMovementComponent.h"
 #include "System/ECRLogChannels.h"
 #include "Gameplay/ECRGameplayTags.h"
@@ -376,6 +378,13 @@ void AECRCharacter::OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 
 
 	SetMovementModeTag(PrevMovementMode, PreviousCustomMode, false);
 	SetMovementModeTag(ECRMoveComp->MovementMode, ECRMoveComp->CustomMovementMode, true);
+
+	FGameplayEventData Payload;
+	Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_MovementModeChanged;
+	Payload.Target = this;
+
+	UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
+		this, FECRGameplayTags::Get().GameplayEvent_MovementModeChanged, Payload);
 }
 
 void AECRCharacter::SetMovementModeTag(EMovementMode MovementMode, uint8 CustomMovementMode, bool bTagEnabled)
@@ -465,7 +474,7 @@ void AECRCharacter::InitPawnDataAndAbilities()
 		return;
 	}
 
-	MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, PawnData, this);	
+	MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, PawnData, this);
 
 	// Granting common ability sets from game state
 	if (AECRGameState* GameState = Cast<AECRGameState>(GetWorld()->GetGameState()))
