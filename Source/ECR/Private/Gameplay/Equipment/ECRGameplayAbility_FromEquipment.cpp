@@ -1,6 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "Gameplay/Equipment/ECRGameplayAbility_FromEquipment.h"
+#include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/Equipment/ECREquipmentInstance.h"
 #include "Gameplay/Inventory/ECRInventoryItemInstance.h"
 
@@ -42,6 +43,13 @@ EDataValidationResult UECRGameplayAbility_FromEquipment::IsDataValid(TArray<FTex
 	{
 		ValidationErrors.Add(NSLOCTEXT("ECR", "EquipmentAbilityMustBeInstanced",
 		                               "Equipment ability must be instanced"));
+		Result = EDataValidationResult::Invalid;
+	}
+
+	if (AbilityTags.HasTag(FECRGameplayTags::Get().Ability_Behavior_SurvivesDeath))
+	{
+		ValidationErrors.Add(NSLOCTEXT("ECR", "EquipmentAbilityCannotSurviveDeath",
+		                               "Equipment ability cannot have tag Ability_Behavior_SurvivesDeath"));
 		Result = EDataValidationResult::Invalid;
 	}
 

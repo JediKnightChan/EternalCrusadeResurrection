@@ -10,6 +10,7 @@
 #include "Gameplay/GAS/Abilities/ECRGameplayAbility.h"
 #include "Animation/ECRAnimInstance.h"
 #include "Gameplay/GAS/ECRAbilityTagRelationshipMapping.h"
+#include "Gameplay/ECRGameplayTags.h"
 
 UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_AbilityInputBlocked, "Gameplay.AbilityInputBlocked");
 
@@ -88,7 +89,8 @@ void UECRAbilitySystemComponent::TryActivateAbilitiesOnSpawn()
 	}
 }
 
-void UECRAbilitySystemComponent::CancelAbilitiesByFunc(TShouldCancelAbilityFunc ShouldCancelFunc, bool bReplicateCancelAbility)
+void UECRAbilitySystemComponent::CancelAbilitiesByFunc(TShouldCancelAbilityFunc ShouldCancelFunc,
+                                                       bool bReplicateCancelAbility)
 {
 	ABILITYLIST_SCOPE_LOCK();
 	for (const FGameplayAbilitySpec& AbilitySpec : ActivatableAbilities.Items)
@@ -112,11 +114,15 @@ void UECRAbilitySystemComponent::CancelAbilitiesByFunc(TShouldCancelAbilityFunc 
 				{
 					if (ECRAbilityInstance->CanBeCanceled())
 					{
-						ECRAbilityInstance->CancelAbility(AbilitySpec.Handle, AbilityActorInfo.Get(), ECRAbilityInstance->GetCurrentActivationInfo(), bReplicateCancelAbility);
+						ECRAbilityInstance->CancelAbility(AbilitySpec.Handle, AbilityActorInfo.Get(),
+						                                  ECRAbilityInstance->GetCurrentActivationInfo(),
+						                                  bReplicateCancelAbility);
 					}
 					else
 					{
-						UE_LOG(LogECRAbilitySystem, Error, TEXT("CancelAbilitiesByFunc: Can't cancel ability [%s] because CanBeCanceled is false."), *ECRAbilityInstance->GetName());
+						UE_LOG(LogECRAbilitySystem, Error,
+						       TEXT("CancelAbilitiesByFunc: Can't cancel ability [%s] because CanBeCanceled is false."),
+						       *ECRAbilityInstance->GetName());
 					}
 				}
 			}
@@ -128,7 +134,8 @@ void UECRAbilitySystemComponent::CancelAbilitiesByFunc(TShouldCancelAbilityFunc 
 			{
 				// Non-instanced abilities can always be canceled.
 				check(ECRAbilityCDO->CanBeCanceled());
-				ECRAbilityCDO->CancelAbility(AbilitySpec.Handle, AbilityActorInfo.Get(), FGameplayAbilityActivationInfo(), bReplicateCancelAbility);
+				ECRAbilityCDO->CancelAbility(AbilitySpec.Handle, AbilityActorInfo.Get(),
+				                             FGameplayAbilityActivationInfo(), bReplicateCancelAbility);
 			}
 		}
 	}
@@ -136,10 +143,12 @@ void UECRAbilitySystemComponent::CancelAbilitiesByFunc(TShouldCancelAbilityFunc 
 
 void UECRAbilitySystemComponent::CancelInputActivatedAbilities(bool bReplicateCancelAbility)
 {
-	TShouldCancelAbilityFunc ShouldCancelFunc = [this](const UECRGameplayAbility* ECRAbility, FGameplayAbilitySpecHandle Handle)
+	TShouldCancelAbilityFunc ShouldCancelFunc = [this](const UECRGameplayAbility* ECRAbility,
+	                                                   FGameplayAbilitySpecHandle Handle)
 	{
 		const EECRAbilityActivationPolicy ActivationPolicy = ECRAbility->GetActivationPolicy();
-		return ((ActivationPolicy == EECRAbilityActivationPolicy::OnInputTriggered) || (ActivationPolicy == EECRAbilityActivationPolicy::WhileInputActive));
+		return ((ActivationPolicy == EECRAbilityActivationPolicy::OnInputTriggered) || (ActivationPolicy ==
+			EECRAbilityActivationPolicy::WhileInputActive));
 	};
 
 	CancelAbilitiesByFunc(ShouldCancelFunc, bReplicateCancelAbility);
@@ -154,7 +163,8 @@ void UECRAbilitySystemComponent::AbilitySpecInputPressed(FGameplayAbilitySpec& S
 	if (Spec.IsActive())
 	{
 		// Invoke the InputPressed event. This is not replicated here. If someone is listening, they may replicate the InputPressed event to the server.
-		InvokeReplicatedEvent(EAbilityGenericReplicatedEvent::InputPressed, Spec.Handle, Spec.ActivationInfo.GetActivationPredictionKey());
+		InvokeReplicatedEvent(EAbilityGenericReplicatedEvent::InputPressed, Spec.Handle,
+		                      Spec.ActivationInfo.GetActivationPredictionKey());
 	}
 }
 
@@ -167,7 +177,8 @@ void UECRAbilitySystemComponent::AbilitySpecInputReleased(FGameplayAbilitySpec& 
 	if (Spec.IsActive())
 	{
 		// Invoke the InputReleased event. This is not replicated here. If someone is listening, they may replicate the InputReleased event to the server.
-		InvokeReplicatedEvent(EAbilityGenericReplicatedEvent::InputReleased, Spec.Handle, Spec.ActivationInfo.GetActivationPredictionKey());
+		InvokeReplicatedEvent(EAbilityGenericReplicatedEvent::InputReleased, Spec.Handle,
+		                      Spec.ActivationInfo.GetActivationPredictionKey());
 	}
 }
 
@@ -306,7 +317,8 @@ void UECRAbilitySystemComponent::ClearAbilityInput()
 	InputHeldSpecHandles.Reset();
 }
 
-void UECRAbilitySystemComponent::NotifyAbilityActivated(const FGameplayAbilitySpecHandle Handle, UGameplayAbility* Ability)
+void UECRAbilitySystemComponent::NotifyAbilityActivated(const FGameplayAbilitySpecHandle Handle,
+                                                        UGameplayAbility* Ability)
 {
 	Super::NotifyAbilityActivated(Handle, Ability);
 
@@ -315,7 +327,8 @@ void UECRAbilitySystemComponent::NotifyAbilityActivated(const FGameplayAbilitySp
 	AddAbilityToActivationGroup(ECRAbility->GetActivationGroup(), ECRAbility);
 }
 
-void UECRAbilitySystemComponent::NotifyAbilityFailed(const FGameplayAbilitySpecHandle Handle, UGameplayAbility* Ability, const FGameplayTagContainer& FailureReason)
+void UECRAbilitySystemComponent::NotifyAbilityFailed(const FGameplayAbilitySpecHandle Handle, UGameplayAbility* Ability,
+                                                     const FGameplayTagContainer& FailureReason)
 {
 	Super::NotifyAbilityFailed(Handle, Ability, FailureReason);
 
@@ -331,7 +344,8 @@ void UECRAbilitySystemComponent::NotifyAbilityFailed(const FGameplayAbilitySpecH
 	HandleAbilityFailed(Ability, FailureReason);
 }
 
-void UECRAbilitySystemComponent::NotifyAbilityEnded(FGameplayAbilitySpecHandle Handle, UGameplayAbility* Ability, bool bWasCancelled)
+void UECRAbilitySystemComponent::NotifyAbilityEnded(FGameplayAbilitySpecHandle Handle, UGameplayAbility* Ability,
+                                                    bool bWasCancelled)
 {
 	Super::NotifyAbilityEnded(Handle, Ability, bWasCancelled);
 
@@ -340,7 +354,12 @@ void UECRAbilitySystemComponent::NotifyAbilityEnded(FGameplayAbilitySpecHandle H
 	RemoveAbilityFromActivationGroup(ECRAbility->GetActivationGroup(), ECRAbility);
 }
 
-void UECRAbilitySystemComponent::ApplyAbilityBlockAndCancelTags(const FGameplayTagContainer& AbilityTags, UGameplayAbility* RequestingAbility, bool bEnableBlockTags, const FGameplayTagContainer& BlockTags, bool bExecuteCancelTags, const FGameplayTagContainer& CancelTags)
+void UECRAbilitySystemComponent::ApplyAbilityBlockAndCancelTags(const FGameplayTagContainer& AbilityTags,
+                                                                UGameplayAbility* RequestingAbility,
+                                                                bool bEnableBlockTags,
+                                                                const FGameplayTagContainer& BlockTags,
+                                                                bool bExecuteCancelTags,
+                                                                const FGameplayTagContainer& CancelTags)
 {
 	FGameplayTagContainer ModifiedBlockTags = BlockTags;
 	FGameplayTagContainer ModifiedCancelTags = CancelTags;
@@ -351,23 +370,46 @@ void UECRAbilitySystemComponent::ApplyAbilityBlockAndCancelTags(const FGameplayT
 		TagRelationshipMapping->GetAbilityTagsToBlockAndCancel(AbilityTags, &ModifiedBlockTags, &ModifiedCancelTags);
 	}
 
-	Super::ApplyAbilityBlockAndCancelTags(AbilityTags, RequestingAbility, bEnableBlockTags, ModifiedBlockTags, bExecuteCancelTags, ModifiedCancelTags);
+	Super::ApplyAbilityBlockAndCancelTags(AbilityTags, RequestingAbility, bEnableBlockTags, ModifiedBlockTags,
+	                                      bExecuteCancelTags, ModifiedCancelTags);
 
 	//@TODO: Apply any special logic like blocking input or movement
 }
 
-void UECRAbilitySystemComponent::HandleChangeAbilityCanBeCanceled(const FGameplayTagContainer& AbilityTags, UGameplayAbility* RequestingAbility, bool bCanBeCanceled)
+void UECRAbilitySystemComponent::HandleChangeAbilityCanBeCanceled(const FGameplayTagContainer& AbilityTags,
+                                                                  UGameplayAbility* RequestingAbility,
+                                                                  bool bCanBeCanceled)
 {
 	Super::HandleChangeAbilityCanBeCanceled(AbilityTags, RequestingAbility, bCanBeCanceled);
 
 	//@TODO: Apply any special logic like blocking input or movement
 }
 
-void UECRAbilitySystemComponent::GetAdditionalActivationTagRequirements(const FGameplayTagContainer& AbilityTags, FGameplayTagContainer& OutActivationRequired, FGameplayTagContainer& OutActivationBlocked) const
+void UECRAbilitySystemComponent::GetAdditionalActivationTagRequirements(const FGameplayTagContainer& AbilityTags,
+                                                                        FGameplayTagContainer& OutActivationRequired,
+                                                                        FGameplayTagContainer& OutActivationBlocked)
+const
 {
 	if (TagRelationshipMapping)
 	{
-		TagRelationshipMapping->GetRequiredAndBlockedActivationTags(AbilityTags, &OutActivationRequired, &OutActivationBlocked);
+		TagRelationshipMapping->GetRequiredAndBlockedActivationTags(AbilityTags, &OutActivationRequired,
+		                                                            &OutActivationBlocked);
+	}
+}
+
+void UECRAbilitySystemComponent::ClearAllResettingOnDeathAbilities()
+{
+	// Get all activatable abilities
+	TArray<FGameplayAbilitySpecHandle> OutSpecHandles;
+	GetAllAbilities(OutSpecHandles);
+	
+	for (const FGameplayAbilitySpecHandle CurrentSpecHandle : OutSpecHandles)
+	{
+		const FGameplayAbilitySpec* AbilitySpec = FindAbilitySpecFromHandle(CurrentSpecHandle);
+		if (!AbilitySpec->Ability->AbilityTags.HasTag(FECRGameplayTags::Get().Ability_Behavior_SurvivesDeath))
+		{
+			ClearAbility(AbilitySpec->Handle);
+		}
 	}
 }
 
@@ -376,19 +418,21 @@ void UECRAbilitySystemComponent::SetTagRelationshipMapping(UECRAbilityTagRelatio
 	TagRelationshipMapping = NewMapping;
 }
 
-void UECRAbilitySystemComponent::ClientNotifyAbilityFailed_Implementation(const UGameplayAbility* Ability, const FGameplayTagContainer& FailureReason)
+void UECRAbilitySystemComponent::ClientNotifyAbilityFailed_Implementation(
+	const UGameplayAbility* Ability, const FGameplayTagContainer& FailureReason)
 {
 	HandleAbilityFailed(Ability, FailureReason);
 }
 
-void UECRAbilitySystemComponent::HandleAbilityFailed(const UGameplayAbility* Ability, const FGameplayTagContainer& FailureReason)
+void UECRAbilitySystemComponent::HandleAbilityFailed(const UGameplayAbility* Ability,
+                                                     const FGameplayTagContainer& FailureReason)
 {
 	//UE_LOG(LogECRAbilitySystem, Warning, TEXT("Ability %s failed to activate (tags: %s)"), *GetPathNameSafe(Ability), *FailureReason.ToString());
 
 	if (const UECRGameplayAbility* ECRAbility = Cast<const UECRGameplayAbility>(Ability))
 	{
 		ECRAbility->OnAbilityFailedToActivate(FailureReason);
-	}	
+	}
 }
 
 bool UECRAbilitySystemComponent::IsActivationGroupBlocked(EECRAbilityActivationGroup Group) const
@@ -416,7 +460,8 @@ bool UECRAbilitySystemComponent::IsActivationGroupBlocked(EECRAbilityActivationG
 	return bBlocked;
 }
 
-void UECRAbilitySystemComponent::AddAbilityToActivationGroup(EECRAbilityActivationGroup Group, UECRGameplayAbility* ECRAbility)
+void UECRAbilitySystemComponent::AddAbilityToActivationGroup(EECRAbilityActivationGroup Group,
+                                                             UECRGameplayAbility* ECRAbility)
 {
 	check(ECRAbility);
 	check(ActivationGroupCounts[(uint8)Group] < INT32_MAX);
@@ -433,7 +478,8 @@ void UECRAbilitySystemComponent::AddAbilityToActivationGroup(EECRAbilityActivati
 
 	case EECRAbilityActivationGroup::Exclusive_Replaceable:
 	case EECRAbilityActivationGroup::Exclusive_Blocking:
-		CancelActivationGroupAbilities(EECRAbilityActivationGroup::Exclusive_Replaceable, ECRAbility, bReplicateCancelAbility);
+		CancelActivationGroupAbilities(EECRAbilityActivationGroup::Exclusive_Replaceable, ECRAbility,
+		                               bReplicateCancelAbility);
 		break;
 
 	default:
@@ -441,14 +487,17 @@ void UECRAbilitySystemComponent::AddAbilityToActivationGroup(EECRAbilityActivati
 		break;
 	}
 
-	const int32 ExclusiveCount = ActivationGroupCounts[(uint8)EECRAbilityActivationGroup::Exclusive_Replaceable] + ActivationGroupCounts[(uint8)EECRAbilityActivationGroup::Exclusive_Blocking];
+	const int32 ExclusiveCount = ActivationGroupCounts[(uint8)EECRAbilityActivationGroup::Exclusive_Replaceable] +
+		ActivationGroupCounts[(uint8)EECRAbilityActivationGroup::Exclusive_Blocking];
 	if (!ensure(ExclusiveCount <= 1))
 	{
-		UE_LOG(LogECRAbilitySystem, Error, TEXT("AddAbilityToActivationGroup: Multiple exclusive abilities are running."));
+		UE_LOG(LogECRAbilitySystem, Error,
+		       TEXT("AddAbilityToActivationGroup: Multiple exclusive abilities are running."));
 	}
 }
 
-void UECRAbilitySystemComponent::RemoveAbilityFromActivationGroup(EECRAbilityActivationGroup Group, UECRGameplayAbility* ECRAbility)
+void UECRAbilitySystemComponent::RemoveAbilityFromActivationGroup(EECRAbilityActivationGroup Group,
+                                                                  UECRGameplayAbility* ECRAbility)
 {
 	check(ECRAbility);
 	check(ActivationGroupCounts[(uint8)Group] > 0);
@@ -456,9 +505,12 @@ void UECRAbilitySystemComponent::RemoveAbilityFromActivationGroup(EECRAbilityAct
 	ActivationGroupCounts[(uint8)Group]--;
 }
 
-void UECRAbilitySystemComponent::CancelActivationGroupAbilities(EECRAbilityActivationGroup Group, UECRGameplayAbility* IgnoreECRAbility, bool bReplicateCancelAbility)
+void UECRAbilitySystemComponent::CancelActivationGroupAbilities(EECRAbilityActivationGroup Group,
+                                                                UECRGameplayAbility* IgnoreECRAbility,
+                                                                bool bReplicateCancelAbility)
 {
-	TShouldCancelAbilityFunc ShouldCancelFunc = [this, Group, IgnoreECRAbility](const UECRGameplayAbility* ECRAbility, FGameplayAbilitySpecHandle Handle)
+	TShouldCancelAbilityFunc ShouldCancelFunc = [this, Group, IgnoreECRAbility](
+		const UECRGameplayAbility* ECRAbility, FGameplayAbilitySpecHandle Handle)
 	{
 		return ((ECRAbility->GetActivationGroup() == Group) && (ECRAbility != IgnoreECRAbility));
 	};
@@ -468,10 +520,13 @@ void UECRAbilitySystemComponent::CancelActivationGroupAbilities(EECRAbilityActiv
 
 void UECRAbilitySystemComponent::AddDynamicTagGameplayEffect(const FGameplayTag& Tag)
 {
-	const TSubclassOf<UGameplayEffect> DynamicTagGE = UECRAssetManager::GetSubclass(UECRGameData::Get().DynamicTagGameplayEffect);
+	const TSubclassOf<UGameplayEffect> DynamicTagGE = UECRAssetManager::GetSubclass(
+		UECRGameData::Get().DynamicTagGameplayEffect);
 	if (!DynamicTagGE)
 	{
-		UE_LOG(LogECRAbilitySystem, Warning, TEXT("AddDynamicTagGameplayEffect: Unable to find DynamicTagGameplayEffect [%s]."), *UECRGameData::Get().DynamicTagGameplayEffect.GetAssetName());
+		UE_LOG(LogECRAbilitySystem, Warning,
+		       TEXT("AddDynamicTagGameplayEffect: Unable to find DynamicTagGameplayEffect [%s]."),
+		       *UECRGameData::Get().DynamicTagGameplayEffect.GetAssetName());
 		return;
 	}
 
@@ -480,7 +535,8 @@ void UECRAbilitySystemComponent::AddDynamicTagGameplayEffect(const FGameplayTag&
 
 	if (!Spec)
 	{
-		UE_LOG(LogECRAbilitySystem, Warning, TEXT("AddDynamicTagGameplayEffect: Unable to make outgoing spec for [%s]."), *GetNameSafe(DynamicTagGE));
+		UE_LOG(LogECRAbilitySystem, Warning,
+		       TEXT("AddDynamicTagGameplayEffect: Unable to make outgoing spec for [%s]."), *GetNameSafe(DynamicTagGE));
 		return;
 	}
 
@@ -491,10 +547,13 @@ void UECRAbilitySystemComponent::AddDynamicTagGameplayEffect(const FGameplayTag&
 
 void UECRAbilitySystemComponent::RemoveDynamicTagGameplayEffect(const FGameplayTag& Tag)
 {
-	const TSubclassOf<UGameplayEffect> DynamicTagGE = UECRAssetManager::GetSubclass(UECRGameData::Get().DynamicTagGameplayEffect);
+	const TSubclassOf<UGameplayEffect> DynamicTagGE = UECRAssetManager::GetSubclass(
+		UECRGameData::Get().DynamicTagGameplayEffect);
 	if (!DynamicTagGE)
 	{
-		UE_LOG(LogECRAbilitySystem, Warning, TEXT("RemoveDynamicTagGameplayEffect: Unable to find gameplay effect [%s]."), *UECRGameData::Get().DynamicTagGameplayEffect.GetAssetName());
+		UE_LOG(LogECRAbilitySystem, Warning,
+		       TEXT("RemoveDynamicTagGameplayEffect: Unable to find gameplay effect [%s]."),
+		       *UECRGameData::Get().DynamicTagGameplayEffect.GetAssetName());
 		return;
 	}
 
@@ -504,9 +563,12 @@ void UECRAbilitySystemComponent::RemoveDynamicTagGameplayEffect(const FGameplayT
 	RemoveActiveEffects(Query);
 }
 
-void UECRAbilitySystemComponent::GetAbilityTargetData(const FGameplayAbilitySpecHandle AbilityHandle, FGameplayAbilityActivationInfo ActivationInfo, FGameplayAbilityTargetDataHandle& OutTargetDataHandle)
+void UECRAbilitySystemComponent::GetAbilityTargetData(const FGameplayAbilitySpecHandle AbilityHandle,
+                                                      FGameplayAbilityActivationInfo ActivationInfo,
+                                                      FGameplayAbilityTargetDataHandle& OutTargetDataHandle)
 {
-	TSharedPtr<FAbilityReplicatedDataCache> ReplicatedData = AbilityTargetDataMap.Find(FGameplayAbilitySpecHandleAndPredictionKey(AbilityHandle, ActivationInfo.GetActivationPredictionKey()));
+	TSharedPtr<FAbilityReplicatedDataCache> ReplicatedData = AbilityTargetDataMap.Find(
+		FGameplayAbilitySpecHandleAndPredictionKey(AbilityHandle, ActivationInfo.GetActivationPredictionKey()));
 	if (ReplicatedData.IsValid())
 	{
 		OutTargetDataHandle = ReplicatedData->TargetData;

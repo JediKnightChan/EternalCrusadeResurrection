@@ -67,6 +67,9 @@ public:
 	/** Looks at ability tags and gathers additional required and blocking tags */
 	void GetAdditionalActivationTagRequirements(const FGameplayTagContainer& AbilityTags, FGameplayTagContainer& OutActivationRequired, FGameplayTagContainer& OutActivationBlocked) const;
 
+	/** Clear abilities that are not explicitly specified as surviving death */
+	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category="Gameplay Abilities")
+	void ClearAllResettingOnDeathAbilities();
 protected:
 
 	void TryActivateAbilitiesOnSpawn();

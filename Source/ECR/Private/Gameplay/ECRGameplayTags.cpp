@@ -35,7 +35,7 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	       "Ability failed to activate because of its activation group.");
 
 	AddTag(Ability_Behavior_SurvivesDeath, "Ability.Behavior.SurvivesDeath",
-	       "An ability with this type tag should not be canceled due to death.");
+	       "An ability with this type tag should not be removed due to death.");
 
 	AddTag(Cheat_GodMode, "Cheat.GodMode", "GodMode cheat is active on the owner.");
 	AddTag(Cheat_UnlimitedHealth, "Cheat.UnlimitedHealth", "UnlimitedHealth cheat is active on the owner.");
