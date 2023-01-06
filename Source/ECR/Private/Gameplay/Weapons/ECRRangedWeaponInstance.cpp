@@ -144,7 +144,7 @@ float UECRRangedWeaponInstance::GetPhysicalMaterialAttenuation(const UPhysicalMa
 
 bool UECRRangedWeaponInstance::UpdateSpread(float DeltaSeconds)
 {
-	const float TimeSinceFired = GetWorld()->TimeSince(LastFireTime);
+	const float TimeSinceFired = GetWorld()->TimeSince(TimeLastFired);
 
 	if (TimeSinceFired > SpreadRecoveryCooldownDelay)
 	{

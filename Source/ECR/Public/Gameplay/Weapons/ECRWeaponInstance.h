@@ -43,7 +43,7 @@ protected:
 	UFUNCTION(BlueprintCallable, BlueprintPure=false, Category=Animation)
 	TSubclassOf<UAnimInstance> PickBestAnimLayer(bool bEquipped, const FGameplayTagContainer& CosmeticTags) const;
 
-private:
+protected:
 	double TimeLastEquipped = 0.0;
 	double TimeLastFired = 0.0;
 };

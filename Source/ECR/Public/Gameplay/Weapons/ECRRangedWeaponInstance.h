@@ -71,26 +71,26 @@ public:
 
 protected:
 #if WITH_EDITORONLY_DATA
-	UPROPERTY(VisibleAnywhere, Category = "Spread|Fire Params")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Spread|Fire Params", meta=(AllowPrivateAccess="true"))
 	float Debug_MinHeat = 0.0f;
 
-	UPROPERTY(VisibleAnywhere, Category = "Spread|Fire Params")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Spread|Fire Params", meta=(AllowPrivateAccess="true"))
 	float Debug_MaxHeat = 0.0f;
 
-	UPROPERTY(VisibleAnywhere, Category="Spread|Fire Params", meta=(ForceUnits=deg))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread|Fire Params", meta=(ForceUnits=deg, AllowPrivateAccess="true"))
 	float Debug_MinSpreadAngle = 0.0f;
 
-	UPROPERTY(VisibleAnywhere, Category="Spread|Fire Params", meta=(ForceUnits=deg))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread|Fire Params", meta=(ForceUnits=deg, AllowPrivateAccess="true"))
 	float Debug_MaxSpreadAngle = 0.0f;
 
-	UPROPERTY(VisibleAnywhere, Category="Spread Debugging")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread Debugging", meta=(AllowPrivateAccess="true"))
 	float Debug_CurrentHeat = 0.0f;
 
-	UPROPERTY(VisibleAnywhere, Category="Spread Debugging", meta = (ForceUnits=deg))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread Debugging", meta = (ForceUnits=deg, AllowPrivateAccess="true"))
 	float Debug_CurrentSpreadAngle = 0.0f;
 
 	// The current *combined* spread angle multiplier
-	UPROPERTY(VisibleAnywhere, Category = "Spread Debugging", meta=(ForceUnits=x))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Spread Debugging", meta=(ForceUnits=x, AllowPrivateAccess="true"))
 	float Debug_CurrentSpreadAngleMultiplier = 1.0f;
 
 #endif
@@ -191,9 +191,6 @@ protected:
 	TMap<FGameplayTag, float> MaterialDamageMultiplier;
 
 private:
-	// Time since this weapon was last fired (relative to world time)
-	double LastFireTime = 0.0;
-
 	// The current heat
 	float CurrentHeat = 0.0f;
 
