@@ -52,12 +52,13 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddTag(GameplayEvent_RequestReset, "GameplayEvent.RequestReset",
 	       "Event to request a player's pawn to be instantly replaced with a new one at a valid spawn location.");
 	AddTag(GameplayEvent_MovementModeChanged, "GameplayEvent.MovementModeChanged",
-		   "Event that fires when character movement mode changes.");
+	       "Event that fires when character movement mode changes.");
 
 	AddTag(SetByCaller_Damage, "SetByCaller.Damage", "SetByCaller tag used by damage gameplay effects.");
 	AddTag(SetByCaller_Heal, "SetByCaller.Heal", "SetByCaller tag used by healing gameplay effects.");
 
 	AddTag(Status_Crouching, "Status.Crouching", "Target is crouching.");
+	AddTag(Status_ADS, "Status.ADS", "Target is in ADS mode.");
 	AddTag(Status_AutoRunning, "Status.AutoRunning", "Target is auto-running.");
 	AddTag(Status_Death, "Status.Death", "Target has the death status.");
 	AddTag(Status_Death_Dying, "Status.Death.Dying", "Target has begun the death process.");

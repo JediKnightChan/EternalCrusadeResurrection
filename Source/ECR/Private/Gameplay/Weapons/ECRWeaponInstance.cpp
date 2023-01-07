@@ -49,6 +49,6 @@ float UECRWeaponInstance::GetTimeSinceLastInteractedWith() const
 
 TSubclassOf<UAnimInstance> UECRWeaponInstance::PickBestAnimLayer(bool bEquipped, const FGameplayTagContainer& CosmeticTags) const
 {
-	const FECRAnimLayerSelectionSet& SetToQuery = (bEquipped ? EquippedAnimSet : UneuippedAnimSet);
+	const FECRAnimLayerSelectionSet& SetToQuery = (bEquipped ? EquippedAnimSet : UnequippedAnimSet);
 	return SetToQuery.SelectBestLayer(CosmeticTags);
 }
