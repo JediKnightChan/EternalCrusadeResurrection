@@ -15,6 +15,17 @@ UECRCharacterHealthSet::UECRCharacterHealthSet()
 }
 
 
+void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Shield, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxShield, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Stamina, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxStamina, COND_None, REPNOTIFY_Always);
+}
+
+
 bool UECRCharacterHealthSet::PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data)
 {
 	if (!Super::PreGameplayEffectExecute(Data))
@@ -42,6 +53,43 @@ bool UECRCharacterHealthSet::PreGameplayEffectExecute(FGameplayEffectModCallback
 }
 
 
+void UECRCharacterHealthSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
+{
+	// Don't call parent function to override behaviour
+	if (Data.EvaluatedData.Attribute == GetDamageAttribute())
+	{
+		// Send a standardized verb message that other systems can observe
+		if (Data.EvaluatedData.Magnitude < 0.0f)
+		{
+			SendDamageMessage(Data);
+		}
+		if (GetShield() > 0)
+		{
+			// Convert into -Shield and then clamp
+			SetShield(FMath::Clamp(GetShield() - GetDamage(), 0, GetMaxShield()));
+		}
+		else
+		{
+			// Convert into -Health and then clamp
+			SetHealth(FMath::Clamp(GetHealth() - GetDamage(), 0, GetMaxHealth()));
+		}
+		SetDamage(0.0f);
+	}
+	else if (Data.EvaluatedData.Attribute == GetHealingAttribute())
+	{
+		SetHealth(FMath::Clamp(GetHealth() + GetHealing(), 0, GetMaxHealth()));
+		SetHealing(0.0f);
+	}
+	else if (Data.EvaluatedData.Attribute == GetHealthAttribute())
+	{
+		// Clamp and fall into out of health handling below
+		SetHealth(FMath::Clamp(GetHealth(), 0, GetMaxHealth()));
+	}
+
+	CheckIfReadyToDie(Data);
+}
+
+
 void UECRCharacterHealthSet::PreAttributeBaseChange(const FGameplayAttribute& Attribute, float& NewValue) const
 {
 	Super::PreAttributeBaseChange(Attribute, NewValue);
@@ -56,6 +104,7 @@ void UECRCharacterHealthSet::PreAttributeChange(const FGameplayAttribute& Attrib
 
 	ClampAttribute(Attribute, NewValue);
 }
+
 
 void UECRCharacterHealthSet::PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue)
 {
@@ -95,17 +144,6 @@ void UECRCharacterHealthSet::ClampAttribute(const FGameplayAttribute& Attribute,
 		// Do not allow max stamina to drop below 1.
 		NewValue = FMath::Max(NewValue, 1.0f);
 	}
-}
-
-
-void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
-{
-	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Shield, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxShield, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Stamina, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxStamina, COND_None, REPNOTIFY_Always);
 }
 
 

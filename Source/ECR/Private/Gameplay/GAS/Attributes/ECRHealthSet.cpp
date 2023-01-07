@@ -18,7 +18,7 @@ UECRHealthSet::UECRHealthSet()
 	: Health(100.0f),
 	  MaxHealth(100.0f)
 {
-	bOutOfHealth = false;
+	bReadyToDie = false;
 }
 
 
@@ -49,49 +49,69 @@ bool UECRHealthSet::PreGameplayEffectExecute(FGameplayEffectModCallbackData& Dat
 }
 
 
+void UECRHealthSet::SendDamageMessage(const FGameplayEffectModCallbackData& DamageData) const
+{
+	FECRVerbMessage Message;
+	Message.Verb = TAG_ECR_Damage_Message;
+	Message.Instigator = DamageData.EffectSpec.GetEffectContext().GetEffectCauser();
+	Message.InstigatorTags = *DamageData.EffectSpec.CapturedSourceTags.GetAggregatedTags();
+	Message.Target = GetOwningActor();
+	Message.TargetTags = *DamageData.EffectSpec.CapturedTargetTags.GetAggregatedTags();
+	//@TODO: Fill out context tags, and any non-ability-system source/instigator tags
+	//@TODO: Determine if it's an opposing team kill, self-own, team kill, etc...
+	Message.Magnitude = DamageData.EvaluatedData.Magnitude;
+
+	UGameplayMessageSubsystem& MessageSystem = UGameplayMessageSubsystem::Get(GetWorld());
+	MessageSystem.BroadcastMessage(Message.Verb, Message);
+}
+
+
+void UECRHealthSet::CheckIfReadyToDie(const FGameplayEffectModCallbackData& Data)
+{
+	if ((GetHealth() <= 0.0f) && !bReadyToDie)
+	{
+		if (OnReadyToDie.IsBound())
+		{
+			const FGameplayEffectContextHandle& EffectContext = Data.EffectSpec.GetEffectContext();
+			AActor* Instigator = EffectContext.GetOriginalInstigator();
+			AActor* Causer = EffectContext.GetEffectCauser();
+
+			OnReadyToDie.Broadcast(Instigator, Causer, Data.EffectSpec, Data.EvaluatedData.Magnitude);
+		}
+	}
+
+	// Check health again in case an event above changed it.
+	bReadyToDie = (GetHealth() <= 0.0f);
+}
+
 void UECRHealthSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
 {
 	Super::PostGameplayEffectExecute(Data);
 
-	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
+	if (Data.EvaluatedData.Attribute == GetDamageAttribute())
 	{
 		// Send a standardized verb message that other systems can observe
 		if (Data.EvaluatedData.Magnitude < 0.0f)
 		{
-			FECRVerbMessage Message;
-			Message.Verb = TAG_ECR_Damage_Message;
-			Message.Instigator = Data.EffectSpec.GetEffectContext().GetEffectCauser();
-			Message.InstigatorTags = *Data.EffectSpec.CapturedSourceTags.GetAggregatedTags();
-			Message.Target = GetOwningActor();
-			Message.TargetTags = *Data.EffectSpec.CapturedTargetTags.GetAggregatedTags();
-			//@TODO: Fill out context tags, and any non-ability-system source/instigator tags
-			//@TODO: Determine if it's an opposing team kill, self-own, team kill, etc...
-			Message.Magnitude = Data.EvaluatedData.Magnitude;
-
-			UGameplayMessageSubsystem& MessageSystem = UGameplayMessageSubsystem::Get(GetWorld());
-			MessageSystem.BroadcastMessage(Message.Verb, Message);
+			SendDamageMessage(Data);
 		}
 
-		if ((GetHealth() <= 0.0f) && !bOutOfHealth)
-		{
-			if (OnOutOfHealth.IsBound())
-			{
-				const FGameplayEffectContextHandle& EffectContext = Data.EffectSpec.GetEffectContext();
-				AActor* Instigator = EffectContext.GetOriginalInstigator();
-				AActor* Causer = EffectContext.GetEffectCauser();
-
-				OnOutOfHealth.Broadcast(Instigator, Causer, Data.EffectSpec, Data.EvaluatedData.Magnitude);
-			}
-		}
-
-		// Check health again in case an event above changed it.
-		bOutOfHealth = (GetHealth() <= 0.0f);
+		// Convert into -Health and then clamp
+		SetHealth(FMath::Clamp(GetHealth() - GetDamage(), 0, GetMaxHealth()));
+		SetDamage(0.0f);
 	}
 	else if (Data.EvaluatedData.Attribute == GetHealingAttribute())
 	{
-		SetHealth(GetHealth() + GetHealing());
+		SetHealth(FMath::Clamp(GetHealth() + GetHealing(), 0, GetMaxHealth()));
 		SetHealing(0.0f);
 	}
+	else if (Data.EvaluatedData.Attribute == GetHealthAttribute())
+	{
+		// Clamp and fall into out of health handling below
+		SetHealth(FMath::Clamp(GetHealth(), 0, GetMaxHealth()));
+	}
+
+	CheckIfReadyToDie(Data);
 }
 
 
@@ -119,9 +139,9 @@ void UECRHealthSet::PostAttributeChange(const FGameplayAttribute& Attribute, flo
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxHealthAttribute(),
 	                                 GetHealthAttribute(), GetHealth());
 
-	if (bOutOfHealth && (GetHealth() > 0.0f))
+	if (bReadyToDie && (GetHealth() > 0.0f))
 	{
-		bOutOfHealth = false;
+		bReadyToDie = false;
 	}
 }
 

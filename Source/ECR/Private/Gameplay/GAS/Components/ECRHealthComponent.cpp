@@ -88,7 +88,7 @@ void UECRHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystemComponent
 		this, &ThisClass::HandleHealthChanged);
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRHealthSet::GetMaxHealthAttribute()).AddUObject(
 		this, &ThisClass::HandleMaxHealthChanged);
-	HealthSet->OnOutOfHealth.AddUObject(this, &ThisClass::HandleOutOfHealth);
+	HealthSet->OnReadyToDie.AddUObject(this, &ThisClass::HandleOutOfHealth);
 
 	OnHealthChanged.Broadcast(this, HealthSet->GetHealth(), HealthSet->GetHealth(), nullptr);
 	OnMaxHealthChanged.Broadcast(this, HealthSet->GetHealth(), HealthSet->GetHealth(), nullptr);
@@ -102,7 +102,7 @@ void UECRHealthComponent::UninitializeFromAbilitySystem()
 
 	if (HealthSet)
 	{
-		HealthSet->OnOutOfHealth.RemoveAll(this);
+		HealthSet->OnReadyToDie.RemoveAll(this);
 	}
 
 	HealthSet = nullptr;
@@ -169,6 +169,7 @@ void UECRHealthComponent::HandleMaxHealthChanged(const FOnAttributeChangeData& C
 void UECRHealthComponent::HandleOutOfHealth(AActor* DamageInstigator, AActor* DamageCauser,
                                             const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude)
 {
+	UE_LOG(LogTemp, Warning, TEXT("OUT OF HEALTH"));
 #if WITH_SERVER_CODE
 	if (AbilitySystemComponent)
 	{

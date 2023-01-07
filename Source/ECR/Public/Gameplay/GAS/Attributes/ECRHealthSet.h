@@ -32,9 +32,6 @@ class ECR_API UECRHealthSet : public UECRAttributeSet
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData MaxHealth;
 
-	// Used to track when the health reaches 0 to trigger OutOfHealth event only once
-	bool bOutOfHealth;
-
 	// -------------------------------------------------------------------
 	//	Meta Attribute (please keep attributes that aren't 'stateful' below) 
 	// -------------------------------------------------------------------
@@ -48,6 +45,12 @@ class ECR_API UECRHealthSet : public UECRAttributeSet
 	FGameplayAttributeData Damage;
 
 protected:
+	/** Send message about damage to other subsystems */
+	void SendDamageMessage(const FGameplayEffectModCallbackData& DamageData) const;
+
+	/** Checks if ready to die and broadcast event */
+	virtual void CheckIfReadyToDie(const FGameplayEffectModCallbackData& Data);
+
 	/** Check for damage immunity in PreGameplayEffectExecute */
 	virtual bool PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data) override;
 
@@ -65,15 +68,19 @@ protected:
 
 	/** Clamp attributes Health [0, MaxHealth] and MaxHealth [1, inf] */
 	virtual void ClampAttribute(const FGameplayAttribute& Attribute, float& NewValue) const;
-	
+
 	// RepNotifies
-	
+
 	UFUNCTION()
 	void OnRep_Health(const FGameplayAttributeData& OldValue) const;
-	
+
 	UFUNCTION()
 	void OnRep_MaxHealth(const FGameplayAttributeData& OldValue) const;
-	
+
+protected:
+	// Used to track when the health reaches 0 to trigger ReadyToDie event only once
+	bool bReadyToDie;
+
 public:
 	UECRHealthSet();
 
@@ -81,7 +88,8 @@ public:
 	ATTRIBUTE_ACCESSORS(UECRHealthSet, Health);
 	ATTRIBUTE_ACCESSORS(UECRHealthSet, MaxHealth);
 	ATTRIBUTE_ACCESSORS(UECRHealthSet, Healing);
+	ATTRIBUTE_ACCESSORS(UECRHealthSet, Damage);
 
 	// Delegate to broadcast when the health attribute reaches zero.
-	mutable FECRAttributeEvent OnOutOfHealth;
+	mutable FECRAttributeEvent OnReadyToDie;
 };

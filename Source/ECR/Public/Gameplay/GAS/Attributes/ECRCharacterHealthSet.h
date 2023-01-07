@@ -36,7 +36,9 @@ class ECR_API UECRCharacterHealthSet : public UECRHealthSet
 protected:
 	/** Check for damage immunity for shield in PreGameplayEffectExecute */
 	virtual bool PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data) override;
-	
+
+	virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
+
 	/** Clamp attribute base value in PreAttributeBaseChange */
 	virtual void PreAttributeBaseChange(const FGameplayAttribute& Attribute, float& NewValue) const override;
 

@@ -7,19 +7,10 @@
 #include "Gameplay/GAS/ECRGameplayEffectContext.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
-#include "Gameplay/GAS/Attributes/ECRSimpleHealthSet.h"
 
 struct FDamageStatics
 {
-	// Common source attributes
 	FGameplayEffectAttributeCaptureDefinition BaseDamageDef;
-
-	// Target character attributes
-	FGameplayEffectAttributeCaptureDefinition CharacterHealthDef;
-	FGameplayEffectAttributeCaptureDefinition CharacterShieldDef;
-
-	// Target simple actor attributes
-	FGameplayEffectAttributeCaptureDefinition SimpleActorHealthDef;
 
 	FDamageStatics()
 	{
@@ -27,18 +18,6 @@ struct FDamageStatics
 		BaseDamageDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetBaseDamageAttribute(),
 		                                                          EGameplayEffectAttributeCaptureSource::Source,
 		                                                          true);
-		// Target character attributes
-		CharacterHealthDef = FGameplayEffectAttributeCaptureDefinition(UECRCharacterHealthSet::GetHealthAttribute(),
-		                                                               EGameplayEffectAttributeCaptureSource::Target,
-		                                                               false);
-		CharacterShieldDef = FGameplayEffectAttributeCaptureDefinition(UECRCharacterHealthSet::GetShieldAttribute(),
-		                                                               EGameplayEffectAttributeCaptureSource::Target,
-		                                                               false);
-
-		// Target simple actor attributes
-		SimpleActorHealthDef = FGameplayEffectAttributeCaptureDefinition(UECRSimpleHealthSet::GetHealthAttribute(),
-		                                                                 EGameplayEffectAttributeCaptureSource::Target,
-		                                                                 false);
 	}
 };
 
@@ -52,17 +31,6 @@ static FDamageStatics& DamageStatics()
 UECRDamageExecution::UECRDamageExecution()
 {
 	RelevantAttributesToCapture.Add(DamageStatics().BaseDamageDef);
-
-	RelevantAttributesToCapture.Add(DamageStatics().CharacterHealthDef);
-	RelevantAttributesToCapture.Add(DamageStatics().CharacterShieldDef);
-
-	RelevantAttributesToCapture.Add(DamageStatics().SimpleActorHealthDef);
-
-#if WITH_EDITORONLY_DATA
-	InvalidScopedModifierAttributes.Add(DamageStatics().CharacterHealthDef);
-	InvalidScopedModifierAttributes.Add(DamageStatics().CharacterShieldDef);
-	InvalidScopedModifierAttributes.Add(DamageStatics().SimpleActorHealthDef);
-#endif // #if WITH_EDITORONLY_DATA
 }
 
 void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
@@ -151,79 +119,10 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	}
 	DistanceAttenuation = FMath::Max(DistanceAttenuation, 0.0f);
 
-	const float AttenuatedDamage = BaseDamage * DistanceAttenuation * PhysicalMaterialAttenuation;
-
-	// Or maybe ExecutionParams.GetTargetAbilitySystemComponent()->GetAttributeSet(UECRCharacterHealthSet::StaticClass());
-	if (Cast<AECRCharacter>(HitActor))
-	{
-		// Handling applying damage to character
-		ApplyDamageToCharacter(ExecutionParams, OutExecutionOutput, EvaluateParameters, AttenuatedDamage);
-	}
-	else
-	{
-		ApplyDamageToSimpleActor(ExecutionParams, OutExecutionOutput, EvaluateParameters, AttenuatedDamage);
-	}
+	const float AttenuatedDamage = FMath::Max(0, BaseDamage * DistanceAttenuation * PhysicalMaterialAttenuation);
+	OutExecutionOutput.AddOutputModifier(
+		FGameplayModifierEvaluatedData(UECRHealthSet::GetDamageAttribute(), EGameplayModOp::Additive,
+		                               AttenuatedDamage));
 
 #endif // #if WITH_SERVER_CODE
-}
-
-
-void UECRDamageExecution::ApplyDamageToCharacter(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
-                                                 FGameplayEffectCustomExecutionOutput& OutExecutionOutput,
-                                                 const FAggregatorEvaluateParameters EvaluateParameters,
-                                                 const float AttenuatedDamage) const
-{
-	float CurrentHealth = 0.0f;
-	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().CharacterHealthDef, EvaluateParameters,
-	                                                           CurrentHealth);
-
-	float CurrentShield = 0.0f;
-	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().CharacterShieldDef, EvaluateParameters,
-	                                                           CurrentShield);
-
-	if (CurrentShield > 0)
-	{
-		// Apply damage to shield
-
-		// This clamp prevents us from doing more damage than there is shield available.
-		const float DamageDone = FMath::Clamp(AttenuatedDamage, 0.0f, CurrentShield);
-		if (DamageDone > 0.0f)
-		{
-			OutExecutionOutput.AddOutputModifier(
-				FGameplayModifierEvaluatedData(UECRCharacterHealthSet::GetShieldAttribute(), EGameplayModOp::Additive,
-				                               -DamageDone));
-		}
-	}
-	else
-	{
-		// Apply damage to health
-
-		// This clamp prevents us from doing more damage than there is health available.
-		const float DamageDone = FMath::Clamp(AttenuatedDamage, 0.0f, CurrentHealth);
-		if (DamageDone > 0.0f)
-		{
-			OutExecutionOutput.AddOutputModifier(
-				FGameplayModifierEvaluatedData(UECRCharacterHealthSet::GetHealthAttribute(), EGameplayModOp::Additive,
-				                               -DamageDone));
-		}
-	}
-}
-
-void UECRDamageExecution::ApplyDamageToSimpleActor(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
-                                                   FGameplayEffectCustomExecutionOutput& OutExecutionOutput,
-                                                   const FAggregatorEvaluateParameters EvaluateParameters,
-                                                   const float AttenuatedDamage) const
-{
-	float CurrentHealth = 0.0f;
-	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().SimpleActorHealthDef, EvaluateParameters,
-	                                                           CurrentHealth);
-
-	// This clamp prevents us from doing more damage than there is health available.
-	const float DamageDone = FMath::Clamp(AttenuatedDamage, 0.0f, CurrentHealth);
-	if (DamageDone > 0.0f)
-	{
-		OutExecutionOutput.AddOutputModifier(
-			FGameplayModifierEvaluatedData(UECRSimpleHealthSet::GetHealthAttribute(), EGameplayModOp::Additive,
-			                               -DamageDone));
-	}
 }
