@@ -68,11 +68,16 @@ public:
 	FECRHealth_AttributeChanged OnMaxStaminaChanged;
 
 protected:
+	virtual void ClearGameplayTags() override;
+
 	virtual void HandleShieldChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleMaxShieldChanged(const FOnAttributeChangeData& ChangeData);
 
 	virtual void HandleStaminaChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleMaxStaminaChanged(const FOnAttributeChangeData& ChangeData);
+
+	virtual void HandleReadyToBecomeWounded(AActor* DamageInstigator, AActor* DamageCauser,
+	                                        const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude);
 
 protected:
 	// Health set used by this component. Duplicates HealthSet.

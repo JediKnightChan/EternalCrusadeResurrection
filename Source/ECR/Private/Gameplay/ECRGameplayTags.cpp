@@ -48,6 +48,8 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 
 	AddTag(GameplayEvent_Death, "GameplayEvent.Death",
 	       "Event that fires on death. This event only fires on the server.");
+	AddTag(GameplayEvent_Wounded, "GameplayEvent.Wounded",
+		   "Event that fires on becoming wounded. This event only fires on the server.");
 	AddTag(GameplayEvent_Reset, "GameplayEvent.Reset", "Event that fires once a player reset is executed.");
 	AddTag(GameplayEvent_RequestReset, "GameplayEvent.RequestReset",
 	       "Event to request a player's pawn to be instantly replaced with a new one at a valid spawn location.");
@@ -63,6 +65,7 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddTag(Status_Death, "Status.Death", "Target has the death status.");
 	AddTag(Status_Death_Dying, "Status.Death.Dying", "Target has begun the death process.");
 	AddTag(Status_Death_Dead, "Status.Death.Dead", "Target has finished the death process.");
+	AddTag(Status_Wounded, "Status.Wounded", "Target is wounded.");
 
 	AddMovementModeTag(Movement_Mode_Walking, "Movement.Mode.Walking", MOVE_Walking);
 	AddMovementModeTag(Movement_Mode_NavWalking, "Movement.Mode.NavWalking", MOVE_NavWalking);

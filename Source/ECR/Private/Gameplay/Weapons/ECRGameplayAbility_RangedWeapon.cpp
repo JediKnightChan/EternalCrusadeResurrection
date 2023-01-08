@@ -81,7 +81,6 @@ UECRGameplayAbility_RangedWeapon::UECRGameplayAbility_RangedWeapon(const FObject
 
 UECRRangedWeaponInstance* UECRGameplayAbility_RangedWeapon::GetWeaponInstance(UObject* SourceObject) const
 {
-	UE_LOG(LogTemp, Warning, TEXT("GWI called"))
 	return Cast<UECRRangedWeaponInstance>(GetAssociatedEquipment(SourceObject));
 }
 
@@ -92,8 +91,7 @@ bool UECRGameplayAbility_RangedWeapon::CanActivateAbility(const FGameplayAbility
                                                           FGameplayTagContainer* OptionalRelevantTags) const
 {
 	bool bResult = Super::CanActivateAbility(Handle, ActorInfo, SourceTags, TargetTags, OptionalRelevantTags);
-
-	UE_LOG(LogTemp, Warning, TEXT("Can activated called"))
+	
 	if (bResult)
 	{
 		FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->FindAbilitySpecFromHandle(Handle);

@@ -48,8 +48,11 @@ protected:
 	/** Send message about damage to other subsystems */
 	void SendDamageMessage(const FGameplayEffectModCallbackData& DamageData) const;
 
+	/** Return if character is ready ti die */
+	virtual bool GetIsReadyToDie() const;
+
 	/** Checks if ready to die and broadcast event */
-	virtual void CheckIfReadyToDie(const FGameplayEffectModCallbackData& Data);
+	void CheckIfReadyToDie(const FGameplayEffectModCallbackData& Data);
 
 	/** Check for damage immunity in PreGameplayEffectExecute */
 	virtual bool PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data) override;

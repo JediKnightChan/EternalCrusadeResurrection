@@ -10,7 +10,9 @@ UECRCharacterHealthSet::UECRCharacterHealthSet()
 	: Shield(100.0f),
 	  MaxShield(100.0f),
 	  Stamina(100.0f),
-	  MaxStamina(100.0f)
+	  MaxStamina(100.0f),
+	  BleedingHealth(100.0f),
+	  MaxBleedingHealth(100.0f)
 {
 }
 
@@ -23,33 +25,38 @@ void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxShield, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Stamina, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxStamina, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, BleedingHealth, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxBleedingHealth, COND_None, REPNOTIFY_Always);
 }
 
 
-bool UECRCharacterHealthSet::PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data)
+bool UECRCharacterHealthSet::GetIsReadyToBecomeWounded() const
 {
-	if (!Super::PreGameplayEffectExecute(Data))
-	{
-		return false;
-	}
+	return GetHealth() <= 0;
+}
 
-	if (Data.EvaluatedData.Attribute == GetShieldAttribute())
+bool UECRCharacterHealthSet::GetIsReadyToDie() const
+{
+	return GetBleedingHealth() <= 0;
+}
+
+
+void UECRCharacterHealthSet::CheckIfReadyToBecomeWounded(const FGameplayEffectModCallbackData& Data)
+{
+	if (GetIsReadyToBecomeWounded() && !bReadyToBecomeWounded)
 	{
-		if (Data.EvaluatedData.Magnitude < 0.0f)
+		if (OnReadyToBecomeWounded.IsBound())
 		{
-			const bool bIsDamageFromSelfDestruct = Data.EffectSpec.GetDynamicAssetTags().HasTagExact(
-				TAG_Gameplay_DamageSelfDestruct);
+			const FGameplayEffectContextHandle& EffectContext = Data.EffectSpec.GetEffectContext();
+			AActor* Instigator = EffectContext.GetOriginalInstigator();
+			AActor* Causer = EffectContext.GetEffectCauser();
 
-			if (Data.Target.HasMatchingGameplayTag(TAG_Gameplay_DamageImmunity) && !bIsDamageFromSelfDestruct)
-			{
-				// Do not take away any shield.
-				Data.EvaluatedData.Magnitude = 0.0f;
-				return false;
-			}
+			OnReadyToBecomeWounded.Broadcast(Instigator, Causer, Data.EffectSpec, Data.EvaluatedData.Magnitude);
 		}
 	}
 
-	return true;
+	// Check health again in case an event above changed it.
+	bReadyToBecomeWounded = GetIsReadyToBecomeWounded();
 }
 
 
@@ -59,33 +66,52 @@ void UECRCharacterHealthSet::PostGameplayEffectExecute(const FGameplayEffectModC
 	if (Data.EvaluatedData.Attribute == GetDamageAttribute())
 	{
 		// Send a standardized verb message that other systems can observe
-		if (Data.EvaluatedData.Magnitude < 0.0f)
+		if (Data.EvaluatedData.Magnitude > 0.0f)
 		{
 			SendDamageMessage(Data);
 		}
+		float DamageToApplyValue = GetDamage();
 		if (GetShield() > 0)
 		{
 			// Convert into -Shield and then clamp
-			SetShield(FMath::Clamp(GetShield() - GetDamage(), 0, GetMaxShield()));
+			const float ShieldValue = GetShield();
+			SetShield(FMath::Clamp(ShieldValue - DamageToApplyValue, 0, GetMaxShield()));
+			DamageToApplyValue = DamageToApplyValue - ShieldValue;
 		}
-		else
+		if (GetHealth() > 0 && DamageToApplyValue > 0)
 		{
 			// Convert into -Health and then clamp
-			SetHealth(FMath::Clamp(GetHealth() - GetDamage(), 0, GetMaxHealth()));
+			const float HealthValue = GetHealth();
+			SetHealth(FMath::Clamp(HealthValue - DamageToApplyValue, 0, GetMaxHealth()));
+			DamageToApplyValue = DamageToApplyValue - HealthValue;
+		}
+		if (GetBleedingHealth() > 0 && DamageToApplyValue > 0)
+		{
+			// Convert into -BleedingHealth and then clamp
+			SetBleedingHealth(FMath::Clamp(GetBleedingHealth() - DamageToApplyValue, 0, GetMaxBleedingHealth()));
 		}
 		SetDamage(0.0f);
 	}
 	else if (Data.EvaluatedData.Attribute == GetHealingAttribute())
 	{
-		SetHealth(FMath::Clamp(GetHealth() + GetHealing(), 0, GetMaxHealth()));
+		float HealingToApplyValue = GetHealing();
+		if (GetBleedingHealth() < GetMaxBleedingHealth())
+		{
+			// Convert into +BleedingHealth and then clamp
+			const float BleedingHealthValue = GetBleedingHealth();
+			SetBleedingHealth(FMath::Clamp(GetBleedingHealth() + HealingToApplyValue, 0, GetMaxBleedingHealth()));
+			HealingToApplyValue = HealingToApplyValue - (GetMaxBleedingHealth() - BleedingHealthValue);
+		}
+		if (GetHealth() < GetMaxHealth() && HealingToApplyValue > 0)
+		{
+			const float HealthValue = GetHealth();
+			SetHealth(FMath::Clamp(GetHealth() + HealingToApplyValue, 0, GetMaxHealth()));
+		}
+
 		SetHealing(0.0f);
 	}
-	else if (Data.EvaluatedData.Attribute == GetHealthAttribute())
-	{
-		// Clamp and fall into out of health handling below
-		SetHealth(FMath::Clamp(GetHealth(), 0, GetMaxHealth()));
-	}
 
+	CheckIfReadyToBecomeWounded(Data);
 	CheckIfReadyToDie(Data);
 }
 
@@ -117,6 +143,10 @@ void UECRCharacterHealthSet::PostAttributeChange(const FGameplayAttribute& Attri
 	// Make sure current stamina is not greater than the new max stamina.
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxStaminaAttribute(),
 	                                 GetStaminaAttribute(), GetStamina());
+
+	// Make sure current bleeding health is not greater than the new max bleeding health.
+	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxBleedingHealthAttribute(), GetBleedingHealthAttribute(),
+	                                 GetBleedingHealth());
 }
 
 
@@ -144,6 +174,16 @@ void UECRCharacterHealthSet::ClampAttribute(const FGameplayAttribute& Attribute,
 		// Do not allow max stamina to drop below 1.
 		NewValue = FMath::Max(NewValue, 1.0f);
 	}
+	else if (Attribute == GetBleedingHealthAttribute())
+	{
+		// Do not allow bleeding health to drop below 0.
+		NewValue = FMath::Clamp(NewValue, 0.0f, GetMaxBleedingHealth());
+	}
+	else if (Attribute == GetMaxBleedingHealthAttribute())
+	{
+		// Do not allow max bleeding health to drop below 1.
+		NewValue = FMath::Max(NewValue, 1.0f);
+	}
 }
 
 
@@ -168,4 +208,14 @@ void UECRCharacterHealthSet::OnRep_Stamina(const FGameplayAttributeData& OldValu
 void UECRCharacterHealthSet::OnRep_MaxStamina(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxStamina, OldValue)
+}
+
+void UECRCharacterHealthSet::OnRep_BleedingHealth(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, BleedingHealth, OldValue)
+}
+
+void UECRCharacterHealthSet::OnRep_MaxBleedingHealth(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxBleedingHealth, OldValue)
 }

@@ -33,10 +33,25 @@ class ECR_API UECRCharacterHealthSet : public UECRHealthSet
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData MaxStamina;
 
-protected:
-	/** Check for damage immunity for shield in PreGameplayEffectExecute */
-	virtual bool PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data) override;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_BleedingHealth,
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData BleedingHealth;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_MaxBleedingHealth,
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData MaxBleedingHealth;
+
+protected:
+	/** Returns if ready to become wounded */
+	virtual bool GetIsReadyToBecomeWounded() const;
+
+	/** Returns if is ready to die */
+	virtual bool GetIsReadyToDie() const override;
+
+	/** Check if is ready to become wounded and broadcast event */
+	void CheckIfReadyToBecomeWounded(const FGameplayEffectModCallbackData& Data);
+
+	/** React to damage, healing */
 	virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
 
 	/** Clamp attribute base value in PreAttributeBaseChange */
@@ -65,6 +80,16 @@ protected:
 	UFUNCTION()
 	void OnRep_MaxStamina(const FGameplayAttributeData& OldValue) const;
 
+	UFUNCTION()
+	void OnRep_BleedingHealth(const FGameplayAttributeData& OldValue) const;
+
+	UFUNCTION()
+	void OnRep_MaxBleedingHealth(const FGameplayAttributeData& OldValue) const;
+
+protected:
+	// Used to track when the health reaches 0 to trigger ReadyToBecomeWounded event only once
+	bool bReadyToBecomeWounded;
+
 public:
 	UECRCharacterHealthSet();
 
@@ -72,4 +97,9 @@ public:
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxShield);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, Stamina);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxStamina);
+	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, BleedingHealth);
+	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxBleedingHealth);
+
+	// Delegate to broadcast when the health attribute reaches zero.
+	mutable FECRAttributeEvent OnReadyToBecomeWounded;
 };

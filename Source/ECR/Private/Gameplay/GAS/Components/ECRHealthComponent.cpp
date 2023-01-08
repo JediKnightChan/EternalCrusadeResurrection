@@ -88,7 +88,7 @@ void UECRHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystemComponent
 		this, &ThisClass::HandleHealthChanged);
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRHealthSet::GetMaxHealthAttribute()).AddUObject(
 		this, &ThisClass::HandleMaxHealthChanged);
-	HealthSet->OnReadyToDie.AddUObject(this, &ThisClass::HandleOutOfHealth);
+	HealthSet->OnReadyToDie.AddUObject(this, &ThisClass::HandleReadyToDie);
 
 	OnHealthChanged.Broadcast(this, HealthSet->GetHealth(), HealthSet->GetHealth(), nullptr);
 	OnMaxHealthChanged.Broadcast(this, HealthSet->GetHealth(), HealthSet->GetHealth(), nullptr);
@@ -166,15 +166,15 @@ void UECRHealthComponent::HandleMaxHealthChanged(const FOnAttributeChangeData& C
 	                             GetInstigatorFromAttrChangeData(ChangeData));
 }
 
-void UECRHealthComponent::HandleOutOfHealth(AActor* DamageInstigator, AActor* DamageCauser,
+void UECRHealthComponent::HandleReadyToDie(AActor* DamageInstigator, AActor* DamageCauser,
                                             const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude)
 {
-	UE_LOG(LogTemp, Warning, TEXT("OUT OF HEALTH"));
 #if WITH_SERVER_CODE
 	if (AbilitySystemComponent)
 	{
 		// Send the "GameplayEvent.Death" gameplay event through the owner's ability system.  This can be used to trigger a death gameplay ability.
 		{
+			UE_LOG(LogTemp, Warning, TEXT("Sending ready to die event"))
 			FGameplayEventData Payload;
 			Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_Death;
 			Payload.Instigator = DamageInstigator;

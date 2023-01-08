@@ -18,7 +18,6 @@ UECRAbilityCost_ItemTagStack::UECRAbilityCost_ItemTagStack()
 
 bool UECRAbilityCost_ItemTagStack::CheckCost(const UECRGameplayAbility* Ability, const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, FGameplayTagContainer* OptionalRelevantTags) const
 {
-	UE_LOG(LogTemp, Warning, TEXT("CC caled"))
 	if (const UECRGameplayAbility_FromEquipment* EquipmentAbility = Cast<const UECRGameplayAbility_FromEquipment>(Ability))
 	{
 		const FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->FindAbilitySpecFromHandle(Handle);

@@ -25,7 +25,6 @@ UECREquipmentInstance* UECRGameplayAbility_FromEquipment::GetAssociatedEquipment
 
 UECRInventoryItemInstance* UECRGameplayAbility_FromEquipment::GetAssociatedItem(UObject* SourceObject) const
 {
-	UE_LOG(LogTemp, Warning, TEXT("GAI called"));
 	if (UECREquipmentInstance* Equipment = GetAssociatedEquipment(SourceObject))
 	{
 		return Cast<UECRInventoryItemInstance>(Equipment->GetInstigator());

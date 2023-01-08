@@ -189,6 +189,11 @@ void AECRCharacter::OnAbilitySystemInitialized()
 	UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent();
 	check(ECRASC);
 
+	if (GetWorld()->GetNetMode() < NM_Client)
+	{
+		InitPawnDataAndAbilities();
+	}
+
 	HealthComponent->InitializeWithAbilitySystem(ECRASC);
 
 	InitializeGameplayTags();
@@ -208,7 +213,6 @@ void AECRCharacter::PossessedBy(AController* NewController)
 	if (GetWorld()->GetNetMode() < NM_Client)
 	{
 		PawnExtComponent->SetPawnData(PawnData);
-		InitPawnDataAndAbilities();
 	}
 }
 
@@ -327,6 +331,7 @@ void AECRCharacter::OnDeathFinished(AActor*)
 
 void AECRCharacter::DisableMovementAndCollision()
 {
+	UE_LOG(LogTemp, Warning, TEXT("Disabling movememnt and collision"));
 	if (Controller)
 	{
 		Controller->SetIgnoreMoveInput(true);

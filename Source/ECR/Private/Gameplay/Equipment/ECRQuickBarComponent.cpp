@@ -89,7 +89,7 @@ void UECRQuickBarComponent::EquipItemInSlot()
 {
 	check(Slots.IsValidIndex(ActiveSlotIndex));
 	check(EquippedItem == nullptr);
-	UE_LOG(LogTemp, Warning, TEXT("Trying to equip item"))
+
 	if (UECRInventoryItemInstance* SlotItem = Slots[ActiveSlotIndex])
 	{
 		if (const UInventoryFragment_EquippableItem* EquipInfo = SlotItem->FindFragmentByClass<
@@ -98,15 +98,12 @@ void UECRQuickBarComponent::EquipItemInSlot()
 			TSubclassOf<UECREquipmentDefinition> EquipDef = EquipInfo->EquipmentDefinition;
 			if (EquipDef != nullptr)
 			{
-				UE_LOG(LogTemp, Warning, TEXT("Equpping def-n is good"))
 				if (UECREquipmentManagerComponent* EquipmentManager = FindEquipmentManager())
 				{
-					UE_LOG(LogTemp, Warning, TEXT("Equpping manager is good"))
 					EquippedItem = EquipmentManager->EquipItem(EquipDef);
 					
 					if (EquippedItem != nullptr)
 					{
-						UE_LOG(LogTemp, Warning, TEXT("Equpping went good"));
 						EquippedItem->SetInstigator(SlotItem);
 					}
 				}
@@ -131,13 +128,9 @@ UECREquipmentManagerComponent* UECRQuickBarComponent::FindEquipmentManager() con
 {
 	if (AController* OwnerController = Cast<AController>(GetOwner()))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Controller is good"))
 		if (APawn* Pawn = OwnerController->GetPawn())
 		{
-		    UE_LOG(LogTemp, Warning, TEXT("Pawn is good"));
 			return Pawn->FindComponentByClass<UECREquipmentManagerComponent>();
-		} else {
-			UE_LOG(LogTemp, Warning, TEXT("Pawn is null"))
 		}
 	}
 	return nullptr;

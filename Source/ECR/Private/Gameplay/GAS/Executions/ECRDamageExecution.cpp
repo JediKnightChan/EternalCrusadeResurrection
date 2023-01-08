@@ -53,7 +53,7 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	float BaseDamage = 0.0f;
 	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().BaseDamageDef, EvaluateParameters,
 	                                                           BaseDamage);
-	UE_LOG(LogTemp, Warning, TEXT("Damage base is %f"), BaseDamage);
+
 	const AActor* EffectCauser = TypedContext->GetEffectCauser();
 	const FHitResult* HitActorResult = TypedContext->GetHitResult();
 

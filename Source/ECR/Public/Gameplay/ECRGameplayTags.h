@@ -39,6 +39,7 @@ public:
 	FGameplayTag InputTag_AutoRun;
 
 	FGameplayTag GameplayEvent_Death;
+	FGameplayTag GameplayEvent_Wounded;
 	FGameplayTag GameplayEvent_Reset;
 	FGameplayTag GameplayEvent_RequestReset;
 	FGameplayTag GameplayEvent_MovementModeChanged;
@@ -55,6 +56,7 @@ public:
 	FGameplayTag Status_Death;
 	FGameplayTag Status_Death_Dying;
 	FGameplayTag Status_Death_Dead;
+	FGameplayTag Status_Wounded;
 
 	FGameplayTag Movement_Mode_Walking;
 	FGameplayTag Movement_Mode_NavWalking;

@@ -111,11 +111,11 @@ public:
 protected:
 	virtual void OnUnregister() override;
 
-	void ClearGameplayTags();
+	virtual void ClearGameplayTags();
 
 	virtual void HandleHealthChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleMaxHealthChanged(const FOnAttributeChangeData& ChangeData);
-	virtual void HandleOutOfHealth(AActor* DamageInstigator, AActor* DamageCauser,
+	virtual void HandleReadyToDie(AActor* DamageInstigator, AActor* DamageCauser,
 	                               const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude);
 
 	UFUNCTION()

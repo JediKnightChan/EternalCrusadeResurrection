@@ -29,9 +29,9 @@ bool UECRHealthSet::PreGameplayEffectExecute(FGameplayEffectModCallbackData& Dat
 		return false;
 	}
 
-	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
+	if (Data.EvaluatedData.Attribute == GetDamageAttribute())
 	{
-		if (Data.EvaluatedData.Magnitude < 0.0f)
+		if (Data.EvaluatedData.Magnitude > 0.0f)
 		{
 			const bool bIsDamageFromSelfDestruct = Data.EffectSpec.GetDynamicAssetTags().HasTagExact(
 				TAG_Gameplay_DamageSelfDestruct);
@@ -66,9 +66,14 @@ void UECRHealthSet::SendDamageMessage(const FGameplayEffectModCallbackData& Dama
 }
 
 
+bool UECRHealthSet::GetIsReadyToDie() const
+{
+	return GetHealth() <= 0.0f;
+}
+
 void UECRHealthSet::CheckIfReadyToDie(const FGameplayEffectModCallbackData& Data)
 {
-	if ((GetHealth() <= 0.0f) && !bReadyToDie)
+	if (GetIsReadyToDie() && !bReadyToDie)
 	{
 		if (OnReadyToDie.IsBound())
 		{
@@ -81,7 +86,7 @@ void UECRHealthSet::CheckIfReadyToDie(const FGameplayEffectModCallbackData& Data
 	}
 
 	// Check health again in case an event above changed it.
-	bReadyToDie = (GetHealth() <= 0.0f);
+	bReadyToDie = GetIsReadyToDie();
 }
 
 void UECRHealthSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
@@ -104,11 +109,6 @@ void UECRHealthSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackDa
 	{
 		SetHealth(FMath::Clamp(GetHealth() + GetHealing(), 0, GetMaxHealth()));
 		SetHealing(0.0f);
-	}
-	else if (Data.EvaluatedData.Attribute == GetHealthAttribute())
-	{
-		// Clamp and fall into out of health handling below
-		SetHealth(FMath::Clamp(GetHealth(), 0, GetMaxHealth()));
 	}
 
 	CheckIfReadyToDie(Data);
