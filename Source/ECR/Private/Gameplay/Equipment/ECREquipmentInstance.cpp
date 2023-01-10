@@ -95,6 +95,20 @@ void UECREquipmentInstance::OnUnequipped()
 	K2_OnUnequipped();
 }
 
+void UECREquipmentInstance::SetVisibility(bool bNewVisible)
+{
+	bVisible = bNewVisible;
+	OnRep_bVisible();
+}
+
+void UECREquipmentInstance::OnRep_bVisible()
+{
+	for (AActor* Actor : GetSpawnedActors())
+	{
+		Actor->SetActorHiddenInGame(!bVisible);
+	}
+}
+
 void UECREquipmentInstance::OnRep_Instigator()
 {
 }

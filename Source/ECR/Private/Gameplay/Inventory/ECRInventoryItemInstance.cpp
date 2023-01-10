@@ -40,9 +40,13 @@ bool UECRInventoryItemInstance::HasStatTag(FGameplayTag Tag) const
 void UECRInventoryItemInstance::SetItemDef(TSubclassOf<UECRInventoryItemDefinition> InDef)
 {
 	ItemDef = InDef;
+
+	const UECRInventoryItemDefinition* ItemDefCDO = InDef.GetDefaultObject();
+	QuickBarChannelName = ItemDefCDO->QuickBarChannelName;
 }
 
-const UECRInventoryItemFragment* UECRInventoryItemInstance::FindFragmentByClass(TSubclassOf<UECRInventoryItemFragment> FragmentClass) const
+const UECRInventoryItemFragment* UECRInventoryItemInstance::FindFragmentByClass(
+	TSubclassOf<UECRInventoryItemFragment> FragmentClass) const
 {
 	if ((ItemDef != nullptr) && (FragmentClass != nullptr))
 	{
@@ -51,4 +55,3 @@ const UECRInventoryItemFragment* UECRInventoryItemInstance::FindFragmentByClass(
 
 	return nullptr;
 }
-

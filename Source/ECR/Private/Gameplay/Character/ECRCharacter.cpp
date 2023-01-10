@@ -181,7 +181,11 @@ UECRAbilitySystemComponent* AECRCharacter::GetECRAbilitySystemComponent() const
 
 UAbilitySystemComponent* AECRCharacter::GetAbilitySystemComponent() const
 {
-	return PawnExtComponent->GetECRAbilitySystemComponent();
+	if (PawnExtComponent)
+	{
+		return PawnExtComponent->GetECRAbilitySystemComponent();
+	}
+	return nullptr;
 }
 
 void AECRCharacter::OnAbilitySystemInitialized()

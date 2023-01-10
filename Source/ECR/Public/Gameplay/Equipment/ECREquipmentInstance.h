@@ -48,6 +48,8 @@ public:
 	virtual void OnEquipped();
 	virtual void OnUnequipped();
 
+	void SetVisibility(bool bNewVisible);
+
 protected:
 	UFUNCTION(BlueprintImplementableEvent, Category=Equipment, meta=(DisplayName="OnEquipped"))
 	void K2_OnEquipped();
@@ -55,6 +57,8 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category=Equipment, meta=(DisplayName="OnUnequipped"))
 	void K2_OnUnequipped();
 
+	UFUNCTION()
+	void OnRep_bVisible();
 private:
 	UFUNCTION()
 	void OnRep_Instigator();
@@ -65,4 +69,7 @@ private:
 
 	UPROPERTY(Replicated)
 	TArray<AActor*> SpawnedActors;
+
+	UPROPERTY(ReplicatedUsing=OnRep_bVisible)
+	bool bVisible = true;
 };

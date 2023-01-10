@@ -12,6 +12,96 @@ class UECRInventoryItemInstance;
 class UECREquipmentInstance;
 class UECREquipmentManagerComponent;
 
+/** A single channel in quickbar */
+USTRUCT(BlueprintType)
+struct FECRQuickBarChannel : public FFastArraySerializerItem
+{
+	GENERATED_BODY()
+
+	FECRQuickBarChannel();
+
+protected:
+	int SlotsDefaultNum = 3;
+
+private:
+	friend struct FECRQuickBar;
+	friend UECRQuickBarComponent;
+
+	UPROPERTY()
+	FName ChannelName;
+
+	UPROPERTY()
+	TArray<TObjectPtr<UECRInventoryItemInstance>> Slots;
+
+	UPROPERTY()
+	int32 ActiveSlotIndex = -1;
+
+	UPROPERTY()
+	TObjectPtr<UECREquipmentInstance> EquippedItem = nullptr;
+
+	UPROPERTY(NotReplicated)
+	bool bVisible = true;
+};
+
+
+/** List of inventory items */
+USTRUCT(BlueprintType)
+struct FECRQuickBar : public FFastArraySerializer
+{
+	GENERATED_BODY()
+
+	FECRQuickBar()
+		: OwnerComponent(nullptr)
+	{
+	}
+
+	FECRQuickBar(UControllerComponent* InOwnerComponent)
+		: OwnerComponent(InOwnerComponent)
+	{
+	}
+public:
+	//~FFastArraySerializer contract
+	void PreReplicatedRemove(const TArrayView<int32> RemovedIndices, int32 FinalSize);
+	void PostReplicatedAdd(const TArrayView<int32> AddedIndices, int32 FinalSize);
+	void PostReplicatedChange(const TArrayView<int32> ChangedIndices, int32 FinalSize);
+	//~End of FFastArraySerializer contract
+
+	bool NetDeltaSerialize(FNetDeltaSerializeInfo& DeltaParms)
+	{
+		return FFastArraySerializer::FastArrayDeltaSerialize<FECRQuickBarChannel, FECRQuickBar>(
+			Channels, DeltaParms, *this);
+	}
+
+private:
+	void BroadcastChangeMessage(FECRQuickBarChannel& Channel);
+	void UnequipItemInActiveSlot(FECRQuickBarChannel& Channel);
+	void EquipItemInActiveSlot(FECRQuickBarChannel& Channel);
+	void UpdateEquippedItemVisibility(FECRQuickBarChannel& Channel);
+
+	UECREquipmentManagerComponent* FindEquipmentManager() const;
+
+	int32 GetIndexOfChannelWithName(FName Name) const;
+	int32 GetIndexOfChannelWithNameOrCreate(FName Name);
+
+private:
+	friend UECRQuickBarComponent;
+
+private:
+	// Replicated list of channels
+	UPROPERTY()
+	TArray<FECRQuickBarChannel> Channels;
+
+	UPROPERTY()
+	UControllerComponent* OwnerComponent;
+};
+
+template <>
+struct TStructOpsTypeTraits<FECRQuickBar> : public TStructOpsTypeTraitsBase2<FECRQuickBar>
+{
+	enum { WithNetDeltaSerializer = true };
+};
+
+
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UECRQuickBarComponent : public UControllerComponent
 {
@@ -20,87 +110,53 @@ class UECRQuickBarComponent : public UControllerComponent
 public:
 	UECRQuickBarComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
-	UFUNCTION(BlueprintCallable, Category="ECR")
-	void CycleActiveSlotForward();
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	TArray<FName> GetChannels() const;
 
 	UFUNCTION(BlueprintCallable, Category="ECR")
-	void CycleActiveSlotBackward();
+	void CycleActiveSlotForward(FName ChannelName);
+
+	UFUNCTION(BlueprintCallable, Category="ECR")
+	void CycleActiveSlotBackward(FName ChannelName);
 
 	UFUNCTION(Server, Reliable, BlueprintCallable, Category="ECR")
-	void SetActiveSlotIndex(int32 NewIndex);
+	void SetActiveSlotIndex(FName ChannelName, int32 NewIndex);
 
 	UFUNCTION(BlueprintCallable, BlueprintPure=false)
-	TArray<UECRInventoryItemInstance*> GetSlots() const
-	{
-		return Slots;
-	}
+	TArray<UECRInventoryItemInstance*> GetSlots(FName ChannelName) const;
 
 	UFUNCTION(BlueprintCallable, BlueprintPure=false)
-	int32 GetActiveSlotIndex() const { return ActiveSlotIndex; }
+	int32 GetActiveSlotIndex(FName ChannelName) const;
 
 	UFUNCTION(BlueprintCallable, BlueprintPure = false)
-	UECRInventoryItemInstance* GetActiveSlotItem() const;
+	UECRInventoryItemInstance* GetActiveSlotItem(FName ChannelName) const;
 
 	UFUNCTION(BlueprintCallable, BlueprintPure=false)
-	int32 GetNextFreeItemSlot() const;
+	int32 GetNextFreeItemSlot(FName ChannelName, bool bReturnZeroIfChannelMissing) const;
 
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void AddItemToSlot(int32 SlotIndex, UECRInventoryItemInstance* Item);
 
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
-	UECRInventoryItemInstance* RemoveItemFromSlot(int32 SlotIndex);
+	UECRInventoryItemInstance* RemoveItemFromSlot(FName ChannelName, int32 SlotIndex);
 
-	virtual void BeginPlay() override;
-
-private:
-	void UnequipItemInSlot();
-	void EquipItemInSlot();
-
-	UECREquipmentManagerComponent* FindEquipmentManager() const;
-
-protected:
-	UPROPERTY()
-	int32 NumSlots = 3;
-
-	UFUNCTION()
-	void OnRep_Slots();
-
-	UFUNCTION()
-	void OnRep_ActiveSlotIndex();
+	UFUNCTION(BlueprintCallable)
+	void SetChannelItemVisibility(FName ChannelName, bool bVisible);
 
 private:
-	UPROPERTY(ReplicatedUsing=OnRep_Slots)
-	TArray<TObjectPtr<UECRInventoryItemInstance>> Slots;
-
-	UPROPERTY(ReplicatedUsing=OnRep_ActiveSlotIndex)
-	int32 ActiveSlotIndex = -1;
-
-	UPROPERTY()
-	TObjectPtr<UECREquipmentInstance> EquippedItem;
+	UPROPERTY(Replicated)
+	FECRQuickBar ChannelData;
 };
 
 
 USTRUCT(BlueprintType)
-struct FECRQuickBarSlotsChangedMessage
+struct FECRQuickBarChannelChangedMessage
 {
 	GENERATED_BODY()
 
-	UPROPERTY(BlueprintReadOnly, Category=Inventory)
-	AActor* Owner = nullptr;
+	UPROPERTY(BlueprintReadOnly, Category=Quickbar)
+	FName ChannelName;
 
-	UPROPERTY(BlueprintReadOnly, Category = Inventory)
-	TArray<TObjectPtr<UECRInventoryItemInstance>> Slots;
-};
-
-
-USTRUCT(BlueprintType)
-struct FECRQuickBarActiveIndexChangedMessage
-{
-	GENERATED_BODY()
-
-	UPROPERTY(BlueprintReadOnly, Category=Inventory)
-	AActor* Owner = nullptr;
-
-	UPROPERTY(BlueprintReadOnly, Category=Inventory)
-	int32 ActiveIndex = 0;
+	UPROPERTY(BlueprintReadOnly, Category=Quickbar)
+	UControllerComponent* QuickBarOwner = nullptr;
 };

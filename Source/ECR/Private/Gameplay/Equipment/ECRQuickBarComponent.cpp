@@ -16,81 +16,74 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/Pawn.h"
 
-UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_ECR_QuickBar_Message_SlotsChanged, "ECR.QuickBar.Message.SlotsChanged");
-UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_ECR_QuickBar_Message_ActiveIndexChanged, "ECR.QuickBar.Message.ActiveIndexChanged");
+UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_ECR_QuickBar_Message_ChannelChanged, "ECR.QuickBar.Message.ChannelChanged");
 
-UECRQuickBarComponent::UECRQuickBarComponent(const FObjectInitializer& ObjectInitializer)
-	: Super(ObjectInitializer)
+
+FECRQuickBarChannel::FECRQuickBarChannel()
 {
-	SetIsReplicatedByDefault(true);
-}
-
-void UECRQuickBarComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
-{
-	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
-	DOREPLIFETIME(ThisClass, Slots);
-	DOREPLIFETIME(ThisClass, ActiveSlotIndex);
-}
-
-void UECRQuickBarComponent::BeginPlay()
-{
-	if (Slots.Num() < NumSlots)
+	if (Slots.Num() < SlotsDefaultNum)
 	{
-		Slots.AddDefaulted(NumSlots - Slots.Num());
+		Slots.AddDefaulted(SlotsDefaultNum - Slots.Num());
 	}
-
-	Super::BeginPlay();
 }
 
-void UECRQuickBarComponent::CycleActiveSlotForward()
-{
-	if (Slots.Num() < 2)
-	{
-		return;
-	}
 
-	const int32 OldIndex = (ActiveSlotIndex < 0 ? Slots.Num() - 1 : ActiveSlotIndex);
-	int32 NewIndex = ActiveSlotIndex;
-	do
+void FECRQuickBar::PreReplicatedRemove(const TArrayView<int32> RemovedIndices, int32 FinalSize)
+{
+	for (int32 Index : RemovedIndices)
 	{
-		NewIndex = (NewIndex + 1) % Slots.Num();
-		if (Slots[NewIndex] != nullptr)
+		FECRQuickBarChannel& Channel = Channels[Index];
+		BroadcastChangeMessage(Channel);
+	}
+}
+
+void FECRQuickBar::PostReplicatedAdd(const TArrayView<int32> AddedIndices, int32 FinalSize)
+{
+	for (int32 Index : AddedIndices)
+	{
+		FECRQuickBarChannel& Channel = Channels[Index];
+		BroadcastChangeMessage(Channel);
+	}
+}
+
+void FECRQuickBar::PostReplicatedChange(const TArrayView<int32> ChangedIndices, int32 FinalSize)
+{
+	for (int32 Index : ChangedIndices)
+	{
+		FECRQuickBarChannel& Channel = Channels[Index];
+		BroadcastChangeMessage(Channel);
+	}
+}
+
+void FECRQuickBar::BroadcastChangeMessage(FECRQuickBarChannel& Channel)
+{
+	FECRQuickBarChannelChangedMessage Message;
+	Message.QuickBarOwner = OwnerComponent;
+	Message.ChannelName = Channel.ChannelName;
+
+	UGameplayMessageSubsystem& MessageSystem = UGameplayMessageSubsystem::Get(OwnerComponent->GetWorld());
+	MessageSystem.BroadcastMessage(TAG_ECR_QuickBar_Message_ChannelChanged, Message);
+}
+
+void FECRQuickBar::UnequipItemInActiveSlot(FECRQuickBarChannel& Channel)
+{
+	if (UECREquipmentManagerComponent* EquipmentManager = FindEquipmentManager())
+	{
+		if (Channel.EquippedItem != nullptr)
 		{
-			SetActiveSlotIndex(NewIndex);
-			return;
+			EquipmentManager->UnequipItem(Channel.EquippedItem);
+			Channel.EquippedItem = nullptr;
+			MarkItemDirty(Channel);
 		}
 	}
-	while (NewIndex != OldIndex);
 }
 
-void UECRQuickBarComponent::CycleActiveSlotBackward()
+void FECRQuickBar::EquipItemInActiveSlot(FECRQuickBarChannel& Channel)
 {
-	if (Slots.Num() < 2)
-	{
-		return;
-	}
+	check(Channel.Slots.IsValidIndex(Channel.ActiveSlotIndex));
+	check(Channel.EquippedItem == nullptr);
 
-	const int32 OldIndex = (ActiveSlotIndex < 0 ? Slots.Num() - 1 : ActiveSlotIndex);
-	int32 NewIndex = ActiveSlotIndex;
-	do
-	{
-		NewIndex = (NewIndex - 1 + Slots.Num()) % Slots.Num();
-		if (Slots[NewIndex] != nullptr)
-		{
-			SetActiveSlotIndex(NewIndex);
-			return;
-		}
-	}
-	while (NewIndex != OldIndex);
-}
-
-void UECRQuickBarComponent::EquipItemInSlot()
-{
-	check(Slots.IsValidIndex(ActiveSlotIndex));
-	check(EquippedItem == nullptr);
-
-	if (UECRInventoryItemInstance* SlotItem = Slots[ActiveSlotIndex])
+	if (UECRInventoryItemInstance* SlotItem = Channel.Slots[Channel.ActiveSlotIndex])
 	{
 		if (const UInventoryFragment_EquippableItem* EquipInfo = SlotItem->FindFragmentByClass<
 			UInventoryFragment_EquippableItem>())
@@ -100,11 +93,12 @@ void UECRQuickBarComponent::EquipItemInSlot()
 			{
 				if (UECREquipmentManagerComponent* EquipmentManager = FindEquipmentManager())
 				{
-					EquippedItem = EquipmentManager->EquipItem(EquipDef);
-					
-					if (EquippedItem != nullptr)
+					Channel.EquippedItem = EquipmentManager->EquipItem(EquipDef);
+					if (Channel.EquippedItem != nullptr)
 					{
-						EquippedItem->SetInstigator(SlotItem);
+						Channel.EquippedItem->SetInstigator(SlotItem);
+						MarkItemDirty(Channel);
+						UpdateEquippedItemVisibility(Channel);
 					}
 				}
 			}
@@ -112,23 +106,17 @@ void UECRQuickBarComponent::EquipItemInSlot()
 	}
 }
 
-void UECRQuickBarComponent::UnequipItemInSlot()
+void FECRQuickBar::UpdateEquippedItemVisibility(FECRQuickBarChannel& Channel)
 {
-	if (UECREquipmentManagerComponent* EquipmentManager = FindEquipmentManager())
-	{
-		if (EquippedItem != nullptr)
-		{
-			EquipmentManager->UnequipItem(EquippedItem);
-			EquippedItem = nullptr;
-		}
-	}
+	check(Channel.EquippedItem);
+	Channel.EquippedItem->SetVisibility(Channel.bVisible);
 }
 
-UECREquipmentManagerComponent* UECRQuickBarComponent::FindEquipmentManager() const
+UECREquipmentManagerComponent* FECRQuickBar::FindEquipmentManager() const
 {
-	if (AController* OwnerController = Cast<AController>(GetOwner()))
+	if (const AController* OwnerController = Cast<AController>(OwnerComponent->GetOwner()))
 	{
-		if (APawn* Pawn = OwnerController->GetPawn())
+		if (const APawn* Pawn = OwnerController->GetPawn())
 		{
 			return Pawn->FindComponentByClass<UECREquipmentManagerComponent>();
 		}
@@ -136,29 +124,157 @@ UECREquipmentManagerComponent* UECRQuickBarComponent::FindEquipmentManager() con
 	return nullptr;
 }
 
-void UECRQuickBarComponent::SetActiveSlotIndex_Implementation(int32 NewIndex)
+int32 FECRQuickBar::GetIndexOfChannelWithName(const FName Name) const
 {
-	if (Slots.IsValidIndex(NewIndex) && (ActiveSlotIndex != NewIndex))
+	for (int i = 0; i < Channels.Num(); i++)
 	{
-		UnequipItemInSlot();
-
-		ActiveSlotIndex = NewIndex;
-
-		EquipItemInSlot();
-
-		OnRep_ActiveSlotIndex();
+		if (Channels[i].ChannelName == Name)
+		{
+			return i;
+		}
 	}
+	return INDEX_NONE;
 }
 
-UECRInventoryItemInstance* UECRQuickBarComponent::GetActiveSlotItem() const
+int32 FECRQuickBar::GetIndexOfChannelWithNameOrCreate(FName Name)
 {
-	return Slots.IsValidIndex(ActiveSlotIndex) ? Slots[ActiveSlotIndex] : nullptr;
+	check(OwnerComponent);
+
+	AActor* OwningActor = OwnerComponent->GetOwner();
+	check(OwningActor->HasAuthority());
+
+	int32 ChannelIndex = GetIndexOfChannelWithName(Name);
+	if (ChannelIndex == INDEX_NONE)
+	{
+		ChannelIndex = Channels.Num();
+
+		FECRQuickBarChannel& NewChannel = Channels.AddDefaulted_GetRef();
+		NewChannel.ChannelName = Name;
+		MarkItemDirty(NewChannel);
+	}
+	return ChannelIndex;
 }
 
-int32 UECRQuickBarComponent::GetNextFreeItemSlot() const
+
+UECRQuickBarComponent::UECRQuickBarComponent(const FObjectInitializer& ObjectInitializer):
+	Super(ObjectInitializer),
+	ChannelData(this)
 {
+	SetIsReplicatedByDefault(true);
+}
+
+TArray<FName> UECRQuickBarComponent::GetChannels() const
+{
+	TArray<FName> ChannelNames;
+	for (const FECRQuickBarChannel& Channel : ChannelData.Channels)
+	{
+		ChannelNames.AddUnique(Channel.ChannelName);
+	}
+	return ChannelNames;
+}
+
+void UECRQuickBarComponent::CycleActiveSlotForward(FName ChannelName)
+{
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
+	if (IndexOfChannel == INDEX_NONE)
+	{
+		return;
+	}
+	FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
+
+	if (Channel.Slots.Num() < 2)
+	{
+		return;
+	}
+
+	const int32 OldIndex = (Channel.ActiveSlotIndex < 0 ? Channel.Slots.Num() - 1 : Channel.ActiveSlotIndex);
+	int32 NewIndex = Channel.ActiveSlotIndex;
+	do
+	{
+		NewIndex = (NewIndex + 1) % Channel.Slots.Num();
+		if (Channel.Slots[NewIndex] != nullptr)
+		{
+			SetActiveSlotIndex(ChannelName, NewIndex);
+			return;
+		}
+	}
+	while (NewIndex != OldIndex);
+}
+
+void UECRQuickBarComponent::CycleActiveSlotBackward(FName ChannelName)
+{
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
+	if (IndexOfChannel == INDEX_NONE)
+	{
+		return;
+	}
+	FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
+
+	if (Channel.Slots.Num() < 2)
+	{
+		return;
+	}
+
+	const int32 OldIndex = (Channel.ActiveSlotIndex < 0 ? Channel.Slots.Num() - 1 : Channel.ActiveSlotIndex);
+	int32 NewIndex = Channel.ActiveSlotIndex;
+	do
+	{
+		NewIndex = (NewIndex - 1 + Channel.Slots.Num()) % Channel.Slots.Num();
+		if (Channel.Slots[NewIndex] != nullptr)
+		{
+			SetActiveSlotIndex(ChannelName, NewIndex);
+			return;
+		}
+	}
+	while (NewIndex != OldIndex);
+}
+
+TArray<UECRInventoryItemInstance*> UECRQuickBarComponent::GetSlots(FName ChannelName) const
+{
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
+	if (IndexOfChannel == INDEX_NONE)
+	{
+		return {};
+	}
+	return ChannelData.Channels[IndexOfChannel].Slots;
+}
+
+int32 UECRQuickBarComponent::GetActiveSlotIndex(FName ChannelName) const
+{
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
+	if (IndexOfChannel == INDEX_NONE)
+	{
+		return INDEX_NONE;
+	}
+	return ChannelData.Channels[IndexOfChannel].ActiveSlotIndex;
+}
+
+UECRInventoryItemInstance* UECRQuickBarComponent::GetActiveSlotItem(FName ChannelName) const
+{
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
+	if (IndexOfChannel == INDEX_NONE)
+	{
+		return nullptr;
+	}
+	const FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
+	return Channel.Slots.IsValidIndex(Channel.ActiveSlotIndex) ? Channel.Slots[Channel.ActiveSlotIndex] : nullptr;
+}
+
+int32 UECRQuickBarComponent::GetNextFreeItemSlot(FName ChannelName, bool bReturnZeroIfChannelMissing) const
+{
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
+	if (IndexOfChannel == INDEX_NONE)
+	{
+		if (bReturnZeroIfChannelMissing)
+		{
+			return 0;
+		}
+		return INDEX_NONE;
+	}
+	const FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
+
 	int32 SlotIndex = 0;
-	for (TObjectPtr<UECRInventoryItemInstance> ItemPtr : Slots)
+	for (TObjectPtr<UECRInventoryItemInstance> ItemPtr : Channel.Slots)
 	{
 		if (ItemPtr == nullptr)
 		{
@@ -172,56 +288,96 @@ int32 UECRQuickBarComponent::GetNextFreeItemSlot() const
 
 void UECRQuickBarComponent::AddItemToSlot(int32 SlotIndex, UECRInventoryItemInstance* Item)
 {
-	if (Slots.IsValidIndex(SlotIndex) && (Item != nullptr))
+	const FName ChannelName = Item->GetQuickBarChannelName();
+
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithNameOrCreate(ChannelName);
+	FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
+
+	if (Channel.Slots.IsValidIndex(SlotIndex) && (Item != nullptr))
 	{
-		if (Slots[SlotIndex] == nullptr)
+		if (Channel.Slots[SlotIndex] == nullptr)
 		{
-			Slots[SlotIndex] = Item;
-			OnRep_Slots();
+			Channel.Slots[SlotIndex] = Item;
+			ChannelData.MarkItemDirty(Channel);
 		}
 	}
 }
 
-UECRInventoryItemInstance* UECRQuickBarComponent::RemoveItemFromSlot(int32 SlotIndex)
+UECRInventoryItemInstance* UECRQuickBarComponent::RemoveItemFromSlot(FName ChannelName, int32 SlotIndex)
 {
 	UECRInventoryItemInstance* Result = nullptr;
 
-	if (ActiveSlotIndex == SlotIndex)
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
+	if (IndexOfChannel == INDEX_NONE)
 	{
-		UnequipItemInSlot();
-		ActiveSlotIndex = -1;
+		return Result;
 	}
 
-	if (Slots.IsValidIndex(SlotIndex))
+	FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
+
+	if (Channel.ActiveSlotIndex == SlotIndex)
 	{
-		Result = Slots[SlotIndex];
+		ChannelData.UnequipItemInActiveSlot(Channel);
+		Channel.ActiveSlotIndex = -1;
+	}
+
+	if (Channel.Slots.IsValidIndex(SlotIndex))
+	{
+		Result = Channel.Slots[SlotIndex];
 
 		if (Result != nullptr)
 		{
-			Slots[SlotIndex] = nullptr;
-			OnRep_Slots();
+			Channel.Slots[SlotIndex] = nullptr;
 		}
 	}
+
+	ChannelData.MarkItemDirty(Channel);
 
 	return Result;
 }
 
-void UECRQuickBarComponent::OnRep_Slots()
+void UECRQuickBarComponent::SetChannelItemVisibility(FName ChannelName, bool bVisible)
 {
-	FECRQuickBarSlotsChangedMessage Message;
-	Message.Owner = GetOwner();
-	Message.Slots = Slots;
+	if (UECREquipmentManagerComponent* EquipmentManager = ChannelData.FindEquipmentManager())
+	{
+		const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
+		if (IndexOfChannel == INDEX_NONE)
+		{
+			return;
+		}
+		FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
+		Channel.bVisible = bVisible;
+		ChannelData.MarkItemDirty(Channel);
 
-	UGameplayMessageSubsystem& MessageSystem = UGameplayMessageSubsystem::Get(this);
-	MessageSystem.BroadcastMessage(TAG_ECR_QuickBar_Message_SlotsChanged, Message);
+		if (Channel.EquippedItem)
+		{
+			ChannelData.UpdateEquippedItemVisibility(Channel);
+		}
+	}
 }
 
-void UECRQuickBarComponent::OnRep_ActiveSlotIndex()
-{
-	FECRQuickBarActiveIndexChangedMessage Message;
-	Message.Owner = GetOwner();
-	Message.ActiveIndex = ActiveSlotIndex;
 
-	UGameplayMessageSubsystem& MessageSystem = UGameplayMessageSubsystem::Get(this);
-	MessageSystem.BroadcastMessage(TAG_ECR_QuickBar_Message_ActiveIndexChanged, Message);
+void UECRQuickBarComponent::SetActiveSlotIndex_Implementation(FName ChannelName, int32 NewIndex)
+{
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
+	if (IndexOfChannel == INDEX_NONE)
+	{
+		return;
+	}
+	FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
+
+	if (Channel.Slots.IsValidIndex(NewIndex) && (Channel.ActiveSlotIndex != NewIndex))
+	{
+		ChannelData.UnequipItemInActiveSlot(Channel);
+		Channel.ActiveSlotIndex = NewIndex;
+		ChannelData.EquipItemInActiveSlot(Channel);
+		ChannelData.MarkItemDirty(Channel);
+	}
+}
+
+void UECRQuickBarComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ThisClass, ChannelData);
 }

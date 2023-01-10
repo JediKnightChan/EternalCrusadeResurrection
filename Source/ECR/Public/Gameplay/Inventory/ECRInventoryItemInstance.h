@@ -53,6 +53,9 @@ public:
 		return (ResultClass*)FindFragmentByClass(ResultClass::StaticClass());
 	}
 
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category=Inventory)
+	FName GetQuickBarChannelName() const { return QuickBarChannelName; }
+
 private:
 	void SetItemDef(TSubclassOf<UECRInventoryItemDefinition> InDef);
 
@@ -65,4 +68,7 @@ private:
 	// The item definition
 	UPROPERTY(Replicated)
 	TSubclassOf<UECRInventoryItemDefinition> ItemDef;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	FName QuickBarChannelName;
 };
