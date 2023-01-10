@@ -16,5 +16,13 @@ that may be useful for a wide range of games.
 -   C++ Unreal Engine 5 project
 -   Customization system for modular characters (material customization, mesh customization)
 -   Epic Online Services P2P matchmaking (users can create their own matches)
--   3rd person multiplayer shooter and melee combat system
 -   Python Scripts for automation of restoring non-exportable or hardly-exportable data for an unpacked UE4 game (socket data, maps data, materials, references to materials within meshes)
+-   Enhanced Input Subsystem is used for input (borrowed from Lyra)
+-   3rd person multiplayer shooter and melee combat system based on Lyra's GAS
+
+### GAS differences from Lyra (5.0)
+-   A better nested directory structure
+-   Fixed a bug with improper cooldown activation on ranged weapons
+-   Several attributes are used to consume damage (First shield, then health, then bleeding health)
+-   QuickBar component has multiple channels (eg one for ranged weapons, one for melee) and can hide all actors by channel
+-   PawnData is defined in GameState and on Character as a spawn option, so it can be customizable, unlike Lyra, where it's defined by experience and is the same for all players
