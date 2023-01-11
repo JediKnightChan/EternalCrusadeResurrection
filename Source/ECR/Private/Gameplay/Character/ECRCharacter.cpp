@@ -22,6 +22,7 @@
 #include "Gameplay/Character/ECRPawnData.h"
 #include "Gameplay/GAS/ECRAbilitySet.h"
 #include "Gameplay/GAS/Components/ECRCharacterHealthComponent.h"
+#include "Gameplay/Interaction/InteractionQuery.h"
 
 static FName NAME_ECRCharacterCollisionProfile_Capsule(TEXT("ECRPawnCapsule"));
 static FName NAME_ECRCharacterCollisionProfile_Mesh(TEXT("ECRPawnMesh"));
@@ -161,6 +162,16 @@ void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTr
 		// [0, MaxAccel] -> [0, 255]
 		ReplicatedAcceleration.AccelZ = FMath::FloorToInt((CurrentAccel.Z / MaxAccel) * 127.0);
 		// [-MaxAccel, MaxAccel] -> [-127, 127]
+	}
+}
+
+void AECRCharacter::GatherInteractionOptions(const FInteractionQuery& InteractQuery,
+                                             FInteractionOptionBuilder& OptionBuilder)
+{
+	TArray<FInteractionOption> InteractionOptions = GetInteractionOptions(InteractQuery);
+	for (FInteractionOption InteractionOption : InteractionOptions)
+	{
+		OptionBuilder.AddInteractionOption(InteractionOption);
 	}
 }
 

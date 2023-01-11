@@ -7,6 +7,8 @@
 #include "GameplayCueInterface.h"
 #include "GameplayTagAssetInterface.h"
 #include "GameFramework/Character.h"
+#include "Gameplay/Interaction/InteractionQuery.h"
+#include "Gameplay/Interaction/IInteractableTarget.h"
 
 #include "ECRCharacter.generated.h"
 
@@ -50,7 +52,7 @@ struct FECRReplicatedAcceleration
  */
 UCLASS(Config = Game, Meta = (ShortTooltip = "The base character pawn class used by this project."))
 class AECRCharacter : public ACharacter, public IAbilitySystemInterface, public IGameplayCueInterface,
-                      public IGameplayTagAssetInterface
+                      public IGameplayTagAssetInterface, public IInteractableTarget
 {
 	GENERATED_BODY()
 
@@ -86,6 +88,15 @@ public:
 	virtual void PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker) override;
 	//~End of AActor interface
 
+	// Interactions
+	/** Blueprint implementable event to get interaction options (like reviving, executing in wounded state) */
+	UFUNCTION(BlueprintImplementableEvent)
+	TArray<FInteractionOption> GetInteractionOptions(const FInteractionQuery InteractQuery);
+	
+	//~IInteractableTarget interface
+	virtual void GatherInteractionOptions(const FInteractionQuery& InteractQuery,
+	                                      FInteractionOptionBuilder& OptionBuilder) override;
+	//~End of IInteractableTarget interface
 protected:
 	virtual void OnAbilitySystemInitialized();
 	virtual void OnAbilitySystemUninitialized();
@@ -100,7 +111,7 @@ protected:
 
 	void InitializeGameplayTags();
 	void GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySets) const;
-	
+
 	virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
 
 	// Begins the death sequence for the character (disables collision, disables movement, etc...)
