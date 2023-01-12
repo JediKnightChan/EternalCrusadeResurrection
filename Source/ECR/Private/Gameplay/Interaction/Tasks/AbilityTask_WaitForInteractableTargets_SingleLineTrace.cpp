@@ -1,6 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "AbilityTask_WaitForInteractableTargets_SingleLineTrace.h"
+#include "Gameplay/Interaction/Tasks/AbilityTask_WaitForInteractableTargets_SingleLineTrace.h"
 #include "GameFramework/Actor.h"
 #include "Physics/ECRCollisionChannels.h"
 #include "Gameplay/Interaction/IInteractableTarget.h"
