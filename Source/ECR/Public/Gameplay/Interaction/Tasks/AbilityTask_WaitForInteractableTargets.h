@@ -18,7 +18,8 @@ class AActor;
 class UPrimitiveComponent;
 class UGameplayAbility;
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInteractableObjectsChangedEvent, const TArray<FInteractionOption>&, InteractableOptions);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInteractableObjectsChangedEvent, const TArray<FInteractionOption>&,
+                                            InteractableOptions);
 
 UCLASS(Abstract)
 class UAbilityTask_WaitForInteractableTargets : public UAbilityTask
@@ -30,14 +31,17 @@ public:
 	FInteractableObjectsChangedEvent InteractableObjectsChanged;
 
 protected:
+	void LineOrSweepTrace(FHitResult& OutHitResult, const UWorld* World, const FVector& Start, const FVector& End,
+	                      FName ProfileName, float SweepRadius, const FCollisionQueryParams Params) const;
 
-	static void LineTrace(FHitResult& OutHitResult, const UWorld* World, const FVector& Start, const FVector& End, FName ProfileName, const FCollisionQueryParams Params);
+	void AimWithPlayerController(const AActor* InSourceActor, FCollisionQueryParams Params, const FVector& TraceStart,
+	                             float MaxRange, float SweepRadius, FVector& OutTraceEnd, bool bIgnorePitch = false) const;
 
-	void AimWithPlayerController(const AActor* InSourceActor, FCollisionQueryParams Params, const FVector& TraceStart, float MaxRange, FVector& OutTraceEnd, bool bIgnorePitch = false) const;
+	static bool ClipCameraRayToAbilityRange(FVector CameraLocation, FVector CameraDirection, FVector AbilityCenter,
+	                                        float AbilityRange, FVector& ClippedPosition);
 
-	static bool ClipCameraRayToAbilityRange(FVector CameraLocation, FVector CameraDirection, FVector AbilityCenter, float AbilityRange, FVector& ClippedPosition);
-
-	void UpdateInteractableOptions(const FInteractionQuery& InteractQuery, const TArray<TScriptInterface<IInteractableTarget>>& InteractableTargets);
+	void UpdateInteractableOptions(const FInteractionQuery& InteractQuery,
+	                               const TArray<TScriptInterface<IInteractableTarget>>& InteractableTargets);
 
 	FCollisionProfileName TraceProfile;
 

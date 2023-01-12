@@ -9,16 +9,23 @@
 #include "AbilitySystemComponent.h"
 #include "TimerManager.h"
 
-UAbilityTask_WaitForInteractableTargets_SingleLineTrace::UAbilityTask_WaitForInteractableTargets_SingleLineTrace(const FObjectInitializer& ObjectInitializer)
+UAbilityTask_WaitForInteractableTargets_SingleLineTrace::UAbilityTask_WaitForInteractableTargets_SingleLineTrace(
+	const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
 }
 
-UAbilityTask_WaitForInteractableTargets_SingleLineTrace* UAbilityTask_WaitForInteractableTargets_SingleLineTrace::WaitForInteractableTargets_SingleLineTrace(UGameplayAbility* OwningAbility, FInteractionQuery InteractionQuery, FCollisionProfileName TraceProfile, FGameplayAbilityTargetingLocationInfo StartLocation, float InteractionScanRange, float InteractionScanRate, bool bShowDebug)
+UAbilityTask_WaitForInteractableTargets_SingleLineTrace*
+UAbilityTask_WaitForInteractableTargets_SingleLineTrace::WaitForInteractableTargets_SingleLineTrace(
+	UGameplayAbility* OwningAbility, FInteractionQuery InteractionQuery, FCollisionProfileName TraceProfile,
+	FGameplayAbilityTargetingLocationInfo StartLocation, float InteractionScanRange, float InteractionScanRate,
+	float SweepRadius, bool bShowDebug)
 {
-	UAbilityTask_WaitForInteractableTargets_SingleLineTrace* MyObj = NewAbilityTask<UAbilityTask_WaitForInteractableTargets_SingleLineTrace>(OwningAbility);
+	UAbilityTask_WaitForInteractableTargets_SingleLineTrace* MyObj = NewAbilityTask<
+		UAbilityTask_WaitForInteractableTargets_SingleLineTrace>(OwningAbility);
 	MyObj->InteractionScanRange = InteractionScanRange;
 	MyObj->InteractionScanRate = InteractionScanRate;
+	MyObj->SweepRadius = SweepRadius;
 	MyObj->StartLocation = StartLocation;
 	MyObj->InteractionQuery = InteractionQuery;
 	MyObj->TraceProfile = TraceProfile;
@@ -57,15 +64,17 @@ void UAbilityTask_WaitForInteractableTargets_SingleLineTrace::PerformTrace()
 	ActorsToIgnore.Add(AvatarActor);
 
 	const bool bTraceComplex = false;
-	FCollisionQueryParams Params(SCENE_QUERY_STAT(UAbilityTask_WaitForInteractableTargets_SingleLineTrace), bTraceComplex);
+	FCollisionQueryParams Params(
+		SCENE_QUERY_STAT(UAbilityTask_WaitForInteractableTargets_SingleLineTrace), bTraceComplex);
 	Params.AddIgnoredActors(ActorsToIgnore);
 
 	FVector TraceStart = StartLocation.GetTargetingTransform().GetLocation();
 	FVector TraceEnd;
-	AimWithPlayerController(AvatarActor, Params, TraceStart, InteractionScanRange, OUT TraceEnd);
+	AimWithPlayerController(AvatarActor, Params, TraceStart, InteractionScanRange, SweepRadius, OUT TraceEnd);
 
 	FHitResult OutHitResult;
-	LineTrace(OutHitResult, World, TraceStart, TraceEnd, TraceProfile.Name, Params);
+	// Trace
+	LineOrSweepTrace(OutHitResult, World, TraceStart, TraceEnd, TraceProfile.Name, SweepRadius, Params);
 
 	TArray<TScriptInterface<IInteractableTarget>> InteractableTargets;
 	UInteractionStatics::AppendInteractableTargetsFromHitResult(OutHitResult, InteractableTargets);
@@ -76,14 +85,26 @@ void UAbilityTask_WaitForInteractableTargets_SingleLineTrace::PerformTrace()
 	if (bShowDebug)
 	{
 		FColor DebugColor = OutHitResult.bBlockingHit ? FColor::Red : FColor::Green;
+		FVector DrawTraceEnd;
+
 		if (OutHitResult.bBlockingHit)
 		{
-			DrawDebugLine(World, TraceStart, OutHitResult.Location, DebugColor, false, InteractionScanRate);
-			DrawDebugSphere(World, OutHitResult.Location, 5, 16, DebugColor, false, InteractionScanRate);
+			DrawTraceEnd = OutHitResult.Location;
+			DrawDebugSphere(World, OutHitResult.Location, 5 + SweepRadius, 16, DebugColor, false, InteractionScanRate);
 		}
 		else
 		{
+			DrawTraceEnd = TraceEnd;
 			DrawDebugLine(World, TraceStart, TraceEnd, DebugColor, false, InteractionScanRate);
+		}
+
+		if (SweepRadius > 0)
+		{
+			DrawDebugCylinder(World, TraceStart, DrawTraceEnd, SweepRadius, 32, DebugColor, false, InteractionScanRate);
+		}
+		else
+		{
+			DrawDebugLine(World, TraceStart, DrawTraceEnd, DebugColor, false, InteractionScanRate);
 		}
 	}
 #endif // ENABLE_DRAW_DEBUG

@@ -9,18 +9,31 @@
 #include "AbilitySystemComponent.h"
 #include "GameFramework/PlayerController.h"
 
-UAbilityTask_WaitForInteractableTargets::UAbilityTask_WaitForInteractableTargets(const FObjectInitializer& ObjectInitializer)
+UAbilityTask_WaitForInteractableTargets::UAbilityTask_WaitForInteractableTargets(
+	const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
 }
 
-void UAbilityTask_WaitForInteractableTargets::LineTrace(FHitResult& OutHitResult, const UWorld* World, const FVector& Start, const FVector& End, FName ProfileName, const FCollisionQueryParams Params)
+void UAbilityTask_WaitForInteractableTargets::LineOrSweepTrace(FHitResult& OutHitResult, const UWorld* World,
+                                                               const FVector& Start, const FVector& End,
+                                                               FName ProfileName, float SweepRadius,
+                                                               const FCollisionQueryParams Params) const
 {
 	check(World);
 
 	OutHitResult = FHitResult();
 	TArray<FHitResult> HitResults;
-	World->LineTraceMultiByProfile(HitResults, Start, End, ProfileName, Params);
+
+	if (SweepRadius > 0)
+	{
+		World->SweepMultiByProfile(HitResults, Start, End, FQuat::Identity, ProfileName,
+		                           FCollisionShape::MakeSphere(SweepRadius), Params);
+	}
+	else
+	{
+		World->LineTraceMultiByProfile(HitResults, Start, End, ProfileName, Params);
+	}
 
 	OutHitResult.TraceStart = Start;
 	OutHitResult.TraceEnd = End;
@@ -31,7 +44,11 @@ void UAbilityTask_WaitForInteractableTargets::LineTrace(FHitResult& OutHitResult
 	}
 }
 
-void UAbilityTask_WaitForInteractableTargets::AimWithPlayerController(const AActor* InSourceActor, FCollisionQueryParams Params, const FVector& TraceStart, float MaxRange, FVector& OutTraceEnd, bool bIgnorePitch) const
+void UAbilityTask_WaitForInteractableTargets::AimWithPlayerController(const AActor* InSourceActor,
+                                                                      FCollisionQueryParams Params,
+                                                                      const FVector& TraceStart, float MaxRange,
+                                                                      float SweepRadius, FVector& OutTraceEnd,
+                                                                      bool bIgnorePitch) const
 {
 	if (!Ability) // Server and launching client only
 	{
@@ -52,9 +69,10 @@ void UAbilityTask_WaitForInteractableTargets::AimWithPlayerController(const AAct
 	ClipCameraRayToAbilityRange(ViewStart, ViewDir, TraceStart, MaxRange, ViewEnd);
 
 	FHitResult HitResult;
-	LineTrace(HitResult, InSourceActor->GetWorld(), ViewStart, ViewEnd, TraceProfile.Name, Params);
+	LineOrSweepTrace(HitResult, InSourceActor->GetWorld(), ViewStart, ViewEnd, TraceProfile.Name, SweepRadius, Params);
 
-	const bool bUseTraceResult = HitResult.bBlockingHit && (FVector::DistSquared(TraceStart, HitResult.Location) <= (MaxRange * MaxRange));
+	const bool bUseTraceResult = HitResult.bBlockingHit && (FVector::DistSquared(TraceStart, HitResult.Location) <= (
+		MaxRange * MaxRange));
 
 	const FVector AdjustedEnd = (bUseTraceResult) ? HitResult.Location : ViewEnd;
 
@@ -83,26 +101,33 @@ void UAbilityTask_WaitForInteractableTargets::AimWithPlayerController(const AAct
 	OutTraceEnd = TraceStart + (AdjustedAimDir * MaxRange);
 }
 
-bool UAbilityTask_WaitForInteractableTargets::ClipCameraRayToAbilityRange(FVector CameraLocation, FVector CameraDirection, FVector AbilityCenter, float AbilityRange, FVector& ClippedPosition)
+bool UAbilityTask_WaitForInteractableTargets::ClipCameraRayToAbilityRange(
+	FVector CameraLocation, FVector CameraDirection, FVector AbilityCenter, float AbilityRange,
+	FVector& ClippedPosition)
 {
 	FVector CameraToCenter = AbilityCenter - CameraLocation;
 	float DotToCenter = FVector::DotProduct(CameraToCenter, CameraDirection);
-	if (DotToCenter >= 0)		//If this fails, we're pointed away from the center, but we might be inside the sphere and able to find a good exit point.
+	if (DotToCenter >= 0)
+	//If this fails, we're pointed away from the center, but we might be inside the sphere and able to find a good exit point.
 	{
 		float DistanceSquared = CameraToCenter.SizeSquared() - (DotToCenter * DotToCenter);
 		float RadiusSquared = (AbilityRange * AbilityRange);
 		if (DistanceSquared <= RadiusSquared)
 		{
 			float DistanceFromCamera = FMath::Sqrt(RadiusSquared - DistanceSquared);
-			float DistanceAlongRay = DotToCenter + DistanceFromCamera;						//Subtracting instead of adding will get the other intersection point
-			ClippedPosition = CameraLocation + (DistanceAlongRay * CameraDirection);		//Cam aim point clipped to range sphere
+			float DistanceAlongRay = DotToCenter + DistanceFromCamera;
+			//Subtracting instead of adding will get the other intersection point
+			ClippedPosition = CameraLocation + (DistanceAlongRay * CameraDirection);
+			//Cam aim point clipped to range sphere
 			return true;
 		}
 	}
 	return false;
 }
 
-void UAbilityTask_WaitForInteractableTargets::UpdateInteractableOptions(const FInteractionQuery& InteractQuery, const TArray<TScriptInterface<IInteractableTarget>>& InteractableTargets)
+void UAbilityTask_WaitForInteractableTargets::UpdateInteractableOptions(const FInteractionQuery& InteractQuery,
+                                                                        const TArray<TScriptInterface<
+	                                                                        IInteractableTarget>>& InteractableTargets)
 {
 	TArray<FInteractionOption> NewOptions;
 
@@ -120,13 +145,15 @@ void UAbilityTask_WaitForInteractableTargets::UpdateInteractableOptions(const FI
 			if (Option.TargetAbilitySystem && Option.TargetInteractionAbilityHandle.IsValid())
 			{
 				// Find the spec
-				InteractionAbilitySpec = Option.TargetAbilitySystem->FindAbilitySpecFromHandle(Option.TargetInteractionAbilityHandle);
+				InteractionAbilitySpec = Option.TargetAbilitySystem->FindAbilitySpecFromHandle(
+					Option.TargetInteractionAbilityHandle);
 			}
 			// If there's an interaction ability then we're activating it on ourselves.
 			else if (Option.InteractionAbilityToGrant)
 			{
 				// Find the spec
-				InteractionAbilitySpec = AbilitySystemComponent->FindAbilitySpecFromClass(Option.InteractionAbilityToGrant);
+				InteractionAbilitySpec = AbilitySystemComponent->FindAbilitySpecFromClass(
+					Option.InteractionAbilityToGrant);
 
 				if (InteractionAbilitySpec)
 				{
@@ -139,7 +166,8 @@ void UAbilityTask_WaitForInteractableTargets::UpdateInteractableOptions(const FI
 			if (InteractionAbilitySpec)
 			{
 				// Filter any options that we can't activate right now for whatever reason.
-				if (InteractionAbilitySpec->Ability->CanActivateAbility(InteractionAbilitySpec->Handle, AbilitySystemComponent->AbilityActorInfo.Get()))
+				if (InteractionAbilitySpec->Ability->CanActivateAbility(InteractionAbilitySpec->Handle,
+				                                                        AbilitySystemComponent->AbilityActorInfo.Get()))
 				{
 					NewOptions.Add(Option);
 				}

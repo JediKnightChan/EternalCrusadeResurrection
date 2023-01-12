@@ -14,15 +14,17 @@ UCLASS()
 class UAbilityTask_WaitForInteractableTargets_SingleLineTrace : public UAbilityTask_WaitForInteractableTargets
 {
 	GENERATED_UCLASS_BODY()
-
 	virtual void Activate() override;
 
 	/** Wait until we trace new set of interactables.  This task automatically loops. */
-	UFUNCTION(BlueprintCallable, Category="Ability|Tasks", meta = (HidePin = "OwningAbility", DefaultToSelf = "OwningAbility", BlueprintInternalUseOnly = "TRUE"))
-	static UAbilityTask_WaitForInteractableTargets_SingleLineTrace* WaitForInteractableTargets_SingleLineTrace(UGameplayAbility* OwningAbility, FInteractionQuery InteractionQuery, FCollisionProfileName TraceProfile, FGameplayAbilityTargetingLocationInfo StartLocation, float InteractionScanRange = 100, float InteractionScanRate = 0.100, bool bShowDebug = false);
+	UFUNCTION(BlueprintCallable, Category="Ability|Tasks",
+		meta = (HidePin = "OwningAbility", DefaultToSelf = "OwningAbility", BlueprintInternalUseOnly = "TRUE"))
+	static UAbilityTask_WaitForInteractableTargets_SingleLineTrace* WaitForInteractableTargets_SingleLineTrace(
+		UGameplayAbility* OwningAbility, FInteractionQuery InteractionQuery, FCollisionProfileName TraceProfile,
+		FGameplayAbilityTargetingLocationInfo StartLocation, float InteractionScanRange = 100.0f,
+		float InteractionScanRate = 0.100f, float SweepRadius = 0.0f, bool bShowDebug = false);
 
 private:
-
 	virtual void OnDestroy(bool AbilityEnded) override;
 
 	void PerformTrace();
@@ -33,8 +35,9 @@ private:
 	UPROPERTY()
 	FGameplayAbilityTargetingLocationInfo StartLocation;
 
-	float InteractionScanRange = 100;
-	float InteractionScanRate = 0.100;
+	float InteractionScanRange = 100.0f;
+	float InteractionScanRate = 0.100f;
+	float SweepRadius = 0.0f;
 	bool bShowDebug = false;
 
 	FTimerHandle TimerHandle;
