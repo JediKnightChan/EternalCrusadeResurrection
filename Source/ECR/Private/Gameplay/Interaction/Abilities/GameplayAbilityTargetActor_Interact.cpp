@@ -1,6 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "GameplayAbilityTargetActor_Interact.h"
+#include "Gameplay/Interaction/Abilities/GameplayAbilityTargetActor_Interact.h"
 #include "DrawDebugHelpers.h"
 #include "GameFramework/LightWeightInstanceSubsystem.h"
 

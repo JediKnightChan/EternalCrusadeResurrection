@@ -102,4 +102,7 @@ public:
 
 	// Delegate to broadcast when the health attribute reaches zero.
 	mutable FECRAttributeEvent OnReadyToBecomeWounded;
+
+	UFUNCTION(BlueprintCallable)
+	void ResetReadyToBecomeWounded();
 };

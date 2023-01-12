@@ -29,6 +29,7 @@ void UECREquipmentInstance::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
 
 	DOREPLIFETIME(ThisClass, Instigator);
 	DOREPLIFETIME(ThisClass, SpawnedActors);
+	DOREPLIFETIME(ThisClass, bVisible);
 }
 
 APawn* UECREquipmentInstance::GetPawn() const

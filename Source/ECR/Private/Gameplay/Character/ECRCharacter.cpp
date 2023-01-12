@@ -346,7 +346,6 @@ void AECRCharacter::OnDeathFinished(AActor*)
 
 void AECRCharacter::DisableMovementAndCollision()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Disabling movememnt and collision"));
 	if (Controller)
 	{
 		Controller->SetIgnoreMoveInput(true);

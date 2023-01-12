@@ -56,8 +56,6 @@ FName UCoreExtendingFunctionLibrary::GetRandomName(TMap<FName, float> NamesToWei
 	// Creating mapping from names to cumulative weights
 	for (auto [Name, Weight] : NamesToWeights)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Name is %s, weight is %f, cumbreak is %f"), *(Name.ToString()), Weight,
-		       CumSum + Weight);
 		Names.Add(Name);
 		CumBreaks.Add(CumSum + Weight);
 		CumSum += Weight;
@@ -70,7 +68,6 @@ FName UCoreExtendingFunctionLibrary::GetRandomName(TMap<FName, float> NamesToWei
 		{
 			CumBreak = CumBreak / CumSum;
 		}
-		UE_LOG(LogTemp, Warning, TEXT("Norm cumbreak is %f, sum was %f"), CumBreak, CumSum);
 	}
 
 	// Getting [0, 1] random fraction
@@ -78,13 +75,8 @@ FName UCoreExtendingFunctionLibrary::GetRandomName(TMap<FName, float> NamesToWei
 	const FRandomStream RandomStream{DateTime.GetMillisecond()};
 	const float Fraction = RandomStream.GetFraction();
 
-	UE_LOG(LogTemp, Warning, TEXT("Names num is %d"), Names.Num());
-	UE_LOG(LogTemp, Warning, TEXT("Cumbreaks num is %d"), CumBreaks.Num());
-
 	for (int i = 0; i < CumBreaks.Num() - 1; i++)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Factions is %f, left is %f, right is %f"), Fraction, CumBreaks[i],
-		       CumBreaks[i+1]);
 		if (CumBreaks[i] <= Fraction && Fraction < CumBreaks[i + 1])
 		{
 			return Names[i];

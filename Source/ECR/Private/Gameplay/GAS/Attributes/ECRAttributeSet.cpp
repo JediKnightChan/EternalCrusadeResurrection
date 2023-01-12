@@ -3,6 +3,8 @@
 
 #include "Gameplay/GAS/Attributes/ECRAttributeSet.h"
 
+#include "System/ECRLogChannels.h"
+
 void UECRAttributeSet::ClampCurrentAttributeOnMaxChange(const FGameplayAttribute& ChangedAttribute,
                                                         const float ChangedAttributeNewValue,
                                                         const FGameplayAttribute& MaxAttribute,
@@ -20,7 +22,7 @@ void UECRAttributeSet::ClampCurrentAttributeOnMaxChange(const FGameplayAttribute
 			}
 			else
 			{
-				UE_LOG(LogTemp, Error,
+				UE_LOG(LogECRAbilitySystem, Error,
 				       TEXT("AbilitySystemComponent invalid in UECRAttributeSet ClampCurrentAttributeOnMaxChange"))
 			}
 		}

@@ -7,6 +7,7 @@
 #include "Gameplay/GAS/ECRGameplayEffectContext.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
+#include "System/ECRLogChannels.h"
 
 struct FDamageStatics
 {
@@ -97,7 +98,7 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning,
+		UE_LOG(LogECRAbilitySystem, Warning,
 		       TEXT(
 			       "Damage Calculation cannot deduce a source location for damage coming from %s; "
 			       "Falling back to WORLD_MAX dist!"

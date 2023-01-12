@@ -1,6 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRGameplayAbility_Interact.h"
+#include "Gameplay/Interaction/Abilities/ECRGameplayAbility_Interact.h"
 #include "AbilitySystemComponent.h"
 #include "Gameplay/Interaction/IInteractableTarget.h"
 #include "Gameplay/Interaction/InteractionStatics.h"

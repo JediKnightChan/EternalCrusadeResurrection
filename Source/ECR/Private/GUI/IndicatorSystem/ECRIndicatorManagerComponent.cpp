@@ -1,8 +1,7 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ECRIndicatorManagerComponent.h"
-
-#include "IndicatorDescriptor.h"
+#include "GUI/IndicatorSystem/ECRIndicatorManagerComponent.h"
+#include "GUI/IndicatorSystem/IndicatorDescriptor.h"
 
 UECRIndicatorManagerComponent::UECRIndicatorManagerComponent(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)

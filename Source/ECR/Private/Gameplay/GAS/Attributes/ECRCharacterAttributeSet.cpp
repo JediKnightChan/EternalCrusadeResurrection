@@ -16,6 +16,11 @@ UECRCharacterHealthSet::UECRCharacterHealthSet()
 {
 }
 
+void UECRCharacterHealthSet::ResetReadyToBecomeWounded()
+{
+	bReadyToBecomeWounded = false;
+}
+
 
 void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {

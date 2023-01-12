@@ -1,8 +1,8 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "InteractionStatics.h"
+#include "Gameplay/Interaction/InteractionStatics.h"
 #include "DrawDebugHelpers.h"
-#include "IInteractableTarget.h"
+#include "Gameplay/Interaction/IInteractableTarget.h"
 
 UInteractionStatics::UInteractionStatics()
 	: Super(FObjectInitializer::Get())

@@ -1,7 +1,8 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "IndicatorDescriptor.h"
+#include "GUI/IndicatorSystem/IndicatorDescriptor.h"
 #include "Engine/LocalPlayer.h"
+
 
 bool FIndicatorProjection::Project(const UIndicatorDescriptor& IndicatorDescriptor, const FSceneViewProjectionData& InProjectionData, const FVector2D& ScreenSize, FVector& OutScreenPositionWithDepth)
 {

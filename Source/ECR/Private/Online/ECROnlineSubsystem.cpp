@@ -2,7 +2,7 @@
 
 
 #include "Online/ECROnlineSubsystem.h"
-
+#include "System/ECRLogChannels.h"
 #include "GUI/ECRGUIPlayerController.h"
 #include "ECRUtilsLibrary.h"
 #include "OnlineSubsystem.h"
@@ -151,7 +151,7 @@ void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName,
 	// Check if logged in
 	if (!bIsLoggedIn)
 	{
-		UE_LOG(LogTemp, Error, TEXT("Attempt to create match, but not logged in!"));
+		UE_LOG(LogECR, Error, TEXT("Attempt to create match, but not logged in!"));
 		return;
 	}
 
@@ -263,7 +263,6 @@ void UECROnlineSubsystem::DestroySession()
 		{
 			OnlineSessionPtr->OnDestroySessionCompleteDelegates.AddUObject(
 				this, &UECROnlineSubsystem::OnDestroySessionComplete);
-			UE_LOG(LogTemp, Display, TEXT("Destroying session"));
 			OnlineSessionPtr->DestroySession(DEFAULT_SESSION_NAME);
 		}
 	}
@@ -349,12 +348,10 @@ void UECROnlineSubsystem::OnJoinSessionComplete(const FName SessionName,
 					{
 						const FString Address = FString::Printf(
 							TEXT("%s?DisplayName=%s"), *(ConnectionString), *(UserDisplayName));
-						UE_LOG(LogTemp, Error, TEXT("Connection string is %s"), *(Address));
 						GUISupervisor->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
 					}
 					else
 					{
-						UE_LOG(LogTemp, Error, TEXT("Connection string for session was empty"));
 						GUISupervisor->HandleJoinMatchFailed(false, false);
 					}
 					break;

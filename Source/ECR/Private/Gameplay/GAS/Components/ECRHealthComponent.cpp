@@ -174,7 +174,6 @@ void UECRHealthComponent::HandleReadyToDie(AActor* DamageInstigator, AActor* Dam
 	{
 		// Send the "GameplayEvent.Death" gameplay event through the owner's ability system.  This can be used to trigger a death gameplay ability.
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Sending ready to die event"))
 			FGameplayEventData Payload;
 			Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_Death;
 			Payload.Instigator = DamageInstigator;
