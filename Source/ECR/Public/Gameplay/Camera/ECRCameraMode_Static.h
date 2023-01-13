@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "ECRCameraMode.h"
+#include "ECRCameraMode_PenetrationAvoidant.h"
 #include "Curves/CurveFloat.h"
 
 #include "ECRCameraMode_Static.generated.h"
@@ -16,7 +16,7 @@ class UCurveVector;
  *	A basic camera mode for camera not depending on user input, but on time since activation
  */
 UCLASS(Abstract, Blueprintable)
-class UECRCameraMode_Static : public UECRCameraMode
+class UECRCameraMode_Static : public UECRCameraMode_PenetrationAvoidant
 {
 	GENERATED_BODY()
 
