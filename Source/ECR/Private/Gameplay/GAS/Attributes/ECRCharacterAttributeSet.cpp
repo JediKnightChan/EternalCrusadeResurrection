@@ -5,6 +5,7 @@
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
 
+#define MAX_ALLOWED_WalkSpeed (2000.0f)
 
 UECRCharacterHealthSet::UECRCharacterHealthSet()
 	: Shield(100.0f),
@@ -12,13 +13,9 @@ UECRCharacterHealthSet::UECRCharacterHealthSet()
 	  Stamina(100.0f),
 	  MaxStamina(100.0f),
 	  BleedingHealth(100.0f),
-	  MaxBleedingHealth(100.0f)
+	  MaxBleedingHealth(100.0f),
+	  WalkSpeed(600.0f)
 {
-}
-
-void UECRCharacterHealthSet::ResetReadyToBecomeWounded()
-{
-	bReadyToBecomeWounded = false;
 }
 
 
@@ -32,6 +29,7 @@ void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxStamina, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, BleedingHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxBleedingHealth, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, WalkSpeed, COND_None, REPNOTIFY_Always);
 }
 
 
@@ -150,8 +148,8 @@ void UECRCharacterHealthSet::PostAttributeChange(const FGameplayAttribute& Attri
 	                                 GetStaminaAttribute(), GetStamina());
 
 	// Make sure current bleeding health is not greater than the new max bleeding health.
-	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxBleedingHealthAttribute(), GetBleedingHealthAttribute(),
-	                                 GetBleedingHealth());
+	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxBleedingHealthAttribute(),
+	                                 GetBleedingHealthAttribute(), GetBleedingHealth());
 }
 
 
@@ -189,6 +187,10 @@ void UECRCharacterHealthSet::ClampAttribute(const FGameplayAttribute& Attribute,
 		// Do not allow max bleeding health to drop below 1.
 		NewValue = FMath::Max(NewValue, 1.0f);
 	}
+	else if (Attribute == GetWalkSpeedAttribute())
+	{
+		NewValue = FMath::Clamp(NewValue, 0.0f, MAX_ALLOWED_WalkSpeed);
+	}
 }
 
 
@@ -223,4 +225,9 @@ void UECRCharacterHealthSet::OnRep_BleedingHealth(const FGameplayAttributeData& 
 void UECRCharacterHealthSet::OnRep_MaxBleedingHealth(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxBleedingHealth, OldValue)
+}
+
+void UECRCharacterHealthSet::OnRep_WalkSpeed(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, WalkSpeed, OldValue)
 }

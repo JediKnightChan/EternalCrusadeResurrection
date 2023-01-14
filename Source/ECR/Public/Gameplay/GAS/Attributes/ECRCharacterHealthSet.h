@@ -41,6 +41,10 @@ class ECR_API UECRCharacterHealthSet : public UECRHealthSet
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData MaxBleedingHealth;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_WalkSpeed,
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData WalkSpeed;
+
 protected:
 	/** Returns if ready to become wounded */
 	virtual bool GetIsReadyToBecomeWounded() const;
@@ -86,6 +90,9 @@ protected:
 	UFUNCTION()
 	void OnRep_MaxBleedingHealth(const FGameplayAttributeData& OldValue) const;
 
+	UFUNCTION()
+	void OnRep_WalkSpeed(const FGameplayAttributeData& OldValue) const;
+
 protected:
 	// Used to track when the health reaches 0 to trigger ReadyToBecomeWounded event only once
 	bool bReadyToBecomeWounded;
@@ -99,10 +106,8 @@ public:
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxStamina);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, BleedingHealth);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxBleedingHealth);
+	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, WalkSpeed);
 
 	// Delegate to broadcast when the health attribute reaches zero.
 	mutable FECRAttributeEvent OnReadyToBecomeWounded;
-
-	UFUNCTION(BlueprintCallable)
-	void ResetReadyToBecomeWounded();
 };

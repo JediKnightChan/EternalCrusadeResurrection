@@ -1,5 +1,7 @@
 ﻿#include "Gameplay/GAS/Components/ECRCharacterHealthComponent.h"
 
+#include "GameFramework/Character.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/GameplayMessageSubsystem.h"
 #include "GameFramework/PlayerState.h"
 #include "Gameplay/ECRGameplayTags.h"
@@ -27,6 +29,11 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 		return;
 	}
 
+	// Speed
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetWalkSpeedAttribute()).
+							AddUObject(this, &ThisClass::HandleWalkSpeedChanged);
+	ChangeCharacterSpeed(CharacterHealthSet->GetWalkSpeed());
+	
 	// Shield
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetShieldAttribute()).
 	                        AddUObject(this, &ThisClass::HandleShieldChanged);
@@ -113,6 +120,32 @@ void UECRCharacterHealthComponent::ClearGameplayTags()
 		AbilitySystemComponent->SetLooseGameplayTagCount(GameplayTags.Status_Wounded, 0);
 	}
 	Super::ClearGameplayTags();
+}
+
+void UECRCharacterHealthComponent::ChangeCharacterSpeed(const float NewSpeed)
+{
+	if (AActor* Actor = GetOwner())
+	{
+		if (const ACharacter* Character = Cast<ACharacter>(Actor))
+		{
+			UCharacterMovementComponent* CharMoveComp = Character->GetCharacterMovement();
+			CharMoveComp->MaxWalkSpeed = NewSpeed;
+			UE_LOG(LogTemp, Warning, TEXT("Setting walk speed %f"), NewSpeed)
+		} else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Owner actor is not character"))
+		}
+	} else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Owner actor is null"))
+	}
+}
+
+void UECRCharacterHealthComponent::HandleWalkSpeedChanged(const FOnAttributeChangeData& ChangeData)
+{
+	const float NewSpeed = ChangeData.NewValue;
+	ChangeCharacterSpeed(NewSpeed);
+	
 }
 
 void UECRCharacterHealthComponent::HandleShieldChanged(const FOnAttributeChangeData& ChangeData)

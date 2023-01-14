@@ -393,11 +393,13 @@ void AECRCharacter::OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 
 {
 	Super::OnMovementModeChanged(PrevMovementMode, PreviousCustomMode);
 
-	UECRCharacterMovementComponent* ECRMoveComp = CastChecked<UECRCharacterMovementComponent>(GetCharacterMovement());
+	const UECRCharacterMovementComponent* ECRMoveComp = CastChecked<UECRCharacterMovementComponent>(GetCharacterMovement());
 
+	// Sending movement tag for possible blocking of some abilities
 	SetMovementModeTag(PrevMovementMode, PreviousCustomMode, false);
 	SetMovementModeTag(ECRMoveComp->MovementMode, ECRMoveComp->CustomMovementMode, true);
 
+	// Sending gameplay event for possible interruption of some abilities
 	FGameplayEventData Payload;
 	Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_MovementModeChanged;
 	Payload.Target = this;

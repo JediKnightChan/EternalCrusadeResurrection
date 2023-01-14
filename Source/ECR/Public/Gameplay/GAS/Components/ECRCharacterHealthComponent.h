@@ -70,6 +70,10 @@ public:
 protected:
 	virtual void ClearGameplayTags() override;
 
+	void ChangeCharacterSpeed(float NewSpeed);
+
+	virtual void HandleWalkSpeedChanged(const FOnAttributeChangeData& ChangeData);
+
 	virtual void HandleShieldChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleMaxShieldChanged(const FOnAttributeChangeData& ChangeData);
 
