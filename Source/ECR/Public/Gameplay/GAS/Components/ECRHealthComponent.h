@@ -13,7 +13,7 @@ struct FGameplayEffectSpec;
 struct FOnAttributeChangeData;
 
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FECRHealth_DeathEvent, AActor*, OwningActor);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FECRHealth_StatusEvent, AActor*, OwningActor);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FECRHealth_AttributeChanged, UECRHealthComponent*, HealthComponent, float,
                                               OldValue, float, NewValue, AActor*, Instigator);
@@ -102,11 +102,11 @@ public:
 
 	// Delegate fired when the death sequence has started.
 	UPROPERTY(BlueprintAssignable)
-	FECRHealth_DeathEvent OnDeathStarted;
+	FECRHealth_StatusEvent OnDeathStarted;
 
 	// Delegate fired when the death sequence has finished.
 	UPROPERTY(BlueprintAssignable)
-	FECRHealth_DeathEvent OnDeathFinished;
+	FECRHealth_StatusEvent OnDeathFinished;
 
 protected:
 	virtual void OnUnregister() override;

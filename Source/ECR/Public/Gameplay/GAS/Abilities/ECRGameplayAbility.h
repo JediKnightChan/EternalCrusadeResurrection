@@ -51,7 +51,7 @@ enum class EECRAbilityActivationGroup : uint8
 	// Ability blocks all other exclusive abilities from activating.
 	Exclusive_Blocking,
 
-	MAX	UMETA(Hidden)
+	MAX UMETA(Hidden)
 };
 
 /** Failure reason that can be used to play an animation montage when a failure occurs */
@@ -61,7 +61,6 @@ struct FECRAbilityMontageFailureMessage
 	GENERATED_BODY()
 
 public:
-	
 	UPROPERTY(BlueprintReadWrite)
 	APlayerController* PlayerController = nullptr;
 
@@ -78,14 +77,14 @@ public:
  *
  *	The base gameplay ability class used by this project.
  */
-UCLASS(Abstract, HideCategories = Input, Meta = (ShortTooltip = "The base gameplay ability class used by this project."))
+UCLASS(Abstract, HideCategories = Input,
+	Meta = (ShortTooltip = "The base gameplay ability class used by this project."))
 class UECRGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
 	friend class UECRAbilitySystemComponent;
 
 public:
-
 	UECRGameplayAbility(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
 	UFUNCTION(BlueprintCallable, Category = "ECR|Ability")
@@ -109,11 +108,13 @@ public:
 	void TryActivateAbilityOnSpawn(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) const;
 
 	// Returns true if the requested activation group is a valid transition.
-	UFUNCTION(BlueprintCallable, BlueprintPure = false, Category = "ECR|Ability", Meta = (ExpandBoolAsExecs = "ReturnValue"))
+	UFUNCTION(BlueprintCallable, BlueprintPure = false, Category = "ECR|Ability",
+		Meta = (ExpandBoolAsExecs = "ReturnValue"))
 	bool CanChangeActivationGroup(EECRAbilityActivationGroup NewGroup) const;
 
 	// Tries to change the activation group.  Returns true if it successfully changed.
-	UFUNCTION(BlueprintCallable, BlueprintPure = false, Category = "ECR|Ability", Meta = (ExpandBoolAsExecs = "ReturnValue"))
+	UFUNCTION(BlueprintCallable, BlueprintPure = false, Category = "ECR|Ability",
+		Meta = (ExpandBoolAsExecs = "ReturnValue"))
 	bool ChangeActivationGroup(EECRAbilityActivationGroup NewGroup);
 
 	// Sets the ability's camera mode.
@@ -124,6 +125,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "ECR|Ability")
 	void ClearCameraMode();
 
+	UFUNCTION(BlueprintCallable, Category = "ECR|Ability")
+	void ToggleInputDisabled(bool NewInputDisabled);
+
+	UFUNCTION(BlueprintCallable, Category = "ECR|Ability")
+	void ToggleMovementDisabled(bool NewMovementDisabled);
+	
 	void OnAbilityFailedToActivate(const FGameplayTagContainer& FailedReason) const
 	{
 		NativeOnAbilityFailedToActivate(FailedReason);
@@ -131,7 +138,6 @@ public:
 	}
 
 protected:
-
 	// Called when the ability fails to activate
 	virtual void NativeOnAbilityFailedToActivate(const FGameplayTagContainer& FailedReason) const;
 
@@ -140,22 +146,37 @@ protected:
 	void ScriptOnAbilityFailedToActivate(const FGameplayTagContainer& FailedReason) const;
 
 	//~UGameplayAbility interface
-	virtual bool CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags, FGameplayTagContainer* OptionalRelevantTags) const override;
+	virtual bool CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+	                                const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags,
+	                                FGameplayTagContainer* OptionalRelevantTags) const override;
 	virtual void SetCanBeCanceled(bool bCanBeCanceled) override;
 	virtual void OnGiveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) override;
 	virtual void OnRemoveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) override;
-	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
-	virtual void EndAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateEndAbility, bool bWasCancelled) override;
-	virtual bool CheckCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, OUT FGameplayTagContainer* OptionalRelevantTags = nullptr) const override;
-	virtual void ApplyCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) const override;
-	virtual FGameplayEffectContextHandle MakeEffectContext(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo) const override;
-	virtual void ApplyAbilityTagsToGameplayEffectSpec(FGameplayEffectSpec& Spec, FGameplayAbilitySpec* AbilitySpec) const override;
-	virtual bool DoesAbilitySatisfyTagRequirements(const UAbilitySystemComponent& AbilitySystemComponent, const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags, OUT FGameplayTagContainer* OptionalRelevantTags) const override;
+	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+	                             const FGameplayAbilityActivationInfo ActivationInfo,
+	                             const FGameplayEventData* TriggerEventData) override;
+	virtual void EndAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+	                        const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateEndAbility,
+	                        bool bWasCancelled) override;
+	virtual bool CheckCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+	                       OUT FGameplayTagContainer* OptionalRelevantTags = nullptr) const override;
+	virtual void ApplyCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+	                       const FGameplayAbilityActivationInfo ActivationInfo) const override;
+	virtual FGameplayEffectContextHandle MakeEffectContext(const FGameplayAbilitySpecHandle Handle,
+	                                                       const FGameplayAbilityActorInfo* ActorInfo) const override;
+	virtual void ApplyAbilityTagsToGameplayEffectSpec(FGameplayEffectSpec& Spec,
+	                                                  FGameplayAbilitySpec* AbilitySpec) const override;
+	virtual bool DoesAbilitySatisfyTagRequirements(const UAbilitySystemComponent& AbilitySystemComponent,
+	                                               const FGameplayTagContainer* SourceTags,
+	                                               const FGameplayTagContainer* TargetTags,
+	                                               OUT FGameplayTagContainer* OptionalRelevantTags) const override;
 	//~End of UGameplayAbility interface
 
 	virtual void OnPawnAvatarSet();
 
-	virtual void GetAbilitySource(FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, float& OutSourceLevel, const IECRAbilitySourceInterface*& OutAbilitySource, AActor*& OutEffectCauser) const;
+	virtual void GetAbilitySource(FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+	                              float& OutSourceLevel, const IECRAbilitySourceInterface*& OutAbilitySource,
+	                              AActor*& OutEffectCauser) const;
 
 	/** Called when this ability is granted to the ability system component. */
 	UFUNCTION(BlueprintImplementableEvent, Category = Ability, DisplayName = "OnAbilityAdded")
@@ -170,7 +191,6 @@ protected:
 	void K2_OnPawnAvatarSet();
 
 protected:
-
 	// Defines how this ability is meant to activate.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "ECR|Ability Activation")
 	EECRAbilityActivationPolicy ActivationPolicy;

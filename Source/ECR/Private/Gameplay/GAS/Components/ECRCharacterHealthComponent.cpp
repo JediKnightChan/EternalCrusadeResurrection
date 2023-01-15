@@ -31,9 +31,9 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 
 	// Speed
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetWalkSpeedAttribute()).
-							AddUObject(this, &ThisClass::HandleWalkSpeedChanged);
+	                        AddUObject(this, &ThisClass::HandleWalkSpeedChanged);
 	ChangeCharacterSpeed(CharacterHealthSet->GetWalkSpeed());
-	
+
 	// Shield
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetShieldAttribute()).
 	                        AddUObject(this, &ThisClass::HandleShieldChanged);
@@ -50,6 +50,19 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 	OnStaminaChanged.Broadcast(this, CharacterHealthSet->GetStamina(), CharacterHealthSet->GetStamina(), nullptr);
 	OnMaxStaminaChanged.Broadcast(this, CharacterHealthSet->GetMaxStamina(), CharacterHealthSet->GetMaxStamina(),
 	                              nullptr);
+
+	// Bleeding health
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
+		                        UECRCharacterHealthSet::GetBleedingHealthAttribute()).
+	                        AddUObject(this, &ThisClass::HandleBleedingHealthChanged);
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
+		                        UECRCharacterHealthSet::GetMaxBleedingHealthAttribute()).
+	                        AddUObject(this, &ThisClass::HandleMaxBleedingHealthChanged);
+	OnBleedingHealthChanged.Broadcast(this, CharacterHealthSet->GetBleedingHealth(),
+	                                  CharacterHealthSet->GetBleedingHealth(), nullptr);
+	OnMaxBleedingHealthChanged.Broadcast(this, CharacterHealthSet->GetMaxBleedingHealth(),
+	                                     CharacterHealthSet->GetMaxBleedingHealth(),
+	                                     nullptr);
 
 	CharacterHealthSet->OnReadyToBecomeWounded.AddUObject(this, &ThisClass::HandleReadyToBecomeWounded);
 }
@@ -111,6 +124,30 @@ float UECRCharacterHealthComponent::GetStaminaNormalized() const
 	return 0.0f;
 }
 
+float UECRCharacterHealthComponent::GetBleedingHealth() const
+{
+	return (CharacterHealthSet ? CharacterHealthSet->GetBleedingHealth() : 0.0f);
+}
+
+float UECRCharacterHealthComponent::GetMaxBleedingHealth() const
+{
+	return (CharacterHealthSet ? CharacterHealthSet->GetMaxBleedingHealth() : 0.0f);
+}
+
+float UECRCharacterHealthComponent::GetBleedingHealthNormalized() const
+{
+	if (CharacterHealthSet)
+	{
+		const float BleedingHealth = CharacterHealthSet->GetBleedingHealth();
+		const float MaxBleedingHealth = CharacterHealthSet->GetMaxBleedingHealth();
+
+		return ((MaxBleedingHealth > 0.0f) ? (BleedingHealth / MaxBleedingHealth) : 0.0f);
+	}
+
+	return 0.0f;
+}
+
+
 void UECRCharacterHealthComponent::ClearGameplayTags()
 {
 	if (AbilitySystemComponent)
@@ -131,11 +168,13 @@ void UECRCharacterHealthComponent::ChangeCharacterSpeed(const float NewSpeed)
 			UCharacterMovementComponent* CharMoveComp = Character->GetCharacterMovement();
 			CharMoveComp->MaxWalkSpeed = NewSpeed;
 			UE_LOG(LogTemp, Warning, TEXT("Setting walk speed %f"), NewSpeed)
-		} else
+		}
+		else
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Owner actor is not character"))
 		}
-	} else
+	}
+	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Owner actor is null"))
 	}
@@ -145,7 +184,6 @@ void UECRCharacterHealthComponent::HandleWalkSpeedChanged(const FOnAttributeChan
 {
 	const float NewSpeed = ChangeData.NewValue;
 	ChangeCharacterSpeed(NewSpeed);
-	
 }
 
 void UECRCharacterHealthComponent::HandleShieldChanged(const FOnAttributeChangeData& ChangeData)
@@ -170,6 +208,18 @@ void UECRCharacterHealthComponent::HandleMaxStaminaChanged(const FOnAttributeCha
 {
 	OnMaxStaminaChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
 	                              GetInstigatorFromAttrChangeData(ChangeData));
+}
+
+void UECRCharacterHealthComponent::HandleBleedingHealthChanged(const FOnAttributeChangeData& ChangeData)
+{
+	OnBleedingHealthChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
+	                                  GetInstigatorFromAttrChangeData(ChangeData));
+}
+
+void UECRCharacterHealthComponent::HandleMaxBleedingHealthChanged(const FOnAttributeChangeData& ChangeData)
+{
+	OnMaxBleedingHealthChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
+	                                     GetInstigatorFromAttrChangeData(ChangeData));
 }
 
 void UECRCharacterHealthComponent::HandleReadyToBecomeWounded(AActor* DamageInstigator, AActor* DamageCauser,

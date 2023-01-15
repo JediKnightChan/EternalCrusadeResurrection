@@ -10,6 +10,7 @@
 #include "Gameplay/Character/ECRHeroComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemGlobals.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Gameplay/GAS/Abilities/ECRAbilitySimpleFailureMessage.h"
 #include "GameFramework/GameplayMessageSubsystem.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
@@ -35,7 +36,9 @@ UECRGameplayAbility::UECRGameplayAbility(const FObjectInitializer& ObjectInitial
 
 UECRAbilitySystemComponent* UECRGameplayAbility::GetECRAbilitySystemComponentFromActorInfo() const
 {
-	return (CurrentActorInfo ? Cast<UECRAbilitySystemComponent>(CurrentActorInfo->AbilitySystemComponent.Get()) : nullptr);
+	return (CurrentActorInfo
+		        ? Cast<UECRAbilitySystemComponent>(CurrentActorInfo->AbilitySystemComponent.Get())
+		        : nullptr);
 }
 
 AECRPlayerController* UECRGameplayAbility::GetECRPlayerControllerFromActorInfo() const
@@ -83,6 +86,41 @@ UECRHeroComponent* UECRGameplayAbility::GetHeroComponentFromActorInfo() const
 	return (CurrentActorInfo ? UECRHeroComponent::FindHeroComponent(CurrentActorInfo->AvatarActor.Get()) : nullptr);
 }
 
+void UECRGameplayAbility::ToggleInputDisabled(const bool NewInputDisabled)
+{
+	AECRPlayerController* PC = GetECRPlayerControllerFromActorInfo();
+	AECRCharacter* Character = GetECRCharacterFromActorInfo();
+	if (PC && Character)
+	{
+		if (NewInputDisabled)
+		{
+			Character->DisableInput(PC);
+		}
+		else
+		{
+			Character->EnableInput(PC);
+		}
+	}
+}
+
+void UECRGameplayAbility::ToggleMovementDisabled(const bool NewMovementDisabled)
+{
+	if (const AECRCharacter* Character = GetECRCharacterFromActorInfo())
+	{
+		if (UCharacterMovementComponent* CharMoveComp = Character->GetCharacterMovement())
+		{
+			if (NewMovementDisabled)
+			{
+				CharMoveComp->DisableMovement();
+			} else
+			{
+				CharMoveComp->SetMovementMode(MOVE_Walking);
+			}
+		}
+		
+	}
+}
+
 void UECRGameplayAbility::NativeOnAbilityFailedToActivate(const FGameplayTagContainer& FailedReason) const
 {
 	bool bSimpleFailureFound = false;
@@ -102,7 +140,7 @@ void UECRGameplayAbility::NativeOnAbilityFailedToActivate(const FGameplayTagCont
 				bSimpleFailureFound = true;
 			}
 		}
-		
+
 		if (UAnimMontage* pMontage = FailureTagToAnimMontage.FindRef(Reason))
 		{
 			FECRAbilityMontageFailureMessage Message;
@@ -116,14 +154,19 @@ void UECRGameplayAbility::NativeOnAbilityFailedToActivate(const FGameplayTagCont
 	}
 }
 
-bool UECRGameplayAbility::CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags, FGameplayTagContainer* OptionalRelevantTags) const
+bool UECRGameplayAbility::CanActivateAbility(const FGameplayAbilitySpecHandle Handle,
+                                             const FGameplayAbilityActorInfo* ActorInfo,
+                                             const FGameplayTagContainer* SourceTags,
+                                             const FGameplayTagContainer* TargetTags,
+                                             FGameplayTagContainer* OptionalRelevantTags) const
 {
 	if (!ActorInfo || !ActorInfo->AbilitySystemComponent.IsValid())
 	{
 		return false;
 	}
 
-	UECRAbilitySystemComponent* ECRASC = CastChecked<UECRAbilitySystemComponent>(ActorInfo->AbilitySystemComponent.Get());
+	UECRAbilitySystemComponent* ECRASC = CastChecked<UECRAbilitySystemComponent>(
+		ActorInfo->AbilitySystemComponent.Get());
 	const FECRGameplayTags& GameplayTags = FECRGameplayTags::Get();
 
 	if (!Super::CanActivateAbility(Handle, ActorInfo, SourceTags, TargetTags, OptionalRelevantTags))
@@ -149,7 +192,10 @@ void UECRGameplayAbility::SetCanBeCanceled(bool bCanBeCanceled)
 	// The ability can not block canceling if it's replaceable.
 	if (!bCanBeCanceled && (ActivationGroup == EECRAbilityActivationGroup::Exclusive_Replaceable))
 	{
-		UE_LOG(LogECRAbilitySystem, Error, TEXT("SetCanBeCanceled: Ability [%s] can not block canceling because its activation group is replaceable."), *GetName());
+		UE_LOG(LogECRAbilitySystem, Error,
+		       TEXT(
+			       "SetCanBeCanceled: Ability [%s] can not block canceling because its activation group is replaceable."
+		       ), *GetName());
 		return;
 	}
 
@@ -172,19 +218,26 @@ void UECRGameplayAbility::OnRemoveAbility(const FGameplayAbilityActorInfo* Actor
 	Super::OnRemoveAbility(ActorInfo, Spec);
 }
 
-void UECRGameplayAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
+void UECRGameplayAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handle,
+                                          const FGameplayAbilityActorInfo* ActorInfo,
+                                          const FGameplayAbilityActivationInfo ActivationInfo,
+                                          const FGameplayEventData* TriggerEventData)
 {
 	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 }
 
-void UECRGameplayAbility::EndAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateEndAbility, bool bWasCancelled)
+void UECRGameplayAbility::EndAbility(const FGameplayAbilitySpecHandle Handle,
+                                     const FGameplayAbilityActorInfo* ActorInfo,
+                                     const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateEndAbility,
+                                     bool bWasCancelled)
 {
 	ClearCameraMode();
 
 	Super::EndAbility(Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled);
 }
 
-bool UECRGameplayAbility::CheckCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, OUT FGameplayTagContainer* OptionalRelevantTags) const
+bool UECRGameplayAbility::CheckCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+                                    OUT FGameplayTagContainer* OptionalRelevantTags) const
 {
 	if (!Super::CheckCost(Handle, ActorInfo, OptionalRelevantTags) || !ActorInfo)
 	{
@@ -206,7 +259,8 @@ bool UECRGameplayAbility::CheckCost(const FGameplayAbilitySpecHandle Handle, con
 	return true;
 }
 
-void UECRGameplayAbility::ApplyCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) const
+void UECRGameplayAbility::ApplyCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+                                    const FGameplayAbilityActivationInfo ActivationInfo) const
 {
 	Super::ApplyCost(Handle, ActorInfo, ActivationInfo);
 
@@ -217,7 +271,8 @@ void UECRGameplayAbility::ApplyCost(const FGameplayAbilitySpecHandle Handle, con
 	{
 		if (ActorInfo->IsNetAuthority())
 		{
-			if (UECRAbilitySystemComponent* ASC = Cast<UECRAbilitySystemComponent>(ActorInfo->AbilitySystemComponent.Get()))
+			if (UECRAbilitySystemComponent* ASC = Cast<UECRAbilitySystemComponent>(
+				ActorInfo->AbilitySystemComponent.Get()))
 			{
 				FGameplayAbilityTargetDataHandle TargetData;
 				ASC->GetAbilityTargetData(Handle, ActivationInfo, TargetData);
@@ -260,7 +315,8 @@ void UECRGameplayAbility::ApplyCost(const FGameplayAbilitySpecHandle Handle, con
 	}
 }
 
-FGameplayEffectContextHandle UECRGameplayAbility::MakeEffectContext(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo) const
+FGameplayEffectContextHandle UECRGameplayAbility::MakeEffectContext(const FGameplayAbilitySpecHandle Handle,
+                                                                    const FGameplayAbilityActorInfo* ActorInfo) const
 {
 	FGameplayEffectContextHandle ContextHandle = Super::MakeEffectContext(Handle, ActorInfo);
 
@@ -285,20 +341,25 @@ FGameplayEffectContextHandle UECRGameplayAbility::MakeEffectContext(const FGamep
 	return ContextHandle;
 }
 
-void UECRGameplayAbility::ApplyAbilityTagsToGameplayEffectSpec(FGameplayEffectSpec& Spec, FGameplayAbilitySpec* AbilitySpec) const
+void UECRGameplayAbility::ApplyAbilityTagsToGameplayEffectSpec(FGameplayEffectSpec& Spec,
+                                                               FGameplayAbilitySpec* AbilitySpec) const
 {
 	Super::ApplyAbilityTagsToGameplayEffectSpec(Spec, AbilitySpec);
 
 	if (const FHitResult* HitResult = Spec.GetContext().GetHitResult())
 	{
-		if (const UPhysicalMaterialWithTags* PhysMatWithTags = Cast<const UPhysicalMaterialWithTags>(HitResult->PhysMaterial.Get()))
+		if (const UPhysicalMaterialWithTags* PhysMatWithTags = Cast<const UPhysicalMaterialWithTags>(
+			HitResult->PhysMaterial.Get()))
 		{
 			Spec.CapturedTargetTags.GetSpecTags().AppendTags(PhysMatWithTags->Tags);
 		}
 	}
 }
 
-bool UECRGameplayAbility::DoesAbilitySatisfyTagRequirements(const UAbilitySystemComponent& AbilitySystemComponent, const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags, OUT FGameplayTagContainer* OptionalRelevantTags) const
+bool UECRGameplayAbility::DoesAbilitySatisfyTagRequirements(const UAbilitySystemComponent& AbilitySystemComponent,
+                                                            const FGameplayTagContainer* SourceTags,
+                                                            const FGameplayTagContainer* TargetTags,
+                                                            OUT FGameplayTagContainer* OptionalRelevantTags) const
 {
 	// Specialized version to handle death exclusion and AbilityTags expansion via ASC
 
@@ -332,7 +393,7 @@ bool UECRGameplayAbility::DoesAbilitySatisfyTagRequirements(const UAbilitySystem
 	if (AllBlockedTags.Num() || AllRequiredTags.Num())
 	{
 		static FGameplayTagContainer AbilitySystemComponentTags;
-		
+
 		AbilitySystemComponentTags.Reset();
 		AbilitySystemComponent.GetOwnedGameplayTags(AbilitySystemComponentTags);
 
@@ -411,7 +472,10 @@ void UECRGameplayAbility::OnPawnAvatarSet()
 	K2_OnPawnAvatarSet();
 }
 
-void UECRGameplayAbility::GetAbilitySource(FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, float& OutSourceLevel, const IECRAbilitySourceInterface*& OutAbilitySource, AActor*& OutEffectCauser) const
+void UECRGameplayAbility::GetAbilitySource(FGameplayAbilitySpecHandle Handle,
+                                           const FGameplayAbilityActorInfo* ActorInfo, float& OutSourceLevel,
+                                           const IECRAbilitySourceInterface*& OutAbilitySource,
+                                           AActor*& OutEffectCauser) const
 {
 	OutSourceLevel = 0.0f;
 	OutAbilitySource = nullptr;
@@ -425,7 +489,8 @@ void UECRGameplayAbility::GetAbilitySource(FGameplayAbilitySpecHandle Handle, co
 	OutAbilitySource = Cast<IECRAbilitySourceInterface>(SourceObject);
 }
 
-void UECRGameplayAbility::TryActivateAbilityOnSpawn(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) const
+void UECRGameplayAbility::TryActivateAbilityOnSpawn(const FGameplayAbilityActorInfo* ActorInfo,
+                                                    const FGameplayAbilitySpec& Spec) const
 {
 	const bool bIsPredicting = (Spec.ActivationInfo.ActivationMode == EGameplayAbilityActivationMode::Predicting);
 
@@ -438,8 +503,10 @@ void UECRGameplayAbility::TryActivateAbilityOnSpawn(const FGameplayAbilityActorI
 		// If avatar actor is torn off or about to die, don't try to activate until we get the new one.
 		if (ASC && AvatarActor && !AvatarActor->GetTearOff() && (AvatarActor->GetLifeSpan() <= 0.0f))
 		{
-			const bool bIsLocalExecution = (NetExecutionPolicy == EGameplayAbilityNetExecutionPolicy::LocalPredicted) || (NetExecutionPolicy == EGameplayAbilityNetExecutionPolicy::LocalOnly);
-			const bool bIsServerExecution = (NetExecutionPolicy == EGameplayAbilityNetExecutionPolicy::ServerOnly) || (NetExecutionPolicy == EGameplayAbilityNetExecutionPolicy::ServerInitiated);
+			const bool bIsLocalExecution = (NetExecutionPolicy == EGameplayAbilityNetExecutionPolicy::LocalPredicted) ||
+				(NetExecutionPolicy == EGameplayAbilityNetExecutionPolicy::LocalOnly);
+			const bool bIsServerExecution = (NetExecutionPolicy == EGameplayAbilityNetExecutionPolicy::ServerOnly) || (
+				NetExecutionPolicy == EGameplayAbilityNetExecutionPolicy::ServerInitiated);
 
 			const bool bClientShouldActivate = ActorInfo->IsLocallyControlled() && bIsLocalExecution;
 			const bool bServerShouldActivate = ActorInfo->IsNetAuthority() && bIsServerExecution;
@@ -467,7 +534,8 @@ bool UECRGameplayAbility::CanChangeActivationGroup(EECRAbilityActivationGroup Ne
 	UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponentFromActorInfo();
 	check(ECRASC);
 
-	if ((ActivationGroup != EECRAbilityActivationGroup::Exclusive_Blocking) && ECRASC->IsActivationGroupBlocked(NewGroup))
+	if ((ActivationGroup != EECRAbilityActivationGroup::Exclusive_Blocking) && ECRASC->
+		IsActivationGroupBlocked(NewGroup))
 	{
 		// This ability can't change groups if it's blocked (unless it is the one doing the blocking).
 		return false;
@@ -507,7 +575,7 @@ bool UECRGameplayAbility::ChangeActivationGroup(EECRAbilityActivationGroup NewGr
 
 void UECRGameplayAbility::SetCameraMode(TSubclassOf<UECRCameraMode> CameraMode)
 {
-	ENSURE_ABILITY_IS_INSTANTIATED_OR_RETURN(SetCameraMode, );
+	ENSURE_ABILITY_IS_INSTANTIATED_OR_RETURN(SetCameraMode,);
 
 	if (UECRHeroComponent* HeroComponent = GetHeroComponentFromActorInfo())
 	{
@@ -518,7 +586,7 @@ void UECRGameplayAbility::SetCameraMode(TSubclassOf<UECRCameraMode> CameraMode)
 
 void UECRGameplayAbility::ClearCameraMode()
 {
-	ENSURE_ABILITY_IS_INSTANTIATED_OR_RETURN(ClearCameraMode, );
+	ENSURE_ABILITY_IS_INSTANTIATED_OR_RETURN(ClearCameraMode,);
 
 	if (ActiveCameraMode)
 	{

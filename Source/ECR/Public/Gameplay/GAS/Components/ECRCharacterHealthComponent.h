@@ -50,6 +50,18 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "ECR|Stamina")
 	float GetStaminaNormalized() const;
 
+	// Returns the current bleeding health value.
+	UFUNCTION(BlueprintCallable, Category = "ECR|BleedingHealth")
+	float GetBleedingHealth() const;
+
+	// Returns the current bleeding health value.
+	UFUNCTION(BlueprintCallable, Category = "ECR|BleedingHealth")
+	float GetMaxBleedingHealth() const;
+
+	// Returns the current bleeding health in the range [0.0, 1.0].
+	UFUNCTION(BlueprintCallable, Category = "ECR|BleedingHealth")
+	float GetBleedingHealthNormalized() const;
+
 public:
 	// Delegate fired when the shield value has changed.
 	UPROPERTY(BlueprintAssignable)
@@ -59,13 +71,21 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FECRHealth_AttributeChanged OnMaxShieldChanged;
 
-	// Delegate fired when the shield value has changed.
+	// Delegate fired when the stamina value has changed.
 	UPROPERTY(BlueprintAssignable)
 	FECRHealth_AttributeChanged OnStaminaChanged;
 
-	// Delegate fired when the shield value has changed.
+	// Delegate fired when the max stamina value has changed.
 	UPROPERTY(BlueprintAssignable)
 	FECRHealth_AttributeChanged OnMaxStaminaChanged;
+
+	// Delegate fired when the bleeding health value has changed.
+	UPROPERTY(BlueprintAssignable)
+	FECRHealth_AttributeChanged OnBleedingHealthChanged;
+
+	// Delegate fired when the max bleeding health value has changed.
+	UPROPERTY(BlueprintAssignable)
+	FECRHealth_AttributeChanged OnMaxBleedingHealthChanged;
 
 protected:
 	virtual void ClearGameplayTags() override;
@@ -79,6 +99,9 @@ protected:
 
 	virtual void HandleStaminaChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleMaxStaminaChanged(const FOnAttributeChangeData& ChangeData);
+
+	virtual void HandleBleedingHealthChanged(const FOnAttributeChangeData& ChangeData);
+	virtual void HandleMaxBleedingHealthChanged(const FOnAttributeChangeData& ChangeData);
 
 	virtual void HandleReadyToBecomeWounded(AActor* DamageInstigator, AActor* DamageCauser,
 	                                        const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude);
