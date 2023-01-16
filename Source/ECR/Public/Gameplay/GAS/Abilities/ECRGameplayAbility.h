@@ -129,7 +129,7 @@ public:
 	void ToggleInputDisabled(bool NewInputDisabled);
 
 	UFUNCTION(BlueprintCallable, Category = "ECR|Ability")
-	void ToggleMovementDisabled(bool NewMovementDisabled);
+	void ToggleMovementEnabled(bool bNewEnabled);
 	
 	void OnAbilityFailedToActivate(const FGameplayTagContainer& FailedReason) const
 	{

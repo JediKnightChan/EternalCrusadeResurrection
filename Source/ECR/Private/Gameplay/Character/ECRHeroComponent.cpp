@@ -39,33 +39,39 @@ UECRHeroComponent::UECRHeroComponent(const FObjectInitializer& ObjectInitializer
 	AbilityCameraMode = nullptr;
 	bPawnHasInitialized = false;
 	bReadyToBindInputs = false;
+	bMovementInputEnabled = true;
 }
 
 void UECRHeroComponent::OnRegister()
 {
 	Super::OnRegister();
-	
+
 	if (const APawn* Pawn = GetPawn<APawn>())
 	{
 		if (UECRPawnExtensionComponent* PawnExtComp = UECRPawnExtensionComponent::FindPawnExtensionComponent(Pawn))
 		{
-			PawnExtComp->OnPawnReadyToInitialize_RegisterAndCall(FSimpleMulticastDelegate::FDelegate::CreateUObject(this, &ThisClass::OnPawnReadyToInitialize));
+			PawnExtComp->OnPawnReadyToInitialize_RegisterAndCall(
+				FSimpleMulticastDelegate::FDelegate::CreateUObject(this, &ThisClass::OnPawnReadyToInitialize));
 		}
 	}
 	else
 	{
-		UE_LOG(LogECR, Error, TEXT("[UECRHeroComponent::OnRegister] This component has been added to a blueprint whose base class is not a Pawn. To use this component, it MUST be placed on a Pawn Blueprint."));
+		UE_LOG(LogECR, Error,
+		       TEXT(
+			       "[UECRHeroComponent::OnRegister] This component has been added to a blueprint whose base class is not a Pawn. To use this component, it MUST be placed on a Pawn Blueprint."
+		       ));
 
 #if WITH_EDITOR
 		if (GIsEditor)
 		{
-			static const FText Message = NSLOCTEXT("ECRHeroComponent", "NotOnPawnError", "has been added to a blueprint whose base class is not a Pawn. To use this component, it MUST be placed on a Pawn Blueprint. This will cause a crash if you PIE!");
+			static const FText Message = NSLOCTEXT("ECRHeroComponent", "NotOnPawnError",
+			                                       "has been added to a blueprint whose base class is not a Pawn. To use this component, it MUST be placed on a Pawn Blueprint. This will cause a crash if you PIE!");
 			static const FName HeroMessageLogName = TEXT("ECRHeroComponent");
-			
+
 			FMessageLog(HeroMessageLogName).Error()
-				->AddToken(FUObjectToken::Create(this, FText::FromString(GetNameSafe(this))))
-				->AddToken(FTextToken::Create(Message));
-				
+			                               ->AddToken(FUObjectToken::Create(this, FText::FromString(GetNameSafe(this))))
+			                               ->AddToken(FTextToken::Create(Message));
+
 			FMessageLog(HeroMessageLogName).Open();
 		}
 #endif
@@ -93,16 +99,16 @@ bool UECRHeroComponent::IsPawnComponentReadyToInitialize() const
 	{
 		AController* Controller = GetController<AController>();
 
-		const bool bHasControllerPairedWithPS = (Controller != nullptr) && \
-												(Controller->PlayerState != nullptr) && \
-												(Controller->PlayerState->GetOwner() == Controller);
+		const bool bHasControllerPairedWithPS = (Controller != nullptr) &&
+			(Controller->PlayerState != nullptr) &&
+			(Controller->PlayerState->GetOwner() == Controller);
 
 		if (!bHasControllerPairedWithPS)
 		{
 			return false;
 		}
 	}
-	
+
 	const bool bIsLocallyControlled = Pawn->IsLocallyControlled();
 	const bool bIsBot = Pawn->IsBotControlled();
 
@@ -178,7 +184,7 @@ void UECRHeroComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 		if (UECRPawnExtensionComponent* PawnExtComp = UECRPawnExtensionComponent::FindPawnExtensionComponent(Pawn))
 		{
 			PawnExtComp->UninitializeAbilitySystem();
-		}	
+		}
 	}
 
 	Super::EndPlay(EndPlayReason);
@@ -212,29 +218,36 @@ void UECRHeroComponent::InitializePlayerInput(UInputComponent* PlayerInputCompon
 			if (const UECRInputConfig* InputConfig = PawnData->InputConfig)
 			{
 				const FECRGameplayTags& GameplayTags = FECRGameplayTags::Get();
-	
+
 				// Register any default input configs with the settings so that they will be applied to the player during AddInputMappings
 				for (const FMappableConfigPair& Pair : DefaultInputConfigs)
 				{
 					FMappableConfigPair::ActivatePair(Pair);
 				}
-				
+
 				UECRInputComponent* ECRIC = CastChecked<UECRInputComponent>(PlayerInputComponent);
 				ECRIC->AddInputMappings(InputConfig, Subsystem);
 				if (UECRSettingsLocal* LocalSettings = UECRSettingsLocal::Get())
 				{
 					LocalSettings->OnInputConfigActivated.AddUObject(this, &UECRHeroComponent::OnInputConfigActivated);
-					LocalSettings->OnInputConfigDeactivated.AddUObject(this, &UECRHeroComponent::OnInputConfigDeactivated);
+					LocalSettings->OnInputConfigDeactivated.AddUObject(
+						this, &UECRHeroComponent::OnInputConfigDeactivated);
 				}
 
 				TArray<uint32> BindHandles;
-				ECRIC->BindAbilityActions(InputConfig, this, &ThisClass::Input_AbilityInputTagPressed, &ThisClass::Input_AbilityInputTagReleased, /*out*/ BindHandles);
+				ECRIC->BindAbilityActions(InputConfig, this, &ThisClass::Input_AbilityInputTagPressed,
+				                          &ThisClass::Input_AbilityInputTagReleased, /*out*/ BindHandles);
 
-				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Move, ETriggerEvent::Triggered, this, &ThisClass::Input_Move, /*bLogIfNotFound=*/ false);
-				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Look_Mouse, ETriggerEvent::Triggered, this, &ThisClass::Input_LookMouse, /*bLogIfNotFound=*/ true);
-				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Look_Stick, ETriggerEvent::Triggered, this, &ThisClass::Input_LookStick, /*bLogIfNotFound=*/ false);
-				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Crouch, ETriggerEvent::Triggered, this, &ThisClass::Input_Crouch, /*bLogIfNotFound=*/ false);
-				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_AutoRun, ETriggerEvent::Triggered, this, &ThisClass::Input_AutoRun, /*bLogIfNotFound=*/ false);
+				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Move, ETriggerEvent::Triggered, this,
+				                        &ThisClass::Input_Move, /*bLogIfNotFound=*/ false);
+				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Look_Mouse, ETriggerEvent::Triggered, this,
+				                        &ThisClass::Input_LookMouse, /*bLogIfNotFound=*/ true);
+				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Look_Stick, ETriggerEvent::Triggered, this,
+				                        &ThisClass::Input_LookStick, /*bLogIfNotFound=*/ false);
+				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Crouch, ETriggerEvent::Triggered, this,
+				                        &ThisClass::Input_Crouch, /*bLogIfNotFound=*/ false);
+				ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_AutoRun, ETriggerEvent::Triggered, this,
+				                        &ThisClass::Input_AutoRun, /*bLogIfNotFound=*/ false);
 			}
 		}
 	}
@@ -244,8 +257,10 @@ void UECRHeroComponent::InitializePlayerInput(UInputComponent* PlayerInputCompon
 		bReadyToBindInputs = true;
 	}
 
-	UGameFrameworkComponentManager::SendGameFrameworkComponentExtensionEvent(const_cast<APlayerController*>(PC), NAME_BindInputsNow);
-	UGameFrameworkComponentManager::SendGameFrameworkComponentExtensionEvent(const_cast<APawn*>(Pawn), NAME_BindInputsNow);
+	UGameFrameworkComponentManager::SendGameFrameworkComponentExtensionEvent(
+		const_cast<APlayerController*>(PC), NAME_BindInputsNow);
+	UGameFrameworkComponentManager::SendGameFrameworkComponentExtensionEvent(
+		const_cast<APawn*>(Pawn), NAME_BindInputsNow);
 }
 
 void UECRHeroComponent::OnInputConfigActivated(const FLoadedMappableConfigPair& ConfigPair)
@@ -258,10 +273,11 @@ void UECRHeroComponent::OnInputConfigActivated(const FLoadedMappableConfigPair& 
 			{
 				if (const ULocalPlayer* LP = ECRPC->GetLocalPlayer())
 				{
-					if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LP->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
+					if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LP->GetSubsystem<
+						UEnhancedInputLocalPlayerSubsystem>())
 					{
-						ECRIC->AddInputConfig(ConfigPair, Subsystem);	
-					}	
+						ECRIC->AddInputConfig(ConfigPair, Subsystem);
+					}
 				}
 			}
 		}
@@ -278,7 +294,8 @@ void UECRHeroComponent::OnInputConfigDeactivated(const FLoadedMappableConfigPair
 			{
 				if (const ULocalPlayer* LP = ECRPC->GetLocalPlayer())
 				{
-					if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LP->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
+					if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LP->GetSubsystem<
+						UEnhancedInputLocalPlayerSubsystem>())
 					{
 						ECRIC->RemoveInputConfig(ConfigPair, Subsystem);
 					}
@@ -312,7 +329,8 @@ void UECRHeroComponent::AddAdditionalInputConfig(const UECRInputConfig* InputCon
 
 	if (const UECRPawnExtensionComponent* PawnExtComp = UECRPawnExtensionComponent::FindPawnExtensionComponent(Pawn))
 	{
-		ECRIC->BindAbilityActions(InputConfig, this, &ThisClass::Input_AbilityInputTagPressed, &ThisClass::Input_AbilityInputTagReleased, /*out*/ BindHandles);
+		ECRIC->BindAbilityActions(InputConfig, this, &ThisClass::Input_AbilityInputTagPressed,
+		                          &ThisClass::Input_AbilityInputTagReleased, /*out*/ BindHandles);
 	}
 }
 
@@ -335,13 +353,14 @@ void UECRHeroComponent::Input_AbilityInputTagPressed(FGameplayTag InputTag)
 {
 	if (const APawn* Pawn = GetPawn<APawn>())
 	{
-		if (const UECRPawnExtensionComponent* PawnExtComp = UECRPawnExtensionComponent::FindPawnExtensionComponent(Pawn))
+		if (const UECRPawnExtensionComponent* PawnExtComp =
+			UECRPawnExtensionComponent::FindPawnExtensionComponent(Pawn))
 		{
 			if (UECRAbilitySystemComponent* ECRASC = PawnExtComp->GetECRAbilitySystemComponent())
 			{
 				ECRASC->AbilityInputTagPressed(InputTag);
 			}
-		}	
+		}
 	}
 }
 
@@ -362,8 +381,18 @@ void UECRHeroComponent::Input_AbilityInputTagReleased(FGameplayTag InputTag)
 	}
 }
 
+void UECRHeroComponent::ToggleMovementInput(const bool bNewEnabled)
+{
+	bMovementInputEnabled = bNewEnabled;
+}
+
 void UECRHeroComponent::Input_Move(const FInputActionValue& InputActionValue)
 {
+	if (!bMovementInputEnabled)
+	{
+		return;
+	}
+
 	APawn* Pawn = GetPawn<APawn>();
 	AController* Controller = Pawn ? Pawn->GetController() : nullptr;
 
@@ -372,7 +401,7 @@ void UECRHeroComponent::Input_Move(const FInputActionValue& InputActionValue)
 	{
 		ECRController->SetIsAutoRunning(false);
 	}
-	
+
 	if (Controller)
 	{
 		const FVector2D Value = InputActionValue.Get<FVector2D>();
@@ -400,7 +429,7 @@ void UECRHeroComponent::Input_LookMouse(const FInputActionValue& InputActionValu
 	{
 		return;
 	}
-	
+
 	const FVector2D Value = InputActionValue.Get<FVector2D>();
 
 	if (Value.X != 0.0f)
@@ -422,7 +451,7 @@ void UECRHeroComponent::Input_LookStick(const FInputActionValue& InputActionValu
 	{
 		return;
 	}
-	
+
 	const FVector2D Value = InputActionValue.Get<FVector2D>();
 
 	const UWorld* World = GetWorld();
@@ -441,6 +470,11 @@ void UECRHeroComponent::Input_LookStick(const FInputActionValue& InputActionValu
 
 void UECRHeroComponent::Input_Crouch(const FInputActionValue& InputActionValue)
 {
+	if (!bMovementInputEnabled)
+	{
+		return;
+	}
+
 	if (AECRCharacter* Character = GetPawn<AECRCharacter>())
 	{
 		Character->ToggleCrouch();
@@ -449,13 +483,18 @@ void UECRHeroComponent::Input_Crouch(const FInputActionValue& InputActionValue)
 
 void UECRHeroComponent::Input_AutoRun(const FInputActionValue& InputActionValue)
 {
+	if (!bMovementInputEnabled)
+	{
+		return;
+	}
+
 	if (APawn* Pawn = GetPawn<APawn>())
 	{
 		if (AECRPlayerController* Controller = Cast<AECRPlayerController>(Pawn->GetController()))
 		{
 			// Toggle auto running
 			Controller->SetIsAutoRunning(!Controller->GetIsAutoRunning());
-		}	
+		}
 	}
 }
 
@@ -483,7 +522,8 @@ TSubclassOf<UECRCameraMode> UECRHeroComponent::DetermineCameraMode() const
 	return nullptr;
 }
 
-void UECRHeroComponent::SetAbilityCameraMode(TSubclassOf<UECRCameraMode> CameraMode, const FGameplayAbilitySpecHandle& OwningSpecHandle)
+void UECRHeroComponent::SetAbilityCameraMode(TSubclassOf<UECRCameraMode> CameraMode,
+                                             const FGameplayAbilitySpecHandle& OwningSpecHandle)
 {
 	if (CameraMode)
 	{

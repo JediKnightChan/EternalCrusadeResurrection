@@ -10,7 +10,6 @@
 #include "Gameplay/Character/ECRHeroComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemGlobals.h"
-#include "GameFramework/CharacterMovementComponent.h"
 #include "Gameplay/GAS/Abilities/ECRAbilitySimpleFailureMessage.h"
 #include "GameFramework/GameplayMessageSubsystem.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
@@ -103,21 +102,11 @@ void UECRGameplayAbility::ToggleInputDisabled(const bool NewInputDisabled)
 	}
 }
 
-void UECRGameplayAbility::ToggleMovementDisabled(const bool NewMovementDisabled)
+void UECRGameplayAbility::ToggleMovementEnabled(const bool bNewEnabled)
 {
-	if (const AECRCharacter* Character = GetECRCharacterFromActorInfo())
+	if (UECRHeroComponent* HeroComponent = GetHeroComponentFromActorInfo())
 	{
-		if (UCharacterMovementComponent* CharMoveComp = Character->GetCharacterMovement())
-		{
-			if (NewMovementDisabled)
-			{
-				CharMoveComp->DisableMovement();
-			} else
-			{
-				CharMoveComp->SetMovementMode(MOVE_Walking);
-			}
-		}
-		
+		HeroComponent->ToggleMovementInput(bNewEnabled);
 	}
 }
 

@@ -27,18 +27,24 @@ class UECRHeroComponent : public UECRPawnComponent
 	GENERATED_BODY()
 
 public:
-
 	UECRHeroComponent(const FObjectInitializer& ObjectInitializer);
 
 	// Returns the hero component if one exists on the specified actor.
 	UFUNCTION(BlueprintPure, Category = "ECR|Hero")
-	static UECRHeroComponent* FindHeroComponent(const AActor* Actor) { return (Actor ? Actor->FindComponentByClass<UECRHeroComponent>() : nullptr); }
+	static UECRHeroComponent* FindHeroComponent(const AActor* Actor)
+	{
+		return (Actor ? Actor->FindComponentByClass<UECRHeroComponent>() : nullptr);
+	}
 
-	void SetAbilityCameraMode(TSubclassOf<UECRCameraMode> CameraMode, const FGameplayAbilitySpecHandle& OwningSpecHandle);
+	void SetAbilityCameraMode(TSubclassOf<UECRCameraMode> CameraMode,
+	                          const FGameplayAbilitySpecHandle& OwningSpecHandle);
 	void ClearAbilityCameraMode(const FGameplayAbilitySpecHandle& OwningSpecHandle);
 
 	void AddAdditionalInputConfig(const UECRInputConfig* InputConfig);
 	void RemoveAdditionalInputConfig(const UECRInputConfig* InputConfig);
+
+	/** Enables or disables movement input (movement, crouch, auto run) */
+	void ToggleMovementInput(bool bNewEnabled);
 
 	/** True if this has completed OnPawnReadyToInitialize so is prepared for late-added features */
 	bool HasPawnInitialized() const;
@@ -49,7 +55,6 @@ public:
 	static const FName NAME_BindInputsNow;
 
 protected:
-
 	virtual void OnRegister() override;
 
 	virtual bool IsPawnComponentReadyToInitialize() const override;
@@ -70,12 +75,11 @@ protected:
 	void Input_AutoRun(const FInputActionValue& InputActionValue);
 
 	TSubclassOf<UECRCameraMode> DetermineCameraMode() const;
-	
+
 	void OnInputConfigActivated(const FLoadedMappableConfigPair& ConfigPair);
 	void OnInputConfigDeactivated(const FLoadedMappableConfigPair& ConfigPair);
 
 protected:
-
 	/**
 	 * Input Configs that should be added to this player when initalizing the input.
 	 * 
@@ -84,7 +88,7 @@ protected:
 	 */
 	UPROPERTY(EditAnywhere)
 	TArray<FMappableConfigPair> DefaultInputConfigs;
-	
+
 	// Camera mode set by an ability.
 	TSubclassOf<UECRCameraMode> AbilityCameraMode;
 
@@ -94,6 +98,9 @@ protected:
 	// True when the pawn has fully finished initialization
 	bool bPawnHasInitialized;
 
-	// True when player input bindings have been applyed, will never be true for non-players
+	// True when player input bindings have been applied, will never be true for non-players
 	bool bReadyToBindInputs;
+
+	// True if movement input enabled (by default)
+	bool bMovementInputEnabled;
 };
