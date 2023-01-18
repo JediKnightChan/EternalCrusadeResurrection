@@ -91,7 +91,7 @@ bool UECRGameplayAbility_RangedWeapon::CanActivateAbility(const FGameplayAbility
                                                           FGameplayTagContainer* OptionalRelevantTags) const
 {
 	bool bResult = Super::CanActivateAbility(Handle, ActorInfo, SourceTags, TargetTags, OptionalRelevantTags);
-	
+
 	if (bResult)
 	{
 		FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->FindAbilitySpecFromHandle(Handle);
@@ -209,6 +209,18 @@ FHitResult UECRGameplayAbility_RangedWeapon::WeaponTrace(const FVector& StartTra
 
 FVector UECRGameplayAbility_RangedWeapon::GetWeaponTargetingSourceLocation() const
 {
+	if (const UECRRangedWeaponInstance* Weapon = GetWeaponInstance())
+	{
+		TArray<AActor*> Actors = Weapon->GetSpawnedActors();
+		if (Actors.Num() > 0)
+		{
+			if (const AActor* WeaponActor = Actors[0])
+			{
+				return WeaponActor->GetActorLocation();
+			}
+		}
+	}
+
 	// Use Pawn's location as a base
 	APawn* const AvatarPawn = Cast<APawn>(GetAvatarActorFromActorInfo());
 	check(AvatarPawn);
@@ -315,10 +327,11 @@ FTransform UECRGameplayAbility_RangedWeapon::GetTargetingTransform(APawn* Source
 
 FHitResult UECRGameplayAbility_RangedWeapon::DoSingleBulletTrace(const FVector& StartTrace, const FVector& EndTrace,
                                                                  float SweepRadius, bool bIsSimulated,
-                                                                 OUT TArray<FHitResult>& OutHits) const
+                                                                 OUT TArray<FHitResult>& OutHits,
+                                                                 bool bSuppressDebugDraw) const
 {
 #if ENABLE_DRAW_DEBUG
-	if (ECRConsoleVariables::DrawBulletTracesDuration > 0.0f)
+	if (ECRConsoleVariables::DrawBulletTracesDuration > 0.0f && !bSuppressDebugDraw)
 	{
 		static float DebugThickness = 1.0f;
 		DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Red, false,
@@ -376,6 +389,26 @@ FHitResult UECRGameplayAbility_RangedWeapon::DoSingleBulletTrace(const FVector& 
 	return Impact;
 }
 
+FVector UECRGameplayAbility_RangedWeapon::GetSingleCameraTraceHitLocation(APawn* const AvatarPawn,
+                                                                          UECRRangedWeaponInstance* WeaponData) const
+{
+	// End tracing location will be calculated accorded to camera transform
+	const FTransform CameraTransform = GetTargetingTransform(
+		AvatarPawn, EECRAbilityTargetingSource::CameraTowardsFocus);
+
+	const FVector CameraTracingStart = CameraTransform.GetTranslation();
+	const FVector CameraTracingEnd = CameraTracingStart + CameraTransform.GetUnitAxis(EAxis::X) *
+		WeaponData->GetMaxDamageRange();
+	TArray<FHitResult> AllCameraHits;
+	DoSingleBulletTrace(CameraTracingStart, CameraTracingEnd, WeaponData->GetBulletTraceSweepRadius(),
+	                    /*bIsSimulated=*/ false, /*out*/ AllCameraHits, true);
+	if (AllCameraHits.Num() > 0)
+	{
+		return AllCameraHits[0].Location;
+	}
+	return CameraTracingEnd;
+}
+
 void UECRGameplayAbility_RangedWeapon::PerformLocalTargeting(OUT TArray<FHitResult>& OutHits)
 {
 	APawn* const AvatarPawn = Cast<APawn>(GetAvatarActorFromActorInfo());
@@ -387,13 +420,25 @@ void UECRGameplayAbility_RangedWeapon::PerformLocalTargeting(OUT TArray<FHitResu
 		InputData.WeaponData = WeaponData;
 		InputData.bCanPlayBulletFX = (AvatarPawn->GetNetMode() != NM_DedicatedServer);
 
-		//@TODO: Should do more complicated logic here when the player is close to a wall, etc...
 		const FTransform TargetTransform = GetTargetingTransform(
-			AvatarPawn, EECRAbilityTargetingSource::CameraTowardsFocus);
-		InputData.AimDir = TargetTransform.GetUnitAxis(EAxis::X);
+			AvatarPawn, TargetingSource);
 		InputData.StartTrace = TargetTransform.GetTranslation();
 
-		InputData.EndAim = InputData.StartTrace + InputData.AimDir * WeaponData->GetMaxDamageRange();
+		if (TargetingSource == EECRAbilityTargetingSource::CameraTowardsFocus || TargetingSource ==
+			EECRAbilityTargetingSource::PawnTowardsFocus || TargetingSource ==
+			EECRAbilityTargetingSource::WeaponTowardsFocus)
+		{
+			// Aim to point where camera hit.
+			InputData.EndAim = GetSingleCameraTraceHitLocation(AvatarPawn, WeaponData);
+			// Calculating aim dir according to end and start of tracing
+			InputData.AimDir = InputData.EndAim - InputData.StartTrace;
+		}
+		else
+		{
+			InputData.AimDir = TargetTransform.GetUnitAxis(EAxis::X);
+			InputData.EndAim = InputData.StartTrace + InputData.AimDir * WeaponData->GetMaxDamageRange();
+		}
+
 
 #if ENABLE_DRAW_DEBUG
 		if (ECRConsoleVariables::DrawBulletTracesDuration > 0.0f)

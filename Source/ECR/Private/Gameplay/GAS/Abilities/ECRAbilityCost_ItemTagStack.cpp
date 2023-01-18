@@ -28,7 +28,6 @@ bool UECRAbilityCost_ItemTagStack::CheckCost(const UECRGameplayAbility* Ability,
 			const float NumStacksReal = Quantity.GetValueAtLevel(AbilityLevel);
 			const int32 NumStacks = FMath::TruncToInt(NumStacksReal);
 			const bool bCanApplyCost = ItemInstance->GetStatTagStackCount(Tag) >= NumStacks;
-
 			// Inform other abilities why this cost cannot be applied
 			if (!bCanApplyCost && OptionalRelevantTags && FailureTag.IsValid())
 			{
@@ -52,7 +51,6 @@ void UECRAbilityCost_ItemTagStack::ApplyCost(const UECRGameplayAbility* Ability,
 
 				const float NumStacksReal = Quantity.GetValueAtLevel(AbilityLevel);
 				const int32 NumStacks = FMath::TruncToInt(NumStacksReal);
-
 				ItemInstance->RemoveStatTagStack(Tag, NumStacks);
 			}
 		}

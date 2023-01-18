@@ -59,6 +59,7 @@ protected:
 
 	UFUNCTION()
 	void OnRep_bVisible();
+
 private:
 	UFUNCTION()
 	void OnRep_Instigator();
@@ -70,6 +71,7 @@ private:
 	UPROPERTY(Replicated)
 	TArray<AActor*> SpawnedActors;
 
+protected:
 	UPROPERTY(ReplicatedUsing=OnRep_bVisible)
 	bool bVisible = true;
 };

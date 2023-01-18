@@ -300,6 +300,9 @@ void UECRGameplayAbility::ApplyCost(const FGameplayAbilitySpecHandle Handle, con
 			}
 
 			AdditionalCost->ApplyCost(this, Handle, ActorInfo, ActivationInfo);
+		} else
+		{
+			UE_LOG(LogECRAbilitySystem, Warning, TEXT("Additional cost is nullptr"))
 		}
 	}
 }

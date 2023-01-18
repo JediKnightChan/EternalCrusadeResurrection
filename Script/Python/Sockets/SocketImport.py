@@ -10,7 +10,7 @@ DEBUG_MODE = True
 
 for asset in ue.get_assets_by_class("Skeleton"):
     asset_path = asset.get_path_name()
-    if asset_path.startswith("/Game/Characters/") and asset_path in global_socket_data:
+    if asset_path.startswith("/Game/Characters/SpaceMarine/Weapons/") and asset_path in global_socket_data:
         print(asset_path)
 
         skeleton = asset

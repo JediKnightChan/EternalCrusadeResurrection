@@ -59,6 +59,7 @@ struct FECRQuickBar : public FFastArraySerializer
 		: OwnerComponent(InOwnerComponent)
 	{
 	}
+
 public:
 	//~FFastArraySerializer contract
 	void PreReplicatedRemove(const TArrayView<int32> RemovedIndices, int32 FinalSize);
@@ -81,7 +82,7 @@ private:
 	UECREquipmentManagerComponent* FindEquipmentManager() const;
 
 	int32 GetIndexOfChannelWithName(FName Name) const;
-	int32 GetIndexOfChannelWithNameOrCreate(FName Name);
+	int32 GetIndexOfChannelWithNameOrCreate(FName Name, bool bVisibilityOnCreation = true);
 
 private:
 	friend UECRQuickBarComponent;
@@ -146,6 +147,9 @@ public:
 private:
 	UPROPERTY(Replicated)
 	FECRQuickBar ChannelData;
+
+	UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
+	TMap<FName, bool> DefaultChannelVisibility;
 };
 
 

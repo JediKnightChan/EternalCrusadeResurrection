@@ -68,6 +68,7 @@ void UECREquipmentInstance::SpawnEquipmentActors(const TArray<FECREquipmentActor
 			NewActor->SetActorRelativeTransform(SpawnInfo.AttachTransform);
 			NewActor->AttachToComponent(AttachTarget, FAttachmentTransformRules::KeepRelativeTransform,
 			                            SpawnInfo.AttachSocket);
+			NewActor->SetActorHiddenInGame(!bVisible);
 			NewActor->SetReplicates(true);
 
 			SpawnedActors.Add(NewActor);
@@ -106,7 +107,10 @@ void UECREquipmentInstance::OnRep_bVisible()
 {
 	for (AActor* Actor : GetSpawnedActors())
 	{
-		Actor->SetActorHiddenInGame(!bVisible);
+		if (Actor)
+		{
+			Actor->SetActorHiddenInGame(!bVisible);
+		}
 	}
 }
 

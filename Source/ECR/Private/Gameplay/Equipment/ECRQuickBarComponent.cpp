@@ -136,7 +136,7 @@ int32 FECRQuickBar::GetIndexOfChannelWithName(const FName Name) const
 	return INDEX_NONE;
 }
 
-int32 FECRQuickBar::GetIndexOfChannelWithNameOrCreate(FName Name)
+int32 FECRQuickBar::GetIndexOfChannelWithNameOrCreate(FName Name, bool bVisibilityOnCreation)
 {
 	check(OwnerComponent);
 
@@ -150,6 +150,7 @@ int32 FECRQuickBar::GetIndexOfChannelWithNameOrCreate(FName Name)
 
 		FECRQuickBarChannel& NewChannel = Channels.AddDefaulted_GetRef();
 		NewChannel.ChannelName = Name;
+		NewChannel.bVisible = bVisibilityOnCreation;
 		MarkItemDirty(NewChannel);
 	}
 	return ChannelIndex;
@@ -290,7 +291,13 @@ void UECRQuickBarComponent::AddItemToSlot(int32 SlotIndex, UECRInventoryItemInst
 {
 	const FName ChannelName = Item->GetQuickBarChannelName();
 
-	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithNameOrCreate(ChannelName);
+	bool bVisibilityOnCreation = true;
+	if (DefaultChannelVisibility.Contains(ChannelName))
+	{
+		bVisibilityOnCreation = DefaultChannelVisibility.FindRef(ChannelName);
+	}
+	
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithNameOrCreate(ChannelName, bVisibilityOnCreation);
 	FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
 
 	if (Channel.Slots.IsValidIndex(SlotIndex) && (Item != nullptr))

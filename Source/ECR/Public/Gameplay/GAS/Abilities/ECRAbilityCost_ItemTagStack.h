@@ -19,11 +19,16 @@ public:
 	UECRAbilityCost_ItemTagStack();
 
 	//~UECRAbilityCost interface
-	virtual bool CheckCost(const UECRGameplayAbility* Ability, const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, FGameplayTagContainer* OptionalRelevantTags) const override;
-	virtual void ApplyCost(const UECRGameplayAbility* Ability, const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) override;
+	virtual bool CheckCost(const UECRGameplayAbility* Ability, const FGameplayAbilitySpecHandle Handle,
+	                       const FGameplayAbilityActorInfo* ActorInfo,
+	                       FGameplayTagContainer* OptionalRelevantTags) const override;
+
+	virtual void ApplyCost(const UECRGameplayAbility* Ability, const FGameplayAbilitySpecHandle Handle,
+	                       const FGameplayAbilityActorInfo* ActorInfo,
+	                       const FGameplayAbilityActivationInfo ActivationInfo) override;
 	//~End of UECRAbilityCost interface
 
-	protected:
+protected:
 	/** How much of the tag to spend (keyed on ability level) */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Costs)
 	FScalableFloat Quantity;

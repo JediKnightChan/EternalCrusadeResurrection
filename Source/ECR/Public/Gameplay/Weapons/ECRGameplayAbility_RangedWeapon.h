@@ -86,7 +86,11 @@ protected:
 	FHitResult WeaponTrace(const FVector& StartTrace, const FVector& EndTrace, float SweepRadius, bool bIsSimulated, OUT TArray<FHitResult>& OutHitResults) const;
 
 	// Wrapper around WeaponTrace to handle trying to do a ray trace before falling back to a sweep trace if there were no hits and SweepRadius is above zero 
-	FHitResult DoSingleBulletTrace(const FVector& StartTrace, const FVector& EndTrace, float SweepRadius, bool bIsSimulated, OUT TArray<FHitResult>& OutHits) const;
+	FHitResult DoSingleBulletTrace(const FVector& StartTrace, const FVector& EndTrace, float SweepRadius, bool bIsSimulated, OUT TArray<FHitResult>&
+	                               OutHits, bool bSuppressDebugDraw = false) const;
+
+	// Does single camera trace for targeting sources toward focus and returns location to aim to
+	FVector GetSingleCameraTraceHitLocation(APawn* const AvatarPawn, UECRRangedWeaponInstance* WeaponData) const;
 
 	// Traces all of the bullets in a single cartridge
 	void TraceBulletsInCartridge(const FRangedWeaponFiringInput& InputData, OUT TArray<FHitResult>& OutHits);
@@ -112,4 +116,7 @@ protected:
 
 private:
 	FDelegateHandle OnTargetDataReadyCallbackDelegateHandle;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	EECRAbilityTargetingSource TargetingSource;
 };
