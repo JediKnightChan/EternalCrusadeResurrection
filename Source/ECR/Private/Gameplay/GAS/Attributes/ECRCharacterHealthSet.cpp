@@ -10,11 +10,13 @@
 UECRCharacterHealthSet::UECRCharacterHealthSet()
 	: Shield(100.0f),
 	  MaxShield(100.0f),
-	  Stamina(100.0f),
-	  MaxStamina(100.0f),
 	  BleedingHealth(100.0f),
 	  MaxBleedingHealth(100.0f),
-	  WalkSpeed(600.0f)
+	  WalkSpeed(600.0f),
+	  Stamina(100.0f),
+	  MaxStamina(100.0f),
+	  EvasionStamina(3.0f),
+	  MaxEvasionStamina(3.0f)
 {
 }
 
@@ -25,11 +27,13 @@ void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Shield, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxShield, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Stamina, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxStamina, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, BleedingHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxBleedingHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, WalkSpeed, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Stamina, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxStamina, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, EvasionStamina, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxEvasionStamina, COND_None, REPNOTIFY_Always);
 }
 
 
@@ -143,13 +147,17 @@ void UECRCharacterHealthSet::PostAttributeChange(const FGameplayAttribute& Attri
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxShieldAttribute(),
 	                                 GetShieldAttribute(), GetShield());
 
+	// Make sure current bleeding health is not greater than the new max bleeding health.
+	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxBleedingHealthAttribute(),
+	                                 GetBleedingHealthAttribute(), GetBleedingHealth());
+
 	// Make sure current stamina is not greater than the new max stamina.
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxStaminaAttribute(),
 	                                 GetStaminaAttribute(), GetStamina());
 
-	// Make sure current bleeding health is not greater than the new max bleeding health.
-	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxBleedingHealthAttribute(),
-	                                 GetBleedingHealthAttribute(), GetBleedingHealth());
+	// Make sure current evasion stamina is not greater than the new max evasion stamina.
+	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxEvasionStaminaAttribute(),
+	                                 GetEvasionStaminaAttribute(), GetEvasionStamina());
 }
 
 
@@ -167,16 +175,6 @@ void UECRCharacterHealthSet::ClampAttribute(const FGameplayAttribute& Attribute,
 		// Do not allow max shield to drop below 1.
 		NewValue = FMath::Max(NewValue, 1.0f);
 	}
-	else if (Attribute == GetStaminaAttribute())
-	{
-		// Do not allow stamina to go negative or above max stamina.
-		NewValue = FMath::Clamp(NewValue, 0.0f, GetMaxStamina());
-	}
-	else if (Attribute == GetMaxStaminaAttribute())
-	{
-		// Do not allow max stamina to drop below 1.
-		NewValue = FMath::Max(NewValue, 1.0f);
-	}
 	else if (Attribute == GetBleedingHealthAttribute())
 	{
 		// Do not allow bleeding health to drop below 0.
@@ -190,6 +188,26 @@ void UECRCharacterHealthSet::ClampAttribute(const FGameplayAttribute& Attribute,
 	else if (Attribute == GetWalkSpeedAttribute())
 	{
 		NewValue = FMath::Clamp(NewValue, 0.0f, MAX_ALLOWED_WalkSpeed);
+	}
+	else if (Attribute == GetStaminaAttribute())
+	{
+		// Do not allow stamina to go negative or above max stamina.
+		NewValue = FMath::Clamp(NewValue, 0.0f, GetMaxStamina());
+	}
+	else if (Attribute == GetMaxStaminaAttribute())
+	{
+		// Do not allow max stamina to drop below 1.
+		NewValue = FMath::Max(NewValue, 1.0f);
+	}
+	else if (Attribute == GetEvasionStaminaAttribute())
+	{
+		// Do not allow stamina to go negative or above max evasion stamina.
+		NewValue = FMath::Clamp(NewValue, 0.0f, GetMaxEvasionStamina());
+	}
+	else if (Attribute == GetMaxEvasionStaminaAttribute())
+	{
+		// Do not allow max evasion stamina to drop below 1.
+		NewValue = FMath::Max(NewValue, 1.0f);
 	}
 }
 
@@ -206,6 +224,24 @@ void UECRCharacterHealthSet::OnRep_MaxShield(const FGameplayAttributeData& OldVa
 }
 
 
+void UECRCharacterHealthSet::OnRep_BleedingHealth(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, BleedingHealth, OldValue)
+}
+
+
+void UECRCharacterHealthSet::OnRep_MaxBleedingHealth(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxBleedingHealth, OldValue)
+}
+
+
+void UECRCharacterHealthSet::OnRep_WalkSpeed(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, WalkSpeed, OldValue)
+}
+
+
 void UECRCharacterHealthSet::OnRep_Stamina(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, Stamina, OldValue)
@@ -217,17 +253,12 @@ void UECRCharacterHealthSet::OnRep_MaxStamina(const FGameplayAttributeData& OldV
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxStamina, OldValue)
 }
 
-void UECRCharacterHealthSet::OnRep_BleedingHealth(const FGameplayAttributeData& OldValue) const
+void UECRCharacterHealthSet::OnRep_EvasionStamina(const FGameplayAttributeData& OldValue) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, BleedingHealth, OldValue)
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, EvasionStamina, OldValue)
 }
 
-void UECRCharacterHealthSet::OnRep_MaxBleedingHealth(const FGameplayAttributeData& OldValue) const
+void UECRCharacterHealthSet::OnRep_MaxEvasionStamina(const FGameplayAttributeData& OldValue) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxBleedingHealth, OldValue)
-}
-
-void UECRCharacterHealthSet::OnRep_WalkSpeed(const FGameplayAttributeData& OldValue) const
-{
-	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, WalkSpeed, OldValue)
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxEvasionStamina, OldValue)
 }

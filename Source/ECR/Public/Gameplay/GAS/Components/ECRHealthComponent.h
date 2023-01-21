@@ -111,12 +111,14 @@ public:
 protected:
 	virtual void OnUnregister() override;
 
+	static float GetNormalizedAttributeValue(const float Value, const float MaxValue);
+
 	virtual void ClearGameplayTags();
 
 	virtual void HandleHealthChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleMaxHealthChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleReadyToDie(AActor* DamageInstigator, AActor* DamageCauser,
-	                               const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude);
+	                              const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude);
 
 	UFUNCTION()
 	virtual void OnRep_DeathState(EECRDeathState OldDeathState);

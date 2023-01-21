@@ -42,15 +42,6 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 	OnShieldChanged.Broadcast(this, CharacterHealthSet->GetShield(), CharacterHealthSet->GetShield(), nullptr);
 	OnMaxShieldChanged.Broadcast(this, CharacterHealthSet->GetMaxShield(), CharacterHealthSet->GetMaxShield(), nullptr);
 
-	// Stamina
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetStaminaAttribute()).
-	                        AddUObject(this, &ThisClass::HandleStaminaChanged);
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetMaxStaminaAttribute()).
-	                        AddUObject(this, &ThisClass::HandleMaxStaminaChanged);
-	OnStaminaChanged.Broadcast(this, CharacterHealthSet->GetStamina(), CharacterHealthSet->GetStamina(), nullptr);
-	OnMaxStaminaChanged.Broadcast(this, CharacterHealthSet->GetMaxStamina(), CharacterHealthSet->GetMaxStamina(),
-	                              nullptr);
-
 	// Bleeding health
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
 		                        UECRCharacterHealthSet::GetBleedingHealthAttribute()).
@@ -65,6 +56,27 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 	                                     nullptr);
 
 	CharacterHealthSet->OnReadyToBecomeWounded.AddUObject(this, &ThisClass::HandleReadyToBecomeWounded);
+
+	// Stamina
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetStaminaAttribute()).
+	                        AddUObject(this, &ThisClass::HandleStaminaChanged);
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetMaxStaminaAttribute()).
+	                        AddUObject(this, &ThisClass::HandleMaxStaminaChanged);
+	OnStaminaChanged.Broadcast(this, CharacterHealthSet->GetStamina(), CharacterHealthSet->GetStamina(), nullptr);
+	OnMaxStaminaChanged.Broadcast(this, CharacterHealthSet->GetMaxStamina(), CharacterHealthSet->GetMaxStamina(),
+	                              nullptr);
+
+	// Evasion stamina
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
+		                        UECRCharacterHealthSet::GetEvasionStaminaAttribute()).
+	                        AddUObject(this, &ThisClass::HandleEvasionStaminaChanged);
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
+								UECRCharacterHealthSet::GetMaxEvasionStaminaAttribute()).
+							AddUObject(this, &ThisClass::HandleMaxEvasionStaminaChanged);
+	OnEvasionStaminaChanged.Broadcast(this, CharacterHealthSet->GetEvasionStamina(),
+	                                  CharacterHealthSet->GetEvasionStamina(), nullptr);
+	OnMaxEvasionStaminaChanged.Broadcast(this, CharacterHealthSet->GetMaxEvasionStamina(),
+									  CharacterHealthSet->GetMaxEvasionStamina(), nullptr);
 }
 
 void UECRCharacterHealthComponent::UninitializeFromAbilitySystem()
@@ -90,38 +102,7 @@ float UECRCharacterHealthComponent::GetMaxShield() const
 
 float UECRCharacterHealthComponent::GetShieldNormalized() const
 {
-	if (CharacterHealthSet)
-	{
-		const float Shield = CharacterHealthSet->GetShield();
-		const float MaxShield = CharacterHealthSet->GetMaxShield();
-
-		return ((MaxShield > 0.0f) ? (Shield / MaxShield) : 0.0f);
-	}
-
-	return 0.0f;
-}
-
-float UECRCharacterHealthComponent::GetStamina() const
-{
-	return (CharacterHealthSet ? CharacterHealthSet->GetStamina() : 0.0f);
-}
-
-float UECRCharacterHealthComponent::GetMaxStamina() const
-{
-	return (CharacterHealthSet ? CharacterHealthSet->GetMaxStamina() : 0.0f);
-}
-
-float UECRCharacterHealthComponent::GetStaminaNormalized() const
-{
-	if (CharacterHealthSet)
-	{
-		const float Stamina = CharacterHealthSet->GetStamina();
-		const float MaxStamina = CharacterHealthSet->GetMaxStamina();
-
-		return ((MaxStamina > 0.0f) ? (Stamina / MaxStamina) : 0.0f);
-	}
-
-	return 0.0f;
+	return GetNormalizedAttributeValue(GetShield(), GetMaxShield());
 }
 
 float UECRCharacterHealthComponent::GetBleedingHealth() const
@@ -136,17 +117,38 @@ float UECRCharacterHealthComponent::GetMaxBleedingHealth() const
 
 float UECRCharacterHealthComponent::GetBleedingHealthNormalized() const
 {
-	if (CharacterHealthSet)
-	{
-		const float BleedingHealth = CharacterHealthSet->GetBleedingHealth();
-		const float MaxBleedingHealth = CharacterHealthSet->GetMaxBleedingHealth();
-
-		return ((MaxBleedingHealth > 0.0f) ? (BleedingHealth / MaxBleedingHealth) : 0.0f);
-	}
-
-	return 0.0f;
+	return GetNormalizedAttributeValue(GetBleedingHealth(), GetMaxBleedingHealth());
 }
 
+float UECRCharacterHealthComponent::GetStamina() const
+{
+	return (CharacterHealthSet ? CharacterHealthSet->GetStamina() : 0.0f);
+}
+
+float UECRCharacterHealthComponent::GetMaxStamina() const
+{
+	return (CharacterHealthSet ? CharacterHealthSet->GetMaxStamina() : 0.0f);
+}
+
+float UECRCharacterHealthComponent::GetStaminaNormalized() const
+{
+	return GetNormalizedAttributeValue(GetStamina(), GetMaxStamina());
+}
+
+float UECRCharacterHealthComponent::GetEvasionStamina() const
+{
+	return (CharacterHealthSet ? CharacterHealthSet->GetEvasionStamina() : 0.0f);
+}
+
+float UECRCharacterHealthComponent::GetMaxEvasionStamina() const
+{
+	return (CharacterHealthSet ? CharacterHealthSet->GetMaxEvasionStamina() : 0.0f);
+}
+
+float UECRCharacterHealthComponent::GetEvasionStaminaNormalized() const
+{
+	return GetNormalizedAttributeValue(GetEvasionStamina(), GetMaxEvasionStamina());
+}
 
 void UECRCharacterHealthComponent::ClearGameplayTags()
 {
@@ -167,16 +169,7 @@ void UECRCharacterHealthComponent::ChangeCharacterSpeed(const float NewSpeed)
 		{
 			UCharacterMovementComponent* CharMoveComp = Character->GetCharacterMovement();
 			CharMoveComp->MaxWalkSpeed = NewSpeed;
-			UE_LOG(LogTemp, Warning, TEXT("Setting walk speed %f"), NewSpeed)
 		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Owner actor is not character"))
-		}
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Owner actor is null"))
 	}
 }
 
@@ -196,18 +189,6 @@ void UECRCharacterHealthComponent::HandleMaxShieldChanged(const FOnAttributeChan
 {
 	OnMaxShieldChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
 	                             GetInstigatorFromAttrChangeData(ChangeData));
-}
-
-void UECRCharacterHealthComponent::HandleStaminaChanged(const FOnAttributeChangeData& ChangeData)
-{
-	OnStaminaChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
-	                           GetInstigatorFromAttrChangeData(ChangeData));
-}
-
-void UECRCharacterHealthComponent::HandleMaxStaminaChanged(const FOnAttributeChangeData& ChangeData)
-{
-	OnMaxStaminaChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
-	                              GetInstigatorFromAttrChangeData(ChangeData));
 }
 
 void UECRCharacterHealthComponent::HandleBleedingHealthChanged(const FOnAttributeChangeData& ChangeData)
@@ -264,4 +245,29 @@ void UECRCharacterHealthComponent::HandleReadyToBecomeWounded(AActor* DamageInst
 	}
 
 #endif // #if WITH_SERVER_CODE
+}
+
+
+void UECRCharacterHealthComponent::HandleStaminaChanged(const FOnAttributeChangeData& ChangeData)
+{
+	OnStaminaChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
+	                           GetInstigatorFromAttrChangeData(ChangeData));
+}
+
+void UECRCharacterHealthComponent::HandleMaxStaminaChanged(const FOnAttributeChangeData& ChangeData)
+{
+	OnMaxStaminaChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
+	                              GetInstigatorFromAttrChangeData(ChangeData));
+}
+
+void UECRCharacterHealthComponent::HandleEvasionStaminaChanged(const FOnAttributeChangeData& ChangeData)
+{
+	OnEvasionStaminaChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
+	                                  GetInstigatorFromAttrChangeData(ChangeData));
+}
+
+void UECRCharacterHealthComponent::HandleMaxEvasionStaminaChanged(const FOnAttributeChangeData& ChangeData)
+{
+	OnMaxEvasionStaminaChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
+									  GetInstigatorFromAttrChangeData(ChangeData));
 }

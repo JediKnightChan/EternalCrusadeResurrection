@@ -48,6 +48,12 @@ void UECRHealthComponent::OnUnregister()
 	Super::OnUnregister();
 }
 
+float UECRHealthComponent::GetNormalizedAttributeValue(const float Value, const float MaxValue)
+{
+	return ((MaxValue > 0.0f) ? (Value / MaxValue) : 0.0f);
+}
+
+
 void UECRHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystemComponent* InASC)
 {
 	AActor* Owner = GetOwner();
@@ -132,15 +138,7 @@ float UECRHealthComponent::GetMaxHealth() const
 
 float UECRHealthComponent::GetHealthNormalized() const
 {
-	if (HealthSet)
-	{
-		const float Health = HealthSet->GetHealth();
-		const float MaxHealth = HealthSet->GetMaxHealth();
-
-		return ((MaxHealth > 0.0f) ? (Health / MaxHealth) : 0.0f);
-	}
-
-	return 0.0f;
+	return GetNormalizedAttributeValue(GetHealth(), GetMaxHealth());
 }
 
 AActor* UECRHealthComponent::GetInstigatorFromAttrChangeData(const FOnAttributeChangeData& ChangeData)
@@ -167,7 +165,7 @@ void UECRHealthComponent::HandleMaxHealthChanged(const FOnAttributeChangeData& C
 }
 
 void UECRHealthComponent::HandleReadyToDie(AActor* DamageInstigator, AActor* DamageCauser,
-                                            const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude)
+                                           const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude)
 {
 #if WITH_SERVER_CODE
 	if (AbilitySystemComponent)
