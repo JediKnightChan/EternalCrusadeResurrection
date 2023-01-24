@@ -56,6 +56,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "ECR|Character")
 	bool GetIsAutoRunning() const;
 
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category="ECR|Network")
+	int32 GetInPacketLoss() const;
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category="ECR|Network")
+	int32 GetOutPacketLoss() const;
 protected:
 	//~APlayerController interface
 	virtual void PostProcessInput(const float DeltaTime, const bool bGamePaused) override;

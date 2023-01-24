@@ -20,7 +20,7 @@ class UAbilityTask_WaitForInteractableTargets_SingleLineTrace : public UAbilityT
 	UFUNCTION(BlueprintCallable, Category="Ability|Tasks",
 		meta = (HidePin = "OwningAbility", DefaultToSelf = "OwningAbility", BlueprintInternalUseOnly = "TRUE"))
 	static UAbilityTask_WaitForInteractableTargets_SingleLineTrace* WaitForInteractableTargets_SingleLineTrace(
-		UGameplayAbility* OwningAbility, FInteractionQuery InteractionQuery, FCollisionProfileName TraceProfile,
+		UGameplayAbility* OwningAbility, FInteractionQuery InteractionQuery,
 		FGameplayAbilityTargetingLocationInfo StartLocation, float InteractionScanRange = 100.0f,
 		float InteractionScanRate = 0.100f, float SweepRadius = 0.0f, bool bShowDebug = false);
 
