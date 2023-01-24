@@ -21,3 +21,25 @@ FString AECRGameMode::InitNewPlayer(APlayerController* NewPlayerController, cons
 
 	return Super::InitNewPlayer(NewPlayerController, UniqueId, Options, Portal);
 }
+
+
+bool AECRGameMode::ControllerCanRestart(AController* Controller)
+{
+	if (APlayerController* PC = Cast<APlayerController>(Controller))
+	{	
+		if (!Super::PlayerCanRestart_Implementation(PC))
+		{
+			return false;
+		}
+	}
+	else
+	{
+		// Bot version of Super::PlayerCanRestart_Implementation
+		if ((Controller == nullptr) || Controller->IsPendingKillPending())
+		{
+			return false;
+		}
+	}
+
+	return true;
+}

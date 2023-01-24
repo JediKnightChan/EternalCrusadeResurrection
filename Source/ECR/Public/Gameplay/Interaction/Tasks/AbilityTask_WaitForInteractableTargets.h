@@ -32,18 +32,17 @@ public:
 
 protected:
 	void LineOrSweepTrace(FHitResult& OutHitResult, const UWorld* World, const FVector& Start, const FVector& End,
-	                      FName ProfileName, float SweepRadius, const FCollisionQueryParams Params) const;
+	                      float SweepRadius, const FCollisionQueryParams Params) const;
 
 	void AimWithPlayerController(const AActor* InSourceActor, FCollisionQueryParams Params, const FVector& TraceStart,
-	                             float MaxRange, float SweepRadius, FVector& OutTraceEnd, bool bIgnorePitch = false) const;
+	                             float MaxRange, float SweepRadius, FVector& OutTraceEnd,
+	                             bool bIgnorePitch = false) const;
 
 	static bool ClipCameraRayToAbilityRange(FVector CameraLocation, FVector CameraDirection, FVector AbilityCenter,
 	                                        float AbilityRange, FVector& ClippedPosition);
 
 	void UpdateInteractableOptions(const FInteractionQuery& InteractQuery,
 	                               const TArray<TScriptInterface<IInteractableTarget>>& InteractableTargets);
-
-	FCollisionProfileName TraceProfile;
 
 	// Does the trace affect the aiming pitch
 	bool bTraceAffectsAimPitch = true;

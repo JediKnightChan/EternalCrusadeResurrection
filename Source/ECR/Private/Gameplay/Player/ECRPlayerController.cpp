@@ -9,6 +9,7 @@
 #include "Framework/Application/NavigationConfig.h"
 #include "Gameplay/Camera/ECRPlayerCameraManager.h"
 #include "Gameplay/Player/ECRPlayerState.h"
+#include "Kismet/KismetMathLibrary.h"
 
 
 AECRPlayerController::AECRPlayerController(const FObjectInitializer& ObjectInitializer)
@@ -90,7 +91,7 @@ void AECRPlayerController::PlayerTick(float DeltaTime)
 void AECRPlayerController::OnPossess(APawn* InPawn)
 {
 	Super::OnPossess(InPawn);
-	
+
 	SetIsAutoRunning(false);
 }
 
@@ -120,6 +121,25 @@ bool AECRPlayerController::GetIsAutoRunning() const
 	return bIsAutoRunning;
 }
 
+int32 AECRPlayerController::GetInPacketLoss() const
+{
+	if (const UNetConnection* MyNetConnection = GetNetConnection())
+	{
+		return MyNetConnection->InPacketsLost;
+	}
+	return 0;
+}
+
+int32 AECRPlayerController::GetOutPacketLoss() const
+{
+	
+	if (const UNetConnection* MyNetConnection = GetNetConnection())
+	{
+		return MyNetConnection->OutPacketsLost;
+	}
+	return 0;
+}
+
 void AECRPlayerController::PostProcessInput(const float DeltaTime, const bool bGamePaused)
 {
 	if (UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
@@ -136,7 +156,7 @@ void AECRPlayerController::OnStartAutoRun()
 	{
 		ECRASC->SetLooseGameplayTagCount(FECRGameplayTags::Get().Status_AutoRunning, 1);
 		K2_OnStartAutoRun();
-	}	
+	}
 }
 
 void AECRPlayerController::OnEndAutoRun()
@@ -155,6 +175,3 @@ void AECRReplayPlayerController::SetPlayer(UPlayer* InPlayer)
 {
 	Super::SetPlayer(InPlayer);
 }
-
-
-

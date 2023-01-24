@@ -22,4 +22,7 @@ protected:
 
 public:
 	AECRGameMode();
+
+	// Agnostic version of PlayerCanRestart that can be used for both player bots and players
+	virtual bool ControllerCanRestart(AController* Controller);
 };

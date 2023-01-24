@@ -17,7 +17,7 @@ UAbilityTask_WaitForInteractableTargets::UAbilityTask_WaitForInteractableTargets
 
 void UAbilityTask_WaitForInteractableTargets::LineOrSweepTrace(FHitResult& OutHitResult, const UWorld* World,
                                                                const FVector& Start, const FVector& End,
-                                                               FName ProfileName, float SweepRadius,
+                                                               float SweepRadius,
                                                                const FCollisionQueryParams Params) const
 {
 	check(World);
@@ -27,12 +27,12 @@ void UAbilityTask_WaitForInteractableTargets::LineOrSweepTrace(FHitResult& OutHi
 
 	if (SweepRadius > 0)
 	{
-		World->SweepMultiByProfile(HitResults, Start, End, FQuat::Identity, ProfileName,
+		World->SweepMultiByChannel(HitResults, Start, End, FQuat::Identity, ECR_TraceChannel_Interaction,
 		                           FCollisionShape::MakeSphere(SweepRadius), Params);
 	}
 	else
 	{
-		World->LineTraceMultiByProfile(HitResults, Start, End, ProfileName, Params);
+		World->LineTraceMultiByChannel(HitResults, Start, End, ECR_TraceChannel_Interaction, Params);
 	}
 
 	OutHitResult.TraceStart = Start;
@@ -55,50 +55,53 @@ void UAbilityTask_WaitForInteractableTargets::AimWithPlayerController(const AAct
 		return;
 	}
 
-	//@TODO: Bots?
-	APlayerController* PC = Ability->GetCurrentActorInfo()->PlayerController.Get();
-	check(PC);
-
-	FVector ViewStart;
-	FRotator ViewRot;
-	PC->GetPlayerViewPoint(ViewStart, ViewRot);
-
-	const FVector ViewDir = ViewRot.Vector();
-	FVector ViewEnd = ViewStart + (ViewDir * MaxRange);
-
-	ClipCameraRayToAbilityRange(ViewStart, ViewDir, TraceStart, MaxRange, ViewEnd);
-
-	FHitResult HitResult;
-	LineOrSweepTrace(HitResult, InSourceActor->GetWorld(), ViewStart, ViewEnd, TraceProfile.Name, SweepRadius, Params);
-
-	const bool bUseTraceResult = HitResult.bBlockingHit && (FVector::DistSquared(TraceStart, HitResult.Location) <= (
-		MaxRange * MaxRange));
-
-	const FVector AdjustedEnd = (bUseTraceResult) ? HitResult.Location : ViewEnd;
-
-	FVector AdjustedAimDir = (AdjustedEnd - TraceStart).GetSafeNormal();
-	if (AdjustedAimDir.IsZero())
+	APawn* const AvatarPawn = Cast<APawn>(Ability->GetAvatarActorFromActorInfo());
+	if (AvatarPawn && AvatarPawn->Controller)
 	{
-		AdjustedAimDir = ViewDir;
-	}
+		TObjectPtr<AController> PC = AvatarPawn->Controller;
 
-	if (!bTraceAffectsAimPitch && bUseTraceResult)
-	{
-		FVector OriginalAimDir = (ViewEnd - TraceStart).GetSafeNormal();
+		FVector ViewStart;
+		FRotator ViewRot;
+		PC->GetPlayerViewPoint(ViewStart, ViewRot);
 
-		if (!OriginalAimDir.IsZero())
+		const FVector ViewDir = ViewRot.Vector();
+		FVector ViewEnd = ViewStart + (ViewDir * MaxRange);
+
+		ClipCameraRayToAbilityRange(ViewStart, ViewDir, TraceStart, MaxRange, ViewEnd);
+
+		FHitResult HitResult;
+		LineOrSweepTrace(HitResult, InSourceActor->GetWorld(), ViewStart, ViewEnd, SweepRadius, Params);
+
+		const bool bUseTraceResult = HitResult.bBlockingHit && (FVector::DistSquared(TraceStart, HitResult.Location) <=
+			(
+				MaxRange * MaxRange));
+
+		const FVector AdjustedEnd = (bUseTraceResult) ? HitResult.Location : ViewEnd;
+
+		FVector AdjustedAimDir = (AdjustedEnd - TraceStart).GetSafeNormal();
+		if (AdjustedAimDir.IsZero())
 		{
-			// Convert to angles and use original pitch
-			const FRotator OriginalAimRot = OriginalAimDir.Rotation();
-
-			FRotator AdjustedAimRot = AdjustedAimDir.Rotation();
-			AdjustedAimRot.Pitch = OriginalAimRot.Pitch;
-
-			AdjustedAimDir = AdjustedAimRot.Vector();
+			AdjustedAimDir = ViewDir;
 		}
-	}
 
-	OutTraceEnd = TraceStart + (AdjustedAimDir * MaxRange);
+		if (!bTraceAffectsAimPitch && bUseTraceResult)
+		{
+			FVector OriginalAimDir = (ViewEnd - TraceStart).GetSafeNormal();
+
+			if (!OriginalAimDir.IsZero())
+			{
+				// Convert to angles and use original pitch
+				const FRotator OriginalAimRot = OriginalAimDir.Rotation();
+
+				FRotator AdjustedAimRot = AdjustedAimDir.Rotation();
+				AdjustedAimRot.Pitch = OriginalAimRot.Pitch;
+
+				AdjustedAimDir = AdjustedAimRot.Vector();
+			}
+		}
+
+		OutTraceEnd = TraceStart + (AdjustedAimDir * MaxRange);
+	}
 }
 
 bool UAbilityTask_WaitForInteractableTargets::ClipCameraRayToAbilityRange(

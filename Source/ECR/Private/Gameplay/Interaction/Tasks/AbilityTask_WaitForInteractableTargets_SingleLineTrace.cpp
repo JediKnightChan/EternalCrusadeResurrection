@@ -17,7 +17,7 @@ UAbilityTask_WaitForInteractableTargets_SingleLineTrace::UAbilityTask_WaitForInt
 
 UAbilityTask_WaitForInteractableTargets_SingleLineTrace*
 UAbilityTask_WaitForInteractableTargets_SingleLineTrace::WaitForInteractableTargets_SingleLineTrace(
-	UGameplayAbility* OwningAbility, FInteractionQuery InteractionQuery, FCollisionProfileName TraceProfile,
+	UGameplayAbility* OwningAbility, FInteractionQuery InteractionQuery,
 	FGameplayAbilityTargetingLocationInfo StartLocation, float InteractionScanRange, float InteractionScanRate,
 	float SweepRadius, bool bShowDebug)
 {
@@ -28,7 +28,6 @@ UAbilityTask_WaitForInteractableTargets_SingleLineTrace::WaitForInteractableTarg
 	MyObj->SweepRadius = SweepRadius;
 	MyObj->StartLocation = StartLocation;
 	MyObj->InteractionQuery = InteractionQuery;
-	MyObj->TraceProfile = TraceProfile;
 	MyObj->bShowDebug = bShowDebug;
 
 	return MyObj;
@@ -74,7 +73,7 @@ void UAbilityTask_WaitForInteractableTargets_SingleLineTrace::PerformTrace()
 
 	FHitResult OutHitResult;
 	// Trace
-	LineOrSweepTrace(OutHitResult, World, TraceStart, TraceEnd, TraceProfile.Name, SweepRadius, Params);
+	LineOrSweepTrace(OutHitResult, World, TraceStart, TraceEnd, SweepRadius, Params);
 
 	TArray<TScriptInterface<IInteractableTarget>> InteractableTargets;
 	UInteractionStatics::AppendInteractableTargetsFromHitResult(OutHitResult, InteractableTargets);

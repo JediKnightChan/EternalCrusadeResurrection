@@ -170,6 +170,8 @@ void UECRHealthComponent::HandleReadyToDie(AActor* DamageInstigator, AActor* Dam
 #if WITH_SERVER_CODE
 	if (AbilitySystemComponent)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Sending death event, %s"),
+		       *(GetNameSafe(AbilitySystemComponent->GetAvatarActor())));
 		// Send the "GameplayEvent.Death" gameplay event through the owner's ability system.  This can be used to trigger a death gameplay ability.
 		{
 			FGameplayEventData Payload;
