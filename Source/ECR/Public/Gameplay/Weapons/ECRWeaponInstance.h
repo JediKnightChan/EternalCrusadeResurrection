@@ -39,7 +39,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Animation)
 	FECRAnimLayerSelectionSet UnequippedAnimSet;
 
-	// Choose the best layer from EquippedAnimSet or UneuippedAnimSet based on the specified gameplay tags
+	// Choose the best layer from EquippedAnimSet or UnqeuippedAnimSet based on the specified gameplay tags
 	UFUNCTION(BlueprintCallable, BlueprintPure=false, Category=Animation)
 	TSubclassOf<UAnimInstance> PickBestAnimLayer(bool bEquipped, const FGameplayTagContainer& CosmeticTags) const;
 

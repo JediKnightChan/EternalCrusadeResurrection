@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Abilities/GameplayAbility.h"
+#include "Cosmetics/ECRCosmeticAnimationTypes.h"
 #include "ECRGameplayAbility.generated.h"
 
 
@@ -130,7 +131,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "ECR|Ability")
 	void ToggleMovementEnabled(bool bNewEnabled);
-	
+
 	void OnAbilityFailedToActivate(const FGameplayTagContainer& FailedReason) const
 	{
 		NativeOnAbilityFailedToActivate(FailedReason);
@@ -190,7 +191,12 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = Ability, DisplayName = "OnPawnAvatarSet")
 	void K2_OnPawnAvatarSet();
 
+	UFUNCTION(BlueprintCallable, Category = "Animation")
+	UAnimMontage* GetMontage(FName MontageCategory);
 protected:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Animation")
+	TMap<FName, FECRAnimMontageSelectionSet> AbilityMontageSelection;
+
 	// Defines how this ability is meant to activate.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "ECR|Ability Activation")
 	EECRAbilityActivationPolicy ActivationPolicy;

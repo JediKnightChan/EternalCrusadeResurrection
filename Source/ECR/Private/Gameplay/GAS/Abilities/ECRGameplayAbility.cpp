@@ -481,6 +481,13 @@ void UECRGameplayAbility::GetAbilitySource(FGameplayAbilitySpecHandle Handle,
 	OutAbilitySource = Cast<IECRAbilitySourceInterface>(SourceObject);
 }
 
+UAnimMontage* UECRGameplayAbility::GetMontage(FName MontageCategory)
+{
+	FECRAnimMontageSelectionSet AnimMontageSelectionSet = AbilityMontageSelection.FindRef(MontageCategory);
+	// TSoftObjectPtr<UAnimMontage> AnimMontage = AnimMontageSelectionSet.SelectBestMontage();
+	// AnimMontage.ToSoftObjectPath();
+}
+
 void UECRGameplayAbility::TryActivateAbilityOnSpawn(const FGameplayAbilityActorInfo* ActorInfo,
                                                     const FGameplayAbilitySpec& Spec) const
 {

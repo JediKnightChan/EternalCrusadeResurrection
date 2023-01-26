@@ -27,3 +27,17 @@ USkeletalMesh* FECRAnimBodyStyleSelectionSet::SelectBestBodyStyle(const FGamepla
 
 	return DefaultMesh;
 }
+
+TSoftObjectPtr<UAnimMontage> FECRAnimMontageSelectionSet::SelectBestMontage(
+	const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const auto& [Montage, RequiredTags] : MontageRules)
+	{
+		if ((Montage != nullptr) && CosmeticTags.HasAll(RequiredTags))
+		{
+			return Montage;
+		}
+	}
+
+	return DefaultMontage;
+}
