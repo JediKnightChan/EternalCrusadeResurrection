@@ -10,6 +10,8 @@
 #include "Gameplay/Character/ECRHeroComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemGlobals.h"
+#include "Cosmetics/ECRPawnComponent_CharacterParts.h"
+#include "Engine/AssetManager.h"
 #include "Gameplay/GAS/Abilities/ECRAbilitySimpleFailureMessage.h"
 #include "GameFramework/GameplayMessageSubsystem.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
@@ -18,6 +20,7 @@
 
 UE_DEFINE_GAMEPLAY_TAG(TAG_ABILITY_SIMPLE_FAILURE_MESSAGE, "Ability.UserFacingSimpleActivateFail.Message");
 UE_DEFINE_GAMEPLAY_TAG(TAG_ABILITY_PLAY_MONTAGE_FAILURE_MESSAGE, "Ability.PlayMontageOnActivateFail.Message");
+UE_DEFINE_GAMEPLAY_TAG(TAG_COSMETIC_MONTAGE, "Cosmetic.Montage");
 
 UECRGameplayAbility::UECRGameplayAbility(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
@@ -31,6 +34,7 @@ UECRGameplayAbility::UECRGameplayAbility(const FObjectInitializer& ObjectInitial
 	ActivationGroup = EECRAbilityActivationGroup::Independent;
 
 	ActiveCameraMode = nullptr;
+	bLoadedMontages = false;
 }
 
 UECRAbilitySystemComponent* UECRGameplayAbility::GetECRAbilitySystemComponentFromActorInfo() const
@@ -195,6 +199,8 @@ void UECRGameplayAbility::OnGiveAbility(const FGameplayAbilityActorInfo* ActorIn
 {
 	Super::OnGiveAbility(ActorInfo, Spec);
 
+	LoadMontages();
+
 	K2_OnAbilityAdded();
 
 	TryActivateAbilityOnSpawn(ActorInfo, Spec);
@@ -300,7 +306,8 @@ void UECRGameplayAbility::ApplyCost(const FGameplayAbilitySpecHandle Handle, con
 			}
 
 			AdditionalCost->ApplyCost(this, Handle, ActorInfo, ActivationInfo);
-		} else
+		}
+		else
 		{
 			UE_LOG(LogECRAbilitySystem, Warning, TEXT("Additional cost is nullptr"))
 		}
@@ -481,12 +488,72 @@ void UECRGameplayAbility::GetAbilitySource(FGameplayAbilitySpecHandle Handle,
 	OutAbilitySource = Cast<IECRAbilitySourceInterface>(SourceObject);
 }
 
-UAnimMontage* UECRGameplayAbility::GetMontage(FName MontageCategory)
+
+const UECRPawnComponent_CharacterParts* UECRGameplayAbility::GetCustomizationComponent() const
 {
-	FECRAnimMontageSelectionSet AnimMontageSelectionSet = AbilityMontageSelection.FindRef(MontageCategory);
-	// TSoftObjectPtr<UAnimMontage> AnimMontage = AnimMontageSelectionSet.SelectBestMontage();
-	// AnimMontage.ToSoftObjectPath();
+	if (const AECRCharacter* ECRCharacter = GetECRCharacterFromActorInfo())
+	{
+		UActorComponent* ActorCustomizationComponent = ECRCharacter->GetComponentByClass(
+			UECRPawnComponent_CharacterParts::StaticClass());
+		if (const UECRPawnComponent_CharacterParts* CustomizationComponent = Cast<UECRPawnComponent_CharacterParts>(
+			ActorCustomizationComponent))
+		{
+			return CustomizationComponent;
+		}
+	}
+	return nullptr;
 }
+
+UAnimMontage* UECRGameplayAbility::GetMontage(const FName MontageCategory) const
+{
+	const FECRAnimMontageSelectionSet AnimMontageSelectionSet = AbilityMontageSelection.FindRef(MontageCategory);
+	if (const UECRPawnComponent_CharacterParts* CustomizationComponent = GetCustomizationComponent())
+	{
+		const FGameplayTagContainer MontageTags = CustomizationComponent->GetCombinedTags(TAG_COSMETIC_MONTAGE);
+		const TSoftObjectPtr<UAnimMontage> AnimMontage = AnimMontageSelectionSet.SelectBestMontage(MontageTags);
+		if (!AnimMontage.IsValid())
+		{
+			UE_LOG(LogECR, Warning, TEXT("Had to sync load ability montage!"))
+			UAssetManager::GetStreamableManager().RequestSyncLoad(AnimMontage.ToSoftObjectPath());
+		}
+		return AnimMontage.Get();
+		
+	}
+	return nullptr;
+}
+
+void UECRGameplayAbility::OnMontagesLoaded()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Montages loaded"));
+	bLoadedMontages = true;
+}
+
+
+void UECRGameplayAbility::LoadMontages()
+{
+	TArray<FSoftObjectPath> MontagesToLoad;
+
+	if (const UECRPawnComponent_CharacterParts* CustomizationComponent = GetCustomizationComponent())
+	{
+		for (const auto& [Name, SelectionSet] : AbilityMontageSelection)
+		{
+			TSoftObjectPtr<UAnimMontage> AnimMontage = SelectionSet.SelectBestMontage(
+				CustomizationComponent->GetCombinedTags(TAG_COSMETIC_MONTAGE));
+			MontagesToLoad.Add(AnimMontage.ToSoftObjectPath());
+		}
+	}
+
+	if (MontagesToLoad.Num())
+	{
+		if (UAssetManager::IsValid())
+		{
+			UAssetManager::GetStreamableManager().RequestAsyncLoad(MontagesToLoad,
+			                                                       FStreamableDelegate::CreateUObject(
+				                                                       this, &ThisClass::OnMontagesLoaded));
+		}
+	}
+}
+
 
 void UECRGameplayAbility::TryActivateAbilityOnSpawn(const FGameplayAbilityActorInfo* ActorInfo,
                                                     const FGameplayAbilitySpec& Spec) const
