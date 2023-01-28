@@ -22,9 +22,10 @@ that may be useful for a wide range of games.
 
 ### GAS differences from Lyra (5.0)
 -   A better nested directory structure
--   [Fixed](https://github.com/JediKnightChan/EternalCrusadeResurrection/commit/2990e9dba32ed76332775ed27df2977768a5d257) a bug with improper cooldown activation on ranged weapons
+-   [Fixed](https://github.com/JediKnightChan/EternalCrusadeResurrection/commit/2990e9dba32ed76332775ed27df2977768a5d257) a bug with improper spread cooldown activation on ranged weapons
 -   Several attributes are used to consume damage (First shield, then health, then bleeding health)
 -   [QuickBar component](https://github.com/JediKnightChan/EternalCrusadeResurrection/blob/master/Source/ECR/Public/Gameplay/Equipment/ECRQuickBarComponent.h) has multiple channels (eg one for ranged weapons, one for melee) and can hide all actors by channel
 -   PawnData is defined in GameState and on Character as a spawn option, so it can be customizable, unlike Lyra, where it's defined by experience and is the same for all players
 -   Shooting uses advanced tracing to get a point on the camera vector where pawn should aim from weapon actor, unlike Lyra, where shooting is done from camera
 -   GAS debugger correctly works on 3rd page, checking costs on abilities CDOs without producing errors in the log
+-   Gameplay Abilities can asynchronously load montages for different skeletons using cosmetic tags without having to create multiple GA instances

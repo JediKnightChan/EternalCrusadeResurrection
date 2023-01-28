@@ -513,11 +513,13 @@ UAnimMontage* UECRGameplayAbility::GetMontage(const FName MontageCategory) const
 		const TSoftObjectPtr<UAnimMontage> AnimMontage = AnimMontageSelectionSet.SelectBestMontage(MontageTags);
 		if (!AnimMontage.IsValid())
 		{
-			UE_LOG(LogECR, Warning, TEXT("Had to sync load ability montage!"))
-			UAssetManager::GetStreamableManager().RequestSyncLoad(AnimMontage.ToSoftObjectPath());
+			if (!AnimMontage.IsNull())
+			{
+				UAssetManager::GetStreamableManager().RequestSyncLoad(AnimMontage.ToSoftObjectPath());
+				UE_LOG(LogECR, Warning, TEXT("Had to sync load ability montage %s!"), *(AnimMontage.GetAssetName()))
+			}
 		}
 		return AnimMontage.Get();
-		
 	}
 	return nullptr;
 }
@@ -537,9 +539,16 @@ void UECRGameplayAbility::LoadMontages()
 	{
 		for (const auto& [Name, SelectionSet] : AbilityMontageSelection)
 		{
-			TSoftObjectPtr<UAnimMontage> AnimMontage = SelectionSet.SelectBestMontage(
-				CustomizationComponent->GetCombinedTags(TAG_COSMETIC_MONTAGE));
-			MontagesToLoad.Add(AnimMontage.ToSoftObjectPath());
+			FGameplayTagContainer GameplayTags = CustomizationComponent->GetCombinedTags(TAG_COSMETIC_MONTAGE);
+			for (FGameplayTag Tag : GameplayTags)
+			{
+				UE_LOG(LogTemp, Warning, TEXT(" customization tag %s"), *(Tag.ToString()));
+			}
+			TSoftObjectPtr<UAnimMontage> AnimMontage = SelectionSet.SelectBestMontage(GameplayTags);
+			if (!AnimMontage.IsNull())
+			{
+				MontagesToLoad.Add(AnimMontage.ToSoftObjectPath());
+			}
 		}
 	}
 

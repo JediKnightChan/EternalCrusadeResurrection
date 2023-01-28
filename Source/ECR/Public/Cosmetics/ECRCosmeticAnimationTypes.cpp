@@ -33,7 +33,7 @@ TSoftObjectPtr<UAnimMontage> FECRAnimMontageSelectionSet::SelectBestMontage(
 {
 	for (const auto& [Montage, RequiredTags] : MontageRules)
 	{
-		if ((Montage != nullptr) && CosmeticTags.HasAll(RequiredTags))
+		if ((!Montage.IsNull()) && CosmeticTags.HasAll(RequiredTags))
 		{
 			return Montage;
 		}
