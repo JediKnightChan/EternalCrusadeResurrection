@@ -540,12 +540,8 @@ void UECRGameplayAbility::LoadMontages()
 		for (const auto& [Name, SelectionSet] : AbilityMontageSelection)
 		{
 			FGameplayTagContainer GameplayTags = CustomizationComponent->GetCombinedTags(TAG_COSMETIC_MONTAGE);
-			for (FGameplayTag Tag : GameplayTags)
-			{
-				UE_LOG(LogTemp, Warning, TEXT(" customization tag %s"), *(Tag.ToString()));
-			}
 			TSoftObjectPtr<UAnimMontage> AnimMontage = SelectionSet.SelectBestMontage(GameplayTags);
-			if (!AnimMontage.IsNull())
+			if (!AnimMontage.IsNull() && !AnimMontage.IsValid())
 			{
 				MontagesToLoad.Add(AnimMontage.ToSoftObjectPath());
 			}

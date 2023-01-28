@@ -401,12 +401,15 @@ void AECRCharacter::OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 
 	SetMovementModeTag(ECRMoveComp->MovementMode, ECRMoveComp->CustomMovementMode, true);
 
 	// Sending gameplay event for possible interruption of some abilities
-	FGameplayEventData Payload;
-	Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_MovementModeChanged;
-	Payload.Target = this;
+	if (GetECRAbilitySystemComponent() != nullptr)
+	{
+		FGameplayEventData Payload;
+		Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_MovementModeChanged;
+		Payload.Target = this;
 
-	UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
-		this, FECRGameplayTags::Get().GameplayEvent_MovementModeChanged, Payload);
+		UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
+			this, FECRGameplayTags::Get().GameplayEvent_MovementModeChanged, Payload);
+	}
 }
 
 void AECRCharacter::SetMovementModeTag(EMovementMode MovementMode, uint8 CustomMovementMode, bool bTagEnabled)
