@@ -11,7 +11,9 @@
 
 FString FECRAppliedCharacterPartEntry::GetDebugString() const
 {
-	return FString::Printf(TEXT("(PartClass: %s, Socket: %s, Instance: %s)"), *GetPathNameSafe(Part.PartClass), *Part.SocketName.ToString(), *GetPathNameSafe(SpawnedComponent));
+	return FString::Printf(
+		TEXT("(PartClass: %s, Socket: %s, Instance: %s)"), *GetPathNameSafe(Part.PartClass),
+		*Part.SocketName.ToString(), *GetPathNameSafe(SpawnedComponent));
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -75,7 +77,7 @@ FECRCharacterPartHandle FECRCharacterPartList::AddEntry(FECRCharacterPart NewPar
 		FECRAppliedCharacterPartEntry& NewEntry = Entries.AddDefaulted_GetRef();
 		NewEntry.Part = NewPart;
 		NewEntry.PartHandle = Result.PartHandle;
-	
+
 		if (SpawnActorForEntry(NewEntry))
 		{
 			OwnerComponent->BroadcastChanged();
@@ -132,7 +134,8 @@ FGameplayTagContainer FECRCharacterPartList::CollectCombinedTags() const
 	{
 		if (Entry.SpawnedComponent != nullptr)
 		{
-			if (IGameplayTagAssetInterface* TagInterface = Cast<IGameplayTagAssetInterface>(Entry.SpawnedComponent->GetChildActor()))
+			if (IGameplayTagAssetInterface* TagInterface = Cast<IGameplayTagAssetInterface>(
+				Entry.SpawnedComponent->GetChildActor()))
 			{
 				TagInterface->GetOwnedGameplayTags(/*inout*/ Result);
 			}
@@ -146,47 +149,46 @@ bool FECRCharacterPartList::SpawnActorForEntry(FECRAppliedCharacterPartEntry& En
 {
 	bool bCreatedAnyActors = false;
 
-	if (!OwnerComponent->IsNetMode(NM_DedicatedServer))
+
+	if (Entry.Part.PartClass != nullptr)
 	{
-		if (Entry.Part.PartClass != nullptr)
+		UWorld* World = OwnerComponent->GetWorld();
+
+		if (USceneComponent* ComponentToAttachTo = OwnerComponent->GetSceneComponentToAttachTo())
 		{
-			UWorld* World = OwnerComponent->GetWorld();
+			const FTransform SpawnTransform = ComponentToAttachTo->GetSocketTransform(Entry.Part.SocketName);
 
-			if (USceneComponent* ComponentToAttachTo = OwnerComponent->GetSceneComponentToAttachTo())
+			UChildActorComponent* PartComponent = NewObject<UChildActorComponent>(OwnerComponent->GetOwner());
+
+			PartComponent->SetupAttachment(ComponentToAttachTo, Entry.Part.SocketName);
+			PartComponent->SetChildActorClass(Entry.Part.PartClass);
+			PartComponent->RegisterComponent();
+
+			if (AActor* SpawnedActor = PartComponent->GetChildActor())
 			{
-				const FTransform SpawnTransform = ComponentToAttachTo->GetSocketTransform(Entry.Part.SocketName);
-
-				UChildActorComponent* PartComponent = NewObject<UChildActorComponent>(OwnerComponent->GetOwner());
-
-				PartComponent->SetupAttachment(ComponentToAttachTo, Entry.Part.SocketName);
-				PartComponent->SetChildActorClass(Entry.Part.PartClass);
-				PartComponent->RegisterComponent();
-
-				if (AActor* SpawnedActor = PartComponent->GetChildActor())
+				switch (Entry.Part.CollisionMode)
 				{
-					switch (Entry.Part.CollisionMode)
-					{
-					case ECharacterCustomizationCollisionMode::UseCollisionFromCharacterPart:
-						// Do nothing
-						break;
+				case ECharacterCustomizationCollisionMode::UseCollisionFromCharacterPart:
+					// Do nothing
+					break;
 
-					case ECharacterCustomizationCollisionMode::NoCollision:
-						SpawnedActor->SetActorEnableCollision(false);
-						break;
-					}
-
-					// Set up a direct tick dependency to work around the child actor component not providing one
-					if (USceneComponent* SpawnedRootComponent = SpawnedActor->GetRootComponent())
-					{
-						SpawnedRootComponent->AddTickPrerequisiteComponent(ComponentToAttachTo);
-					}
+				case ECharacterCustomizationCollisionMode::NoCollision:
+					SpawnedActor->SetActorEnableCollision(false);
+					break;
 				}
 
-				Entry.SpawnedComponent = PartComponent;
-				bCreatedAnyActors = true;
+				// Set up a direct tick dependency to work around the child actor component not providing one
+				if (USceneComponent* SpawnedRootComponent = SpawnedActor->GetRootComponent())
+				{
+					SpawnedRootComponent->AddTickPrerequisiteComponent(ComponentToAttachTo);
+				}
 			}
+
+			Entry.SpawnedComponent = PartComponent;
+			bCreatedAnyActors = true;
 		}
 	}
+
 
 	return bCreatedAnyActors;
 }
@@ -209,12 +211,12 @@ bool FECRCharacterPartList::DestroyActorForEntry(FECRAppliedCharacterPartEntry& 
 
 UECRPawnComponent_CharacterParts::UECRPawnComponent_CharacterParts(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
-	, CharacterPartList(this)
+	  , CharacterPartList(this)
 {
 	SetIsReplicatedByDefault(true);
 }
 
-void UECRPawnComponent_CharacterParts::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const
+void UECRPawnComponent_CharacterParts::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
@@ -336,4 +338,3 @@ void UECRPawnComponent_CharacterParts::BroadcastChanged()
 	// Let observers know, e.g., if they need to apply team coloring or similar
 	OnCharacterPartsChanged.Broadcast(this);
 }
-

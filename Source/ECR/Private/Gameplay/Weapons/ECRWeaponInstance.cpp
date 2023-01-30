@@ -18,7 +18,6 @@ UECRWeaponInstance::UECRWeaponInstance(const FObjectInitializer& ObjectInitializ
 
 void UECRWeaponInstance::LinkAnimLayer() const
 {
-	UE_LOG(LogTemp, Warning, TEXT("Linking start"));
 	if (const UECRPawnComponent_CharacterParts* CosmeticComponent =
 		UECRCosmeticStatics::GetPawnCustomizationComponent(GetPawn()))
 	{
@@ -30,7 +29,6 @@ void UECRWeaponInstance::LinkAnimLayer() const
 		{
 			if (USkeletalMeshComponent* Mesh = Character->GetMesh())
 			{
-				UE_LOG(LogTemp, Warning, TEXT("Linking real %s"), *(GetNameSafe(AnimClass)));
 				Mesh->LinkAnimClassLayers(AnimClass);
 			}
 		}

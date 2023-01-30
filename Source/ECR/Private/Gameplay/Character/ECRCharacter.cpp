@@ -480,13 +480,10 @@ bool AECRCharacter::CanJumpInternal_Implementation() const
 
 void AECRCharacter::GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySets) const
 {
-	UE_LOG(LogTemp, Warning, TEXT("Starting gratting as to %s len %d"), *(GetNameSafe(this)), AbilitySets.Num());
 	for (const UECRAbilitySet* AbilitySet : AbilitySets)
 	{
 		if (AbilitySet)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Granting as %s to character %s"),
-			       *(GetNameSafe(AbilitySet)), *(GetNameSafe(this)));
 			UECRAbilitySystemComponent* ECRAbilitySystemComponent = GetECRPlayerState()->GetECRAbilitySystemComponent();
 			AbilitySet->GiveToAbilitySystem(ECRAbilitySystemComponent, nullptr);
 		}
@@ -495,8 +492,6 @@ void AECRCharacter::GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySets) const
 
 void AECRCharacter::InitPawnDataAndAbilities()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Initting pawn data on %s"), *(GetNameSafe(this)));
-
 	ensureMsgf(PawnData, TEXT("ECRCharacter [%s] pawn data is not specified"), *(GetNameSafe(this)));
 
 	if (GetLocalRole() != ROLE_Authority)
@@ -513,7 +508,6 @@ void AECRCharacter::InitPawnDataAndAbilities()
 		GrantAbilitySets(CommonCharacterAbilitySets);
 	}
 
-	UE_LOG(LogTemp, Warning, TEXT("Calling grant as to %s"), *(GetNameSafe(this)));
 	// Granting this character ability sets
 	GrantAbilitySets(PawnData->AbilitySets);
 
