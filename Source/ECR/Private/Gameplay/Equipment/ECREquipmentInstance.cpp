@@ -89,11 +89,13 @@ void UECREquipmentInstance::DestroyEquipmentActors()
 
 void UECREquipmentInstance::OnEquipped()
 {
+	bEquipped = true;
 	K2_OnEquipped();
 }
 
 void UECREquipmentInstance::OnUnequipped()
 {
+	bEquipped = false;
 	K2_OnUnequipped();
 }
 

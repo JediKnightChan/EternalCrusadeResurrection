@@ -41,3 +41,14 @@ TSoftObjectPtr<UAnimMontage> FECRAnimMontageSelectionSet::SelectBestMontage(
 
 	return DefaultMontage;
 }
+
+TArray<TSoftObjectPtr<UAnimMontage>> FECRAnimMontageSelectionSet::GetAllMontages()
+{
+	TArray<TSoftObjectPtr<UAnimMontage>> Montages;
+	for (auto [Montage, RequiredTags] : MontageRules)
+	{
+		Montages.AddUnique(Montage);
+	}
+	Montages.AddUnique(DefaultMontage);
+	return Montages;
+}

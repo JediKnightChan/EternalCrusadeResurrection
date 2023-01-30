@@ -104,7 +104,7 @@ struct FECRAnimMontageSelectionSet
 	GENERATED_BODY()
 
 	// List of montage rules to apply, first one that matches will be used
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Layer))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Montage))
 	TArray<FECRAnimMontageSelectionEntry> MontageRules;
 
 	// The montage to use if none of the LayerRules matches
@@ -113,4 +113,7 @@ struct FECRAnimMontageSelectionSet
 
 	// Choose the best montage given the rules
 	TSoftObjectPtr<UAnimMontage> SelectBestMontage(const FGameplayTagContainer& CosmeticTags) const;
+
+	// Returns all montages associated with this set
+	TArray<TSoftObjectPtr<UAnimMontage>> GetAllMontages();
 };

@@ -74,4 +74,6 @@ private:
 protected:
 	UPROPERTY(ReplicatedUsing=OnRep_bVisible)
 	bool bVisible = true;
+
+	bool bEquipped = false;
 };

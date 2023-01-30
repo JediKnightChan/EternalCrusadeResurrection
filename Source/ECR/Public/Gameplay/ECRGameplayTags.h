@@ -44,6 +44,9 @@ public:
 	FGameplayTag GameplayEvent_RequestReset;
 	FGameplayTag GameplayEvent_MovementModeChanged;
 
+	FGameplayTag Cosmetic_Montage;
+	FGameplayTag Cosmetic_AnimStyle;
+
 	FGameplayTag Cheat_GodMode;
 	FGameplayTag Cheat_UnlimitedHealth;
 

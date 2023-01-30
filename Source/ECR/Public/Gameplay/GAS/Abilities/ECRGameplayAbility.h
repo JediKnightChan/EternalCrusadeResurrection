@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Abilities/GameplayAbility.h"
 #include "Cosmetics/ECRCosmeticAnimationTypes.h"
+#include "Cosmetics/ECRPawnComponent_CharacterParts.h"
 #include "ECRGameplayAbility.generated.h"
 
 
@@ -191,13 +192,11 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = Ability, DisplayName = "OnPawnAvatarSet")
 	void K2_OnPawnAvatarSet();
 
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="Animation")
-	const UECRPawnComponent_CharacterParts* GetCustomizationComponent() const;
-
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Animation")
-	UAnimMontage* GetMontage(FName MontageCategory) const;
+	UAnimMontage* GetMontage(const FName MontageCategory) const;
 
-	void OnMontagesLoaded();
+	UFUNCTION()
+	void OnCharacterPartsChanged(UECRPawnComponent_CharacterParts* ComponentWithChangedParts);
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Animation")
 	TMap<FName, FECRAnimMontageSelectionSet> AbilityMontageSelection;
@@ -227,6 +226,7 @@ protected:
 
 private:
 	void LoadMontages();
+
 private:
 	bool bLoadedMontages;
 };

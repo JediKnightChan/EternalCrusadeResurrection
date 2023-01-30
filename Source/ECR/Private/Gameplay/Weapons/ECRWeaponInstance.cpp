@@ -1,12 +1,40 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "Gameplay/Weapons/ECRWeaponInstance.h"
+
+#include "Cosmetics/ECRCosmeticStatics.h"
+#include "Cosmetics/ECRPawnComponent_CharacterParts.h"
+#include "Engine/AssetManager.h"
 #include "Net/UnrealNetwork.h"
 #include "Engine/World.h"
+#include "Gameplay/ECRGameplayTags.h"
+#include "Gameplay/Character/ECRCharacter.h"
+#include "System/ECRLogChannels.h"
 
 UECRWeaponInstance::UECRWeaponInstance(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
+}
+
+void UECRWeaponInstance::LinkAnimLayer() const
+{
+	UE_LOG(LogTemp, Warning, TEXT("Linking start"));
+	if (const UECRPawnComponent_CharacterParts* CosmeticComponent =
+		UECRCosmeticStatics::GetPawnCustomizationComponent(GetPawn()))
+	{
+		const TSubclassOf<UAnimInstance> AnimClass = PickBestAnimLayer(
+			CosmeticComponent->GetCombinedTags(FECRGameplayTags::Get().Cosmetic_AnimStyle));
+		const AECRCharacter* Character = Cast<AECRCharacter>(GetPawn());
+
+		if (AnimClass && Character)
+		{
+			if (USkeletalMeshComponent* Mesh = Character->GetMesh())
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Linking real %s"), *(GetNameSafe(AnimClass)));
+				Mesh->LinkAnimClassLayers(AnimClass);
+			}
+		}
+	}
 }
 
 void UECRWeaponInstance::OnEquipped()
@@ -16,11 +44,27 @@ void UECRWeaponInstance::OnEquipped()
 	UWorld* World = GetWorld();
 	check(World);
 	TimeLastEquipped = World->GetTimeSeconds();
+
+	LoadMontages();
+
+	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponent(GetPawn()))
+	{
+		CosmeticComp->OnCharacterPartsChanged.AddDynamic(this, &ThisClass::OnCharacterPartsChanged);
+	}
+
+	LinkAnimLayer();
 }
 
 void UECRWeaponInstance::OnUnequipped()
 {
 	Super::OnUnequipped();
+
+	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponent(GetPawn()))
+	{
+		CosmeticComp->OnCharacterPartsChanged.RemoveDynamic(this, &ThisClass::OnCharacterPartsChanged);
+	}
+
+	LinkAnimLayer();
 }
 
 void UECRWeaponInstance::UpdateFiringTime()
@@ -47,8 +91,72 @@ float UECRWeaponInstance::GetTimeSinceLastInteractedWith() const
 	return Result;
 }
 
-TSubclassOf<UAnimInstance> UECRWeaponInstance::PickBestAnimLayer(bool bEquipped, const FGameplayTagContainer& CosmeticTags) const
+TSubclassOf<UAnimInstance> UECRWeaponInstance::PickBestAnimLayer(const FGameplayTagContainer& CosmeticTags) const
 {
 	const FECRAnimLayerSelectionSet& SetToQuery = (bEquipped ? EquippedAnimSet : UnequippedAnimSet);
 	return SetToQuery.SelectBestLayer(CosmeticTags);
+}
+
+UAnimMontage* UECRWeaponInstance::GetKillerExecutionMontage() const
+{
+	return GetExecutionMontage(KillerExecutionMontageSet, GetPawn());
+}
+
+UAnimMontage* UECRWeaponInstance::GetVictimExecutionMontage(AActor* TargetActor) const
+{
+	return GetExecutionMontage(VictimExecutionMontageSet, TargetActor);
+}
+
+UAnimMontage* UECRWeaponInstance::GetExecutionMontage(const FECRAnimMontageSelectionSet& SelectionSet,
+                                                      AActor* TargetActor) const
+{
+	if (const UECRPawnComponent_CharacterParts* CosmeticsComponent =
+		UECRCosmeticStatics::GetPawnCustomizationComponent(TargetActor))
+	{
+		const FGameplayTagContainer PawnCosmeticTags = CosmeticsComponent->GetCombinedTags(
+			FECRGameplayTags::Get().Cosmetic_Montage);
+		const TSoftObjectPtr<UAnimMontage> AnimMontage = SelectionSet.SelectBestMontage(PawnCosmeticTags);
+		if (!AnimMontage.IsNull() && !AnimMontage.IsValid())
+		{
+			UE_LOG(LogECR, Warning, TEXT("Had to sync load montage %s"), *(AnimMontage.GetAssetName()));
+			UAssetManager::GetStreamableManager().RequestSyncLoad(AnimMontage.ToSoftObjectPath());
+		}
+		return AnimMontage.Get();
+	}
+	return nullptr;
+}
+
+void UECRWeaponInstance::LoadMontages()
+{
+	TArray<FSoftObjectPath> MontagesToLoad;
+
+	if (const UECRPawnComponent_CharacterParts* CosmeticsComponent =
+		UECRCosmeticStatics::GetPawnCustomizationComponent(GetPawn()))
+	{
+		const FGameplayTagContainer PawnCosmeticTags = CosmeticsComponent->GetCombinedTags(
+			FECRGameplayTags::Get().Cosmetic_Montage);
+		const TSoftObjectPtr<UAnimMontage> KillerAnimMontage = KillerExecutionMontageSet.SelectBestMontage(
+			PawnCosmeticTags);
+		UECRCosmeticStatics::AddMontageToLoadQueueIfNeeded(KillerAnimMontage, MontagesToLoad);
+
+		for (TSoftObjectPtr<UAnimMontage>& VictimAnimMontage : VictimExecutionMontageSet.GetAllMontages())
+		{
+			UECRCosmeticStatics::AddMontageToLoadQueueIfNeeded(VictimAnimMontage, MontagesToLoad);
+		}
+	}
+
+	if (MontagesToLoad.Num() > 0)
+	{
+		UAssetManager::GetStreamableManager().RequestAsyncLoad(MontagesToLoad);
+	}
+}
+
+void UECRWeaponInstance::OnCharacterPartsChanged(UECRPawnComponent_CharacterParts* ComponentWithChangedParts)
+{
+	LoadMontages();
+
+	if (bEquipped)
+	{
+		LinkAnimLayer();
+	}
 }
