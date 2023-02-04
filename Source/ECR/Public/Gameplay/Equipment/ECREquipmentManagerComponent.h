@@ -22,7 +22,8 @@ struct FECRAppliedEquipmentEntry : public FFastArraySerializerItem
 	GENERATED_BODY()
 
 	FECRAppliedEquipmentEntry()
-	{}
+	{
+	}
 
 	FString GetDebugString() const;
 
@@ -67,7 +68,8 @@ public:
 
 	bool NetDeltaSerialize(FNetDeltaSerializeInfo& DeltaParms)
 	{
-		return FFastArraySerializer::FastArrayDeltaSerialize<FECRAppliedEquipmentEntry, FECREquipmentList>(Entries, DeltaParms, *this);
+		return FFastArraySerializer::FastArrayDeltaSerialize<FECRAppliedEquipmentEntry, FECREquipmentList>(
+			Entries, DeltaParms, *this);
 	}
 
 	UECREquipmentInstance* AddEntry(TSubclassOf<UECREquipmentDefinition> EquipmentDefinition);
@@ -87,19 +89,11 @@ private:
 	UActorComponent* OwnerComponent;
 };
 
-template<>
+template <>
 struct TStructOpsTypeTraits<FECREquipmentList> : public TStructOpsTypeTraitsBase2<FECREquipmentList>
 {
 	enum { WithNetDeltaSerializer = true };
 };
-
-
-
-
-
-
-
-
 
 
 /**
@@ -116,11 +110,18 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	UECREquipmentInstance* EquipItem(TSubclassOf<UECREquipmentDefinition> EquipmentDefinition);
 
+	UFUNCTION(BlueprintCallable)
+	void SetItemVisible(UECREquipmentInstance* ItemInstance);
+
+	UFUNCTION(BlueprintCallable)
+	static void SetItemsInvisible(TArray<UECREquipmentInstance*> Items);
+
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void UnequipItem(UECREquipmentInstance* ItemInstance);
 
 	//~UObject interface
-	virtual bool ReplicateSubobjects(class UActorChannel* Channel, class FOutBunch* Bunch, FReplicationFlags* RepFlags) override;
+	virtual bool ReplicateSubobjects(class UActorChannel* Channel, class FOutBunch* Bunch,
+	                                 FReplicationFlags* RepFlags) override;
 	//~End of UObject interface
 
 	//~UActorComponent interface
@@ -133,8 +134,8 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	UECREquipmentInstance* GetFirstInstanceOfType(TSubclassOf<UECREquipmentInstance> InstanceType);
 
- 	/** Returns all equipped instances of a given type, or an empty array if none are found */
- 	UFUNCTION(BlueprintCallable, BlueprintPure)
+	/** Returns all equipped instances of a given type, or an empty array if none are found */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	TArray<UECREquipmentInstance*> GetEquipmentInstancesOfType(TSubclassOf<UECREquipmentInstance> InstanceType) const;
 
 	template <typename T>
@@ -143,10 +144,11 @@ public:
 		return (T*)GetFirstInstanceOfType(T::StaticClass());
 	}
 
+	/** Returns the first equipped instance which is visible and belongs to the specified visibility channel */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	UECREquipmentInstance* GetFirstInstanceVisibleInChannel(FName VisibilityChannel);
+
 private:
 	UPROPERTY(Replicated)
 	FECREquipmentList EquipmentList;
-	//
-	// TWeakObjectPtr<UECREquipmentInstance> LeftHandWeapon;
-	// TWeakObjectPtr<UECREquipmentInstance> RightHandWeapon;
 };

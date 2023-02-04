@@ -42,6 +42,8 @@ public:
 	UFUNCTION(BlueprintPure, Category=Equipment)
 	TArray<AActor*> GetSpawnedActors() const { return SpawnedActors; }
 
+	FORCEINLINE TArray<FName> GetVisibilityChannels() { return VisibilityChannels; }
+
 	virtual void SpawnEquipmentActors(const TArray<FECREquipmentActorToSpawn>& ActorsToSpawn);
 	virtual void DestroyEquipmentActors();
 
@@ -70,6 +72,10 @@ private:
 
 	UPROPERTY(Replicated)
 	TArray<AActor*> SpawnedActors;
+
+	/** Array of visibility channels in which this item hides other items (eg LeftHand, RightHand for two hand weapon)*/
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess=true))
+	TArray<FName> VisibilityChannels;
 
 protected:
 	UPROPERTY(ReplicatedUsing=OnRep_bVisible)

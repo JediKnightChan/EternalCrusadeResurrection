@@ -38,9 +38,6 @@ private:
 
 	UPROPERTY()
 	TObjectPtr<UECREquipmentInstance> EquippedItem = nullptr;
-
-	UPROPERTY(NotReplicated)
-	bool bVisible = true;
 };
 
 
@@ -77,12 +74,11 @@ private:
 	void BroadcastChangeMessage(FECRQuickBarChannel& Channel);
 	void UnequipItemInActiveSlot(FECRQuickBarChannel& Channel);
 	void EquipItemInActiveSlot(FECRQuickBarChannel& Channel);
-	void UpdateEquippedItemVisibility(FECRQuickBarChannel& Channel);
 
 	UECREquipmentManagerComponent* FindEquipmentManager() const;
 
 	int32 GetIndexOfChannelWithName(FName Name) const;
-	int32 GetIndexOfChannelWithNameOrCreate(FName Name, bool bVisibilityOnCreation = true);
+	int32 GetIndexOfChannelWithNameOrCreate(FName Name);
 
 private:
 	friend UECRQuickBarComponent;
@@ -141,15 +137,9 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	UECRInventoryItemInstance* RemoveItemFromSlot(FName ChannelName, int32 SlotIndex);
 
-	UFUNCTION(BlueprintCallable)
-	void SetChannelItemVisibility(FName ChannelName, bool bVisible);
-
 private:
 	UPROPERTY(Replicated)
 	FECRQuickBar ChannelData;
-
-	UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
-	TMap<FName, bool> DefaultChannelVisibility;
 };
 
 

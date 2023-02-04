@@ -50,7 +50,10 @@ void UECRWeaponInstance::OnEquipped()
 		CosmeticComp->OnCharacterPartsChanged.AddDynamic(this, &ThisClass::OnCharacterPartsChanged);
 	}
 
-	LinkAnimLayer();
+	if (bVisible)
+	{
+		LinkAnimLayer();
+	}
 }
 
 void UECRWeaponInstance::OnUnequipped()
@@ -153,7 +156,7 @@ void UECRWeaponInstance::OnCharacterPartsChanged(UECRPawnComponent_CharacterPart
 {
 	LoadMontages();
 
-	if (bEquipped)
+	if (bEquipped && bVisible)
 	{
 		LinkAnimLayer();
 	}

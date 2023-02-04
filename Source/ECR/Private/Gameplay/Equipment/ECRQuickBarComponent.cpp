@@ -98,18 +98,11 @@ void FECRQuickBar::EquipItemInActiveSlot(FECRQuickBarChannel& Channel)
 					{
 						Channel.EquippedItem->SetInstigator(SlotItem);
 						MarkItemDirty(Channel);
-						UpdateEquippedItemVisibility(Channel);
 					}
 				}
 			}
 		}
 	}
-}
-
-void FECRQuickBar::UpdateEquippedItemVisibility(FECRQuickBarChannel& Channel)
-{
-	check(Channel.EquippedItem);
-	Channel.EquippedItem->SetVisibility(Channel.bVisible);
 }
 
 UECREquipmentManagerComponent* FECRQuickBar::FindEquipmentManager() const
@@ -136,7 +129,7 @@ int32 FECRQuickBar::GetIndexOfChannelWithName(const FName Name) const
 	return INDEX_NONE;
 }
 
-int32 FECRQuickBar::GetIndexOfChannelWithNameOrCreate(FName Name, bool bVisibilityOnCreation)
+int32 FECRQuickBar::GetIndexOfChannelWithNameOrCreate(const FName Name)
 {
 	check(OwnerComponent);
 
@@ -150,7 +143,6 @@ int32 FECRQuickBar::GetIndexOfChannelWithNameOrCreate(FName Name, bool bVisibili
 
 		FECRQuickBarChannel& NewChannel = Channels.AddDefaulted_GetRef();
 		NewChannel.ChannelName = Name;
-		NewChannel.bVisible = bVisibilityOnCreation;
 		MarkItemDirty(NewChannel);
 	}
 	return ChannelIndex;
@@ -290,14 +282,8 @@ int32 UECRQuickBarComponent::GetNextFreeItemSlot(FName ChannelName, bool bReturn
 void UECRQuickBarComponent::AddItemToSlot(int32 SlotIndex, UECRInventoryItemInstance* Item)
 {
 	const FName ChannelName = Item->GetQuickBarChannelName();
-
-	bool bVisibilityOnCreation = true;
-	if (DefaultChannelVisibility.Contains(ChannelName))
-	{
-		bVisibilityOnCreation = DefaultChannelVisibility.FindRef(ChannelName);
-	}
 	
-	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithNameOrCreate(ChannelName, bVisibilityOnCreation);
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithNameOrCreate(ChannelName);
 	FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
 
 	if (Channel.Slots.IsValidIndex(SlotIndex) && (Item != nullptr))
@@ -341,26 +327,6 @@ UECRInventoryItemInstance* UECRQuickBarComponent::RemoveItemFromSlot(FName Chann
 	ChannelData.MarkItemDirty(Channel);
 
 	return Result;
-}
-
-void UECRQuickBarComponent::SetChannelItemVisibility(FName ChannelName, bool bVisible)
-{
-	if (UECREquipmentManagerComponent* EquipmentManager = ChannelData.FindEquipmentManager())
-	{
-		const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
-		if (IndexOfChannel == INDEX_NONE)
-		{
-			return;
-		}
-		FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
-		Channel.bVisible = bVisible;
-		ChannelData.MarkItemDirty(Channel);
-
-		if (Channel.EquippedItem)
-		{
-			ChannelData.UpdateEquippedItemVisibility(Channel);
-		}
-	}
 }
 
 

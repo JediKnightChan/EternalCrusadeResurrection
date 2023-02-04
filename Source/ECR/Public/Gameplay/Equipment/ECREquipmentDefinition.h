@@ -17,7 +17,8 @@ struct FECREquipmentActorToSpawn
 	GENERATED_BODY()
 
 	FECREquipmentActorToSpawn()
-	{}
+	{
+	}
 
 	UPROPERTY(EditAnywhere, Category=Equipment)
 	TSubclassOf<AActor> ActorToSpawn;

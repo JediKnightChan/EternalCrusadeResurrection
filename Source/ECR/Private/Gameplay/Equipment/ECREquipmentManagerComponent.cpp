@@ -22,14 +22,14 @@ FString FECRAppliedEquipmentEntry::GetDebugString() const
 
 void FECREquipmentList::PreReplicatedRemove(const TArrayView<int32> RemovedIndices, int32 FinalSize)
 {
- 	for (int32 Index : RemovedIndices)
- 	{
- 		const FECRAppliedEquipmentEntry& Entry = Entries[Index];
+	for (int32 Index : RemovedIndices)
+	{
+		const FECRAppliedEquipmentEntry& Entry = Entries[Index];
 		if (Entry.Instance != nullptr)
 		{
 			Entry.Instance->OnUnequipped();
 		}
- 	}
+	}
 }
 
 void FECREquipmentList::PostReplicatedAdd(const TArrayView<int32> AddedIndices, int32 FinalSize)
@@ -46,11 +46,11 @@ void FECREquipmentList::PostReplicatedAdd(const TArrayView<int32> AddedIndices, 
 
 void FECREquipmentList::PostReplicatedChange(const TArrayView<int32> ChangedIndices, int32 FinalSize)
 {
-// 	for (int32 Index : ChangedIndices)
-// 	{
-// 		const FGameplayTagStack& Stack = Stacks[Index];
-// 		TagToCountMap[Stack.Tag] = Stack.StackCount;
-// 	}
+	// 	for (int32 Index : ChangedIndices)
+	// 	{
+	// 		const FGameplayTagStack& Stack = Stacks[Index];
+	// 		TagToCountMap[Stack.Tag] = Stack.StackCount;
+	// 	}
 }
 
 UECRAbilitySystemComponent* FECREquipmentList::GetAbilitySystemComponent() const
@@ -65,9 +65,9 @@ UECREquipmentInstance* FECREquipmentList::AddEntry(TSubclassOf<UECREquipmentDefi
 	UECREquipmentInstance* Result = nullptr;
 
 	check(EquipmentDefinition != nullptr);
- 	check(OwnerComponent);
+	check(OwnerComponent);
 	check(OwnerComponent->GetOwner()->HasAuthority());
-	
+
 	const UECREquipmentDefinition* EquipmentCDO = GetDefault<UECREquipmentDefinition>(EquipmentDefinition);
 
 	TSubclassOf<UECREquipmentInstance> InstanceType = EquipmentCDO->InstanceType;
@@ -75,10 +75,11 @@ UECREquipmentInstance* FECREquipmentList::AddEntry(TSubclassOf<UECREquipmentDefi
 	{
 		InstanceType = UECREquipmentInstance::StaticClass();
 	}
-	
+
 	FECRAppliedEquipmentEntry& NewEntry = Entries.AddDefaulted_GetRef();
 	NewEntry.EquipmentDefinition = EquipmentDefinition;
-	NewEntry.Instance = NewObject<UECREquipmentInstance>(OwnerComponent->GetOwner(), InstanceType);  //@TODO: Using the actor instead of component as the outer due to UE-127172
+	NewEntry.Instance = NewObject<UECREquipmentInstance>(OwnerComponent->GetOwner(), InstanceType);
+	//@TODO: Using the actor instead of component as the outer due to UE-127172
 	Result = NewEntry.Instance;
 
 	if (UECRAbilitySystemComponent* ASC = GetAbilitySystemComponent())
@@ -94,7 +95,6 @@ UECREquipmentInstance* FECREquipmentList::AddEntry(TSubclassOf<UECREquipmentDefi
 	}
 
 	Result->SpawnEquipmentActors(EquipmentCDO->ActorsToSpawn);
-
 
 	MarkItemDirty(NewEntry);
 
@@ -114,7 +114,7 @@ void FECREquipmentList::RemoveEntry(UECREquipmentInstance* Instance)
 			}
 
 			Instance->DestroyEquipmentActors();
-			
+
 
 			EntryIt.RemoveCurrent();
 			MarkArrayDirty();
@@ -127,13 +127,13 @@ void FECREquipmentList::RemoveEntry(UECREquipmentInstance* Instance)
 
 UECREquipmentManagerComponent::UECREquipmentManagerComponent(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
-	, EquipmentList(this)
+	  , EquipmentList(this)
 {
 	SetIsReplicatedByDefault(true);
 	bWantsInitializeComponent = true;
 }
 
-void UECREquipmentManagerComponent::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const
+void UECREquipmentManagerComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
@@ -149,9 +149,37 @@ UECREquipmentInstance* UECREquipmentManagerComponent::EquipItem(TSubclassOf<UECR
 		if (Result != nullptr)
 		{
 			Result->OnEquipped();
+			SetItemVisible(Result);
 		}
 	}
 	return Result;
+}
+
+void UECREquipmentManagerComponent::SetItemVisible(UECREquipmentInstance* ItemInstance)
+{
+	TArray<FName> VisibilityChannels = ItemInstance->GetVisibilityChannels();
+	for (FName VisibilityChannel : VisibilityChannels)
+	{
+		for (const FECRAppliedEquipmentEntry Entry : EquipmentList.Entries)
+		{
+			if (Entry.Instance)
+			{
+				if (Entry.Instance->GetVisibilityChannels().Contains(VisibilityChannel))
+				{
+					Entry.Instance->SetVisibility(false);
+				}
+			}
+		};
+	}
+	ItemInstance->SetVisibility(true);
+}
+
+void UECREquipmentManagerComponent::SetItemsInvisible(TArray<UECREquipmentInstance*> Items)
+{
+	for (UECREquipmentInstance* Item : Items)
+	{
+		Item->SetVisibility(false);
+	}
 }
 
 void UECREquipmentManagerComponent::UnequipItem(UECREquipmentInstance* ItemInstance)
@@ -163,7 +191,8 @@ void UECREquipmentManagerComponent::UnequipItem(UECREquipmentInstance* ItemInsta
 	}
 }
 
-bool UECREquipmentManagerComponent::ReplicateSubobjects(UActorChannel* Channel, class FOutBunch* Bunch, FReplicationFlags* RepFlags)
+bool UECREquipmentManagerComponent::ReplicateSubobjects(UActorChannel* Channel, class FOutBunch* Bunch,
+                                                        FReplicationFlags* RepFlags)
 {
 	bool WroteSomething = Super::ReplicateSubobjects(Channel, Bunch, RepFlags);
 
@@ -203,7 +232,8 @@ void UECREquipmentManagerComponent::UninitializeComponent()
 	Super::UninitializeComponent();
 }
 
-UECREquipmentInstance* UECREquipmentManagerComponent::GetFirstInstanceOfType(TSubclassOf<UECREquipmentInstance> InstanceType)
+UECREquipmentInstance* UECREquipmentManagerComponent::GetFirstInstanceOfType(
+	TSubclassOf<UECREquipmentInstance> InstanceType)
 {
 	for (FECRAppliedEquipmentEntry& Entry : EquipmentList.Entries)
 	{
@@ -219,7 +249,8 @@ UECREquipmentInstance* UECREquipmentManagerComponent::GetFirstInstanceOfType(TSu
 	return nullptr;
 }
 
-TArray<UECREquipmentInstance*> UECREquipmentManagerComponent::GetEquipmentInstancesOfType(TSubclassOf<UECREquipmentInstance> InstanceType) const
+TArray<UECREquipmentInstance*> UECREquipmentManagerComponent::GetEquipmentInstancesOfType(
+	TSubclassOf<UECREquipmentInstance> InstanceType) const
 {
 	TArray<UECREquipmentInstance*> Results;
 	for (const FECRAppliedEquipmentEntry& Entry : EquipmentList.Entries)
@@ -235,3 +266,18 @@ TArray<UECREquipmentInstance*> UECREquipmentManagerComponent::GetEquipmentInstan
 	return Results;
 }
 
+UECREquipmentInstance* UECREquipmentManagerComponent::GetFirstInstanceVisibleInChannel(const FName VisibilityChannel)
+{
+	for (const FECRAppliedEquipmentEntry& Entry : EquipmentList.Entries)
+	{
+		if (UECREquipmentInstance* Instance = Entry.Instance)
+		{
+			if (Instance->GetVisibilityChannels().Contains(VisibilityChannel))
+			{
+				return Instance;
+			}
+		}
+	}
+
+	return nullptr;
+}

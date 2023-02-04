@@ -4,6 +4,7 @@
 #include "Gameplay/Equipment/ECREquipmentDefinition.h"
 #include "GameFramework/Character.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Gameplay/Weapons/ECRWeaponInstance.h"
 #include "Net/UnrealNetwork.h"
 
 UECREquipmentInstance::UECREquipmentInstance(const FObjectInitializer& ObjectInitializer)
@@ -99,7 +100,7 @@ void UECREquipmentInstance::OnUnequipped()
 	K2_OnUnequipped();
 }
 
-void UECREquipmentInstance::SetVisibility(bool bNewVisible)
+void UECREquipmentInstance::SetVisibility(const bool bNewVisible)
 {
 	bVisible = bNewVisible;
 	OnRep_bVisible();
@@ -112,6 +113,14 @@ void UECREquipmentInstance::OnRep_bVisible()
 		if (Actor)
 		{
 			Actor->SetActorHiddenInGame(!bVisible);
+		}
+	}
+
+	if (bEquipped && bVisible)
+	{
+		if (const UECRWeaponInstance* WeaponInstance = Cast<UECRWeaponInstance>(this))
+		{
+			WeaponInstance->LinkAnimLayer();
 		}
 	}
 }

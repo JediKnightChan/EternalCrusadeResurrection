@@ -39,6 +39,8 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category=Animation)
 	UAnimMontage* GetVictimExecutionMontage(AActor* TargetActor) const;
 
+	void LinkAnimLayer() const;
+
 protected:
 	// Choose the best layer from EquippedAnimSet or UnequippedAnimSet based on the specified gameplay tags
 	UFUNCTION(BlueprintCallable, BlueprintPure=false, Category=Animation)
@@ -46,7 +48,6 @@ protected:
 
 	UAnimMontage* GetExecutionMontage(const FECRAnimMontageSelectionSet& SelectionSet, AActor* TargetActor) const;
 
-	void LinkAnimLayer() const;
 	void LoadMontages();
 
 	UFUNCTION()
