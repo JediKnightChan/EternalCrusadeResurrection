@@ -29,3 +29,6 @@ that may be useful for a wide range of games.
 -   Shooting uses advanced tracing to get a point on the camera vector where pawn should aim from weapon actor, unlike Lyra, where shooting is done from camera
 -   GAS debugger correctly works on 3rd page, checking costs on abilities CDOs without producing errors in the log
 -   Gameplay Abilities can asynchronously load montages for different skeletons using cosmetic tags without having to create multiple GA instances
+-   Advanced melee combat prediction system
+
+![](https://eternal-crusade.com/dist/images/github/melee_prediction.jpg)
