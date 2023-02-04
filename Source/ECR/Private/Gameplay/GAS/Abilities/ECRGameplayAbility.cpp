@@ -10,6 +10,9 @@
 #include "Gameplay/Character/ECRHeroComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemGlobals.h"
+#include "Cosmetics/ECRCosmeticStatics.h"
+#include "Cosmetics/ECRPawnComponent_CharacterParts.h"
+#include "Engine/AssetManager.h"
 #include "Gameplay/GAS/Abilities/ECRAbilitySimpleFailureMessage.h"
 #include "GameFramework/GameplayMessageSubsystem.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
@@ -195,6 +198,16 @@ void UECRGameplayAbility::OnGiveAbility(const FGameplayAbilityActorInfo* ActorIn
 {
 	Super::OnGiveAbility(ActorInfo, Spec);
 
+	LoadMontages();
+
+
+	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponent(
+		GetAvatarActorFromActorInfo()))
+	{
+		CosmeticComp->OnCharacterPartsChanged.AddDynamic(this, &ThisClass::OnCharacterPartsChanged);
+	}
+
+
 	K2_OnAbilityAdded();
 
 	TryActivateAbilityOnSpawn(ActorInfo, Spec);
@@ -205,6 +218,12 @@ void UECRGameplayAbility::OnRemoveAbility(const FGameplayAbilityActorInfo* Actor
 	K2_OnAbilityRemoved();
 
 	Super::OnRemoveAbility(ActorInfo, Spec);
+
+	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponent(
+		GetAvatarActorFromActorInfo()))
+	{
+		CosmeticComp->OnCharacterPartsChanged.RemoveDynamic(this, &ThisClass::OnCharacterPartsChanged);
+	}
 }
 
 void UECRGameplayAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handle,
@@ -300,7 +319,8 @@ void UECRGameplayAbility::ApplyCost(const FGameplayAbilitySpecHandle Handle, con
 			}
 
 			AdditionalCost->ApplyCost(this, Handle, ActorInfo, ActivationInfo);
-		} else
+		}
+		else
 		{
 			UE_LOG(LogECRAbilitySystem, Warning, TEXT("Additional cost is nullptr"))
 		}
@@ -480,6 +500,62 @@ void UECRGameplayAbility::GetAbilitySource(FGameplayAbilitySpecHandle Handle,
 
 	OutAbilitySource = Cast<IECRAbilitySourceInterface>(SourceObject);
 }
+
+
+UAnimMontage* UECRGameplayAbility::GetMontage(const FName MontageCategory) const
+{
+	const FECRAnimMontageSelectionSet AnimMontageSelectionSet = AbilityMontageSelection.FindRef(MontageCategory);
+	if (const UECRPawnComponent_CharacterParts* CustomizationComponent =
+		UECRCosmeticStatics::GetPawnCustomizationComponent(GetECRCharacterFromActorInfo()))
+	{
+		const FGameplayTagContainer MontageTags = CustomizationComponent->GetCombinedTags(
+			FECRGameplayTags::Get().Cosmetic_Montage);
+		const TSoftObjectPtr<UAnimMontage> AnimMontage = AnimMontageSelectionSet.SelectBestMontage(MontageTags);
+		if (!AnimMontage.IsValid())
+		{
+			if (!AnimMontage.IsNull())
+			{
+				UAssetManager::GetStreamableManager().RequestSyncLoad(AnimMontage.ToSoftObjectPath());
+				UE_LOG(LogECR, Warning, TEXT("Had to sync load ability montage %s!"), *(AnimMontage.GetAssetName()))
+			}
+		}
+		return AnimMontage.Get();
+	}
+	return nullptr;
+}
+
+void UECRGameplayAbility::OnCharacterPartsChanged(UECRPawnComponent_CharacterParts* ComponentWithChangedParts)
+{
+	LoadMontages();
+}
+
+
+void UECRGameplayAbility::LoadMontages()
+{
+	TArray<FSoftObjectPath> MontagesToLoad;
+
+	if (const UECRPawnComponent_CharacterParts* CustomizationComponent =
+		UECRCosmeticStatics::GetPawnCustomizationComponent(
+			GetECRCharacterFromActorInfo()))
+	{
+		for (const auto& [Name, SelectionSet] : AbilityMontageSelection)
+		{
+			FGameplayTagContainer GameplayTags = CustomizationComponent->GetCombinedTags(
+				FECRGameplayTags::Get().Cosmetic_Montage);
+			const TSoftObjectPtr<UAnimMontage> AnimMontage = SelectionSet.SelectBestMontage(GameplayTags);
+			UECRCosmeticStatics::AddMontageToLoadQueueIfNeeded(AnimMontage, MontagesToLoad);
+		}
+	}
+
+	if (MontagesToLoad.Num())
+	{
+		if (UAssetManager::IsValid())
+		{
+			UAssetManager::GetStreamableManager().RequestAsyncLoad(MontagesToLoad);
+		}
+	}
+}
+
 
 void UECRGameplayAbility::TryActivateAbilityOnSpawn(const FGameplayAbilityActorInfo* ActorInfo,
                                                     const FGameplayAbilitySpec& Spec) const

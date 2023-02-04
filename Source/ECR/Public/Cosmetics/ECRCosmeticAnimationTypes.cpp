@@ -27,3 +27,28 @@ USkeletalMesh* FECRAnimBodyStyleSelectionSet::SelectBestBodyStyle(const FGamepla
 
 	return DefaultMesh;
 }
+
+TSoftObjectPtr<UAnimMontage> FECRAnimMontageSelectionSet::SelectBestMontage(
+	const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const auto& [Montage, RequiredTags] : MontageRules)
+	{
+		if ((!Montage.IsNull()) && CosmeticTags.HasAll(RequiredTags))
+		{
+			return Montage;
+		}
+	}
+
+	return DefaultMontage;
+}
+
+TArray<TSoftObjectPtr<UAnimMontage>> FECRAnimMontageSelectionSet::GetAllMontages()
+{
+	TArray<TSoftObjectPtr<UAnimMontage>> Montages;
+	for (auto [Montage, RequiredTags] : MontageRules)
+	{
+		Montages.AddUnique(Montage);
+	}
+	Montages.AddUnique(DefaultMontage);
+	return Montages;
+}

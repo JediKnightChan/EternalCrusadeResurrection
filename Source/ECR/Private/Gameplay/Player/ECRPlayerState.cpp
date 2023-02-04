@@ -1,6 +1,8 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "Gameplay/Player/ECRPlayerState.h"
+
+#include "OnlineSubsystemTypes.h"
 #include "System/ECRLogChannels.h"
 #include "Net/UnrealNetwork.h"
 #include "Gameplay/Character/ECRPawnExtensionComponent.h"
@@ -15,7 +17,8 @@
 AECRPlayerState::AECRPlayerState(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	AbilitySystemComponent = ObjectInitializer.CreateDefaultSubobject<UECRAbilitySystemComponent>(this, TEXT("AbilitySystemComponent"));
+	AbilitySystemComponent = ObjectInitializer.CreateDefaultSubobject<UECRAbilitySystemComponent>(
+		this, TEXT("AbilitySystemComponent"));
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
@@ -55,6 +58,13 @@ void AECRPlayerState::ClientInitialize(AController* C)
 	{
 		PawnExtComp->CheckPawnReadyToInitialize();
 	}
+}
+
+void AECRPlayerState::SetTempNetId(const FString SomeString)
+{
+	check(GetUniqueId().ToString().IsEmpty())
+	const FUniqueNetIdStringRef Id = FUniqueNetIdString::Create(SomeString, FName{"PIE_NetId"});
+	SetUniqueId(FUniqueNetIdRepl{Id.Get()});
 }
 
 void AECRPlayerState::AddStatTagStack(FGameplayTag Tag, int32 StackCount)

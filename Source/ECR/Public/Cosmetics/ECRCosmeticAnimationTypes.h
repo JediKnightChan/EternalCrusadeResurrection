@@ -31,7 +31,7 @@ USTRUCT(BlueprintType)
 struct FECRAnimLayerSelectionSet
 {
 	GENERATED_BODY()
-		
+
 	// List of layer rules to apply, first one that matches will be used
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Layer))
 	TArray<FECRAnimLayerSelectionEntry> LayerRules;
@@ -51,7 +51,7 @@ struct FECRAnimBodyStyleSelectionEntry
 {
 	GENERATED_BODY()
 
-	// Layer to apply if the tag matches
+	// Skeletal mesh to apply if the tag matches
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<USkeletalMesh> Mesh = nullptr;
 
@@ -64,12 +64,12 @@ USTRUCT(BlueprintType)
 struct FECRAnimBodyStyleSelectionSet
 {
 	GENERATED_BODY()
-		
+
 	// List of layer rules to apply, first one that matches will be used
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Mesh))
 	TArray<FECRAnimBodyStyleSelectionEntry> MeshRules;
 
-	// The layer to use if none of the LayerRules matches
+	// The layer to use if none of the MeshRules matches
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<USkeletalMesh> DefaultMesh = nullptr;
 
@@ -79,4 +79,41 @@ struct FECRAnimBodyStyleSelectionSet
 
 	// Choose the best body style skeletal mesh given the rules
 	USkeletalMesh* SelectBestBodyStyle(const FGameplayTagContainer& CosmeticTags) const;
+};
+
+
+//////////////////////////////////////////////////////////////////////
+
+USTRUCT(BlueprintType)
+struct FECRAnimMontageSelectionEntry
+{
+	GENERATED_BODY()
+
+	// Layer to apply if the tag matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSoftObjectPtr<UAnimMontage> Montage;
+
+	// Cosmetic tags required (all of these must be present to be considered a match)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Categories="Cosmetic"))
+	FGameplayTagContainer RequiredTags;
+};
+
+USTRUCT(BlueprintType)
+struct FECRAnimMontageSelectionSet
+{
+	GENERATED_BODY()
+
+	// List of montage rules to apply, first one that matches will be used
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Montage))
+	TArray<FECRAnimMontageSelectionEntry> MontageRules;
+
+	// The montage to use if none of the LayerRules matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSoftObjectPtr<UAnimMontage> DefaultMontage;
+
+	// Choose the best montage given the rules
+	TSoftObjectPtr<UAnimMontage> SelectBestMontage(const FGameplayTagContainer& CosmeticTags) const;
+
+	// Returns all montages associated with this set
+	TArray<TSoftObjectPtr<UAnimMontage>> GetAllMontages();
 };

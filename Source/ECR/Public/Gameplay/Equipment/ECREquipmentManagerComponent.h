@@ -146,4 +146,7 @@ public:
 private:
 	UPROPERTY(Replicated)
 	FECREquipmentList EquipmentList;
+	//
+	// TWeakObjectPtr<UECREquipmentInstance> LeftHandWeapon;
+	// TWeakObjectPtr<UECREquipmentInstance> RightHandWeapon;
 };

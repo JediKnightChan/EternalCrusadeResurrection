@@ -41,6 +41,9 @@ public:
 	virtual void ClientInitialize(AController* C) override;
 	//~End of APlayerState interface
 
+	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
+	void SetTempNetId(FString SomeString);
+	
 	// Adds a specified number of stacks to the tag (does nothing if StackCount is below 1)
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category=Teams)
 	void AddStatTagStack(FGameplayTag Tag, int32 StackCount);
