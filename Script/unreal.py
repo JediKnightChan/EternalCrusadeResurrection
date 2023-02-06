@@ -17,6 +17,19 @@ class Asset:
         pass
 
 
+class Array:
+    def __init__(self, Type):
+        pass
+
+    def append(self, value):
+        pass
+
+class EditorFilterLibrary:
+    @staticmethod
+    def by_class(array, class_):
+        return array
+
+
 class EditorAssetLibrary:
     @staticmethod
     def does_asset_exist(path):
@@ -74,15 +87,36 @@ class MaterialInstanceConstantFactoryNew:
     pass
 
 
-class StaticMeshComponent:
+class StaticMesh:
+    pass
+
+
+class SkeletalMesh:
+    pass
+
+
+class SkeletalMaterial:
+    def set_editor_property(self, name, value):
+        pass
+
+class MeshComponent:
     def __init__(self):
         self.material_slot_names = ["SlotName1", "SlotName2"]
-
-    def set_static_mesh(self, static_mesh_asset):
-        pass
 
     def get_material_slot_names(self):
         return self.material_slot_names
 
     def get_material_index(self, slot_name):
         return self.material_slot_names.index(slot_name)
+
+
+class StaticMeshComponent(MeshComponent):
+
+    def set_static_mesh(self, static_mesh_asset):
+        pass
+
+
+class SkeletalMeshComponent(MeshComponent):
+
+    def set_skeletal_mesh(self, static_mesh_asset):
+        pass

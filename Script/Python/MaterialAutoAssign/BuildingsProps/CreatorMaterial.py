@@ -10,16 +10,19 @@ import unreal
 import os
 import json
 
-DO_OVERWRITE_EXISTING_MATERIALS = False
+DO_OVERWRITE_EXISTING_MATERIALS = True
 
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/"
-          "MaterialAutoAssign/BuildingsProps/props_all_materials_data.json", "r") as f:
+          "MaterialAutoAssign/BuildingsProps/space_marines_all_materials_data.json", "r") as f:
     materials_data = json.load(f)
 
-EC_PARENT_MATERIAL = "/EternalCrusade/Content/Materials/Templates/M_Template_Mk.M_Template_Mk"
-MY_PARENT_MATERIAL = "/Game/Materials/Templates/M_Template_Mk"
-MATERIAL_LOC_PREFIX = "D:/MyProjects/eternal_crusade/umodel_needed/exp2/"
+# CHANGE ME
+EC_PARENT_MATERIAL = "/EternalCrusade/Content/Characters/Eldar/Base_Materials/M_Eldar01.M_Eldar01"
+# CHANGE ME
+MY_PARENT_MATERIAL = "/Game/Characters/SpaceMarine/Materials/EmissiveArmorMaterial"
 
+MATERIAL_LOC_PREFIX = "D:/MyProjects/eternal_crusade/umodel_needed/exp2/"
+MATERIAL_FILTER_PREFIX = "/Game/Characters/SpaceMarine/"
 materials_data = {k: v for k, v in materials_data.items() if "Parent" in v and EC_PARENT_MATERIAL in v["Parent"]}
 
 
@@ -71,7 +74,10 @@ def get_texture_data(material_data):
     for _, data in material_data[texture_data_key].items():
         result_key = data["ParameterName"]
         result_value = data["ParameterValue"]
-        result_value = re.search(r"Texture2D'(?P<path>[/a-zA-Z0-9_]+)\.[a-zA-Z0-9_]+'", result_value).group("path")
+        result_value = re.search(r"Texture2D'(?P<path>[/a-zA-Z0-9_-]+)\.[a-zA-Z0-9_-]+'", result_value)
+        if not result_value:
+            raise ValueError(f"{data['ParameterValue']} doesn't match regex")
+        result_value = result_value.group("path")
         result_value = result_value.replace("/EternalCrusade/Content/", "/Game/")
         result[result_key] = result_value
     return result
@@ -79,6 +85,8 @@ def get_texture_data(material_data):
 
 for material_path, material_data in materials_data.items():
     material_game_path = material_path.replace(MATERIAL_LOC_PREFIX, "/Game/").replace(".json", "")
+    if not material_path.startswith(MATERIAL_FILTER_PREFIX):
+        continue
     texture_data = get_texture_data(material_data)
     texture_data = {k: v.replace("/EternalCrusade/Content/", "/Game/") for k, v in texture_data.items()}
 
@@ -94,12 +102,6 @@ for material_path, material_data in materials_data.items():
                                        "Metal": texture_data.get("Metallic Map", None),
                                        "OpacityMask": texture_data.get("Opacity Map", None)}
 
-    ec_opaque_masked_parameter_data = {"BaseColor": texture_data.get("Base Color", None),
-                                       "Normal": texture_data.get("Normal Map", None),
-                                       "Roughness": texture_data.get("Roughness Map", None),
-                                       "Metal": texture_data.get("Metallic Map", None),
-                                       "OpacityMask": texture_data.get("Alpha", None)}
-
     vertex_parameter_data = {
         "Base Color 1": texture_data.get("Base Color_A", None),
         "Base Color 2": texture_data.get("Base Color_B", None),
@@ -111,4 +113,20 @@ for material_path, material_data in materials_data.items():
         "Roughness 2": texture_data.get("R_B", None)
     }
 
-    create_material_instance(material_game_path, ec_opaque_masked_parameter_data)
+    ec_bodypart_parameter_data = {
+        "BaseColor": None,
+        "Mask": texture_data.get("Color_Mask", None),
+        "Metal": texture_data.get("Metallic", None),
+        "Roughness": texture_data.get("Roughness", None),
+        "Normal": texture_data.get("Normal_Map", None)
+    }
+
+    ec_sm_unique_parameter_data = {
+        "BaseColor": texture_data.get("Base_Color", None),
+        "Mask": texture_data.get("Color_Mask", None),
+        "Metal": texture_data.get("Metallic", None),
+        "Roughness": texture_data.get("Roughness", None),
+        "Normal": texture_data.get("Normal_Map", None)
+    }
+
+    create_material_instance(material_game_path, ec_sm_unique_parameter_data)

@@ -4,7 +4,7 @@ from PropsTxtToJson import convert_props_txt_file_to_json
 if __name__ == '__main__':
     """Bulk conversion of produced by umodel .props.txt material files to json"""
 
-    root_dir = "D:/MyProjects/eternal_crusade/umodel_needed/exp2/"
+    root_dir = "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Characters/SpaceMarine/"
 
     DO_DELETE_PROPS_TXT = True
     DO_DELETE_MAT = True

@@ -1,6 +1,13 @@
+# Should be used outside UE
+
 import os
 import re
 import json
+
+material_regexes = [
+    rb"(?P<ref>/Game/Materials/[a-zA-Z0-9\/_]+)\x00",
+    rb"(?P<ref>/Game/Characters/SpaceMarine/[a-zA-Z0-9\/_]+/MI{0,1}_[a-zA-Z0-9\/_]+)\x00"
+]
 
 
 def get_material_references_for_uasset(uasset_filepath):
@@ -9,10 +16,13 @@ def get_material_references_for_uasset(uasset_filepath):
 
     with open(uasset_filepath, "rb") as f:
         content = f.read()
-    material_refs = [r.group("ref").decode("utf8") for r in
-                     re.finditer(rb"(?P<ref>/Game/Materials/[a-zA-Z0-9\/_]+)\x00", content)]
-    slot_names_to_material_refs = {os.path.basename(material_ref): material_ref for material_ref in material_refs}
-    return slot_names_to_material_refs
+    all_slot_names_to_material_refs = {}
+    for regex in material_regexes:
+        material_refs = [r.group("ref").decode("utf8") for r in
+                         re.finditer(regex, content)]
+        slot_names_to_material_refs = {os.path.basename(material_ref): material_ref for material_ref in material_refs}
+        all_slot_names_to_material_refs = {**all_slot_names_to_material_refs, **slot_names_to_material_refs}
+    return all_slot_names_to_material_refs
 
 
 def collect_material_references_for_directory(root_dir):
@@ -34,7 +44,7 @@ def collect_material_references_for_directory(root_dir):
 if __name__ == '__main__':
     """Collect material references from meshes in this directory and save them to json file"""
 
-    root_dir = "D:/MyProjects/eternal_crusade/umodel_needed/EternalCrusade_dup/Content/PROPS/"
+    root_dir = "D:/MyProjects/eternal_crusade/umodel_needed/EternalCrusade_dup/Content/Characters/SpaceMarine/"
     data = collect_material_references_for_directory(root_dir)
-    with open("props_material_references.json", "w") as f:
+    with open("space_marines_material_references.json", "w") as f:
         json.dump(data, f, indent=4)

@@ -37,6 +37,7 @@ def load_materials_data_from_json(root_dir, new_json_file, references_file):
         if "Parent" in material_data_:
             parent_material_ = re.search(r"'(?P<path>[/a-zA-Z0-9_]+)\.[a-zA-Z0-9_]+'", material_data_["Parent"]).group(
                 "path")
+            parent_material_ = parent_material_.replace("/EternalCrusade/Content/", "/Game/")
             return parent_material_
 
     used_materials = []
@@ -135,8 +136,8 @@ def find_material_parameters(all_materials_data, parent_material):
 
 if __name__ == '__main__':
     root_dir = "D:/MyProjects/eternal_crusade/umodel_needed/exp2"
-    new_json_file = "props_all_materials_data.json"
-    references_file = "props_material_references.json"
+    new_json_file = "space_marines_all_materials_data.json"
+    references_file = "space_marines_material_references.json"
     # save_material_data_to_json(root_dir, new_json_file)
 
     all_materials_data, not_found_materials = load_materials_data_from_json(root_dir, new_json_file, references_file)
@@ -145,10 +146,12 @@ if __name__ == '__main__':
     #     f.write(json.dumps(all_materials_data, indent=4))
 
     print(len(all_materials_data), len(not_found_materials))
-    res = find_child_materials(all_materials_data, "M_Basic_Material_01", recursive=True,
+    # print("\n".join(not_found_materials))
+
+    res = find_child_materials(all_materials_data, "M_Eldar01", recursive=False,
                                replacer=lambda string: os.path.basename(string).replace(".json", ""))
-    # res = find_materials_with_other_parent(all_materials_data, ['M_Opaque', 'M_Opaque_Mk', 'M_Template'])
-    # res = find_material_parameters(all_materials_data, 'M_Template_Mk')
+    # res = find_materials_with_other_parent(all_materials_data, ['M_BodyParts_01', 'M_SM_Unique01'])
+    res = find_material_parameters(all_materials_data, 'M_Eldar01')
     print(len(res))
     for item in res:
         print(item)

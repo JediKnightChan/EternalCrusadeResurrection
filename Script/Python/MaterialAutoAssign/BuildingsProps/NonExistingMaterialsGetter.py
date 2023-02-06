@@ -2,7 +2,7 @@ import json
 import unreal
 
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/"
-          "MaterialAutoAssign/BuildingsProps/props_material_references.json", "r") as f:
+          "MaterialAutoAssign/BuildingsProps/space_marines_material_references.json", "r") as f:
     material_references_data = json.load(f)
 
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/"
