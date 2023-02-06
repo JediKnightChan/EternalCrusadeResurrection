@@ -141,6 +141,11 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
 			SocketName);
 		SkeletalMeshComponent->SetSkeletalMesh(SkeletalMesh);
 
+		if (!CollisionProfileName.IsNone())
+		{
+			SkeletalMeshComponent->SetCollisionProfileName(CollisionProfileName);
+		}
+
 		if (MaterialNamespacesToData.Contains(CustomizationNamespace))
 		{
 			const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
@@ -168,6 +173,12 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
 			Component, NameEnding + SocketName.ToString(),
 			SocketName);
 		StaticMeshComponent->SetStaticMesh(StaticMesh);
+
+		if (!CollisionProfileName.IsNone())
+		{
+			StaticMeshComponent->SetCollisionProfileName(CollisionProfileName);
+		}
+
 
 		// Applying material changes
 		if (MaterialNamespacesToData.Contains(CustomizationNamespace))
@@ -239,8 +250,13 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 		SkeletalMeshParentComponent, Namespace);
 	ChildComponent->SetSkeletalMesh(MergedSkeletalMesh);
 
+	if (!CollisionProfileName.IsNone())
+	{
+		ChildComponent->SetCollisionProfileName(CollisionProfileName);
+	}
+
 	TArray<FName> Names = ChildComponent->GetMaterialSlotNames();
-	
+
 	// Inheriting animations if needed
 	if (bInheritParentAnimations)
 	{
@@ -286,6 +302,11 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 		USkeletalMeshComponent* ChildComponent = SpawnChildComponent<USkeletalMeshComponent>(
 			SkeletalMeshParentComponent, Namespace, SocketName);
 		ChildComponent->SetSkeletalMesh(Asset->BaseSkeletalMesh);
+
+		if (!CollisionProfileName.IsNone())
+		{
+			ChildComponent->SetCollisionProfileName(CollisionProfileName);
+		}
 
 		// Inheriting animations if needed
 		if (bInheritParentAnimations)

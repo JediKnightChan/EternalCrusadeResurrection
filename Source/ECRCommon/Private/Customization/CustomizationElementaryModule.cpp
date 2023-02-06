@@ -156,10 +156,13 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 	const FString SaveRootDir = CustomizationSavingNameSpace->SaveDestinationRootDirectory;
 	const FString ComponentName = UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
 
-	FString ModuleTypeName, ModuleCustomizationName;
-	if (!ComponentName.Split("_", &ModuleTypeName, &ModuleCustomizationName))
+	FString ModuleTypeName = ComponentName;
+	FString ModuleCustomizationName;
+	if (CustomizationSavingNameSpace->ModuleNamingMapping.Contains(ModuleTypeName))
 	{
-		ModuleTypeName = ComponentName;
+		ModuleCustomizationName = CustomizationSavingNameSpace->ModuleNamingMapping.FindRef(ModuleTypeName);
+	} else
+	{
 		ModuleCustomizationName = UCustomizationUtilsLibrary::GetDisplayNameEnd(CustomizationSavingNameSpace);
 	}
 

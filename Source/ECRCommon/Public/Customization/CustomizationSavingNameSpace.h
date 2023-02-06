@@ -26,7 +26,7 @@ struct ECRCOMMON_API FCustomizationMaterialNamespaceData
 	{
 		return (ScalarParameters.Num() == 0 && VectorParameters.Num() == 0 && TextureParameters.Num() == 0);
 	}
-	
+
 	/** Relative path in CustomizationSavingNameSpace root directory to save asset to */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	FString RelativeSavePath;
@@ -53,6 +53,7 @@ class ECRCOMMON_API UCustomizationSavingNameSpace : public USceneComponent
 	/** Save every child CustomizationElementaryModule, overwriting / skipping it if it already exists,
 	 * and produce CustomizationLoaderAsset */
 	void SaveLoadout(bool bDoOverwrite);
+
 public:
 	// Sets default values for this component's properties
 	UCustomizationSavingNameSpace();
@@ -64,6 +65,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TMap<FString, FCustomizationMaterialNamespaceData> MaterialCustomizationData;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TMap<FString, FString> ModuleNamingMapping;
+
 	/** Save every child CustomizationElementaryModule, overwriting if it already exists,
 	 * and produce CustomizationLoaderAsset */
 	UFUNCTION(CallInEditor, BlueprintCallable)
@@ -73,5 +77,6 @@ public:
 	 * and produce CustomizationLoaderAsset */
 	UFUNCTION(CallInEditor, BlueprintCallable)
 	void SaveLoadoutSkippingExistingModules();
+
 	void SaveMaterialCustomizationData(bool bDoOverwrite) const;
 };

@@ -23,6 +23,10 @@ class ECRCOMMON_API UCustomizationLoaderComponent : public USceneComponent
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	bool bUseParentSkeleton;
 
+	/** Collision profile name to use for static and skeletal components. Leave None for default */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	FName CollisionProfileName;
+
 	/** Modular mesh customization config we want to load */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	class UCustomizationLoaderAsset* AssetConfig;
