@@ -22,12 +22,12 @@ public:
 	virtual void NativeTick(const FGeometry& MyGeometry, float InDeltaTime) override;
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnWeaponChanged(UECRWeaponInstance* OldWeapon, UECRWeaponInstance* NewWeapon);
+	void OnWeaponChanged(UECRRangedWeaponInstance* OldWeapon, UECRRangedWeaponInstance* NewWeapon);
 
 private:
 	void RebuildWidgetFromWeapon();
 
 private:
 	UPROPERTY(Transient)
-	TObjectPtr<UECRWeaponInstance> CurrentInstance;
+	TObjectPtr<UECRRangedWeaponInstance> CurrentInstance;
 };

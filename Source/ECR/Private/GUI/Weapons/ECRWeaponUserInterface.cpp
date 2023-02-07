@@ -5,6 +5,7 @@
 #include "Gameplay/Weapons/ECRWeaponInstance.h"
 #include "Gameplay/Equipment/ECREquipmentManagerComponent.h"
 #include "GameFramework/Pawn.h"
+#include "Gameplay/Weapons/ECRRangedWeaponInstance.h"
 
 UECRWeaponUserInterface::UECRWeaponUserInterface(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
@@ -29,11 +30,11 @@ void UECRWeaponUserInterface::NativeTick(const FGeometry& MyGeometry, float InDe
 	{
 		if (UECREquipmentManagerComponent* EquipmentManager = Pawn->FindComponentByClass<UECREquipmentManagerComponent>())
 		{
-			if (UECRWeaponInstance* NewInstance = EquipmentManager->GetFirstInstanceOfType<UECRWeaponInstance>())
+			if (UECRRangedWeaponInstance* NewInstance = EquipmentManager->GetFirstInstanceOfType<UECRRangedWeaponInstance>())
 			{
 				if (NewInstance != CurrentInstance && NewInstance->GetInstigator() != nullptr)
 				{
-					UECRWeaponInstance* OldWeapon = CurrentInstance;
+					UECRRangedWeaponInstance* OldWeapon = CurrentInstance;
 					CurrentInstance = NewInstance;
 					RebuildWidgetFromWeapon();
 					OnWeaponChanged(OldWeapon, CurrentInstance);
