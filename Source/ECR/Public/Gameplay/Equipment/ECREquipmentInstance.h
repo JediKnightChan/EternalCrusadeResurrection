@@ -52,6 +52,8 @@ public:
 
 	void SetVisibility(bool bNewVisible);
 
+	FORCEINLINE bool GetIsVisible() const { return bVisible; }
+
 protected:
 	UFUNCTION(BlueprintImplementableEvent, Category=Equipment, meta=(DisplayName="OnEquipped"))
 	void K2_OnEquipped();

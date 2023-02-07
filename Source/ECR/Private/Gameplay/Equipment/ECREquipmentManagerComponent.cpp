@@ -8,6 +8,7 @@
 #include "Gameplay/Equipment/ECREquipmentDefinition.h"
 #include "Net/UnrealNetwork.h"
 #include "Engine/ActorChannel.h"
+#include "System/ECRLogChannels.h"
 
 //////////////////////////////////////////////////////////////////////
 // FECRAppliedEquipmentEntry
@@ -157,6 +158,12 @@ UECREquipmentInstance* UECREquipmentManagerComponent::EquipItem(TSubclassOf<UECR
 
 void UECREquipmentManagerComponent::SetItemVisible(UECREquipmentInstance* ItemInstance)
 {
+	if (!ItemInstance)
+	{
+		UE_LOG(LogECR, Warning, TEXT("Passed null into SetItemVisible"))
+		return;
+	}
+
 	TArray<FName> VisibilityChannels = ItemInstance->GetVisibilityChannels();
 	for (FName VisibilityChannel : VisibilityChannels)
 	{
@@ -178,7 +185,14 @@ void UECREquipmentManagerComponent::SetItemsInvisible(TArray<UECREquipmentInstan
 {
 	for (UECREquipmentInstance* Item : Items)
 	{
-		Item->SetVisibility(false);
+		if (Item)
+		{
+			Item->SetVisibility(false);
+		}
+		else
+		{
+			UE_LOG(LogECR, Warning, TEXT("Passed null item into SetItemsInvisible"));
+		}
 	}
 }
 
@@ -274,7 +288,10 @@ UECREquipmentInstance* UECREquipmentManagerComponent::GetFirstInstanceVisibleInC
 		{
 			if (Instance->GetVisibilityChannels().Contains(VisibilityChannel))
 			{
-				return Instance;
+				if (Instance->GetIsVisible())
+				{
+					return Instance;
+				}
 			}
 		}
 	}

@@ -75,12 +75,24 @@ void UCustomizationLoaderComponent::LoadFromAsset()
 	TMap<FString, UCustomizationMaterialAsset*> MaterialNamespacesToData;
 	for (UCustomizationMaterialAsset* Config : MaterialConfigs)
 	{
+		if (!Config)
+		{
+			UE_LOG(LogAssetData, Warning, TEXT("Material config is null on %s"), *(GetNameSafe(GetOwner())));
+			continue;
+		}
+		
 		MaterialNamespacesToData.Add(Config->MaterialNamespace, Config);
 	}
 
 	// Fill array of modules for attachment and merge 
 	for (UCustomizationElementaryAsset* ElementaryAsset : AssetConfig->ElementaryAssets)
 	{
+		if (!ElementaryAsset)
+		{
+			UE_LOG(LogAssetData, Warning, TEXT("Elementary asset is null in %s"), *(GetNameSafe(AssetConfig)));
+			continue;
+		}
+
 		if (ElementaryAsset->MeshMergeNamespace != "")
 		{
 			MergeNamespaceToModules.FindOrAdd(ElementaryAsset->MeshMergeNamespace).Add(ElementaryAsset);
