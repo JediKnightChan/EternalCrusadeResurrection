@@ -39,10 +39,11 @@ public:
 	FGameplayTag InputTag_AutoRun;
 
 	FGameplayTag GameplayEvent_Death;
-	FGameplayTag GameplayEvent_Wounded;
-	FGameplayTag GameplayEvent_Reset;
-	FGameplayTag GameplayEvent_RequestReset;
+	FGameplayTag GameplayEvent_Landed;
 	FGameplayTag GameplayEvent_MovementModeChanged;
+	FGameplayTag GameplayEvent_RequestReset;
+	FGameplayTag GameplayEvent_Reset;
+	FGameplayTag GameplayEvent_Wounded;
 
 	FGameplayTag Cosmetic_Montage;
 	FGameplayTag Cosmetic_AnimStyle;

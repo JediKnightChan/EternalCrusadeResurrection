@@ -20,8 +20,8 @@ struct FECRCharacterGroundInfo
 	GENERATED_BODY()
 
 	FECRCharacterGroundInfo()
-		: LastUpdateFrame(0)
-		  , GroundDistance(0.0f)
+		: LastUpdateFrame(0),
+		  GroundDistance(0.0f)
 	{
 	}
 

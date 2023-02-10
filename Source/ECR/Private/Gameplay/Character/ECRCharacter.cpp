@@ -400,6 +400,26 @@ void AECRCharacter::OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 
 	SetMovementModeTag(PrevMovementMode, PreviousCustomMode, false);
 	SetMovementModeTag(ECRMoveComp->MovementMode, ECRMoveComp->CustomMovementMode, true);
 
+	if (ECRMoveComp->MovementMode == MOVE_Falling)
+	{
+		StartedFallingTime = GetWorld()->GetTimeSeconds();
+	}
+	else if (PrevMovementMode == MOVE_Falling)
+	{
+		float TimeFalling = GetWorld()->GetTimeSeconds() - StartedFallingTime;
+
+		// Sending gameplay event for possible fall damage
+		if (GetECRAbilitySystemComponent() != nullptr)
+		{
+			FGameplayEventData Payload;
+			Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_Landed;
+			Payload.Target = this;
+			Payload.EventMagnitude = TimeFalling;
+
+			UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
+				this, FECRGameplayTags::Get().GameplayEvent_Landed, Payload);
+		}
+	}
 	// Sending gameplay event for possible interruption of some abilities
 	if (GetECRAbilitySystemComponent() != nullptr)
 	{

@@ -92,7 +92,7 @@ public:
 	/** Blueprint implementable event to get interaction options (like reviving, executing in wounded state) */
 	UFUNCTION(BlueprintImplementableEvent)
 	TArray<FInteractionOption> GetInteractionOptions(const FInteractionQuery InteractQuery);
-	
+
 	//~IInteractableTarget interface
 	virtual void GatherInteractionOptions(const FInteractionQuery& InteractQuery,
 	                                      FInteractionOptionBuilder& OptionBuilder) override;
@@ -158,6 +158,9 @@ private:
 	UPROPERTY(ReplicatedUsing = OnRep_PawnData, EditAnywhere, BlueprintReadOnly,
 		meta=(AllowPrivateAccess="true", ExposeOnSpawn="true"))
 	const UECRPawnData* PawnData;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
+	float StartedFallingTime;
 
 private:
 	UFUNCTION()

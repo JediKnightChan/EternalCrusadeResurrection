@@ -39,7 +39,7 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 
 	AddTag(Cosmetic_Montage, "Cosmetic.Montage", "Prefix for montage customization");
 	AddTag(Cosmetic_AnimStyle, "Cosmetic.AnimationStyle", "Prefix for animation style customization");
-	
+
 	AddTag(Cheat_GodMode, "Cheat.GodMode", "GodMode cheat is active on the owner.");
 	AddTag(Cheat_UnlimitedHealth, "Cheat.UnlimitedHealth", "UnlimitedHealth cheat is active on the owner.");
 
@@ -51,13 +51,16 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 
 	AddTag(GameplayEvent_Death, "GameplayEvent.Death",
 	       "Event that fires on death. This event only fires on the server.");
-	AddTag(GameplayEvent_Wounded, "GameplayEvent.Wounded",
-	       "Event that fires on becoming wounded. This event only fires on the server.");
-	AddTag(GameplayEvent_Reset, "GameplayEvent.Reset", "Event that fires once a player reset is executed.");
+
 	AddTag(GameplayEvent_RequestReset, "GameplayEvent.RequestReset",
 	       "Event to request a player's pawn to be instantly replaced with a new one at a valid spawn location.");
+	AddTag(GameplayEvent_Reset, "GameplayEvent.Reset", "Event that fires once a player reset is executed.");
+	AddTag(GameplayEvent_Landed, "GameplayEvent.Landed",
+	       "Event that fires once a player lands (movement mode changes from falling to another)");
 	AddTag(GameplayEvent_MovementModeChanged, "GameplayEvent.MovementModeChanged",
 	       "Event that fires when character movement mode changes.");
+	AddTag(GameplayEvent_Wounded, "GameplayEvent.Wounded",
+	       "Event that fires on becoming wounded. This event only fires on the server.");
 
 	AddTag(SetByCaller_Damage, "SetByCaller.Damage", "SetByCaller tag used by damage gameplay effects.");
 	AddTag(SetByCaller_Heal, "SetByCaller.Heal", "SetByCaller tag used by healing gameplay effects.");
