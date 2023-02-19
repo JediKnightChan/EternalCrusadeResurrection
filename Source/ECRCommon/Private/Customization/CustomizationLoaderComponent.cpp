@@ -16,12 +16,16 @@ UCustomizationLoaderComponent::UCustomizationLoaderComponent()
 {
 	bInheritParentAnimations = true;
 	bUseParentSkeleton = true;
+	bLoadOnBeginPlay = false;
 }
 
 void UCustomizationLoaderComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	LoadFromAsset();
+	if (bLoadOnBeginPlay)
+	{
+		LoadFromAsset(nullptr, {});
+	}
 }
 
 
@@ -42,13 +46,26 @@ SceneComponentClass* UCustomizationLoaderComponent::SpawnChildComponent(USkeleta
 	{
 		ChildComponent->AttachToComponent(Component, FAttachmentTransformRules::SnapToTargetIncludingScale);
 	}
-	ChildComponent->CreationMethod = EComponentCreationMethod::Instance;
+	ChildComponent->CreationMethod = EComponentCreationMethod::UserConstructionScript;
+
+	SpawnedComponents.Add(ChildComponent);
 	return ChildComponent;
 }
 
 
-void UCustomizationLoaderComponent::LoadFromAsset()
+void UCustomizationLoaderComponent::LoadFromAsset(UCustomizationLoaderAsset* NewAssetConfig,
+                                                  TArray<UCustomizationMaterialAsset*> NewMaterialConfigs)
 {
+	// Setting properties to passed args
+	if (NewAssetConfig)
+	{
+		AssetConfig = NewAssetConfig;
+	}
+	if (!NewMaterialConfigs.IsEmpty())
+	{
+		MaterialConfigs = NewMaterialConfigs;
+	}
+
 	TMap<FString, TArray<UCustomizationElementaryAsset*>> MergeNamespaceToModules;
 	TMap<FName, TArray<UCustomizationElementaryAsset*>> AttachSocketNameToModules;
 
@@ -80,7 +97,7 @@ void UCustomizationLoaderComponent::LoadFromAsset()
 			UE_LOG(LogAssetData, Warning, TEXT("Material config is null on %s"), *(GetNameSafe(GetOwner())));
 			continue;
 		}
-		
+
 		MaterialNamespacesToData.Add(Config->MaterialNamespace, Config);
 	}
 
@@ -116,6 +133,18 @@ void UCustomizationLoaderComponent::LoadFromAsset()
 		ProcessAttachmentModule(AttachSocketNameAndModule.Key, AttachSocketNameAndModule.Value,
 		                        SkeletalMeshParentComponent, MaterialNamespacesToData);
 	}
+}
+
+void UCustomizationLoaderComponent::UnloadPreviousCustomization()
+{
+	for (USceneComponent* SpawnedComponent : SpawnedComponents)
+	{
+		if (SpawnedComponent)
+		{
+			SpawnedComponent->DestroyComponent();
+		}
+	}
+	SpawnedComponents.Empty();
 }
 
 

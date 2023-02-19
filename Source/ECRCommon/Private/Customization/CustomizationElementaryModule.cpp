@@ -278,7 +278,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 
 			if (GetMaterialCustomizationData(ChildSkeletalMeshComponentMaterialNamespace).IsEmpty())
 			{
-				UE_LOG(LogTemp, Warning,
+				UE_LOG(LogTemp, Display,
 				       TEXT(
 					       "Material namespace of component %s isn't present in SavingNamespace or"
 					       " doesn't contain any parameters, it will be set to None"

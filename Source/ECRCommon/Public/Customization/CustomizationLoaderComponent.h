@@ -15,6 +15,10 @@ class ECRCOMMON_API UCustomizationLoaderComponent : public USceneComponent
 {
 	GENERATED_BODY()
 
+	/** Whether to load customization on BeginPlay or load function will be called externally */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	bool bLoadOnBeginPlay;
+
 	/** Whether to inherit animation from the first SkeletalMeshComponent parent via Master Pose */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	bool bInheritParentAnimations;
@@ -34,6 +38,9 @@ class ECRCOMMON_API UCustomizationLoaderComponent : public USceneComponent
 	/** Material customization configs we want to load */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TArray<class UCustomizationMaterialAsset*> MaterialConfigs;
+
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	TArray<USceneComponent*> SpawnedComponents;
 
 protected:
 	/** Spawn child component for Component and attach to it */
@@ -59,7 +66,7 @@ protected:
 	                                         const FString NameEnding,
 	                                         TMap<FString, UCustomizationMaterialAsset*>& MaterialNamespacesToData);
 
-	/** For given map of socket names to skeletal meshes for attachment, attach to the Component */
+	/** For given array of socket names and skeletal meshes for attachment, attach to the Component */
 	void ProcessStaticAttachesForComponent(USkeletalMeshComponent* Component,
 	                                       const TArray<FCustomizationElementarySubmoduleStatic>& MeshesForAttach,
 	                                       const FString NameEnding,
@@ -69,8 +76,14 @@ protected:
 	template <class ComponentClass>
 	static FName GetExistingSocketNameOrNameNone(const ComponentClass* Component, FName SocketName);
 
-	/** Load CustomizationLoaderAsset */
-	void LoadFromAsset();
+	/** Load CustomizationLoaderAsset. Note that previous loaded meshes won't be destroyed,
+	 * you should call UnloadPreviousCustomization for that */
+	UFUNCTION(BlueprintCallable)
+	void LoadFromAsset(UCustomizationLoaderAsset* NewAssetConfig,
+	                   TArray<UCustomizationMaterialAsset*> NewMaterialConfigs);
+
+	UFUNCTION(BlueprintCallable)
+	void UnloadPreviousCustomization();
 
 public:
 	UCustomizationLoaderComponent();

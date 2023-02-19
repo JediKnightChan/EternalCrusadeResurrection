@@ -43,19 +43,28 @@ void UCustomizationSavingNameSpace::SaveLoadout(const bool bDoOverwrite)
 			}
 		}
 	}
-	
+
 	// Saving material customization assets
 	SaveMaterialCustomizationData(bDoOverwrite);
 
-	const FString SaveDestinationFilename = "CLA_" + UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
+	FString FinalFilename;
+	if (!SaveDestinationFilename.IsEmpty())
+	{
+		FinalFilename = SaveDestinationFilename.Replace(TEXT("/"), TEXT("_")).Replace(TEXT("\\"), TEXT("_"));
+	}
+	else
+	{
+		FinalFilename = "CLA_" + UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
+	}
+
 	const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(
-		SaveDestinationRootDirectory, "CLA/" + SaveDestinationFilename);
+		SaveDestinationRootDirectory, "CLA/" + FinalFilename);
 
 
 	// Creating package for saving data
 	UPackage* NewPackage = CreatePackage(*SaveDestinationPackagePath);
 	UCustomizationLoaderAsset* LoadoutSave = NewObject<UCustomizationLoaderAsset>(
-		NewPackage, *SaveDestinationFilename,
+		NewPackage, *FinalFilename,
 		EObjectFlags::RF_Public |
 		EObjectFlags::RF_Standalone |
 		RF_MarkAsRootSet);
@@ -98,7 +107,7 @@ void UCustomizationSavingNameSpace::SaveMaterialCustomizationData(bool bDoOverwr
 		TArray<TObjectPtr<USceneComponent>> DirectChildren;
 		GetChildrenComponents(false, DirectChildren);
 
-		const FString SaveDestinationFilename = UCustomizationUtilsLibrary::GetFilenameFromRelativePath(
+		const FString DestinationFilename = UCustomizationUtilsLibrary::GetFilenameFromRelativePath(
 			CustomizationData.RelativeSavePath);
 		const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(
 			SaveDestinationRootDirectory, CustomizationData.RelativeSavePath);
@@ -126,7 +135,7 @@ void UCustomizationSavingNameSpace::SaveMaterialCustomizationData(bool bDoOverwr
 		// Creating package for saving data
 		UPackage* NewPackage = CreatePackage(*SaveDestinationPackagePath);
 		UCustomizationMaterialAsset* DataAssetSave = NewObject<UCustomizationMaterialAsset>(
-			NewPackage, *SaveDestinationFilename,
+			NewPackage, *DestinationFilename,
 			EObjectFlags::RF_Public |
 			EObjectFlags::RF_Standalone |
 			RF_MarkAsRootSet);

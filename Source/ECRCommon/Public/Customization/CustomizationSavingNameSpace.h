@@ -62,6 +62,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString SaveDestinationRootDirectory;
 
+	/** Save destination filename for CLA asset (will be placed into <SaveDestinationRootDirectory>/CLA/ folder) */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FString SaveDestinationFilename;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TMap<FString, FCustomizationMaterialNamespaceData> MaterialCustomizationData;
 

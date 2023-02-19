@@ -6,6 +6,7 @@
 #include "Components/ChildActorComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "GameplayTagAssetInterface.h"
+#include "Gameplay/GAS/ECRPlayerOwnedTaggedActor.h"
 
 //////////////////////////////////////////////////////////////////////
 
@@ -149,7 +150,6 @@ bool FECRCharacterPartList::SpawnActorForEntry(FECRAppliedCharacterPartEntry& En
 {
 	bool bCreatedAnyActors = false;
 
-
 	if (Entry.Part.PartClass != nullptr)
 	{
 		UWorld* World = OwnerComponent->GetWorld();
@@ -181,6 +181,16 @@ bool FECRCharacterPartList::SpawnActorForEntry(FECRAppliedCharacterPartEntry& En
 				if (USceneComponent* SpawnedRootComponent = SpawnedActor->GetRootComponent())
 				{
 					SpawnedRootComponent->AddTickPrerequisiteComponent(ComponentToAttachTo);
+				}
+
+				// Set player state if it's AECRPlayerOwnedTaggedActor
+				if (AECRPlayerOwnedTaggedActor* PlayerOwnedTaggedActor = Cast<AECRPlayerOwnedTaggedActor>(
+					SpawnedActor))
+				{
+					if (const APawn* OwningPawn = Cast<APawn>(OwnerComponent->GetOwner()))
+					{
+						PlayerOwnedTaggedActor->SetPlayerState(OwningPawn->GetPlayerState());
+					}
 				}
 			}
 
