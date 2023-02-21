@@ -31,9 +31,6 @@ protected:
 	/** Get material namespace for given component */
 	FString GetFirstMaterialNameSpaceRaw(const USceneComponent* GivenComponent) const;
 
-	/** Get child (attachment) material customization namespace: split by '_' and return second part */
-	static FString GetAttachmentMaterialCustomizationNamespace(const USceneComponent* ChildComponent);
-
 	/** Get material customization data for given material namespace */
 	FCustomizationMaterialNamespaceData GetMaterialCustomizationData(FString MaterialNamespace) const;
 

@@ -62,13 +62,20 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString SaveDestinationRootDirectory;
 
-	/** Save destination filename for CLA asset (will be placed into <SaveDestinationRootDirectory>/CLA/ folder) */
+	/** Save destination filename for CLA asset (will be placed into <SaveDestinationRootDirectory>/CLA/ folder).
+	 *  Leave empty if you don't need to save loadout */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString SaveDestinationFilename;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TMap<FString, FCustomizationMaterialNamespaceData> MaterialCustomizationData;
 
+	/** This will be added to Elementary Module asset name (CEA_<CommonModuleNaming>_<ModuleName>).
+	 *  You can override it for specific modules in ModuleNamingMapping  */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FString CommonModuleNaming;
+
+	/** Overrides CommonModuleNaming for specific modules */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TMap<FString, FString> ModuleNamingMapping;
 

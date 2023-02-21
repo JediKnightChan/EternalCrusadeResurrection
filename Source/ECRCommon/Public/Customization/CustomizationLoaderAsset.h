@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "CustomizationElementaryAsset.h"
 #include "CustomizationLoaderAsset.generated.h"
 
 /**
@@ -17,5 +18,16 @@ class ECRCOMMON_API UCustomizationLoaderAsset : public UPrimaryDataAsset
 public:
 	/** Array of CustomizationElementaryAssets */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	TArray<class UCustomizationElementaryAsset*> ElementaryAssets;
+	TArray<UCustomizationElementaryAsset*> ElementaryAssets;
+
+	/** Get contents of this asset as map for merging */
+	FORCEINLINE TMap<FString, UCustomizationElementaryAsset*> GetAssetsAsMap()
+	{
+		TMap<FString, UCustomizationElementaryAsset*> Result;
+		for (UCustomizationElementaryAsset* Asset : ElementaryAssets)
+		{
+			Result[Asset->ModuleName] = Asset;
+		}
+		return Result;
+	}
 };

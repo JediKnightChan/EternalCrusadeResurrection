@@ -56,6 +56,9 @@ class ECRCOMMON_API UCustomizationElementaryAsset : public UPrimaryDataAsset
 	GENERATED_BODY()
 
 public:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	FString ModuleName;
+
 	/** The base of this module - Skeletal mesh */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class USkeletalMesh* BaseSkeletalMesh;

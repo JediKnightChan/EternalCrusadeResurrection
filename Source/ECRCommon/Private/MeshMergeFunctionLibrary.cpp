@@ -4,6 +4,7 @@
 #include "SkeletalMeshMerge.h"
 #include "Engine/SkeletalMesh.h"
 #include "Animation/Skeleton.h"
+#include "Customization/CustomizationElementaryAsset.h"
 
 
 USkeletalMesh* UMeshMergeFunctionLibrary::MergeMeshes(const FSkeletalMeshMergeParams& Params)
@@ -22,7 +23,7 @@ USkeletalMesh* UMeshMergeFunctionLibrary::MergeMeshes(const FSkeletalMeshMergePa
 		                                       ? EMeshBufferAccess::ForceCPUAndGPU
 		                                       : EMeshBufferAccess::Default;
 	const TArray<FSkelMeshMergeSectionMapping> SectionMappings;
-	
+
 	USkeletalMesh* BaseMesh = NewObject<USkeletalMesh>();
 	if (Params.Skeleton && Params.bSkeletonBefore)
 	{
@@ -40,4 +41,33 @@ USkeletalMesh* UMeshMergeFunctionLibrary::MergeMeshes(const FSkeletalMeshMergePa
 		BaseMesh->SetSkeleton(Params.Skeleton);
 	}
 	return BaseMesh;
+}
+
+TArray<UCustomizationElementaryAsset*> UMeshMergeFunctionLibrary::MergeCustomizationElementaryAssets(
+	TArray<UCustomizationElementaryAsset*> Assets1, TArray<UCustomizationElementaryAsset*> Assets2)
+{
+	TMap<FString, UCustomizationElementaryAsset*> ResultMap;
+	TArray<UCustomizationElementaryAsset*> ResultArray;
+
+	for (UCustomizationElementaryAsset* Asset : Assets1)
+	{
+		if (!Asset)
+		{
+			continue;
+		}
+		ResultMap.Add(Asset->ModuleName, Asset);
+	}
+
+	for (UCustomizationElementaryAsset* Asset : Assets2)
+	{
+		if (!Asset)
+		{
+			continue;
+		}
+		ResultMap.Add(Asset->ModuleName, Asset);
+	}
+
+	ResultMap.GenerateValueArray(ResultArray);
+
+	return ResultArray;
 }

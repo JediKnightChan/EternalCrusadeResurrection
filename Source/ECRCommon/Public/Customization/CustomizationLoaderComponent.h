@@ -79,8 +79,8 @@ protected:
 	/** Load CustomizationLoaderAsset. Note that previous loaded meshes won't be destroyed,
 	 * you should call UnloadPreviousCustomization for that */
 	UFUNCTION(BlueprintCallable)
-	void LoadFromAsset(UCustomizationLoaderAsset* NewAssetConfig,
-	                   TArray<UCustomizationMaterialAsset*> NewMaterialConfigs);
+	void LoadFromAsset(
+		TArray<UCustomizationElementaryAsset*> NewElementaryAssets, TArray<UCustomizationMaterialAsset*> NewMaterialConfigs);
 
 	UFUNCTION(BlueprintCallable)
 	void UnloadPreviousCustomization();

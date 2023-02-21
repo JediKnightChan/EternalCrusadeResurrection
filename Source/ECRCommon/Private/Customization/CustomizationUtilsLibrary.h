@@ -102,7 +102,7 @@ public:
 
 	/** Among given array of Skeletal Materials, get indices of materials with given MaterialSlotName */
 	FORCEINLINE static TArray<int32> GetMaterialIndices(TArray<FSkeletalMaterial>& SkeletalMeshMaterials,
-	                                        const FName MaterialSlotName)
+	                                                    const FName MaterialSlotName)
 	{
 		TArray<int32> MaterialIndices;
 		for (int32 MaterialIndex = 0; MaterialIndex < SkeletalMeshMaterials.Num(); ++MaterialIndex)
@@ -117,7 +117,8 @@ public:
 	}
 
 	/** Among given array of Static Materials, get indices of materials with given MaterialSlotName */
-	FORCEINLINE static TArray<int32> GetMaterialIndices(TArray<FStaticMaterial>& StaticMaterials, const FName MaterialSlotName)
+	FORCEINLINE static TArray<int32> GetMaterialIndices(TArray<FStaticMaterial>& StaticMaterials,
+	                                                    const FName MaterialSlotName)
 	{
 		TArray<int32> MaterialIndices;
 		for (int32 MaterialIndex = 0; MaterialIndex < StaticMaterials.Num(); ++MaterialIndex)
@@ -130,4 +131,19 @@ public:
 		}
 		return MaterialIndices;
 	}
+
+
+	/** Get child (attachment) material customization namespace: split by '_' and return second part */
+	FORCEINLINE static FString GetAttachmentMaterialCustomizationNamespace(const USceneComponent* ChildComponent)
+	{
+		const FString ChildComponentName = UCustomizationUtilsLibrary::GetDisplayNameEnd(ChildComponent);
+		FString AttachmentName, AttachmentMaterialNamespace;
+
+		// No CustomizationMaterialNamespace as no name part after '_'
+		if (!ChildComponentName.Split("_", &AttachmentName, &AttachmentMaterialNamespace))
+		{
+			return "";
+		}
+		return AttachmentMaterialNamespace;
+	};
 };

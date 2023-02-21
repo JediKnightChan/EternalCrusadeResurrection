@@ -43,7 +43,8 @@ void UCustomizationElementaryModule::OnChildAttached(USceneComponent* ChildCompo
 	}
 
 	// Get material customization data for child
-	const FString AttachmentMaterialNamespace = GetAttachmentMaterialCustomizationNamespace(ChildComponent);
+	const FString AttachmentMaterialNamespace = UCustomizationUtilsLibrary::GetAttachmentMaterialCustomizationNamespace(
+		ChildComponent);
 	const FCustomizationMaterialNamespaceData MaterialData = GetMaterialCustomizationData(
 		AttachmentMaterialNamespace);
 
@@ -51,20 +52,6 @@ void UCustomizationElementaryModule::OnChildAttached(USceneComponent* ChildCompo
 	UCustomizationMaterialNameSpace::ApplyMaterialChanges(ChildComponent, MaterialData.ScalarParameters,
 	                                                      MaterialData.VectorParameters,
 	                                                      MaterialData.TextureParameters, {});
-}
-
-FString UCustomizationElementaryModule::GetAttachmentMaterialCustomizationNamespace(
-	const USceneComponent* ChildComponent)
-{
-	const FString ChildComponentName = UCustomizationUtilsLibrary::GetDisplayNameEnd(ChildComponent);
-	FString AttachmentName, AttachmentMaterialNamespace;
-
-	// No CustomizationMaterialNamespace as no name part after '_'
-	if (!ChildComponentName.Split("_", &AttachmentName, &AttachmentMaterialNamespace))
-	{
-		return "";
-	}
-	return AttachmentMaterialNamespace;
 }
 
 
@@ -154,6 +141,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 	}
 
 	const FString SaveRootDir = CustomizationSavingNameSpace->SaveDestinationRootDirectory;
+
 	const FString ComponentName = UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
 
 	FString ModuleTypeName = ComponentName;
@@ -161,7 +149,12 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 	if (CustomizationSavingNameSpace->ModuleNamingMapping.Contains(ModuleTypeName))
 	{
 		ModuleCustomizationName = CustomizationSavingNameSpace->ModuleNamingMapping.FindRef(ModuleTypeName);
-	} else
+	}
+	else if (!CustomizationSavingNameSpace->CommonModuleNaming.IsEmpty())
+	{
+		ModuleCustomizationName = CustomizationSavingNameSpace->CommonModuleNaming;
+	}
+	else
 	{
 		ModuleCustomizationName = UCustomizationUtilsLibrary::GetDisplayNameEnd(CustomizationSavingNameSpace);
 	}
@@ -205,6 +198,9 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 		EObjectFlags::RF_Standalone |
 		RF_MarkAsRootSet);
 
+	// Setting name
+	DataAssetSave->ModuleName = ComponentName;
+
 	// Setting base mesh
 	DataAssetSave->BaseSkeletalMesh = SkeletalMesh;
 
@@ -244,8 +240,9 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 		if (ChildStaticMeshComponent != nullptr)
 		{
 			// Getting material namespace for child, if '_' in it, consider part before it
-			FString ChildStaticMeshComponentMaterialNamespace = GetAttachmentMaterialCustomizationNamespace(
-				ChildStaticMeshComponent);
+			FString ChildStaticMeshComponentMaterialNamespace =
+				UCustomizationUtilsLibrary::GetAttachmentMaterialCustomizationNamespace(
+					ChildStaticMeshComponent);
 
 			if (GetMaterialCustomizationData(ChildStaticMeshComponentMaterialNamespace).IsEmpty())
 			{
@@ -273,8 +270,9 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 		if (ChildSkeletalMeshComponent != nullptr)
 		{
 			// Getting material namespace for child, if '_' in it, consider part before it
-			FString ChildSkeletalMeshComponentMaterialNamespace = GetAttachmentMaterialCustomizationNamespace(
-				ChildSkeletalMeshComponent);
+			FString ChildSkeletalMeshComponentMaterialNamespace =
+				UCustomizationUtilsLibrary::GetAttachmentMaterialCustomizationNamespace(
+					ChildSkeletalMeshComponent);
 
 			if (GetMaterialCustomizationData(ChildSkeletalMeshComponentMaterialNamespace).IsEmpty())
 			{

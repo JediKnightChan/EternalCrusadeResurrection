@@ -22,10 +22,10 @@ protected:
 	/** ApplyMaterialChanges to child on child attached */
 	virtual void OnChildAttached(USceneComponent* ChildComponent) override;
 
-
 public:
 	// Sets default values for this component's properties
 	UCustomizationMaterialNameSpace();
+
 	FCustomizationMaterialNamespaceData GetMaterialCustomizationData() const;
 
 	/** Update child material parameters, pass non empty SlotNames array to limit material names that will be modified */

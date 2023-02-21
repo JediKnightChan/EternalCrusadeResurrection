@@ -54,7 +54,8 @@ void UCustomizationSavingNameSpace::SaveLoadout(const bool bDoOverwrite)
 	}
 	else
 	{
-		FinalFilename = "CLA_" + UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
+		// Don't save loadout
+		return;
 	}
 
 	const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(

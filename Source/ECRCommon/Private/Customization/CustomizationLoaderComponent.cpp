@@ -24,7 +24,7 @@ void UCustomizationLoaderComponent::BeginPlay()
 	Super::BeginPlay();
 	if (bLoadOnBeginPlay)
 	{
-		LoadFromAsset(nullptr, {});
+		LoadFromAsset({}, {});
 	}
 }
 
@@ -53,14 +53,30 @@ SceneComponentClass* UCustomizationLoaderComponent::SpawnChildComponent(USkeleta
 }
 
 
-void UCustomizationLoaderComponent::LoadFromAsset(UCustomizationLoaderAsset* NewAssetConfig,
+void UCustomizationLoaderComponent::LoadFromAsset(TArray<UCustomizationElementaryAsset*> NewElementaryAssets,
                                                   TArray<UCustomizationMaterialAsset*> NewMaterialConfigs)
 {
-	// Setting properties to passed args
-	if (NewAssetConfig)
+	// Setting new elementary assets if passed or old from config
+	TArray<UCustomizationElementaryAsset*> ElementaryAssets;
+	if (!NewElementaryAssets.IsEmpty())
 	{
-		AssetConfig = NewAssetConfig;
+		ElementaryAssets = NewElementaryAssets;
 	}
+	else
+	{
+		// Use elementary assets from asset config
+		if (AssetConfig == nullptr)
+		{
+			UE_LOG(LogTemp, Warning,
+			       TEXT("AssetConfig of CustomizationLoaderComponent %s is not specified, but tried to load it. "
+				       "Stopping loading it"),
+			       *(UKismetSystemLibrary::GetDisplayName(this)))
+			return;
+		}
+		AssetConfig->GetAssetsAsMap().GenerateValueArray(ElementaryAssets);
+	}
+
+	// Setting materials if overriden
 	if (!NewMaterialConfigs.IsEmpty())
 	{
 		MaterialConfigs = NewMaterialConfigs;
@@ -68,14 +84,6 @@ void UCustomizationLoaderComponent::LoadFromAsset(UCustomizationLoaderAsset* New
 
 	TMap<FString, TArray<UCustomizationElementaryAsset*>> MergeNamespaceToModules;
 	TMap<FName, TArray<UCustomizationElementaryAsset*>> AttachSocketNameToModules;
-
-	if (AssetConfig == nullptr)
-	{
-		UE_LOG(LogTemp, Warning,
-		       TEXT("AssetConfig of CustomizationLoaderComponent %s is not specified, stopping loading it"),
-		       *(UKismetSystemLibrary::GetDisplayName(this)))
-		return;
-	}
 
 	// Retrieving first parent skeletal mesh: for attaching created components to it
 	USkeletalMeshComponent* SkeletalMeshParentComponent = UCustomizationUtilsLibrary::GetFirstParentComponentOfType<
@@ -102,11 +110,14 @@ void UCustomizationLoaderComponent::LoadFromAsset(UCustomizationLoaderAsset* New
 	}
 
 	// Fill array of modules for attachment and merge 
-	for (UCustomizationElementaryAsset* ElementaryAsset : AssetConfig->ElementaryAssets)
+	for (UCustomizationElementaryAsset* ElementaryAsset : ElementaryAssets)
 	{
 		if (!ElementaryAsset)
 		{
-			UE_LOG(LogAssetData, Warning, TEXT("Elementary asset is null in %s"), *(GetNameSafe(AssetConfig)));
+			if (NewElementaryAssets.IsEmpty())
+			{
+				UE_LOG(LogAssetData, Warning, TEXT("Elementary asset is null in %s"), *(GetNameSafe(AssetConfig)));
+			}
 			continue;
 		}
 
