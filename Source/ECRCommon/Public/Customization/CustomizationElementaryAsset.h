@@ -21,6 +21,10 @@ struct ECRCOMMON_API FCustomizationElementarySubmoduleStatic
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FName SocketName;
 
+	/** Relative transform */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FTransform AttachTransform;
+
 	/** Static mesh */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString CustomizationNamespace;
@@ -40,6 +44,10 @@ struct ECRCOMMON_API FCustomizationElementarySubmoduleSkeletal
 	/** Socket name on UCustomizationElementaryModel to attach mesh to */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FName SocketName;
+
+	/** Relative transform */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FTransform AttachTransform;
 
 	/** Static mesh */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

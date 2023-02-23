@@ -250,7 +250,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 				       TEXT(
 					       "Material namespace of component %s isn't present in SavingNamespace or"
 					       " doesn't contain any parameters, it will be set to None"
-				       ), *(UKismetSystemLibrary::GetDisplayName(this)))
+				       ), *(UKismetSystemLibrary::GetDisplayName(ChildStaticMeshComponent)))
 				ChildStaticMeshComponentMaterialNamespace = "";
 			}
 
@@ -259,7 +259,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 
 			FCustomizationElementarySubmoduleStatic StaticData{
 				ChildStaticMeshComponent->GetStaticMesh(), SocketName,
-				ChildStaticMeshComponentMaterialNamespace
+				ChildStaticMeshComponent->GetRelativeTransform(), ChildStaticMeshComponentMaterialNamespace
 			};
 			DataAssetSave->StaticAttachments.Add(StaticData);
 		}
@@ -280,7 +280,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 				       TEXT(
 					       "Material namespace of component %s isn't present in SavingNamespace or"
 					       " doesn't contain any parameters, it will be set to None"
-				       ), *(UKismetSystemLibrary::GetDisplayName(this)))
+				       ), *(UKismetSystemLibrary::GetDisplayName(ChildSkeletalMeshComponent)))
 				ChildSkeletalMeshComponentMaterialNamespace = "";
 			}
 
@@ -289,7 +289,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 
 			FCustomizationElementarySubmoduleSkeletal SkeletalData{
 				ChildSkeletalMeshComponent->SkeletalMesh, SocketName,
-				ChildSkeletalMeshComponentMaterialNamespace
+				ChildSkeletalMeshComponent->GetRelativeTransform(), ChildSkeletalMeshComponentMaterialNamespace
 			};
 			DataAssetSave->SkeletalAttachments.Add(SkeletalData);
 		}

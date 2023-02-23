@@ -31,22 +31,24 @@ void UCustomizationLoaderComponent::BeginPlay()
 
 template <class SceneComponentClass>
 SceneComponentClass* UCustomizationLoaderComponent::SpawnChildComponent(USkeletalMeshComponent* Component,
-                                                                        const FString Name, const FName SocketName = "")
+                                                                        const FString Name, const FName SocketName,
+                                                                        const FTransform RelativeTransform)
 {
 	SceneComponentClass* ChildComponent = NewObject<SceneComponentClass>(
 		Component, SceneComponentClass::StaticClass(), FName{Name});
 
 	ChildComponent->RegisterComponent();
+	ChildComponent->SetRelativeTransform(RelativeTransform);
 	if (SocketName != "" && SocketName != "None")
 	{
-		ChildComponent->AttachToComponent(Component, FAttachmentTransformRules::SnapToTargetIncludingScale,
+		ChildComponent->AttachToComponent(Component, FAttachmentTransformRules::KeepRelativeTransform,
 		                                  SocketName);
 	}
 	else
 	{
-		ChildComponent->AttachToComponent(Component, FAttachmentTransformRules::SnapToTargetIncludingScale);
+		ChildComponent->AttachToComponent(Component, FAttachmentTransformRules::KeepRelativeTransform);
 	}
-	ChildComponent->CreationMethod = EComponentCreationMethod::UserConstructionScript;
+	ChildComponent->CreationMethod = EComponentCreationMethod::Native;
 
 	SpawnedComponents.Add(ChildComponent);
 	return ChildComponent;
@@ -185,12 +187,12 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
                                                                         MaterialNamespacesToData)
 {
 	// Attaching skeletal meshes to sockets
-	for (auto [SkeletalMesh, SocketName, CustomizationNamespace] : MeshesForAttach)
+	for (auto [SkeletalMesh, SocketName, SocketTransform, CustomizationNamespace] : MeshesForAttach)
 	{
 		SocketName = GetExistingSocketNameOrNameNone(Component, SocketName);
 		USkeletalMeshComponent* SkeletalMeshComponent = SpawnChildComponent<USkeletalMeshComponent>(
 			Component, NameEnding + SocketName.ToString(),
-			SocketName);
+			SocketName, SocketTransform);
 		SkeletalMeshComponent->SetSkeletalMesh(SkeletalMesh);
 
 		if (!CollisionProfileName.IsNone())
@@ -218,12 +220,12 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
                                                                       MaterialNamespacesToData)
 {
 	// Attaching skeletal meshes to sockets
-	for (auto [StaticMesh, SocketName, CustomizationNamespace] : MeshesForAttach)
+	for (auto [StaticMesh, SocketName, SocketTransform, CustomizationNamespace] : MeshesForAttach)
 	{
 		SocketName = GetExistingSocketNameOrNameNone(Component, SocketName);
 		UStaticMeshComponent* StaticMeshComponent = SpawnChildComponent<UStaticMeshComponent>(
 			Component, NameEnding + SocketName.ToString(),
-			SocketName);
+			SocketName, SocketTransform);
 		StaticMeshComponent->SetStaticMesh(StaticMesh);
 
 		if (!CollisionProfileName.IsNone())

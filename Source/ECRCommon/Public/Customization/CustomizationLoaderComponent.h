@@ -46,7 +46,8 @@ protected:
 	/** Spawn child component for Component and attach to it */
 	template <class SceneComponentClass>
 	SceneComponentClass* SpawnChildComponent(USkeletalMeshComponent* Component, const FString Name,
-	                                         const FName SocketName);
+	                                         const FName SocketName = "",
+	                                         const FTransform RelativeTransform = FTransform::Identity);
 
 	/** When no merger namespace, attach base meshes from CustomizationElementaryModules and process their attachments and materials */
 	void ProcessAttachmentModule(const FName SocketName, TArray<UCustomizationElementaryAsset*>& SocketNameAssets,
@@ -80,7 +81,8 @@ protected:
 	 * you should call UnloadPreviousCustomization for that */
 	UFUNCTION(BlueprintCallable)
 	void LoadFromAsset(
-		TArray<UCustomizationElementaryAsset*> NewElementaryAssets, TArray<UCustomizationMaterialAsset*> NewMaterialConfigs);
+		TArray<UCustomizationElementaryAsset*> NewElementaryAssets,
+		TArray<UCustomizationMaterialAsset*> NewMaterialConfigs);
 
 	UFUNCTION(BlueprintCallable)
 	void UnloadPreviousCustomization();
