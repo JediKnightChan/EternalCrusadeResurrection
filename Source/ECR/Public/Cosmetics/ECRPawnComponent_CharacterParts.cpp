@@ -7,6 +7,7 @@
 #include "Net/UnrealNetwork.h"
 #include "GameplayTagAssetInterface.h"
 #include "Gameplay/GAS/ECRPlayerOwnedTaggedActor.h"
+#include "Gameplay/Player/ECRPlayerState.h"
 
 //////////////////////////////////////////////////////////////////////
 
@@ -189,6 +190,8 @@ bool FECRCharacterPartList::SpawnActorForEntry(FECRAppliedCharacterPartEntry& En
 				{
 					if (const APawn* OwningPawn = Cast<APawn>(OwnerComponent->GetOwner()))
 					{
+						UE_LOG(LogTemp, Warning, TEXT("%s"), *(GetNameSafe(OwningPawn->GetController())));
+						UE_LOG(LogTemp, Warning, TEXT("%s"), *(GetNameSafe(OwningPawn->GetPlayerState())));
 						PlayerOwnedTaggedActor->SetPlayerState(OwningPawn->GetPlayerState());
 					}
 				}
