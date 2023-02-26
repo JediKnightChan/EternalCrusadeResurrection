@@ -134,6 +134,8 @@ void UAbilityTask_WaitForInteractableTargets::UpdateInteractableOptions(const FI
 {
 	TArray<FInteractionOption> NewOptions;
 
+	GrantAbilitiesToAbilitySystem(InteractQuery, InteractableTargets);
+
 	for (const TScriptInterface<IInteractableTarget>& InteractiveTarget : InteractableTargets)
 	{
 		TArray<FInteractionOption> TempOptions;
@@ -205,4 +207,58 @@ void UAbilityTask_WaitForInteractableTargets::UpdateInteractableOptions(const FI
 		CurrentOptions = NewOptions;
 		InteractableObjectsChanged.Broadcast(CurrentOptions);
 	}
+}
+
+void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(const FInteractionQuery& InteractQuery,
+                                                                            const TArray<TScriptInterface<
+	                                                                            IInteractableTarget>>&
+                                                                            InteractableTargets)
+{
+	TArray<FInteractionOption> Options;
+	for (const TScriptInterface<IInteractableTarget>& InteractiveTarget : InteractableTargets)
+	{
+		FInteractionOptionBuilder InteractionBuilder(InteractiveTarget, Options);
+		InteractiveTarget->GatherInteractionOptions(InteractQuery, InteractionBuilder);
+	}
+
+	// Removing ability specs from options that disappeared
+	for (FInteractionOption& LastUpdateOption : LastUpdateOptions)
+	{
+		bool bKeepLastUpdateOptionAbility = false;
+		for (FInteractionOption& NewOption : Options)
+		{
+			if (NewOption.InteractionAbilityToGrant == LastUpdateOption.InteractionAbilityToGrant)
+			{
+				bKeepLastUpdateOptionAbility = true;
+			}
+		}
+		if (!bKeepLastUpdateOptionAbility)
+		{
+			FObjectKey ObjectKey(LastUpdateOption.InteractionAbilityToGrant);
+			FGameplayAbilitySpecHandle SpecHandle = InteractionAbilityCache.FindRef(ObjectKey);
+			if (SpecHandle.IsValid())
+			{
+				AbilitySystemComponent->ClearAbility(SpecHandle);
+			}
+			InteractionAbilityCache.Remove(ObjectKey);
+		}
+	}
+
+	// Check if any of the options need to grant the ability to the user before they can be used.
+	for (FInteractionOption& Option : Options)
+	{
+		if (Option.InteractionAbilityToGrant)
+		{
+			// Grant the ability to the GAS, otherwise it won't be able to do whatever the interaction is.
+			FObjectKey ObjectKey(Option.InteractionAbilityToGrant);
+			if (!InteractionAbilityCache.Find(ObjectKey))
+			{
+				FGameplayAbilitySpec Spec(Option.InteractionAbilityToGrant, 1, INDEX_NONE, this);
+				FGameplayAbilitySpecHandle Handle = AbilitySystemComponent->GiveAbility(Spec);
+				InteractionAbilityCache.Add(ObjectKey, Handle);
+			}
+		}
+	}
+
+	LastUpdateOptions = Options;
 }

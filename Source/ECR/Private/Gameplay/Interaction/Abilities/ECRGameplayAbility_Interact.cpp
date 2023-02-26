@@ -5,7 +5,6 @@
 #include "Gameplay/Interaction/IInteractableTarget.h"
 #include "Gameplay/Interaction/InteractionStatics.h"
 #include "AbilitySystemBlueprintLibrary.h"
-#include "Gameplay/Interaction/Tasks/AbilityTask_GrantNearbyInteraction.h"
 #include "NativeGameplayTags.h"
 #include "GUI/IndicatorSystem/ECRIndicatorManagerComponent.h"
 #include "Gameplay/Player/ECRPlayerController.h"
@@ -27,11 +26,6 @@ void UECRGameplayAbility_Interact::ActivateAbility(const FGameplayAbilitySpecHan
 	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 
 	UAbilitySystemComponent* AbilitySystem = GetAbilitySystemComponentFromActorInfo();
-	if (AbilitySystem && AbilitySystem->GetOwnerRole() == ROLE_Authority)
-	{
-		UAbilityTask_GrantNearbyInteraction* Task = UAbilityTask_GrantNearbyInteraction::GrantAbilitiesForNearbyInteractors(this, InteractionScanRange, InteractionScanRate);
-		Task->ReadyForActivation();
-	}
 }
 
 void UECRGameplayAbility_Interact::UpdateInteractions(const TArray<FInteractionOption>& InteractiveOptions)

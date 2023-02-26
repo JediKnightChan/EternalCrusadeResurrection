@@ -44,8 +44,14 @@ protected:
 	void UpdateInteractableOptions(const FInteractionQuery& InteractQuery,
 	                               const TArray<TScriptInterface<IInteractableTarget>>& InteractableTargets);
 
+	void GrantAbilitiesToAbilitySystem(const FInteractionQuery& InteractQuery,
+	                                   const TArray<TScriptInterface<IInteractableTarget>>& InteractableTargets);
 	// Does the trace affect the aiming pitch
 	bool bTraceAffectsAimPitch = true;
 
 	TArray<FInteractionOption> CurrentOptions;
+
+private:
+	TMap<FObjectKey, FGameplayAbilitySpecHandle> InteractionAbilityCache;
+	TArray<FInteractionOption> LastUpdateOptions;
 };
