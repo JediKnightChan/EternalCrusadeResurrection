@@ -84,4 +84,8 @@ protected:
 	bool bVisible = true;
 
 	bool bEquipped = false;
+	
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	bool bVisibleOnEquip = true;
 };

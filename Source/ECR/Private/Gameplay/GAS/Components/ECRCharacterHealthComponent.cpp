@@ -71,12 +71,12 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 		                        UECRCharacterHealthSet::GetEvasionStaminaAttribute()).
 	                        AddUObject(this, &ThisClass::HandleEvasionStaminaChanged);
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-								UECRCharacterHealthSet::GetMaxEvasionStaminaAttribute()).
-							AddUObject(this, &ThisClass::HandleMaxEvasionStaminaChanged);
+		                        UECRCharacterHealthSet::GetMaxEvasionStaminaAttribute()).
+	                        AddUObject(this, &ThisClass::HandleMaxEvasionStaminaChanged);
 	OnEvasionStaminaChanged.Broadcast(this, CharacterHealthSet->GetEvasionStamina(),
 	                                  CharacterHealthSet->GetEvasionStamina(), nullptr);
 	OnMaxEvasionStaminaChanged.Broadcast(this, CharacterHealthSet->GetMaxEvasionStamina(),
-									  CharacterHealthSet->GetMaxEvasionStamina(), nullptr);
+	                                     CharacterHealthSet->GetMaxEvasionStamina(), nullptr);
 }
 
 void UECRCharacterHealthComponent::UninitializeFromAbilitySystem()
@@ -269,5 +269,10 @@ void UECRCharacterHealthComponent::HandleEvasionStaminaChanged(const FOnAttribut
 void UECRCharacterHealthComponent::HandleMaxEvasionStaminaChanged(const FOnAttributeChangeData& ChangeData)
 {
 	OnMaxEvasionStaminaChanged.Broadcast(this, ChangeData.OldValue, ChangeData.NewValue,
-									  GetInstigatorFromAttrChangeData(ChangeData));
+	                                     GetInstigatorFromAttrChangeData(ChangeData));
+}
+
+float UECRCharacterHealthComponent::GetDamageToKill()
+{
+	return GetMaxShield() + GetMaxHealth() + GetMaxBleedingHealth();
 }

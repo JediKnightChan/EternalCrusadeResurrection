@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ECRIndicatorManagerComponent.h"
+#include "GameplayTagContainer.h"
 #include "Widgets/SWidget.h"
 #include "Widgets/SNullWidget.h"
 #include "SceneView.h"
@@ -16,7 +17,8 @@ class UECRIndicatorManagerComponent;
 
 struct FIndicatorProjection
 {
-	bool Project(const UIndicatorDescriptor& IndicatorDescriptor, const FSceneViewProjectionData& InProjectionData, const FVector2D& ScreenSize, FVector& ScreenPositionWithDepth);
+	bool Project(const UIndicatorDescriptor& IndicatorDescriptor, const FSceneViewProjectionData& InProjectionData,
+	             const FVector2D& ScreenSize, FVector& ScreenPositionWithDepth);
 };
 
 UENUM(BlueprintType)
@@ -37,32 +39,47 @@ UCLASS(BlueprintType)
 class ECR_API UIndicatorDescriptor : public UObject
 {
 	GENERATED_BODY()
-	
+
 public:
-	UIndicatorDescriptor() { }
+	UIndicatorDescriptor()
+	{
+	}
 
 public:
 	UFUNCTION(BlueprintCallable)
 	UObject* GetDataObject() const { return DataObject; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetDataObject(UObject* InDataObject) { DataObject = InDataObject; }
-	
+
 	UFUNCTION(BlueprintCallable)
 	USceneComponent* GetSceneComponent() const { return Component; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetSceneComponent(USceneComponent* InComponent) { Component = InComponent; }
 
 	UFUNCTION(BlueprintCallable)
 	FName GetComponentSocketName() const { return ComponentSocketName; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetComponentSocketName(FName SocketName) { ComponentSocketName = SocketName; }
 
 	UFUNCTION(BlueprintCallable)
 	TSoftClassPtr<UUserWidget> GetIndicatorClass() const { return IndicatorWidgetClass; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetIndicatorClass(TSoftClassPtr<UUserWidget> InIndicatorWidgetClass)
 	{
 		IndicatorWidgetClass = InIndicatorWidgetClass;
+	}
+
+	UFUNCTION(BlueprintCallable)
+	FGameplayTag GetCategory() const { return Category; }
+
+	UFUNCTION(BlueprintCallable)
+	void SetCategory(FGameplayTag NewCategory)
+	{
+		Category = NewCategory;
 	}
 
 public:
@@ -75,6 +92,7 @@ public:
 	{
 		bAutoRemoveWhenIndicatorComponentIsNull = CanAutomaticallyRemove;
 	}
+
 	UFUNCTION(BlueprintCallable)
 	bool GetAutoRemoveWhenIndicatorComponentIsNull() const { return bAutoRemoveWhenIndicatorComponentIsNull; }
 
@@ -89,7 +107,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	bool GetIsVisible() const { return IsValid(GetSceneComponent()) && bVisible; }
-	
+
 	UFUNCTION(BlueprintCallable)
 	void SetDesiredVisibility(bool InVisible)
 	{
@@ -98,6 +116,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	EActorCanvasProjectionMode GetProjectionMode() const { return ProjectionMode; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetProjectionMode(EActorCanvasProjectionMode InProjectionMode)
 	{
@@ -107,6 +126,7 @@ public:
 	// Horizontal alignment to the point in space to place the indicator at.
 	UFUNCTION(BlueprintCallable)
 	EHorizontalAlignment GetHAlign() const { return HAlignment; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetHAlign(EHorizontalAlignment InHAlignment)
 	{
@@ -116,6 +136,7 @@ public:
 	// Vertical alignment to the point in space to place the indicator at.
 	UFUNCTION(BlueprintCallable)
 	EVerticalAlignment GetVAlign() const { return VAlignment; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetVAlign(EVerticalAlignment InVAlignment)
 	{
@@ -125,6 +146,7 @@ public:
 	// Clamp the indicator to the edge of the screen?
 	UFUNCTION(BlueprintCallable)
 	bool GetClampToScreen() const { return bClampToScreen; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetClampToScreen(bool bValue)
 	{
@@ -134,6 +156,7 @@ public:
 	// Show the arrow if clamping to the edge of the screen?
 	UFUNCTION(BlueprintCallable)
 	bool GetShowClampToScreenArrow() const { return bShowClampToScreenArrow; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetShowClampToScreenArrow(bool bValue)
 	{
@@ -143,6 +166,7 @@ public:
 	// The position offset for the indicator in world space.
 	UFUNCTION(BlueprintCallable)
 	FVector GetWorldPositionOffset() const { return WorldPositionOffset; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetWorldPositionOffset(FVector Offset)
 	{
@@ -152,6 +176,7 @@ public:
 	// The position offset for the indicator in screen space.
 	UFUNCTION(BlueprintCallable)
 	FVector2D GetScreenSpaceOffset() const { return ScreenSpaceOffset; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetScreenSpaceOffset(FVector2D Offset)
 	{
@@ -160,6 +185,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	FVector GetBoundingBoxAnchor() const { return BoundingBoxAnchor; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetBoundingBoxAnchor(FVector InBoundingBoxAnchor)
 	{
@@ -174,6 +200,7 @@ public:
 	// to always be in front of others.
 	UFUNCTION(BlueprintCallable)
 	int32 GetPriority() const { return Priority; }
+
 	UFUNCTION(BlueprintCallable)
 	void SetPriority(int32 InPriority)
 	{
@@ -183,7 +210,7 @@ public:
 public:
 	UECRIndicatorManagerComponent* GetIndicatorManagerComponent() { return ManagerPtr.Get(); }
 	void SetIndicatorManagerComponent(UECRIndicatorManagerComponent* InManager);
-	
+
 	UFUNCTION(BlueprintCallable)
 	void UnregisterIndicator();
 
@@ -219,19 +246,22 @@ private:
 private:
 	friend class SActorCanvas;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	FGameplayTag Category;
+
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TObjectPtr<UObject> DataObject;
-	
-	UPROPERTY()
+
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TObjectPtr<USceneComponent> Component;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	FName ComponentSocketName = NAME_None;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TSoftClassPtr<UUserWidget> IndicatorWidgetClass;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TWeakObjectPtr<UECRIndicatorManagerComponent> ManagerPtr;
 
 	TWeakPtr<SWidget> Content;

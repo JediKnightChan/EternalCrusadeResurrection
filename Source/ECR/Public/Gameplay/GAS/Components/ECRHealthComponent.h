@@ -87,10 +87,13 @@ public:
 
 	// Ends the death sequence for the owner.
 	virtual void FinishDeath();
+	
 
 	// Applies enough damage to kill the owner.
 	virtual void DamageSelfDestruct(bool bFellOutOfWorld = false);
 
+	// Gets enough damage to kill the owner.
+	virtual float GetDamageToKill();
 public:
 	// Delegate fired when the health value has changed.
 	UPROPERTY(BlueprintAssignable)

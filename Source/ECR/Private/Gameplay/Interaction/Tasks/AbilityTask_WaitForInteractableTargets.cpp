@@ -7,6 +7,7 @@
 #include "Gameplay/Interaction/InteractionStatics.h"
 #include "Gameplay/Interaction/InteractionQuery.h"
 #include "AbilitySystemComponent.h"
+#include "EnhancedInputSubsystems.h"
 #include "GameFramework/PlayerController.h"
 
 UAbilityTask_WaitForInteractableTargets::UAbilityTask_WaitForInteractableTargets(
@@ -214,6 +215,34 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 	                                                                            IInteractableTarget>>&
                                                                             InteractableTargets)
 {
+	// Removing abilities queued for removal
+	TArray<FGameplayAbilitySpecHandle> HandlesToRemove;
+	AbilitiesToRemove.GetKeys(HandlesToRemove);
+
+	for (FGameplayAbilitySpecHandle Handle : HandlesToRemove)
+	{
+		FGameplayAbilitySpec* Spec = AbilitySystemComponent->FindAbilitySpecFromHandle(Handle);
+		if (Spec)
+		{
+			if (!Spec->IsActive())
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Clearing ability"))
+
+				AbilitySystemComponent->ClearAbility(Handle);
+				FObjectKey ObjectKey = AbilitiesToRemove.FindRef(Handle);
+				AbilitiesToRemove.Remove(Handle);
+				InteractionAbilityCache.Remove(ObjectKey);
+			}
+		}
+		else
+		{
+			FObjectKey ObjectKey = AbilitiesToRemove.FindRef(Handle);
+			AbilitiesToRemove.Remove(Handle);
+			InteractionAbilityCache.Remove(ObjectKey);
+		}
+	}
+
+	// Gathering options
 	TArray<FInteractionOption> Options;
 	for (const TScriptInterface<IInteractableTarget>& InteractiveTarget : InteractableTargets)
 	{
@@ -221,7 +250,7 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 		InteractiveTarget->GatherInteractionOptions(InteractQuery, InteractionBuilder);
 	}
 
-	// Removing ability specs from options that disappeared
+	// Queueing ability specs from options that disappeared for remove
 	for (FInteractionOption& LastUpdateOption : LastUpdateOptions)
 	{
 		bool bKeepLastUpdateOptionAbility = false;
@@ -236,11 +265,24 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 		{
 			FObjectKey ObjectKey(LastUpdateOption.InteractionAbilityToGrant);
 			FGameplayAbilitySpecHandle SpecHandle = InteractionAbilityCache.FindRef(ObjectKey);
-			if (SpecHandle.IsValid())
+
+			// Queueing for remove
+			AbilitiesToRemove.Add(SpecHandle, ObjectKey);
+
+			// Removing mapping context if present
+			APlayerController* Controller = Ability->GetActorInfo().PlayerController.Get();
+			UE_LOG(LogTemp, Warning, TEXT("Remove controller %s"), *(GetNameSafe(Controller)))
+			if (Controller)
 			{
-				AbilitySystemComponent->ClearAbility(SpecHandle);
+				if (const ULocalPlayer* LocalPlayer = Controller->GetLocalPlayer())
+				{
+					if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<
+						UEnhancedInputLocalPlayerSubsystem>())
+					{
+						Subsystem->RemoveMappingContext(LastUpdateOption.MappingContext);
+					}
+				}
 			}
-			InteractionAbilityCache.Remove(ObjectKey);
 		}
 	}
 
@@ -253,9 +295,36 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 			FObjectKey ObjectKey(Option.InteractionAbilityToGrant);
 			if (!InteractionAbilityCache.Find(ObjectKey))
 			{
-				FGameplayAbilitySpec Spec(Option.InteractionAbilityToGrant, 1, INDEX_NONE, this);
-				FGameplayAbilitySpecHandle Handle = AbilitySystemComponent->GiveAbility(Spec);
-				InteractionAbilityCache.Add(ObjectKey, Handle);
+				FGameplayAbilitySpec Spec(Option.InteractionAbilityToGrant, 1);
+				Spec.SourceObject = Option.AbilitySource ? Option.AbilitySource : this;
+				if (Option.InputTag.IsValid())
+				{
+					Spec.DynamicAbilityTags.AddTag(Option.InputTag);
+				}
+
+				APlayerController* Controller = Ability->GetActorInfo().PlayerController.Get();
+				UE_LOG(LogTemp, Warning, TEXT("Grant controller %s"), *(GetNameSafe(Controller)))
+
+				if (Controller)
+				{
+					if (const ULocalPlayer* LocalPlayer = Controller->GetLocalPlayer())
+					{
+						if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<
+							UEnhancedInputLocalPlayerSubsystem>())
+						{
+							Subsystem->AddMappingContext(Option.MappingContext, Option.MappingContextPriority);
+						}
+					}
+				}
+
+				if (AbilitySystemComponent->IsOwnerActorAuthoritative())
+				{
+					FGameplayAbilitySpecHandle Handle = AbilitySystemComponent->GiveAbility(Spec);
+					InteractionAbilityCache.Add(ObjectKey, Handle);
+				} else
+				{
+					InteractionAbilityCache.Add(ObjectKey, FGameplayAbilitySpecHandle{});
+				}
 			}
 		}
 	}

@@ -129,6 +129,7 @@ protected:
 	virtual void HandleEvasionStaminaChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleMaxEvasionStaminaChanged(const FOnAttributeChangeData& ChangeData);
 
+	virtual float GetDamageToKill() override;
 protected:
 	// Health set used by this component. Duplicates HealthSet.
 	UPROPERTY()

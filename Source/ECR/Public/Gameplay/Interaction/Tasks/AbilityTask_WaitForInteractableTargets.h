@@ -46,6 +46,7 @@ protected:
 
 	void GrantAbilitiesToAbilitySystem(const FInteractionQuery& InteractQuery,
 	                                   const TArray<TScriptInterface<IInteractableTarget>>& InteractableTargets);
+
 	// Does the trace affect the aiming pitch
 	bool bTraceAffectsAimPitch = true;
 
@@ -54,4 +55,5 @@ protected:
 private:
 	TMap<FObjectKey, FGameplayAbilitySpecHandle> InteractionAbilityCache;
 	TArray<FInteractionOption> LastUpdateOptions;
+	TMap<FGameplayAbilitySpecHandle, FObjectKey> AbilitiesToRemove;
 };

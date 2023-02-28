@@ -28,9 +28,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Indicator)
 	void RemoveIndicator(UIndicatorDescriptor* IndicatorDescriptor);
 
-	DECLARE_EVENT_OneParam(UECRIndicatorManagerComponent, FIndicatorEvent, UIndicatorDescriptor* Descriptor)
-	FIndicatorEvent OnIndicatorAdded;
-	FIndicatorEvent OnIndicatorRemoved;
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnIndicatorAdded(UIndicatorDescriptor* IndicatorDescriptor);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnIndicatorRemoved(UIndicatorDescriptor* IndicatorDescriptor);
 
 	const TArray<UIndicatorDescriptor*>& GetIndicators() const { return Indicators; }
 

@@ -11,6 +11,7 @@
 #include "GUI/IndicatorSystem/IndicatorDescriptor.h"
 
 UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_Ability_Interaction_Activate, "Ability.Interaction.Activate");
+UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_Indicator_Category_Interaction, "GUI.Indicators.Category.Interaction");
 UE_DEFINE_GAMEPLAY_TAG(TAG_INTERACTION_DURATION_MESSAGE, "Ability.Interaction.Duration.Message");
 
 UECRGameplayAbility_Interact::UECRGameplayAbility_Interact(const FObjectInitializer& ObjectInitializer)
@@ -21,7 +22,10 @@ UECRGameplayAbility_Interact::UECRGameplayAbility_Interact(const FObjectInitiali
 	NetExecutionPolicy = EGameplayAbilityNetExecutionPolicy::LocalPredicted;
 }
 
-void UECRGameplayAbility_Interact::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
+void UECRGameplayAbility_Interact::ActivateAbility(const FGameplayAbilitySpecHandle Handle,
+                                                   const FGameplayAbilityActorInfo* ActorInfo,
+                                                   const FGameplayAbilityActivationInfo ActivationInfo,
+                                                   const FGameplayEventData* TriggerEventData)
 {
 	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 
@@ -42,12 +46,16 @@ void UECRGameplayAbility_Interact::UpdateInteractions(const TArray<FInteractionO
 
 			for (const FInteractionOption& InteractionOption : InteractiveOptions)
 			{
-				AActor* InteractableTargetActor = UInteractionStatics::GetActorFromInteractableTarget(InteractionOption.InteractableTarget);
+				AActor* InteractableTargetActor = UInteractionStatics::GetActorFromInteractableTarget(
+					InteractionOption.InteractableTarget);
 
-				TSoftClassPtr<UUserWidget> InteractionWidgetClass = 
-					InteractionOption.InteractionWidgetClass.IsNull() ? DefaultInteractionWidgetClass : InteractionOption.InteractionWidgetClass;
+				TSoftClassPtr<UUserWidget> InteractionWidgetClass =
+					InteractionOption.InteractionWidgetClass.IsNull()
+						? DefaultInteractionWidgetClass
+						: InteractionOption.InteractionWidgetClass;
 
 				UIndicatorDescriptor* Indicator = NewObject<UIndicatorDescriptor>();
+				Indicator->SetCategory(TAG_Indicator_Category_Interaction);
 				Indicator->SetDataObject(InteractableTargetActor);
 				Indicator->SetSceneComponent(InteractableTargetActor->GetRootComponent());
 				Indicator->SetIndicatorClass(InteractionWidgetClass);
@@ -55,10 +63,6 @@ void UECRGameplayAbility_Interact::UpdateInteractions(const TArray<FInteractionO
 
 				Indicators.Add(Indicator);
 			}
-		}
-		else
-		{
-			//TODO This should probably be a noisy warning.  Why are we updating interactions on a PC that can never do anything with them?
 		}
 	}
 
@@ -77,8 +81,15 @@ void UECRGameplayAbility_Interact::TriggerInteraction()
 	{
 		const FInteractionOption& InteractionOption = CurrentOptions[0];
 
+		if (InteractionOption.InputTag.IsValid())
+		{
+			// Should be activated via input tag, not by same input as interaction
+			return;
+		}
+
 		AActor* Instigator = GetAvatarActorFromActorInfo();
-		AActor* InteractableTargetActor = UInteractionStatics::GetActorFromInteractableTarget(InteractionOption.InteractableTarget);
+		AActor* InteractableTargetActor = UInteractionStatics::GetActorFromInteractableTarget(
+			InteractionOption.InteractableTarget);
 
 		// Allow the target to customize the event data we're about to pass in, in case the ability needs custom data
 		// that only the actor knows.

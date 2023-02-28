@@ -150,7 +150,13 @@ UECREquipmentInstance* UECREquipmentManagerComponent::EquipItem(TSubclassOf<UECR
 		if (Result != nullptr)
 		{
 			Result->OnEquipped();
-			SetItemVisible(Result);
+			if (Result->bVisibleOnEquip)
+			{
+				SetItemVisible(Result);
+			} else
+			{
+				Result->SetVisibility(false);
+			}
 		}
 	}
 	return Result;

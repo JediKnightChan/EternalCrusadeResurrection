@@ -302,6 +302,11 @@ void UECRHealthComponent::FinishDeath()
 	Owner->ForceNetUpdate();
 }
 
+float UECRHealthComponent::GetDamageToKill()
+{
+	return GetMaxHealth();
+}
+
 void UECRHealthComponent::DamageSelfDestruct(bool bFellOutOfWorld)
 {
 	if ((DeathState == EECRDeathState::NotDead) && AbilitySystemComponent)
@@ -337,7 +342,7 @@ void UECRHealthComponent::DamageSelfDestruct(bool bFellOutOfWorld)
 			Spec->AddDynamicAssetTag(TAG_Gameplay_FellOutOfWorld);
 		}
 
-		const float DamageAmount = GetMaxHealth();
+		const float DamageAmount = GetDamageToKill();
 
 		Spec->SetSetByCallerMagnitude(FECRGameplayTags::Get().SetByCaller_Damage, DamageAmount);
 		AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*Spec);

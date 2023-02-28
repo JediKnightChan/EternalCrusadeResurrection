@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Abilities/GameplayAbility.h"
+#include "InputMappingContext.h"
 #include "InteractionOption.generated.h"
 
 class IInteractableTarget;
@@ -20,13 +21,25 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	TScriptInterface<IInteractableTarget> InteractableTarget;
 
-	/** Simple text the interaction might return */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FText Text;
+	/** Source object that will be set in ability. If empty, will be set to ability task */
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
+	UObject* AbilitySource;
 
-	/** Simple sub-text the interaction might return */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FText SubText;
+	// Input
+	//--------------------------------------------------------------
+
+	/** Input Tag. Leave empty if no separate input, but standard for interaction */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Meta = (Categories = "InputTag"))
+	FGameplayTag InputTag;
+
+	/** Mapping context granted and removed along with the ability.
+	 *  For example, for input tag replacing another with the same button */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UInputMappingContext* MappingContext;
+
+	/** Priority for input context */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	int32 MappingContextPriority;
 
 	// METHODS OF INTERACTION
 	//--------------------------------------------------------------
@@ -62,12 +75,13 @@ public:
 	FORCEINLINE bool operator==(const FInteractionOption& Other) const
 	{
 		return InteractableTarget == Other.InteractableTarget &&
-			InteractionAbilityToGrant == Other.InteractionAbilityToGrant&&
+			InteractionAbilityToGrant == Other.InteractionAbilityToGrant &&
 			TargetAbilitySystem == Other.TargetAbilitySystem &&
 			TargetInteractionAbilityHandle == Other.TargetInteractionAbilityHandle &&
 			InteractionWidgetClass == Other.InteractionWidgetClass &&
-			Text.IdenticalTo(Other.Text) &&
-			SubText.IdenticalTo(Other.SubText);
+			InputTag == Other.InputTag &&
+			MappingContext == Other.MappingContext &&
+			MappingContextPriority == Other.MappingContextPriority;
 	}
 
 	FORCEINLINE bool operator!=(const FInteractionOption& Other) const
