@@ -130,6 +130,10 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, meta=(DisplayName="OnDeathFinished"))
 	void K2_OnDeathFinished();
 
+	// Called when player state changed
+	UFUNCTION(BlueprintImplementableEvent, meta=(DisplayName="OnPlayerStateChanged"))
+	void K2_OnPlayerStateChanged();
+
 	virtual void OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 PreviousCustomMode) override;
 	void SetMovementModeTag(EMovementMode MovementMode, uint8 CustomMovementMode, bool bTagEnabled);
 

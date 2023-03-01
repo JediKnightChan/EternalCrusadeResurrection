@@ -147,6 +147,25 @@ FGameplayTagContainer FECRCharacterPartList::CollectCombinedTags() const
 	return Result;
 }
 
+void FECRCharacterPartList::UpdatePlayerStateOnEntries()
+{
+	for (const FECRAppliedCharacterPartEntry& Entry : Entries)
+	{
+		if (Entry.SpawnedComponent != nullptr)
+		{
+			// Set player state if it's AECRPlayerOwnedTaggedActor
+			if (AECRPlayerOwnedTaggedActor* PlayerOwnedTaggedActor = Cast<AECRPlayerOwnedTaggedActor>(
+				Entry.SpawnedComponent->GetChildActor()))
+			{
+				if (const APawn* OwningPawn = Cast<APawn>(OwnerComponent->GetOwner()))
+				{
+					PlayerOwnedTaggedActor->SetPlayerState(OwningPawn->GetPlayerState());
+				}
+			}
+		}
+	}
+}
+
 bool FECRCharacterPartList::SpawnActorForEntry(FECRAppliedCharacterPartEntry& Entry)
 {
 	bool bCreatedAnyActors = false;
@@ -190,8 +209,6 @@ bool FECRCharacterPartList::SpawnActorForEntry(FECRAppliedCharacterPartEntry& En
 				{
 					if (const APawn* OwningPawn = Cast<APawn>(OwnerComponent->GetOwner()))
 					{
-						UE_LOG(LogTemp, Warning, TEXT("%s"), *(GetNameSafe(OwningPawn->GetController())));
-						UE_LOG(LogTemp, Warning, TEXT("%s"), *(GetNameSafe(OwningPawn->GetPlayerState())));
 						PlayerOwnedTaggedActor->SetPlayerState(OwningPawn->GetPlayerState());
 					}
 				}
@@ -325,6 +342,11 @@ FGameplayTagContainer UECRPawnComponent_CharacterParts::GetCombinedTags(FGamepla
 	{
 		return Result;
 	}
+}
+
+void UECRPawnComponent_CharacterParts::UpdatePlayerStateOnEntries()
+{
+	CharacterPartList.UpdatePlayerStateOnEntries();
 }
 
 void UECRPawnComponent_CharacterParts::BroadcastChanged()

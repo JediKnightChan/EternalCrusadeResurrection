@@ -252,6 +252,7 @@ void AECRCharacter::OnRep_PlayerState()
 	Super::OnRep_PlayerState();
 
 	PawnExtComponent->HandlePlayerStateReplicated();
+	K2_OnPlayerStateChanged();
 }
 
 void AECRCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

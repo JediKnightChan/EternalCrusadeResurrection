@@ -16,7 +16,8 @@ class UChildActorComponent;
 class UECRPawnComponent_CharacterParts;
 struct FECRCharacterPartList;
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FECRSpawnedCharacterPartsChanged, UECRPawnComponent_CharacterParts*, ComponentWithChangedParts);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FECRSpawnedCharacterPartsChanged, UECRPawnComponent_CharacterParts*,
+                                            ComponentWithChangedParts);
 
 //////////////////////////////////////////////////////////////////////
 
@@ -27,7 +28,8 @@ struct FECRAppliedCharacterPartEntry : public FFastArraySerializerItem
 	GENERATED_BODY()
 
 	FECRAppliedCharacterPartEntry()
-	{}
+	{
+	}
 
 	FString GetDebugString() const;
 
@@ -76,7 +78,8 @@ public:
 
 	bool NetDeltaSerialize(FNetDeltaSerializeInfo& DeltaParms)
 	{
-		return FFastArraySerializer::FastArrayDeltaSerialize<FECRAppliedCharacterPartEntry, FECRCharacterPartList>(Entries, DeltaParms, *this);
+		return FFastArraySerializer::FastArrayDeltaSerialize<FECRAppliedCharacterPartEntry, FECRCharacterPartList>(
+			Entries, DeltaParms, *this);
 	}
 
 	FECRCharacterPartHandle AddEntry(FECRCharacterPart NewPart);
@@ -84,6 +87,8 @@ public:
 	void ClearAllEntries(bool bBroadcastChangeDelegate);
 
 	FGameplayTagContainer CollectCombinedTags() const;
+	void UpdatePlayerStateOnEntries();
+
 private:
 	friend UECRPawnComponent_CharacterParts;
 
@@ -103,7 +108,7 @@ private:
 	int32 PartHandleCounter = 0;
 };
 
-template<>
+template <>
 struct TStructOpsTypeTraits<FECRCharacterPartList> : public TStructOpsTypeTraitsBase2<FECRCharacterPartList>
 {
 	enum { WithNetDeltaSerializer = true };
@@ -151,6 +156,10 @@ public:
 	// Returns the set of combined gameplay tags from attached character parts, optionally filtered to only tags that start with the specified root
 	UFUNCTION(BlueprintCallable, BlueprintPure=false, BlueprintCosmetic, Category=Cosmetics)
 	FGameplayTagContainer GetCombinedTags(FGameplayTag RequiredPrefix) const;
+
+	// Among spawned actors that depend on player state, update player state reference
+	UFUNCTION(BlueprintCallable)
+	void UpdatePlayerStateOnEntries();
 
 	void BroadcastChanged();
 
