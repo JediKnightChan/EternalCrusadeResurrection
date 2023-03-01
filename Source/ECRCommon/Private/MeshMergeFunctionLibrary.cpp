@@ -71,3 +71,32 @@ TArray<UCustomizationElementaryAsset*> UMeshMergeFunctionLibrary::MergeCustomiza
 
 	return ResultArray;
 }
+
+TArray<UCustomizationMaterialAsset*> UMeshMergeFunctionLibrary::MergeCustomizationMaterialAssets(
+	TArray<UCustomizationMaterialAsset*> Materials1, TArray<UCustomizationMaterialAsset*> Materials2)
+{
+	TMap<FString, UCustomizationMaterialAsset*> ResultMap;
+	TArray<UCustomizationMaterialAsset*> ResultArray;
+
+	for (UCustomizationMaterialAsset* Material : Materials1)
+	{
+		if (!Material)
+		{
+			continue;
+		}
+		ResultMap.Add(Material->MaterialNamespace, Material);
+	}
+
+	for (UCustomizationMaterialAsset* Material : Materials2)
+	{
+		if (!Material)
+		{
+			continue;
+		}
+		ResultMap.Add(Material->MaterialNamespace, Material);
+	}
+
+	ResultMap.GenerateValueArray(ResultArray);
+
+	return ResultArray;
+}

@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Customization/CustomizationMaterialAsset.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "MeshMergeFunctionLibrary.generated.h"
 
@@ -58,6 +59,11 @@ public:
 	static USkeletalMesh* MergeMeshes(const FSkeletalMeshMergeParams& Params);
 
 	UFUNCTION(BlueprintCallable)
-	static TArray<UCustomizationElementaryAsset*> MergeCustomizationElementaryAssets(TArray<UCustomizationElementaryAsset*> Assets1,
-	                                                          TArray<UCustomizationElementaryAsset*> Assets2);
+	static TArray<UCustomizationElementaryAsset*> MergeCustomizationElementaryAssets(
+		TArray<UCustomizationElementaryAsset*> Assets1,
+		TArray<UCustomizationElementaryAsset*> Assets2);
+
+	UFUNCTION(BlueprintCallable)
+	static TArray<UCustomizationMaterialAsset*> MergeCustomizationMaterialAssets(
+		TArray<UCustomizationMaterialAsset*> Materials1, TArray<UCustomizationMaterialAsset*> Materials2);
 };
