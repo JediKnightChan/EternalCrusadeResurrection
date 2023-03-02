@@ -34,34 +34,37 @@ void UECRGameplayAbility_Interact::ActivateAbility(const FGameplayAbilitySpecHan
 
 void UECRGameplayAbility_Interact::UpdateInteractions(const TArray<FInteractionOption>& InteractiveOptions)
 {
-	if (AECRPlayerController* PC = GetECRPlayerControllerFromActorInfo())
+	if (AController* PC = GetControllerFromActorInfo())
 	{
-		if (UECRIndicatorManagerComponent* IndicatorManager = UECRIndicatorManagerComponent::GetComponent(PC))
+		if (PC->IsLocalPlayerController())
 		{
-			for (UIndicatorDescriptor* Indicator : Indicators)
+			if (UECRIndicatorManagerComponent* IndicatorManager = UECRIndicatorManagerComponent::GetComponent(PC))
 			{
-				IndicatorManager->RemoveIndicator(Indicator);
-			}
-			Indicators.Reset();
+				for (UIndicatorDescriptor* Indicator : Indicators)
+				{
+					IndicatorManager->RemoveIndicator(Indicator);
+				}
+				Indicators.Reset();
 
-			for (const FInteractionOption& InteractionOption : InteractiveOptions)
-			{
-				AActor* InteractableTargetActor = UInteractionStatics::GetActorFromInteractableTarget(
-					InteractionOption.InteractableTarget);
+				for (const FInteractionOption& InteractionOption : InteractiveOptions)
+				{
+					AActor* InteractableTargetActor = UInteractionStatics::GetActorFromInteractableTarget(
+						InteractionOption.InteractableTarget);
 
-				TSoftClassPtr<UUserWidget> InteractionWidgetClass =
-					InteractionOption.InteractionWidgetClass.IsNull()
-						? DefaultInteractionWidgetClass
-						: InteractionOption.InteractionWidgetClass;
+					TSoftClassPtr<UUserWidget> InteractionWidgetClass =
+						InteractionOption.InteractionWidgetClass.IsNull()
+							? DefaultInteractionWidgetClass
+							: InteractionOption.InteractionWidgetClass;
 
-				UIndicatorDescriptor* Indicator = NewObject<UIndicatorDescriptor>();
-				Indicator->SetCategory(TAG_Indicator_Category_Interaction);
-				Indicator->SetDataObject(InteractableTargetActor);
-				Indicator->SetSceneComponent(InteractableTargetActor->GetRootComponent());
-				Indicator->SetIndicatorClass(InteractionWidgetClass);
-				IndicatorManager->AddIndicator(Indicator);
+					UIndicatorDescriptor* Indicator = NewObject<UIndicatorDescriptor>();
+					Indicator->SetCategory(TAG_Indicator_Category_Interaction);
+					Indicator->SetDataObject(InteractableTargetActor);
+					Indicator->SetSceneComponent(InteractableTargetActor->GetRootComponent());
+					Indicator->SetIndicatorClass(InteractionWidgetClass);
+					IndicatorManager->AddIndicator(Indicator);
 
-				Indicators.Add(Indicator);
+					Indicators.Add(Indicator);
+				}
 			}
 		}
 	}
