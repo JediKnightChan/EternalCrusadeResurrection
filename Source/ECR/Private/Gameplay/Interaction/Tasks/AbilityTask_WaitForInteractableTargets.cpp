@@ -226,8 +226,6 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 		{
 			if (!Spec->IsActive())
 			{
-				UE_LOG(LogTemp, Warning, TEXT("Clearing ability"))
-
 				AbilitySystemComponent->ClearAbility(Handle);
 				FObjectKey ObjectKey = AbilitiesToRemove.FindRef(Handle);
 				AbilitiesToRemove.Remove(Handle);
@@ -271,7 +269,6 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 
 			// Removing mapping context if present
 			APlayerController* Controller = Ability->GetActorInfo().PlayerController.Get();
-			UE_LOG(LogTemp, Warning, TEXT("Remove controller %s"), *(GetNameSafe(Controller)))
 			if (Controller)
 			{
 				if (const ULocalPlayer* LocalPlayer = Controller->GetLocalPlayer())
@@ -303,7 +300,6 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 				}
 
 				APlayerController* Controller = Ability->GetActorInfo().PlayerController.Get();
-				UE_LOG(LogTemp, Warning, TEXT("Grant controller %s"), *(GetNameSafe(Controller)))
 
 				if (Controller)
 				{
@@ -321,7 +317,8 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 				{
 					FGameplayAbilitySpecHandle Handle = AbilitySystemComponent->GiveAbility(Spec);
 					InteractionAbilityCache.Add(ObjectKey, Handle);
-				} else
+				}
+				else
 				{
 					InteractionAbilityCache.Add(ObjectKey, FGameplayAbilitySpecHandle{});
 				}

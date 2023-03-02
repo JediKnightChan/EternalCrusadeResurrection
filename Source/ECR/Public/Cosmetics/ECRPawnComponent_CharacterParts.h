@@ -163,6 +163,9 @@ public:
 
 	void BroadcastChanged();
 
+	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
+	void SetAdditionalCosmeticTags(const FGameplayTagContainer NewTags);
+
 public:
 	// Delegate that will be called when the list of spawned character parts has changed
 	UPROPERTY(BlueprintAssignable, Category=Cosmetics, BlueprintCallable)
@@ -176,4 +179,8 @@ private:
 	// Rules for how to pick a body style mesh for animation to play on, based on character part cosmetics tags
 	UPROPERTY(EditAnywhere, Category=Cosmetics)
 	FECRAnimBodyStyleSelectionSet BodyMeshes;
+
+	// Additional cosmetic tags not depending on spawned character parts
+	UPROPERTY(Replicated)
+	FGameplayTagContainer AdditionalCosmeticTags;
 };

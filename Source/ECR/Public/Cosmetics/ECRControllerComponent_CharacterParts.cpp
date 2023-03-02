@@ -97,9 +97,17 @@ void UECRControllerComponent_CharacterParts::RemoveAllCharacterParts()
 	CharacterParts.Reset();
 }
 
+void UECRControllerComponent_CharacterParts::SetAdditionalCosmeticTags(const FGameplayTagContainer NewTags)
+{
+	if (UECRPawnComponent_CharacterParts* PawnCustomizer = GetPawnCustomizer())
+	{
+		PawnCustomizer->SetAdditionalCosmeticTags(NewTags);
+	}
+}
+
 void UECRControllerComponent_CharacterParts::OnPossessedPawnChanged(APawn* OldPawn, APawn* NewPawn)
 {
-	// Remove from the old pawn
+	// Remove parts from the old pawn
 	if (UECRPawnComponent_CharacterParts* OldCustomizer = OldPawn ? OldPawn->FindComponentByClass<UECRPawnComponent_CharacterParts>() : nullptr)
 	{
 		for (FECRControllerCharacterPartEntry& Entry : CharacterParts)
@@ -109,7 +117,7 @@ void UECRControllerComponent_CharacterParts::OnPossessedPawnChanged(APawn* OldPa
 		}
 	}
 
-	// Apply to the new pawn
+	// Apply parts to the new pawn
 	if (UECRPawnComponent_CharacterParts* NewCustomizer = NewPawn ? NewPawn->FindComponentByClass<UECRPawnComponent_CharacterParts>() : nullptr)
 	{
 		for (FECRControllerCharacterPartEntry& Entry : CharacterParts)

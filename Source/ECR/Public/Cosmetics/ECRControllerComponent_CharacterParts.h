@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Components/ControllerComponent.h"
 #include "ECRCharacterPartTypes.h"
+#include "GameplayTagContainer.h"
 
 #include "ECRControllerComponent_CharacterParts.generated.h"
 
@@ -71,6 +72,10 @@ public:
 	// Removes all added character parts, should be called on the authority only
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category=Cosmetics)
 	void RemoveAllCharacterParts();
+
+	// Sets additional cosmetic tags that will be considered for montage selection, etc.
+	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category=Cosmetics)
+	void SetAdditionalCosmeticTags(const FGameplayTagContainer NewTags);
 protected:
 	UPROPERTY(EditAnywhere, Category=Cosmetics)
 	TArray<FECRControllerCharacterPartEntry> CharacterParts;

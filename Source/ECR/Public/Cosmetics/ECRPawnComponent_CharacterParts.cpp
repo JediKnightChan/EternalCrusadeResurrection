@@ -251,6 +251,7 @@ void UECRPawnComponent_CharacterParts::GetLifetimeReplicatedProps(TArray<FLifeti
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(ThisClass, CharacterPartList);
+	DOREPLIFETIME(ThisClass, AdditionalCosmeticTags);
 }
 
 FECRCharacterPartHandle UECRPawnComponent_CharacterParts::AddCharacterPart(const FECRCharacterPart& NewPart)
@@ -334,6 +335,8 @@ USceneComponent* UECRPawnComponent_CharacterParts::GetSceneComponentToAttachTo()
 FGameplayTagContainer UECRPawnComponent_CharacterParts::GetCombinedTags(FGameplayTag RequiredPrefix) const
 {
 	FGameplayTagContainer Result = CharacterPartList.CollectCombinedTags();
+	Result.AppendTags(AdditionalCosmeticTags);
+
 	if (RequiredPrefix.IsValid())
 	{
 		return Result.Filter(FGameplayTagContainer(RequiredPrefix));
@@ -371,5 +374,11 @@ void UECRPawnComponent_CharacterParts::BroadcastChanged()
 	}
 
 	// Let observers know, e.g., if they need to apply team coloring or similar
+	OnCharacterPartsChanged.Broadcast(this);
+}
+
+void UECRPawnComponent_CharacterParts::SetAdditionalCosmeticTags(const FGameplayTagContainer NewTags)
+{
+	AdditionalCosmeticTags = NewTags;
 	OnCharacterPartsChanged.Broadcast(this);
 }
