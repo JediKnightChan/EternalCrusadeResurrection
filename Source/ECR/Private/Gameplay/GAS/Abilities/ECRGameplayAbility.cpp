@@ -17,6 +17,7 @@
 #include "GameFramework/GameplayMessageSubsystem.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
 #include "Gameplay/GAS/ECRGameplayEffectContext.h"
+#include "Gameplay/Player/ECRPlayerState.h"
 #include "Physics/PhysicalMaterialWithTags.h"
 
 UE_DEFINE_GAMEPLAY_TAG(TAG_ABILITY_SIMPLE_FAILURE_MESSAGE, "Ability.UserFacingSimpleActivateFail.Message");
@@ -201,8 +202,7 @@ void UECRGameplayAbility::OnGiveAbility(const FGameplayAbilityActorInfo* ActorIn
 	LoadMontages();
 
 
-	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponent(
-		GetAvatarActorFromActorInfo()))
+	if (UECRPawnComponent_CharacterParts* CosmeticComp = GetPawnCustomizationComponent())
 	{
 		CosmeticComp->OnCharacterPartsChanged.AddDynamic(this, &ThisClass::OnCharacterPartsChanged);
 	}
@@ -219,8 +219,7 @@ void UECRGameplayAbility::OnRemoveAbility(const FGameplayAbilityActorInfo* Actor
 
 	Super::OnRemoveAbility(ActorInfo, Spec);
 
-	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponent(
-		GetAvatarActorFromActorInfo()))
+	if (UECRPawnComponent_CharacterParts* CosmeticComp = GetPawnCustomizationComponent())
 	{
 		CosmeticComp->OnCharacterPartsChanged.RemoveDynamic(this, &ThisClass::OnCharacterPartsChanged);
 	}
@@ -506,7 +505,7 @@ UAnimMontage* UECRGameplayAbility::GetMontage(const FName MontageCategory) const
 {
 	const FECRAnimMontageSelectionSet AnimMontageSelectionSet = AbilityMontageSelection.FindRef(MontageCategory);
 	if (const UECRPawnComponent_CharacterParts* CustomizationComponent =
-		UECRCosmeticStatics::GetPawnCustomizationComponent(GetECRCharacterFromActorInfo()))
+		GetPawnCustomizationComponent())
 	{
 		const FGameplayTagContainer MontageTags = CustomizationComponent->GetCombinedTags(
 			FECRGameplayTags::Get().Cosmetic_Montage);
@@ -529,14 +528,30 @@ void UECRGameplayAbility::OnCharacterPartsChanged(UECRPawnComponent_CharacterPar
 	LoadMontages();
 }
 
+UECRPawnComponent_CharacterParts* UECRGameplayAbility::GetPawnCustomizationComponent() const
+{
+	if (!CurrentActorInfo)
+	{
+		return nullptr;
+	}
+
+	if (const AECRPlayerState* PS = Cast<AECRPlayerState>(CurrentActorInfo->OwnerActor))
+	{
+		if (const APawn* Pawn = PS->GetPawn())
+		{
+			return Pawn->FindComponentByClass<UECRPawnComponent_CharacterParts>();
+		}
+		return nullptr;
+	}
+	return nullptr;
+}
+
 
 void UECRGameplayAbility::LoadMontages()
 {
 	TArray<FSoftObjectPath> MontagesToLoad;
 
-	if (const UECRPawnComponent_CharacterParts* CustomizationComponent =
-		UECRCosmeticStatics::GetPawnCustomizationComponent(
-			GetECRCharacterFromActorInfo()))
+	if (const UECRPawnComponent_CharacterParts* CustomizationComponent = GetPawnCustomizationComponent())
 	{
 		for (const auto& [Name, SelectionSet] : AbilityMontageSelection)
 		{

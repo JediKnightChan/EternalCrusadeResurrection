@@ -197,6 +197,8 @@ protected:
 
 	UFUNCTION()
 	void OnCharacterPartsChanged(UECRPawnComponent_CharacterParts* ComponentWithChangedParts);
+
+	UECRPawnComponent_CharacterParts* GetPawnCustomizationComponent() const;
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Animation")
 	TMap<FName, FECRAnimMontageSelectionSet> AbilityMontageSelection;

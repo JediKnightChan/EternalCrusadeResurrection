@@ -14,7 +14,7 @@ class UECRCosmeticStatics : public UBlueprintFunctionLibrary
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	static UECRPawnComponent_CharacterParts* GetPawnCustomizationComponent(AActor* TargetActor);
+	static UECRPawnComponent_CharacterParts* GetPawnCustomizationComponentFromActor(AActor* TargetActor);
 
 	static void AddMontageToLoadQueueIfNeeded(const TSoftObjectPtr<UAnimMontage>& Montage,
 	                                          TArray<FSoftObjectPath>& MontagesToLoad);

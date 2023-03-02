@@ -172,6 +172,10 @@ public:
 	FECRSpawnedCharacterPartsChanged OnCharacterPartsChanged;
 
 private:
+	UFUNCTION()
+	void OnRep_AdditionalCosmeticTags();
+
+private:
 	// List of character parts
 	UPROPERTY(Replicated)
 	FECRCharacterPartList CharacterPartList;
@@ -181,6 +185,6 @@ private:
 	FECRAnimBodyStyleSelectionSet BodyMeshes;
 
 	// Additional cosmetic tags not depending on spawned character parts
-	UPROPERTY(Replicated)
+	UPROPERTY(ReplicatedUsing=OnRep_AdditionalCosmeticTags)
 	FGameplayTagContainer AdditionalCosmeticTags;
 };

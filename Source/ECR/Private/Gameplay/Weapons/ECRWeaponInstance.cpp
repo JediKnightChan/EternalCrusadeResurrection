@@ -19,7 +19,7 @@ UECRWeaponInstance::UECRWeaponInstance(const FObjectInitializer& ObjectInitializ
 void UECRWeaponInstance::LinkAnimLayer() const
 {
 	if (const UECRPawnComponent_CharacterParts* CosmeticComponent =
-		UECRCosmeticStatics::GetPawnCustomizationComponent(GetPawn()))
+		UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(GetPawn()))
 	{
 		const TSubclassOf<UAnimInstance> AnimClass = PickBestAnimLayer(
 			CosmeticComponent->GetCombinedTags(FECRGameplayTags::Get().Cosmetic_AnimStyle));
@@ -45,7 +45,7 @@ void UECRWeaponInstance::OnEquipped()
 
 	LoadMontages();
 
-	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponent(GetPawn()))
+	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(GetPawn()))
 	{
 		CosmeticComp->OnCharacterPartsChanged.AddDynamic(this, &ThisClass::OnCharacterPartsChanged);
 	}
@@ -60,7 +60,7 @@ void UECRWeaponInstance::OnUnequipped()
 {
 	Super::OnUnequipped();
 
-	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponent(GetPawn()))
+	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(GetPawn()))
 	{
 		CosmeticComp->OnCharacterPartsChanged.RemoveDynamic(this, &ThisClass::OnCharacterPartsChanged);
 	}
@@ -112,7 +112,7 @@ UAnimMontage* UECRWeaponInstance::GetExecutionMontage(const FECRAnimMontageSelec
                                                       AActor* TargetActor) const
 {
 	if (const UECRPawnComponent_CharacterParts* CosmeticsComponent =
-		UECRCosmeticStatics::GetPawnCustomizationComponent(TargetActor))
+		UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(TargetActor))
 	{
 		const FGameplayTagContainer PawnCosmeticTags = CosmeticsComponent->GetCombinedTags(
 			FECRGameplayTags::Get().Cosmetic_Montage);
@@ -132,7 +132,7 @@ void UECRWeaponInstance::LoadMontages()
 	TArray<FSoftObjectPath> MontagesToLoad;
 
 	if (const UECRPawnComponent_CharacterParts* CosmeticsComponent =
-		UECRCosmeticStatics::GetPawnCustomizationComponent(GetPawn()))
+		UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(GetPawn()))
 	{
 		const FGameplayTagContainer PawnCosmeticTags = CosmeticsComponent->GetCombinedTags(
 			FECRGameplayTags::Get().Cosmetic_Montage);

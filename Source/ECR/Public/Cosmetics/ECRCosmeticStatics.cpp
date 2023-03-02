@@ -2,7 +2,7 @@
 
 #include "ECRPawnComponent_CharacterParts.h"
 
-UECRPawnComponent_CharacterParts* UECRCosmeticStatics::GetPawnCustomizationComponent(AActor* TargetActor)
+UECRPawnComponent_CharacterParts* UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(AActor* TargetActor)
 {
 	if (TargetActor)
 	{

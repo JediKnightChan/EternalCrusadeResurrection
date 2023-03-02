@@ -380,5 +380,10 @@ void UECRPawnComponent_CharacterParts::BroadcastChanged()
 void UECRPawnComponent_CharacterParts::SetAdditionalCosmeticTags(const FGameplayTagContainer NewTags)
 {
 	AdditionalCosmeticTags = NewTags;
+	OnRep_AdditionalCosmeticTags();
+}
+
+void UECRPawnComponent_CharacterParts::OnRep_AdditionalCosmeticTags()
+{
 	OnCharacterPartsChanged.Broadcast(this);
 }
