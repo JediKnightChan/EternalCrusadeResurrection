@@ -127,10 +127,10 @@ void UCustomizationSavingNameSpace::SaveMaterialCustomizationData(bool bDoOverwr
 		// Return if overwriting disabled, but package already exists
 		if (!bDoOverwrite && FPackageName::DoesPackageExist(SaveDestinationPackagePath))
 		{
-			UE_LOG(LogTemp, Error,
+			UE_LOG(LogTemp, Warning,
 			       TEXT("Package %s already exists and overwriting not requested, not saving"),
 			       *(SaveDestinationPackagePath));
-			return;
+			continue;;
 		}
 
 		// Creating package for saving data

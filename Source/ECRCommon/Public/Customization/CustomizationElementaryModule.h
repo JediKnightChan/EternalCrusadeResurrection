@@ -24,6 +24,9 @@ class ECRCOMMON_API UCustomizationElementaryModule : public USkeletalMeshCompone
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	FString MeshMergerNamespace;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	TMap<FString, FString> AttachmentsToMaterialNamespaces;
+
 protected:
 	/* Inheriting animations from first SkeletalMeshComponent parent if requested */
 	void InheritAnimationsIfNeeded();

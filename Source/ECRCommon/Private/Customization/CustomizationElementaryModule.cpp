@@ -43,8 +43,8 @@ void UCustomizationElementaryModule::OnChildAttached(USceneComponent* ChildCompo
 	}
 
 	// Get material customization data for child
-	const FString AttachmentMaterialNamespace = UCustomizationUtilsLibrary::GetAttachmentMaterialCustomizationNamespace(
-		ChildComponent);
+	const FString MyDisplayName = UCustomizationUtilsLibrary::GetDisplayNameEnd(ChildComponent);
+	const FString AttachmentMaterialNamespace = AttachmentsToMaterialNamespaces.FindRef(MyDisplayName);
 	const FCustomizationMaterialNamespaceData MaterialData = GetMaterialCustomizationData(
 		AttachmentMaterialNamespace);
 
@@ -239,19 +239,28 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 			UStaticMeshComponent>(ChildComponent);
 		if (ChildStaticMeshComponent != nullptr)
 		{
-			// Getting material namespace for child, if '_' in it, consider part before it
-			FString ChildStaticMeshComponentMaterialNamespace =
-				UCustomizationUtilsLibrary::GetAttachmentMaterialCustomizationNamespace(
-					ChildStaticMeshComponent);
+			// If component present, but empty, skip
+			if (!ChildStaticMeshComponent->GetStaticMesh())
+			{
+				continue;
+			}
 
+			// Getting material namespace for child
+			FString ChildStaticMeshComponentName =
+				UCustomizationUtilsLibrary::GetDisplayNameEnd(ChildStaticMeshComponent);
+			FString ChildStaticMeshComponentMaterialNamespace = AttachmentsToMaterialNamespaces.FindRef(
+				ChildStaticMeshComponentName);
 			if (GetMaterialCustomizationData(ChildStaticMeshComponentMaterialNamespace).IsEmpty())
 			{
-				UE_LOG(LogTemp, Warning,
-				       TEXT(
-					       "Material namespace of component %s isn't present in SavingNamespace or"
-					       " doesn't contain any parameters, it will be set to None"
-				       ), *(UKismetSystemLibrary::GetDisplayName(ChildStaticMeshComponent)))
-				ChildStaticMeshComponentMaterialNamespace = "";
+				if (!ChildStaticMeshComponentName.IsEmpty())
+				{
+					UE_LOG(LogTemp, Warning,
+					       TEXT(
+						       "Material namespace of component %s isn't present in SavingNamespace or"
+						       " doesn't contain any parameters, it will be set to None"
+					       ), *(UKismetSystemLibrary::GetDisplayName(ChildStaticMeshComponent)))
+					ChildStaticMeshComponentMaterialNamespace = "";
+				}
 			}
 
 			FName SocketName = ChildStaticMeshComponent->GetAttachSocketName();
@@ -269,18 +278,30 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 			USkeletalMeshComponent>(ChildComponent);
 		if (ChildSkeletalMeshComponent != nullptr)
 		{
-			// Getting material namespace for child, if '_' in it, consider part before it
-			FString ChildSkeletalMeshComponentMaterialNamespace =
-				UCustomizationUtilsLibrary::GetAttachmentMaterialCustomizationNamespace(
+			// If component present, but empty, skip
+			if (!ChildSkeletalMeshComponent->SkeletalMesh)
+			{
+				continue;
+			}
+			
+			// Getting material namespace for child
+			FString ChildSkeletalMeshComponentName =
+				UCustomizationUtilsLibrary::GetDisplayNameEnd(
 					ChildSkeletalMeshComponent);
+			FString ChildSkeletalMeshComponentMaterialNamespace = AttachmentsToMaterialNamespaces.FindRef(
+				ChildSkeletalMeshComponentName);
 
 			if (GetMaterialCustomizationData(ChildSkeletalMeshComponentMaterialNamespace).IsEmpty())
 			{
-				UE_LOG(LogTemp, Display,
-				       TEXT(
-					       "Material namespace of component %s isn't present in SavingNamespace or"
-					       " doesn't contain any parameters, it will be set to None"
-				       ), *(UKismetSystemLibrary::GetDisplayName(ChildSkeletalMeshComponent)))
+				if (!ChildSkeletalMeshComponentMaterialNamespace.IsEmpty())
+				{
+					UE_LOG(LogTemp, Display,
+					       TEXT(
+						       "Material namespace of component %s isn't present in SavingNamespace or "
+						       "doesn't contain any parameters, it will be set to None"
+					       ), *(UKismetSystemLibrary::GetDisplayName(ChildSkeletalMeshComponent)))
+				}
+
 				ChildSkeletalMeshComponentMaterialNamespace = "";
 			}
 
