@@ -52,3 +52,16 @@ TArray<TSoftObjectPtr<UAnimMontage>> FECRAnimMontageSelectionSet::GetAllMontages
 	Montages.AddUnique(DefaultMontage);
 	return Montages;
 }
+
+TSubclassOf<AActor> FECRActorSelectionSet::SelectBestActor(const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const auto& [ActorClass, RequiredTags] : ActorRules)
+	{
+		if ((ActorClass != nullptr) && CosmeticTags.HasAll(RequiredTags))
+		{
+			return ActorClass;
+		}
+	}
+
+	return DefaultActorClass;
+}

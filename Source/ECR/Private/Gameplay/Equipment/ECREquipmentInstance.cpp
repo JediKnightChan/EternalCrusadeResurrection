@@ -4,6 +4,7 @@
 #include "Gameplay/Equipment/ECREquipmentDefinition.h"
 #include "GameFramework/Character.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/Weapons/ECRWeaponInstance.h"
 #include "Net/UnrealNetwork.h"
 
@@ -61,9 +62,18 @@ void UECREquipmentInstance::SpawnEquipmentActors(const TArray<FECREquipmentActor
 			AttachTarget = Char->GetMesh();
 		}
 
+		const UECRPawnComponent_CharacterParts* CosmeticComponent = OwningPawn->FindComponentByClass<
+			UECRPawnComponent_CharacterParts>();
+		FGameplayTagContainer CosmeticTags = {};
+		if (CosmeticComponent)
+		{
+			CosmeticTags = CosmeticComponent->GetCombinedTags(FECRGameplayTags::Get().Cosmetic_ActorSubclass);
+		}
+
 		for (const FECREquipmentActorToSpawn& SpawnInfo : ActorsToSpawn)
 		{
-			AActor* NewActor = GetWorld()->SpawnActorDeferred<AActor>(SpawnInfo.ActorToSpawn, FTransform::Identity,
+			TSubclassOf<AActor> ActorClass = SpawnInfo.ActorSelectionSet.SelectBestActor(CosmeticTags);
+			AActor* NewActor = GetWorld()->SpawnActorDeferred<AActor>(ActorClass, FTransform::Identity,
 			                                                          OwningPawn);
 			NewActor->FinishSpawning(FTransform::Identity, /*bIsDefaultTransform=*/ true);
 			NewActor->SetActorRelativeTransform(SpawnInfo.AttachTransform);

@@ -117,3 +117,37 @@ struct FECRAnimMontageSelectionSet
 	// Returns all montages associated with this set
 	TArray<TSoftObjectPtr<UAnimMontage>> GetAllMontages();
 };
+
+
+//////////////////////////////////////////////////////////////////////
+
+USTRUCT(BlueprintType)
+struct FECRActorSelectionEntry
+{
+	GENERATED_BODY()
+
+	// Actor class to select if tags match
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<AActor> ActorClass = nullptr;
+
+	// Cosmetic tags required (all of these must be present to be considered a match)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Categories="Cosmetic"))
+	FGameplayTagContainer RequiredTags;
+};
+
+USTRUCT(BlueprintType)
+struct FECRActorSelectionSet
+{
+	GENERATED_BODY()
+
+	// List of layer rules to apply, first one that matches will be used
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Mesh))
+	TArray<FECRActorSelectionEntry> ActorRules;
+
+	// The layer to use if none of the MeshRules matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<AActor> DefaultActorClass = nullptr;
+
+	// Choose the best actor class given the rules
+	TSubclassOf<AActor> SelectBestActor(const FGameplayTagContainer& CosmeticTags) const;
+};

@@ -47,6 +47,7 @@ public:
 
 	FGameplayTag Cosmetic_Montage;
 	FGameplayTag Cosmetic_AnimStyle;
+	FGameplayTag Cosmetic_ActorSubclass;
 
 	FGameplayTag Cheat_GodMode;
 	FGameplayTag Cheat_UnlimitedHealth;

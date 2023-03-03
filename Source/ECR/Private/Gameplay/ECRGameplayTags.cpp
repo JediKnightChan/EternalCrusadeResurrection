@@ -39,7 +39,8 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 
 	AddTag(Cosmetic_Montage, "Cosmetic.Montage", "Prefix for montage customization");
 	AddTag(Cosmetic_AnimStyle, "Cosmetic.AnimationStyle", "Prefix for animation style customization");
-
+	AddTag(Cosmetic_ActorSubclass, "Cosmetic.ActorSubclass", "Prefix for actor subclass customization");
+	
 	AddTag(Cheat_GodMode, "Cheat.GodMode", "GodMode cheat is active on the owner.");
 	AddTag(Cheat_UnlimitedHealth, "Cheat.UnlimitedHealth", "UnlimitedHealth cheat is active on the owner.");
 

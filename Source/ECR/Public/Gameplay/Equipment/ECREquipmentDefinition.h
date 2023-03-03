@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "GameplayTagContainer.h"
+#include "Cosmetics/ECRCosmeticAnimationTypes.h"
 
 #include "ECREquipmentDefinition.generated.h"
 
@@ -21,7 +22,7 @@ struct FECREquipmentActorToSpawn
 	}
 
 	UPROPERTY(EditAnywhere, Category=Equipment)
-	TSubclassOf<AActor> ActorToSpawn;
+	FECRActorSelectionSet ActorSelectionSet;
 
 	UPROPERTY(EditAnywhere, Category=Equipment)
 	FName AttachSocket;
