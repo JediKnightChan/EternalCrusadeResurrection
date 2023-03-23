@@ -1,15 +1,14 @@
-# Should be used with internal UE API in later versions of UE
-
-"""
-Auto assign materials to the corresponding meshes according to data from materials_props.json,
-which was collected by ReferencesCollectorMaterial.py
-"""
-
 import unreal
 import json
 
+""" Should be used with internal UE API in later versions of UE
+
+Auto assign materials to the corresponding meshes according to data from materials_props.json,
+which was collected by ReferencesCollectorMaterial.py"""
+
+
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/"
-          "MaterialAutoAssign/BuildingsProps/space_marines_material_references.json", "r") as f:
+          "MaterialAutoAssign/BuildingsProps/buildings_material_references.json", "r") as f:
     mesh_to_material_references = json.load(f)
 
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/"
@@ -44,6 +43,9 @@ def set_skeletal_mesh_material(skeletal_mesh, material_path_, slot_name_):
 
 # CHANGE ME
 STATIC_MESH = True
+filter_path = "/Game/Buildings/Structures/STRUC_Ruins_01/"
+mesh_to_material_references = {k: v for k, v in mesh_to_material_references.items() if k.startswith(filter_path)}
+
 print(len(mesh_to_material_references))
 
 c = 0

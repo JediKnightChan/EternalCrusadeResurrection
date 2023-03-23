@@ -24,6 +24,7 @@ class Array:
     def append(self, value):
         pass
 
+
 class EditorFilterLibrary:
     @staticmethod
     def by_class(array, class_):
@@ -44,7 +45,7 @@ class EditorAssetLibrary:
         return
 
     @staticmethod
-    def save_asset(path):
+    def save_asset(path, only_if_is_dirty=True):
         return
 
     @staticmethod
@@ -99,6 +100,7 @@ class SkeletalMaterial:
     def set_editor_property(self, name, value):
         pass
 
+
 class MeshComponent:
     def __init__(self):
         self.material_slot_names = ["SlotName1", "SlotName2"]
@@ -120,3 +122,11 @@ class SkeletalMeshComponent(MeshComponent):
 
     def set_skeletal_mesh(self, static_mesh_asset):
         pass
+
+
+class StaticMeshEditorSubsystem:
+    pass
+
+
+def get_editor_subsystem(subsystem):
+    pass

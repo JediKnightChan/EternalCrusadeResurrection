@@ -163,7 +163,7 @@ private:
 		meta=(AllowPrivateAccess="true", ExposeOnSpawn="true"))
 	const UECRPawnData* PawnData;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
 	float StartedFallingTime;
 
 private:
