@@ -397,7 +397,7 @@ void UECRGameplayCueManager::RefreshGameplayCuePrimaryAsset()
 	}
 
 	FAssetBundleData BundleData;
-	BundleData.AddBundleAssets(UFortAssetManager_LoadStateClient, CuePaths);
+	BundleData.AddBundleAssetsTruncated(UFortAssetManager_LoadStateClient, CuePaths);
 
 	FPrimaryAssetId PrimaryAssetId = FPrimaryAssetId(UFortAssetManager_GameplayCueRefsType, UFortAssetManager_GameplayCueRefsName);
 	UAssetManager::Get().AddDynamicAsset(PrimaryAssetId, FSoftObjectPath(), BundleData);

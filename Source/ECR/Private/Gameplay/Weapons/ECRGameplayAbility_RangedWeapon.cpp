@@ -94,8 +94,8 @@ bool UECRGameplayAbility_RangedWeapon::CanActivateAbility(const FGameplayAbility
 
 	if (bResult)
 	{
-		FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->FindAbilitySpecFromHandle(Handle);
-		if (GetWeaponInstance(AbilitySpec->SourceObject) == nullptr)
+		const FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->FindAbilitySpecFromHandle(Handle);
+		if (GetWeaponInstance(AbilitySpec->SourceObject.Get()) == nullptr)
 		{
 			UE_LOG(LogECRAbilitySystem, Error,
 			       TEXT(

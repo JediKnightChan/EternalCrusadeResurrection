@@ -108,7 +108,7 @@ void UECRGameplayAbility_Interact::TriggerInteraction()
 
 		// Grab the target actor off the payload we're going to use it as the 'avatar' for the interaction, and the
 		// source InteractableTarget actor as the owner actor.
-		AActor* TargetActor = const_cast<AActor*>(Payload.Target);
+		AActor* TargetActor = const_cast<AActor*>(ToRawPtr(Payload.Target));
 
 		// The actor info needed for the interaction.
 		FGameplayAbilityActorInfo ActorInfo;

@@ -54,7 +54,7 @@ void FECRAbilitySet_GrantedHandles::TakeFromAbilitySystem(UECRAbilitySystemCompo
 
 	for (UAttributeSet* Set : GrantedAttributeSets)
 	{
-		ECRASC->GetSpawnedAttributes_Mutable().Remove(Set);
+		ECRASC->RemoveSpawnedAttribute(Set);
 	}
 
 	AbilitySpecHandles.Reset();

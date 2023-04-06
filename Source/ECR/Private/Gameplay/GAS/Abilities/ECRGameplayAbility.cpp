@@ -10,6 +10,7 @@
 #include "Gameplay/Character/ECRHeroComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemGlobals.h"
+#include "AbilitySystemLog.h"
 #include "Cosmetics/ECRCosmeticStatics.h"
 #include "Cosmetics/ECRPawnComponent_CharacterParts.h"
 #include "Engine/AssetManager.h"
@@ -19,6 +20,16 @@
 #include "Gameplay/GAS/ECRGameplayEffectContext.h"
 #include "Gameplay/Player/ECRPlayerState.h"
 #include "Physics/PhysicalMaterialWithTags.h"
+
+
+#define ENSURE_ABILITY_IS_INSTANTIATED_OR_RETURN(FunctionName, ReturnValue)																				\
+{																																						\
+if (!ensure(IsInstantiated()))																														\
+{																																					\
+ABILITY_LOG(Error, TEXT("%s: " #FunctionName " cannot be called on a non-instanced ability. Check the instancing policy."), *GetPathName());	\
+return ReturnValue;																																\
+}																																					\
+}
 
 UE_DEFINE_GAMEPLAY_TAG(TAG_ABILITY_SIMPLE_FAILURE_MESSAGE, "Ability.UserFacingSimpleActivateFail.Message");
 UE_DEFINE_GAMEPLAY_TAG(TAG_ABILITY_PLAY_MONTAGE_FAILURE_MESSAGE, "Ability.PlayMontageOnActivateFail.Message");

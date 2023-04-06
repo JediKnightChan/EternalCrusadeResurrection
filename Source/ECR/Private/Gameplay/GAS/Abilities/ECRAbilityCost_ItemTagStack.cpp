@@ -21,7 +21,7 @@ bool UECRAbilityCost_ItemTagStack::CheckCost(const UECRGameplayAbility* Ability,
 	if (const UECRGameplayAbility_FromEquipment* EquipmentAbility = Cast<const UECRGameplayAbility_FromEquipment>(Ability))
 	{
 		const FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->FindAbilitySpecFromHandle(Handle);
-		if (const UECRInventoryItemInstance* ItemInstance = EquipmentAbility->GetAssociatedItem(AbilitySpec->SourceObject))
+		if (const UECRInventoryItemInstance* ItemInstance = EquipmentAbility->GetAssociatedItem(AbilitySpec->SourceObject.Get()))
 		{
 			const int32 AbilityLevel = Ability->GetAbilityLevel(Handle, ActorInfo);
 
