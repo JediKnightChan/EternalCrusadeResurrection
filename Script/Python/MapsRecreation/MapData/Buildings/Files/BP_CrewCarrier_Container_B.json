@@ -1,0 +1,102 @@
+[
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Containers/SM_PROP_CrewCarrier_Container_B.SM_PROP_CrewCarrier_Container_B",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Containers/SM_PROP_CrewCarrier_Container_B.SM_PROP_CrewCarrier_Container_B",
+        "transform": {
+            "loc": [
+                0.0,
+                -296.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Containers/SM_PROP_CrewCarrier_Door_B.SM_PROP_CrewCarrier_Door_B",
+        "transform": {
+            "loc": [
+                0.0,
+                300.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Containers/SM_PROP_CrewCarrier_Door_B.SM_PROP_CrewCarrier_Door_B",
+        "transform": {
+            "loc": [
+                0.002419710159301758,
+                -297.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Containers/SM_PROP_CrewCarrier_Junction_B.SM_PROP_CrewCarrier_Junction_B",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

@@ -1,0 +1,222 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_AntiAirCraftBattery_01/SM_STRUC_AntiAirCraftBattery_Elevator_01.SM_STRUC_AntiAirCraftBattery_Elevator_01",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                40.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_AntiAirCraftBattery_01/SM_STRUC_AntiAirCraftBattery_Level_01.SM_STRUC_AntiAirCraftBattery_Level_01",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_AntiAirCraftBattery_01/SM_STRUC_AntiAirCraftBattery_Level_02.SM_STRUC_AntiAirCraftBattery_Level_02",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_DualGun_01/Models/SM_XX_DualGun_01.SM_XX_DualGun_01",
+        "transform": {
+            "loc": [
+                0.0,
+                -1100.0,
+                900.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_DualGun_01/Models/SM_XX_DualGun_01.SM_XX_DualGun_01",
+        "transform": {
+            "loc": [
+                0.0,
+                1100.0,
+                900.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_DualGun_01/Models/SM_XX_DualGun_01.SM_XX_DualGun_01",
+        "transform": {
+            "loc": [
+                1100.0,
+                0.0,
+                900.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_DualGun_01/Models/SM_XX_DualGun_01.SM_XX_DualGun_01",
+        "transform": {
+            "loc": [
+                760.0,
+                0.0,
+                1900.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_DualGun_01/Models/SM_XX_DualGun_01.SM_XX_DualGun_01",
+        "transform": {
+            "loc": [
+                0.0,
+                -760.0,
+                1900.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_DualGun_01/Models/SM_XX_DualGun_01.SM_XX_DualGun_01",
+        "transform": {
+            "loc": [
+                -760.0,
+                0.0,
+                1900.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_DualGun_01/Models/SM_XX_DualGun_01.SM_XX_DualGun_01",
+        "transform": {
+            "loc": [
+                0.0,
+                760.0,
+                1900.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_DualGun_01/Models/SM_XX_DualGun_01.SM_XX_DualGun_01",
+        "transform": {
+            "loc": [
+                -1100.0,
+                0.0,
+                900.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

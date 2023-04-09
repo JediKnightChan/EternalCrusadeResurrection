@@ -1,0 +1,162 @@
+[
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                325.0
+            ],
+            "scale": [
+                -6.2136054039001465,
+                14.5035982131958,
+                4.811945915222168
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                -5.0,
+                0.0,
+                280.0
+            ],
+            "scale": [
+                5.6400532722473145,
+                11.359245300292969,
+                5.478113174438477
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                279.80621337890625
+            ],
+            "scale": [
+                5.710000038146973,
+                11.835359573364258,
+                5.2599687576293945
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_ContainerDoor_01.SM_PROP_ContainerDoor_01",
+        "transform": {
+            "loc": [
+                -275.0,
+                575.0,
+                15.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.000518798828125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_ContainerDoor_02.SM_PROP_ContainerDoor_02",
+        "transform": {
+            "loc": [
+                275.0,
+                575.0,
+                15.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_ContainerDoor_01.SM_PROP_ContainerDoor_01",
+        "transform": {
+            "loc": [
+                274.99066162109375,
+                -575.0084838867188,
+                15.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.9990997314453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_ContainerDoor_02.SM_PROP_ContainerDoor_02",
+        "transform": {
+            "loc": [
+                -275.00933837890625,
+                -575.0018310546875,
+                15.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.9996337890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Container_01.SM_PROP_Container_01",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

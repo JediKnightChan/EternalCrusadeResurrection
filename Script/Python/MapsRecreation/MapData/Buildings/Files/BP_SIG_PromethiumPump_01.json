@@ -1,0 +1,7082 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesChimneyStraight_LARGE_02_A.SM_STRUC_PROMPUMP_PipesChimneyStraight_LARGE_02_A",
+        "transform": {
+            "loc": [
+                2273.089111328125,
+                1494.0355224609375,
+                1798.4375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99995422363281
+            ],
+            "scale": [
+                -1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_01_A.SM_STRUC_PROMPUMP_Wall15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_01_A.SM_STRUC_PROMPUMP_Wall15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_01_A.SM_STRUC_PROMPUMP_Wall15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -29.99995231628418
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_01_A.SM_STRUC_PROMPUMP_Wall15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                15.000231742858887
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_03_A.SM_STRUC_PROMPUMP_Wall_Large_03_A",
+        "transform": {
+            "loc": [
+                -2400.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                1.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -1200.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -1800.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                -1800.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                -1200.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                -600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                1.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3600.0,
+                1.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3600.0,
+                -600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3600.0,
+                -1200.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3600.0,
+                -1800.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                -1800.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2401.0,
+                -1800.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2401.0,
+                -1200.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                -1200.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2401.0,
+                -600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                -600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2401.0,
+                1.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                1.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFondation15D_Large_01_A.SM_STRUC_PROMPUMP_WallFondation15D_Large_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFondation15D_Large_01_A.SM_STRUC_PROMPUMP_WallFondation15D_Large_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_XL_01_A.SM_STRUC_PROMPUMP_Wall_XL_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -2400.0,
+                1199.9998779296875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_XL_01_A.SM_STRUC_PROMPUMP_Wall_XL_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -1200.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallCorner_Large_02_A.SM_STRUC_PROMPUMP_WallCorner_Large_02_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                0.0,
+                -1199.9998779296875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_XL_01_A.SM_STRUC_PROMPUMP_Wall_XL_01_A",
+        "transform": {
+            "loc": [
+                -3600.0,
+                -2400.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_XL_01_A.SM_STRUC_PROMPUMP_Wall_XL_01_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                -2399.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Large_02_A.SM_STRUC_PROMPUMP_Wall15D_Large_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Chimney_Small_01_A.SM_STRUC_PROMPUMP_Chimney_Small_01_A",
+        "transform": {
+            "loc": [
+                128.20489501953125,
+                -46.595542907714844,
+                619.9995727539062
+            ],
+            "rot": [
+                2.219811358372681e-05,
+                89.9999771118164,
+                -114.9998779296875
+            ],
+            "scale": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_05_A.SM_STRUC_PROMPUMP_Wall_Large_05_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                -2400.00048828125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Large_02_A.SM_STRUC_PROMPUMP_Wall15D_Large_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_06_A.SM_STRUC_PROMPUMP_Wall_Large_06_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                -2399.99658203125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_05_A.SM_STRUC_PROMPUMP_Wall_Large_05_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                7.62939453125e-06,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0499999523162842,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallCorner_Large_02_A.SM_STRUC_PROMPUMP_WallCorner_Large_02_A",
+        "transform": {
+            "loc": [
+                -4800.0009765625,
+                -2399.99951171875,
+                -1199.9998779296875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                180.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallCorner_Large_01_A.SM_STRUC_PROMPUMP_WallCorner_Large_01_A",
+        "transform": {
+            "loc": [
+                -4800.0009765625,
+                -2399.99951171875,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                180.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallCorner_Large_02_A.SM_STRUC_PROMPUMP_WallCorner_Large_02_A",
+        "transform": {
+            "loc": [
+                -1800.001220703125,
+                -2399.997314453125,
+                -1199.9998779296875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallCorner_Large_01_A.SM_STRUC_PROMPUMP_WallCorner_Large_01_A",
+        "transform": {
+            "loc": [
+                -1800.001220703125,
+                -2399.997314453125,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallCorner_Large_01_A.SM_STRUC_PROMPUMP_WallCorner_Large_01_A",
+        "transform": {
+            "loc": [
+                -1800.001220703125,
+                0.00266265869140625,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Buttress_Large_01_A.SM_STRUC_PROMPUMP_Buttress_Large_01_A",
+        "transform": {
+            "loc": [
+                -4900.0,
+                -110.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_MED_01_A.SM_STRUC_PROMPUMP_WallTop15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_MED_01_A.SM_STRUC_PROMPUMP_WallTop15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Buttress_Large_01_A.SM_STRUC_PROMPUMP_Buttress_Large_01_A",
+        "transform": {
+            "loc": [
+                -4900.00048828125,
+                -2109.999755859375,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_01_A.SM_STRUC_PROMPUMP_RoofVent_01_A",
+        "transform": {
+            "loc": [
+                -2108.921875,
+                -2100.9287109375,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_MED_01_A.SM_STRUC_PROMPUMP_WallTop15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_MED_01_A.SM_STRUC_PROMPUMP_WallTop15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_XL_01_A.SM_STRUC_PROMPUMP_Wall_XL_01_A",
+        "transform": {
+            "loc": [
+                -1800.00341796875,
+                0.0033721923828125,
+                1200.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_05_A.SM_STRUC_PROMPUMP_Wall_Large_05_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                -1198.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A.SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco15D_MED_02_A.SM_STRUC_PROMPUMP_PipesDeco15D_MED_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco15D_MED_02_A.SM_STRUC_PROMPUMP_PipesDeco15D_MED_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A.SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Chimney_Small_01_A.SM_STRUC_PROMPUMP_Chimney_Small_01_A",
+        "transform": {
+            "loc": [
+                128.2048797607422,
+                -46.59544372558594,
+                819.9995727539062
+            ],
+            "rot": [
+                90.0,
+                -155.00057983398438,
+                0.0
+            ],
+            "scale": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco15D_MED_02_A.SM_STRUC_PROMPUMP_PipesDeco15D_MED_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame_MED_02_A.SM_STRUC_PROMPUMP_WallDoorFrame_MED_02_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                -1800.0,
+                900.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_MED_04_A.SM_STRUC_PROMPUMP_Wall_MED_04_A",
+        "transform": {
+            "loc": [
+                -1784.0,
+                -1799.9998779296875,
+                1499.9998779296875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallWindowTrap15D_MED_01_A.SM_STRUC_PROMPUMP_WallWindowTrap15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Arsh15D_MED_01_A.SM_STRUC_PROMPUMP_Arsh15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wires15D_MED_01_A.SM_STRUC_PROMPUMP_Wires15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Arsh15D_MED_01_A.SM_STRUC_PROMPUMP_Arsh15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wires15D_MED_01_A.SM_STRUC_PROMPUMP_Wires15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                90.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Arsh15D_MED_01_A.SM_STRUC_PROMPUMP_Arsh15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                90.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A.SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Arsh15D_MED_01_A.SM_STRUC_PROMPUMP_Arsh15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wires15D_MED_01_A.SM_STRUC_PROMPUMP_Wires15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -41.39996337890625
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Arsh15D_MED_01_A.SM_STRUC_PROMPUMP_Arsh15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallWindowCover15D_MED_01_A.SM_STRUC_PROMPUMP_WallWindowCover15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_MED_01_A.SM_STRUC_PROMPUMP_WallTop15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallWindowTrap15D_MED_01_A.SM_STRUC_PROMPUMP_WallWindowTrap15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                145.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallWindowCover15D_MED_01_A.SM_STRUC_PROMPUMP_WallWindowCover15D_MED_01_A",
+        "transform": {
+            "loc": [
+                -1822.1820068359375,
+                -182.2740020751953,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                86.20047760009766
+            ],
+            "scale": [
+                1.100000023841858,
+                0.5,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesChimney45D_LARGE_01_A.SM_STRUC_PROMPUMP_PipesChimney45D_LARGE_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                43.39985656738281
+            ],
+            "scale": [
+                -1.0,
+                1.0,
+                1.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallWindowTrap15D_MED_01_A.SM_STRUC_PROMPUMP_WallWindowTrap15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallWindowCover15D_MED_01_A.SM_STRUC_PROMPUMP_WallWindowCover15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallWindowTrap15D_MED_01_A.SM_STRUC_PROMPUMP_WallWindowTrap15D_MED_01_A",
+        "transform": {
+            "loc": [
+                -4.7600035031791776e-05,
+                2.6702879040385596e-05,
+                -856.8092041015625
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallWindowCover15D_MED_01_A.SM_STRUC_PROMPUMP_WallWindowCover15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_GrillTill15D_MED_01_A.SM_STRUC_PROMPUMP_GrillTill15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_GrillTill_MED_01_A.SM_STRUC_PROMPUMP_GrillTill_MED_01_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                -1800.0,
+                900.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_MechanicusLogo_Small_01_A.SM_STRUC_PROMPUMP_MechanicusLogo_Small_01_A",
+        "transform": {
+            "loc": [
+                -3900.0,
+                50.0,
+                1700.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                2702.3251953125,
+                -4.333984375,
+                5.826904296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Pipes45D_LARGE_01_A.SM_STRUC_PROMPUMP_Pipes45D_LARGE_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -1.60009765625
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_MED_01_A.SM_STRUC_PROMPUMP_WallTop15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_MED_01_A.SM_STRUC_PROMPUMP_WallTop15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A.SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                -30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesChimney45D_LARGE_01_A.SM_STRUC_PROMPUMP_PipesChimney45D_LARGE_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -1.60009765625
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesChimney_Large_01_A.SM_STRUC_PROMPUMP_PipesChimney_Large_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                22.79998207092285
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesChimney_MED_01_A.SM_STRUC_PROMPUMP_PipesChimney_MED_01_A",
+        "transform": {
+            "loc": [
+                -5018.93212890625,
+                -243.60830688476562,
+                -0.00048828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                90.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A.SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesChimneyStraight_LARGE_01_A.SM_STRUC_PROMPUMP_PipesChimneyStraight_LARGE_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -1.60009765625
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_MED_01_A.SM_STRUC_PROMPUMP_WallTop15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco15D_MED_01_A.SM_STRUC_PROMPUMP_PipesDeco15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                4502.3251953125,
+                -24.333984375,
+                5.826904296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WindowTrap_MED_01_A.SM_STRUC_PROMPUMP_WindowTrap_MED_01_A",
+        "transform": {
+            "loc": [
+                4502.3251953125,
+                -24.333984375,
+                -194.173095703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco15D_MED_02_A.SM_STRUC_PROMPUMP_PipesDeco15D_MED_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                90.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Arsh15D_MED_01_A.SM_STRUC_PROMPUMP_Arsh15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Deco_SMALL_01_A.SM_STRUC_Garage_Deco_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -2642.0,
+                -2463.99951171875,
+                1589.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Deco_SMALL_01_A.SM_STRUC_Garage_Deco_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -2642.0,
+                -2410.99951171875,
+                1589.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.00018310546875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Deco_SMALL_01_A.SM_STRUC_Garage_Deco_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -2175.0,
+                -2464.000732421875,
+                1589.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Deco_SMALL_01_A.SM_STRUC_Garage_Deco_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -2175.0,
+                -2411.000732421875,
+                1589.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.00018310546875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Deco_SMALL_01_A.SM_STRUC_Garage_Deco_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -4431.0,
+                -2463.992431640625,
+                1589.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Deco_SMALL_01_A.SM_STRUC_Garage_Deco_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -4431.0,
+                -2410.992431640625,
+                1589.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.00018310546875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Deco_SMALL_01_A.SM_STRUC_Garage_Deco_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -3964.0,
+                -2463.99365234375,
+                1589.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Deco_SMALL_01_A.SM_STRUC_Garage_Deco_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -3964.0,
+                -2410.99365234375,
+                1589.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.00018310546875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco_MED_01_A.SM_STRUC_PROMPUMP_PipesDeco_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                66.5
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PumpPipes_Large_01_A.SM_STRUC_PROMPUMP_PumpPipes_Large_01_A",
+        "transform": {
+            "loc": [
+                2.482024908065796,
+                -1.0029295682907104,
+                -1.4901155864777138e-08
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -111.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Pipe_MED_01_A.SM_STRUC_Garage_Pipe_MED_01_A",
+        "transform": {
+            "loc": [
+                -2092.998779296875,
+                -2680.0029296875,
+                -820.7120361328125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Pipe_MED_01_A.SM_STRUC_Garage_Pipe_MED_01_A",
+        "transform": {
+            "loc": [
+                -4480.9990234375,
+                -2679.9931640625,
+                -820.7120361328125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_GrillTill_MED_01_A.SM_STRUC_PROMPUMP_GrillTill_MED_01_A",
+        "transform": {
+            "loc": [
+                -1200.0,
+                -1800.0,
+                900.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_GrillTill_MED_01_A.SM_STRUC_PROMPUMP_GrillTill_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -1800.0,
+                900.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Arsh15D_MED_01_A.SM_STRUC_PROMPUMP_Arsh15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RampModule45D_MED_01_A.SM_STRUC_PROMPUMP_RampModule45D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RampModule_MED_01_A.SM_STRUC_PROMPUMP_RampModule_MED_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_GrillTill15D_MED_01_A.SM_STRUC_PROMPUMP_GrillTill15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_GrillTill15D_MED_01_A.SM_STRUC_PROMPUMP_GrillTill15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_GrillTill15D_MED_01_A.SM_STRUC_PROMPUMP_GrillTill15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SkullDeco_Small_01_A.SM_STRUC_PROMPUMP_SkullDeco_Small_01_A",
+        "transform": {
+            "loc": [
+                -3291.424072265625,
+                -2400.0,
+                700.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
+        "transform": {
+            "loc": [
+                2105.0,
+                -45.00044631958008,
+                1314.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                1.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                1.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3600.0,
+                1.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_02_A.SM_STRUC_PROMPUMP_SpotLight_Small_02_A",
+        "transform": {
+            "loc": [
+                -3875.0,
+                82.0,
+                1200.0
+            ],
+            "rot": [
+                -0.0,
+                90.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                1.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_01_A.SM_STRUC_PROMPUMP_RoofVent_01_A",
+        "transform": {
+            "loc": [
+                4603.0400390625,
+                1932.335693359375,
+                1803.99755859375
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -68.199951171875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_01_A.SM_STRUC_PROMPUMP_RoofVent_01_A",
+        "transform": {
+            "loc": [
+                4962.21826171875,
+                624.0486450195312,
+                1803.9969482421875
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -81.7999267578125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_02_A.SM_STRUC_PROMPUMP_RoofVent_02_A",
+        "transform": {
+            "loc": [
+                5084.37060546875,
+                194.32965087890625,
+                1811.5460205078125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -83.19989013671875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_02_A.SM_STRUC_PROMPUMP_RoofVent_02_A",
+        "transform": {
+            "loc": [
+                4845.1875,
+                1544.89013671875,
+                1811.54541015625
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -65.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_02_A.SM_STRUC_PROMPUMP_RoofVent_02_A",
+        "transform": {
+            "loc": [
+                3696.791259765625,
+                3468.826171875,
+                1803.8397216796875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -51.399993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_02_A.SM_STRUC_PROMPUMP_RoofVent_02_A",
+        "transform": {
+            "loc": [
+                -3914.910888671875,
+                -2087.0283203125,
+                2405.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_02_A.SM_STRUC_PROMPUMP_RoofVent_02_A",
+        "transform": {
+            "loc": [
+                -2694.943359375,
+                -2102.259033203125,
+                2406.12548828125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                -600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3600.0,
+                -600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                -600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2401.0,
+                -600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_02_A.SM_STRUC_PROMPUMP_RoofVent_02_A",
+        "transform": {
+            "loc": [
+                4483.0576171875,
+                2358.251708984375,
+                1806.54541015625
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -65.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_01_A.SM_STRUC_PROMPUMP_Till15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -1200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                -1200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3600.0,
+                -1200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                -1200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2401.0,
+                -1200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -1800.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                -1800.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3600.0,
+                -1800.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                -1800.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2401.0,
+                -1800.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_02_A.SM_STRUC_PROMPUMP_Till15D_MED_02_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A.SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_03_A.SM_STRUC_PROMPUMP_Till15D_MED_03_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_01_A.SM_STRUC_PROMPUMP_RoofVent_01_A",
+        "transform": {
+            "loc": [
+                3953.47509765625,
+                3040.20947265625,
+                1798.99755859375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -53.199951171875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_02_A.SM_STRUC_PROMPUMP_RoofVent_02_A",
+        "transform": {
+            "loc": [
+                4963.73681640625,
+                1045.4814453125,
+                1811.5460205078125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -83.19989013671875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_02_A.SM_STRUC_PROMPUMP_RoofVent_02_A",
+        "transform": {
+            "loc": [
+                4275.630859375,
+                2704.612548828125,
+                1806.6427001953125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -56.399993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_01_A.SM_STRUC_PROMPUMP_RoofVent_01_A",
+        "transform": {
+            "loc": [
+                -3293.57177734375,
+                -2100.924072265625,
+                2405.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_RoofVent_01_A.SM_STRUC_PROMPUMP_RoofVent_01_A",
+        "transform": {
+            "loc": [
+                -4490.2900390625,
+                -2100.9169921875,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PumpPipes_Med_01_A.SM_STRUC_PROMPUMP_PumpPipes_Med_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                112.5
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallCorner_Large_01_A.SM_STRUC_PROMPUMP_WallCorner_Large_01_A",
+        "transform": {
+            "loc": [
+                -4800.0009765625,
+                -2399.99951171875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                180.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Arsh15D_MED_01_A.SM_STRUC_PROMPUMP_Arsh15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_VentCircle_MED_01_A.SM_STRUC_PROMPUMP_VentCircle_MED_01_A",
+        "transform": {
+            "loc": [
+                3888.0,
+                -98.0,
+                -362.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Large_01_A.SM_STRUC_PROMPUMP_Wall15D_Large_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Large_02_A.SM_STRUC_PROMPUMP_Wall15D_Large_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_Small_01_A.SM_STRUC_PROMPUMP_WallTop15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1455.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A.SM_STRUC_PROMPUMP_WallDoorFrame15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_Small_01_A.SM_STRUC_PROMPUMP_WallTop15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1455.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PumpPipes_Large_02_A.SM_STRUC_PROMPUMP_PumpPipes_Large_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                22.4999942779541
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_02_A.SM_STRUC_PROMPUMP_Wall15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall45D_XXL_01_A.SM_STRUC_PROMPUMP_Wall45D_XXL_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorCover15D_Small_01_A.SM_STRUC_PROMPUMP_WallDoorCover15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_02_A.SM_STRUC_PROMPUMP_Wall15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                29.999849319458008
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorCover15D_Small_01_A.SM_STRUC_PROMPUMP_WallDoorCover15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall45D_XXL_02_A.SM_STRUC_PROMPUMP_Wall45D_XXL_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_02_A.SM_STRUC_PROMPUMP_Wall15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_03_A.SM_STRUC_PROMPUMP_Wall_Large_03_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorCover15D_Small_01_A.SM_STRUC_PROMPUMP_WallDoorCover15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_02_A.SM_STRUC_PROMPUMP_Wall15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_02_A.SM_STRUC_PROMPUMP_Wall15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_05_A.SM_STRUC_PROMPUMP_Wall_Large_05_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                -2400.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_01_A.SM_STRUC_PROMPUMP_Wall15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -44.99995422363281
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_01_A.SM_STRUC_PROMPUMP_Wall15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                74.9999771118164
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                74.9999771118164
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                74.9999771118164
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_01_A.SM_STRUC_PROMPUMP_Wall15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_MED_03_A.SM_STRUC_PROMPUMP_Wall_MED_03_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_01_A.SM_STRUC_PROMPUMP_Wall15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_01_A.SM_STRUC_PROMPUMP_Wall15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                90.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_MED_04_A.SM_STRUC_PROMPUMP_Wall_MED_04_A",
+        "transform": {
+            "loc": [
+                -1784.0,
+                -1809.9998779296875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh SM_CylinderTrigger.SM_CylinderTrigger",
+        "transform": {
+            "loc": [
+                0.0,
+                -5.0,
+                1320.0
+            ],
+            "scale": [
+                2.63671875,
+                2.63671875,
+                7.724761962890625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh SM_CylinderTrigger.SM_CylinderTrigger",
+        "transform": {
+            "loc": [
+                0.0,
+                -5.0,
+                1785.0
+            ],
+            "scale": [
+                6.0,
+                6.0,
+                1.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallCorner_Large_01_A.SM_STRUC_PROMPUMP_WallCorner_Large_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame_MED_02_A.SM_STRUC_PROMPUMP_WallDoorFrame_MED_02_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh SM_CylinderTrigger.SM_CylinderTrigger",
+        "transform": {
+            "loc": [
+                0.0,
+                -5.0,
+                3295.0
+            ],
+            "scale": [
+                6.5,
+                6.5,
+                25.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WindowTrap_MED_01_A.SM_STRUC_PROMPUMP_WindowTrap_MED_01_A",
+        "transform": {
+            "loc": [
+                2702.3251953125,
+                -24.333984375,
+                35.826904296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh SM_CylinderTrigger.SM_CylinderTrigger",
+        "transform": {
+            "loc": [
+                0.0,
+                -5.0,
+                1950.0
+            ],
+            "scale": [
+                3.0,
+                3.0,
+                2.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_GrillTill15D_MED_01_A.SM_STRUC_PROMPUMP_GrillTill15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Small_04_A.SM_STRUC_PROMPUMP_Wall_Small_04_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                -1800.0,
+                600.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_XL_01_A.SM_STRUC_PROMPUMP_Wall_XL_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -2400.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_XL_02_A.SM_STRUC_PROMPUMP_Wall_XL_02_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -1199.99951171875,
+                -2.3655594816318626e-07
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation_Large_01_A.SM_STRUC_PROMPUMP_WallFoundation_Large_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallCorner_Large_01_A.SM_STRUC_PROMPUMP_WallCorner_Large_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation_Large_01_A.SM_STRUC_PROMPUMP_WallFoundation_Large_01_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation_Large_01_A.SM_STRUC_PROMPUMP_WallFoundation_Large_01_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                -1200.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/ST_SIG_PromethiumPump_01.ST_SIG_PromethiumPump_01",
+        "transform": {
+            "loc": [
+                -143.29965209960938,
+                29.622058868408203,
+                -79.81218719482422
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation_Large_01_A.SM_STRUC_PROMPUMP_WallFoundation_Large_01_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                -2400.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                180.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorCover15D_Small_01_A.SM_STRUC_PROMPUMP_WallDoorCover15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_03_A.SM_STRUC_PROMPUMP_Till15D_MED_03_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_02_A.SM_STRUC_PROMPUMP_Till15D_MED_02_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_01_A.SM_STRUC_PROMPUMP_Till15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation_Large_01_A.SM_STRUC_PROMPUMP_WallFoundation_Large_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                -2400.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -180.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame15D_Large_01_A.SM_STRUC_PROMPUMP_WallDoorFrame15D_Large_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation_Large_01_A.SM_STRUC_PROMPUMP_WallFoundation_Large_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -2400.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_MED_01_A.SM_STRUC_PROMPUMP_Wall15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                15.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation_Large_01_A.SM_STRUC_PROMPUMP_WallFoundation_Large_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                -1200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_01_A.SM_STRUC_PROMPUMP_Till15D_MED_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_02_A.SM_STRUC_PROMPUMP_Till15D_MED_02_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_03_A.SM_STRUC_PROMPUMP_Till15D_MED_03_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation_MED_01_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                -2400.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                180.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallCorner_Large_01_A.SM_STRUC_PROMPUMP_WallCorner_Large_01_A",
+        "transform": {
+            "loc": [
+                -1800.001220703125,
+                -2399.997314453125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_MED_03_A.SM_STRUC_PROMPUMP_Wall_MED_03_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_03_A.SM_STRUC_PROMPUMP_Wall_Large_03_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_03_A.SM_STRUC_PROMPUMP_Wall_Large_03_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame_XL_01_A.SM_STRUC_PROMPUMP_WallDoorFrame_XL_01_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                -630.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_02_A.SM_STRUC_PROMPUMP_Till15D_MED_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_03_A.SM_STRUC_PROMPUMP_Till15D_MED_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_01_A.SM_STRUC_PROMPUMP_Till15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_01_A.SM_STRUC_PROMPUMP_Till15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_02_A.SM_STRUC_PROMPUMP_Till15D_MED_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_02_A.SM_STRUC_PROMPUMP_Till15D_MED_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_01_A.SM_STRUC_PROMPUMP_Till15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_03_A.SM_STRUC_PROMPUMP_Till15D_MED_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_MED_03_A.SM_STRUC_PROMPUMP_Till15D_MED_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1800.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame_XXL_01_A.SM_STRUC_PROMPUMP_WallDoorFrame_XXL_01_A",
+        "transform": {
+            "loc": [
+                -2400.0,
+                -2400.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                180.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_02_A.SM_STRUC_PROMPUMP_Wall15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_02_A.SM_STRUC_PROMPUMP_Wall15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFondation15D_Large_01_A.SM_STRUC_PROMPUMP_WallFondation15D_Large_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_02_A.SM_STRUC_PROMPUMP_Wall15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -75.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco15D_MED_03_A.SM_STRUC_PROMPUMP_PipesDeco15D_MED_03_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                45.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A.SM_STRUC_PROMPUMP_WallFoundation15D_Small_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation_Large_01_A.SM_STRUC_PROMPUMP_WallFoundation_Large_01_A",
+        "transform": {
+            "loc": [
+                -4200.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_MED_03_A.SM_STRUC_PROMPUMP_Wall_MED_03_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                0.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallFoundation_MED_01_A.SM_STRUC_PROMPUMP_WallFoundation_MED_01_A",
+        "transform": {
+            "loc": [
+                -4800.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_MED_01_A.SM_STRUC_PROMPUMP_WallTop15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                15.000000953674316
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop15D_Small_01_A.SM_STRUC_PROMPUMP_WallTop15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1455.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallTop_Small_01_A.SM_STRUC_PROMPUMP_WallTop_Small_01_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                -1800.0,
+                2100.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallWindowCover15D_MED_01_A.SM_STRUC_PROMPUMP_WallWindowCover15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall15D_Small_01_A.SM_STRUC_PROMPUMP_Wall15D_Small_01_A",
+        "transform": {
+            "rot": [
+                -0.0,
+                -0.0,
+                -60.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallWindowTrap15D_MED_01_A.SM_STRUC_PROMPUMP_WallWindowTrap15D_MED_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                -30.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wires15D_MED_01_A.SM_STRUC_PROMPUMP_Wires15D_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_WallDoorFrame15D_Large_01_A.SM_STRUC_PROMPUMP_WallDoorFrame15D_Large_01_A",
+        "transform": {
+            "rot": [
+                0.0,
+                0.0,
+                -75.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                74.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                74.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                74.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -15.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_01_A.SM_STRUC_PROMPUMP_Till15D_Small_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_02_A.SM_STRUC_PROMPUMP_Till15D_Small_02_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Till15D_Small_03_A.SM_STRUC_PROMPUMP_Till15D_Small_03_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -30.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_03_A.SM_STRUC_PROMPUMP_Wall_Large_03_A",
+        "transform": {
+            "loc": [
+                -3600.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Wall_Large_03_A.SM_STRUC_PROMPUMP_Wall_Large_03_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

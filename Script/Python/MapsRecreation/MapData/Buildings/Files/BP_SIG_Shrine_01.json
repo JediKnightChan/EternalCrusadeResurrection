@@ -1,0 +1,2262 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                2399.999755859375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Buttress_XL_01_A.SM_STRUC_Shrine_Buttress_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Buttress_XL_01_A.SM_STRUC_Shrine_Buttress_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                238.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Buttress_XL_01_A.SM_STRUC_Shrine_Buttress_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                211.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Buttress_XL_01_A.SM_STRUC_Shrine_Buttress_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                328.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                -600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileLong_SMALL_01_A.SM_STRUC_Shrine_FloorTileLong_SMALL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                -1199.9998779296875,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                1200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Chandelier_Large_01_A.SM_STRUC_Shrine_Chandelier_Large_01_A",
+        "transform": {
+            "loc": [
+                1512.32568359375,
+                840.8831176757812,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -50.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                2100.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_BanisterCorner_SMALL_01_A.SM_STRUC_Shrine_BanisterCorner_SMALL_01_A",
+        "transform": {
+            "loc": [
+                625.0,
+                2150.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallDoorFrame_LARGE_01_A.SM_STRUC_Shrine_WallDoorFrame_LARGE_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                2100.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.00006103515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                2100.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Chandelier_Large_01_A.SM_STRUC_Shrine_Chandelier_Large_01_A",
+        "transform": {
+            "loc": [
+                1500.0,
+                -899.9999389648438,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -139.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnRound_XL_01_A.SM_STRUC_Shrine_ColumnRound_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                -700.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallFoundation_Large_01_A.SM_STRUC_Shrine_WallFoundation_Large_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                2125.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Buttress_XL_01_A.SM_STRUC_Shrine_Buttress_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                301.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_XL_01_A.SM_STRUC_Shrine_ColumnSquare_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                2150.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Chandelier_Large_01_A.SM_STRUC_Shrine_Chandelier_Large_01_A",
+        "transform": {
+            "loc": [
+                -1500.0,
+                -899.9999389648438,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                130.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Chandelier_Large_01_A.SM_STRUC_Shrine_Chandelier_Large_01_A",
+        "transform": {
+            "loc": [
+                -1487.67431640625,
+                840.8831176757812,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -139.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnRound_LARGE_01_A.SM_STRUC_Shrine_ColumnRound_LARGE_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Stairs_MED_01_A.SM_STRUC_Shrine_Stairs_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                1550.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallDoorFrame_XL_01_A.SM_STRUC_Shrine_WallDoorFrame_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                1550.0,
+                1.52587890625e-05
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnRound_XL_01_A.SM_STRUC_Shrine_ColumnRound_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                2100.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                2100.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_XL_01_A.SM_STRUC_Shrine_ColumnSquare_XL_01_A",
+        "transform": {
+            "loc": [
+                625.0,
+                2150.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                1200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileLong_SMALL_01_A.SM_STRUC_Shrine_FloorTileLong_SMALL_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                1500.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileLong_SMALL_01_A.SM_STRUC_Shrine_FloorTileLong_SMALL_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                -1199.9998779296875,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_XL_01_A.SM_STRUC_Shrine_ColumnSquare_XL_01_A",
+        "transform": {
+            "loc": [
+                625.0,
+                1525.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileLong_SMALL_01_A.SM_STRUC_Shrine_FloorTileLong_SMALL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                1500.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_XL_01_A.SM_STRUC_Shrine_ColumnSquare_XL_01_A",
+        "transform": {
+            "loc": [
+                -575.0,
+                1525.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileRoundQuarter_XL_01_A.SM_STRUC_Shrine_FloorTileRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A.SM_STRUC_Shrine_DecoWall_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -1500.0,
+                500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Platform_MED_01_A.SM_STRUC_Shrine_Platform_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                1500.0,
+                4700.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Roof_XL_01_A.SM_STRUC_Shrine_Roof_XL_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                6200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_RoofLong_XL_01_A.SM_STRUC_Shrine_RoofLong_XL_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                4800.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                -599.9999389648438,
+                5.2453655371209607e-05,
+                2399.999755859375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9998779296875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                -599.9999389648438,
+                5.2453655371209607e-05,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99988555908203
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                -599.9999389648438,
+                5.2453655371209607e-05,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                -599.9999389648438,
+                5.2453655371209607e-05,
+                2399.999755859375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Stairs_MED_01_A.SM_STRUC_Shrine_Stairs_MED_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                2200.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallDoorFrame_XL_01_A.SM_STRUC_Shrine_WallDoorFrame_XL_01_A",
+        "transform": {
+            "loc": [
+                -599.9942016601562,
+                -1550.004150390625,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.000175877328729257
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallDoorFrame_XL_01_A.SM_STRUC_Shrine_WallDoorFrame_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -1550.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00017843861132860184
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Wall_XL_01_A.SM_STRUC_Shrine_Wall_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                2100.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallDoorFrame_LARGE_01_A.SM_STRUC_Shrine_WallDoorFrame_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -550.0,
+                1500.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Buttress_XL_01_A.SM_STRUC_Shrine_Buttress_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                58.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Buttress_XL_01_A.SM_STRUC_Shrine_Buttress_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0000228881836
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Buttress_XL_01_A.SM_STRUC_Shrine_Buttress_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                121.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Buttress_XL_01_A.SM_STRUC_Shrine_Buttress_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                148.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Buttress_XL_01_A.SM_STRUC_Shrine_Buttress_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                31.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallDoorFrame_XL_01_A.SM_STRUC_Shrine_WallDoorFrame_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                1550.0,
+                2400.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallFoundationRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallFoundationRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A.SM_STRUC_Shrine_DecoWall_MED_01_A",
+        "transform": {
+            "loc": [
+                625.0,
+                -1500.0,
+                500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_BanisterCorner_SMALL_01_A.SM_STRUC_Shrine_BanisterCorner_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                2150.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_XL_01_A.SM_STRUC_Shrine_ColumnSquare_XL_01_A",
+        "transform": {
+            "loc": [
+                625.0,
+                1525.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_XL_01_A.SM_STRUC_Shrine_ColumnSquare_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                1525.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallFoundationRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallFoundationRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A.SM_STRUC_Shrine_DecoWall_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                1500.0,
+                500.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -169.99990844726562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A.SM_STRUC_Shrine_DecoWall_MED_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                1500.0,
+                500.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -169.99990844726562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallFoundationRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallFoundationRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallFoundationRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallFoundationRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallFoundation_Large_01_A.SM_STRUC_Shrine_WallFoundation_Large_01_A",
+        "transform": {
+            "loc": [
+                -0.0014559404226019979,
+                -2125.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Luster_Large_01_A.SM_STRUC_Shrine_Luster_Large_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Stairs_MED_01_A.SM_STRUC_Shrine_Stairs_MED_01_A",
+        "transform": {
+            "loc": [
+                599.9999389648438,
+                -1500.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                -1500.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -1500.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Wall_XL_01_A.SM_STRUC_Shrine_Wall_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0001220703125,
+                -2100.002197265625,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Stairs_MED_01_A.SM_STRUC_Shrine_Stairs_MED_01_A",
+        "transform": {
+            "loc": [
+                -599.9995727539062,
+                -2200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallDoorFrame_LARGE_01_A.SM_STRUC_Shrine_WallDoorFrame_LARGE_01_A",
+        "transform": {
+            "loc": [
+                600.0018310546875,
+                -1500.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.00006103515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                -1500.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_XL_01_A.SM_STRUC_Shrine_ColumnSquare_XL_01_A",
+        "transform": {
+            "loc": [
+                625.0,
+                -2150.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_BanisterCorner_SMALL_01_A.SM_STRUC_Shrine_BanisterCorner_SMALL_01_A",
+        "transform": {
+            "loc": [
+                625.0,
+                -2150.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -1500.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_BanisterCorner_SMALL_01_A.SM_STRUC_Shrine_BanisterCorner_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -2150.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_XL_01_A.SM_STRUC_Shrine_ColumnSquare_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -2150.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileRoundQuarter_XL_01_A.SM_STRUC_Shrine_FloorTileRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                -599.9998779296875,
+                5.2453659009188414e-05,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99958038330078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileRoundQuarter_XL_01_A.SM_STRUC_Shrine_FloorTileRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                -599.9998779296875,
+                5.2453659009188414e-05,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnRound_LARGE_01_A.SM_STRUC_Shrine_ColumnRound_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnRound_XL_01_A.SM_STRUC_Shrine_ColumnRound_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -700.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnRound_XL_01_A.SM_STRUC_Shrine_ColumnRound_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileLong_SMALL_01_A.SM_STRUC_Shrine_FloorTileLong_SMALL_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                1500.0,
+                2400.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                1200.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                1200.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileLong_SMALL_01_A.SM_STRUC_Shrine_FloorTileLong_SMALL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                1500.0,
+                2400.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                0.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                -600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTile_MED_01_A.SM_STRUC_Shrine_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileLong_SMALL_01_A.SM_STRUC_Shrine_FloorTileLong_SMALL_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                -1199.9998779296875,
+                2400.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileLong_SMALL_01_A.SM_STRUC_Shrine_FloorTileLong_SMALL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                -1199.9998779296875,
+                2400.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnRound_XL_01_A.SM_STRUC_Shrine_ColumnRound_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                -700.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnRound_XL_01_A.SM_STRUC_Shrine_ColumnRound_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnRound_XL_01_A.SM_STRUC_Shrine_ColumnRound_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                600.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnRound_XL_01_A.SM_STRUC_Shrine_ColumnRound_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -700.0,
+                2400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_Platform_MED_01_A.SM_STRUC_Shrine_Platform_MED_01_A",
+        "transform": {
+            "loc": [
+                0.003363288938999176,
+                -1600.0,
+                4700.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallDoorFrame_LARGE_01_A.SM_STRUC_Shrine_WallDoorFrame_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -550.0,
+                -2100.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9998779296875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_XL_01_A.SM_STRUC_Shrine_ColumnSquare_XL_01_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                -1525.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_XL_01_A.SM_STRUC_Shrine_ColumnSquare_XL_01_A",
+        "transform": {
+            "loc": [
+                625.0,
+                -1525.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_FloorTileRoundQuarter_XL_01_A.SM_STRUC_Shrine_FloorTileRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_LARGE_02_A.SM_STRUC_Shrine_ColumnSquare_LARGE_02_A",
+        "transform": {
+            "loc": [
+                2124.999755859375,
+                14.694818496704102,
+                1.4999999621068127e-05
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_ColumnSquare_LARGE_02_A.SM_STRUC_Shrine_ColumnSquare_LARGE_02_A",
+        "transform": {
+            "loc": [
+                -2075.0,
+                14.695195198059082,
+                1.52587890625e-05
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallRoundQuarter_XL_01_A.SM_STRUC_Shrine_WallRoundQuarter_XL_01_A",
+        "transform": {
+            "loc": [
+                600.0,
+                0.0,
+                2399.999755859375
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

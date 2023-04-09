@@ -83,14 +83,6 @@ struct FMappableConfigPair
 	 * Registers the given config mapping with the settings
 	 */
 	static bool RegisterPair(const FMappableConfigPair& Pair);
-
-	/**
-	 * Activates the given config mapping in the settings. This will also register the mapping
-	 * if it hasn't been yet. 
-	 */
-	static bool ActivatePair(const FMappableConfigPair& Pair);
-
-	static void DeactivatePair(const FMappableConfigPair& Pair);
 	
 	static void UnregisterPair(const FMappableConfigPair& Pair);
 };

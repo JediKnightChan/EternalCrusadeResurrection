@@ -1,0 +1,82 @@
+[
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_SearchLight_Wall_Small_Base_A.SM_PROP_SearchLight_Wall_Small_Base_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_SearchLight_Wall_Small_Light_A.SM_PROP_SearchLight_Wall_Small_Light_A",
+        "transform": {
+            "loc": [
+                -116.93059539794922,
+                0.0,
+                9.18509292602539
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_SearchLight_Wall_Small_Light_A.SM_PROP_SearchLight_Wall_Small_Light_A",
+        "transform": {
+            "loc": [
+                0.015912000089883804,
+                0.0,
+                9.18509292602539
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_SearchLight_Wall_Small_Light_A.SM_PROP_SearchLight_Wall_Small_Light_A",
+        "transform": {
+            "loc": [
+                111.59674072265625,
+                3.0517578125e-05,
+                9.18509292602539
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

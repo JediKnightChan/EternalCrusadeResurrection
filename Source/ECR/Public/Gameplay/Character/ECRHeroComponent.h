@@ -76,9 +76,6 @@ protected:
 
 	TSubclassOf<UECRCameraMode> DetermineCameraMode() const;
 
-	void OnInputConfigActivated(const FLoadedMappableConfigPair& ConfigPair);
-	void OnInputConfigDeactivated(const FLoadedMappableConfigPair& ConfigPair);
-
 protected:
 	/**
 	 * Input Configs that should be added to this player when initalizing the input.

@@ -222,17 +222,17 @@ void UECRHeroComponent::InitializePlayerInput(UInputComponent* PlayerInputCompon
 				// Register any default input configs with the settings so that they will be applied to the player during AddInputMappings
 				for (const FMappableConfigPair& Pair : DefaultInputConfigs)
 				{
-					FMappableConfigPair::ActivatePair(Pair);
+					if (Pair.bShouldActivateAutomatically && Pair.CanBeActivated())
+					{
+						FModifyContextOptions Options = {};
+						Options.bIgnoreAllPressedKeysUntilRelease = false;
+						// Actually add the config to the local player							
+						Subsystem->AddPlayerMappableConfig(Pair.Config.LoadSynchronous(), Options);	
+					}
 				}
 
 				UECRInputComponent* ECRIC = CastChecked<UECRInputComponent>(PlayerInputComponent);
 				ECRIC->AddInputMappings(InputConfig, Subsystem);
-				if (UECRSettingsLocal* LocalSettings = UECRSettingsLocal::Get())
-				{
-					LocalSettings->OnInputConfigActivated.AddUObject(this, &UECRHeroComponent::OnInputConfigActivated);
-					LocalSettings->OnInputConfigDeactivated.AddUObject(
-						this, &UECRHeroComponent::OnInputConfigDeactivated);
-				}
 
 				TArray<uint32> BindHandles;
 				ECRIC->BindAbilityActions(InputConfig, this, &ThisClass::Input_AbilityInputTagPressed,
@@ -263,47 +263,6 @@ void UECRHeroComponent::InitializePlayerInput(UInputComponent* PlayerInputCompon
 		const_cast<APawn*>(Pawn), NAME_BindInputsNow);
 }
 
-void UECRHeroComponent::OnInputConfigActivated(const FLoadedMappableConfigPair& ConfigPair)
-{
-	if (AECRPlayerController* ECRPC = GetController<AECRPlayerController>())
-	{
-		if (APawn* Pawn = GetPawn<APawn>())
-		{
-			if (UECRInputComponent* ECRIC = Cast<UECRInputComponent>(Pawn->InputComponent))
-			{
-				if (const ULocalPlayer* LP = ECRPC->GetLocalPlayer())
-				{
-					if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LP->GetSubsystem<
-						UEnhancedInputLocalPlayerSubsystem>())
-					{
-						ECRIC->AddInputConfig(ConfigPair, Subsystem);
-					}
-				}
-			}
-		}
-	}
-}
-
-void UECRHeroComponent::OnInputConfigDeactivated(const FLoadedMappableConfigPair& ConfigPair)
-{
-	if (AECRPlayerController* ECRPC = GetController<AECRPlayerController>())
-	{
-		if (APawn* Pawn = GetPawn<APawn>())
-		{
-			if (UECRInputComponent* ECRIC = Cast<UECRInputComponent>(Pawn->InputComponent))
-			{
-				if (const ULocalPlayer* LP = ECRPC->GetLocalPlayer())
-				{
-					if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LP->GetSubsystem<
-						UEnhancedInputLocalPlayerSubsystem>())
-					{
-						ECRIC->RemoveInputConfig(ConfigPair, Subsystem);
-					}
-				}
-			}
-		}
-	}
-}
 
 void UECRHeroComponent::AddAdditionalInputConfig(const UECRInputConfig* InputConfig)
 {

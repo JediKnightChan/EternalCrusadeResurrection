@@ -3,7 +3,8 @@ import re
 import subprocess
 import time
 
-root_sound_directory = "./Files"
+DO_DELETE_BNK = False
+root_sound_directory = "C:/Users/JediKnight/Downloads/smvoiceunpacker/pck_outputs/sfx/player1_vanguard/"
 tools_directory = "C:/Users/JediKnight/Downloads/Wwise-Audio-Unpacker-master/Tools/"
 bnk_extractor_exe = os.path.join(tools_directory, "bnkextr.exe")
 
@@ -31,4 +32,5 @@ for root, subdirs, files in os.walk(root_sound_directory):
                         os.remove(new_wem_filepath)
 
                     os.rename(os.path.join(".", this_dir_file), new_wem_filepath)
-            os.remove(bnk_filepath)
+            if DO_DELETE_BNK:
+                os.remove(bnk_filepath)

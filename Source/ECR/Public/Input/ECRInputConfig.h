@@ -10,7 +10,6 @@
 
 class UInputAction;
 class UInputMappingContext;
-class UECRLocalPlayer;
 
 /**
  * FECRInputAction

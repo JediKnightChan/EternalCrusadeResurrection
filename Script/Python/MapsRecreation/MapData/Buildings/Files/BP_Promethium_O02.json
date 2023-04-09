@@ -1,0 +1,942 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Chimney_Med_02_A.SM_STRUC_PROM_Chimney_Med_02_A",
+        "transform": {
+            "loc": [
+                990.0,
+                -2400.0,
+                3590.0
+            ],
+            "rot": [
+                -3.0517578125e-05,
+                -179.99989318847656,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.5,
+                1.5,
+                1.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Tank_LARGE_01_A.SM_STRUC_Garage_Tank_LARGE_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                -390.0,
+                526.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Vent_SMALL_01_A.SM_STRUC_Garage_Vent_SMALL_01_A",
+        "transform": {
+            "loc": [
+                993.0,
+                -1938.0,
+                2488.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Vent_SMALL_01_A.SM_STRUC_Garage_Vent_SMALL_01_A",
+        "transform": {
+            "loc": [
+                993.0,
+                -1938.0,
+                3161.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco15D_MED_03_A.SM_STRUC_PROMPUMP_PipesDeco15D_MED_03_A",
+        "transform": {
+            "loc": [
+                460.0,
+                -6569.0,
+                635.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh SM_Promethium_O02.SM_Promethium_O02",
+        "transform": {
+            "loc": [
+                -20850.0,
+                -17570.0,
+                6.103515625e-05
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Tank_LARGE_01_A.SM_STRUC_Garage_Tank_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -502.0,
+                -2423.0,
+                892.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99990844726562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Deco_SMALL_01_A.SM_STRUC_Garage_Deco_SMALL_01_A",
+        "transform": {
+            "loc": [
+                2855.0,
+                847.0,
+                940.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_PipeCap_Small_01_A.SM_STRUC_PROM_PipeCap_Small_01_A",
+        "transform": {
+            "loc": [
+                2548.0,
+                546.0,
+                917.0
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_PipeCap_Small_01_A.SM_STRUC_PROM_PipeCap_Small_01_A",
+        "transform": {
+            "loc": [
+                3175.0,
+                546.0,
+                642.0
+            ],
+            "rot": [
+                90.0,
+                179.999755859375,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_PipeCap_Small_01_A.SM_STRUC_PROM_PipeCap_Small_01_A",
+        "transform": {
+            "loc": [
+                2548.0,
+                546.0,
+                1210.0
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_PipeCap_Small_01_A.SM_STRUC_PROM_PipeCap_Small_01_A",
+        "transform": {
+            "loc": [
+                3175.0,
+                546.0,
+                1210.0
+            ],
+            "rot": [
+                90.0,
+                179.999755859375,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_PipeCap_Small_01_A.SM_STRUC_PROM_PipeCap_Small_01_A",
+        "transform": {
+            "loc": [
+                3175.0,
+                546.0,
+                917.0
+            ],
+            "rot": [
+                90.0,
+                179.999755859375,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_PipeCap_Small_01_A.SM_STRUC_PROM_PipeCap_Small_01_A",
+        "transform": {
+            "loc": [
+                2548.0,
+                546.0,
+                642.0
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_PipeCap_Small_01_A.SM_STRUC_PROM_PipeCap_Small_01_A",
+        "transform": {
+            "loc": [
+                709.0,
+                1904.0,
+                970.0
+            ],
+            "rot": [
+                90.0,
+                179.99989318847656,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Chimney_Med_01_A.SM_STRUC_PROM_Chimney_Med_01_A",
+        "transform": {
+            "loc": [
+                1915.0,
+                1924.9998779296875,
+                9.71481204032898e-05
+            ],
+            "rot": [
+                3.3161075407406315e-05,
+                -0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_FuelTank_Large_01_A.SM_STRUC_PROM_FuelTank_Large_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                49.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_FuelTank_Large_02_A.SM_STRUC_PROM_FuelTank_Large_02_A",
+        "transform": {
+            "loc": [
+                -60.0,
+                -2400.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Chimney_Med_02_A.SM_STRUC_PROM_Chimney_Med_02_A",
+        "transform": {
+            "loc": [
+                235.01730346679688,
+                1904.0,
+                -0.03805200010538101
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.5,
+                1.5,
+                1.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_T_LARGE_01.SM_STRUC_Pipe_T_LARGE_01",
+        "transform": {
+            "loc": [
+                -1320.0,
+                54.999420166015625,
+                439.9997253417969
+            ],
+            "rot": [
+                6.0068930906709284e-05,
+                -90.0001220703125,
+                179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_LARGE_01.SM_STRUC_Pipe_90Degree_LARGE_01",
+        "transform": {
+            "loc": [
+                -2660.0,
+                54.9980354309082,
+                -300.0002746582031
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_LARGE_06.SM_STRUC_Pipe_Straight_LARGE_06",
+        "transform": {
+            "loc": [
+                1740.0010986328125,
+                -1135.9981689453125,
+                344.99993896484375
+            ],
+            "rot": [
+                -90.0,
+                5.795607285108417e-05,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.8544921875
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_LARGE_01.SM_STRUC_Pipe_90Degree_LARGE_01",
+        "transform": {
+            "loc": [
+                1741.0015869140625,
+                -1137.0054931640625,
+                343.9979553222656
+            ],
+            "rot": [
+                -0.0001220703125,
+                89.99990844726562,
+                89.99974822998047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                2845.000244140625,
+                -1126.000244140625,
+                952.9999389648438
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_T_LARGE_01.SM_STRUC_Pipe_T_LARGE_01",
+        "transform": {
+            "loc": [
+                2845.000244140625,
+                -1132.000244140625,
+                354.9999694824219
+            ],
+            "rot": [
+                -90.0,
+                89.999755859375,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_LARGE_01.SM_STRUC_Pipe_90Degree_LARGE_01",
+        "transform": {
+            "loc": [
+                1342.0,
+                55.0,
+                -300.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                2860.2314453125,
+                555.7581787109375,
+                1779.9605712890625
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_MED_01.SM_STRUC_Pipe_Straight_MED_01",
+        "transform": {
+            "loc": [
+                240.0,
+                -2400.0,
+                2640.0
+            ],
+            "rot": [
+                -3.0517578125e-05,
+                89.99903106689453,
+                -89.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Chimney_Small_03_A.SM_STRUC_PROM_Chimney_Small_03_A",
+        "transform": {
+            "loc": [
+                2860.2314453125,
+                555.7581787109375,
+                -20.0394287109375
+            ],
+            "rot": [
+                -3.0517578125e-05,
+                1.3110147847328335e-05,
+                -20.0
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_LARGE_02.SM_STRUC_Pipe_Straight_LARGE_02",
+        "transform": {
+            "loc": [
+                612.0,
+                60.0,
+                443.0
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                1905.0,
+                1924.9993896484375,
+                585.0000610351562
+            ],
+            "rot": [
+                3.320398900541477e-05,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_LARGE_02.SM_STRUC_Pipe_Straight_LARGE_02",
+        "transform": {
+            "loc": [
+                -728.0,
+                60.0,
+                443.0
+            ],
+            "rot": [
+                -90.0,
+                -0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_LARGE_02.SM_STRUC_Pipe_Straight_LARGE_02",
+        "transform": {
+            "loc": [
+                998.0,
+                -1847.0,
+                345.0
+            ],
+            "rot": [
+                90.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Chimney_Med_02_A.SM_STRUC_PROM_Chimney_Med_02_A",
+        "transform": {
+            "loc": [
+                990.0,
+                -2400.0,
+                5.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.5,
+                1.5,
+                1.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Chimney_Med_02_A.SM_STRUC_PROM_Chimney_Med_02_A",
+        "transform": {
+            "loc": [
+                235.01730346679688,
+                1904.9891357421875,
+                3589.9619140625
+            ],
+            "rot": [
+                0.0,
+                -179.99989318847656,
+                89.9999771118164
+            ],
+            "scale": [
+                1.5,
+                1.5,
+                1.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_MED_01.SM_STRUC_Pipe_90Degree_MED_01",
+        "transform": {
+            "loc": [
+                -60.0,
+                -2400.0,
+                2340.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_MED_01.SM_STRUC_Pipe_Straight_MED_01",
+        "transform": {
+            "loc": [
+                1115.01708984375,
+                1904.9971923828125,
+                129.99273681640625
+            ],
+            "rot": [
+                -3.0517578125e-05,
+                89.99903106689453,
+                -89.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_PipeCap_Small_01_A.SM_STRUC_PROM_PipeCap_Small_01_A",
+        "transform": {
+            "loc": [
+                -240.0,
+                1904.0,
+                970.0
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_PipeCap_Small_01_A.SM_STRUC_PROM_PipeCap_Small_01_A",
+        "transform": {
+            "loc": [
+                -240.0,
+                1904.0,
+                1245.0
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_WaterFilterUnit_Pipes_Med_01.SM_STRUC_WaterFilterUnit_Pipes_Med_01",
+        "transform": {
+            "loc": [
+                235.0,
+                2365.0,
+                1480.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_MED_01.SM_STRUC_Pipe_Straight_MED_01",
+        "transform": {
+            "loc": [
+                2855.01708984375,
+                324.9971923828125,
+                129.99200439453125
+            ],
+            "rot": [
+                -3.0517578125e-05,
+                89.9990005493164,
+                -179.9996337890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_MED_01.SM_STRUC_Pipe_Straight_MED_01",
+        "transform": {
+            "loc": [
+                515.0173950195312,
+                1900.0,
+                129.9617919921875
+            ],
+            "rot": [
+                -3.0517578125e-05,
+                89.99909973144531,
+                -89.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_MED_01.SM_STRUC_Pipe_Straight_MED_01",
+        "transform": {
+            "loc": [
+                2855.01708984375,
+                -275.0028076171875,
+                129.99200439453125
+            ],
+            "rot": [
+                -3.0517578125e-05,
+                89.9990005493164,
+                -179.9996337890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -1320.0,
+                54.999420166015625,
+                1029.9998779296875
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                645.0,
+                104.0,
+                710.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Deco_SMALL_01_A.SM_STRUC_Garage_Deco_SMALL_01_A",
+        "transform": {
+            "loc": [
+                2855.0,
+                250.0,
+                940.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Pipe_MED_01_A.SM_STRUC_Garage_Pipe_MED_01_A",
+        "transform": {
+            "loc": [
+                940.0,
+                1910.0,
+                200.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

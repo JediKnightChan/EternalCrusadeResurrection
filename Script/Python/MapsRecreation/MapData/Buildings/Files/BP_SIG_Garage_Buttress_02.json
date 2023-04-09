@@ -1,0 +1,242 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Block_MED_01_A.SM_STRUC_Garage_Block_MED_01_A",
+        "transform": {
+            "loc": [
+                400.0,
+                0.0,
+                1575.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Block_MED_02_A.SM_STRUC_Garage_Block_MED_02_A",
+        "transform": {
+            "loc": [
+                -200.0,
+                0.0,
+                1875.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Buttress_LARGE_01_A.SM_STRUC_Garage_Buttress_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -2600.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Buttress_MED_01_A.SM_STRUC_Garage_Buttress_MED_01_A",
+        "transform": {
+            "loc": [
+                400.0,
+                0.0,
+                1875.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Buttress_SMALL_01_A.SM_STRUC_Garage_Buttress_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -3000.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Column_LARGE_01_A.SM_STRUC_Garage_Column_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -1400.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Column_LARGE_02_A.SM_STRUC_Garage_Column_LARGE_02_A",
+        "transform": {
+            "loc": [
+                -800.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Column_LARGE_03_A.SM_STRUC_Garage_Column_LARGE_03_A",
+        "transform": {
+            "loc": [
+                400.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_MED_01_A.SM_STRUC_Garage_Cube_MED_01_A",
+        "transform": {
+            "loc": [
+                -800.0,
+                0.0,
+                1875.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A.SM_STRUC_Garage_Triangle_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -800.0,
+                -200.0,
+                1875.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Block_MED_02_A.SM_STRUC_Garage_Block_MED_02_A",
+        "transform": {
+            "loc": [
+                400.0,
+                0.0,
+                1875.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A.SM_STRUC_Garage_Triangle_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -800.0,
+                300.0,
+                1875.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

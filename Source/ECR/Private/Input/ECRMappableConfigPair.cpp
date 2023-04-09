@@ -43,36 +43,6 @@ bool FMappableConfigPair::RegisterPair(const FMappableConfigPair& Pair)
 	return false;
 }
 
-bool FMappableConfigPair::ActivatePair(const FMappableConfigPair& Pair)
-{
-	UECRAssetManager& AssetManager = UECRAssetManager::Get();
-	// Only activate a pair that has been successfully registered
-	if (FMappableConfigPair::RegisterPair(Pair) && Pair.CanBeActivated())
-	{		
-		if (UECRSettingsLocal* Settings = UECRSettingsLocal::Get())
-		{
-			if (const UPlayerMappableInputConfig* LoadedConfig = AssetManager.GetAsset(Pair.Config))
-			{
-				Settings->ActivateInputConfig(LoadedConfig);
-				return true;
-			}			
-		}
-	}
-	return false;
-}
-
-void FMappableConfigPair::DeactivatePair(const FMappableConfigPair& Pair)
-{
-	UECRAssetManager& AssetManager = UECRAssetManager::Get();
-	
-	if (UECRSettingsLocal* Settings = UECRSettingsLocal::Get())
-	{
-		if (const UPlayerMappableInputConfig* LoadedConfig = AssetManager.GetAsset(Pair.Config))
-		{
-			Settings->DeactivateInputConfig(LoadedConfig);
-		}
-	}
-}
 
 void FMappableConfigPair::UnregisterPair(const FMappableConfigPair& Pair)
 {

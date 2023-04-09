@@ -1,0 +1,1142 @@
+[
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Missiles/Models/SM_PROP_MissileRack_Missile_LARGE_01_A.SM_PROP_MissileRack_Missile_LARGE_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                -7.62939453125e-05,
+                950.0
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                4.178133487701416,
+                4.178133487701416,
+                4.178133487701416
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_AquilaMissiles_01.SM_STRUC_AQ_STRHOLD_MED_AquilaMissiles_01",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_Barrier_01.SM_STRUC_AQ_STRHOLD_MED_Barrier_01",
+        "transform": {
+            "loc": [
+                -550.0,
+                -1575.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01.SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01",
+        "transform": {
+            "loc": [
+                1953.3203125,
+                819.0155029296875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                22.5
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_01.SM_STRUC_AQ_STRHOLD_MED_WallAngle_01",
+        "transform": {
+            "loc": [
+                -600.0,
+                1450.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_04.SM_STRUC_AQ_STRHOLD_MED_WallAngle_04",
+        "transform": {
+            "loc": [
+                -600.0,
+                1625.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01",
+        "transform": {
+            "loc": [
+                -600.0,
+                1450.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02",
+        "transform": {
+            "loc": [
+                -600.0,
+                1450.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_SMALL_FloorOctogon_01.SM_STRUC_AQ_STRHOLD_SMALL_FloorOctogon_01",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_01.SM_STRUC_AQ_STRHOLD_MED_WallAngle_01",
+        "transform": {
+            "loc": [
+                1450.0,
+                -600.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_04.SM_STRUC_AQ_STRHOLD_MED_WallAngle_04",
+        "transform": {
+            "loc": [
+                1575.0,
+                -725.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01",
+        "transform": {
+            "loc": [
+                1450.0,
+                -600.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0001220703125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_01.SM_STRUC_AQ_STRHOLD_MED_WallAngle_01",
+        "transform": {
+            "loc": [
+                600.0,
+                -1450.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02",
+        "transform": {
+            "loc": [
+                600.0,
+                -1450.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_04.SM_STRUC_AQ_STRHOLD_MED_WallAngle_04",
+        "transform": {
+            "loc": [
+                600.0,
+                -1625.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01",
+        "transform": {
+            "loc": [
+                600.0,
+                -1450.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.9999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_01.SM_STRUC_AQ_STRHOLD_MED_WallAngle_01",
+        "transform": {
+            "loc": [
+                -600.0,
+                -1450.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                134.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02",
+        "transform": {
+            "loc": [
+                -600.0,
+                -1450.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_04.SM_STRUC_AQ_STRHOLD_MED_WallAngle_04",
+        "transform": {
+            "loc": [
+                -725.0,
+                -1575.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                134.99990844726562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01",
+        "transform": {
+            "loc": [
+                600.0,
+                1450.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01",
+        "transform": {
+            "loc": [
+                -600.0,
+                -1450.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                134.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02",
+        "transform": {
+            "loc": [
+                -1450.0,
+                -600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_04.SM_STRUC_AQ_STRHOLD_MED_WallAngle_04",
+        "transform": {
+            "loc": [
+                -1625.0,
+                -600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01",
+        "transform": {
+            "loc": [
+                -1450.0,
+                -600.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99952697753906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_01.SM_STRUC_AQ_STRHOLD_MED_WallAngle_01",
+        "transform": {
+            "loc": [
+                -1450.0,
+                -600.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99964904785156
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_04.SM_STRUC_AQ_STRHOLD_MED_WallAngle_04",
+        "transform": {
+            "loc": [
+                -1575.0,
+                725.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99956130981445
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01",
+        "transform": {
+            "loc": [
+                -1450.0,
+                600.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.999385833740234
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_01.SM_STRUC_AQ_STRHOLD_MED_WallAngle_01",
+        "transform": {
+            "loc": [
+                -1450.0,
+                600.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.999515533447266
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02",
+        "transform": {
+            "loc": [
+                -1450.0,
+                600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99958801269531
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_Barrier_01.SM_STRUC_AQ_STRHOLD_MED_Barrier_01",
+        "transform": {
+            "loc": [
+                1556.0660400390625,
+                -564.6446533203125,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02",
+        "transform": {
+            "loc": [
+                600.0,
+                1450.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_Barrier_01.SM_STRUC_AQ_STRHOLD_MED_Barrier_01",
+        "transform": {
+            "loc": [
+                1506.0660400390625,
+                735.3553466796875,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                135.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_Barrier_01.SM_STRUC_AQ_STRHOLD_MED_Barrier_01",
+        "transform": {
+            "loc": [
+                556.0660400390625,
+                1585.3553466796875,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_Barrier_01.SM_STRUC_AQ_STRHOLD_MED_Barrier_01",
+        "transform": {
+            "loc": [
+                -693.9339599609375,
+                1535.3553466796875,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -134.9998321533203
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_Barrier_01.SM_STRUC_AQ_STRHOLD_MED_Barrier_01",
+        "transform": {
+            "loc": [
+                -1593.9339599609375,
+                585.3553466796875,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99974822998047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_Barrier_01.SM_STRUC_AQ_STRHOLD_MED_Barrier_01",
+        "transform": {
+            "loc": [
+                -1493.9339599609375,
+                -714.6446533203125,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.9996452331543
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01.SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01",
+        "transform": {
+            "loc": [
+                1953.3203125,
+                -830.9844970703125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -22.5
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01.SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01",
+        "transform": {
+            "loc": [
+                803.3203125,
+                -1980.9844970703125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -70.00004577636719
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01.SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01",
+        "transform": {
+            "loc": [
+                -846.6796875,
+                -1980.9844970703125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -115.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01.SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01",
+        "transform": {
+            "loc": [
+                -1996.6796875,
+                -830.9844970703125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -154.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01.SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01",
+        "transform": {
+            "loc": [
+                -1996.6796875,
+                819.0155029296875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                159.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_04.SM_STRUC_AQ_STRHOLD_MED_WallAngle_04",
+        "transform": {
+            "loc": [
+                725.0,
+                1580.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01.SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01",
+        "transform": {
+            "loc": [
+                -796.6796875,
+                1969.0155029296875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                109.9997329711914
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01.SM_STRUC_AQ_STRHOLD_MED_ColumnAngle_01",
+        "transform": {
+            "loc": [
+                853.3203125,
+                1969.0155029296875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                69.99958801269531
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Missiles/Models/SM_PROP_MissileRack_Missile_LARGE_01_A.SM_PROP_MissileRack_Missile_LARGE_01_A",
+        "transform": {
+            "loc": [
+                200.0,
+                -360.00006103515625,
+                950.0
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                4.178133010864258,
+                4.178133010864258,
+                4.178133010864258
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Missiles/Models/SM_PROP_MissileRack_Missile_LARGE_01_A.SM_PROP_MissileRack_Missile_LARGE_01_A",
+        "transform": {
+            "loc": [
+                400.0,
+                -6.103515625e-05,
+                950.0
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                4.178133010864258,
+                4.178133010864258,
+                4.178133010864258
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Missiles/Models/SM_PROP_MissileRack_Missile_LARGE_01_A.SM_PROP_MissileRack_Missile_LARGE_01_A",
+        "transform": {
+            "loc": [
+                210.0,
+                369.99993896484375,
+                950.0
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                4.178133010864258,
+                4.178133010864258,
+                4.178133010864258
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Missiles/Models/SM_PROP_MissileRack_Missile_LARGE_01_A.SM_PROP_MissileRack_Missile_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -210.0,
+                359.99993896484375,
+                950.0
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                4.178133010864258,
+                4.178133010864258,
+                4.178133010864258
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Missiles/Models/SM_PROP_MissileRack_Missile_LARGE_01_A.SM_PROP_MissileRack_Missile_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -420.0,
+                -6.103515625e-05,
+                950.0
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                4.178133010864258,
+                4.178133010864258,
+                4.178133010864258
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Missiles/Models/SM_PROP_MissileRack_Missile_LARGE_01_A.SM_PROP_MissileRack_Missile_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -200.0,
+                -370.00006103515625,
+                950.0
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                4.178133010864258,
+                4.178133010864258,
+                4.178133010864258
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_01.SM_STRUC_AQ_STRHOLD_MED_WallAngle_01",
+        "transform": {
+            "loc": [
+                600.0,
+                1450.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_01",
+        "transform": {
+            "loc": [
+                1450.0,
+                600.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00018310546875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02",
+        "transform": {
+            "loc": [
+                1450.0,
+                600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_04.SM_STRUC_AQ_STRHOLD_MED_WallAngle_04",
+        "transform": {
+            "loc": [
+                1625.0,
+                600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngle_01.SM_STRUC_AQ_STRHOLD_MED_WallAngle_01",
+        "transform": {
+            "loc": [
+                1450.0,
+                600.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00013732910156
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02.SM_STRUC_AQ_STRHOLD_MED_WallAngleCorner_02",
+        "transform": {
+            "loc": [
+                1450.0,
+                -600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_Barrier_01.SM_STRUC_AQ_STRHOLD_MED_Barrier_01",
+        "transform": {
+            "loc": [
+                706.0660400390625,
+                -1514.6446533203125,
+                1200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

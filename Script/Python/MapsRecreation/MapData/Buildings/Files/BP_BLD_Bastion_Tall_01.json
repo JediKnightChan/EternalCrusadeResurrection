@@ -1,0 +1,442 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_WalllWindow_01.SM_STRUC_Bastion_WalllWindow_01",
+        "transform": {
+            "loc": [
+                4.06640625,
+                1306.93310546875,
+                1193.3331298828125
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_WallFloor_01.SM_STRUC_Bastion_WallFloor_01",
+        "transform": {
+            "loc": [
+                11.06640625,
+                -14.06689453125,
+                1204.3331298828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_WallPlain_01.SM_STRUC_Bastion_WallPlain_01",
+        "transform": {
+            "loc": [
+                1305.06640625,
+                20.93310546875,
+                1214.3331298828125
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_WallWindows_01.SM_STRUC_Bastion_WallWindows_01",
+        "transform": {
+            "loc": [
+                11.06640625,
+                -1210.06689453125,
+                1203.3331298828125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_WallDoors_01.SM_STRUC_Bastion_WallDoors_01",
+        "transform": {
+            "loc": [
+                -1283.93359375,
+                45.93310546875,
+                9.333251953125
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_Door_01.SM_STRUC_Bastion_Door_01",
+        "transform": {
+            "loc": [
+                -1295.9344482421875,
+                49.9337158203125,
+                1212.3331298828125
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -3.0517578125e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_WalllWindow_01.SM_STRUC_Bastion_WalllWindow_01",
+        "transform": {
+            "loc": [
+                4.06640625,
+                1306.93310546875,
+                -6.666749954223633
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_Door_01.SM_STRUC_Bastion_Door_01",
+        "transform": {
+            "loc": [
+                -0.9335947036743164,
+                1319.93310546875,
+                -1197.666748046875
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.00003051757812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_WallFloor_01.SM_STRUC_Bastion_WallFloor_01",
+        "transform": {
+            "loc": [
+                11.06640625,
+                -14.06689453125,
+                4.333251953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_Door_01.SM_STRUC_Bastion_Door_01",
+        "transform": {
+            "loc": [
+                1323.06640625,
+                1.93310546875,
+                -1192.666748046875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_Door_01.SM_STRUC_Bastion_Door_01",
+        "transform": {
+            "loc": [
+                -1.9335947036743164,
+                -1332.06689453125,
+                -1192.666748046875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99994659423828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_Door_01.SM_STRUC_Bastion_Door_01",
+        "transform": {
+            "loc": [
+                -1327.93359375,
+                -1.0668492317199707,
+                -1197.666748046875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_WallDoors_01.SM_STRUC_Bastion_WallDoors_01",
+        "transform": {
+            "loc": [
+                -1283.93359375,
+                45.93310546875,
+                1209.333251953125
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_WallWindows_01.SM_STRUC_Bastion_WallWindows_01",
+        "transform": {
+            "loc": [
+                11.06640625,
+                -1210.06689453125,
+                3.333251953125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_WallPlain_01.SM_STRUC_Bastion_WallPlain_01",
+        "transform": {
+            "loc": [
+                1305.06640625,
+                20.93310546875,
+                14.333250045776367
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_BunkerWall_01.SM_STRUC_Bastion_BunkerWall_01",
+        "transform": {
+            "loc": [
+                -1.933584213256836,
+                1340.93310546875,
+                2394.333251953125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_TopWall_01.SM_STRUC_Bastion_TopWall_01",
+        "transform": {
+            "loc": [
+                -9.93359375,
+                -4.06689453125,
+                2389.333251953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_BunkerWall_01.SM_STRUC_Bastion_BunkerWall_01",
+        "transform": {
+            "loc": [
+                -1332.93359375,
+                -5.06689453125,
+                2394.333251953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_BunkerWall_01.SM_STRUC_Bastion_BunkerWall_01",
+        "transform": {
+            "loc": [
+                22.06640625,
+                -1332.06689453125,
+                2394.333251953125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_BunkerWall_01.SM_STRUC_Bastion_BunkerWall_01",
+        "transform": {
+            "loc": [
+                1327.06640625,
+                -4.06689453125,
+                2394.333251953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_Base_01.SM_STRUC_Bastion_Base_01",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                -1196.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_Door_01.SM_STRUC_Bastion_Door_01",
+        "transform": {
+            "loc": [
+                -1295.9344482421875,
+                49.933746337890625,
+                22.333160400390625
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -3.0517578125e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

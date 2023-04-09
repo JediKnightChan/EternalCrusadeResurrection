@@ -1,0 +1,4762 @@
+[
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                1450.98828125,
+                -891.0708618164062,
+                2358.7451171875
+            ],
+            "scale": [
+                8.663046836853027,
+                7.956037998199463,
+                0.15503095090389252
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -1517.3421630859375,
+                1525.1839599609375,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -0.0013457706663757563,
+                2116.255126953125,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -89.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -1937.3828125,
+                1106.54296875,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -1097.7296142578125,
+                1946.1939697265625,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                1977.8592529296875,
+                -1129.3951416015625,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                1557.060302734375,
+                -1549.2177734375,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                1137.7169189453125,
+                -1968.556396484375,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                1579.773681640625,
+                1511.1884765625,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99996566772461
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                1264.9000244140625,
+                1826.0628662109375,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99996566772461
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                1999.69970703125,
+                1091.2633056640625,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99996566772461
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -1533.675537109375,
+                -1470.654052734375,
+                2363.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99996566772461
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -1113.750244140625,
+                -1890.5804443359375,
+                2363.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99996566772461
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -1956.35205078125,
+                -1047.9759521484375,
+                2363.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99996566772461
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -593.03125,
+                2116.2548828125,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                593.2931518554688,
+                2116.253662109375,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                2254.616943359375,
+                -43.04822540283203,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                2254.616943359375,
+                550.5757446289062,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                2254.616943359375,
+                -637.25244140625,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -2184.778564453125,
+                -637.25244140625,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -2184.7802734375,
+                -43.04822540283203,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -2184.779541015625,
+                553.6710815429688,
+                2373.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Arch_Deco_01.SM_ControlCenter_Arch_Deco_01",
+        "transform": {
+            "loc": [
+                536.3583984375,
+                -5113.02587890625,
+                -485.439697265625
+            ],
+            "scale": [
+                1.350000023841858,
+                1.350000023841858,
+                1.350000023841858
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Arch_Deco_01.SM_ControlCenter_Arch_Deco_01",
+        "transform": {
+            "loc": [
+                -510.1496276855469,
+                -5113.02587890625,
+                -485.439697265625
+            ],
+            "scale": [
+                1.350000023841858,
+                1.350000023841858,
+                1.350000023841858
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Dome_Small_Roof_01.SM_ControlCenter_Dome_Small_Roof_01",
+        "transform": {
+            "loc": [
+                10.5978364944458,
+                -52.88379669189453,
+                3750.43359375
+            ],
+            "scale": [
+                1.149999976158142,
+                1.149999976158142,
+                1.149999976158142
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_02.SM_ControlCenter_NewModule_01_SM_Wallpiece_02",
+        "transform": {
+            "loc": [
+                1105.7120361328125,
+                -8855.6083984375,
+                -284.9974365234375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_02.SM_ControlCenter_NewModule_01_SM_Wallpiece_02",
+        "transform": {
+            "loc": [
+                25.71198081970215,
+                -9300.6083984375,
+                -209.9980926513672
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -89.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_02.SM_ControlCenter_NewModule_01_SM_Wallpiece_02",
+        "transform": {
+            "loc": [
+                -1052.6256103515625,
+                -8851.5927734375,
+                -284.99847412109375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99995803833008
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Roof_01.SM_ControlCenter_Roof_01",
+        "transform": {
+            "loc": [
+                18.999996185302734,
+                21.999996185302734,
+                2376.999267578125
+            ],
+            "scale": [
+                1.0299999713897705,
+                1.0199999809265137,
+                1.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_RoundStairs_01.SM_ControlCenter_RoundStairs_01",
+        "transform": {
+            "loc": [
+                24.999996185302734,
+                -7799.9970703125,
+                524.9998779296875
+            ],
+            "scale": [
+                1.0499999523162842,
+                1.0499999523162842,
+                1.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Beam_MED_01_A.SM_STRUC_CATH_Beam_MED_01_A",
+        "transform": {
+            "loc": [
+                -1178.2841796875,
+                -1921.7158203125,
+                -605.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_HAR_Balcony_01/SM_STRUC_HAR_Concrete_12x6_Floor_01.SM_STRUC_HAR_Concrete_12x6_Floor_01",
+        "transform": {
+            "loc": [
+                486.9998779296875,
+                -4009.99951171875,
+                560.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0429999828338623,
+                0.800000011920929,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_HAR_Balcony_01/SM_STRUC_HAR_Concrete_12x6_Floor_01.SM_STRUC_HAR_Concrete_12x6_Floor_01",
+        "transform": {
+            "loc": [
+                486.9998779296875,
+                -4634.99951171875,
+                560.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0429999828338623,
+                0.800000011920929,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_HAR_Balcony_01/SM_STRUC_HAR_Concrete_12x6_Floor_01.SM_STRUC_HAR_Concrete_12x6_Floor_01",
+        "transform": {
+            "loc": [
+                486.9999694824219,
+                -5259.99951171875,
+                560.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0429999828338623,
+                0.7919570207595825,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_HAR_Balcony_01/SM_STRUC_HAR_Concrete_12x6_Floor_01.SM_STRUC_HAR_Concrete_12x6_Floor_01",
+        "transform": {
+            "loc": [
+                486.9999694824219,
+                -5884.99951171875,
+                560.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                0.6502570509910583,
+                0.7919570207595825,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x18_Wall_01.SM_ControlCenter_12x18_Wall_01",
+        "transform": {
+            "loc": [
+                -1673.3990478515625,
+                -1503.95751953125,
+                20.000003814697266
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Beam_MED_01_A.SM_STRUC_CATH_Beam_MED_01_A",
+        "transform": {
+            "loc": [
+                -1178.2841796875,
+                -1921.7158203125,
+                595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_02.SM_ControlCenter_NewModule_01_SM_Wallpiece_02",
+        "transform": {
+            "loc": [
+                15.736120223999023,
+                -3924.4462890625,
+                306.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Roof_02.SM_ControlCenter_Roof_02",
+        "transform": {
+            "loc": [
+                0.0,
+                -4271.5556640625,
+                1771.0
+            ],
+            "scale": [
+                1.0,
+                1.0499999523162842,
+                1.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_02.SM_ControlCenter_NewModule_01_SM_Wallpiece_02",
+        "transform": {
+            "loc": [
+                15.736294746398926,
+                -6362.0859375,
+                1753.0001220703125
+            ],
+            "rot": [
+                3.415094397496432e-05,
+                -179.9999542236328,
+                89.9994888305664
+            ],
+            "scale": [
+                0.8165248036384583,
+                0.8981773257255554,
+                0.8165248036384583
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Stairs_02.SM_ControlCenter_Stairs_02",
+        "transform": {
+            "loc": [
+                15.000000953674316,
+                -3490.0,
+                443.0
+            ],
+            "scale": [
+                0.703125,
+                1.0,
+                1.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_DomeRoof_01.SM_ControlCenter_DomeRoof_01",
+        "transform": {
+            "loc": [
+                37.0,
+                -7811.0,
+                1511.00390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ChimneyStack_01.SM_ControlCenter_ChimneyStack_01",
+        "transform": {
+            "loc": [
+                29.717655181884766,
+                -7747.85107421875,
+                2885.000244140625
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -43.39990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Generator_01.SM_ControlCenter_Generator_01",
+        "transform": {
+            "loc": [
+                19.138198852539062,
+                -7833.78564453125,
+                1243.004150390625
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                46.19953536987305
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                -1663.8153076171875,
+                -8512.0859375,
+                -150.76510620117188
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -155.00006103515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_02.SM_ControlCenter_NewModule_02",
+        "transform": {
+            "loc": [
+                1101.1885986328125,
+                -6693.7392578125,
+                25.003463745117188
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                45.000003814697266
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -925.0,
+                865.0,
+                2512.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Floor_01.SM_ControlCenter_Floor_01",
+        "transform": {
+            "loc": [
+                54.192527770996094,
+                27.664119720458984,
+                0.8525066375732422
+            ],
+            "scale": [
+                1.062273383140564,
+                1.062273383140564,
+                1.062273383140564
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -921.5279541015625,
+                -965.3995361328125,
+                2512.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -5.40008544921875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Wall_01.SM_ControlCenter_18x24_Wall_01",
+        "transform": {
+            "loc": [
+                0.00037630414590239525,
+                2200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                923.5435180664062,
+                -967.0219116210938,
+                2512.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.7999874353408813
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_02.SM_ControlCenter_NewModule_02",
+        "transform": {
+            "loc": [
+                1551.1885986328125,
+                -7773.7392578125,
+                25.00303077697754
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                930.9759521484375,
+                864.2603759765625,
+                2512.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.7999874353408813
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Arch_Deco_01.SM_ControlCenter_Arch_Deco_01",
+        "transform": {
+            "loc": [
+                914.0,
+                -68.0,
+                2895.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_02.SM_ControlCenter_NewModule_02",
+        "transform": {
+            "loc": [
+                1105.7120361328125,
+                -8855.6083984375,
+                25.002511978149414
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Arch_Deco_01.SM_ControlCenter_Arch_Deco_01",
+        "transform": {
+            "loc": [
+                -871.0,
+                -63.99983596801758,
+                2895.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Logo_Small_01_A.SM_STRUC_PROM_Logo_Small_01_A",
+        "transform": {
+            "loc": [
+                6.4894256591796875,
+                -1378.6854248046875,
+                149.0
+            ],
+            "scale": [
+                0.5636749267578125,
+                0.5636749267578125,
+                0.5636749267578125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Wall_01.SM_ControlCenter_18x24_Wall_01",
+        "transform": {
+            "loc": [
+                1620.708984375,
+                1554.851318359375,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.999820709228516
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Arch_Deco_01.SM_ControlCenter_Arch_Deco_01",
+        "transform": {
+            "loc": [
+                6.000839710235596,
+                840.9993286132812,
+                2895.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_02.SM_ControlCenter_NewModule_02",
+        "transform": {
+            "loc": [
+                25.71198081970215,
+                -9300.6083984375,
+                25.001813888549805
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Arch_Deco_01.SM_ControlCenter_Arch_Deco_01",
+        "transform": {
+            "loc": [
+                5.999386787414551,
+                -945.0006103515625,
+                2895.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0001220703125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                930.0,
+                860.0,
+                3600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                34.99996566772461
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                1723.7689208984375,
+                -7080.70361328125,
+                -150.76498413085938
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                19.99976921081543
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                -1595.5313720703125,
+                -7115.57958984375,
+                -150.76580810546875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                154.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_02.SM_ControlCenter_NewModule_02",
+        "transform": {
+            "loc": [
+                -1052.6256103515625,
+                -8851.5927734375,
+                25.001380920410156
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_02.SM_ControlCenter_NewModule_02",
+        "transform": {
+            "loc": [
+                -1498.8114013671875,
+                -7773.7392578125,
+                25.0006160736084
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                930.0,
+                -970.0,
+                3600.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -35.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                -930.0,
+                -970.0,
+                3600.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -130.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                -930.0,
+                860.0,
+                3600.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                119.99980926513672
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                2200.0,
+                830.0,
+                2940.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                19.999990463256836
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_02.SM_ControlCenter_NewModule_02",
+        "transform": {
+            "loc": [
+                -1051.237548828125,
+                -6693.740234375,
+                25.00054359436035
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                134.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                2200.0,
+                -940.0,
+                2940.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -25.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                -2180.0,
+                -960.0,
+                2940.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                -2150.0,
+                890.0,
+                2940.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_WiresDeco_01.SM_ControlCenter_WiresDeco_01",
+        "transform": {
+            "loc": [
+                -946.0,
+                -45.00002670288086,
+                975.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                -920.0,
+                2120.0,
+                2940.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                124.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                930.0,
+                2120.0,
+                2940.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                64.99987030029297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                -704.3358154296875,
+                -6116.56884765625,
+                -150.76625061035156
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                114.99972534179688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                948.6422119140625,
+                -2173.084228515625,
+                2912.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -65.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                -861.16552734375,
+                -2233.87451171875,
+                2912.00146484375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -120.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                610.0,
+                -3890.0,
+                1900.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -40.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                -570.0,
+                -3890.0,
+                1900.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -130.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                -1274.0882568359375,
+                -3038.767578125,
+                1900.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -139.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x6_Wall_01.SM_ControlCenter_12x6_Wall_01",
+        "transform": {
+            "loc": [
+                1520.0,
+                -7775.0,
+                -183.9998779296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01",
+        "transform": {
+            "loc": [
+                1300.0,
+                -3040.0,
+                1900.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -25.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                630.0,
+                -6350.0,
+                1805.0013427734375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                59.99993133544922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Wall_01.SM_ControlCenter_18x24_Wall_01",
+        "transform": {
+            "loc": [
+                -1587.8685302734375,
+                1563.6075439453125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                134.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                -540.0,
+                -6350.0,
+                1805.0010986328125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                129.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                1470.0,
+                -7180.0,
+                1805.000732421875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                29.99997901916504
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_TrapDoorPiece_01.SM_ControlCenter_18x24_Module_01_SM_TrapDoorPiece_01",
+        "transform": {
+            "loc": [
+                2265.0,
+                -40.0,
+                19.999969482421875
+            ],
+            "scale": [
+                0.9061075448989868,
+                1.0,
+                1.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                1487.5166015625,
+                -8405.1708984375,
+                1805.000244140625
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -25.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_Wallpiece_01.SM_ControlCenter_18x24_Module_01_SM_Wallpiece_01",
+        "transform": {
+            "loc": [
+                2300.0,
+                -50.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_Wallpiece_01.SM_ControlCenter_18x24_Module_01_SM_Wallpiece_01",
+        "transform": {
+            "loc": [
+                2300.0,
+                -50.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                615.0,
+                -9248.66015625,
+                1805.00048828125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01.SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01",
+        "transform": {
+            "loc": [
+                -912.0025024414062,
+                790.6329345703125,
+                1780.0
+            ],
+            "rot": [
+                -0.000152587890625,
+                89.99987030029297,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                0.8999999761581421,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                -603.2891845703125,
+                -9264.8359375,
+                1750.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -115.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                -1443.6602783203125,
+                -8413.66015625,
+                1805.000732421875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -149.9999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                721.21533203125,
+                -6160.5712890625,
+                -150.765869140625
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                64.99948120117188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Torches_01.SM_ControlCenter_Torches_01",
+        "transform": {
+            "loc": [
+                -1440.0,
+                -7180.0,
+                1805.0008544921875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                164.99977111816406
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01.SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01",
+        "transform": {
+            "loc": [
+                -913.008544921875,
+                -59.36692810058594,
+                1780.0
+            ],
+            "rot": [
+                -0.000152587890625,
+                89.99987030029297,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                0.8999999761581421,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_WiresDeco_01.SM_ControlCenter_WiresDeco_01",
+        "transform": {
+            "loc": [
+                939.9998779296875,
+                -75.00006866455078,
+                975.0039672851562
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01.SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01",
+        "transform": {
+            "loc": [
+                937.9973754882812,
+                -60.003353118896484,
+                1780.0
+            ],
+            "rot": [
+                -0.000152587890625,
+                89.99987030029297,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                0.8999999761581421,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01.SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01",
+        "transform": {
+            "loc": [
+                937.9973754882812,
+                789.9966430664062,
+                1780.0
+            ],
+            "rot": [
+                -0.000152587890625,
+                89.99987030029297,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                0.8999999761581421,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01.SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01",
+        "transform": {
+            "loc": [
+                3.8775522708892822,
+                -927.0032348632812,
+                1780.0
+            ],
+            "rot": [
+                0.0001912452862598002,
+                89.99976348876953,
+                0.00012104326742701232
+            ],
+            "scale": [
+                1.0,
+                0.8999999761581421,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x6_Wall_01.SM_ControlCenter_12x6_Wall_01",
+        "transform": {
+            "loc": [
+                1085.7235107421875,
+                -8844.806640625,
+                -183.9998779296875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                0.8999999761581421,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01.SM_ControlCenter_18x24_Module_01_SM_CoverPiece_01",
+        "transform": {
+            "loc": [
+                -2234.0,
+                -40.000450134277344,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                8.366981637664139e-05
+            ],
+            "scale": [
+                1.0,
+                1.100000023841858,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_Wallpiece_01.SM_ControlCenter_18x24_Module_01_SM_Wallpiece_01",
+        "transform": {
+            "loc": [
+                -2260.0,
+                -40.000484466552734,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01.SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01",
+        "transform": {
+            "loc": [
+                -847.0009155273438,
+                -927.0050659179688,
+                1780.0
+            ],
+            "rot": [
+                0.0001912452862598002,
+                89.99976348876953,
+                0.00012104326742701232
+            ],
+            "scale": [
+                1.0,
+                0.8999999761581421,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Roof_01.SM_ControlCenter_Roof_01",
+        "transform": {
+            "loc": [
+                31.000741958618164,
+                70.99990844726562,
+                2319.0
+            ],
+            "rot": [
+                -0.0001220703125,
+                -179.99989318847656,
+                89.99962615966797
+            ],
+            "scale": [
+                1.0099999904632568,
+                1.0199999809265137,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_WiresDeco_01.SM_ControlCenter_WiresDeco_01",
+        "transform": {
+            "loc": [
+                4.70042610168457,
+                847.9999389648438,
+                975.0001220703125
+            ],
+            "rot": [
+                -6.103515625e-05,
+                -0.0003662109375,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01.SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01",
+        "transform": {
+            "loc": [
+                -848.0069580078125,
+                877.9948120117188,
+                1780.0
+            ],
+            "rot": [
+                0.0001912452862598002,
+                89.99976348876953,
+                0.00012104326742701232
+            ],
+            "scale": [
+                1.0,
+                0.8999999761581421,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01.SM_STRUC_AQ_STRHOLD_MED_FloorRectangle_01",
+        "transform": {
+            "loc": [
+                2.999013900756836,
+                877.9945068359375,
+                1780.0
+            ],
+            "rot": [
+                0.0001912452862598002,
+                89.99976348876953,
+                0.00012104326742701232
+            ],
+            "scale": [
+                1.0,
+                0.8999999761581421,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_TrapDoorPiece_01.SM_ControlCenter_18x24_Module_01_SM_TrapDoorPiece_01",
+        "transform": {
+            "loc": [
+                -2225.42333984375,
+                -39.99883270263672,
+                53.83576965332031
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x6_Wall_01.SM_ControlCenter_12x6_Wall_01",
+        "transform": {
+            "loc": [
+                25.735755920410156,
+                -9284.806640625,
+                -183.9998779296875
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x6_Wall_01.SM_ControlCenter_12x6_Wall_01",
+        "transform": {
+            "loc": [
+                -1038.459716796875,
+                -8842.8662109375,
+                -183.9998779296875
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x18_Wall_01.SM_ControlCenter_12x18_Wall_01",
+        "transform": {
+            "loc": [
+                1732.409423828125,
+                -1463.7142333984375,
+                -1.9073486328125e-06
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.000091552734375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                777.1416015625,
+                -4065.93115234375,
+                -19.761674880981445
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.00054931640625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x6_Wall_01.SM_ControlCenter_12x6_Wall_01",
+        "transform": {
+            "loc": [
+                -1478.4613037109375,
+                -7787.8662109375,
+                -183.9998779296875
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x6_Wall_01.SM_ControlCenter_12x6_Wall_01",
+        "transform": {
+            "loc": [
+                -1040.0560302734375,
+                -6720.13232421875,
+                -183.9998779296875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x6_Wall_01.SM_ControlCenter_12x6_Wall_01",
+        "transform": {
+            "loc": [
+                19.94382095336914,
+                -6290.13232421875,
+                -8.999924659729004
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x6_Wall_01.SM_ControlCenter_12x6_Wall_01",
+        "transform": {
+            "loc": [
+                1078.05908203125,
+                -6710.8046875,
+                -183.9998779296875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                45.000003814697266
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                1503.06884765625,
+                -3153.4697265625,
+                -19.760723114013672
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -30.00054931640625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_12x18_Wall_01.SM_ControlCenter_12x18_Wall_01",
+        "transform": {
+            "loc": [
+                -1620.3662109375,
+                -1450.9246826171875,
+                10.00000286102295
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                629.6019897460938,
+                -6338.1220703125,
+                20.003623962402344
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -27.40008544921875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -544.3980102539062,
+                -6342.1220703125,
+                20.000385284423828
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -12.00006103515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x6_Wall_01.SM_ControlCenter_18x6_Wall_01",
+        "transform": {
+            "loc": [
+                5.999954700469971,
+                2060.000244140625,
+                1785.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                614.6019897460938,
+                -9225.1220703125,
+                20.00018882751465
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -20.60009765625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -591.2313842773438,
+                -9243.4990234375,
+                20.00174331665039
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -23.40032958984375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -1432.9388427734375,
+                -8393.4248046875,
+                20.0012264251709
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -20.20037841796875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -1415.39794921875,
+                -7171.1220703125,
+                20.00078010559082
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -18.800048828125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                1474.60205078125,
+                -7171.1220703125,
+                20.00310707092285
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -22.3997802734375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                1474.60205078125,
+                -8386.1220703125,
+                20.002676010131836
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -24.60009765625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x6_Wall_01.SM_ControlCenter_18x6_Wall_01",
+        "transform": {
+            "loc": [
+                1526.27880859375,
+                1458.958251953125,
+                1796.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99995803833008
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                610.0,
+                -3890.0,
+                598.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -575.0,
+                -3890.0,
+                600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                2402.33935546875,
+                -1047.7525634765625,
+                -19.760412216186523
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -25.00054931640625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x6_Wall_01.SM_ControlCenter_18x6_Wall_01",
+        "transform": {
+            "loc": [
+                2175.27880859375,
+                -51.04180145263672,
+                1796.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -6.103515625e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -1270.0,
+                -3035.0,
+                599.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -14.799896240234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                623.0,
+                -6348.0,
+                1218.0037841796875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                16.2000732421875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                2416.03125,
+                929.23046875,
+                -19.759868621826172
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                24.999425888061523
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x6_Wall_01.SM_ControlCenter_18x6_Wall_01",
+        "transform": {
+            "loc": [
+                -2123.720947265625,
+                -41.03684616088867,
+                1791.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_New_TrapDoorPiece_01.SM_ControlCenter_18x24_Module_01_SM_New_TrapDoorPiece_01",
+        "transform": {
+            "loc": [
+                14.999651908874512,
+                -9294.39453125,
+                -4.99802827835083
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                0.17499999701976776,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                1469.768798828125,
+                -7180.13720703125,
+                1219.0032958984375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                21.799861907958984
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                1005.2929077148438,
+                2335.129638671875,
+                -19.75928497314453
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                69.9993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                1470.5592041015625,
+                -8394.3203125,
+                1219.0028076171875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                18.79994010925293
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                610.4155883789062,
+                -9236.4482421875,
+                1219.0025634765625
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                23.79999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -552.1857299804688,
+                -6348.3154296875,
+                1213.00244140625
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -13.200225830078125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                -1020.7982177734375,
+                2332.255615234375,
+                -19.761432647705078
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                114.99927520751953
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -1419.6639404296875,
+                -7179.70556640625,
+                1219.0010986328125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -19.800018310546875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -1437.4144287109375,
+                -8402.1865234375,
+                1219.001220703125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -21.40020751953125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                -2363.87548828125,
+                1010.4969482421875,
+                -19.761518478393555
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                149.99916076660156
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -594.5845336914062,
+                -9253.1494140625,
+                1214.0001220703125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -25.0001220703125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnCap_01.SM_ControlCenter_ColumnCap_01",
+        "transform": {
+            "loc": [
+                -576.0,
+                -3891.0,
+                1803.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.60003662109375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x6_Wall_01.SM_ControlCenter_18x6_Wall_01",
+        "transform": {
+            "loc": [
+                -1480.2537841796875,
+                1465.100830078125,
+                1786.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnCap_01.SM_ControlCenter_ColumnCap_01",
+        "transform": {
+            "loc": [
+                609.0714111328125,
+                -3890.409912109375,
+                1803.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.60003662109375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                -2386.42822265625,
+                -1060.167724609375,
+                -19.762907028198242
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -155.000732421875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnCap_01.SM_ControlCenter_ColumnCap_01",
+        "transform": {
+            "loc": [
+                1295.061767578125,
+                -3034.600830078125,
+                1803.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -28.39990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_TrapDoorPiece_01.SM_ControlCenter_18x24_Module_01_SM_TrapDoorPiece_01",
+        "transform": {
+            "loc": [
+                -1033.2100830078125,
+                -8843.6552734375,
+                -572.9982299804688
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -135.0
+            ],
+            "scale": [
+                0.17499999701976776,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnCap_01.SM_ControlCenter_ColumnCap_01",
+        "transform": {
+            "loc": [
+                -1268.0692138671875,
+                -3034.706787109375,
+                1803.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.60003662109375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                -1478.46533203125,
+                -3157.277587890625,
+                -19.76229476928711
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -150.000732421875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                1686.6094970703125,
+                -8505.595703125,
+                -150.76632690429688
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -25.000244140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                608.49072265625,
+                -6358.33740234375,
+                -177.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                60.79909133911133
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                -595.4140625,
+                -6314.8876953125,
+                -177.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                118.39744567871094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                -747.4961547851562,
+                -4056.2421875,
+                -19.761920928955078
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -135.000732421875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                623.0,
+                -9262.0,
+                -177.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -67.0003662109375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                -611.8219604492188,
+                -9291.3818359375,
+                -177.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -112.60174560546875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                1478.0,
+                -8414.0,
+                -177.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -24.20062255859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x6_Wall_01.SM_ControlCenter_18x6_Wall_01",
+        "transform": {
+            "loc": [
+                1546.905517578125,
+                -1458.3037109375,
+                1791.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -45.00006103515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                1510.048828125,
+                -7162.52734375,
+                -177.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                21.99915885925293
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                -1448.5408935546875,
+                -8421.302734375,
+                -177.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -157.39976501464844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                -1388.5546875,
+                -7194.36962890625,
+                -177.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                160.79696655273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x6_Wall_01.SM_ControlCenter_18x6_Wall_01",
+        "transform": {
+            "loc": [
+                -1410.1024169921875,
+                -1459.532470703125,
+                1789.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                620.0,
+                -3900.0,
+                5.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.600372314453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x6_Wall_01.SM_ControlCenter_18x6_Wall_01",
+        "transform": {
+            "loc": [
+                4.999401092529297,
+                -1955.895751953125,
+                1791.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0001220703125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                -584.0,
+                -3900.0,
+                7.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -135.5990753173828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                -1283.0,
+                -3043.0,
+                7.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -150.9978790283203
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_New_TrapDoorPiece_01.SM_ControlCenter_18x24_Module_01_SM_New_TrapDoorPiece_01",
+        "transform": {
+            "loc": [
+                1400.0,
+                -2430.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_01.SM_ControlCenter_NewModule_01_SM_Wallpiece_01",
+        "transform": {
+            "loc": [
+                1340.0,
+                -2430.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_02.SM_ControlCenter_NewModule_01_SM_Wallpiece_02",
+        "transform": {
+            "loc": [
+                1340.0,
+                -2430.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                1294.0,
+                -3035.0,
+                596.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                107.79927062988281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                1308.0,
+                -3038.0,
+                3.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -28.397735595703125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_New_TrapDoorPiece_01.SM_ControlCenter_18x24_Module_01_SM_New_TrapDoorPiece_01",
+        "transform": {
+            "loc": [
+                960.2839965820312,
+                -3513.993408203125,
+                23.898578643798828
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_01.SM_ControlCenter_NewModule_01_SM_Wallpiece_01",
+        "transform": {
+            "loc": [
+                915.7361450195312,
+                -3469.4462890625,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_02.SM_ControlCenter_NewModule_01_SM_Wallpiece_02",
+        "transform": {
+            "loc": [
+                915.7361450195312,
+                -3469.4462890625,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                2189.528564453125,
+                -933.8618774414062,
+                592.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -26.000244140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                2193.991455078125,
+                832.8081665039062,
+                593.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                24.39956283569336
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -2163.06787109375,
+                -951.6465454101562,
+                591.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -17.00018310546875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_New_TrapDoorPiece_01.SM_ControlCenter_18x24_Module_01_SM_New_TrapDoorPiece_01",
+        "transform": {
+            "loc": [
+                -1350.0,
+                -2430.0,
+                50.00001525878906
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_01.SM_ControlCenter_NewModule_01_SM_Wallpiece_01",
+        "transform": {
+            "loc": [
+                -1290.0,
+                -2430.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_02.SM_ControlCenter_NewModule_01_SM_Wallpiece_02",
+        "transform": {
+            "loc": [
+                -1290.0,
+                -2430.0,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/ST_SIG_ControlCenter_01.ST_SIG_ControlCenter_01",
+        "transform": {
+            "loc": [
+                55.75617980957031,
+                -5061.423828125,
+                -52.408203125
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -2153.06787109375,
+                888.3534545898438,
+                592.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -28.20013427734375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -923.06787109375,
+                2108.353515625,
+                592.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                26.799341201782227
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_18x24_Module_01_SM_New_TrapDoorPiece_01.SM_ControlCenter_18x24_Module_01_SM_New_TrapDoorPiece_01",
+        "transform": {
+            "loc": [
+                -926.5709228515625,
+                -3529.557373046875,
+                22.36727523803711
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -134.99974060058594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_01.SM_ControlCenter_NewModule_01_SM_Wallpiece_01",
+        "transform": {
+            "loc": [
+                -884.1445922851562,
+                -3487.130859375,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -134.99974060058594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_02.SM_ControlCenter_NewModule_01_SM_Wallpiece_02",
+        "transform": {
+            "loc": [
+                -884.1445922851562,
+                -3487.130859375,
+                0.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -134.99974060058594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                926.93212890625,
+                2108.353515625,
+                593.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                26.799341201782227
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                -2176.81689453125,
+                -957.6682739257812,
+                -2.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -151.99932861328125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                -2163.81689453125,
+                895.331787109375,
+                -1.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                151.59976196289062
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                -928.81689453125,
+                2120.331787109375,
+                -1.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                114.79788208007812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                927.18310546875,
+                2120.331787109375,
+                -1.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                69.99730682373047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                2207.242431640625,
+                837.7864379882812,
+                -1.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                23.59687042236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                2201.779541015625,
+                -941.883544921875,
+                -1.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -26.8028564453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                2192.8505859375,
+                832.4346313476562,
+                1799.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -21.599945068359375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                2188.974365234375,
+                -935.6619873046875,
+                1798.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -71.3990478515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -2153.1494140625,
+                889.4346313476562,
+                1796.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -73.9998779296875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -2162.367431640625,
+                -952.215576171875,
+                1799.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -108.39814758300781
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -922.6055297851562,
+                2108.466064453125,
+                1798.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -108.9991455078125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                927.3944702148438,
+                2108.466064453125,
+                1798.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -154.1981964111328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                946.0366821289062,
+                -2169.6181640625,
+                1770.0001220703125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -103.99786376953125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -863.5101318359375,
+                -2229.9560546875,
+                1770.00146484375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -69.99951171875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Stairs_01.SM_ControlCenter_Stairs_01",
+        "transform": {
+            "loc": [
+                34.99999237060547,
+                -1241.0,
+                150.0
+            ],
+            "scale": [
+                0.8999999761581421,
+                1.0,
+                1.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                708.8613891601562,
+                -9472.40625,
+                -150.7670135498047
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -65.000244140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -863.7713012695312,
+                -2230.408447265625,
+                2370.00146484375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -69.99951171875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                946.0366821289062,
+                -2169.6181640625,
+                2370.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -103.99786376953125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                2188.974365234375,
+                -935.6619873046875,
+                2398.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -71.3990478515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                2192.8505859375,
+                832.4346313476562,
+                2399.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -21.599945068359375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                927.3944702148438,
+                2108.466064453125,
+                2398.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -154.1981964111328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -922.6055297851562,
+                2108.466064453125,
+                2398.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -108.9991455078125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -2153.1494140625,
+                889.4346313476562,
+                2396.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -73.9998779296875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_6M_01.SM_ControlCenter_ColumnStrata_6M_01",
+        "transform": {
+            "loc": [
+                -2162.367431640625,
+                -952.215576171875,
+                2399.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -108.39813232421875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Floor_02.SM_ControlCenter_Floor_02",
+        "transform": {
+            "loc": [
+                2.276897066622041e-05,
+                -3382.2119140625,
+                313.8119201660156
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                928.0,
+                864.0,
+                -10.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                1.199584722518921
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                925.0,
+                -965.0,
+                -10.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.000640869140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -926.0,
+                864.0,
+                -10.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.00042724609375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -923.0,
+                -965.0,
+                -10.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -5.0001220703125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_24x12_Wall_02.SM_ControlCenter_24x12_Wall_02",
+        "transform": {
+            "loc": [
+                534.7440795898438,
+                -5223.4423828125,
+                561.59765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -926.0,
+                864.0,
+                1189.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.00042724609375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                928.0,
+                864.0,
+                1189.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                1.199584722518921
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                925.0,
+                -965.0,
+                1189.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -45.000640869140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                -923.0,
+                -965.0,
+                1189.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -5.0001220703125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnCap_01.SM_ControlCenter_ColumnCap_01",
+        "transform": {
+            "loc": [
+                924.0714111328125,
+                -964.409912109375,
+                2387.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -0.60003662109375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_24x12_Wall_02.SM_ControlCenter_24x12_Wall_02",
+        "transform": {
+            "loc": [
+                -520.1328735351562,
+                -4984.091796875,
+                561.59765625
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnCap_01.SM_ControlCenter_ColumnCap_01",
+        "transform": {
+            "loc": [
+                -923.9285888671875,
+                -964.409912109375,
+                2387.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -6.80023193359375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_90Pipes_01.SM_ControlCenter_90Pipes_01",
+        "transform": {
+            "loc": [
+                -703.5823974609375,
+                -9497.650390625,
+                -150.76693725585938
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -115.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnCap_01.SM_ControlCenter_ColumnCap_01",
+        "transform": {
+            "loc": [
+                -926.9285888671875,
+                864.590087890625,
+                2387.0
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -1.200042724609375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnCap_01.SM_ControlCenter_ColumnCap_01",
+        "transform": {
+            "loc": [
+                929.0714111328125,
+                862.590087890625,
+                2387.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.19982700049877167
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_NewModule_01_SM_Wallpiece_02.SM_ControlCenter_NewModule_01_SM_Wallpiece_02",
+        "transform": {
+            "loc": [
+                15.736120223999023,
+                -3924.4462890625,
+                14.999996185302734
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]
