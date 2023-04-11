@@ -8,14 +8,16 @@ import re
 
 # Change me!
 map_data_filepath = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                    "MapData/Maps/Usual/Ronan/ronan_static.json"
+                    "MapData/Maps/Usual/Bregg2/bregg2_gamemode.json"
 
 EXCLUDE_ENGINE_ASSETS = True
 
 level_library = unreal.EditorLevelLibrary
 editor_asset_library = unreal.EditorAssetLibrary
 # relative_offset = unreal.Vector(-167598.703125, -1021464.375, +96750.0)
-relative_offset_loc = unreal.Vector(0, 0, 0)
+relative_offset_loc = unreal.Vector(3951.241943,
+                                    39898.847656,
+                                    62376.0)
 
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/"
           "MapData/Maps/path_replacing_map.json", "r") as f:

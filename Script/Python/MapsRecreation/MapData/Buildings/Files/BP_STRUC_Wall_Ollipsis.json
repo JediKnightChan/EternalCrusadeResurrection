@@ -1,0 +1,1022 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_SMALL_01_A.SM_STRUC_CATH_Alcove_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1647.588623046875,
+                644.4155883789062,
+                -698.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.0001539999939268455
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1647.588623046875,
+                644.4155883789062,
+                -798.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.0001539999939268455
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1647.588623046875,
+                644.4155883789062,
+                -395.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.0001539999939268455
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_LARGE_01_C.SM_STRUC_CATH_Buttress_LARGE_01_C",
+        "transform": {
+            "loc": [
+                -147.6141357421875,
+                -658.6011962890625,
+                -1244.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99978637695312
+            ],
+            "scale": [
+                0.47567400336265564,
+                0.47567400336265564,
+                0.47567400336265564
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_LARGE_01_C.SM_STRUC_CATH_Buttress_LARGE_01_C",
+        "transform": {
+            "loc": [
+                -427.60968017578125,
+                -658.5970458984375,
+                -1244.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9998016357422
+            ],
+            "scale": [
+                0.47567400336265564,
+                0.47567400336265564,
+                0.47567400336265564
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "loc": [
+                599.9998779296875,
+                0.006591796875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1038.623291015625,
+                644.4209594726562,
+                -798.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1038.623291015625,
+                644.4209594726562,
+                -395.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                442.1287841796875,
+                644.431396484375,
+                -798.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                442.1287841796875,
+                644.431396484375,
+                -395.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_LARGE_01_A.SM_STRUC_CATH_CoverHigh_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -726.593505859375,
+                665.8858032226562,
+                -1151.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99951171875
+            ],
+            "scale": [
+                0.8957489728927612,
+                0.8957489728927612,
+                0.8957489728927612
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_LARGE_01_A.SM_STRUC_CATH_CoverHigh_LARGE_01_A",
+        "transform": {
+            "loc": [
+                348.40045166015625,
+                665.8893432617188,
+                -1151.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99951171875
+            ],
+            "scale": [
+                0.8957489728927612,
+                0.8957489728927612,
+                0.8957489728927612
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_LARGE_01_A.SM_STRUC_CATH_CoverHigh_LARGE_01_A",
+        "transform": {
+            "loc": [
+                1202.3671875,
+                665.8919067382812,
+                -1151.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99951171875
+            ],
+            "scale": [
+                0.7084970474243164,
+                0.8957489728927612,
+                0.8957489728927612
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_LARGE_01_C.SM_STRUC_CATH_Wall_LARGE_01_C",
+        "transform": {
+            "loc": [
+                0.18408203125,
+                599.8975219726562,
+                -1151.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                1034.8681640625,
+                644.4329223632812,
+                -798.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                1034.8681640625,
+                644.4329223632812,
+                -395.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_LARGE_01_C.SM_STRUC_CATH_Wall_LARGE_01_C",
+        "transform": {
+            "loc": [
+                -1799.8232421875,
+                599.89990234375,
+                -1151.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_SMALL_01_A.SM_STRUC_CATH_Alcove_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1038.623291015625,
+                644.4209594726562,
+                -698.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_SMALL_01_A.SM_STRUC_CATH_Alcove_SMALL_01_A",
+        "transform": {
+            "loc": [
+                442.1287841796875,
+                644.431396484375,
+                -698.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_SMALL_01_A.SM_STRUC_CATH_Alcove_SMALL_01_A",
+        "transform": {
+            "loc": [
+                1034.8681640625,
+                644.4329223632812,
+                -698.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_LARGE_01_C.SM_STRUC_CATH_Buttress_LARGE_01_C",
+        "transform": {
+            "loc": [
+                -147.61773681640625,
+                641.3988037109375,
+                -1244.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                0.47567400336265564,
+                0.47567400336265564,
+                0.47567400336265564
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_LARGE_01_C.SM_STRUC_CATH_Buttress_LARGE_01_C",
+        "transform": {
+            "loc": [
+                -427.61328125,
+                641.4029541015625,
+                -1244.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                0.47567400336265564,
+                0.47567400336265564,
+                0.47567400336265564
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "loc": [
+                -1799.9959716796875,
+                -600.009033203125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "loc": [
+                -1800.006591796875,
+                -0.004638671875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MED_01_A.SM_STRUC_CATH_Wall_MED_01_A",
+        "transform": {
+            "loc": [
+                -599.8232421875,
+                599.8965454101562,
+                -1151.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                0.00015367924061138183
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "loc": [
+                -1200.000732421875,
+                -0.00341796875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "loc": [
+                -1199.9951171875,
+                -600.007568359375,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "loc": [
+                -600.0,
+                -600.006103515625,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "loc": [
+                -599.996826171875,
+                -0.005126953125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "loc": [
+                0.00567626953125,
+                -599.9989013671875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.0,
+                8.879244705894962e-05
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_C.SM_STRUC_CATH_FloorTile_MED_01_C",
+        "transform": {
+            "loc": [
+                600.0014038085938,
+                -599.9953002929688,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_SMALL_01_A.SM_STRUC_CATH_Alcove_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1650.6297607421875,
+                -644.61669921875,
+                -698.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1650.6297607421875,
+                -644.61669921875,
+                -395.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1650.6297607421875,
+                -644.61669921875,
+                -798.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_LARGE_01_A.SM_STRUC_CATH_CoverHigh_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -1798.37353515625,
+                -666.0628662109375,
+                -1151.0
+            ],
+            "scale": [
+                0.9157553911209106,
+                0.8957489728927612,
+                0.8957489728927612
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_LARGE_01_C.SM_STRUC_CATH_Wall_LARGE_01_C",
+        "transform": {
+            "loc": [
+                -600.1478881835938,
+                -600.0599975585938,
+                -1151.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_SMALL_01_A.SM_STRUC_CATH_Alcove_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -760.624755859375,
+                -644.6138916015625,
+                -698.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -760.624755859375,
+                -644.6138916015625,
+                -395.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -760.624755859375,
+                -644.6138916015625,
+                -798.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_LARGE_01_A.SM_STRUC_CATH_CoverHigh_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -698.37890625,
+                -666.0628662109375,
+                -1151.0
+            ],
+            "scale": [
+                0.8957489728927612,
+                0.8957489728927612,
+                0.8957489728927612
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_LARGE_01_C.SM_STRUC_CATH_Wall_LARGE_01_C",
+        "transform": {
+            "loc": [
+                1199.851806640625,
+                -600.046142578125,
+                -1151.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                154.3699951171875,
+                -644.6032104492188,
+                -395.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_SMALL_01_A.SM_STRUC_CATH_Alcove_SMALL_01_A",
+        "transform": {
+            "loc": [
+                154.3699951171875,
+                -644.6032104492188,
+                -698.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                154.3699951171875,
+                -644.6032104492188,
+                -798.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_LARGE_01_A.SM_STRUC_CATH_CoverHigh_LARGE_01_A",
+        "transform": {
+            "loc": [
+                361.3157653808594,
+                -666.0515747070312,
+                -1151.0
+            ],
+            "scale": [
+                0.7084970474243164,
+                0.8957489728927612,
+                0.8957489728927612
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MED_01_A.SM_STRUC_CATH_Wall_MED_01_A",
+        "transform": {
+            "loc": [
+                -0.1649169921875,
+                -600.081787109375,
+                -1151.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_SMALL_01_A.SM_STRUC_CATH_Alcove_SMALL_01_A",
+        "transform": {
+            "loc": [
+                1044.369384765625,
+                -644.6025390625,
+                -698.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                1044.369384765625,
+                -644.6025390625,
+                -395.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                1044.369384765625,
+                -644.6025390625,
+                -798.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -179.99935913085938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

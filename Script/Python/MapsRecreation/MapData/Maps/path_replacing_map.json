@@ -3,6 +3,11 @@
   "/Game/Blueprints/BP_DeploymentZOne_SM": "/Game/Buildings/Blueprints/BP_DeploymentZone_SM",
   "/Game/Blueprints/BP_EC_MagLift_01": "/Game/Blueprints/InWorldAssets/Elevators/B_Elevator_Platform_1",
   "/Game/PROPS/Gameplay/BP_SM_PROP_Small_Crate01": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Box_SmallCrate_01",
-  "/Game/Buildings/Signature/BP_SIG_ControlCenter_01v2": "/Game/Buildings/Signature/BP_SIG_ControlCenter_01_Int_v2",
-  "": ""
+  "/Game/Buildings/Signature/SIG_ControlCenter_01/BP_SIG_ControlCenter_01v2": "/Game/Buildings/Signature/BP_SIG_ControlCenter_01_Int_v2",
+  "/Game/Blueprints/BP_BorderWall01": "/Game/Buildings/Blueprints/BP_BorderWall01",
+  "/Game/Blueprints/BP_BorderWall_Corner01": "/Game/Buildings/Blueprints/BP_BorderWall_Corner01",
+  "/Game/Blueprints/BP_CaputurePoint_Building_48x48_Olipsis": "/Game/Buildings/Blueprints/BP_CapturePoint_Building_48x48_Olipsis",
+  "/Game/PROPS/Ambiance/BP_STRUC_Wall_Ollipsis": "/Game/PROPS/Ambiance/BP_STRUC_Wall_Olipsis",
+  "/Game/VFX/Blueprints/BP_Torche": "/Game/PROPS/Blueprints/BP_Torch",
+  "/Game/Blueprints/BP_STRUC_Reaper01": "/Game/Buildings/Blueprints/BP_STRUC_Reaper01"
 }

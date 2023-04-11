@@ -1,0 +1,4222 @@
+[
+    {
+        "path": "Blueprint /Game/Blueprints/BP_CapturePoint.BP_CapturePoint",
+        "transform": {
+            "loc": [
+                33130.5,
+                8432.25,
+                -96182.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_CapturePoint_Wall.BP_CapturePoint_Wall",
+        "transform": {
+            "loc": [
+                7220.0,
+                -13950.0,
+                -97120.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99993133544922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_CapturePoint_Wall.BP_CapturePoint_Wall",
+        "transform": {
+            "loc": [
+                32400.869140625,
+                -10404.923828125,
+                -96695.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                10.000041961669922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/DeploymentSmall/BP_DeploymentSmall_SM_DA.BP_DeploymentSmall_SM_DA",
+        "transform": {
+            "loc": [
+                14523.0,
+                -27525.0,
+                -94144.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/DeploymentSmall/BP_DeploymentSmall_SM_DA.BP_DeploymentSmall_SM_DA",
+        "transform": {
+            "loc": [
+                27140.0,
+                36274.5,
+                -98037.5078125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/DeploymentSmall/BP_DeploymentSmall_SM_DA.BP_DeploymentSmall_SM_DA",
+        "transform": {
+            "loc": [
+                32238.421875,
+                23963.25,
+                -97776.6328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/DeploymentSmall/BP_DeploymentSmall_SM_DA.BP_DeploymentSmall_SM_DA",
+        "transform": {
+            "loc": [
+                46660.21875,
+                -271.5791015625,
+                -95752.4140625
+            ],
+            "rot": [
+                0.43101224303245544,
+                1.0137574672698975,
+                41.630741119384766
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/DeploymentSmall/BP_DeploymentSmall_SM_DA.BP_DeploymentSmall_SM_DA",
+        "transform": {
+            "loc": [
+                16434.25,
+                -32108.0,
+                -93778.3125
+            ],
+            "rot": [
+                -0.00018441509746480733,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_POI.BP_POI",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/VehicleSpawners/BP_VehicleSpawner_AttackersFaction.BP_VehicleSpawner_AttackersFaction",
+        "transform": {
+            "loc": [
+                29254.46875,
+                29775.11328125,
+                -98170.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -95.00006103515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/VehicleSpawners/BP_VehicleSpawner_AttackersFaction.BP_VehicleSpawner_AttackersFaction",
+        "transform": {
+            "loc": [
+                52830.6171875,
+                7818.25048828125,
+                -95680.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -118.91425323486328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/VehicleSpawners/DefendersVersion/BP_VehicleSpawner_DefendersFaction.BP_VehicleSpawner_DefendersFaction",
+        "transform": {
+            "loc": [
+                19887.0,
+                -28933.5,
+                -93750.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                98.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                28586.283203125,
+                -6745.53857421875,
+                -96501.0859375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                22.125431060791016,
+                1.6683720350265503,
+                8.147443771362305
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                7345.0,
+                1275.0,
+                -96450.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                4.806727409362793,
+                2.970886707305908,
+                2.005115032196045
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/Dummies/GB_SpawnPoint.GB_SpawnPoint",
+        "transform": {
+            "loc": [
+                31910.0,
+                -9480.0,
+                -96687.8828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_ElectricTank_Cap01.SM_PROP_ElectricTank_Cap01",
+        "transform": {
+            "loc": [
+                7270.0,
+                -13950.0,
+                -97120.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                0.75,
+                0.75,
+                0.75
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Tank_Barrier_01.SM_PROP_Tank_Barrier_01",
+        "transform": {
+            "loc": [
+                60071.1796875,
+                8076.5537109375,
+                -94680.6171875
+            ],
+            "rot": [
+                6.822689056396484,
+                0.3068430423736572,
+                57.71298599243164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Reservoir_Med_01_A.SM_STRUC_PROM_Reservoir_Med_01_A",
+        "transform": {
+            "loc": [
+                10329.1220703125,
+                -28208.62109375,
+                -94218.0390625
+            ],
+            "rot": [
+                8.771506309509277,
+                20.343626022338867,
+                -26.988306045532227
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                59080.01171875,
+                3487.219970703125,
+                -93684.6640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -49.999969482421875
+            ],
+            "scale": [
+                17.880624771118164,
+                1.0,
+                15.05020523071289
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                51798.58984375,
+                743.1383056640625,
+                -94345.1328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                59.99998474121094
+            ],
+            "scale": [
+                19.470901489257812,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10935.791015625,
+                336.5329895019531,
+                -95281.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                131.3030548095703
+            ],
+            "scale": [
+                0.4126800000667572,
+                6.558891773223877,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10011.7080078125,
+                -446.0008239746094,
+                -95274.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                165.47177124023438
+            ],
+            "scale": [
+                3.0004279613494873,
+                3.1281330585479736,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10608.6650390625,
+                27.82015037536621,
+                -95274.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                127.82740783691406
+            ],
+            "scale": [
+                3.0004279613494873,
+                3.1281330585479736,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                11314.240234375,
+                741.1914672851562,
+                -95281.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                157.63804626464844
+            ],
+            "scale": [
+                0.4126800000667572,
+                6.8351521492004395,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                11576.0166015625,
+                1231.3424072265625,
+                -95281.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                144.50051879882812
+            ],
+            "scale": [
+                0.4126800000667572,
+                4.617417812347412,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                11911.75390625,
+                1491.4998779296875,
+                -95281.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                110.70987701416016
+            ],
+            "scale": [
+                0.4126800000667572,
+                4.617417812347412,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                12324.2080078125,
+                1628.946533203125,
+                -95281.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                105.87940216064453
+            ],
+            "scale": [
+                0.4126800000667572,
+                4.617417812347412,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                12889.8349609375,
+                1917.14892578125,
+                -95281.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                122.29871368408203
+            ],
+            "scale": [
+                0.4126800000667572,
+                8.519580841064453,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                11664.8955078125,
+                3510.241943359375,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                117.29871368408203
+            ],
+            "scale": [
+                0.4126800000667572,
+                11.424156188964844,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                9459.7568359375,
+                2807.819580078125,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                81.97163391113281
+            ],
+            "scale": [
+                0.4126800000667572,
+                13.804922103881836,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                50980.28125,
+                -434.80010986328125,
+                -94345.1328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99995422363281
+            ],
+            "scale": [
+                10.548604965209961,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10933.103515625,
+                3069.991455078125,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                104.21794891357422
+            ],
+            "scale": [
+                3.0559239387512207,
+                6.62482213973999,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10326.6064453125,
+                2796.6884765625,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                123.7053451538086
+            ],
+            "scale": [
+                3.0559239387512207,
+                6.62482213973999,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                8441.4189453125,
+                2424.3916015625,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                143.950927734375
+            ],
+            "scale": [
+                3.1842129230499268,
+                13.804922103881836,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                7722.6396484375,
+                1532.2569580078125,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                171.02964782714844
+            ],
+            "scale": [
+                5.283463001251221,
+                6.923965930938721,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                8014.615234375,
+                1841.132568359375,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                161.60887145996094
+            ],
+            "scale": [
+                3.1842129230499268,
+                0.3307889997959137,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                7164.7919921875,
+                999.1821899414062,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                138.3863525390625
+            ],
+            "scale": [
+                0.4126800000667572,
+                13.804922103881836,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                6401.76416015625,
+                359.8976135253906,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                106.31398010253906
+            ],
+            "scale": [
+                2.0058939456939697,
+                7.784540176391602,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                6102.97509765625,
+                -112.42544555664062,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                150.3781280517578
+            ],
+            "scale": [
+                0.5212879776954651,
+                9.412664413452148,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                5672.0859375,
+                -596.289794921875,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                113.22959899902344
+            ],
+            "scale": [
+                0.5212879776954651,
+                4.6094560623168945,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                5611.76171875,
+                -689.629150390625,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                1.218284010887146
+            ],
+            "scale": [
+                0.5212879776954651,
+                4.6094560623168945,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                49889.9609375,
+                -1053.1419677734375,
+                -94345.1328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                19.999895095825195
+            ],
+            "scale": [
+                15.779244422912598,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                5306.4111328125,
+                -1197.919677734375,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -47.13115692138672
+            ],
+            "scale": [
+                0.5212879776954651,
+                8.628259658813477,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                4606.95166015625,
+                -1754.6282958984375,
+                -96441.609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -65.36158752441406
+            ],
+            "scale": [
+                1.462486982345581,
+                10.178982734680176,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                48417.9609375,
+                -788.1954345703125,
+                -94820.1328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.29412001371383667
+            ],
+            "scale": [
+                5.8943281173706055,
+                7.4754319190979,
+                15.05020523071289
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                47003.02734375,
+                -2340.71923828125,
+                -94987.328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.2941280007362366
+            ],
+            "scale": [
+                5.8943281173706055,
+                6.440149784088135,
+                15.05020523071289
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                46939.78515625,
+                7749.71875,
+                -94987.328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.2941280007362366
+            ],
+            "scale": [
+                7.160182952880859,
+                6.440149784088135,
+                15.05020523071289
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                48560.3671875,
+                6068.87939453125,
+                -94987.328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.2941280007362366
+            ],
+            "scale": [
+                6.625833034515381,
+                7.6748881340026855,
+                15.05020523071289
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                37839.51171875,
+                6094.0654296875,
+                -94897.15625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.6786789894104004
+            ],
+            "scale": [
+                12.960247993469238,
+                1.0001505613327026,
+                29.866058349609375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                37206.02734375,
+                5791.52734375,
+                -95162.34375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.6786789894104004
+            ],
+            "scale": [
+                0.43560001254081726,
+                12.096003532409668,
+                29.865909576416016
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                36624.8671875,
+                5195.8740234375,
+                -95162.34375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.64005279541016
+            ],
+            "scale": [
+                0.43560001254081726,
+                12.096003532409668,
+                29.865909576416016
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                38830.26171875,
+                7938.8310546875,
+                -94897.15625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.63924407958984
+            ],
+            "scale": [
+                25.142494201660156,
+                1.0001505613327026,
+                29.866058349609375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                46819.57421875,
+                -4239.5595703125,
+                -94448.03125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                59.999855041503906
+            ],
+            "scale": [
+                28.198335647583008,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                38821.8046875,
+                6598.92578125,
+                -94897.15625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.63924407958984
+            ],
+            "scale": [
+                2.300032615661621,
+                1.0001505613327026,
+                29.866058349609375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                38749.58203125,
+                6334.60205078125,
+                -94897.15625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                65.02484893798828
+            ],
+            "scale": [
+                3.837428569793701,
+                1.0001505613327026,
+                29.866058349609375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                38585.76953125,
+                6136.275390625,
+                -94897.15625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                19.641639709472656
+            ],
+            "scale": [
+                2.4136757850646973,
+                1.0001505613327026,
+                29.866058349609375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                38461.44140625,
+                9691.048828125,
+                -94897.1484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                165.572265625
+            ],
+            "scale": [
+                2.299881935119629,
+                1.0,
+                29.865909576416016
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                38698.296875,
+                9544.7666015625,
+                -94897.1484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                137.4172821044922
+            ],
+            "scale": [
+                3.837277889251709,
+                1.0,
+                29.865909576416016
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                38829.203125,
+                9319.353515625,
+                -94897.15625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                92.03437805175781
+            ],
+            "scale": [
+                2.4136757850646973,
+                1.0001505613327026,
+                29.866058349609375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                38353.01171875,
+                10044.818359375,
+                -95714.9453125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                87.32396697998047
+            ],
+            "scale": [
+                8.441563606262207,
+                1.0,
+                10.354340553283691
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                37603.67578125,
+                11920.146484375,
+                -95544.4921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                115.17436218261719
+            ],
+            "scale": [
+                10.39164924621582,
+                1.0,
+                10.354340553283691
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                34130.86328125,
+                13588.1669921875,
+                -95544.4921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                164.8623504638672
+            ],
+            "scale": [
+                42.99113082885742,
+                1.0,
+                49.047828674316406
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                31541.48046875,
+                13732.7021484375,
+                -93635.359375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -151.5260467529297
+            ],
+            "scale": [
+                39.5,
+                1.0,
+                49.0898551940918
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                45560.30859375,
+                -4315.9111328125,
+                -94860.4296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -50.000335693359375
+            ],
+            "scale": [
+                24.965591430664062,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                30142.794921875,
+                11425.9462890625,
+                -93864.6484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -79.587890625
+            ],
+            "scale": [
+                34.5,
+                1.0,
+                53.58985900878906
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                31024.5625,
+                17564.4609375,
+                -96019.1875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -133.63113403320312
+            ],
+            "scale": [
+                17.4669189453125,
+                1.0,
+                10.354340553283691
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                29590.3203125,
+                16862.89453125,
+                -96019.1875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -170.8150634765625
+            ],
+            "scale": [
+                17.4669189453125,
+                1.0,
+                10.354340553283691
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                34173.7578125,
+                5168.4765625,
+                -95332.34375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.64005279541016
+            ],
+            "scale": [
+                0.43560001254081726,
+                45.20714569091797,
+                24.00792121887207
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                31671.2890625,
+                4988.4697265625,
+                -95332.34375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                120.82997131347656
+            ],
+            "scale": [
+                0.43560001254081726,
+                6.362228870391846,
+                24.00792121887207
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                30653.61328125,
+                5256.49560546875,
+                -95412.34375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                60.497886657714844
+            ],
+            "scale": [
+                0.43560001254081726,
+                16.944835662841797,
+                19.535655975341797
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                29935.615234375,
+                6373.9189453125,
+                -95316.09375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -4.757568359375
+            ],
+            "scale": [
+                0.43560001254081726,
+                14.557619094848633,
+                18.527069091796875
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                25974.59765625,
+                5989.478515625,
+                -95741.09375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.3832319974899292
+            ],
+            "scale": [
+                6.681680202484131,
+                6.194675922393799,
+                10.354340553283691
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                26628.923828125,
+                6817.62109375,
+                -93728.734375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                36.23614501953125
+            ],
+            "scale": [
+                1.1143029928207397,
+                10.212499618530273,
+                55.31774139404297
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                26976.404296875,
+                6165.44140625,
+                -94356.9453125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                13.942521095275879
+            ],
+            "scale": [
+                1.1143029928207397,
+                5.439690113067627,
+                55.31774139404297
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                44230.99609375,
+                -3586.274169921875,
+                -94860.4296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                24.999588012695312
+            ],
+            "scale": [
+                12.278019905090332,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                26900.986328125,
+                5586.38623046875,
+                -94356.9453125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -21.31500244140625
+            ],
+            "scale": [
+                1.1143029928207397,
+                7.617713928222656,
+                55.31774139404297
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                26626.232421875,
+                4965.65576171875,
+                -94356.9453125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -28.1219482421875
+            ],
+            "scale": [
+                1.1143029928207397,
+                6.394863128662109,
+                55.31774139404297
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                26329.455078125,
+                4118.60498046875,
+                -94356.9453125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -28.1219482421875
+            ],
+            "scale": [
+                1.1143029928207397,
+                12.664310455322266,
+                55.31774139404297
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                25177.017578125,
+                3554.05859375,
+                -93849.4375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -28.1219482421875
+            ],
+            "scale": [
+                1.1143029928207397,
+                7.577950954437256,
+                60.59681701660156
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                23518.201171875,
+                3325.673828125,
+                -94364.484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -28.1219482421875
+            ],
+            "scale": [
+                1.1143029928207397,
+                9.637803077697754,
+                56.22749328613281
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                22946.447265625,
+                2645.152587890625,
+                -94364.484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -52.438995361328125
+            ],
+            "scale": [
+                1.1143029928207397,
+                9.38647747039795,
+                56.22749328613281
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                22189.708984375,
+                2107.240234375,
+                -94364.484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -56.166412353515625
+            ],
+            "scale": [
+                1.1143029928207397,
+                9.579122543334961,
+                56.22749328613281
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19437.119140625,
+                242.82357788085938,
+                -95291.3046875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.931121826171875
+            ],
+            "scale": [
+                1.1143029928207397,
+                9.579122543334961,
+                60.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19450.392578125,
+                -614.5349731445312,
+                -95291.3046875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                33.221248626708984
+            ],
+            "scale": [
+                1.1143029928207397,
+                13.489533424377441,
+                60.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20229.951171875,
+                -1085.9068603515625,
+                -95306.71875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                97.54347229003906
+            ],
+            "scale": [
+                1.1143029928207397,
+                8.048818588256836,
+                60.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                43435.6484375,
+                -4087.19482421875,
+                -94860.4296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99961471557617
+            ],
+            "scale": [
+                7.241652965545654,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20781.451171875,
+                -1231.4840087890625,
+                -95511.734375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.31553649902344
+            ],
+            "scale": [
+                1.1143029928207397,
+                5.843321800231934,
+                60.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                21041.333984375,
+                -1865.6148681640625,
+                -95905.1484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                9.64467716217041
+            ],
+            "scale": [
+                1.1143029928207397,
+                9.416754722595215,
+                60.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20905.599609375,
+                -2711.1328125,
+                -95905.1484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -28.333282470703125
+            ],
+            "scale": [
+                1.1143029928207397,
+                9.416754722595215,
+                60.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20049.234375,
+                -3596.977294921875,
+                -95905.1484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -52.564697265625
+            ],
+            "scale": [
+                1.1143029928207397,
+                16.364742279052734,
+                60.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                22999.21484375,
+                11998.6162109375,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -11.631110191345215
+            ],
+            "scale": [
+                25.5631103515625,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                23466.95703125,
+                14271.01953125,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -11.631104469299316
+            ],
+            "scale": [
+                25.5631103515625,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19637.5390625,
+                9853.8212890625,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                78.23507690429688
+            ],
+            "scale": [
+                25.5631103515625,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                17366.224609375,
+                10326.830078125,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                78.23507690429688
+            ],
+            "scale": [
+                25.5631103515625,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                21762.609375,
+                15567.083984375,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -57.184661865234375
+            ],
+            "scale": [
+                24.077842712402344,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                16983.03125,
+                12485.0380859375,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -57.184661865234375
+            ],
+            "scale": [
+                24.077842712402344,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                42854.40625,
+                -4386.2763671875,
+                -94860.4296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                4.9996209144592285
+            ],
+            "scale": [
+                7.241652965545654,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20842.810546875,
+                11661.03515625,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                32.81544494628906
+            ],
+            "scale": [
+                22.70381736755371,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                17825.326171875,
+                16363.39453125,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                32.81544494628906
+            ],
+            "scale": [
+                24.077842712402344,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19941.68359375,
+                16777.36328125,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -12.184661865234375
+            ],
+            "scale": [
+                24.077842712402344,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                16565.74609375,
+                14573.23046875,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                77.8154296875
+            ],
+            "scale": [
+                24.077842712402344,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19988.544921875,
+                7636.287109375,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -57.184661865234375
+            ],
+            "scale": [
+                24.077842712402344,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                16075.8818359375,
+                8477.5595703125,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                32.81544494628906
+            ],
+            "scale": [
+                24.077842712402344,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                14879.4833984375,
+                6770.27685546875,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                77.8154296875
+            ],
+            "scale": [
+                24.077842712402344,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20347.822265625,
+                5392.4814453125,
+                -95527.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                77.8154296875
+            ],
+            "scale": [
+                25.709447860717773,
+                1.0,
+                13.903106689453125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                17096.333984375,
+                3402.806640625,
+                -94367.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                167.81546020507812
+            ],
+            "scale": [
+                27.8881893157959,
+                1.0,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20754.375,
+                2975.766357421875,
+                -96425.8671875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                33.23455810546875
+            ],
+            "scale": [
+                1.1143029928207397,
+                32.746681213378906,
+                26.76106834411621
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                41222.9453125,
+                -4909.197265625,
+                -95267.0859375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                14.999693870544434
+            ],
+            "scale": [
+                14.594972610473633,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19207.75,
+                1962.353515625,
+                -95525.8671875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                33.23455810546875
+            ],
+            "scale": [
+                1.1143029928207397,
+                32.746681213378906,
+                60.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                13455.18359375,
+                4541.76220703125,
+                -96425.8671875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                123.2344741821289
+            ],
+            "scale": [
+                1.1143029928207397,
+                32.42289733886719,
+                26.76106834411621
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                14437.7421875,
+                2974.92138671875,
+                -95265.8671875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                123.2344741821289
+            ],
+            "scale": [
+                1.1143029928207397,
+                31.530834197998047,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                24920.158203125,
+                -2358.395263671875,
+                -97179.5546875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -86.32806396484375
+            ],
+            "scale": [
+                0.7879700064659119,
+                9.837634086608887,
+                18.215240478515625
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                14086.78125,
+                -29024.296875,
+                -92717.0546875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -171.1777801513672
+            ],
+            "scale": [
+                0.7879700064659119,
+                60.6382942199707,
+                30.75
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                22165.697265625,
+                -28081.025390625,
+                -91866.828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                3.822366714477539
+            ],
+            "scale": [
+                0.7879700064659119,
+                68.0,
+                38.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                14695.7177734375,
+                -32564.7890625,
+                -91916.828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -166.17784118652344
+            ],
+            "scale": [
+                0.7879700064659119,
+                39.4012565612793,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                39868.9296875,
+                -4910.826171875,
+                -95490.7265625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -15.000396728515625
+            ],
+            "scale": [
+                14.594972610473633,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                45125.640625,
+                10737.818359375,
+                -94415.4921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                24.999916076660156
+            ],
+            "scale": [
+                50.85038757324219,
+                1.0,
+                37.47865295410156
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                48729.36328125,
+                11592.2294921875,
+                -94475.5625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -10.0
+            ],
+            "scale": [
+                35.65781021118164,
+                1.0,
+                37.25
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                53767.12109375,
+                10620.439453125,
+                -93779.6640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -10.000083923339844
+            ],
+            "scale": [
+                78.25,
+                1.0,
+                35.75
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                58564.6875,
+                9024.8388671875,
+                -94344.6640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -35.0
+            ],
+            "scale": [
+                57.75,
+                1.0,
+                36.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                60677.7421875,
+                2443.72509765625,
+                -93697.6640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -170.00003051757812
+            ],
+            "scale": [
+                18.079471588134766,
+                1.0,
+                24.720172882080078
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                25299.978515625,
+                -15118.5400390625,
+                -94637.640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -26.96872901916504
+            ],
+            "scale": [
+                0.7879700064659119,
+                17.15378761291504,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                25478.98046875,
+                3735.700439453125,
+                -94356.9453125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -103.12198638916016
+            ],
+            "scale": [
+                1.1143029928207397,
+                12.664310455322266,
+                55.31774139404297
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                24357.169921875,
+                3504.3408203125,
+                -94356.9453125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -103.12197875976562
+            ],
+            "scale": [
+                1.1143029928207397,
+                12.664310455322266,
+                55.31774139404297
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                42653.34765625,
+                8516.3349609375,
+                -94415.4921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                50.85038757324219,
+                1.0,
+                37.47865295410156
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                38293.3046875,
+                -5234.15576171875,
+                -95733.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                19.999656677246094
+            ],
+            "scale": [
+                11.09317398071289,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                15381.0859375,
+                -7715.875,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                1.882677674293518
+            ],
+            "scale": [
+                0.7879700064659119,
+                27.990188598632812,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                8834.2939453125,
+                -4621.80078125,
+                -95274.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                57.84676742553711
+            ],
+            "scale": [
+                2.0295510292053223,
+                44.03125,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                37524.96484375,
+                -4974.85009765625,
+                -95733.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -55.0003662109375
+            ],
+            "scale": [
+                11.09317398071289,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                37304.39453125,
+                -4298.65478515625,
+                -95733.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -125.00039672851562
+            ],
+            "scale": [
+                8.247442245483398,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                37139.76953125,
+                -3777.44189453125,
+                -95733.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -25.000244140625
+            ],
+            "scale": [
+                9.902012825012207,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                36628.375,
+                -3084.353515625,
+                -95733.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -85.00021362304688
+            ],
+            "scale": [
+                9.902012825012207,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                36584.5234375,
+                -2073.9287109375,
+                -95733.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                11.63803768157959,
+                1.0,
+                30.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                36373.234375,
+                -56.147613525390625,
+                -96208.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                4.80653715133667,
+                6.1711578369140625,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                34861.04296875,
+                1362.726806640625,
+                -96208.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                4.80653715133667,
+                12.558956146240234,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                33193.96484375,
+                1207.3238525390625,
+                -96208.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                0.7879700064659119,
+                12.558956146240234,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                30433.390625,
+                1059.603271484375,
+                -96269.140625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -80.00017547607422
+            ],
+            "scale": [
+                0.7879700064659119,
+                19.27592658996582,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                28581.20703125,
+                120.34418487548828,
+                -96372.65625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -65.67839050292969
+            ],
+            "scale": [
+                4.80653715133667,
+                12.558956146240234,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                29425.412109375,
+                -2204.13427734375,
+                -96372.65625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -66.40650177001953
+            ],
+            "scale": [
+                4.80653715133667,
+                12.558956146240234,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                27402.716796875,
+                -1381.2906494140625,
+                -96343.59375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -80.00018310546875
+            ],
+            "scale": [
+                0.7879700064659119,
+                7.7829508781433105,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                26527.13671875,
+                -1865.4410400390625,
+                -96343.59375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -41.32810592651367
+            ],
+            "scale": [
+                0.7879700064659119,
+                7.7829508781433105,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                26901.20703125,
+                -1514.54150390625,
+                -96343.59375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -61.253353118896484
+            ],
+            "scale": [
+                0.7879700064659119,
+                2.9625608921051025,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                24194.26953125,
+                -2674.326904296875,
+                -97078.1796875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -41.328094482421875
+            ],
+            "scale": [
+                0.7879700064659119,
+                7.7829508781433105,
+                13.130297660827637
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                23827.794921875,
+                -3199.33056640625,
+                -97179.5546875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -26.999479293823242
+            ],
+            "scale": [
+                0.7879700064659119,
+                5.3680901527404785,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                23647.798828125,
+                -3790.805908203125,
+                -97179.5546875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -10.115973472595215
+            ],
+            "scale": [
+                0.7879700064659119,
+                7.359598159790039,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                23239.8359375,
+                -4250.49267578125,
+                -97302.484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -66.44013977050781
+            ],
+            "scale": [
+                0.7879700064659119,
+                7.359598159790039,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                22663.767578125,
+                -4652.4501953125,
+                -97314.4921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.575233459472656
+            ],
+            "scale": [
+                0.7879700064659119,
+                7.359598159790039,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                22211.123046875,
+                -5111.83251953125,
+                -97314.4921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.575225830078125
+            ],
+            "scale": [
+                0.7879700064659119,
+                7.359598159790039,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                21526.087890625,
+                -5978.744140625,
+                -97314.4921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.575225830078125
+            ],
+            "scale": [
+                0.7879700064659119,
+                12.351668357849121,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                21953.38671875,
+                -5439.8525390625,
+                -97314.4921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -5.721343994140625
+            ],
+            "scale": [
+                0.7879700064659119,
+                1.9545140266418457,
+                10.860031127929688
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20812.32421875,
+                -8396.5078125,
+                -96119.125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.5023890137672424
+            ],
+            "scale": [
+                0.7879700064659119,
+                22.91146469116211,
+                30.047964096069336
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20922.41015625,
+                -6829.91748046875,
+                -96089.4921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -12.706095695495605
+            ],
+            "scale": [
+                0.7879700064659119,
+                9.120890617370605,
+                30.047964096069336
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                22801.171875,
+                -10916.935546875,
+                -95866.109375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                4.497611045837402
+            ],
+            "scale": [
+                0.7879700064659119,
+                17.028635025024414,
+                18.80587387084961
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                24555.6171875,
+                -13334.78125,
+                -95905.8828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                48.513912200927734
+            ],
+            "scale": [
+                0.7879700064659119,
+                32.1635627746582,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                25232.9375,
+                -16511.0234375,
+                -94572.640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                28.03131675720215
+            ],
+            "scale": [
+                0.7879700064659119,
+                14.8421049118042,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                24173.658203125,
+                -17268.65625,
+                -95262.640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                77.305908203125
+            ],
+            "scale": [
+                0.7879700064659119,
+                14.8421049118042,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                25081.82421875,
+                -17148.162109375,
+                -95262.640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                128.6644744873047
+            ],
+            "scale": [
+                0.7879700064659119,
+                8.545339584350586,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                22733.63671875,
+                -16944.29296875,
+                -95262.640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                77.305908203125
+            ],
+            "scale": [
+                0.7879700064659119,
+                18.172395706176758,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                21511.947265625,
+                -16400.498046875,
+                -95262.640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.64805603027344
+            ],
+            "scale": [
+                10.748645782470703,
+                6.565019130706787,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20918.48828125,
+                -15855.4248046875,
+                -95262.640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                84.2850341796875
+            ],
+            "scale": [
+                0.7879700064659119,
+                9.983076095581055,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                20283.810546875,
+                -16256.0712890625,
+                -94570.5234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                159.59580993652344
+            ],
+            "scale": [
+                0.7879700064659119,
+                9.983076095581055,
+                39.60116958618164
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19708.734375,
+                -16989.0,
+                -94570.5234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                122.96940612792969
+            ],
+            "scale": [
+                0.7804281115531921,
+                9.975534439086914,
+                39.5936279296875
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19407.318359375,
+                -17690.341796875,
+                -94570.5234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -164.1494903564453
+            ],
+            "scale": [
+                0.7804281115531921,
+                9.975534439086914,
+                39.5936279296875
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19429.47265625,
+                -18651.744140625,
+                -94243.9765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                169.40084838867188
+            ],
+            "scale": [
+                0.7879700064659119,
+                9.983076095581055,
+                33.08961486816406
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19369.796875,
+                -19591.333984375,
+                -94243.9765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -177.70423889160156
+            ],
+            "scale": [
+                0.7879700064659119,
+                9.983076095581055,
+                33.08961486816406
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                19822.9375,
+                -20279.826171875,
+                -94243.9765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -116.7034912109375
+            ],
+            "scale": [
+                0.7879700064659119,
+                9.983076095581055,
+                33.08961486816406
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                23340.607421875,
+                -20676.29296875,
+                -93809.640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -116.7034912109375
+            ],
+            "scale": [
+                0.7879700064659119,
+                22.895681381225586,
+                67.63273620605469
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                57627.10546875,
+                4111.81640625,
+                -93949.6640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                8.399999933317304e-05
+            ],
+            "scale": [
+                17.880624771118164,
+                1.0,
+                19.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                17056.529296875,
+                -33814.38671875,
+                -91878.796875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -86.17782592773438
+            ],
+            "scale": [
+                0.7879700064659119,
+                39.4012565612793,
+                38.07194519042969
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                15258.427734375,
+                -16821.859375,
+                -94010.1640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -169.31117248535156
+            ],
+            "scale": [
+                0.7879700064659119,
+                23.386720657348633,
+                51.780460357666016
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                15306.2939453125,
+                -25969.60546875,
+                -94456.484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                130.34637451171875
+            ],
+            "scale": [
+                0.7879700064659119,
+                44.36326599121094,
+                49.37969970703125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                17029.6640625,
+                -24011.912109375,
+                -93327.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                173.0195770263672
+            ],
+            "scale": [
+                0.7879700064659119,
+                11.299581527709961,
+                35.5452995300293
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                16173.9775390625,
+                -21739.986328125,
+                -93496.484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -146.11785888671875
+            ],
+            "scale": [
+                0.7879700064659119,
+                29.31148910522461,
+                35.63996887207031
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                17048.517578125,
+                -22896.044921875,
+                -93327.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -146.11785888671875
+            ],
+            "scale": [
+                3.794682025909424,
+                0.660427987575531,
+                35.5452995300293
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                17325.5859375,
+                -23500.83203125,
+                -93327.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -158.97720336914062
+            ],
+            "scale": [
+                5.131484031677246,
+                0.660427987575531,
+                35.5452995300293
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                17375.0546875,
+                -23101.2578125,
+                -93327.203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -61.379150390625
+            ],
+            "scale": [
+                7.824717044830322,
+                0.660427987575531,
+                35.5452995300293
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                15031.7109375,
+                -13912.5263671875,
+                -95434.1875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.51547241210938
+            ],
+            "scale": [
+                0.7879700064659119,
+                36.0997314453125,
+                51.780460357666016
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                11339.3837890625,
+                -11855.1376953125,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -125.1556396484375
+            ],
+            "scale": [
+                0.7879700064659119,
+                16.501502990722656,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                57056.5625,
+                733.9100341796875,
+                -94344.6640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -10.000039100646973
+            ],
+            "scale": [
+                19.470901489257812,
+                1.0,
+                15.05020523071289
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                11501.5693359375,
+                -11969.357421875,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -125.1556396484375
+            ],
+            "scale": [
+                0.7879700064659119,
+                16.501502990722656,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                9725.0400390625,
+                -10962.8017578125,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -133.7007293701172
+            ],
+            "scale": [
+                0.7879700064659119,
+                8.945500373840332,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10256.244140625,
+                -11241.6708984375,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -109.28128814697266
+            ],
+            "scale": [
+                0.7879700064659119,
+                8.945500373840332,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                9287.9990234375,
+                -10403.814453125,
+                -96736.046875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -133.7007293701172
+            ],
+            "scale": [
+                1.8901560306549072,
+                8.126182556152344,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                8604.9052734375,
+                -9946.6982421875,
+                -96736.046875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -133.7007293701172
+            ],
+            "scale": [
+                0.8317980170249939,
+                8.916217803955078,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                7812.2314453125,
+                -9373.1962890625,
+                -96531.1015625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -113.76304626464844
+            ],
+            "scale": [
+                0.8317980170249939,
+                5.470667839050293,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                8157.732421875,
+                -9552.5771484375,
+                -96531.1015625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -124.39183807373047
+            ],
+            "scale": [
+                0.8317980170249939,
+                3.0325169563293457,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                7426.9638671875,
+                -8950.4931640625,
+                -96531.1015625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -156.6184539794922
+            ],
+            "scale": [
+                0.8317980170249939,
+                5.470667839050293,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                7124.806640625,
+                -8528.5361328125,
+                -96540.078125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -133.04843139648438
+            ],
+            "scale": [
+                0.8317980170249939,
+                5.470667839050293,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                6685.35693359375,
+                -8311.279296875,
+                -96540.078125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -99.43697357177734
+            ],
+            "scale": [
+                0.8317980170249939,
+                5.470667839050293,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                58986.8359375,
+                1194.0413818359375,
+                -94029.6640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                35.000022888183594
+            ],
+            "scale": [
+                21.5,
+                1.0,
+                21.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                6307.45166015625,
+                -7878.8505859375,
+                -96500.5703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -166.6670379638672
+            ],
+            "scale": [
+                0.8317980170249939,
+                6.716454029083252,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                5501.77734375,
+                -6897.54638671875,
+                -96500.5703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -114.58357238769531
+            ],
+            "scale": [
+                0.8317980170249939,
+                8.948838233947754,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                3956.77880859375,
+                -6943.16650390625,
+                -96500.5703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -60.18931198120117
+            ],
+            "scale": [
+                0.8317980170249939,
+                16.419483184814453,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                4873.439453125,
+                -6544.50830078125,
+                -96500.5703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -111.76184844970703
+            ],
+            "scale": [
+                3.538922071456909,
+                6.927915096282959,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                6104.6904296875,
+                -7228.6650390625,
+                -96500.5703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -131.72882080078125
+            ],
+            "scale": [
+                3.538922071456909,
+                6.927915096282959,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                3886.695068359375,
+                -4223.361328125,
+                -96500.5703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                171.91256713867188
+            ],
+            "scale": [
+                0.8317980170249939,
+                61.90653610229492,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                13402.763671875,
+                -9138.634765625,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -88.1175537109375
+            ],
+            "scale": [
+                0.7879700064659119,
+                41.58187484741211,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                11203.5966796875,
+                -9177.802734375,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -102.352783203125
+            ],
+            "scale": [
+                0.7879700064659119,
+                2.990609884262085,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10932.955078125,
+                -9080.0625,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -117.29155731201172
+            ],
+            "scale": [
+                0.7879700064659119,
+                2.990609884262085,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10553.458984375,
+                -8757.015625,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.54383850097656
+            ],
+            "scale": [
+                0.7879700064659119,
+                7.380619049072266,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                59812.10546875,
+                2291.089111328125,
+                -94054.6640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                104.9999008178711
+            ],
+            "scale": [
+                11.5,
+                1.0,
+                21.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10184.1455078125,
+                -8208.337890625,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -158.0623779296875
+            ],
+            "scale": [
+                0.7879700064659119,
+                6.460134983062744,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10291.4873046875,
+                -7658.56884765625,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                150.626708984375
+            ],
+            "scale": [
+                0.7879700064659119,
+                6.460134983062744,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10777.3896484375,
+                -6906.98974609375,
+                -96434.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                136.93443298339844
+            ],
+            "scale": [
+                2.0295510292053223,
+                12.044441223144531,
+                21.558691024780273
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                7413.90966796875,
+                -2973.015625,
+                -95274.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                127.84703826904297
+            ],
+            "scale": [
+                2.0295510292053223,
+                12.044441223144531,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                7835.33642578125,
+                -2347.90185546875,
+                -95274.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                170.35565185546875
+            ],
+            "scale": [
+                0.9254429936408997,
+                6.652660846710205,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                8103.23095703125,
+                -1570.1986083984375,
+                -95274.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                154.39747619628906
+            ],
+            "scale": [
+                0.9254429936408997,
+                9.963350296020508,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                8560.966796875,
+                -960.822021484375,
+                -95274.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                110.75328063964844
+            ],
+            "scale": [
+                1.505553960800171,
+                6.558891773223877,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                9138.9345703125,
+                -1011.8035888671875,
+                -95274.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                84.5107192993164
+            ],
+            "scale": [
+                1.505553960800171,
+                6.558891773223877,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                9672.5380859375,
+                -737.89208984375,
+                -95274.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                139.55015563964844
+            ],
+            "scale": [
+                0.4126800000667572,
+                6.558891773223877,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                10298.08984375,
+                -182.76016235351562,
+                -95274.1953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                139.55015563964844
+            ],
+            "scale": [
+                0.4126800000667572,
+                6.558891773223877,
+                40.0
+            ]
+        }
+    }
+]

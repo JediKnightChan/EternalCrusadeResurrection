@@ -1,7 +1,7 @@
 import json
 import os.path
 
-raw_filename = "Files/BP_Tower2.raw.json"
+raw_filename = "Files/BP_Torche.raw.json"
 filename = raw_filename.replace(".raw.json", ".json")
 
 with open(raw_filename, "rb") as f:

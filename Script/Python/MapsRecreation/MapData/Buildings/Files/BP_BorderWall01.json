@@ -1,0 +1,362 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_HAR_Balcony_01/SM_STRUC_HAR_Balcony_12x12_Floor_01.SM_STRUC_HAR_Balcony_12x12_Floor_01",
+        "transform": {
+            "loc": [
+                0.0,
+                1200.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_HAR_Balcony_01/SM_STRUC_HAR_Balcony_12x12_Floor_01.SM_STRUC_HAR_Balcony_12x12_Floor_01",
+        "transform": {
+            "loc": [
+                0.0,
+                2400.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_HAR_Balcony_01/SM_STRUC_HAR_Balcony_12x12_Floor_01.SM_STRUC_HAR_Balcony_12x12_Floor_01",
+        "transform": {
+            "loc": [
+                0.0,
+                3600.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_HAR_Balcony_01/SM_STRUC_HAR_Balcony_12x12_Floor_01.SM_STRUC_HAR_Balcony_12x12_Floor_01",
+        "transform": {
+            "loc": [
+                0.0,
+                4800.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_HAR_Balcony_01/SM_STRUC_HAR_Balcony_12x12_Floor_01.SM_STRUC_HAR_Balcony_12x12_Floor_01",
+        "transform": {
+            "loc": [
+                0.0,
+                6000.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                249.0009002685547,
+                -1201.0042724609375,
+                -2407.999755859375
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.00003051757812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                949.00244140625,
+                1198.9974365234375,
+                -3658.999755859375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                949.0081176757812,
+                3598.997314453125,
+                -2407.999755859375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                949.0082397460938,
+                3598.997314453125,
+                -3658.999755859375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                949.0125122070312,
+                5998.9970703125,
+                -2407.999755859375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9998779296875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                949.0125122070312,
+                5998.9970703125,
+                -3658.999755859375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                949.00244140625,
+                1198.9974365234375,
+                -2407.999755859375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9998779296875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                249.0065155029297,
+                1198.9952392578125,
+                -2407.999755859375
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.00003051757812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                249.0009002685547,
+                -1201.0042724609375,
+                -3658.999755859375
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.00003051757812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                249.0065155029297,
+                1198.9952392578125,
+                -3658.999755859375
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.00003051757812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                249.0109100341797,
+                3598.9951171875,
+                -3658.999755859375
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.00003051757812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_GAM_High_FortificationWall04_EXT.SM_XX_GAM_High_FortificationWall04_EXT",
+        "transform": {
+            "loc": [
+                249.0109100341797,
+                3598.9951171875,
+                -2407.999755859375
+            ],
+            "rot": [
+                -0.0,
+                -0.0,
+                -90.00003051757812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_HAR_Balcony_01/SM_STRUC_HAR_Balcony_12x12_Floor_01.SM_STRUC_HAR_Balcony_12x12_Floor_01",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

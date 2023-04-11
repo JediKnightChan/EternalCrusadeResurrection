@@ -3,7 +3,7 @@ import os
 from PIL import Image
 
 DO_DELETE_TGAS = True
-root_dir = "./Ronan/"
+root_dir = "D:/MyProjects/eternal_crusade/umodel_needed/exp2/Maps/Levels/FortressAgnathio/Landscape/Territory05_x0_y2"
 
 walk_iterator = list(os.walk(root_dir))
 for root, subdirs, files in walk_iterator:

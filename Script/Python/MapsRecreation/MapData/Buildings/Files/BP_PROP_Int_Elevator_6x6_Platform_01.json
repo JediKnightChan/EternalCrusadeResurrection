@@ -1,0 +1,102 @@
+[
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Int_Elevator_6x6_Platform_01.SM_PROP_Int_Elevator_6x6_Platform_01",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Ext_Elevator_Wheel_01.SM_PROP_Ext_Elevator_Wheel_01",
+        "transform": {
+            "loc": [
+                -232.3223114013672,
+                -233.53553771972656,
+                89.99999237060547
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -44.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Ext_Elevator_Wheel_01.SM_PROP_Ext_Elevator_Wheel_01",
+        "transform": {
+            "loc": [
+                234.36819458007812,
+                233.15496826171875,
+                89.99999237060547
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -44.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Ext_Elevator_Wheel_01.SM_PROP_Ext_Elevator_Wheel_01",
+        "transform": {
+            "loc": [
+                -232.3222198486328,
+                233.1553192138672,
+                89.99999237060547
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99995803833008
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Ext_Elevator_Wheel_01.SM_PROP_Ext_Elevator_Wheel_01",
+        "transform": {
+            "loc": [
+                234.36790466308594,
+                -233.53543090820312,
+                89.99999237060547
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                44.99995803833008
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]
