@@ -1,8 +1,8 @@
 import json
 import os.path
 
-raw_filename = "Raw/Harkus/harkus_vfx.raw.json"
-new_filename = "Usual/Harkus/harkus_vfx.json"
+raw_filename = "Raw/Medusa/medusa_background.raw.json"
+new_filename = "Usual/Medusa/medusa_background.json"
 
 with open(raw_filename, "rb") as f:
     data = json.load(f)

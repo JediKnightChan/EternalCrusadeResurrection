@@ -8,7 +8,7 @@ import re
 
 # Change me!
 map_data_filepath = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                    "MapData/Maps/Usual/Harkus/harkus_static.json"
+                    "MapData/Maps/Usual/Medusa/medusa_background.json"
 
 EXCLUDE_ENGINE_ASSETS = True
 

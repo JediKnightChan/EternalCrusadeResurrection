@@ -1,1 +1,4542 @@
-[{"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [59140.0, -87340.0, -66575.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H", "transform": {"loc": [60488.1640625, -87241.265625, -66540.0], "rot": [5.546509265899658, -46.69826126098633, -10.74901008605957], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [60500.8125, -86720.5390625, -66575.0], "rot": [0.0, 0.0, 20.000219345092773], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B", "transform": {"loc": [56841.1640625, -82733.5625, -66504.9296875], "rot": [6.830188794992864e-06, 20.000030517578125, -84.99995422363281], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Engine/BasicShapes/Cube.Cube", "transform": {"loc": [60376.68359375, -85990.0625, -66600.0], "rot": [0.0, 0.0, -3.0517576306010596e-05], "scale": [19.970386505126953, 30.369977951049805, 21.453777313232422]}}, {"path": "StaticMesh /Engine/BasicShapes/Cube.Cube", "transform": {"loc": [64895.1484375, -96919.9609375, -66450.0], "rot": [0.0, 0.0, -15.000020027160645], "scale": [19.970386505126953, 50.0218620300293, 21.453777313232422]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H", "transform": {"loc": [55922.4921875, -82767.03125, -66540.0], "rot": [5.546509265899658, -46.698787689208984, -65.74909973144531], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [56356.32421875, -82478.7265625, -66575.0], "rot": [0.0, 0.0, -35.0001335144043], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B", "transform": {"loc": [63786.2890625, -72501.640625, -66504.9296875], "rot": [6.830188794992864e-06, 19.999921798706055, 90.00000762939453], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H", "transform": {"loc": [64704.375, -72548.3515625, -66540.0], "rot": [5.546509265899658, -46.698299407958984, 109.25062561035156], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [65578.0, -25662.0, -67255.0], "rot": [6.028584003448486, -9.911147117614746, -91.72667694091797], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [64247.078125, -72797.7578125, -66575.0], "rot": [0.0, 0.0, 139.99986267089844], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [60947.40234375, -65304.4609375, -66542.0], "rot": [0.0, 0.0, -113.35256958007812], "scale": [0.533851146697998, 0.533851146697998, 0.533851146697998]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B", "transform": {"loc": [51413.25390625, -69377.84375, -66504.9296875], "rot": [6.830188794992864e-06, 19.99983024597168, -0.00024414061044808477], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H", "transform": {"loc": [51366.55078125, -70295.9296875, -66540.0], "rot": [5.546502590179443, -46.69796371459961, 19.250459671020508], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [51117.12890625, -69838.6328125, -66575.0], "rot": [0.0, 0.0, 49.99981689453125], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [28774.904296875, -3181.765869140625, -66469.0], "rot": [0.0, 0.0, 90.01163482666016], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [27916.904296875, -1709.765869140625, -66497.0], "rot": [0.0, 0.0, 50.0114860534668], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03", "transform": {"loc": [27690.0, -11605.0, -68610.0], "rot": [-5.88067626953125, 16.926652908325195, 34.0103874206543], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B", "transform": {"loc": [56049.06640625, -53034.0078125, -66459.9296875], "rot": [6.830188794992864e-06, 19.99971580505371, 114.99960327148438], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H", "transform": {"loc": [56900.87890625, -52688.31640625, -66495.0], "rot": [5.546509265899658, -46.69743728637695, 134.2503662109375], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [56591.83203125, -53107.640625, -66530.0], "rot": [0.0, 0.0, 164.99964904785156], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B", "transform": {"loc": [53188.875, -22637.65234375, -68464.9296875], "rot": [6.830188794992864e-06, 19.999698638916016, 84.99968719482422], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H", "transform": {"loc": [54099.40625, -22764.1796875, -68500.0], "rot": [5.546509265899658, -46.69735336303711, 104.25033569335938], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [53622.10546875, -22972.8046875, -68535.0], "rot": [0.0, 0.0, 134.9997100830078], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B", "transform": {"loc": [41568.80078125, -22573.337890625, -68439.9296875], "rot": [6.830188794992864e-06, 19.999658584594727, 9.999661445617676], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01.SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01", "transform": {"loc": [27380.1796875, -11880.8349609375, -68496.0078125], "rot": [6.565238952636719, -16.25013542175293, -10.68018913269043], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H", "transform": {"loc": [42182.2421875, -22740.587890625, -68475.0], "rot": [5.546509265899658, -46.69715881347656, 29.250125885009766], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [41357.19140625, -23078.546875, -68510.0], "rot": [0.0, 0.0, 59.999603271484375], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [64754.3984375, -88556.0703125, -66580.0], "rot": [0.0, 0.0, -174.1157684326172], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [17965.0, -45105.0, -66555.0], "rot": [0.0, 0.0, 105.00005340576172], "scale": [1.4915430545806885, 1.4915430545806885, 2.2982020378112793]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [64957.7109375, -93689.9140625, -66555.0], "rot": [0.0, 0.0, -103.78316497802734], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03", "transform": {"loc": [27729.486328125, -11508.2568359375, -68557.2421875], "rot": [-6.717347145080566, 31.99573516845703, -87.65252685546875], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02", "transform": {"loc": [27563.814453125, -11508.2080078125, -68595.6796875], "rot": [-6.147169915493578e-05, 10.001770973205566, 125.000244140625], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04.SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04", "transform": {"loc": [27770.83203125, -11481.787109375, -68593.5078125], "rot": [16.122074127197266, -99.62831115722656, 66.46770477294922], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03", "transform": {"loc": [27722.794921875, -11587.0478515625, -68607.21875], "rot": [7.435459613800049, 13.064410209655762, -119.14733123779297], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02", "transform": {"loc": [27701.79296875, -11402.6337890625, -68598.9140625], "rot": [7.253626346588135, -6.493016719818115, -67.90338897705078], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01.SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01", "transform": {"loc": [27777.646484375, -11404.8232421875, -68577.4765625], "rot": [6.565238952636719, -16.25013542175293, -10.68018913269043], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03", "transform": {"loc": [27711.109375, -11303.2568359375, -68610.0], "rot": [-5.88067626953125, 16.92748260498047, -85.98979187011719], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02", "transform": {"loc": [27561.02734375, -11303.2080078125, -68690.0], "rot": [0.0, 10.001834869384766, 124.99998474121094], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04.SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04", "transform": {"loc": [27755.25390625, -11276.787109375, -68615.0], "rot": [17.528087615966797, 76.20650482177734, -124.69512176513672], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03", "transform": {"loc": [27717.578125, -11382.0478515625, -68660.0], "rot": [0.0, 0.0, -119.99993896484375], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02", "transform": {"loc": [27685.484375, -11207.6337890625, -68660.0], "rot": [0.0, 10.001209259033203, -55.00004577636719], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01.SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01", "transform": {"loc": [27750.615234375, -11204.8232421875, -68610.0], "rot": [21.291099548339844, -19.200897216796875, -11.396440505981445], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A", "transform": {"loc": [39075.0, -68525.0, -65960.0], "rot": [0.0, 0.0, 130.00001525878906], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02", "transform": {"loc": [27765.0, -11735.0, -68690.0], "rot": [0.0, 10.001016616821289, -114.99994659423828], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_B.SM_PROPS_TITAN_WH_WRECK_B", "transform": {"loc": [56472.421875, -96401.953125, -66312.1328125], "rot": [0.0, -38.828590393066406, -66.44336700439453], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_C.SM_PROPS_TITAN_WH_WRECK_C", "transform": {"loc": [57855.26953125, -95795.2578125, -65603.1171875], "rot": [3.6485912799835205, 112.66674041748047, 138.75653076171875], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [57226.35546875, -96067.796875, -66600.0], "rot": [0.0, 0.0, -66.44331359863281], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_A.SM_PROPS_TITAN_WH_WRECK_A", "transform": {"loc": [56760.48828125, -96336.390625, -66435.0], "rot": [4.999896049499512, 2.8496406230260618e-05, 76.58712005615234], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [54625.0, -68515.0, -66555.0], "rot": [0.0, 0.0, -77.20387268066406], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [46685.0, -78210.0, -66545.0], "rot": [0.0, 0.0, -177.7067108154297], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [36505.0, -53350.0, -66565.0], "rot": [0.0, 0.0, 106.0053482055664], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [13299.0, -44432.0, -66630.0], "rot": [0.0, 0.0, 89.99993133544922], "scale": [0.9622365832328796, 0.9622365832328796, 0.9622365832328796]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_A.SM_PROP_AMB_Rubble_S_B_half_A", "transform": {"loc": [27420.0, -17790.0, -68495.0], "rot": [0.0, 0.0, 179.99996948242188], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [16105.7587890625, -49491.7734375, -66550.0], "rot": [0.0, 0.0, -117.32788848876953], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [23195.0, -58770.0, -64980.0], "rot": [0.0, 0.0, 68.01667022705078], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [21405.0703125, -49216.59375, -66565.0], "rot": [0.0, 0.0, -91.9787826538086], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [22664.615234375, -58099.34375, -64985.0], "rot": [0.0, 0.0, 125.21199035644531], "scale": [0.5372700095176697, 0.5372700095176697, 0.5372700095176697]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [53840.0, -25740.0, -68515.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [54500.0, -24220.0, -68515.0], "rot": [0.0, 0.0, 129.5103302001953], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [61574.0625, -30935.052734375, -66505.0], "rot": [0.0, 0.0, 28.662187576293945], "scale": [0.7055099606513977, 0.7055099606513977, 0.7055099606513977]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [25477.443359375, -2332.588134765625, -66490.0], "rot": [0.0, 0.0, -119.72050476074219], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [16510.0, 880.0, -66500.0], "rot": [0.0, 0.0, -114.92787170410156], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [18610.0, -1410.0, -66540.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B", "transform": {"loc": [61247.65625, -86469.5546875, -66504.9296875], "rot": [-13.047545433044434, 7.54359245300293, 10.110674858093262], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [44525.44140625, -9533.3271484375, -68520.0], "rot": [0.0, 0.0, -11.659226417541504], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [23780.0, -22985.0, -68525.0], "rot": [0.0, 0.0, -129.9996795654297], "scale": [2.2561120986938477, 2.2561120986938477, 2.2561120986938477]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [43290.51171875, -16221.1015625, -68508.828125], "rot": [0.0, 0.0, 110.0000228881836], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B", "transform": {"loc": [38757.39453125, -63450.78125, -66005.625], "rot": [-7.951623916625977, 11.159317970275879, -70.1021499633789], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A", "transform": {"loc": [33225.0, -23515.0, -68455.0], "rot": [0.0, 0.0, -9.999953269958496], "scale": [1.0, 1.0, 1.4613759517669678]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [23585.0, -23785.0, -68525.0], "rot": [0.0, 0.0, 0.0], "scale": [2.2561120986938477, 2.2561120986938477, 2.2561120986938477]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_A.SM_PROPS_TITAN_WH_WRECK_A", "transform": {"loc": [43771.89453125, -16561.63671875, -68343.953125], "rot": [-17.894527435302734, -9.899092674255371, -60.4062385559082], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_B.SM_PROPS_TITAN_WH_WRECK_B", "transform": {"loc": [44063.71875, -16514.3515625, -68220.9609375], "rot": [0.0, -38.828956604003906, 110.00001525878906], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [38301.69921875, -63209.953125, -65995.0], "rot": [0.0, 0.0, -9.71052360534668], "scale": [0.8267784714698792, 0.8267784714698792, 0.8267784714698792]}}, {"path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_12X3_Plain_A.SM_STRUC_Building_Wall_12X3_Plain_A", "transform": {"loc": [71014.9765625, -43541.00390625, -66501.9296875], "rot": [0.0, 0.0, -179.99989318847656], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_C.SM_PROPS_Rhino_WRECK_C", "transform": {"loc": [51744.171875, -52365.6796875, -66186.9375], "rot": [-5.140810012817383, -18.34583282470703, -138.53329467773438], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [51760.9453125, -52823.4765625, -66536.8671875], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B", "transform": {"loc": [51811.97265625, -52563.85546875, -66537.328125], "rot": [-5.319979190826416, -4.63644552230835, -170.22097778320312], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [50098.73046875, -57988.61328125, -66569.75], "rot": [0.0, 0.0, 54.999916076660156], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B", "transform": {"loc": [49613.78515625, -59271.6171875, -66557.4921875], "rot": [0.0, 0.0, 0.0], "scale": [1.741034984588623, 1.741034984588623, 1.9500563144683838]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [47451.0859375, -61058.9609375, -66538.3984375], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [59990.0, -85740.0, -66575.0], "rot": [0.0, 0.0, 84.99995422363281], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [60410.0, -83955.0, -66545.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_D.SM_PROPS_TITAN_WH_WRECK_D", "transform": {"loc": [59976.93359375, -84510.453125, -66510.0], "rot": [0.0, 0.0, -14.99931812286377], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_B.SM_PROPS_TITAN_WH_WRECK_B", "transform": {"loc": [60237.796875, -86426.3359375, -66510.0], "rot": [0.0, 0.0, 169.9999542236328], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_A.SM_PROPS_TITAN_WH_WRECK_A", "transform": {"loc": [60497.796875, -86426.3359375, -66510.0], "rot": [0.0, 0.0, 169.9999542236328], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [41840.0, -4420.0, -68520.0], "rot": [0.0, 0.0, -49.388301849365234], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [32023.955078125, 2025.4268798828125, -66482.421875], "rot": [1.3673559427261353, -2.411804437637329, 65.23035430908203], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [35440.0, -7540.0, -65375.0], "rot": [0.0, 0.0, 13.845675468444824], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [29280.0, -6360.0, -66090.0], "rot": [0.0, 0.0, -15.000231742858887], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [30205.9140625, -9446.5791015625, -66105.0], "rot": [0.0, 0.0, -15.00010871887207], "scale": [0.8788664937019348, 0.8788664937019348, 0.8788664937019348]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_C.SM_PROP_AMB_Rubble_S_B_half_C", "transform": {"loc": [30540.083984375, -3945.52294921875, -66105.0], "rot": [0.0, 0.0, -4.988528251647949], "scale": [1.600000023841858, 1.600000023841858, 1.5]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [27270.0, 3040.0, -66510.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [31540.0, 3090.0, -66500.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [29370.0, 2040.0, -66520.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [17055.0, -3530.0, -66540.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [17265.0, 2360.0, -66500.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [23275.0, -1965.0, -66490.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [24050.0, -6970.0, -66500.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [24325.0, -8830.0, -66520.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [21349.486328125, -9097.2724609375, -65670.0], "rot": [0.0, 0.0, -33.37171936035156], "scale": [0.9044119119644165, 0.9044119119644165, 0.9044119119644165]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [20370.0, -10295.0, -65670.0], "rot": [0.0, 0.0, 0.0], "scale": [0.8585039377212524, 0.8585039377212524, 0.8585039377212524]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [27195.0, -45305.0, -66600.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [36352.96875, -54383.15234375, -66564.0], "rot": [0.0, 0.0, 69.45114135742188], "scale": [0.8985182046890259, 0.8985182046890259, 0.8985182046890259]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [39574.78125, -74091.609375, -66005.0], "rot": [0.0, 0.0, -169.69854736328125], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [58815.0, -70495.0, -66555.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [62005.0, -66040.0, -66530.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_b.SM_PROP_AMB_Rubble_EXT_D_b", "transform": {"loc": [60397.9140625, -66868.0390625, -66525.0], "rot": [0.0, 0.0, -113.35267639160156], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [60555.0, -67800.0, -66550.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [63204.7890625, -69718.3359375, -66550.0], "rot": [0.0, 0.0, -54.31475067138672], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [57365.0, -68230.0, -66555.0], "rot": [0.0, 0.0, 25.000015258789062], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [61773.90625, -33218.59375, -66510.0], "rot": [0.0, 0.0, -31.791732788085938], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [66007.34375, -31088.37890625, -66590.0], "rot": [0.0, 0.0, -171.3382568359375], "scale": [0.8620102405548096, 0.8620102405548096, 0.8620102405548096]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [64415.0, -22460.0, -67400.0], "rot": [0.0, 0.0, -71.47206115722656], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [63210.0, -24105.0, -67380.0], "rot": [0.0, 0.0, 179.99989318847656], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [56752.25, -17752.705078125, -67895.0], "rot": [0.0, 0.0, 0.6265004873275757], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [56160.0, -25276.0, -68515.0], "rot": [0.0, 0.0, 0.0], "scale": [0.8349520564079285, 0.8349520564079285, 0.8349520564079285]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [48740.0, -24370.0, -68495.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [51345.0, -24585.0, -68515.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [45365.0, -32885.0, -67640.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [16110.0, -69655.0, -63455.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [18010.0, -70460.0, -63485.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [21317.927734375, -57309.9140625, -64985.0], "rot": [0.0, 0.0, -59.7993278503418], "scale": [0.5372697710990906, 0.5372697710990906, 0.5372697710990906]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A", "transform": {"loc": [21295.76171875, -57139.46875, -64945.0], "rot": [0.0, 0.0, -153.1671142578125], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [46856.984375, -31475.689453125, -67630.0], "rot": [0.0, 0.0, -74.99996948242188], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A_Half_A.SM_PROP_AMB_Rubble_S_A_Half_A", "transform": {"loc": [54260.31640625, -33698.16015625, -66500.0], "rot": [0.0, 0.0, 164.9998016357422], "scale": [1.900767207145691, 1.900767207145691, 1.900767207145691]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [16990.0, -41970.0, -66575.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [22709.99609375, -46194.98828125, -66550.0], "rot": [0.0, 0.0, -36.88737869262695], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [26304.7734375, -53701.81640625, -65335.0], "rot": [0.0, 0.0, -72.64433288574219], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [21240.0, -52965.0, -65380.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [23410.0, -58425.0, -64980.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [16609.05078125, -56916.5859375, -66630.0], "rot": [0.0, 0.0, 70.00008392333984], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [17839.37890625, -51800.0, -66590.0], "rot": [0.0, 0.0, -30.000091552734375], "scale": [0.9271489977836609, 0.9271489977836609, 0.9271489977836609]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [18705.0, -50075.0, -66560.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [15115.0, -44965.0, -66560.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_b.SM_PROP_AMB_Rubble_EXT_D_b", "transform": {"loc": [48056.21875, -22958.8828125, -68508.0], "rot": [0.0, 0.0, 90.00007629394531], "scale": [0.48777449131011963, 0.48777449131011963, 0.48777449131011963]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [16830.0, -38650.0, -66590.0], "rot": [0.0, 0.0, 176.43333435058594], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_b.SM_PROP_AMB_Rubble_EXT_D_b", "transform": {"loc": [47623.0, -22971.0, -68495.0], "rot": [0.0, 0.0, -89.99999237060547], "scale": [0.5586180686950684, 0.5586180686950684, 0.5586180686950684]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [23290.0, -41510.0, -65300.0], "rot": [0.0, 0.0, 0.0], "scale": [1.5428491830825806, 1.5428491830825806, 1.5428491830825806]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [26517.373046875, -41505.5390625, -65285.0], "rot": [0.0, 0.0, 105.95613098144531], "scale": [1.1598657369613647, 1.1598657369613647, 1.1598657369613647]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [24837.0, -40275.0, -65302.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [25190.0, -38660.0, -65310.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [34705.0, -38560.0, -66615.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [34430.0, -40750.0, -66580.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B", "transform": {"loc": [35750.0, -43765.0, -66545.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [36885.0, -46855.0, -66565.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [36210.0, -53195.0, -66560.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [38410.0, -55170.0, -66600.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [62105.0, -58220.0, -66530.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [50915.0, -56355.0, -66535.0], "rot": [0.0, 0.0, 0.0], "scale": [0.6258147954940796, 0.6258147954940796, 0.6258147954940796]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [44030.0, -78155.0, -66545.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [51895.0, -76745.0, -66545.0], "rot": [0.0, 0.0, 86.5429458618164], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [54300.0, -71875.0, -66535.0], "rot": [0.0, 0.0, 0.0], "scale": [1.402197241783142, 1.402197241783142, 1.402197241783142]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_a.SM_PROP_AMB_Rubble_EXT_D_a", "transform": {"loc": [55744.83203125, -73490.4765625, -66595.0], "rot": [0.0, 0.0, 63.792945861816406], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank_b.SM_PROP_AMB_Rubble_EXT_tank_b", "transform": {"loc": [54513.26953125, -73172.7421875, -66530.0], "rot": [0.0, 0.0, -65.8902816772461], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [51770.0, -65815.0, -66555.0], "rot": [0.0, 0.0, 0.0], "scale": [0.7467538118362427, 0.7467538118362427, 0.7467538118362427]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_E.SM_PROPS_TITAN_WH_WRECK_E", "transform": {"loc": [55932.66015625, -85891.71875, -63825.40234375], "rot": [-84.22975158691406, 179.999755859375, -24.07423210144043], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_B.SM_PROPS_TITAN_WH_WRECK_B", "transform": {"loc": [55181.23046875, -85294.8984375, -63754.3515625], "rot": [0.0, -14.08922290802002, 138.56344604492188], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_A.SM_PROPS_TITAN_WH_WRECK_A", "transform": {"loc": [55181.23046875, -85294.8984375, -63754.3515625], "rot": [0.0, -14.08922290802002, 138.56344604492188], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [57420.0, -94005.0, -66580.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_F.SM_PROPS_TITAN_WH_WRECK_F", "transform": {"loc": [56489.9296875, -93914.6796875, -66343.65625], "rot": [38.67079544067383, 3.007211716976599e-06, -178.63050842285156], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_corner_C.SM_PROP_AMB_Rubble_S_corner_C", "transform": {"loc": [30269.49609375, -8387.7568359375, -66089.0], "rot": [0.0, 0.0, -20.000089645385742], "scale": [2.126424551010132, 2.126424551010132, 2.126424551010132]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [64328.6640625, -95621.3671875, -66600.0], "rot": [0.0, 0.0, 40.00001907348633], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_D.SM_PROPS_TITAN_WH_WRECK_D", "transform": {"loc": [64293.453125, -94403.625, -66154.34375], "rot": [18.565921783447266, 128.05682373046875, -121.00952911376953], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_B.SM_PROPS_TITAN_WH_WRECK_B", "transform": {"loc": [64862.5703125, -96249.8671875, -66312.1328125], "rot": [0.0, -38.82941818237305, 40.00003433227539], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [64825.8984375, -90856.453125, -66580.0], "rot": [0.0, 0.0, -87.17633056640625], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_E.SM_PROPS_TITAN_WH_WRECK_E", "transform": {"loc": [64674.1875, -90018.8125, -66405.5078125], "rot": [82.51335906982422, 161.3285369873047, 168.73403930664062], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_D.SM_PROPS_TITAN_WH_WRECK_D", "transform": {"loc": [55764.828125, -81835.9296875, -66553.9140625], "rot": [14.041556358337402, -10.145491600036621, 16.20957374572754], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [55710.0, -81680.0, -66520.0], "rot": [0.0, 0.0, 0.0], "scale": [2.4350109100341797, 2.4350109100341797, 2.4350109100341797]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank_a.SM_PROP_AMB_Rubble_EXT_tank_a", "transform": {"loc": [56660.91015625, -84320.484375, -66535.0], "rot": [0.0, 0.0, 26.756519317626953], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [63851.0, -25847.0, -67391.0], "rot": [0.0, 0.0, -149.99969482421875], "scale": [0.7525740265846252, 0.7525740265846252, 0.7525740265846252]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_G.SM_PROPS_Rhino_WRECK_G", "transform": {"loc": [65146.59765625, -87497.5390625, -66515.0], "rot": [0.0, 0.0, 135.78211975097656], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H", "transform": {"loc": [58950.0, -87825.0, -66540.0], "rot": [5.546523094177246, -46.69902420043945, -30.749189376831055], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B", "transform": {"loc": [59683.3203125, -87270.65625, -66504.9296875], "rot": [0.0, 20.00005340576172, -50.0000114440918], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [47929.875, -17677.34765625, -68500.0], "rot": [0.0, 0.0, -85.00008392333984], "scale": [0.7408469915390015, 0.7408469915390015, 0.7408469915390015]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [17900.0, -44380.0, -66555.0], "rot": [0.0, 0.0, 0.0], "scale": [1.4915434122085571, 1.4915434122085571, 2.298201560974121]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04.SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04", "transform": {"loc": [27645.0, -11580.0, -68615.0], "rot": [14.075475692749023, -104.35325622558594, -174.7639617919922], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03", "transform": {"loc": [27755.0, -11560.0, -68660.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02", "transform": {"loc": [27620.0, -11675.0, -68660.0], "rot": [0.0, 10.000378608703613, 65.00009155273438], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01.SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01", "transform": {"loc": [27585.0, -11620.0, -68610.0], "rot": [21.291099548339844, -19.200897216796875, 108.60386657714844], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_corner_C.SM_PROP_AMB_Rubble_S_corner_C", "transform": {"loc": [35110.0, -70890.0, -66025.0], "rot": [0.0, 0.0, 130.00001525878906], "scale": [4.626364231109619, 4.626364231109619, 4.626364231109619]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [39555.0, -70405.0, -65990.0], "rot": [0.0, 0.0, 0.0], "scale": [1.6991674900054932, 1.6991674900054932, 1.6991674900054932]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_b.SM_PROP_AMB_Rubble_EXT_D_b", "transform": {"loc": [38470.0, -71165.0, -65990.0], "rot": [0.0, 0.0, 134.99996948242188], "scale": [0.7684259414672852, 0.7684259414672852, 0.7684259414672852]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B", "transform": {"loc": [39295.0, -67070.0, -65995.0], "rot": [0.0, 0.0, 45.000030517578125], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [31405.0, -65845.0, -65980.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [26150.0, -67140.0, -66000.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [28105.0, -64635.0, -66000.0], "rot": [0.0, 0.0, 0.0], "scale": [1.8292254209518433, 1.8292254209518433, 1.8292254209518433]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [29315.0, -63710.0, -65990.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [30810.0, -51270.0, -66545.0], "rot": [0.0, 0.0, 0.0], "scale": [1.8281973600387573, 1.8281973600387573, 1.8281973600387573]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_C.SM_PROP_AMB_Rubble_S_B_half_C", "transform": {"loc": [30505.0, -50685.0, -66540.0], "rot": [0.0, 0.0, 0.0], "scale": [1.327492356300354, 1.272337794303894, 1.327492356300354]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_B.SM_PROP_AMB_Rubble_S_B_half_B", "transform": {"loc": [29945.0, -33020.0, -68515.0], "rot": [0.0, 0.0, 179.9996337890625], "scale": [1.8540046215057373, 1.8540046215057373, 1.8540046215057373]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B", "transform": {"loc": [29495.0, -33870.0, -68500.0], "rot": [0.0, 0.0, -84.99993133544922], "scale": [1.0, 1.0, 1.5075441598892212]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [27250.0, -31470.0, -68500.0], "rot": [0.0, 0.0, 0.0], "scale": [1.6456917524337769, 1.6456917524337769, 1.8153319358825684]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A", "transform": {"loc": [29195.0, -31045.0, -68480.0], "rot": [0.0, 0.0, -89.99999237060547], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Engine/BasicShapes/Cube.Cube", "transform": {"loc": [28159.177734375, -11849.4296875, -68440.0], "rot": [0.0, 0.0, -10.000075340270996], "scale": [1.0, 1.7222623825073242, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_A.SM_PROP_AMB_Rubble_S_B_half_A", "transform": {"loc": [29225.0, -15425.0, -68510.0], "rot": [0.0, 0.0, 89.99995422363281], "scale": [1.5010151863098145, 1.5010151863098145, 2.0493741035461426]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02", "transform": {"loc": [28154.373046875, -11888.6328125, -68470.0], "rot": [0.0, 0.0, -10.00013542175293], "scale": [1.1597349643707275, 1.067700982093811, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_B.SM_PROP_AMB_Rubble_S_B_half_B", "transform": {"loc": [27435.0, -15665.0, -68500.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_PromethiumCarts_02.SM_PROP_AMB_PromethiumCarts_02", "transform": {"loc": [28157.640625, -11855.4765625, -68532.125], "rot": [0.0, 0.0, -9.004712104797363], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_A.SM_PROP_AMB_Rubble_S_B_half_A", "transform": {"loc": [29790.0, -19070.0, -68495.0], "rot": [0.0, 0.0, -89.99999237060547], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_A.SM_PROP_AMB_Rubble_S_B_half_A", "transform": {"loc": [29920.0, -18345.0, -68505.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [29000.0, -32160.0, -68490.0], "rot": [0.0, 0.0, 0.0], "scale": [2.375690221786499, 2.375690221786499, 2.375690221786499]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [43985.0, -49955.0, -66535.0], "rot": [0.0, 0.0, 0.0], "scale": [1.75206458568573, 1.75206458568573, 1.75206458568573]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [23585.0, -26000.0, -68525.0], "rot": [0.0, 0.0, 0.0], "scale": [2.2561123371124268, 2.2561123371124268, 2.2561123371124268]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_A.SM_PROP_AMB_Rubble_EXT_A", "transform": {"loc": [42979.21875, -27183.70703125, -68611.734375], "rot": [4.923849105834961, -10.037520408630371, -0.8703916668891907], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_corner_C.SM_PROP_AMB_Rubble_S_B_corner_C", "transform": {"loc": [29885.0, -33650.0, -68495.0], "rot": [0.0, 0.0, 0.0], "scale": [2.165524959564209, 2.165524959564209, 2.165524959564209]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank", "transform": {"loc": [45346.6015625, -52362.4921875, -66530.6796875], "rot": [0.0, 0.0, 0.0], "scale": [0.625165581703186, 0.625165581703186, 0.625165581703186]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A_half_a.SM_PROP_AMB_Rubble_L_A_half_a", "transform": {"loc": [25730.0, -26940.0, -68490.0], "rot": [0.0, 0.0, -89.99993896484375], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_C.SM_PROP_AMB_Rubble_EXT_C", "transform": {"loc": [44673.76171875, -25456.337890625, -68495.171875], "rot": [0.0, 120.00005340576172, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A", "transform": {"loc": [22830.0, -24720.0, -68460.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_C.SM_PROP_AMB_Rubble_EXT_C", "transform": {"loc": [46191.90234375, -24677.048828125, -68518.671875], "rot": [-4.999998569488525, 2.9996219836903038e-06, 125.0001220703125], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A", "transform": {"loc": [31570.0, -27805.0, -68455.0], "rot": [0.0, 0.0, -89.99993896484375], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [43760.0, -47965.0, -66525.0], "rot": [0.0, 0.0, 0.0], "scale": [1.5105805397033691, 1.5105805397033691, 1.5105805397033691]}}, {"path": "StaticMesh /Engine/BasicShapes/Cube.Cube", "transform": {"loc": [56771.015625, -97069.84375, -66300.0], "rot": [0.0, 0.0, 20.00007438659668], "scale": [14.077886581420898, 50.0218620300293, 21.453777313232422]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [33035.0, -27370.0, -68500.0], "rot": [0.0, 0.0, 0.0], "scale": [1.2769920825958252, 1.2769920825958252, 1.2769920825958252]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_C.SM_PROP_AMB_Rubble_EXT_C", "transform": {"loc": [37665.52734375, -15881.771484375, -68541.40625], "rot": [0.0, 0.0, 45.000038146972656], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [45240.0, -48160.0, -66515.0], "rot": [0.0, 0.0, 179.99996948242188], "scale": [0.6843592524528503, 0.6843592524528503, 0.6843592524528503]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [39725.3515625, -12659.244140625, -68510.4609375], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A", "transform": {"loc": [32135.0, -22560.0, -68455.0], "rot": [0.0, 0.0, -89.99999237060547], "scale": [1.0, 1.0, 1.4613763093948364]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D", "transform": {"loc": [38477.9609375, -16943.96875, -68528.890625], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02", "transform": {"loc": [28170.0, -11800.0009765625, -68470.0], "rot": [0.0, 0.0, -10.00013542175293], "scale": [1.1597352027893066, 1.067700743675232, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A", "transform": {"loc": [41919.60546875, -69125.1171875, -65986.0546875], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}}, {"path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_a.SM_PROP_AMB_Rubble_EXT_D_a", "transform": {"loc": [36970.29296875, -16127.2119140625, -68493.8515625], "rot": [0.0, 0.0, 59.99999237060547], "scale": [1.0, 1.0, 1.0]}}]
+[
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                28159.177734375,
+                -11849.4296875,
+                -68440.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -10.000046730041504
+            ],
+            "scale": [
+                1.0,
+                1.7222623825073242,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                56771.015625,
+                -97069.84375,
+                -66300.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                20.000076293945312
+            ],
+            "scale": [
+                14.077886581420898,
+                50.0218620300293,
+                21.453777313232422
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                64895.1484375,
+                -96919.9609375,
+                -66450.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -14.99998950958252
+            ],
+            "scale": [
+                19.970386505126953,
+                50.0218620300293,
+                21.453777313232422
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                60376.68359375,
+                -85990.0625,
+                -66600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -2.050399598374497e-05
+            ],
+            "scale": [
+                19.970386505126953,
+                30.369977951049805,
+                21.453777313232422
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01.SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01",
+        "transform": {
+            "loc": [
+                27585.0,
+                -11620.0,
+                -68610.0
+            ],
+            "rot": [
+                21.291099548339844,
+                -19.200891494750977,
+                108.60386657714844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01.SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01",
+        "transform": {
+            "loc": [
+                27750.615234375,
+                -11204.8232421875,
+                -68610.0
+            ],
+            "rot": [
+                21.291099548339844,
+                -19.200897216796875,
+                -11.3964204788208
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01.SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01",
+        "transform": {
+            "loc": [
+                27777.646484375,
+                -11404.8232421875,
+                -68577.4765625
+            ],
+            "rot": [
+                6.565238952636719,
+                -16.25011444091797,
+                -10.680179595947266
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01.SM_PROP_AMB_Dead_Marine01_SM_PROP_AMB_Dead_Marine01",
+        "transform": {
+            "loc": [
+                27380.1796875,
+                -11880.8349609375,
+                -68496.0078125
+            ],
+            "rot": [
+                6.565238952636719,
+                -16.2501220703125,
+                -10.68017578125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02",
+        "transform": {
+            "loc": [
+                27620.0,
+                -11675.0,
+                -68660.0
+            ],
+            "rot": [
+                0.0,
+                10.000362396240234,
+                65.00006103515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02",
+        "transform": {
+            "loc": [
+                27765.0,
+                -11735.0,
+                -68690.0
+            ],
+            "rot": [
+                0.0,
+                10.001002311706543,
+                -114.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02",
+        "transform": {
+            "loc": [
+                27685.484375,
+                -11207.6337890625,
+                -68660.0
+            ],
+            "rot": [
+                0.0,
+                10.001194953918457,
+                -55.00006866455078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02",
+        "transform": {
+            "loc": [
+                27561.02734375,
+                -11303.2080078125,
+                -68690.0
+            ],
+            "rot": [
+                0.0,
+                10.001822471618652,
+                124.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02",
+        "transform": {
+            "loc": [
+                27701.79296875,
+                -11402.6337890625,
+                -68598.9140625
+            ],
+            "rot": [
+                7.253626346588135,
+                -6.493016242980957,
+                -67.90336608886719
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02.SM_PROP_AMB_Dead_Marine02_SM_PROP_AMB_Dead_Marine02",
+        "transform": {
+            "loc": [
+                27563.814453125,
+                -11508.2080078125,
+                -68595.6796875
+            ],
+            "rot": [
+                -6.830188794992864e-05,
+                10.001757621765137,
+                125.000244140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03",
+        "transform": {
+            "loc": [
+                27755.0,
+                -11560.0,
+                -68660.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03",
+        "transform": {
+            "loc": [
+                27690.0,
+                -11605.0,
+                -68610.0
+            ],
+            "rot": [
+                -5.88067626953125,
+                16.926637649536133,
+                34.01036834716797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03",
+        "transform": {
+            "loc": [
+                27717.578125,
+                -11382.0478515625,
+                -68660.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -119.99993133544922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03",
+        "transform": {
+            "loc": [
+                27711.109375,
+                -11303.2568359375,
+                -68610.0
+            ],
+            "rot": [
+                -5.88067626953125,
+                16.927467346191406,
+                -85.98979187011719
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03",
+        "transform": {
+            "loc": [
+                27722.794921875,
+                -11587.0478515625,
+                -68607.21875
+            ],
+            "rot": [
+                7.435459613800049,
+                13.064391136169434,
+                -119.14733123779297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03.SM_PROP_AMB_Dead_Marine03__SM_PROP_AMB_Dead_Marine03",
+        "transform": {
+            "loc": [
+                27729.486328125,
+                -11508.2568359375,
+                -68557.2421875
+            ],
+            "rot": [
+                -6.717347145080566,
+                31.9957218170166,
+                -87.65252685546875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04.SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04",
+        "transform": {
+            "loc": [
+                27645.0,
+                -11580.0,
+                -68615.0
+            ],
+            "rot": [
+                14.075475692749023,
+                -104.3532485961914,
+                -174.7639617919922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04.SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04",
+        "transform": {
+            "loc": [
+                27755.25390625,
+                -11276.787109375,
+                -68615.0
+            ],
+            "rot": [
+                17.528087615966797,
+                76.20653533935547,
+                -124.69512176513672
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04.SM_PROP_AMB_Dead_Marine04__SM_PROP_AMB_Dead_Marine04",
+        "transform": {
+            "loc": [
+                27770.83203125,
+                -11481.787109375,
+                -68593.5078125
+            ],
+            "rot": [
+                16.122079849243164,
+                -99.62828063964844,
+                66.46768951416016
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_PromethiumCarts_02.SM_PROP_AMB_PromethiumCarts_02",
+        "transform": {
+            "loc": [
+                28157.640625,
+                -11855.4765625,
+                -68532.125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.004688262939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_A.SM_PROP_AMB_Rubble_EXT_A",
+        "transform": {
+            "loc": [
+                42979.21875,
+                -27183.70703125,
+                -68611.734375
+            ],
+            "rot": [
+                4.923849105834961,
+                -10.037504196166992,
+                -0.8703920245170593
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_C.SM_PROP_AMB_Rubble_EXT_C",
+        "transform": {
+            "loc": [
+                46191.90234375,
+                -24677.048828125,
+                -68518.671875
+            ],
+            "rot": [
+                -4.999985218048096,
+                3.000000106112566e-06,
+                125.0001220703125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_C.SM_PROP_AMB_Rubble_EXT_C",
+        "transform": {
+            "loc": [
+                44673.76171875,
+                -25456.337890625,
+                -68495.171875
+            ],
+            "rot": [
+                0.0,
+                120.00005340576172,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_C.SM_PROP_AMB_Rubble_EXT_C",
+        "transform": {
+            "loc": [
+                37665.52734375,
+                -15881.771484375,
+                -68541.40625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                45.000038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                59140.0,
+                -87340.0,
+                -66575.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                56591.83203125,
+                -53107.640625,
+                -66530.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                164.99966430664062
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                53622.10546875,
+                -22972.8046875,
+                -68535.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                134.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                41357.19140625,
+                -23078.546875,
+                -68510.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                59.99961471557617
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                64825.8984375,
+                -90856.453125,
+                -66580.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -87.17634582519531
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                64754.3984375,
+                -88556.0703125,
+                -66580.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -174.11578369140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                64328.6640625,
+                -95621.3671875,
+                -66600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                40.000038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                64957.7109375,
+                -93689.9140625,
+                -66555.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -103.78314208984375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                57226.35546875,
+                -96067.796875,
+                -66600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -66.44329071044922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                57420.0,
+                -94005.0,
+                -66580.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                60500.8125,
+                -86720.5390625,
+                -66575.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                20.000219345092773
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                51770.0,
+                -65815.0,
+                -66555.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                0.7467538118362427,
+                0.7467538118362427,
+                0.7467538118362427
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                54625.0,
+                -68515.0,
+                -66555.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -77.20389556884766
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                51895.0,
+                -76745.0,
+                -66545.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                86.5429458618164
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                44030.0,
+                -78155.0,
+                -66545.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                46685.0,
+                -78210.0,
+                -66545.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -177.7067108154297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                50915.0,
+                -56355.0,
+                -66535.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                0.6258147954940796,
+                0.6258147954940796,
+                0.6258147954940796
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                62105.0,
+                -58220.0,
+                -66530.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                38410.0,
+                -55170.0,
+                -66600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                36885.0,
+                -46855.0,
+                -66565.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                34430.0,
+                -40750.0,
+                -66580.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                56356.32421875,
+                -82478.7265625,
+                -66575.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -35.000118255615234
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                34705.0,
+                -38560.0,
+                -66615.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                25190.0,
+                -38660.0,
+                -65310.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                24837.0,
+                -40275.0,
+                -65302.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                26517.373046875,
+                -41505.5390625,
+                -65285.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                105.95612335205078
+            ],
+            "scale": [
+                1.1598657369613647,
+                1.1598657369613647,
+                1.1598657369613647
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                16830.0,
+                -38650.0,
+                -66590.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                176.43333435058594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                15115.0,
+                -44965.0,
+                -66560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                13299.0,
+                -44432.0,
+                -66630.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99993133544922
+            ],
+            "scale": [
+                0.9622365832328796,
+                0.9622365832328796,
+                0.9622365832328796
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                18705.0,
+                -50075.0,
+                -66560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                16105.7587890625,
+                -49491.7734375,
+                -66550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -117.3279037475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                17839.37890625,
+                -51800.0,
+                -66590.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -30.000078201293945
+            ],
+            "scale": [
+                0.9271489977836609,
+                0.9271489977836609,
+                0.9271489977836609
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                64247.078125,
+                -72797.7578125,
+                -66575.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                139.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                16609.05078125,
+                -56916.5859375,
+                -66630.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                70.00008392333984
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                21240.0,
+                -52965.0,
+                -65380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                26304.7734375,
+                -53701.81640625,
+                -65335.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -72.64434814453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                22709.99609375,
+                -46194.98828125,
+                -66550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -36.88739013671875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                16990.0,
+                -41970.0,
+                -66575.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                21405.0703125,
+                -49216.59375,
+                -66565.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -91.9787826538086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                21317.927734375,
+                -57309.9140625,
+                -64985.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -59.799354553222656
+            ],
+            "scale": [
+                0.5372697710990906,
+                0.5372697710990906,
+                0.5372697710990906
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                22664.615234375,
+                -58099.34375,
+                -64985.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                125.21199035644531
+            ],
+            "scale": [
+                0.5372700095176697,
+                0.5372700095176697,
+                0.5372700095176697
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                18010.0,
+                -70460.0,
+                -63485.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                48740.0,
+                -24370.0,
+                -68495.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                51117.12890625,
+                -69838.6328125,
+                -66575.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                49.99980545043945
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                56160.0,
+                -25276.0,
+                -68515.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                0.8349520564079285,
+                0.8349520564079285,
+                0.8349520564079285
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                64415.0,
+                -22460.0,
+                -67400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -71.4720687866211
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                66007.34375,
+                -31088.37890625,
+                -66590.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -171.33827209472656
+            ],
+            "scale": [
+                0.8620102405548096,
+                0.8620102405548096,
+                0.8620102405548096
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                61574.0625,
+                -30935.052734375,
+                -66505.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                28.662193298339844
+            ],
+            "scale": [
+                0.7055099606513977,
+                0.7055099606513977,
+                0.7055099606513977
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                57365.0,
+                -68230.0,
+                -66555.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                25.000036239624023
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                60555.0,
+                -67800.0,
+                -66550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                39574.78125,
+                -74091.609375,
+                -66005.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -169.6985626220703
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                36352.96875,
+                -54383.15234375,
+                -66564.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                69.45114135742188
+            ],
+            "scale": [
+                0.8985182046890259,
+                0.8985182046890259,
+                0.8985182046890259
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                27195.0,
+                -45305.0,
+                -66600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                20370.0,
+                -10295.0,
+                -65670.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                0.8585039377212524,
+                0.8585039377212524,
+                0.8585039377212524
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                21349.486328125,
+                -9097.2724609375,
+                -65670.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -33.371700286865234
+            ],
+            "scale": [
+                0.9044119119644165,
+                0.9044119119644165,
+                0.9044119119644165
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                24325.0,
+                -8830.0,
+                -66520.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                17265.0,
+                2360.0,
+                -66500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                16510.0,
+                880.0,
+                -66500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -114.92790222167969
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                17055.0,
+                -3530.0,
+                -66540.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                18610.0,
+                -1410.0,
+                -66540.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                31540.0,
+                3090.0,
+                -66500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                27270.0,
+                3040.0,
+                -66510.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                30205.9140625,
+                -9446.5791015625,
+                -66105.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -15.00009536743164
+            ],
+            "scale": [
+                0.8788664937019348,
+                0.8788664937019348,
+                0.8788664937019348
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                35440.0,
+                -7540.0,
+                -65375.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                13.84565544128418
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                47929.875,
+                -17677.34765625,
+                -68500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -85.00009155273438
+            ],
+            "scale": [
+                0.7408469915390015,
+                0.7408469915390015,
+                0.7408469915390015
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                59990.0,
+                -85740.0,
+                -66575.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                84.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                43290.51171875,
+                -16221.1015625,
+                -68508.828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                110.00003051757812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                39725.3515625,
+                -12659.244140625,
+                -68510.4609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                38301.69921875,
+                -63209.953125,
+                -65995.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.710519790649414
+            ],
+            "scale": [
+                0.8267784714698792,
+                0.8267784714698792,
+                0.8267784714698792
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                45240.0,
+                -48160.0,
+                -66515.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99998474121094
+            ],
+            "scale": [
+                0.6843592524528503,
+                0.6843592524528503,
+                0.6843592524528503
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                63851.0,
+                -25847.0,
+                -67391.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -149.99969482421875
+            ],
+            "scale": [
+                0.7525740265846252,
+                0.7525740265846252,
+                0.7525740265846252
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                38477.9609375,
+                -16943.96875,
+                -68528.890625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_a.SM_PROP_AMB_Rubble_EXT_D_a",
+        "transform": {
+            "loc": [
+                36970.29296875,
+                -16127.2119140625,
+                -68493.8515625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                60.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_a.SM_PROP_AMB_Rubble_EXT_D_a",
+        "transform": {
+            "loc": [
+                55744.83203125,
+                -73490.4765625,
+                -66595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                63.79292678833008
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_b.SM_PROP_AMB_Rubble_EXT_D_b",
+        "transform": {
+            "loc": [
+                38470.0,
+                -71165.0,
+                -65990.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                134.99996948242188
+            ],
+            "scale": [
+                0.7684259414672852,
+                0.7684259414672852,
+                0.7684259414672852
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_b.SM_PROP_AMB_Rubble_EXT_D_b",
+        "transform": {
+            "loc": [
+                47623.0,
+                -22971.0,
+                -68495.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00000762939453
+            ],
+            "scale": [
+                0.5586180686950684,
+                0.5586180686950684,
+                0.5586180686950684
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_b.SM_PROP_AMB_Rubble_EXT_D_b",
+        "transform": {
+            "loc": [
+                48056.21875,
+                -22958.8828125,
+                -68508.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00007629394531
+            ],
+            "scale": [
+                0.48777449131011963,
+                0.48777449131011963,
+                0.48777449131011963
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                60947.40234375,
+                -65304.4609375,
+                -66542.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -113.35260009765625
+            ],
+            "scale": [
+                0.533851146697998,
+                0.533851146697998,
+                0.533851146697998
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_b.SM_PROP_AMB_Rubble_EXT_D_b",
+        "transform": {
+            "loc": [
+                60397.9140625,
+                -66868.0390625,
+                -66525.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -113.35269927978516
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                62005.0,
+                -66040.0,
+                -66530.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                58815.0,
+                -70495.0,
+                -66555.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                24050.0,
+                -6970.0,
+                -66500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                23275.0,
+                -1965.0,
+                -66490.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                25477.443359375,
+                -2332.588134765625,
+                -66490.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -119.72050476074219
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                29370.0,
+                2040.0,
+                -66520.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_C.SM_PROP_AMB_Rubble_S_B_half_C",
+        "transform": {
+            "loc": [
+                30540.083984375,
+                -3945.52294921875,
+                -66105.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -4.9885406494140625
+            ],
+            "scale": [
+                1.600000023841858,
+                1.600000023841858,
+                1.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                29280.0,
+                -6360.0,
+                -66090.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -15.000216484069824
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                32023.955078125,
+                2025.4268798828125,
+                -66482.421875
+            ],
+            "rot": [
+                1.3673559427261353,
+                -2.411794900894165,
+                65.23033905029297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                41840.0,
+                -4420.0,
+                -68520.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -49.38831329345703
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                44525.44140625,
+                -9533.3271484375,
+                -68520.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -11.65920352935791
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                60410.0,
+                -83955.0,
+                -66545.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                47451.0859375,
+                -61058.9609375,
+                -66538.3984375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                51760.9453125,
+                -52823.4765625,
+                -66536.8671875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                46856.984375,
+                -31475.689453125,
+                -67630.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -74.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                45346.6015625,
+                -52362.4921875,
+                -66530.6796875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                0.625165581703186,
+                0.625165581703186,
+                0.625165581703186
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                27916.904296875,
+                -1709.765869140625,
+                -66497.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                50.011474609375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D.SM_PROP_AMB_Rubble_EXT_D",
+        "transform": {
+            "loc": [
+                28774.904296875,
+                -3181.765869140625,
+                -66469.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.01164245605469
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                65578.0,
+                -25662.0,
+                -67255.0
+            ],
+            "rot": [
+                6.028584003448486,
+                -9.911123275756836,
+                -91.72669219970703
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                45365.0,
+                -32885.0,
+                -67640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                51345.0,
+                -24585.0,
+                -68515.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                53840.0,
+                -25740.0,
+                -68515.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                54500.0,
+                -24220.0,
+                -68515.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                129.51034545898438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                56752.25,
+                -17752.705078125,
+                -67895.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.6265005469322205
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                63210.0,
+                -24105.0,
+                -67380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                61773.90625,
+                -33218.59375,
+                -66510.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -31.79170799255371
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                63204.7890625,
+                -69718.3359375,
+                -66550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -54.31477355957031
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                16110.0,
+                -69655.0,
+                -63455.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank.SM_PROP_AMB_Rubble_EXT_tank",
+        "transform": {
+            "loc": [
+                50098.73046875,
+                -57988.61328125,
+                -66569.75
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                54.99992370605469
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank_a.SM_PROP_AMB_Rubble_EXT_tank_a",
+        "transform": {
+            "loc": [
+                56660.91015625,
+                -84320.484375,
+                -66535.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                26.75653648376465
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_tank_b.SM_PROP_AMB_Rubble_EXT_tank_b",
+        "transform": {
+            "loc": [
+                54513.26953125,
+                -73172.7421875,
+                -66530.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -65.8902587890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A",
+        "transform": {
+            "loc": [
+                22830.0,
+                -24720.0,
+                -68460.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A",
+        "transform": {
+            "loc": [
+                21295.76171875,
+                -57139.46875,
+                -64945.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -153.1671142578125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A",
+        "transform": {
+            "loc": [
+                29195.0,
+                -31045.0,
+                -68480.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B",
+        "transform": {
+            "loc": [
+                39295.0,
+                -67070.0,
+                -65995.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                45.000030517578125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A",
+        "transform": {
+            "loc": [
+                39075.0,
+                -68525.0,
+                -65960.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                130.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A",
+        "transform": {
+            "loc": [
+                32135.0,
+                -22560.0,
+                -68455.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.4613763093948364
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A",
+        "transform": {
+            "loc": [
+                33225.0,
+                -23515.0,
+                -68455.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.4613759517669678
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A",
+        "transform": {
+            "loc": [
+                31570.0,
+                -27805.0,
+                -68455.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A_half_a.SM_PROP_AMB_Rubble_L_A_half_a",
+        "transform": {
+            "loc": [
+                25730.0,
+                -26940.0,
+                -68490.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                29315.0,
+                -63710.0,
+                -65990.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                28105.0,
+                -64635.0,
+                -66000.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.8292254209518433,
+                1.8292254209518433,
+                1.8292254209518433
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                26150.0,
+                -67140.0,
+                -66000.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                33035.0,
+                -27370.0,
+                -68500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.2769920825958252,
+                1.2769920825958252,
+                1.2769920825958252
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                23585.0,
+                -26000.0,
+                -68525.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.2561123371124268,
+                2.2561123371124268,
+                2.2561123371124268
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                55710.0,
+                -81680.0,
+                -66520.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.4350109100341797,
+                2.4350109100341797,
+                2.4350109100341797
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                54300.0,
+                -71875.0,
+                -66535.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.402197241783142,
+                1.402197241783142,
+                1.402197241783142
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                36210.0,
+                -53195.0,
+                -66560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                36505.0,
+                -53350.0,
+                -66565.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                106.00533294677734
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                23290.0,
+                -41510.0,
+                -65300.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.5428491830825806,
+                1.5428491830825806,
+                1.5428491830825806
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                23410.0,
+                -58425.0,
+                -64980.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                23195.0,
+                -58770.0,
+                -64980.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                68.01667022705078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                31405.0,
+                -65845.0,
+                -65980.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                39555.0,
+                -70405.0,
+                -65990.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.6991674900054932,
+                1.6991674900054932,
+                1.6991674900054932
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                17900.0,
+                -44380.0,
+                -66555.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.4915434122085571,
+                1.4915434122085571,
+                2.298201560974121
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                23585.0,
+                -23785.0,
+                -68525.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.2561120986938477,
+                2.2561120986938477,
+                2.2561120986938477
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                17965.0,
+                -45105.0,
+                -66555.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                105.00003814697266
+            ],
+            "scale": [
+                1.4915430545806885,
+                1.4915430545806885,
+                2.2982020378112793
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                29000.0,
+                -32160.0,
+                -68490.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.375690221786499,
+                2.375690221786499,
+                2.375690221786499
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                41919.60546875,
+                -69125.1171875,
+                -65986.0546875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                43760.0,
+                -47965.0,
+                -66525.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.5105805397033691,
+                1.5105805397033691,
+                1.5105805397033691
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                43985.0,
+                -49955.0,
+                -66535.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.75206458568573,
+                1.75206458568573,
+                1.75206458568573
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                23780.0,
+                -22985.0,
+                -68525.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -129.99969482421875
+            ],
+            "scale": [
+                2.2561120986938477,
+                2.2561120986938477,
+                2.2561120986938477
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                27250.0,
+                -31470.0,
+                -68500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.6456917524337769,
+                1.6456917524337769,
+                1.8153319358825684
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                30810.0,
+                -51270.0,
+                -66545.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.8281973600387573,
+                1.8281973600387573,
+                1.8281973600387573
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A_Half_A.SM_PROP_AMB_Rubble_S_A_Half_A",
+        "transform": {
+            "loc": [
+                54260.31640625,
+                -33698.16015625,
+                -66500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                164.99981689453125
+            ],
+            "scale": [
+                1.900767207145691,
+                1.900767207145691,
+                1.900767207145691
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B",
+        "transform": {
+            "loc": [
+                49613.78515625,
+                -59271.6171875,
+                -66557.4921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.741034984588623,
+                1.741034984588623,
+                1.9500563144683838
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B",
+        "transform": {
+            "loc": [
+                29495.0,
+                -33870.0,
+                -68500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -84.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.5075441598892212
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B",
+        "transform": {
+            "loc": [
+                35750.0,
+                -43765.0,
+                -66545.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_corner_C.SM_PROP_AMB_Rubble_S_B_corner_C",
+        "transform": {
+            "loc": [
+                29885.0,
+                -33650.0,
+                -68495.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.165524959564209,
+                2.165524959564209,
+                2.165524959564209
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_A.SM_PROP_AMB_Rubble_S_B_half_A",
+        "transform": {
+            "loc": [
+                29920.0,
+                -18345.0,
+                -68505.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_A.SM_PROP_AMB_Rubble_S_B_half_A",
+        "transform": {
+            "loc": [
+                29790.0,
+                -19070.0,
+                -68495.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_A.SM_PROP_AMB_Rubble_S_B_half_A",
+        "transform": {
+            "loc": [
+                27420.0,
+                -17790.0,
+                -68495.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_A.SM_PROP_AMB_Rubble_S_B_half_A",
+        "transform": {
+            "loc": [
+                29225.0,
+                -15425.0,
+                -68510.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.5010151863098145,
+                1.5010151863098145,
+                2.0493741035461426
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_B.SM_PROP_AMB_Rubble_S_B_half_B",
+        "transform": {
+            "loc": [
+                29945.0,
+                -33020.0,
+                -68515.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.9996337890625
+            ],
+            "scale": [
+                1.8540046215057373,
+                1.8540046215057373,
+                1.8540046215057373
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_B.SM_PROP_AMB_Rubble_S_B_half_B",
+        "transform": {
+            "loc": [
+                27435.0,
+                -15665.0,
+                -68500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B_half_C.SM_PROP_AMB_Rubble_S_B_half_C",
+        "transform": {
+            "loc": [
+                30505.0,
+                -50685.0,
+                -66540.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.327492356300354,
+                1.272337794303894,
+                1.327492356300354
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_corner_C.SM_PROP_AMB_Rubble_S_corner_C",
+        "transform": {
+            "loc": [
+                30269.49609375,
+                -8387.7568359375,
+                -66089.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -20.000091552734375
+            ],
+            "scale": [
+                2.126424551010132,
+                2.126424551010132,
+                2.126424551010132
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_corner_C.SM_PROP_AMB_Rubble_S_corner_C",
+        "transform": {
+            "loc": [
+                35110.0,
+                -70890.0,
+                -66025.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                130.00001525878906
+            ],
+            "scale": [
+                4.626364231109619,
+                4.626364231109619,
+                4.626364231109619
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                38757.39453125,
+                -63450.78125,
+                -66005.625
+            ],
+            "rot": [
+                -7.951617240905762,
+                11.1593017578125,
+                -70.10214233398438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                51811.97265625,
+                -52563.85546875,
+                -66537.328125
+            ],
+            "rot": [
+                -5.319976806640625,
+                -4.636444091796875,
+                -170.22100830078125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                61247.65625,
+                -86469.5546875,
+                -66504.9296875
+            ],
+            "rot": [
+                -13.04754638671875,
+                7.543584823608398,
+                10.1106595993042
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                56841.1640625,
+                -82733.5625,
+                -66504.9296875
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                20.00003433227539,
+                -84.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                63786.2890625,
+                -72501.640625,
+                -66504.9296875
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                19.99992561340332,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                51413.25390625,
+                -69377.84375,
+                -66504.9296875
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                19.999834060668945,
+                -0.0002512931823730469
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                56049.06640625,
+                -53034.0078125,
+                -66459.9296875
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                19.99971580505371,
+                114.99961853027344
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                53188.875,
+                -22637.65234375,
+                -68464.9296875
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                19.999698638916016,
+                84.99968719482422
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                41568.80078125,
+                -22573.337890625,
+                -68439.9296875
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                19.999662399291992,
+                9.999646186828613
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                59683.3203125,
+                -87270.65625,
+                -66504.9296875
+            ],
+            "rot": [
+                0.0,
+                20.000057220458984,
+                -50.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_C.SM_PROPS_Rhino_WRECK_C",
+        "transform": {
+            "loc": [
+                51744.171875,
+                -52365.6796875,
+                -66186.9375
+            ],
+            "rot": [
+                -5.14080810546875,
+                -18.3458251953125,
+                -138.53329467773438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_G.SM_PROPS_Rhino_WRECK_G",
+        "transform": {
+            "loc": [
+                65146.59765625,
+                -87497.5390625,
+                -66515.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                135.7821044921875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H",
+        "transform": {
+            "loc": [
+                60488.1640625,
+                -87241.265625,
+                -66540.0
+            ],
+            "rot": [
+                5.546509265899658,
+                -46.69826126098633,
+                -10.748992919921875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H",
+        "transform": {
+            "loc": [
+                55922.4921875,
+                -82767.03125,
+                -66540.0
+            ],
+            "rot": [
+                5.546509265899658,
+                -46.698787689208984,
+                -65.74909973144531
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H",
+        "transform": {
+            "loc": [
+                64704.375,
+                -72548.3515625,
+                -66540.0
+            ],
+            "rot": [
+                5.546509265899658,
+                -46.69829559326172,
+                109.25062561035156
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H",
+        "transform": {
+            "loc": [
+                51366.55078125,
+                -70295.9296875,
+                -66540.0
+            ],
+            "rot": [
+                5.546502590179443,
+                -46.69796371459961,
+                19.250459671020508
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H",
+        "transform": {
+            "loc": [
+                56900.87890625,
+                -52688.31640625,
+                -66495.0
+            ],
+            "rot": [
+                5.546509265899658,
+                -46.69746017456055,
+                134.25038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H",
+        "transform": {
+            "loc": [
+                54099.40625,
+                -22764.1796875,
+                -68500.0
+            ],
+            "rot": [
+                5.546509265899658,
+                -46.697357177734375,
+                104.25032043457031
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H",
+        "transform": {
+            "loc": [
+                42182.2421875,
+                -22740.587890625,
+                -68475.0
+            ],
+            "rot": [
+                5.546509265899658,
+                -46.697174072265625,
+                29.25012969970703
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_H.SM_PROPS_Rhino_WRECK_H",
+        "transform": {
+            "loc": [
+                58950.0,
+                -87825.0,
+                -66540.0
+            ],
+            "rot": [
+                5.546523094177246,
+                -46.69903564453125,
+                -30.749176025390625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_A.SM_PROPS_TITAN_WH_WRECK_A",
+        "transform": {
+            "loc": [
+                56760.48828125,
+                -96336.390625,
+                -66435.0
+            ],
+            "rot": [
+                4.999896049499512,
+                2.8282145649427548e-05,
+                76.58714294433594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_A.SM_PROPS_TITAN_WH_WRECK_A",
+        "transform": {
+            "loc": [
+                55181.23046875,
+                -85294.8984375,
+                -63754.3515625
+            ],
+            "rot": [
+                0.0,
+                -14.089195251464844,
+                138.5634765625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_A.SM_PROPS_TITAN_WH_WRECK_A",
+        "transform": {
+            "loc": [
+                60497.796875,
+                -86426.3359375,
+                -66510.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                169.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_A.SM_PROPS_TITAN_WH_WRECK_A",
+        "transform": {
+            "loc": [
+                43771.89453125,
+                -16561.63671875,
+                -68343.953125
+            ],
+            "rot": [
+                -17.894540786743164,
+                -9.899064064025879,
+                -60.40625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_B.SM_PROPS_TITAN_WH_WRECK_B",
+        "transform": {
+            "loc": [
+                56472.421875,
+                -96401.953125,
+                -66312.1328125
+            ],
+            "rot": [
+                0.0,
+                -38.82862854003906,
+                -66.443359375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_B.SM_PROPS_TITAN_WH_WRECK_B",
+        "transform": {
+            "loc": [
+                55181.23046875,
+                -85294.8984375,
+                -63754.3515625
+            ],
+            "rot": [
+                0.0,
+                -14.089195251464844,
+                138.5634765625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_B.SM_PROPS_TITAN_WH_WRECK_B",
+        "transform": {
+            "loc": [
+                60237.796875,
+                -86426.3359375,
+                -66510.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                169.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_B.SM_PROPS_TITAN_WH_WRECK_B",
+        "transform": {
+            "loc": [
+                44063.71875,
+                -16514.3515625,
+                -68220.9609375
+            ],
+            "rot": [
+                0.0,
+                -38.8289794921875,
+                110.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_B.SM_PROPS_TITAN_WH_WRECK_B",
+        "transform": {
+            "loc": [
+                64862.5703125,
+                -96249.8671875,
+                -66312.1328125
+            ],
+            "rot": [
+                0.0,
+                -38.829437255859375,
+                40.00004959106445
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_C.SM_PROPS_TITAN_WH_WRECK_C",
+        "transform": {
+            "loc": [
+                57855.26953125,
+                -95795.2578125,
+                -65603.1171875
+            ],
+            "rot": [
+                3.6485910415649414,
+                112.66677856445312,
+                138.75653076171875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_D.SM_PROPS_TITAN_WH_WRECK_D",
+        "transform": {
+            "loc": [
+                64293.453125,
+                -94403.625,
+                -66154.34375
+            ],
+            "rot": [
+                18.565921783447266,
+                128.05685424804688,
+                -121.00953674316406
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_D.SM_PROPS_TITAN_WH_WRECK_D",
+        "transform": {
+            "loc": [
+                59976.93359375,
+                -84510.453125,
+                -66510.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -14.999298095703125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_D.SM_PROPS_TITAN_WH_WRECK_D",
+        "transform": {
+            "loc": [
+                55764.828125,
+                -81835.9296875,
+                -66553.9140625
+            ],
+            "rot": [
+                14.041556358337402,
+                -10.145483016967773,
+                16.209556579589844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_E.SM_PROPS_TITAN_WH_WRECK_E",
+        "transform": {
+            "loc": [
+                55932.66015625,
+                -85891.71875,
+                -63825.40234375
+            ],
+            "rot": [
+                -84.22972106933594,
+                179.999755859375,
+                -24.074262619018555
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_E.SM_PROPS_TITAN_WH_WRECK_E",
+        "transform": {
+            "loc": [
+                64674.1875,
+                -90018.8125,
+                -66405.5078125
+            ],
+            "rot": [
+                82.51343536376953,
+                161.32859802246094,
+                168.7340850830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Titan_W_H_WRECK/SM_PROPS_TITAN_WH_WRECK_F.SM_PROPS_TITAN_WH_WRECK_F",
+        "transform": {
+            "loc": [
+                56489.9296875,
+                -93914.6796875,
+                -66343.65625
+            ],
+            "rot": [
+                38.67079544067383,
+                3.000000106112566e-06,
+                -178.63050842285156
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/SM_PROPS_XX_QuadGun01_WRECK.SM_PROPS_XX_QuadGun01_WRECK",
+        "transform": {
+            "loc": [
+                17427.375,
+                -11832.763671875,
+                -64040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -66.95909881591797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/SM_PROPS_XX_QuadGun01_WRECK.SM_PROPS_XX_QuadGun01_WRECK",
+        "transform": {
+            "loc": [
+                11855.0,
+                -15330.0,
+                -63935.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -88.41667938232422
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/SM_PROPS_XX_QuadGun01_WRECK.SM_PROPS_XX_QuadGun01_WRECK",
+        "transform": {
+            "loc": [
+                39025.0,
+                -11715.0,
+                -65410.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_12X3_Plain_A.SM_STRUC_Building_Wall_12X3_Plain_A",
+        "transform": {
+            "loc": [
+                71014.9765625,
+                -43541.00390625,
+                -66501.9296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99990844726562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02",
+        "transform": {
+            "loc": [
+                28170.0,
+                -11800.0009765625,
+                -68470.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -10.00011920928955
+            ],
+            "scale": [
+                1.1597352027893066,
+                1.067700743675232,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02",
+        "transform": {
+            "loc": [
+                28154.373046875,
+                -11888.6328125,
+                -68470.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -10.0001220703125
+            ],
+            "scale": [
+                1.1597349643707275,
+                1.067700982093811,
+                1.0
+            ]
+        }
+    }
+]
