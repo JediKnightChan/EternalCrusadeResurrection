@@ -1,0 +1,62 @@
+[
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_SearchLight_MED_Base_A.SM_PROP_SearchLight_MED_Base_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_SearchLight_MED_Light_A.SM_PROP_SearchLight_MED_Light_A",
+        "transform": {
+            "rot": [
+                0.0,
+                -0.000152587890625,
+                0.0
+            ],
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_SearchLight_MED_Pivot_A.SM_PROP_SearchLight_MED_Pivot_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

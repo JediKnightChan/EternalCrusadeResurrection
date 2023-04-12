@@ -1,0 +1,202 @@
+[
+    {
+        "path": "Blueprint /Game/Blueprints/BP_CapturePoint.BP_CapturePoint",
+        "transform": {
+            "loc": [
+                -146865.0,
+                59848.1953125,
+                -10073.7578125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_CapturePoint.BP_CapturePoint",
+        "transform": {
+            "loc": [
+                -177734.0,
+                57610.0,
+                -6950.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_CapturePoint.BP_CapturePoint",
+        "transform": {
+            "loc": [
+                -158494.0,
+                54545.30859375,
+                1806.8521728515625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                106.87481689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_EC_MagLift_01.BP_EC_MagLift_01",
+        "transform": {
+            "loc": [
+                -160456.9375,
+                36787.0703125,
+                -4551.2900390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                50.62478256225586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                -184235.0,
+                49245.2109375,
+                -7584.20703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                25.31247901916504
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                -160809.0,
+                35717.69921875,
+                -1724.07373046875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                50.62504959106445
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                -189640.578125,
+                68009.765625,
+                -5548.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                25.31247901916504
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/VehicleSpawners/BP_VehicleSpawner_AttackersFaction.BP_VehicleSpawner_AttackersFaction",
+        "transform": {
+            "loc": [
+                -169541.234375,
+                17422.189453125,
+                -14458.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                56.249874114990234
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/VehicleSpawners/BP_VehicleSpawner_AttackersFaction.BP_VehicleSpawner_AttackersFaction",
+        "transform": {
+            "loc": [
+                -171122.125,
+                18476.111328125,
+                -14458.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                56.249874114990234
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
+        "transform": {
+            "loc": [
+                -171482.375,
+                61951.8671875,
+                -6946.25244140625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                16.875213623046875
+            ],
+            "scale": [
+                1.1875,
+                1.1875,
+                1.1875
+            ]
+        }
+    }
+]

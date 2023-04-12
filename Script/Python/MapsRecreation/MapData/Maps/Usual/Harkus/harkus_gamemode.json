@@ -1,0 +1,1082 @@
+[
+    {
+        "path": "Blueprint /Game/Blueprints/Banne050/BP_Banner050.BP_Banner050",
+        "transform": {
+            "loc": [
+                167770.0,
+                -66180.0,
+                -75810.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00007629394531
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/Banne050/BP_Banner050.BP_Banner050",
+        "transform": {
+            "loc": [
+                167750.0,
+                -70660.0,
+                -75810.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00007629394531
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/Banne050/BP_Banner050.BP_Banner050",
+        "transform": {
+            "loc": [
+                168290.0,
+                -71020.0,
+                -75810.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/Banne050/BP_Banner050.BP_Banner050",
+        "transform": {
+            "loc": [
+                172570.0,
+                -71059.9921875,
+                -75810.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/Banne050/BP_Banner050.BP_Banner050",
+        "transform": {
+            "loc": [
+                173290.0,
+                -70589.9921875,
+                -75810.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99962615966797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/Banne050/BP_Banner050.BP_Banner050",
+        "transform": {
+            "loc": [
+                173289.984375,
+                -66209.9921875,
+                -75810.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99962615966797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_Banner.BP_Banner",
+        "transform": {
+            "loc": [
+                182101.0,
+                -75291.0,
+                -73496.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_Banner.BP_Banner",
+        "transform": {
+            "loc": [
+                182111.0,
+                -80747.0,
+                -73496.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_Banner.BP_Banner",
+        "transform": {
+            "loc": [
+                194986.0,
+                -77997.0,
+                -70396.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_CapturePoint.BP_CapturePoint",
+        "transform": {
+            "loc": [
+                191775.1875,
+                -78039.2265625,
+                -72988.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_CapturePoint.BP_CapturePoint",
+        "transform": {
+            "loc": [
+                170437.578125,
+                -68409.1015625,
+                -75390.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_DamageZone.BP_DamageZone",
+        "transform": {
+            "loc": [
+                158087.578125,
+                -68640.09375,
+                -81930.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_DamageZone.BP_DamageZone",
+        "transform": {
+            "loc": [
+                158087.484375,
+                -90580.09375,
+                -81930.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_DamageZone.BP_DamageZone",
+        "transform": {
+            "loc": [
+                194600.0,
+                -70900.0,
+                -73600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_DamageZone.BP_DamageZone",
+        "transform": {
+            "loc": [
+                194600.0,
+                -85250.0,
+                -73600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/DefenseWalls/BP_DestroyableGate_Fortress.BP_DestroyableGate_Fortress",
+        "transform": {
+            "loc": [
+                155314.9375,
+                -78009.2109375,
+                -75666.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.9372329711914
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/DefenseWalls/BP_DestroyableGate_Fortress.BP_DestroyableGate_Fortress",
+        "transform": {
+            "loc": [
+                159206.4375,
+                -90552.2265625,
+                -75696.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                134.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_EC_MagLift_01.BP_EC_MagLift_01",
+        "transform": {
+            "loc": [
+                156900.0,
+                -83030.0,
+                -75716.9375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_EC_MagLift_01.BP_EC_MagLift_01",
+        "transform": {
+            "loc": [
+                184950.0,
+                -76540.0,
+                -73016.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_EC_MagLift_01.BP_EC_MagLift_01",
+        "transform": {
+            "loc": [
+                156884.8125,
+                -71670.0,
+                -75723.484375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_EC_MagLift_01.BP_EC_MagLift_01",
+        "transform": {
+            "loc": [
+                158046.3125,
+                -67423.2734375,
+                -75719.328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_EC_MagLift_01.BP_EC_MagLift_01",
+        "transform": {
+            "loc": [
+                158520.015625,
+                -87953.109375,
+                -75719.328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_EC_MagLift_01.BP_EC_MagLift_01",
+        "transform": {
+            "loc": [
+                184880.015625,
+                -79490.2734375,
+                -73009.328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_EC_MagLift_01.BP_EC_MagLift_01",
+        "transform": {
+            "loc": [
+                183051.3125,
+                -78040.0,
+                -70606.8046875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_MediumBanner.BP_MediumBanner",
+        "transform": {
+            "loc": [
+                168012.0,
+                -67645.0,
+                -75396.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_MediumBanner.BP_MediumBanner",
+        "transform": {
+            "loc": [
+                168005.0,
+                -66727.0,
+                -75396.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_MediumBanner.BP_MediumBanner",
+        "transform": {
+            "loc": [
+                168005.0,
+                -69123.0,
+                -75396.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_MediumBanner.BP_MediumBanner",
+        "transform": {
+            "loc": [
+                168005.0,
+                -70041.0,
+                -75396.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_MediumBanner.BP_MediumBanner",
+        "transform": {
+            "loc": [
+                173027.0,
+                -67940.0,
+                -75396.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_MediumBanner.BP_MediumBanner",
+        "transform": {
+            "loc": [
+                173027.0,
+                -68838.0,
+                -75396.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                181771.515625,
+                -78035.7578125,
+                -69394.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                186609.578125,
+                -65849.09375,
+                -72994.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                186628.578125,
+                -90254.09375,
+                -72988.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                152232.578125,
+                -72940.09375,
+                -72715.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                156930.375,
+                -65780.1796875,
+                -72707.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                157700.140625,
+                -89760.09375,
+                -72710.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0001678466797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                164812.5625,
+                -81340.09375,
+                -74195.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                164817.578125,
+                -74740.09375,
+                -74190.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/BP_SM_QuadGun_Mount.BP_SM_QuadGun_Mount",
+        "transform": {
+            "loc": [
+                152227.59375,
+                -83115.0859375,
+                -72720.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/VehicleSpawners/BP_VehicleSpawner_AttackersFaction.BP_VehicleSpawner_AttackersFaction",
+        "transform": {
+            "loc": [
+                121167.5859375,
+                -87945.0625,
+                -77400.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/VehicleSpawners/BP_VehicleSpawner_AttackersFaction.BP_VehicleSpawner_AttackersFaction",
+        "transform": {
+            "loc": [
+                122624.1875,
+                -73167.171875,
+                -76341.6328125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -86.26019287109375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Gameplay/VehicleSpawner/BP_VehicleSpawner.BP_VehicleSpawner",
+        "transform": {
+            "loc": [
+                165740.59375,
+                -84486.0546875,
+                -75706.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                161040.0,
+                -106110.0,
+                -75910.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                20.0,
+                1.0,
+                20.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                145705.0,
+                -76685.0,
+                -75655.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                3.344573974609375,
+                3.687411069869995,
+                7.276580810546875
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                157792.234375,
+                -67183.9609375,
+                -74710.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.00010299682617
+            ],
+            "scale": [
+                1.0,
+                7.0,
+                40.25
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                156524.734375,
+                -71629.2578125,
+                -74710.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -8.535384404240176e-05
+            ],
+            "scale": [
+                1.0,
+                7.0,
+                40.25
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                156544.71875,
+                -83039.2578125,
+                -74710.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                7.0,
+                40.25
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                156490.0,
+                -72270.0,
+                -71710.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.5,
+                2.5,
+                20.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A.SM_STRUC_CATH_Stairs_MED_01_A",
+        "transform": {
+            "loc": [
+                166550.0,
+                -87100.0,
+                -75700.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A.SM_STRUC_CATH_Stairs_MED_01_A",
+        "transform": {
+            "loc": [
+                166550.0,
+                -86500.0,
+                -75700.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/SM_XX_SupportBase_QuadGun_A.SM_XX_SupportBase_QuadGun_A",
+        "transform": {
+            "loc": [
+                152440.0,
+                -83130.0,
+                -72860.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99994659423828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/SM_XX_SupportBase_QuadGun_A.SM_XX_SupportBase_QuadGun_A",
+        "transform": {
+            "loc": [
+                157855.546875,
+                -89615.046875,
+                -72860.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                134.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/SM_XX_SupportBase_QuadGun_A.SM_XX_SupportBase_QuadGun_A",
+        "transform": {
+            "loc": [
+                157092.4375,
+                -65937.6015625,
+                -72860.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                45.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Turrets/SM_XX_QuadGun01/SM_XX_SupportBase_QuadGun_A.SM_XX_SupportBase_QuadGun_A",
+        "transform": {
+            "loc": [
+                152440.0,
+                -72930.0,
+                -72860.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99994659423828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

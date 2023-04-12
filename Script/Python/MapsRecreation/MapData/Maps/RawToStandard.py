@@ -1,8 +1,8 @@
 import json
 import os.path
 
-raw_filename = "Raw/Bregg2/bregg2_gamemode.raw.json"
-new_filename = "Usual/Bregg2/bregg2_gamemode.json"
+raw_filename = "Raw/Harkus/harkus_vfx.raw.json"
+new_filename = "Usual/Harkus/harkus_vfx.json"
 
 with open(raw_filename, "rb") as f:
     data = json.load(f)
@@ -15,7 +15,8 @@ for i, import_struc in enumerate(data["Imports"]):
 buildings_imports = {"Cube": "/Engine/BasicShapes/Cube.Cube"}
 for i, import_struc in enumerate(data["Imports"]):
     asset_path = import_struc["ObjectName"]
-    buildings_prefixes = ["/Game/Buildings/", "/Game/PROPS/", "/Game/Blueprints/", "/Game/Graybox/", "/Game/VFX/Blueprints/"]
+    buildings_prefixes = ["/Game/Buildings/", "/Game/PROPS/", "/Game/Blueprints/", "/Game/Graybox/",
+                          "/Game/VFX/Blueprints/", "/Game/Vehicles/"]
     for pref in buildings_prefixes:
         if asset_path.startswith(pref):
             buildings_imports[os.path.basename(asset_path)] = asset_path
