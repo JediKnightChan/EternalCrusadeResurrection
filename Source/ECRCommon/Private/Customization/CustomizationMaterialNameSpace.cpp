@@ -90,9 +90,9 @@ void UCustomizationMaterialNameSpace::ApplyMaterialChanges(USceneComponent* Chil
 
 			if (SkinnedMeshComponent)
 			{
-				if (SkinnedMeshComponent->SkeletalMesh)
+				if (SkinnedMeshComponent->GetSkinnedAsset())
 				{
-					TArray<FSkeletalMaterial> SkeletalMaterials = SkinnedMeshComponent->SkeletalMesh->GetMaterials();
+					TArray<FSkeletalMaterial> SkeletalMaterials = SkinnedMeshComponent->GetSkinnedAsset()->GetMaterials();
 					MaterialIndices = UCustomizationUtilsLibrary::GetMaterialIndices(SkeletalMaterials, MaterialName);
 				}
 			}

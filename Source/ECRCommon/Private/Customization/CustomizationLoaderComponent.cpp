@@ -281,9 +281,9 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 	{
 		// Merging skeletal meshes
 		FSkeletalMeshMergeParams MergeParams;
-		if (bUseParentSkeleton && SkeletalMeshParentComponent->SkeletalMesh)
+		if (bUseParentSkeleton && SkeletalMeshParentComponent->GetSkeletalMeshAsset())
 		{
-			MergeParams.Skeleton = SkeletalMeshParentComponent->SkeletalMesh->GetSkeleton();
+			MergeParams.Skeleton = SkeletalMeshParentComponent->GetSkeletalMeshAsset()->GetSkeleton();
 			MergeParams.bSkeletonBefore = false;
 		}
 		MergeParams.MeshesToMerge = MeshesForMerge;
@@ -314,7 +314,7 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 	// Inheriting animations if needed
 	if (bInheritParentAnimations)
 	{
-		ChildComponent->SetMasterPoseComponent(SkeletalMeshParentComponent);
+		ChildComponent->SetLeaderPoseComponent(SkeletalMeshParentComponent);
 	}
 
 	// Applying materials
@@ -365,7 +365,7 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 		// Inheriting animations if needed
 		if (bInheritParentAnimations)
 		{
-			ChildComponent->SetMasterPoseComponent(SkeletalMeshParentComponent);
+			ChildComponent->SetLeaderPoseComponent(SkeletalMeshParentComponent);
 		}
 
 		// Applying materials
