@@ -29,7 +29,8 @@ void FGameplayTagStackContainer::AddStack(FGameplayTag Tag, int32 StackCount)
 			{
 				const int32 NewCount = Stack.StackCount + StackCount;
 				Stack.StackCount = NewCount;
-				TagToCountMap[Tag] = NewCount;
+				TagToCountMap.Add(Tag, NewCount);
+				// TagToCountMap[Tag] = NewCount;
 				MarkItemDirty(Stack);
 				return;
 			}

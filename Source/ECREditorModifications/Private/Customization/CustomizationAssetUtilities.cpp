@@ -33,7 +33,7 @@ void UCustomizationAssetUtilities::CreateElementaryAssetBundle()
 			LastDirectoryName = FilenamePart;
 		}
 		
-		if (SelectedAsset.AssetClass == UCustomizationElementaryAsset::StaticClass()->GetFName())
+		if (SelectedAsset.AssetClassPath == UCustomizationElementaryAsset::StaticClass()->GetClassPathName())
 		{
 			UObject* Object = SelectedAsset.GetAsset();
 			if (UCustomizationElementaryAsset* CustomizationElementaryAsset = Cast<

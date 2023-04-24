@@ -95,7 +95,7 @@ void UCustomizationElementaryModule::InheritAnimationsIfNeeded()
 	}
 
 	// Inheriting animations or resetting them
-	SetMasterPoseComponent(FirstParentSkeletalMeshComponent);
+	SetLeaderPoseComponent(FirstParentSkeletalMeshComponent);
 }
 
 
@@ -115,7 +115,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 	GetChildrenComponents(true, AllChildren);
 
 	// Return if no skeletal mesh
-	if (SkeletalMesh == nullptr)
+	if (GetSkeletalMeshAsset() == nullptr)
 	{
 		return nullptr;
 	}
@@ -202,7 +202,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 	DataAssetSave->ModuleName = ComponentName;
 
 	// Setting base mesh
-	DataAssetSave->BaseSkeletalMesh = SkeletalMesh;
+	DataAssetSave->BaseSkeletalMesh = GetSkeletalMeshAsset();
 
 	// Setting merging namespace
 	DataAssetSave->MeshMergeNamespace = MeshMergerNamespace;
@@ -279,7 +279,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 		if (ChildSkeletalMeshComponent != nullptr)
 		{
 			// If component present, but empty, skip
-			if (!ChildSkeletalMeshComponent->SkeletalMesh)
+			if (!ChildSkeletalMeshComponent->GetSkeletalMeshAsset())
 			{
 				continue;
 			}
@@ -309,7 +309,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 			SocketName = SocketName == NAME_None ? "" : SocketName;
 
 			FCustomizationElementarySubmoduleSkeletal SkeletalData{
-				ChildSkeletalMeshComponent->SkeletalMesh, SocketName,
+				ChildSkeletalMeshComponent->GetSkeletalMeshAsset(), SocketName,
 				ChildSkeletalMeshComponent->GetRelativeTransform(), ChildSkeletalMeshComponentMaterialNamespace
 			};
 			DataAssetSave->SkeletalAttachments.Add(SkeletalData);
