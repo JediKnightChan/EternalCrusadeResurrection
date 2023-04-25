@@ -452,6 +452,25 @@ void AECRCharacter::SetMovementModeTag(EMovementMode MovementMode, uint8 CustomM
 		if (MovementModeTag && MovementModeTag->IsValid())
 		{
 			ECRASC->SetLooseGameplayTagCount(*MovementModeTag, (bTagEnabled ? 1 : 0));
+
+			// Set falling tag depending on whether jump pack or not
+			if (*MovementModeTag == GameplayTags.Movement_Mode_Falling)
+			{
+				if (!bTagEnabled)
+				{
+					ECRASC->SetLooseGameplayTagCount(GameplayTags.Movement_Mode_Falling_Standard, 0);
+					ECRASC->SetLooseGameplayTagCount(GameplayTags.Movement_Mode_Falling_JumpPack, 0);
+				} else
+				{
+					if (ECRASC->HasMatchingGameplayTag(GameplayTags.Status_JumpFlying))
+					{
+						ECRASC->SetLooseGameplayTagCount(GameplayTags.Movement_Mode_Falling_JumpPack, 1);
+					} else
+					{
+						ECRASC->SetLooseGameplayTagCount(GameplayTags.Movement_Mode_Falling_Standard, 1);
+					}
+				}
+			}
 		}
 	}
 }

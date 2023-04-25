@@ -13,7 +13,9 @@ UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_MovementStopped, "Gameplay.MovementStopped")
 namespace ECRCharacter
 {
 	static float GroundTraceDistance = 100000.0f;
-	FAutoConsoleVariableRef CVar_GroundTraceDistance(TEXT("ECRCharacter.GroundTraceDistance"), GroundTraceDistance, TEXT("Distance to trace down when generating ground information."), ECVF_Cheat);
+	FAutoConsoleVariableRef CVar_GroundTraceDistance(
+		TEXT("ECRCharacter.GroundTraceDistance"), GroundTraceDistance,
+		TEXT("Distance to trace down when generating ground information."), ECVF_Cheat);
 };
 
 
@@ -41,12 +43,24 @@ bool UECRCharacterMovementComponent::CanAttemptJump() const
 {
 	// Same as UCharacterMovementComponent's implementation but without the crouch check
 	return IsJumpAllowed() &&
-		(IsMovingOnGround() || IsFalling()); // Falling included for double-jump and non-zero jump hold time, but validated by character.
+		(IsMovingOnGround() || IsFalling());
+	// Falling included for double-jump and non-zero jump hold time, but validated by character.
 }
 
 void UECRCharacterMovementComponent::InitializeComponent()
 {
 	Super::InitializeComponent();
+}
+
+void UECRCharacterMovementComponent::PhysCustom(float deltaTime, int32 Iterations)
+{
+	switch (CustomMovementMode)
+	{
+	case EECRCustomMovementMode::CustomFrozen:
+		break;
+	default:
+		Super::PhysCustom(deltaTime, Iterations);
+	}
 }
 
 const FECRCharacterGroundInfo& UECRCharacterMovementComponent::GetGroundInfo()
@@ -67,16 +81,21 @@ const FECRCharacterGroundInfo& UECRCharacterMovementComponent::GetGroundInfo()
 		check(CapsuleComp);
 
 		const float CapsuleHalfHeight = CapsuleComp->GetUnscaledCapsuleHalfHeight();
-		const ECollisionChannel CollisionChannel = (UpdatedComponent ? UpdatedComponent->GetCollisionObjectType() : ECC_Pawn);
+		const ECollisionChannel CollisionChannel = (UpdatedComponent
+			                                            ? UpdatedComponent->GetCollisionObjectType()
+			                                            : ECC_Pawn);
 		const FVector TraceStart(GetActorLocation());
-		const FVector TraceEnd(TraceStart.X, TraceStart.Y, (TraceStart.Z - ECRCharacter::GroundTraceDistance - CapsuleHalfHeight));
+		const FVector TraceEnd(TraceStart.X, TraceStart.Y,
+		                       (TraceStart.Z - ECRCharacter::GroundTraceDistance - CapsuleHalfHeight));
 
-		FCollisionQueryParams QueryParams(SCENE_QUERY_STAT(ECRCharacterMovementComponent_GetGroundInfo), false, CharacterOwner);
+		FCollisionQueryParams QueryParams(
+			SCENE_QUERY_STAT(ECRCharacterMovementComponent_GetGroundInfo), false, CharacterOwner);
 		FCollisionResponseParams ResponseParam;
 		InitCollisionParams(QueryParams, ResponseParam);
 
 		FHitResult HitResult;
-		GetWorld()->LineTraceSingleByChannel(HitResult, TraceStart, TraceEnd, CollisionChannel, QueryParams, ResponseParam);
+		GetWorld()->LineTraceSingleByChannel(HitResult, TraceStart, TraceEnd, CollisionChannel, QueryParams,
+		                                     ResponseParam);
 
 		CachedGroundInfo.GroundHitResult = HitResult;
 		CachedGroundInfo.GroundDistance = ECRCharacter::GroundTraceDistance;
@@ -108,7 +127,7 @@ FRotator UECRCharacterMovementComponent::GetDeltaRotation(float DeltaTime) const
 	{
 		if (ASC->HasMatchingGameplayTag(TAG_Gameplay_MovementStopped))
 		{
-			return FRotator(0,0,0);
+			return FRotator(0, 0, 0);
 		}
 	}
 
