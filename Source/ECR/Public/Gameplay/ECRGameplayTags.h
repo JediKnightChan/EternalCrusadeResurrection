@@ -61,6 +61,7 @@ public:
 	FGameplayTag Status_Death;
 	FGameplayTag Status_Death_Dying;
 	FGameplayTag Status_Death_Dead;
+	FGameplayTag Status_JumpFlying;
 	FGameplayTag Status_Wounded;
 
 	FGameplayTag Movement_Mode_Walking;
@@ -69,6 +70,11 @@ public:
 	FGameplayTag Movement_Mode_Swimming;
 	FGameplayTag Movement_Mode_Flying;
 	FGameplayTag Movement_Mode_Custom;
+
+	FGameplayTag Movement_Mode_Falling_Standard;
+	FGameplayTag Movement_Mode_Falling_JumpPack;
+
+	FGameplayTag Movement_Mode_Custom_Frozen;
 
 	TMap<uint8, FGameplayTag> MovementModeTagMap;
 	TMap<uint8, FGameplayTag> CustomMovementModeTagMap;

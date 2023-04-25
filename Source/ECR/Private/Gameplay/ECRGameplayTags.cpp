@@ -4,6 +4,7 @@
 #include "System/ECRLogChannels.h"
 #include "GameplayTagsManager.h"
 #include "Engine/EngineTypes.h"
+#include "Gameplay/Character/ECRCharacterMovementComponent.h"
 
 FECRGameplayTags FECRGameplayTags::GameplayTags;
 
@@ -40,7 +41,7 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddTag(Cosmetic_Montage, "Cosmetic.Montage", "Prefix for montage customization");
 	AddTag(Cosmetic_AnimStyle, "Cosmetic.AnimationStyle", "Prefix for animation style customization");
 	AddTag(Cosmetic_ActorSubclass, "Cosmetic.ActorSubclass", "Prefix for actor subclass customization");
-	
+
 	AddTag(Cheat_GodMode, "Cheat.GodMode", "GodMode cheat is active on the owner.");
 	AddTag(Cheat_UnlimitedHealth, "Cheat.UnlimitedHealth", "UnlimitedHealth cheat is active on the owner.");
 
@@ -72,6 +73,7 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddTag(Status_Death, "Status.Death", "Target has the death status.");
 	AddTag(Status_Death_Dying, "Status.Death.Dying", "Target has begun the death process.");
 	AddTag(Status_Death_Dead, "Status.Death.Dead", "Target has finished the death process.");
+	AddTag(Status_JumpFlying, "Status.JumpFlying", "Target is jump pack flying.");
 	AddTag(Status_Wounded, "Status.Wounded", "Target is wounded.");
 
 	AddMovementModeTag(Movement_Mode_Walking, "Movement.Mode.Walking", MOVE_Walking);
@@ -80,6 +82,12 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddMovementModeTag(Movement_Mode_Swimming, "Movement.Mode.Swimming", MOVE_Swimming);
 	AddMovementModeTag(Movement_Mode_Flying, "Movement.Mode.Flying", MOVE_Flying);
 	AddMovementModeTag(Movement_Mode_Custom, "Movement.Mode.Custom", MOVE_Custom);
+
+	AddTag(Movement_Mode_Falling_Standard, "Movement.Mode.Falling.Standard", "Standard falling");
+	AddTag(Movement_Mode_Falling_JumpPack, "Movement.Mode.Falling.JumpPack", "Falling when jump pack flying");
+
+	AddCustomMovementModeTag(Movement_Mode_Custom_Frozen, "Movement.Mode.Custom.Frozen",
+	                         static_cast<uint8>(EECRCustomMovementMode::CustomFrozen));
 }
 
 void FECRGameplayTags::AddTag(FGameplayTag& OutTag, const ANSICHAR* TagName, const ANSICHAR* TagComment)

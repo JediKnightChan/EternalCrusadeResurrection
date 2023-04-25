@@ -10,6 +10,18 @@
 ECR_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_MovementStopped);
 
 /**
+ * EECRCustomMovementMode
+ *
+ * Custom movement modes for ECR
+ */
+UENUM(BlueprintType)
+enum class EECRCustomMovementMode : uint8
+{
+	CustomFrozen,
+};
+
+
+/**
  * FECRCharacterGroundInfo
  *
  *	Information about the ground under the character.  It only gets updated as needed.
@@ -65,7 +77,7 @@ public:
 
 protected:
 	virtual void InitializeComponent() override;
-
+	virtual void PhysCustom(float deltaTime, int32 Iterations) override;
 protected:
 	// Cached ground info for the character.  Do not access this directly!  It's only updated when accessed via GetGroundInfo().
 	FECRCharacterGroundInfo CachedGroundInfo;
