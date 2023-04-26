@@ -141,7 +141,9 @@ void UECRCharacterHealthSet::PreAttributeChange(const FGameplayAttribute& Attrib
 
 void UECRCharacterHealthSet::PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue)
 {
-	Super::PostAttributeChange(Attribute, OldValue, NewValue);
+	// Make sure current health is not greater than the new max health.
+	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxHealthAttribute(),
+									 GetHealthAttribute(), GetHealth());
 
 	// Make sure current shield is not greater than the new max shield.
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxShieldAttribute(),
@@ -158,6 +160,16 @@ void UECRCharacterHealthSet::PostAttributeChange(const FGameplayAttribute& Attri
 	// Make sure current evasion stamina is not greater than the new max evasion stamina.
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxEvasionStaminaAttribute(),
 	                                 GetEvasionStaminaAttribute(), GetEvasionStamina());
+
+	if (bReadyToBecomeWounded && !GetIsReadyToBecomeWounded())
+	{
+		bReadyToBecomeWounded = false;
+	}
+
+	if (bReadyToDie && !GetIsReadyToDie())
+	{
+		bReadyToDie = false;
+	}
 }
 
 
