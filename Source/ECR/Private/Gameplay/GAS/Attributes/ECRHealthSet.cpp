@@ -139,7 +139,7 @@ void UECRHealthSet::PostAttributeChange(const FGameplayAttribute& Attribute, flo
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxHealthAttribute(),
 	                                 GetHealthAttribute(), GetHealth());
 
-	if (bReadyToDie && (GetHealth() > 0.0f))
+	if (bReadyToDie && !GetIsReadyToDie())
 	{
 		bReadyToDie = false;
 	}
