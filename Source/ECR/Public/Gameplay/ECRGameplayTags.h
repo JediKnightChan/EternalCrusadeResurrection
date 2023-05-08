@@ -38,6 +38,10 @@ public:
 	FGameplayTag InputTag_Crouch;
 	FGameplayTag InputTag_AutoRun;
 
+	FGameplayTag InputTag_Vehicle_Throttle;
+	FGameplayTag InputTag_Vehicle_Steer;
+	FGameplayTag InputTag_Vehicle_Brake;
+
 	FGameplayTag GameplayEvent_Death;
 	FGameplayTag GameplayEvent_Landed;
 	FGameplayTag GameplayEvent_MovementModeChanged;

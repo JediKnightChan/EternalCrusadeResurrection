@@ -12,7 +12,7 @@
 class UECRAbilitySystemComponent;
 class AECRPlayerController;
 class AECRCharacter;
-class UECRHeroComponent;
+class UECRPawnControlComponent;
 class UECRCameraMode;
 class UECRAbilityCost;
 class IECRAbilitySourceInterface;
@@ -102,7 +102,7 @@ public:
 	AECRCharacter* GetECRCharacterFromActorInfo() const;
 
 	UFUNCTION(BlueprintCallable, Category = "ECR|Ability")
-	UECRHeroComponent* GetHeroComponentFromActorInfo() const;
+	UECRPawnControlComponent* GetHeroComponentFromActorInfo() const;
 
 	EECRAbilityActivationPolicy GetActivationPolicy() const { return ActivationPolicy; }
 	EECRAbilityActivationGroup GetActivationGroup() const { return ActivationGroup; }

@@ -7,7 +7,7 @@
 #include "Gameplay/Character/ECRCharacter.h"
 #include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/GAS/Abilities/ECRAbilityCost.h"
-#include "Gameplay/Character/ECRHeroComponent.h"
+#include "Gameplay/Character/ECRPawnControlComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemGlobals.h"
 #include "AbilitySystemLog.h"
@@ -95,9 +95,9 @@ AECRCharacter* UECRGameplayAbility::GetECRCharacterFromActorInfo() const
 	return (CurrentActorInfo ? Cast<AECRCharacter>(CurrentActorInfo->AvatarActor.Get()) : nullptr);
 }
 
-UECRHeroComponent* UECRGameplayAbility::GetHeroComponentFromActorInfo() const
+UECRPawnControlComponent* UECRGameplayAbility::GetHeroComponentFromActorInfo() const
 {
-	return (CurrentActorInfo ? UECRHeroComponent::FindHeroComponent(CurrentActorInfo->AvatarActor.Get()) : nullptr);
+	return (CurrentActorInfo ? UECRPawnControlComponent::FindPawnControlComonent(CurrentActorInfo->AvatarActor.Get()) : nullptr);
 }
 
 void UECRGameplayAbility::ToggleInputDisabled(const bool NewInputDisabled)
@@ -119,7 +119,7 @@ void UECRGameplayAbility::ToggleInputDisabled(const bool NewInputDisabled)
 
 void UECRGameplayAbility::ToggleMovementEnabled(const bool bNewEnabled)
 {
-	if (UECRHeroComponent* HeroComponent = GetHeroComponentFromActorInfo())
+	if (UECRPawnControlComponent* HeroComponent = GetHeroComponentFromActorInfo())
 	{
 		HeroComponent->ToggleMovementInput(bNewEnabled);
 	}
@@ -671,7 +671,7 @@ void UECRGameplayAbility::SetCameraMode(TSubclassOf<UECRCameraMode> CameraMode)
 {
 	ENSURE_ABILITY_IS_INSTANTIATED_OR_RETURN(SetCameraMode,);
 
-	if (UECRHeroComponent* HeroComponent = GetHeroComponentFromActorInfo())
+	if (UECRPawnControlComponent* HeroComponent = GetHeroComponentFromActorInfo())
 	{
 		HeroComponent->SetAbilityCameraMode(CameraMode, CurrentSpecHandle);
 		ActiveCameraMode = CameraMode;
@@ -684,7 +684,7 @@ void UECRGameplayAbility::ClearCameraMode()
 
 	if (ActiveCameraMode)
 	{
-		if (UECRHeroComponent* HeroComponent = GetHeroComponentFromActorInfo())
+		if (UECRPawnControlComponent* HeroComponent = GetHeroComponentFromActorInfo())
 		{
 			HeroComponent->ClearAbilityCameraMode(CurrentSpecHandle);
 		}

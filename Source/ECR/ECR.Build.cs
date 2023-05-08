@@ -22,7 +22,8 @@ public class ECR : ModuleRules
 			"OnlineSubsystemEOS", 
 			"OnlineSubsystemUtils", 
 			"PhysicsCore", 
-			"SignificanceManager"
+			"SignificanceManager", 
+			"ChaosVehicles",
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[]
