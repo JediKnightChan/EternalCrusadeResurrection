@@ -20,6 +20,5 @@ protected:
 	virtual void BindNativeActions(UECRInputComponent* ECRIC, const UECRInputConfig* InputConfig) override;
 
 	virtual void Input_Move(const FInputActionValue& InputActionValue);
-	virtual void Input_Crouch(const FInputActionValue& InputActionValue);
 	virtual void Input_AutoRun(const FInputActionValue& InputActionValue);
 };

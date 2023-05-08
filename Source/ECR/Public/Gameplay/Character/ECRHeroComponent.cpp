@@ -18,8 +18,6 @@ void UECRHeroComponent::BindNativeActions(UECRInputComponent* ECRIC, const UECRI
 	const FECRGameplayTags& GameplayTags = FECRGameplayTags::Get();
 	ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Move, ETriggerEvent::Triggered, this,
 	                        &ThisClass::Input_Move, /*bLogIfNotFound=*/ false);
-	ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Crouch, ETriggerEvent::Triggered, this,
-	                        &ThisClass::Input_Crouch, /*bLogIfNotFound=*/ false);
 	ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_AutoRun, ETriggerEvent::Triggered, this,
 	                        &ThisClass::Input_AutoRun, /*bLogIfNotFound=*/ false);
 }
@@ -59,19 +57,6 @@ void UECRHeroComponent::Input_Move(const FInputActionValue& InputActionValue)
 	}
 }
 
-
-void UECRHeroComponent::Input_Crouch(const FInputActionValue& InputActionValue)
-{
-	if (!bMovementInputEnabled)
-	{
-		return;
-	}
-
-	if (AECRCharacter* Character = GetPawn<AECRCharacter>())
-	{
-		Character->ToggleCrouch();
-	}
-}
 
 void UECRHeroComponent::Input_AutoRun(const FInputActionValue& InputActionValue)
 {
