@@ -10,6 +10,7 @@ public class ECRCommon : ModuleRules
 			new string[]
 			{
 				"Core",
+				"FMODStudio"
 			}
 		);
 

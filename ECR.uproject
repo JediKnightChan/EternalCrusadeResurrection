@@ -82,6 +82,10 @@
 		{
 			"Name": "ChaosVehiclesPlugin",
 			"Enabled": true
+		},
+		{
+			"Name": "FMODStudio",
+			"Enabled": true
 		}
 	]
 }
