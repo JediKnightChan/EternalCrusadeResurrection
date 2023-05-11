@@ -20,28 +20,39 @@ that may be useful for a wide range of games.
 - Python Scripts for automation of restoring non-exportable or hardly-exportable data for an unpacked UE4 game (socket
   data, maps data, materials, references to materials within meshes)
 - Enhanced Input Subsystem is used for input (borrowed from Lyra)
-- 3rd person multiplayer shooter and melee combat system based on Lyra's GAS
+- 3rd person multiplayer shooter and melee combat system based on Lyra's GAS, including combat vehicles
 
 ### GAS differences from Lyra (5.0)
 
-- A better nested directory structure
-- [Fixed](https://github.com/JediKnightChan/EternalCrusadeResurrection/commit/2990e9dba32ed76332775ed27df2977768a5d257)
-  a bug with improper spread cooldown activation on ranged weapons
+#### Large changes
+
+- Vehicles are supported as pawns (ECRWheeledVehiclePawn)
+- [Ability Queue System](https://github.com/JediKnightChan/EternalCrusadeResurrection/commit/d9096523e16c7203f4ac2663be893c6969a5f803)
+  allows to grab input while another ability (like stun) is active
+- PawnData elements are defined in GameState and on Character as a spawn option, so it can be customizable, unlike Lyra,
+  where it's defined by experience and is the same for all players
+
+#### Medium changes
+
 - Several attributes are used to consume damage (First shield, then health, then bleeding health)
 - [QuickBar component](https://github.com/JediKnightChan/EternalCrusadeResurrection/blob/master/Source/ECR/Public/Gameplay/Equipment/ECRQuickBarComponent.h)
-  has multiple channels (eg one for ranged weapons, one for melee)
+  has multiple channels (eg one for ranged weapons, one for melee), can make many "quick bars"
 - ECREquipmentManagerComponent is capable of hiding equipment by visibility channels (eg LeftHand, RightHand for
   two-handed weapon)
-- PawnData is defined in GameState and on Character as a spawn option, so it can be customizable, unlike Lyra, where
-  it's defined by experience and is the same for all players
-- Shooting uses advanced tracing to get a point on the camera vector where pawn should aim from weapon actor, unlike
-  Lyra, where shooting is done from camera
-- GAS debugger correctly works on 3rd page, checking costs on abilities CDOs without producing errors in the log
 - Gameplay Abilities can asynchronously load montages for different skeletons using cosmetic tags without having to
   create multiple GA instances
 - Advanced interaction system allows interaction options to be set by actors in blueprints, makes possible interactions
   via input tags and overriding input mappings
 - Advanced melee combat prediction system
+
+#### Fixes and small changes
+
+- A better nested directory structure
+- [Fixed](https://github.com/JediKnightChan/EternalCrusadeResurrection/commit/2990e9dba32ed76332775ed27df2977768a5d257)
+  a bug with improper spread cooldown activation on ranged weapons
+- Shooting uses advanced tracing to get a point on the camera vector where pawn should aim from weapon actor, unlike
+  Lyra, where shooting is done from camera
+- GAS debugger correctly works on 3rd page, checking costs on abilities CDOs without producing errors in the log
 
 ![](https://eternal-crusade.com/dist/images/github/melee_prediction.jpg)
 
