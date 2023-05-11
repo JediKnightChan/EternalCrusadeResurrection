@@ -157,6 +157,7 @@ protected:
 	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
 	                             const FGameplayAbilityActivationInfo ActivationInfo,
 	                             const FGameplayEventData* TriggerEventData) override;
+
 	virtual void EndAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
 	                        const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateEndAbility,
 	                        bool bWasCancelled) override;
@@ -199,7 +200,10 @@ protected:
 	void OnCharacterPartsChanged(UECRPawnComponent_CharacterParts* ComponentWithChangedParts);
 
 	UECRPawnComponent_CharacterParts* GetPawnCustomizationComponent() const;
-protected:
+	
+	/** Check for ability queue on ASC, if need to activate any queued ability */
+	void CheckAbilityQueue(const FGameplayAbilityActorInfo* ActorInfo) const;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Animation")
 	TMap<FName, FECRAnimMontageSelectionSet> AbilityMontageSelection;
 

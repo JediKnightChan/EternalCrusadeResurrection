@@ -40,6 +40,9 @@ UECRPawnControlComponent::UECRPawnControlComponent(const FObjectInitializer& Obj
 	bPawnHasInitialized = false;
 	bReadyToBindInputs = false;
 	bMovementInputEnabled = true;
+	
+	bListenForAbilityQueue = false;
+	AbilityQueueDeltaTime = 0;
 }
 
 void UECRPawnControlComponent::OnRegister()
@@ -257,9 +260,25 @@ void UECRPawnControlComponent::BindNativeActions(UECRInputComponent* ECRIC, cons
 {
 	const FECRGameplayTags& GameplayTags = FECRGameplayTags::Get();
 	ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Look_Mouse, ETriggerEvent::Triggered, this,
-							&ThisClass::Input_LookMouse, /*bLogIfNotFound=*/ true);
+	                        &ThisClass::Input_LookMouse, /*bLogIfNotFound=*/ true);
 	ECRIC->BindNativeAction(InputConfig, GameplayTags.InputTag_Look_Stick, ETriggerEvent::Triggered, this,
-							&ThisClass::Input_LookStick, /*bLogIfNotFound=*/ false);
+	                        &ThisClass::Input_LookStick, /*bLogIfNotFound=*/ false);
+}
+
+void UECRPawnControlComponent::NotifyAbilityQueueSystem(UECRAbilitySystemComponent* ASC, const FGameplayTag& InputTag)
+{
+	if (InputTag.IsValid() && bListenForAbilityQueue && AbilityQueueInputTags.HasTagExact(InputTag))
+	{
+		ASC->AbilityQueueSystemLastInputTag = InputTag;
+		ASC->AbilityQueueSystemLastInputTagTime = GetWorld()->GetTimeSeconds();
+		ASC->AbilityQueueSystemDeltaTime = AbilityQueueDeltaTime;
+	}
+	else
+	{
+		ASC->AbilityQueueSystemLastInputTag = {};
+		ASC->AbilityQueueSystemLastInputTagTime = 0;
+		ASC->AbilityQueueSystemDeltaTime = 0;
+	}
 }
 
 
@@ -317,6 +336,7 @@ void UECRPawnControlComponent::Input_AbilityInputTagPressed(FGameplayTag InputTa
 			if (UECRAbilitySystemComponent* ECRASC = PawnExtComp->GetECRAbilitySystemComponent())
 			{
 				ECRASC->AbilityInputTagPressed(InputTag);
+				NotifyAbilityQueueSystem(ECRASC, InputTag);
 			}
 		}
 	}

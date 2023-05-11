@@ -17,6 +17,10 @@ UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_AbilityInputBlocked, "Gameplay.AbilityInputB
 UECRAbilitySystemComponent::UECRAbilitySystemComponent(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
+	AbilityQueueSystemLastInputTag = {};
+	AbilityQueueSystemLastInputTagTime = 0;
+	AbilityQueueSystemDeltaTime = 0;
+
 	InputPressedSpecHandles.Reset();
 	InputReleasedSpecHandles.Reset();
 	InputHeldSpecHandles.Reset();
@@ -402,7 +406,7 @@ void UECRAbilitySystemComponent::ClearAllResettingOnDeathAbilities()
 	// Get all activatable abilities
 	TArray<FGameplayAbilitySpecHandle> OutSpecHandles;
 	GetAllAbilities(OutSpecHandles);
-	
+
 	for (const FGameplayAbilitySpecHandle CurrentSpecHandle : OutSpecHandles)
 	{
 		const FGameplayAbilitySpec* AbilitySpec = FindAbilitySpecFromHandle(CurrentSpecHandle);

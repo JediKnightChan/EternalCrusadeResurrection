@@ -97,7 +97,9 @@ AECRCharacter* UECRGameplayAbility::GetECRCharacterFromActorInfo() const
 
 UECRPawnControlComponent* UECRGameplayAbility::GetHeroComponentFromActorInfo() const
 {
-	return (CurrentActorInfo ? UECRPawnControlComponent::FindPawnControlComonent(CurrentActorInfo->AvatarActor.Get()) : nullptr);
+	return (CurrentActorInfo
+		        ? UECRPawnControlComponent::FindPawnControlComonent(CurrentActorInfo->AvatarActor.Get())
+		        : nullptr);
 }
 
 void UECRGameplayAbility::ToggleInputDisabled(const bool NewInputDisabled)
@@ -252,6 +254,8 @@ void UECRGameplayAbility::EndAbility(const FGameplayAbilitySpecHandle Handle,
 	ClearCameraMode();
 
 	Super::EndAbility(Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled);
+
+	CheckAbilityQueue(ActorInfo);
 }
 
 bool UECRGameplayAbility::CheckCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
@@ -555,6 +559,24 @@ UECRPawnComponent_CharacterParts* UECRGameplayAbility::GetPawnCustomizationCompo
 		return nullptr;
 	}
 	return nullptr;
+}
+
+
+void UECRGameplayAbility::CheckAbilityQueue(const FGameplayAbilityActorInfo* ActorInfo) const
+{
+	if (UECRAbilitySystemComponent* ASC = Cast<UECRAbilitySystemComponent>(ActorInfo->AbilitySystemComponent.Get()))
+	{
+		const double CurrentTime = GetWorld()->GetTimeSeconds();
+
+		if (ASC->AbilityQueueSystemLastInputTag.IsValid() && (ASC->AbilityQueueSystemDeltaTime == 0 || CurrentTime - ASC
+			->AbilityQueueSystemLastInputTagTime < ASC->AbilityQueueSystemDeltaTime))
+		{
+			ASC->AbilityInputTagPressed(ASC->AbilityQueueSystemLastInputTag);
+		}
+
+		ASC->AbilityQueueSystemLastInputTag = {};
+		ASC->AbilityQueueSystemLastInputTagTime = 0;
+	}
 }
 
 

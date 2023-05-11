@@ -7,6 +7,7 @@
 #include "Gameplay/Camera/ECRCameraMode.h"
 #include "GameplayTagContainer.h"
 #include "GameplayAbilitySpec.h"
+#include "Gameplay/GAS/ECRAbilitySet.h"
 #include "Input/ECRMappableConfigPair.h"
 #include "ECRPawnControlComponent.generated.h"
 
@@ -67,6 +68,8 @@ protected:
 	virtual void InitializePlayerInput(UInputComponent* PlayerInputComponent);
 	virtual void BindNativeActions(UECRInputComponent* ECRIC, const UECRInputConfig* InputConfig);
 
+	void NotifyAbilityQueueSystem(UECRAbilitySystemComponent* ASC, const FGameplayTag& InputTag);
+
 	void Input_AbilityInputTagPressed(FGameplayTag InputTag);
 	void Input_AbilityInputTagReleased(FGameplayTag InputTag);
 
@@ -76,6 +79,10 @@ protected:
 	TSubclassOf<UECRCameraMode> DetermineCameraMode() const;
 
 protected:
+	/** List of input tags handled by ability queue system */
+	UPROPERTY(EditAnywhere)
+	FGameplayTagContainer AbilityQueueInputTags;
+	
 	/**
 	 * Input Configs that should be added to this player when initalizing the input.
 	 * 
@@ -99,4 +106,11 @@ protected:
 
 	// True if movement input enabled (by default)
 	bool bMovementInputEnabled;
+	
+public:
+	// True when should listen for ability queue
+	bool bListenForAbilityQueue;
+	
+	// Delta time for ability queue system
+	double AbilityQueueDeltaTime;
 };
