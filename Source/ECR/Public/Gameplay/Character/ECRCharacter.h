@@ -70,6 +70,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "ECR|Character")
 	UECRAbilitySystemComponent* GetECRAbilitySystemComponent() const;
+	
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	virtual void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override;

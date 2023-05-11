@@ -12,7 +12,7 @@
 class UECRAbilitySystemComponent;
 class AECRPlayerController;
 class AECRCharacter;
-class UECRHeroComponent;
+class UECRPawnControlComponent;
 class UECRCameraMode;
 class UECRAbilityCost;
 class IECRAbilitySourceInterface;
@@ -102,7 +102,7 @@ public:
 	AECRCharacter* GetECRCharacterFromActorInfo() const;
 
 	UFUNCTION(BlueprintCallable, Category = "ECR|Ability")
-	UECRHeroComponent* GetHeroComponentFromActorInfo() const;
+	UECRPawnControlComponent* GetHeroComponentFromActorInfo() const;
 
 	EECRAbilityActivationPolicy GetActivationPolicy() const { return ActivationPolicy; }
 	EECRAbilityActivationGroup GetActivationGroup() const { return ActivationGroup; }
@@ -157,6 +157,7 @@ protected:
 	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
 	                             const FGameplayAbilityActivationInfo ActivationInfo,
 	                             const FGameplayEventData* TriggerEventData) override;
+
 	virtual void EndAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
 	                        const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateEndAbility,
 	                        bool bWasCancelled) override;
@@ -199,7 +200,10 @@ protected:
 	void OnCharacterPartsChanged(UECRPawnComponent_CharacterParts* ComponentWithChangedParts);
 
 	UECRPawnComponent_CharacterParts* GetPawnCustomizationComponent() const;
-protected:
+	
+	/** Check for ability queue on ASC, if need to activate any queued ability */
+	void CheckAbilityQueue(const FGameplayAbilityActorInfo* ActorInfo) const;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Animation")
 	TMap<FName, FECRAnimMontageSelectionSet> AbilityMontageSelection;
 

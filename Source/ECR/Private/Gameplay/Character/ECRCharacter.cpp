@@ -285,6 +285,10 @@ void AECRCharacter::InitializeGameplayTags()
 			}
 		}
 
+		// Two blocking movement modes
+		ECRASC->SetLooseGameplayTagCount(GameplayTags.Movement_Mode_Falling_Standard, 0);
+		ECRASC->SetLooseGameplayTagCount(GameplayTags.Movement_Mode_Falling_JumpPack, 0);
+
 		UECRCharacterMovementComponent* ECRMoveComp = CastChecked<UECRCharacterMovementComponent>(
 			GetCharacterMovement());
 		SetMovementModeTag(ECRMoveComp->MovementMode, ECRMoveComp->CustomMovementMode, true);

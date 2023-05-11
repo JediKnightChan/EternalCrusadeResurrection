@@ -51,6 +51,10 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddTag(InputTag_Crouch, "InputTag.Crouch", "Crouch input.");
 	AddTag(InputTag_AutoRun, "InputTag.AutoRun", "Auto-run input.");
 
+	AddTag(InputTag_Vehicle_Throttle, "InputTag.Vehicle.Throttle", "Throttle input.");
+	AddTag(InputTag_Vehicle_Steer, "InputTag.Vehicle.Steer", "Steer input.");
+	AddTag(InputTag_Vehicle_Brake, "InputTag.Vehicle.Brake", "Brake input.");
+
 	AddTag(GameplayEvent_Death, "GameplayEvent.Death",
 	       "Event that fires on death. This event only fires on the server.");
 

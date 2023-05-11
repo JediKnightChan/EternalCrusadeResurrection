@@ -105,4 +105,16 @@ protected:
 
 	// Number of abilities running in each activation group.
 	int32 ActivationGroupCounts[(uint8)EECRAbilityActivationGroup::MAX];
+	
+public:
+	// Ability Queue System
+	
+	// Latest input tag received
+	FGameplayTag AbilityQueueSystemLastInputTag;
+	
+	// Time when received
+	double AbilityQueueSystemLastInputTagTime;
+	
+	// Delta time
+	double AbilityQueueSystemDeltaTime;
 };
