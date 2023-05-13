@@ -74,7 +74,7 @@ public:
 	void RemoveAllCharacterParts();
 
 	// Sets additional cosmetic tags that will be considered for montage selection, etc.
-	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category=Cosmetics)
+	UFUNCTION(BlueprintCallable, Category=Cosmetics)
 	void SetAdditionalCosmeticTags(const FGameplayTagContainer NewTags);
 protected:
 	UPROPERTY(EditAnywhere, Category=Cosmetics)
