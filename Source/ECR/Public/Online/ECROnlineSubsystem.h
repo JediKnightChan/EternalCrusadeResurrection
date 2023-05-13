@@ -150,7 +150,7 @@ public:
 
 	/** Login user via Device ID */
 	UFUNCTION(BlueprintCallable)
-	void LoginViaDevice(FString PlayerName);
+	void LoginPersistent(FString PlayerName);
 
 	/** Login user via DevTool */
 	UFUNCTION(BlueprintCallable)
