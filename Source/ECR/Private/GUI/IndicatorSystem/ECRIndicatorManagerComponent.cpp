@@ -23,7 +23,7 @@ UECRIndicatorManagerComponent::UECRIndicatorManagerComponent(const FObjectInitia
 void UECRIndicatorManagerComponent::AddIndicator(UIndicatorDescriptor* IndicatorDescriptor)
 {
 	IndicatorDescriptor->SetIndicatorManagerComponent(this);
-	OnIndicatorAdded(IndicatorDescriptor);
+	OnIndicatorAdded.Broadcast(IndicatorDescriptor);
 	Indicators.Add(IndicatorDescriptor);
 }
 
@@ -33,7 +33,7 @@ void UECRIndicatorManagerComponent::RemoveIndicator(UIndicatorDescriptor* Indica
 	{
 		ensure(IndicatorDescriptor->GetIndicatorManagerComponent() == this);
 	
-		OnIndicatorRemoved(IndicatorDescriptor);
+		OnIndicatorRemoved.Broadcast(IndicatorDescriptor);
 		Indicators.Remove(IndicatorDescriptor);
 	}
 }
