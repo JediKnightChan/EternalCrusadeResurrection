@@ -28,6 +28,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Indicator)
 	void RemoveIndicator(UIndicatorDescriptor* IndicatorDescriptor);
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnNonDefaultHandledIndicatorAdded(UIndicatorDescriptor* IndicatorDescriptor);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnNonDefaultHandledIndicatorRemoved(UIndicatorDescriptor* IndicatorDescriptor);
+	
 	DECLARE_EVENT_OneParam(UECRIndicatorManagerComponent, FIndicatorEvent, UIndicatorDescriptor* Descriptor)
 	FIndicatorEvent OnIndicatorAdded;
 	FIndicatorEvent OnIndicatorRemoved;
