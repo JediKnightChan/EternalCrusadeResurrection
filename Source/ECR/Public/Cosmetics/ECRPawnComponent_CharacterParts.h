@@ -163,7 +163,7 @@ public:
 
 	void BroadcastChanged();
 
-	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
+	UFUNCTION(BlueprintCallable)
 	void SetAdditionalCosmeticTags(const FGameplayTagContainer NewTags);
 
 public:

@@ -57,6 +57,7 @@ void UECRGameplayAbility_Interact::UpdateInteractions(const TArray<FInteractionO
 							: InteractionOption.InteractionWidgetClass;
 
 					UIndicatorDescriptor* Indicator = NewObject<UIndicatorDescriptor>();
+					Indicator->SetWantsNonDefaultHandling(true);
 					Indicator->SetCategory(TAG_Indicator_Category_Interaction);
 					Indicator->SetDataObject(InteractableTargetActor);
 					Indicator->SetSceneComponent(InteractableTargetActor->GetRootComponent());

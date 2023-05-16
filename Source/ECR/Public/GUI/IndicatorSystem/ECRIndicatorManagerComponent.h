@@ -29,10 +29,14 @@ public:
 	void RemoveIndicator(UIndicatorDescriptor* IndicatorDescriptor);
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnIndicatorAdded(UIndicatorDescriptor* IndicatorDescriptor);
+	void OnNonDefaultHandledIndicatorAdded(UIndicatorDescriptor* IndicatorDescriptor);
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnIndicatorRemoved(UIndicatorDescriptor* IndicatorDescriptor);
+	void OnNonDefaultHandledIndicatorRemoved(UIndicatorDescriptor* IndicatorDescriptor);
+	
+	DECLARE_EVENT_OneParam(UECRIndicatorManagerComponent, FIndicatorEvent, UIndicatorDescriptor* Descriptor)
+	FIndicatorEvent OnIndicatorAdded;
+	FIndicatorEvent OnIndicatorRemoved;
 
 	const TArray<UIndicatorDescriptor*>& GetIndicators() const { return Indicators; }
 

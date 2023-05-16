@@ -43,6 +43,7 @@ class ECR_API UIndicatorDescriptor : public UObject
 public:
 	UIndicatorDescriptor()
 	{
+		bWantNonDefaultHandling = false;
 	}
 
 public:
@@ -80,6 +81,15 @@ public:
 	void SetCategory(FGameplayTag NewCategory)
 	{
 		Category = NewCategory;
+	}
+
+	UFUNCTION(BlueprintCallable)
+	bool GetWantsNonDefaultHandling() const { return bWantNonDefaultHandling; }
+	
+	UFUNCTION(BlueprintCallable)
+	void SetWantsNonDefaultHandling(const bool bNewWantNonDefaultHandling)
+	{
+		bWantNonDefaultHandling = bNewWantNonDefaultHandling;
 	}
 
 public:
@@ -245,6 +255,9 @@ private:
 
 private:
 	friend class SActorCanvas;
+
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	bool bWantNonDefaultHandling;
 
 	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	FGameplayTag Category;
