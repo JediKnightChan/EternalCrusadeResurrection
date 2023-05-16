@@ -20,6 +20,13 @@ class ECR_API UECRCharacterHealthComponent : public UECRHealthComponent
 	GENERATED_BODY()
 
 public:
+	// Returns the health component if one exists on the specified actor.
+	UFUNCTION(BlueprintPure, Category = "ECR|Health")
+	static UECRCharacterHealthComponent* FindCharacterHealthComponent(const AActor* Actor)
+	{
+		return (Actor ? Actor->FindComponentByClass<UECRCharacterHealthComponent>() : nullptr);
+	}
+
 	// Initialize the component using an ability system component.
 	virtual void InitializeWithAbilitySystem(UECRAbilitySystemComponent* InASC) override;
 
@@ -130,6 +137,7 @@ protected:
 	virtual void HandleMaxEvasionStaminaChanged(const FOnAttributeChangeData& ChangeData);
 
 	virtual float GetDamageToKill() override;
+
 protected:
 	// Health set used by this component. Duplicates HealthSet.
 	UPROPERTY()
