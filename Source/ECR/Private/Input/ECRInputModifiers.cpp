@@ -168,6 +168,25 @@ FInputActionValue UECRInputModifierGamepadSensitivity::ModifyRaw_Implementation(
 }
 
 //////////////////////////////////////////////////////////////////////
+// UECRInputModifierMouseSensitivity
+
+FInputActionValue UECRInputModifierMouseSensitivity::ModifyRaw_Implementation(const UEnhancedPlayerInput* PlayerInput,
+	FInputActionValue CurrentValue, float DeltaTime)
+{
+	// You can't scale a boolean action type
+	UECRLocalPlayer* LocalPlayer = ECRInputModifiersHelpers::GetLocalPlayer(PlayerInput);
+	if (CurrentValue.GetValueType() == EInputActionValueType::Boolean || !LocalPlayer)
+	{
+		return CurrentValue;
+	}
+	
+	UECRSettingsShared* Settings = LocalPlayer->GetSharedSettings();
+	ensure(Settings);
+	
+	return CurrentValue.Get<FVector>() * Settings->GetMouseSensitivity();
+}
+
+//////////////////////////////////////////////////////////////////////
 // UECRInputModifierAimInversion
 
 FInputActionValue UECRInputModifierAimInversion::ModifyRaw_Implementation(const UEnhancedPlayerInput* PlayerInput, FInputActionValue CurrentValue, float DeltaTime)

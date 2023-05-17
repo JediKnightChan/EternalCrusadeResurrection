@@ -6,6 +6,7 @@
 class UEnhancedPlayerInput;
 class UECRAimSensitivityData;
 
+
 /** 
 *  Scales input basedon a double property in the SharedUserSettings
 */
@@ -43,6 +44,7 @@ protected:
 	TArray<const FProperty*> PropertyCache;
 };
 
+
 /** Represents which stick that this deadzone is for, either the move or the look stick */
 UENUM()
 enum class EDeadzoneStick : uint8
@@ -53,6 +55,7 @@ enum class EDeadzoneStick : uint8
 	/** Deadzone for the looking stick */
 	LookStick = 1,
 };
+
 
 /**
  * This is a deadzone input modifier that will have it's thresholds driven by what is in the ECR Shared game settings. 
@@ -83,6 +86,7 @@ protected:
 	virtual FLinearColor GetVisualizationColor_Implementation(FInputActionValue SampleValue, FInputActionValue FinalValue) const override;
 };
 
+
 /** The type of targeting sensitity that should be  */
 UENUM()
 enum class EECRTargetingType : uint8
@@ -93,6 +97,7 @@ enum class EECRTargetingType : uint8
 	/** The sensitivity that should be applied while Aiming Down Sights */
 	ADS = 1,
 };
+
 
 /** Applies a scalar modifier based on the current gamepad settings in ECR Shared game settings.  */
 UCLASS(NotBlueprintable, MinimalAPI, meta = (DisplayName = "ECR Gamepad Sensitivity"))
@@ -112,6 +117,18 @@ public:
 protected:
 	virtual FInputActionValue ModifyRaw_Implementation(const UEnhancedPlayerInput* PlayerInput, FInputActionValue CurrentValue, float DeltaTime) override;
 };
+
+
+/** Applies a scalar modifier based on the current mouse sensitivity settings in ECR Shared game settings.  */
+UCLASS(NotBlueprintable, MinimalAPI, meta = (DisplayName = "ECR Mouse Sensitivity"))
+class UECRInputModifierMouseSensitivity : public UInputModifier
+{
+	GENERATED_BODY()
+
+protected:
+	virtual FInputActionValue ModifyRaw_Implementation(const UEnhancedPlayerInput* PlayerInput, FInputActionValue CurrentValue, float DeltaTime) override;
+};
+
 
 /** Applies an inversion of axis values based on a setting in the ECR Shared game settings */
 UCLASS(NotBlueprintable, MinimalAPI, meta = (DisplayName = "ECR Aim Inversion Setting"))
