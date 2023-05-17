@@ -40,7 +40,7 @@ that may be useful for a wide range of games.
 - ECREquipmentManagerComponent is capable of hiding equipment by visibility channels (eg LeftHand, RightHand for
   two-handed weapon)
 - Gameplay Abilities can asynchronously load montages for different skeletons using cosmetic tags without having to
-  create multiple GA instances
+  create multiple ability instances for them
 - Advanced interaction system allows interaction options to be set by actors in blueprints, makes possible interactions
   via input tags and overriding input mappings
 - Advanced melee combat prediction system
