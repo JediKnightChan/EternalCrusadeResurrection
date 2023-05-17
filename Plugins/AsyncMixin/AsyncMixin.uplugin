@@ -1,0 +1,21 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "AsyncMixin",
+	"Description": "C++ utility class for managing asynchronous operations like loading.",
+	"Category": "UI",
+	"CreatedBy": "Epic Games, Inc.",
+	"CreatedByURL": "http://epicgames.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": false,
+	"Modules": [
+		{
+			"Name": "AsyncMixin",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

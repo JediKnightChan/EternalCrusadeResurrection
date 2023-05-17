@@ -409,25 +409,30 @@ void AECRCharacter::OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 
 	{
 		StartedFallingTime = GetWorld()->GetTimeSeconds();
 	}
-	else if (PrevMovementMode == MOVE_Falling)
+	else if (ECRMoveComp->MovementMode == MOVE_Walking)
 	{
-		float TimeFalling = GetWorld()->GetTimeSeconds() - StartedFallingTime;
-
-		// Sending gameplay event for possible fall damage
-		if (GetECRAbilitySystemComponent() != nullptr)
+		if (PrevMovementMode == MOVE_Falling)
 		{
-			FGameplayEventData Payload;
-			Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_Landed;
-			Payload.Target = this;
-			Payload.EventMagnitude = TimeFalling;
+			if (GetECRAbilitySystemComponent())
+			{
+				const float TimeFalling = GetWorld()->GetTimeSeconds() - StartedFallingTime;
 
-			UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
-				this, FECRGameplayTags::Get().GameplayEvent_Landed, Payload);
+				// Sending gameplay event for landing
+				FGameplayEventData Payload;
+				Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_Landed;
+				Payload.Target = this;
+				Payload.EventMagnitude = TimeFalling;
+
+				UE_LOG(LogTemp, Warning, TEXT("sending landed"))
+				UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
+					this, FECRGameplayTags::Get().GameplayEvent_Landed, Payload);
+			}
 		}
 	}
-	// Sending gameplay event for possible interruption of some abilities
-	if (GetECRAbilitySystemComponent() != nullptr)
+
+	if (GetECRAbilitySystemComponent())
 	{
+		// Sending gameplay event for possible interruption of some abilities
 		FGameplayEventData Payload;
 		Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_MovementModeChanged;
 		Payload.Target = this;
@@ -464,12 +469,14 @@ void AECRCharacter::SetMovementModeTag(EMovementMode MovementMode, uint8 CustomM
 				{
 					ECRASC->SetLooseGameplayTagCount(GameplayTags.Movement_Mode_Falling_Standard, 0);
 					ECRASC->SetLooseGameplayTagCount(GameplayTags.Movement_Mode_Falling_JumpPack, 0);
-				} else
+				}
+				else
 				{
 					if (ECRASC->HasMatchingGameplayTag(GameplayTags.Status_JumpFlying))
 					{
 						ECRASC->SetLooseGameplayTagCount(GameplayTags.Movement_Mode_Falling_JumpPack, 1);
-					} else
+					}
+					else
 					{
 						ECRASC->SetLooseGameplayTagCount(GameplayTags.Movement_Mode_Falling_Standard, 1);
 					}

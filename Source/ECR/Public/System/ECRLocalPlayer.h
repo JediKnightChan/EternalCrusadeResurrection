@@ -14,7 +14,7 @@ class UInputMappingContext;
 /**
  * UECRLocalPlayer
  */
-UCLASS()
+UCLASS(BlueprintType)
 class ECR_API UECRLocalPlayer : public UCommonLocalPlayer
 {
 	GENERATED_BODY()
@@ -27,12 +27,15 @@ public:
 	//~End of UObject interface
 
 public:
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	UECRSettingsLocal* GetLocalSettings() const;
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	UECRSettingsShared* GetSharedSettings() const;
 
+	UFUNCTION(BlueprintCallable)
+	void ResetSharedSettings();
+	
 protected:
 	void OnAudioOutputDeviceChanged(const FString& InAudioOutputDeviceId);
 

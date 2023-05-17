@@ -36,6 +36,11 @@ UECRSettingsShared* UECRLocalPlayer::GetSharedSettings() const
 	return SharedSettings;
 }
 
+void UECRLocalPlayer::ResetSharedSettings()
+{
+	SharedSettings = nullptr;
+}
+
 
 void UECRLocalPlayer::OnAudioOutputDeviceChanged(const FString& InAudioOutputDeviceId)
 {

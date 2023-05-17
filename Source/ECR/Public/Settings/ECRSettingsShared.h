@@ -202,39 +202,30 @@ private:
 	////////////////////////////////////////////////////////
 	// Gamepad Sensitivity
 public:
-	UFUNCTION()
-	double GetMouseSensitivityX() const { return MouseSensitivityX; }
-	UFUNCTION()
-	void SetMouseSensitivityX(double NewValue) { ChangeValueAndDirty(MouseSensitivityX, NewValue); ApplyInputSensitivity(); }
+	UFUNCTION(BlueprintCallable)
+	double GetMouseSensitivity() const { return MouseSensitivity; }
+	UFUNCTION(BlueprintCallable)
+	void SetMouseSensitivity(double NewValue) { ChangeValueAndDirty(MouseSensitivity, NewValue); ApplyInputSensitivity(); }
 
-	UFUNCTION()
-	double GetMouseSensitivityY() const { return MouseSensitivityY; }
-	UFUNCTION()
-	void SetMouseSensitivityY(double NewValue) { ChangeValueAndDirty(MouseSensitivityY, NewValue); ApplyInputSensitivity(); }
-
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	double GetTargetingMultiplier() const { return TargetingMultiplier; }
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void SetTargetingMultiplier(double NewValue) { ChangeValueAndDirty(TargetingMultiplier, NewValue); ApplyInputSensitivity(); }
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	bool GetInvertVerticalAxis() const { return bInvertVerticalAxis; }
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void SetInvertVerticalAxis(bool NewValue) { ChangeValueAndDirty(bInvertVerticalAxis, NewValue); ApplyInputSensitivity(); }
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	bool GetInvertHorizontalAxis() const { return bInvertHorizontalAxis; }
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void SetInvertHorizontalAxis(bool NewValue) { ChangeValueAndDirty(bInvertHorizontalAxis, NewValue); ApplyInputSensitivity(); }
 	
 private:
-	/** Holds the mouse horizontal sensitivity */
+	/** Holds the mouse sensitivity */
 	UPROPERTY()
-	double MouseSensitivityX = 1.0;
-
-	/** Holds the mouse vertical sensitivity */
-	UPROPERTY()
-	double MouseSensitivityY = 1.0;
+	double MouseSensitivity = 1.0;
 
 	/** Multiplier applied while Aiming down sights. */
 	UPROPERTY()

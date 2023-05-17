@@ -18,6 +18,7 @@ public class ECR : ModuleRules
 			"ModularGameplay", 
 			"ModularGameplayActors", 
 			"Niagara", 
+			"AsyncMixin",
 			"OnlineSubsystem", 
 			"OnlineSubsystemEOS", 
 			"OnlineSubsystemUtils", 

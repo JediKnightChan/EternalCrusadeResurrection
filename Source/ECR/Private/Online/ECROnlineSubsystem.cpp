@@ -63,10 +63,10 @@ void UECROnlineSubsystem::LoginViaEpic(const FString PlayerName)
 }
 
 
-void UECROnlineSubsystem::LoginViaDevice(const FString PlayerName)
+void UECROnlineSubsystem::LoginPersistent(const FString PlayerName)
 {
 	// ReSharper disable once StringLiteralTypo
-	Login(PlayerName, "persistentauth");
+	Login(PlayerName, "persistentauth", "", "");
 }
 
 void UECROnlineSubsystem::LoginViaDevTool(const FString PlayerName, const FString Address, const FString CredName)
