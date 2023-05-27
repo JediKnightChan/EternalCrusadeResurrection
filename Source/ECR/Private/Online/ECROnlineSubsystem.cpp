@@ -11,6 +11,7 @@
 
 
 #define SETTING_GAME_MISSION FName(TEXT("GAMEMISSION"))
+#define SETTING_REGION FName(TEXT("REGION"))
 #define SETTING_FACTION_PREFIX FName(TEXT("FACTION_"))
 #define SETTING_FACTIONS FName(TEXT("FACTIONS"))
 #define SEARCH_USER_DISPLAY_NAME FName(TEXT("USERDISPLAYNAME"))
@@ -38,6 +39,9 @@ FECRMatchResult::FECRMatchResult(const FBlueprintSessionResult BlueprintSessionI
 
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_GAMEMODE, StringBuffer);
 	Mode = FName{*StringBuffer};
+
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_REGION, StringBuffer);
+	Region = FName{*StringBuffer};
 
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_FACTIONS, FactionsString);
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SEARCH_USER_DISPLAY_NAME, UserDisplayName);
@@ -143,7 +147,7 @@ FString UECROnlineSubsystem::GetMatchFactionString(
 
 
 void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName, const FString MapPath,
-                                      const FName MissionName,
+                                      const FName MissionName, const FName RegionName,
                                       const TArray<FFactionAlliance> Alliances,
                                       const TMap<FName, int32> FactionNamesToCapacities,
                                       const TMap<FName, FText> FactionNamesToShortTexts)
@@ -194,11 +198,13 @@ void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName,
 			SessionSettings.Set(SEARCH_USER_DISPLAY_NAME, UserDisplayName,
 			                    EOnlineDataAdvertisementType::ViaOnlineService);
 
+			SessionSettings.Set(SETTING_REGION, RegionName.ToString(), EOnlineDataAdvertisementType::ViaOnlineService);
+
 			/** Custom settings end */
 
 			// Saving match creation settings for use in delegate and after map load
 			MatchCreationSettings = FECRMatchSettings{
-				ModeName, MapName, MapPath, MissionName, Alliances, FactionNamesToCapacities
+				ModeName, MapName, MapPath, MissionName, RegionName, Alliances, FactionNamesToCapacities
 			};
 
 			OnlineSessionPtr->OnCreateSessionCompleteDelegates.AddUObject(
@@ -209,7 +215,8 @@ void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName,
 }
 
 
-void UECROnlineSubsystem::FindMatches(const FString MatchType, const FString MatchMode, const FString MapName)
+void UECROnlineSubsystem::FindMatches(const FString MatchType, const FString MatchMode, const FString MapName, const FString
+                                      RegionName)
 {
 	if (OnlineSubsystem)
 	{
@@ -228,6 +235,9 @@ void UECROnlineSubsystem::FindMatches(const FString MatchType, const FString Mat
 			if (MapName != "")
 				SessionSearchSettings->QuerySettings.Set(
 					SETTING_MAPNAME, MapName, EOnlineComparisonOp::Equals);
+			if (RegionName != "")
+				SessionSearchSettings->QuerySettings.Set(
+					SETTING_REGION, RegionName, EOnlineComparisonOp::Equals);
 
 			OnlineSessionPtr->OnFindSessionsCompleteDelegates.AddUObject(
 				this, &UECROnlineSubsystem::OnFindMatchesComplete);
