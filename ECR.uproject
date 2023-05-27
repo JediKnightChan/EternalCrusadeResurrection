@@ -94,6 +94,10 @@
 		{
 			"Name": "HTTPRequests",
 			"Enabled": true
+		},
+		{
+			"Name": "JsonBlueprintUtilities",
+			"Enabled": true
 		}
 	]
 }

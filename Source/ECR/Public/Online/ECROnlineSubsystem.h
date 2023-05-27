@@ -47,6 +47,9 @@ struct FECRMatchResult
 	FName Mission;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FName Region;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FString FactionsString;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -65,11 +68,13 @@ struct FECRMatchSettings
 
 	// Real constructor
 	FECRMatchSettings(const FName& GameMode, const FName& MapName, const FString& MapPath, const FName& GameMission,
-	                  const TArray<FFactionAlliance>& Alliances, const TMap<FName, int32>& FactionNamesToCapacities)
+	                  const FName& Region, const TArray<FFactionAlliance>& Alliances,
+	                  const TMap<FName, int32>& FactionNamesToCapacities)
 		: GameMode(GameMode),
 		  MapName(MapName),
 		  MapPath(MapPath),
 		  GameMission(GameMission),
+		  Region(Region),
 		  Alliances(Alliances),
 		  FactionNamesToCapacities(FactionNamesToCapacities)
 	{
@@ -86,6 +91,9 @@ struct FECRMatchSettings
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FName GameMission;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FName Region;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TArray<FFactionAlliance> Alliances;
@@ -123,6 +131,7 @@ class ECR_API UECROnlineSubsystem : public UGameInstanceSubsystem
 	/** Get factions string (like "SM, Eldar vs CSM") **/
 	static FString GetMatchFactionString(const TArray<FFactionAlliance>& FactionAlliances,
 	                                     const TMap<FName, FText>& FactionNamesToShortTexts);
+
 protected:
 	/** Login via selected login type */
 	void Login(FString PlayerName, FString LoginType, FString Id = "", FString Token = "");
@@ -141,6 +150,7 @@ protected:
 
 	/** When OnDestroySessionComplete fires, clear other delegates */
 	void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
+
 public:
 	UECROnlineSubsystem();
 
@@ -160,13 +170,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void CreateMatch(const FName ModeName,
 	                 const FName MapName, const FString MapPath, const FName MissionName,
-	                 const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
+	                 const FName RegionName, const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
 	                 FactionNamesToCapacities, const TMap<FName, FText> FactionNamesToShortTexts);
 
 	/** Create match, by player (P2P) or dedicated server */
 	UFUNCTION(BlueprintCallable)
 	void FindMatches(const FString MatchType = "",
-	                 const FString MatchMode = "", const FString MapName = "");
+	                 const FString MatchMode = "", const FString MapName = "", const FString RegionName = "");
 
 	/** Join match */
 	UFUNCTION(BlueprintCallable)
