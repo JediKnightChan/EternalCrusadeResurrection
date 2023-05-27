@@ -21,6 +21,7 @@ that may be useful for a wide range of games.
   data, maps data, materials, references to materials within meshes)
 - Enhanced Input Subsystem is used for input (borrowed from Lyra)
 - 3rd person multiplayer shooter and melee combat system based on Lyra's GAS, including combat vehicles
+- Additional plugins for: HTTP requests
 
 ### GAS differences from Lyra (5.0)
 
