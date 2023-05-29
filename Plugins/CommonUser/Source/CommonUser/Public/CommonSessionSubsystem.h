@@ -70,7 +70,7 @@ public:
 
 	/** Maximum players allowed per gameplay session */
 	UPROPERTY(BlueprintReadWrite, Category=Session)
-	int32 MaxPlayerCount = 16;
+	int32 MaxPlayerCount = 200;
 
 public:
 	/** Returns the maximum players that should actually be used, could be overridden in child classes */
