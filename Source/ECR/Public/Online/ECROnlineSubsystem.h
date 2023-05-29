@@ -22,6 +22,7 @@ struct FFactionAlliance
 };
 
 
+/** Data about match that will be available in match search */
 USTRUCT(BlueprintType)
 // ReSharper disable once CppUE4CodingStandardNamingViolationWarning
 struct FECRMatchResult
@@ -50,6 +51,12 @@ struct FECRMatchResult
 	FName Region;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int32 CurrentPlayerAmount;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	double MatchStartedTimestamp;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FString FactionsString;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -57,6 +64,7 @@ struct FECRMatchResult
 };
 
 
+/** Data about match that will be saved in game instance to be available after match creation */
 USTRUCT(BlueprintType)
 // ReSharper disable once CppUE4CodingStandardNamingViolationWarning
 struct FECRMatchSettings
@@ -67,18 +75,28 @@ struct FECRMatchSettings
 	FECRMatchSettings();
 
 	// Real constructor
-	FECRMatchSettings(const FName& GameMode, const FName& MapName, const FString& MapPath, const FName& GameMission,
-	                  const FName& Region, const TArray<FFactionAlliance>& Alliances,
-	                  const TMap<FName, int32>& FactionNamesToCapacities)
-		: GameMode(GameMode),
+	FECRMatchSettings(const FString& GameVersion, const FName& GameMode, const FName& MapName, const FString& MapPath,
+	                  const FName& GameMission,
+	                  const FName& Region, const double TimeDelta, const TArray<FFactionAlliance>& Alliances,
+	                  const TMap<FName, int32>& FactionNamesToCapacities,
+	                  const TMap<FName, FText>& FactionNamesToShortTexts)
+		: GameVersion(GameVersion),
+		  GameMode(GameMode),
 		  MapName(MapName),
 		  MapPath(MapPath),
 		  GameMission(GameMission),
 		  Region(Region),
+		  TimeDelta(TimeDelta),
 		  Alliances(Alliances),
-		  FactionNamesToCapacities(FactionNamesToCapacities)
+		  FactionNamesToCapacities(FactionNamesToCapacities),
+		  FactionNamesToShortTexts(FactionNamesToShortTexts)
 	{
+		CurrentPlayerAmount = 1;
+		MatchStartedTime = 0.0f;
 	}
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString GameVersion;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FName GameMode;
@@ -96,10 +114,24 @@ struct FECRMatchSettings
 	FName Region;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	double TimeDelta;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TArray<FFactionAlliance> Alliances;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TMap<FName, int32> FactionNamesToCapacities;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TMap<FName, FText> FactionNamesToShortTexts;
+
+	// Updatable stats
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int32 CurrentPlayerAmount;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	double MatchStartedTime;
 };
 
 
@@ -151,6 +183,8 @@ protected:
 	/** When OnDestroySessionComplete fires, clear other delegates */
 	void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
 
+	FOnlineSessionSettings GetSessionSettings();
+
 public:
 	UECROnlineSubsystem();
 
@@ -168,19 +202,31 @@ public:
 
 	/** Create match, by player (P2P) */
 	UFUNCTION(BlueprintCallable)
-	void CreateMatch(const FName ModeName,
+	void CreateMatch(const FString GameVersion, const FName ModeName,
 	                 const FName MapName, const FString MapPath, const FName MissionName,
-	                 const FName RegionName, const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
+	                 const FName RegionName, const double TimeDelta, const TArray<FFactionAlliance> Alliances,
+	                 const TMap<FName, int32>
 	                 FactionNamesToCapacities, const TMap<FName, FText> FactionNamesToShortTexts);
 
 	/** Create match, by player (P2P) or dedicated server */
 	UFUNCTION(BlueprintCallable)
-	void FindMatches(const FString MatchType = "",
+	void FindMatches(const FString GameVersion = "", const FString MatchType = "",
 	                 const FString MatchMode = "", const FString MapName = "", const FString RegionName = "");
 
 	/** Join match */
 	UFUNCTION(BlueprintCallable)
 	void JoinMatch(FBlueprintSessionResult Session);
+
+	UFUNCTION(BlueprintCallable)
+	void UpdateSessionSettings();
+	
+	/** Update current player amount */
+	UFUNCTION(BlueprintCallable)
+	void UpdateSessionCurrentPlayerAmount(int32 NewPlayerAmount);
+
+	/** Update match started timestamp */
+	UFUNCTION(BlueprintCallable)
+	void UpdateSessionMatchStartedTimestamp(double NewTimestamp);
 
 	/** Leave match */
 	UFUNCTION(BlueprintCallable)

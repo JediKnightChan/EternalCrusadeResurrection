@@ -14,13 +14,18 @@
 #define SETTING_REGION FName(TEXT("REGION"))
 #define SETTING_FACTION_PREFIX FName(TEXT("FACTION_"))
 #define SETTING_FACTIONS FName(TEXT("FACTIONS"))
-#define SEARCH_USER_DISPLAY_NAME FName(TEXT("USERDISPLAYNAME"))
+#define SETTING_GAME_VERSION FName(TEXT("GAMEVERSION"))
+#define SETTING_CURRENT_PLAYER_AMOUNT FName(TEXT("CURRENTPLAYERAMOUNT"))
+#define SETTING_STARTED_TIME FName(TEXT("MATCHSTARTEDTIME"))
+#define SETTING_USER_DISPLAY_NAME FName(TEXT("USERDISPLAYNAME"))
 
 #define DEFAULT_SESSION_NAME FName(TEXT("DEFAULT_SESSION_NAME"))
 
 
 FECRMatchResult::FECRMatchResult()
 {
+	CurrentPlayerAmount = 0;
+	MatchStartedTimestamp = 0.0f;
 }
 
 
@@ -43,8 +48,10 @@ FECRMatchResult::FECRMatchResult(const FBlueprintSessionResult BlueprintSessionI
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_REGION, StringBuffer);
 	Region = FName{*StringBuffer};
 
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_CURRENT_PLAYER_AMOUNT, CurrentPlayerAmount);
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_STARTED_TIME, MatchStartedTimestamp);
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_FACTIONS, FactionsString);
-	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SEARCH_USER_DISPLAY_NAME, UserDisplayName);
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_USER_DISPLAY_NAME, UserDisplayName);
 }
 
 
@@ -146,8 +153,9 @@ FString UECROnlineSubsystem::GetMatchFactionString(
 }
 
 
-void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName, const FString MapPath,
-                                      const FName MissionName, const FName RegionName,
+void UECROnlineSubsystem::CreateMatch(const FString GameVersion, const FName ModeName, const FName MapName,
+                                      const FString MapPath, const FName MissionName,
+                                      const FName RegionName, const double TimeDelta,
                                       const TArray<FFactionAlliance> Alliances,
                                       const TMap<FName, int32> FactionNamesToCapacities,
                                       const TMap<FName, FText> FactionNamesToShortTexts)
@@ -163,50 +171,12 @@ void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName,
 	{
 		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
 		{
-			FOnlineSessionSettings SessionSettings;
-
-			TArray<int32> FactionCapacities;
-			FactionNamesToCapacities.GenerateValueArray(FactionCapacities);
-
-			SessionSettings.NumPublicConnections = Algo::Accumulate(FactionCapacities, 0);
-			SessionSettings.bIsDedicated = false;
-			SessionSettings.bIsLANMatch = false;
-			SessionSettings.bShouldAdvertise = true;
-			SessionSettings.bAllowJoinInProgress = true;
-			SessionSettings.bAllowJoinViaPresence = false;
-			SessionSettings.bUsesPresence = true;
-
-			/** Custom settings **/
-			SessionSettings.Set(SETTING_GAMEMODE, ModeName.ToString(), EOnlineDataAdvertisementType::ViaOnlineService);
-			SessionSettings.Set(SETTING_MAPNAME, MapName.ToString(), EOnlineDataAdvertisementType::ViaOnlineService);
-			SessionSettings.Set(SETTING_GAME_MISSION, MissionName.ToString(),
-			                    EOnlineDataAdvertisementType::ViaOnlineService);
-
-			// Set boolean flags for filtering by participating factions, set string flag for info about sides
-			for (auto [FactionNames, Strength] : Alliances)
-			{
-				for (FName FactionName : FactionNames)
-				{
-					SessionSettings.Set(FName{SETTING_FACTION_PREFIX.ToString() + FactionName.ToString()}, true,
-					                    EOnlineDataAdvertisementType::ViaOnlineService);
-				}
-			}
-
-			FString FactionsString = GetMatchFactionString(Alliances, FactionNamesToShortTexts);
-			SessionSettings.Set(SETTING_FACTIONS, FactionsString, EOnlineDataAdvertisementType::ViaOnlineService);
-
-			SessionSettings.Set(SEARCH_USER_DISPLAY_NAME, UserDisplayName,
-			                    EOnlineDataAdvertisementType::ViaOnlineService);
-
-			SessionSettings.Set(SETTING_REGION, RegionName.ToString(), EOnlineDataAdvertisementType::ViaOnlineService);
-
-			/** Custom settings end */
-
 			// Saving match creation settings for use in delegate and after map load
 			MatchCreationSettings = FECRMatchSettings{
-				ModeName, MapName, MapPath, MissionName, RegionName, Alliances, FactionNamesToCapacities
+				GameVersion, ModeName, MapName, MapPath, MissionName, RegionName, TimeDelta, Alliances,
+				FactionNamesToCapacities, FactionNamesToShortTexts
 			};
-
+			FOnlineSessionSettings SessionSettings = GetSessionSettings();
 			OnlineSessionPtr->OnCreateSessionCompleteDelegates.AddUObject(
 				this, &UECROnlineSubsystem::OnCreateMatchComplete);
 			OnlineSessionPtr->CreateSession(0, DEFAULT_SESSION_NAME, SessionSettings);
@@ -215,7 +185,8 @@ void UECROnlineSubsystem::CreateMatch(const FName ModeName, const FName MapName,
 }
 
 
-void UECROnlineSubsystem::FindMatches(const FString MatchType, const FString MatchMode, const FString MapName, const FString
+void UECROnlineSubsystem::FindMatches(const FString GameVersion, const FString MatchType, const FString MatchMode,
+                                      const FString MapName, const FString
                                       RegionName)
 {
 	if (OnlineSubsystem)
@@ -238,6 +209,9 @@ void UECROnlineSubsystem::FindMatches(const FString MatchType, const FString Mat
 			if (RegionName != "")
 				SessionSearchSettings->QuerySettings.Set(
 					SETTING_REGION, RegionName, EOnlineComparisonOp::Equals);
+			if (GameVersion != "")
+				SessionSearchSettings->QuerySettings.Set(
+					SETTING_GAME_VERSION, GameVersion, EOnlineComparisonOp::Equals);
 
 			OnlineSessionPtr->OnFindSessionsCompleteDelegates.AddUObject(
 				this, &UECROnlineSubsystem::OnFindMatchesComplete);
@@ -262,6 +236,31 @@ void UECROnlineSubsystem::JoinMatch(const FBlueprintSessionResult Session)
 			OnlineSessionPtr->JoinSession(0, DEFAULT_SESSION_NAME, Session.OnlineResult);
 		}
 	}
+}
+
+
+void UECROnlineSubsystem::UpdateSessionSettings()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
+		{
+			FOnlineSessionSettings SessionSettings = GetSessionSettings();
+			OnlineSessionPtr->UpdateSession(DEFAULT_SESSION_NAME, SessionSettings, true);
+		}
+	}
+}
+
+void UECROnlineSubsystem::UpdateSessionCurrentPlayerAmount(const int32 NewPlayerAmount)
+{
+	MatchCreationSettings.CurrentPlayerAmount = NewPlayerAmount;
+	UpdateSessionSettings();
+}
+
+void UECROnlineSubsystem::UpdateSessionMatchStartedTimestamp(const double NewTimestamp)
+{
+	MatchCreationSettings.MatchStartedTime = NewTimestamp;
+	UpdateSessionSettings();
 }
 
 
@@ -389,6 +388,62 @@ void UECROnlineSubsystem::OnDestroySessionComplete(FName SessionName, bool bWasS
 			OnlineSessionPtr->ClearOnDestroySessionCompleteDelegates(this);
 		}
 	}
+}
+
+FOnlineSessionSettings UECROnlineSubsystem::GetSessionSettings()
+{
+	FOnlineSessionSettings SessionSettings;
+
+	TArray<int32> FactionCapacities;
+	MatchCreationSettings.FactionNamesToCapacities.GenerateValueArray(FactionCapacities);
+
+	SessionSettings.NumPublicConnections = Algo::Accumulate(FactionCapacities, 0);
+	SessionSettings.bIsDedicated = false;
+	SessionSettings.bIsLANMatch = false;
+	SessionSettings.bShouldAdvertise = true;
+	SessionSettings.bAllowJoinInProgress = true;
+	SessionSettings.bAllowJoinViaPresence = false;
+	SessionSettings.bUsesPresence = true;
+
+	/** Custom settings **/
+	SessionSettings.Set(SETTING_GAMEMODE, MatchCreationSettings.GameMode.ToString(),
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_MAPNAME, MatchCreationSettings.MapName.ToString(),
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_GAME_MISSION, MatchCreationSettings.GameMission.ToString(),
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_USER_DISPLAY_NAME, UserDisplayName,
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_GAME_VERSION, MatchCreationSettings.GameVersion,
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_REGION, MatchCreationSettings.Region.ToString(),
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
+
+	// Set boolean flags for filtering by participating factions, set string flag for info about sides
+	for (auto [FactionNames, Strength] : MatchCreationSettings.Alliances)
+	{
+		for (FName FactionName : FactionNames)
+		{
+			SessionSettings.Set(FName{SETTING_FACTION_PREFIX.ToString() + FactionName.ToString()}, true,
+			                    EOnlineDataAdvertisementType::ViaOnlineService);
+		}
+	}
+
+	FString FactionsString = GetMatchFactionString(MatchCreationSettings.Alliances,
+	                                               MatchCreationSettings.FactionNamesToShortTexts);
+	SessionSettings.Set(SETTING_FACTIONS, FactionsString, EOnlineDataAdvertisementType::ViaOnlineService);
+
+
+	// Real updatable values
+
+	SessionSettings.Set(SETTING_CURRENT_PLAYER_AMOUNT, MatchCreationSettings.CurrentPlayerAmount,
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_STARTED_TIME, MatchCreationSettings.MatchStartedTime,
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
+
+	/** Custom settings end */
+
+	return SessionSettings;
 }
 
 

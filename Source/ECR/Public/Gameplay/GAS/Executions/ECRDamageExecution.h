@@ -23,14 +23,4 @@ public:
 protected:
 	virtual void Execute_Implementation(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
 	                                    FGameplayEffectCustomExecutionOutput& OutExecutionOutput) const override;
-
-	void ApplyDamageToCharacter(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
-	                            FGameplayEffectCustomExecutionOutput& OutExecutionOutput,
-	                            const FAggregatorEvaluateParameters EvaluateParameters,
-	                            const float AttenuatedDamage) const;
-
-	void ApplyDamageToSimpleActor(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
-	                            FGameplayEffectCustomExecutionOutput& OutExecutionOutput,
-	                            const FAggregatorEvaluateParameters EvaluateParameters,
-	                            const float AttenuatedDamage) const;
 };
