@@ -50,8 +50,9 @@ struct FECRMatchResult
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FName Region;
 
+	/** For some reason getting int in EOS doesn't work */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	int32 CurrentPlayerAmount;
+	FString CurrentPlayerAmount;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	double MatchStartedTimestamp;

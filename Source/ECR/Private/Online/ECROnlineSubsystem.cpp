@@ -435,8 +435,8 @@ FOnlineSessionSettings UECROnlineSubsystem::GetSessionSettings()
 
 
 	// Real updatable values
-
-	SessionSettings.Set(SETTING_CURRENT_PLAYER_AMOUNT, MatchCreationSettings.CurrentPlayerAmount,
+	const FString PlayerAmountString = FString::FromInt(MatchCreationSettings.CurrentPlayerAmount);
+	SessionSettings.Set(SETTING_CURRENT_PLAYER_AMOUNT, PlayerAmountString,
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_STARTED_TIME, MatchCreationSettings.MatchStartedTime,
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
