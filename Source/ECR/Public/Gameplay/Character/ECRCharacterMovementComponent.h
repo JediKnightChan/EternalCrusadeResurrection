@@ -9,17 +9,6 @@
 
 ECR_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_MovementStopped);
 
-/**
- * EECRCustomMovementMode
- *
- * Custom movement modes for ECR
- */
-UENUM(BlueprintType)
-enum class EECRCustomMovementMode : uint8
-{
-	CustomFrozen,
-};
-
 
 /**
  * FECRCharacterGroundInfo

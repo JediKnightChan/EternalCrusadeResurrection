@@ -323,7 +323,7 @@ void UECROnlineSubsystem::OnFindMatchesComplete(const bool bWasSuccessful)
 		if (bWasSuccessful)
 		{
 			TArray<FECRMatchResult> SessionResults;
-			for (const FOnlineSessionSearchResult SessionResult : SessionSearchSettings->SearchResults)
+			for (const FOnlineSessionSearchResult& SessionResult : SessionSearchSettings->SearchResults)
 			{
 				SessionResults.Add(FECRMatchResult{FBlueprintSessionResult{SessionResult}});
 			}
