@@ -66,7 +66,6 @@ public:
 
 protected:
 	virtual void InitializeComponent() override;
-	virtual void PhysCustom(float deltaTime, int32 Iterations) override;
 protected:
 	// Cached ground info for the character.  Do not access this directly!  It's only updated when accessed via GetGroundInfo().
 	FECRCharacterGroundInfo CachedGroundInfo;
