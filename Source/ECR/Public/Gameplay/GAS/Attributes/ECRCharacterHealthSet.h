@@ -33,6 +33,10 @@ class ECR_API UECRCharacterHealthSet : public UECRHealthSet
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData MaxBleedingHealth;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_RootMotionScale,
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData RootMotionScale;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_WalkSpeed,
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData WalkSpeed;
@@ -93,8 +97,11 @@ protected:
 	void OnRep_MaxBleedingHealth(const FGameplayAttributeData& OldValue) const;
 
 	UFUNCTION()
+	void OnRep_RootMotionScale(const FGameplayAttributeData& OldValue) const;
+
+	UFUNCTION()
 	void OnRep_WalkSpeed(const FGameplayAttributeData& OldValue) const;
-	
+
 	UFUNCTION()
 	void OnRep_Stamina(const FGameplayAttributeData& OldValue) const;
 
@@ -118,6 +125,7 @@ public:
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxShield);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, BleedingHealth);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxBleedingHealth);
+	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, RootMotionScale);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, WalkSpeed);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, Stamina);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxStamina);

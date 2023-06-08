@@ -6,12 +6,14 @@
 #include "Net/UnrealNetwork.h"
 
 #define MAX_ALLOWED_WalkSpeed (2000.0f)
+#define MAX_ALLOWED_RootMotionScale (3.0f)
 
 UECRCharacterHealthSet::UECRCharacterHealthSet()
 	: Shield(100.0f),
 	  MaxShield(100.0f),
 	  BleedingHealth(100.0f),
 	  MaxBleedingHealth(100.0f),
+	  RootMotionScale(1.0f),
 	  WalkSpeed(600.0f),
 	  Stamina(100.0f),
 	  MaxStamina(100.0f),
@@ -29,6 +31,7 @@ void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxShield, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, BleedingHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxBleedingHealth, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, RootMotionScale, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, WalkSpeed, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Stamina, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxStamina, COND_None, REPNOTIFY_Always);
@@ -143,7 +146,7 @@ void UECRCharacterHealthSet::PostAttributeChange(const FGameplayAttribute& Attri
 {
 	// Make sure current health is not greater than the new max health.
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxHealthAttribute(),
-									 GetHealthAttribute(), GetHealth());
+	                                 GetHealthAttribute(), GetHealth());
 
 	// Make sure current shield is not greater than the new max shield.
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxShieldAttribute(),
@@ -197,8 +200,14 @@ void UECRCharacterHealthSet::ClampAttribute(const FGameplayAttribute& Attribute,
 		// Do not allow max bleeding health to drop below 1.
 		NewValue = FMath::Max(NewValue, 1.0f);
 	}
+	else if (Attribute == GetRootMotionScaleAttribute())
+	{
+		// Do not allow root motion scale to go negative or above max
+		NewValue = FMath::Clamp(NewValue, 0.0f, MAX_ALLOWED_RootMotionScale);
+	}
 	else if (Attribute == GetWalkSpeedAttribute())
 	{
+		// Do not allow walk speed to go negative or above max
 		NewValue = FMath::Clamp(NewValue, 0.0f, MAX_ALLOWED_WalkSpeed);
 	}
 	else if (Attribute == GetStaminaAttribute())
@@ -248,6 +257,12 @@ void UECRCharacterHealthSet::OnRep_MaxBleedingHealth(const FGameplayAttributeDat
 }
 
 
+void UECRCharacterHealthSet::OnRep_RootMotionScale(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, RootMotionScale, OldValue)
+}
+
+
 void UECRCharacterHealthSet::OnRep_WalkSpeed(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, WalkSpeed, OldValue)
@@ -265,10 +280,12 @@ void UECRCharacterHealthSet::OnRep_MaxStamina(const FGameplayAttributeData& OldV
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxStamina, OldValue)
 }
 
+
 void UECRCharacterHealthSet::OnRep_EvasionStamina(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, EvasionStamina, OldValue)
 }
+
 
 void UECRCharacterHealthSet::OnRep_MaxEvasionStamina(const FGameplayAttributeData& OldValue) const
 {

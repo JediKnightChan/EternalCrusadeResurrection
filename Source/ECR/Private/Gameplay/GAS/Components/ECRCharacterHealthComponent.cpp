@@ -29,6 +29,12 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 		return;
 	}
 
+	// Root motion scale
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
+		UECRCharacterHealthSet::GetRootMotionScaleAttribute()).AddUObject(
+		this, &ThisClass::HandleRootMotionScaleChanged);
+	ChangeCharacterRootMotionScale(CharacterHealthSet->GetRootMotionScale());
+
 	// Speed
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetWalkSpeedAttribute()).
 	                        AddUObject(this, &ThisClass::HandleWalkSpeedChanged);
@@ -161,6 +167,19 @@ void UECRCharacterHealthComponent::ClearGameplayTags()
 	Super::ClearGameplayTags();
 }
 
+
+void UECRCharacterHealthComponent::ChangeCharacterRootMotionScale(float NewScale)
+{
+	if (AActor* Actor = GetOwner())
+	{
+		if (ACharacter* Character = Cast<ACharacter>(Actor))
+		{
+			Character->SetAnimRootMotionTranslationScale(NewScale);
+		}
+	}
+}
+
+
 void UECRCharacterHealthComponent::ChangeCharacterSpeed(const float NewSpeed)
 {
 	if (AActor* Actor = GetOwner())
@@ -171,6 +190,12 @@ void UECRCharacterHealthComponent::ChangeCharacterSpeed(const float NewSpeed)
 			CharMoveComp->MaxWalkSpeed = NewSpeed;
 		}
 	}
+}
+
+void UECRCharacterHealthComponent::HandleRootMotionScaleChanged(const FOnAttributeChangeData& ChangeData)
+{
+	const float NewScale = ChangeData.NewValue;
+	ChangeCharacterRootMotionScale(NewScale);
 }
 
 void UECRCharacterHealthComponent::HandleWalkSpeedChanged(const FOnAttributeChangeData& ChangeData)
