@@ -18,7 +18,7 @@ struct FFactionAlliance
 	TArray<FName> FactionNames;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Strength;
+	int32 Strength = 0;
 };
 
 

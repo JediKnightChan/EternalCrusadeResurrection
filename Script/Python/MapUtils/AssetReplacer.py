@@ -1,3 +1,5 @@
+import re
+
 import unreal
 
 """ Should be used with internal UE Python API
@@ -6,11 +8,18 @@ Replace all actors of given asset in the level by another asset, saving coords, 
 
 level_actors = unreal.EditorLevelLibrary.get_all_level_actors()
 
-asset_to_replace_from = "/Game/PROPS/Ambiance/" \
-                        "SM_PROP_AMB_EnergyCell_01_a.SM_PROP_AMB_EnergyCell_01_a"
-asset_to_replace_to = "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/" \
-                      "B_WA_VaultOver_Low_AmbEnergyCell_1A.B_WA_VaultOver_Low_AmbEnergyCell_1A"
+
+def get_path_from_ref(string):
+    path = re.search(r"'(?P<path>.+)'", string).group("path")
+    return path
+
+
+asset_to_replace_from = "/Script/Engine.StaticMesh'/Game/PROPS/Gameplay/SM_PROP_Cover_9x3x3_Promethium_Tank_01.SM_PROP_Cover_9x3x3_Promethium_Tank_01'"
+asset_to_replace_to = "/Script/Engine.Blueprint'/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Cover_9x3x3_Promethium_Tank_01.B_WA_VaultOn_High_Cover_9x3x3_Promethium_Tank_01'"
 actors_to_replace = []
+
+asset_to_replace_from = get_path_from_ref(asset_to_replace_from)
+asset_to_replace_to = get_path_from_ref(asset_to_replace_to)
 
 for actor in level_actors:
     if (isinstance(actor, unreal.StaticMeshActor)):
