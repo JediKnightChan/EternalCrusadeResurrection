@@ -160,11 +160,19 @@ void UECROnlineSubsystem::CreateMatch(const FString GameVersion, const FName Mod
                                       const TMap<FName, int32> FactionNamesToCapacities,
                                       const TMap<FName, FText> FactionNamesToShortTexts)
 {
-	// Check if logged in
-	if (!bIsLoggedIn)
+	
+
+	if (GetGameInstance()->IsDedicatedServerInstance())
 	{
-		UE_LOG(LogECR, Error, TEXT("Attempt to create match, but not logged in!"));
-		return;
+		UserDisplayName = "SERVER";
+	} else
+	{
+		// Check if logged in
+		if (!bIsLoggedIn)
+		{
+			UE_LOG(LogECR, Error, TEXT("Attempt to create match, but not logged in!"));
+			return;
+		}
 	}
 
 	if (OnlineSubsystem)
@@ -396,14 +404,15 @@ FOnlineSessionSettings UECROnlineSubsystem::GetSessionSettings()
 
 	TArray<int32> FactionCapacities;
 	MatchCreationSettings.FactionNamesToCapacities.GenerateValueArray(FactionCapacities);
-
+    
+    bool bIsDedicatedServer = GetGameInstance()->IsDedicatedServerInstance();
 	SessionSettings.NumPublicConnections = Algo::Accumulate(FactionCapacities, 0);
-	SessionSettings.bIsDedicated = false;
+	SessionSettings.bIsDedicated = bIsDedicatedServer;
 	SessionSettings.bIsLANMatch = false;
 	SessionSettings.bShouldAdvertise = true;
 	SessionSettings.bAllowJoinInProgress = true;
 	SessionSettings.bAllowJoinViaPresence = false;
-	SessionSettings.bUsesPresence = true;
+	SessionSettings.bUsesPresence = !bIsDedicatedServer;
 
 	/** Custom settings **/
 	SessionSettings.Set(SETTING_GAMEMODE, MatchCreationSettings.GameMode.ToString(),

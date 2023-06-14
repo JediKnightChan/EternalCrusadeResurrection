@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayEffect.h"
 #include "Components/GameFrameworkComponent.h"
 #include "ECRHealthComponent.generated.h"
 
@@ -87,13 +88,13 @@ public:
 
 	// Ends the death sequence for the owner.
 	virtual void FinishDeath();
-	
 
 	// Applies enough damage to kill the owner.
-	virtual void DamageSelfDestruct(bool bFellOutOfWorld = false);
+	void DamageSelfDestruct(bool bFellOutOfWorld = false);
 
 	// Gets enough damage to kill the owner.
 	virtual float GetDamageToKill();
+
 public:
 	// Delegate fired when the health value has changed.
 	UPROPERTY(BlueprintAssignable)
@@ -138,4 +139,7 @@ protected:
 	// Replicated state used to handle dying.
 	UPROPERTY(ReplicatedUsing = OnRep_DeathState)
 	EECRDeathState DeathState;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	TSubclassOf<UGameplayEffect> SetByCallerDamageEffect;
 };
