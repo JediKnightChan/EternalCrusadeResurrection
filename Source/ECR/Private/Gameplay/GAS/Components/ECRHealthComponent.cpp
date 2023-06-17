@@ -3,7 +3,6 @@
 #include "Gameplay/GAS/Components/ECRHealthComponent.h"
 #include "System/ECRLogChannels.h"
 #include "System/ECRAssetManager.h"
-#include "System/ECRGameData.h"
 #include "Gameplay/ECRGameplayTags.h"
 #include "Net/UnrealNetwork.h"
 #include "GameplayEffect.h"
@@ -302,25 +301,11 @@ void UECRHealthComponent::FinishDeath()
 	Owner->ForceNetUpdate();
 }
 
-float UECRHealthComponent::GetDamageToKill()
-{
-	return GetMaxHealth();
-}
-
 void UECRHealthComponent::DamageSelfDestruct(bool bFellOutOfWorld)
 {
 	if ((DeathState == EECRDeathState::NotDead) && AbilitySystemComponent)
 	{
-		const TSubclassOf<UGameplayEffect> DamageGE = UECRAssetManager::GetSubclass(
-			UECRGameData::Get().DamageGameplayEffect_SetByCaller);
-		if (!DamageGE)
-		{
-			UE_LOG(LogECR, Error,
-			       TEXT(
-				       "ECRHealthComponent: DamageSelfDestruct failed for owner [%s]. Unable to find gameplay effect [%s]."
-			       ), *GetNameSafe(GetOwner()), *UECRGameData::Get().DamageGameplayEffect_SetByCaller.GetAssetName());
-			return;
-		}
+		const TSubclassOf<UGameplayEffect> DamageGE = SetByCallerDamageEffect;
 
 		FGameplayEffectSpecHandle SpecHandle = AbilitySystemComponent->MakeOutgoingSpec(
 			DamageGE, 1.0f, AbilitySystemComponent->MakeEffectContext());
@@ -347,4 +332,9 @@ void UECRHealthComponent::DamageSelfDestruct(bool bFellOutOfWorld)
 		Spec->SetSetByCallerMagnitude(FECRGameplayTags::Get().SetByCaller_Damage, DamageAmount);
 		AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*Spec);
 	}
+}
+
+float UECRHealthComponent::GetDamageToKill()
+{
+	return GetMaxHealth();
 }

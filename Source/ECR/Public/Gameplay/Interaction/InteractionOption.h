@@ -23,7 +23,7 @@ public:
 
 	/** Source object that will be set in ability. If empty, will be set to ability task */
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
-	UObject* AbilitySource;
+	UObject* AbilitySource = nullptr;
 
 	// Input
 	//--------------------------------------------------------------
@@ -35,11 +35,11 @@ public:
 	/** Mapping context granted and removed along with the ability.
 	 *  For example, for input tag replacing another with the same button */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	UInputMappingContext* MappingContext;
+	UInputMappingContext* MappingContext = nullptr;
 
 	/** Priority for input context */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	int32 MappingContextPriority;
+	int32 MappingContextPriority = 0;
 
 	// METHODS OF INTERACTION
 	//--------------------------------------------------------------

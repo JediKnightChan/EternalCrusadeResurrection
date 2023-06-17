@@ -89,9 +89,6 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 
 	AddTag(Movement_Mode_Falling_Standard, "Movement.Mode.Falling.Standard", "Standard falling");
 	AddTag(Movement_Mode_Falling_JumpPack, "Movement.Mode.Falling.JumpPack", "Falling when jump pack flying");
-
-	AddCustomMovementModeTag(Movement_Mode_Custom_Frozen, "Movement.Mode.Custom.Frozen",
-	                         static_cast<uint8>(EECRCustomMovementMode::CustomFrozen));
 }
 
 void FECRGameplayTags::AddTag(FGameplayTag& OutTag, const ANSICHAR* TagName, const ANSICHAR* TagComment)

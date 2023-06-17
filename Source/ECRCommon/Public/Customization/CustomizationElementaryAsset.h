@@ -15,7 +15,7 @@ struct ECRCOMMON_API FCustomizationElementarySubmoduleStatic
 
 	/** Static mesh */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	class UStaticMesh* StaticMesh;
+	class UStaticMesh* StaticMesh = nullptr;
 
 	/** Socket name on UCustomizationElementaryModel to attach mesh to */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -39,7 +39,7 @@ struct ECRCOMMON_API FCustomizationElementarySubmoduleSkeletal
 
 	/** Static mesh */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	class USkeletalMesh* SkeletalMesh;
+	class USkeletalMesh* SkeletalMesh = nullptr;
 
 	/** Socket name on UCustomizationElementaryModel to attach mesh to */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

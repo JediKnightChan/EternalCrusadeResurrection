@@ -173,7 +173,7 @@ void UECREquipmentManagerComponent::SetItemVisible(UECREquipmentInstance* ItemIn
 	TArray<FName> VisibilityChannels = ItemInstance->GetVisibilityChannels();
 	for (FName VisibilityChannel : VisibilityChannels)
 	{
-		for (const FECRAppliedEquipmentEntry Entry : EquipmentList.Entries)
+		for (const FECRAppliedEquipmentEntry& Entry : EquipmentList.Entries)
 		{
 			if (Entry.Instance)
 			{
