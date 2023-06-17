@@ -4,8 +4,13 @@
 
 void UAnimNotifyState_ECRAbilityQueueListen::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation)
 {
+	if (!MeshComp)
+	{
+		return;
+	}
+
 	AActor* Actor = MeshComp->GetOwner();
-	if (!Actor->HasLocalNetOwner())
+	if (!Actor || !Actor->HasLocalNetOwner())
 	{
 		return;
 	}
@@ -21,8 +26,13 @@ void UAnimNotifyState_ECRAbilityQueueListen::NotifyBegin(USkeletalMeshComponent*
                                                          float TotalDuration,
                                                          const FAnimNotifyEventReference& EventReference)
 {
+	if (!MeshComp)
+	{
+		return;
+	}
+
 	AActor* Actor = MeshComp->GetOwner();
-	if (!Actor->HasLocalNetOwner())
+	if (!Actor || !Actor->HasLocalNetOwner())
 	{
 		return;
 	}

@@ -51,11 +51,11 @@ void UECRRangedWeaponInstance::OnEquipped()
 {
 	Super::OnEquipped();
 
-	// Start heat in the middle
+	// Start heat in the start
 	float MinHeatRange;
 	float MaxHeatRange;
 	ComputeHeatRange(/*out*/ MinHeatRange, /*out*/ MaxHeatRange);
-	CurrentHeat = (MinHeatRange + MaxHeatRange) * 0.5f;
+	CurrentHeat = 0;
 
 	// Derive spread
 	CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat);
