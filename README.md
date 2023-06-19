@@ -22,6 +22,7 @@ that may be useful for a wide range of games.
 - Enhanced Input Subsystem is used for input (borrowed from Lyra)
 - 3rd person multiplayer shooter and melee combat system based on Lyra's GAS, including combat vehicles
 - Additional plugins for: HTTP requests
+- Cross-platform code (was built for Windows, Linux, Android)
 
 ### GAS differences from Lyra (5.0)
 
