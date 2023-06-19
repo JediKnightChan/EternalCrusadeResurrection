@@ -9,8 +9,7 @@ public class ECRCommon : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core",
-				"FMODStudio"
+				"Core"
 			}
 		);
 

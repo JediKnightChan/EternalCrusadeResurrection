@@ -2,7 +2,6 @@
 
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 #include "System/ECRLogChannels.h"
-#include "System/ECRGameData.h"
 #include "System/ECRAssetManager.h"
 #include "Gameplay/GAS/ECRGlobalAbilitySystem.h"
 #include "GameplayTagContainer.h"
@@ -524,47 +523,12 @@ void UECRAbilitySystemComponent::CancelActivationGroupAbilities(EECRAbilityActiv
 
 void UECRAbilitySystemComponent::AddDynamicTagGameplayEffect(const FGameplayTag& Tag)
 {
-	const TSubclassOf<UGameplayEffect> DynamicTagGE = UECRAssetManager::GetSubclass(
-		UECRGameData::Get().DynamicTagGameplayEffect);
-	if (!DynamicTagGE)
-	{
-		UE_LOG(LogECRAbilitySystem, Warning,
-		       TEXT("AddDynamicTagGameplayEffect: Unable to find DynamicTagGameplayEffect [%s]."),
-		       *UECRGameData::Get().DynamicTagGameplayEffect.GetAssetName());
-		return;
-	}
-
-	const FGameplayEffectSpecHandle SpecHandle = MakeOutgoingSpec(DynamicTagGE, 1.0f, MakeEffectContext());
-	FGameplayEffectSpec* Spec = SpecHandle.Data.Get();
-
-	if (!Spec)
-	{
-		UE_LOG(LogECRAbilitySystem, Warning,
-		       TEXT("AddDynamicTagGameplayEffect: Unable to make outgoing spec for [%s]."), *GetNameSafe(DynamicTagGE));
-		return;
-	}
-
-	Spec->DynamicGrantedTags.AddTag(Tag);
-
-	ApplyGameplayEffectSpecToSelf(*Spec);
+	return;
 }
 
 void UECRAbilitySystemComponent::RemoveDynamicTagGameplayEffect(const FGameplayTag& Tag)
 {
-	const TSubclassOf<UGameplayEffect> DynamicTagGE = UECRAssetManager::GetSubclass(
-		UECRGameData::Get().DynamicTagGameplayEffect);
-	if (!DynamicTagGE)
-	{
-		UE_LOG(LogECRAbilitySystem, Warning,
-		       TEXT("RemoveDynamicTagGameplayEffect: Unable to find gameplay effect [%s]."),
-		       *UECRGameData::Get().DynamicTagGameplayEffect.GetAssetName());
-		return;
-	}
-
-	FGameplayEffectQuery Query = FGameplayEffectQuery::MakeQuery_MatchAnyOwningTags(FGameplayTagContainer(Tag));
-	Query.EffectDefinition = DynamicTagGE;
-
-	RemoveActiveEffects(Query);
+	return;
 }
 
 void UECRAbilitySystemComponent::GetAbilityTargetData(const FGameplayAbilitySpecHandle AbilityHandle,

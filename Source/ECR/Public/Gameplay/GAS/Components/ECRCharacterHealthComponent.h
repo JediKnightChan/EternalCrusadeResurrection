@@ -117,8 +117,10 @@ public:
 protected:
 	virtual void ClearGameplayTags() override;
 
+	void ChangeCharacterRootMotionScale(float NewScale);
 	void ChangeCharacterSpeed(float NewSpeed);
 
+	virtual void HandleRootMotionScaleChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleWalkSpeedChanged(const FOnAttributeChangeData& ChangeData);
 
 	virtual void HandleShieldChanged(const FOnAttributeChangeData& ChangeData);

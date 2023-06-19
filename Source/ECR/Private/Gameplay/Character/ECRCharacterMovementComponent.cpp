@@ -52,17 +52,6 @@ void UECRCharacterMovementComponent::InitializeComponent()
 	Super::InitializeComponent();
 }
 
-void UECRCharacterMovementComponent::PhysCustom(float deltaTime, int32 Iterations)
-{
-	switch (CustomMovementMode)
-	{
-	case EECRCustomMovementMode::CustomFrozen:
-		break;
-	default:
-		Super::PhysCustom(deltaTime, Iterations);
-	}
-}
-
 const FECRCharacterGroundInfo& UECRCharacterMovementComponent::GetGroundInfo()
 {
 	if (!CharacterOwner || (GFrameCounter == CachedGroundInfo.LastUpdateFrame))

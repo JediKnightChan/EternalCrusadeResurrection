@@ -37,7 +37,7 @@ public:
 	{
 		return BulletsPerCartridge;
 	}
-	
+
 	/** Returns the current spread angle (in degrees, diametrical) */
 	float GetCalculatedSpreadAngle() const
 	{
@@ -47,6 +47,12 @@ public:
 	float GetCalculatedSpreadAngleMultiplier() const
 	{
 		return bHasFirstShotAccuracy ? 0.0f : CurrentSpreadAngleMultiplier;
+	}
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	float GetCurrentHeat() const
+	{
+		return CurrentHeat;
 	}
 
 	bool HasFirstShotAccuracy() const
@@ -77,20 +83,24 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Spread|Fire Params", meta=(AllowPrivateAccess="true"))
 	float Debug_MaxHeat = 0.0f;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread|Fire Params", meta=(ForceUnits=deg, AllowPrivateAccess="true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread|Fire Params",
+		meta=(ForceUnits=deg, AllowPrivateAccess="true"))
 	float Debug_MinSpreadAngle = 0.0f;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread|Fire Params", meta=(ForceUnits=deg, AllowPrivateAccess="true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread|Fire Params",
+		meta=(ForceUnits=deg, AllowPrivateAccess="true"))
 	float Debug_MaxSpreadAngle = 0.0f;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread Debugging", meta=(AllowPrivateAccess="true"))
 	float Debug_CurrentHeat = 0.0f;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread Debugging", meta = (ForceUnits=deg, AllowPrivateAccess="true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spread Debugging",
+		meta = (ForceUnits=deg, AllowPrivateAccess="true"))
 	float Debug_CurrentSpreadAngle = 0.0f;
 
 	// The current *combined* spread angle multiplier
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Spread Debugging", meta=(ForceUnits=x, AllowPrivateAccess="true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Spread Debugging",
+		meta=(ForceUnits=x, AllowPrivateAccess="true"))
 	float Debug_CurrentSpreadAngleMultiplier = 1.0f;
 
 #endif
@@ -112,7 +122,7 @@ protected:
 	// but can be other shapes to do things like punish overheating by adding progressively more heat.
 	UPROPERTY(EditAnywhere, Category="Spread|Fire Params")
 	FRuntimeFloatCurve HeatToHeatPerShotCurve;
-	
+
 	// A curve that maps the current heat to the heat cooldown rate per second
 	// This is typically a flat curve with a single data point indicating how fast the heat
 	// wears off, but can be other shapes to do things like punish overheating by slowing down
@@ -223,8 +233,11 @@ public:
 	void AddSpread();
 
 	//~IECRAbilitySourceInterface interface
-	virtual float GetDistanceAttenuation(float Distance, const FGameplayTagContainer* SourceTags = nullptr, const FGameplayTagContainer* TargetTags = nullptr) const override;
-	virtual float GetPhysicalMaterialAttenuation(const UPhysicalMaterial* PhysicalMaterial, const FGameplayTagContainer* SourceTags = nullptr, const FGameplayTagContainer* TargetTags = nullptr) const override;
+	virtual float GetDistanceAttenuation(float Distance, const FGameplayTagContainer* SourceTags = nullptr,
+	                                     const FGameplayTagContainer* TargetTags = nullptr) const override;
+	virtual float GetPhysicalMaterialAttenuation(const UPhysicalMaterial* PhysicalMaterial,
+	                                             const FGameplayTagContainer* SourceTags = nullptr,
+	                                             const FGameplayTagContainer* TargetTags = nullptr) const override;
 	//~End of IECRAbilitySourceInterface interface
 
 private:

@@ -12,23 +12,34 @@ struct FGameplayAbilityTargetDataHandle;
 struct FGameplayEffectContextHandle;
 struct FHitResult;
 
+UENUM()
+enum EHitSuccess
+{
+	None = 0,
+	Ally,
+	Enemy
+};
+
 // Hit markers are shown for ranged weapon impacts in the reticle
 // A 'successful' hit marker is shown for impacts that damaged an enemy
 struct FECRScreenSpaceHitLocation
 {
 	/** Hit location in viewport screenspace */
-	FVector2D Location;	
+	FVector2D Location;
 	FGameplayTag HitZone;
-	bool bShowAsSuccess = false;
+	EHitSuccess HitSuccess = None;
 };
 
 struct FECRServerSideHitMarkerBatch
 {
-	FECRServerSideHitMarkerBatch() { }
+	FECRServerSideHitMarkerBatch()
+	{
+	}
 
 	FECRServerSideHitMarkerBatch(uint8 InUniqueId) :
 		UniqueId(InUniqueId)
-	{ }
+	{
+	}
 
 	TArray<FECRScreenSpaceHitLocation> Markers;
 
@@ -42,15 +53,16 @@ class UECRWeaponStateComponent : public UControllerComponent
 	GENERATED_BODY()
 
 public:
-
 	UECRWeaponStateComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
-	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType,
+	                           FActorComponentTickFunction* ThisTickFunction) override;
 
 	UFUNCTION(Client, Reliable)
 	void ClientConfirmTargetData(uint16 UniqueId, bool bSuccess, const TArray<uint8>& HitReplaces);
 
-	void AddUnconfirmedServerSideHitMarkers(const FGameplayAbilityTargetDataHandle& InTargetData, const TArray<FHitResult>& FoundHits);
+	void AddUnconfirmedServerSideHitMarkers(const FGameplayAbilityTargetDataHandle& InTargetData,
+	                                        const TArray<FHitResult>& FoundHits);
 
 	/** Updates this player's last damage instigated time */
 	void UpdateDamageInstigatedTime(const FGameplayEffectContextHandle& EffectContext);
@@ -73,9 +85,11 @@ protected:
 	// This is called to filter hit results to determine whether they should be considered as a successful hit or not
 	// The default behavior is to treat it as a success if being done to a team actor that belongs to a different team
 	// to the owning controller's pawn
-	virtual bool ShouldShowHitAsSuccess(const FHitResult& Hit) const;
+	UFUNCTION(BlueprintNativeEvent)
+	EHitSuccess ShouldShowHitAsSuccess(const FHitResult& Hit) const;
 
-	virtual bool ShouldUpdateDamageInstigatedTime(const FGameplayEffectContextHandle& EffectContext) const;
+	UFUNCTION(BlueprintNativeEvent)
+	bool ShouldUpdateDamageInstigatedTime(const FGameplayEffectContextHandle& EffectContext) const;
 
 	void ActuallyUpdateDamageInstigatedTime();
 

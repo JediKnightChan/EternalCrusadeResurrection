@@ -15,6 +15,6 @@ public class ECREditorTarget : TargetRules
 
 	private void RegisterModulesCreatedByRider()
 	{
-		ExtraModuleNames.AddRange(new string[] { "ECRCommon", "ECREditorModifications"});
+		ExtraModuleNames.AddRange(new string[] { "ECRCommon", "ECREditorModifications" });
 	}
 }

@@ -14,7 +14,7 @@
  * Play FMod event and automatically stop it when AnimNotifyState ends
  */
 UCLASS()
-class ECRCOMMON_API UAnimNotifyState_FModPlayEvent : public UAnimNotifyState
+class FMODEXTENSIONS_API UAnimNotifyState_FModPlayEvent : public UAnimNotifyState
 {
 	GENERATED_BODY()
 

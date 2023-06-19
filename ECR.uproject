@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.1",
+	"EngineAssociation": "{E556D182-4ACA-68CD-7B6A-3FB68156C360}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -48,7 +48,7 @@
 			"Enabled": true
 		},
 		{
-			"Name": "OnlineSubsystemEOS",
+			"Name": "MyOnlineSubsystemEOS",
 			"Enabled": true
 		},
 		{
@@ -92,12 +92,21 @@
 			"Enabled": true
 		},
 		{
+			"Name": "FMODExtensions",
+			"Enabled": true
+		},
+		{
 			"Name": "HTTPRequests",
 			"Enabled": true
 		},
 		{
 			"Name": "JsonBlueprintUtilities",
 			"Enabled": true
+		},
+		{
+			"Name": "TargetSystem",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/6bd21ce58d6e4cb295f71bd370233f53"
 		}
 	]
 }

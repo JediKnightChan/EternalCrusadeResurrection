@@ -78,8 +78,6 @@ public:
 	FGameplayTag Movement_Mode_Falling_Standard;
 	FGameplayTag Movement_Mode_Falling_JumpPack;
 
-	FGameplayTag Movement_Mode_Custom_Frozen;
-
 	TMap<uint8, FGameplayTag> MovementModeTagMap;
 	TMap<uint8, FGameplayTag> CustomMovementModeTagMap;
 

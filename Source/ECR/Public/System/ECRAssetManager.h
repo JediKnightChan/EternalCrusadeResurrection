@@ -8,7 +8,6 @@
 #include "ECRAssetManagerStartupJob.h"
 #include "ECRAssetManager.generated.h"
 
-class UECRGameData;
 class UECRPawnData;
 
 struct FECRBundles
@@ -46,24 +45,10 @@ public:
 
 	// Logs all assets currently loaded and tracked by the asset manager.
 	static void DumpLoadedAssets();
-
-	const UECRGameData& GetGameData();
+	
 	const UECRPawnData* GetDefaultPawnData() const;
 
 protected:
-	template <typename GameDataClass>
-	const GameDataClass& GetOrLoadTypedGameData(const TSoftObjectPtr<GameDataClass>& DataPath)
-	{
-		if (const UPrimaryDataAsset* const * pResult = GameDataMap.Find(GameDataClass::StaticClass()))
-		{
-			return *CastChecked<GameDataClass>(*pResult);
-		}
-
-		// Does a blocking load if needed
-		return *CastChecked<const GameDataClass>(LoadGameDataOfClass(GameDataClass::StaticClass(), DataPath, GameDataClass::StaticClass()->GetFName()));
-	}
-
-
 	static UObject* SynchronousLoadAsset(const FSoftObjectPath& AssetPath);
 	static bool ShouldLogAssetLoads();
 
@@ -77,18 +62,8 @@ protected:
 #endif
 	
 	//~End of UAssetManager interface
-
-	UPrimaryDataAsset* LoadGameDataOfClass(TSubclassOf<UPrimaryDataAsset> DataClass, const TSoftObjectPtr<UPrimaryDataAsset>& DataClassPath, FPrimaryAssetType PrimaryAssetType);
-
+	
 protected:
-
-	// Global game data asset to use.
-	UPROPERTY(Config)
-	TSoftObjectPtr<UECRGameData> ECRGameDataPath;
-
-	// Loaded version of the game data
-	UPROPERTY(Transient)
-	TMap<UClass*, UPrimaryDataAsset*> GameDataMap;
 
 	// Pawn data used when spawning player pawns if there isn't one set on the character
 	UPROPERTY(Config)

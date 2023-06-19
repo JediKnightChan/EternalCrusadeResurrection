@@ -1,6 +1,6 @@
 // Copyleft: All rights reversed
 
-#include "FMOD/AnimNotifyState_FModPlayEvent.h"
+#include "Public/FMOD/AnimNotifyState_FModPlayEvent.h"
 #include "FMODBlueprintStatics.h"
 
 void UAnimNotifyState_FModPlayEvent::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation)
