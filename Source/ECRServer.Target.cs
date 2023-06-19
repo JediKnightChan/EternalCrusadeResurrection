@@ -15,6 +15,6 @@ public class ECRServerTarget : TargetRules
     
     private void RegisterModulesCreatedByRider()
     {
-        ExtraModuleNames.AddRange(new string[] { "ECRCommon"});
+        ExtraModuleNames.AddRange(new string[] { "ECRCommon" });
     }
 }

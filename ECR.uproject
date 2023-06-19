@@ -48,7 +48,7 @@
 			"Enabled": true
 		},
 		{
-			"Name": "OnlineSubsystemEOS",
+			"Name": "MyOnlineSubsystemEOS",
 			"Enabled": true
 		},
 		{
@@ -89,6 +89,10 @@
 		},
 		{
 			"Name": "FMODStudio",
+			"Enabled": true
+		},
+		{
+			"Name": "FMODExtensions",
 			"Enabled": true
 		},
 		{
