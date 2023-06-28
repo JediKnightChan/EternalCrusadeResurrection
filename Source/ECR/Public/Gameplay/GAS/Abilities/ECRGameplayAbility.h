@@ -102,7 +102,7 @@ public:
 	AECRCharacter* GetECRCharacterFromActorInfo() const;
 
 	UFUNCTION(BlueprintCallable, Category = "ECR|Ability")
-	UECRPawnControlComponent* GetHeroComponentFromActorInfo() const;
+	UECRPawnControlComponent* GetPawnControlComponentFromActorInfo() const;
 
 	EECRAbilityActivationPolicy GetActivationPolicy() const { return ActivationPolicy; }
 	EECRAbilityActivationGroup GetActivationGroup() const { return ActivationGroup; }

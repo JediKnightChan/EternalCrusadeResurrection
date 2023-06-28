@@ -86,3 +86,24 @@ FName UCoreExtendingFunctionLibrary::GetRandomName(TMap<FName, float> NamesToWei
 	// Shouldn't get here, but for IDE warning to disappear :)
 	return NAME_None;
 }
+
+double UCoreExtendingFunctionLibrary::DegreesToStandardized(const double Degrees)
+{
+	const double DegreesInCircle = UKismetMathLibrary::GenericPercent_FloatFloat(Degrees, 360.0f);
+	return DegreesInCircle > 180.0f ? DegreesInCircle - 360.0f : DegreesInCircle;
+}
+
+void UCoreExtendingFunctionLibrary::GetPawnAimOffsetDifference(APawn* Pawn, double& PitchDiff, double& YawDiff)
+{
+	if (!Pawn)
+	{
+		PitchDiff = 0;
+		YawDiff = 0;
+	}
+
+	const FRotator BaseAimRotation = Pawn->GetBaseAimRotation();
+	const FRotator ActorRotation = Pawn->GetActorRotation();
+
+	PitchDiff = DegreesToStandardized(BaseAimRotation.Pitch - ActorRotation.Pitch);
+	YawDiff = DegreesToStandardized(BaseAimRotation.Yaw - ActorRotation.Yaw);
+}

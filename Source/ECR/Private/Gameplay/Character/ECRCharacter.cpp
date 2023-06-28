@@ -137,32 +137,9 @@ void AECRCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME_CONDITION(ThisClass, ReplicatedAcceleration, COND_SimulatedOnly);
-
 	FDoRepLifetimeParams SharedParams;
 	SharedParams.bIsPushBased = true;
 	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, PawnData, SharedParams);
-}
-
-void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker)
-{
-	Super::PreReplication(ChangedPropertyTracker);
-
-	if (UCharacterMovementComponent* MovementComponent = GetCharacterMovement())
-	{
-		// Compress Acceleration: XY components as direction + magnitude, Z component as direct value
-		const double MaxAccel = MovementComponent->MaxAcceleration;
-		const FVector CurrentAccel = MovementComponent->GetCurrentAcceleration();
-		double AccelXYRadians, AccelXYMagnitude;
-		FMath::CartesianToPolar(CurrentAccel.X, CurrentAccel.Y, AccelXYMagnitude, AccelXYRadians);
-
-		ReplicatedAcceleration.AccelXYRadians = FMath::FloorToInt((AccelXYRadians / TWO_PI) * 255.0);
-		// [0, 2PI] -> [0, 255]
-		ReplicatedAcceleration.AccelXYMagnitude = FMath::FloorToInt((AccelXYMagnitude / MaxAccel) * 255.0);
-		// [0, MaxAccel] -> [0, 255]
-		ReplicatedAcceleration.AccelZ = FMath::FloorToInt((CurrentAccel.Z / MaxAccel) * 127.0);
-		// [-MaxAccel, MaxAccel] -> [-127, 127]
-	}
 }
 
 void AECRCharacter::GatherInteractionOptions(const FInteractionQuery& InteractQuery,
@@ -569,25 +546,4 @@ void AECRCharacter::InitPawnDataAndAbilities()
 
 void AECRCharacter::OnRep_PawnData()
 {
-}
-
-void AECRCharacter::OnRep_ReplicatedAcceleration()
-{
-	if (UECRCharacterMovementComponent* ECRMovementComponent = Cast<UECRCharacterMovementComponent>(
-		GetCharacterMovement()))
-	{
-		// Decompress Acceleration
-		const double MaxAccel = ECRMovementComponent->MaxAcceleration;
-		const double AccelXYMagnitude = double(ReplicatedAcceleration.AccelXYMagnitude) * MaxAccel / 255.0;
-		// [0, 255] -> [0, MaxAccel]
-		const double AccelXYRadians = double(ReplicatedAcceleration.AccelXYRadians) * TWO_PI / 255.0;
-		// [0, 255] -> [0, 2PI]
-
-		FVector UnpackedAcceleration(FVector::ZeroVector);
-		FMath::PolarToCartesian(AccelXYMagnitude, AccelXYRadians, UnpackedAcceleration.X, UnpackedAcceleration.Y);
-		UnpackedAcceleration.Z = double(ReplicatedAcceleration.AccelZ) * MaxAccel / 127.0;
-		// [-127, 127] -> [-MaxAccel, MaxAccel]
-
-		ECRMovementComponent->SetReplicatedAcceleration(UnpackedAcceleration);
-	}
 }

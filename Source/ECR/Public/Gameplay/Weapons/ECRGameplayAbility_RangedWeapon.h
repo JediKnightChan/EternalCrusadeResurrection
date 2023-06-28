@@ -117,6 +117,6 @@ protected:
 private:
 	FDelegateHandle OnTargetDataReadyCallbackDelegateHandle;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
 	EECRAbilityTargetingSource TargetingSource;
 };

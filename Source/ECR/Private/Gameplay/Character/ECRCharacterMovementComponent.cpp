@@ -24,21 +24,6 @@ UECRCharacterMovementComponent::UECRCharacterMovementComponent(const FObjectInit
 {
 }
 
-void UECRCharacterMovementComponent::SimulateMovement(float DeltaTime)
-{
-	if (bHasReplicatedAcceleration)
-	{
-		// Preserve our replicated acceleration
-		const FVector OriginalAcceleration = Acceleration;
-		Super::SimulateMovement(DeltaTime);
-		Acceleration = OriginalAcceleration;
-	}
-	else
-	{
-		Super::SimulateMovement(DeltaTime);
-	}
-}
-
 bool UECRCharacterMovementComponent::CanAttemptJump() const
 {
 	// Same as UCharacterMovementComponent's implementation but without the crouch check
@@ -104,11 +89,6 @@ const FECRCharacterGroundInfo& UECRCharacterMovementComponent::GetGroundInfo()
 	return CachedGroundInfo;
 }
 
-void UECRCharacterMovementComponent::SetReplicatedAcceleration(const FVector& InAcceleration)
-{
-	bHasReplicatedAcceleration = true;
-	Acceleration = InAcceleration;
-}
 
 FRotator UECRCharacterMovementComponent::GetDeltaRotation(float DeltaTime) const
 {
@@ -134,4 +114,9 @@ float UECRCharacterMovementComponent::GetMaxSpeed() const
 	}
 
 	return Super::GetMaxSpeed();
+}
+
+bool UECRCharacterMovementComponent::ShouldUsePackedMovementRPCs() const
+{
+	return false;
 }

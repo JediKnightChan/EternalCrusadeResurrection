@@ -13,7 +13,8 @@ UCLASS()
 class ECRCOMMON_API UCoreExtendingFunctionLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
-	
+
+public:
 	// Sorting
 
 	/** Sort UObjects according to their string parameter exposed as value in map - without changing original map */
@@ -37,4 +38,14 @@ class ECRCOMMON_API UCoreExtendingFunctionLibrary : public UBlueprintFunctionLib
 	/** Get current UTC time in seconds (unix timestamp) */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static double GetCurrentTimeInSeconds();
+
+	/** Converts degrees to [-180, 180] range */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static double DegreesToStandardized(double Degrees);
+
+	// UE Utils
+
+	/** Returns Pitch difference and Yaw difference for pawn (in [-180, 180] range)*/
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static void GetPawnAimOffsetDifference(APawn* Pawn, double& PitchDiff, double& YawDiff);
 };

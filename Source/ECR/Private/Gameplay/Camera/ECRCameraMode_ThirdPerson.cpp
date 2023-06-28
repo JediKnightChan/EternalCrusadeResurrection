@@ -4,6 +4,7 @@
 #include "Curves/CurveVector.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/Character.h"
+#include "Gameplay/Character/ECRCharacter.h"
 
 
 UECRCameraMode_ThirdPerson::UECRCameraMode_ThirdPerson()
@@ -31,7 +32,16 @@ void UECRCameraMode_ThirdPerson::UpdateView(float DeltaTime)
 	{
 		if (TargetOffsetCurve)
 		{
-			const FVector TargetOffset = TargetOffsetCurve->GetVectorValue(PivotRotation.Pitch);
+			FVector TargetOffset = TargetOffsetCurve->GetVectorValue(PivotRotation.Pitch);
+
+			if (const AECRCharacter* TargetCharacter = Cast<AECRCharacter>(GetTargetActor()))
+			{
+				if (TargetCharacter->bInvertCameraY)
+				{
+					TargetOffset.Y = -1 * TargetOffset.Y;
+				}
+			}
+
 			View.Location = PivotLocation + PivotRotation.RotateVector(TargetOffset);
 		}
 	}
@@ -43,6 +53,14 @@ void UECRCameraMode_ThirdPerson::UpdateView(float DeltaTime)
 		TargetOffset.Y = TargetOffsetY.GetRichCurveConst()->Eval(PivotRotation.Pitch);
 		TargetOffset.Z = TargetOffsetZ.GetRichCurveConst()->Eval(PivotRotation.Pitch);
 
+		if (const AECRCharacter* TargetCharacter = Cast<AECRCharacter>(GetTargetActor()))
+		{
+			if (TargetCharacter->bInvertCameraY)
+			{
+				TargetOffset.Y = -1 * TargetOffset.Y;
+			}
+		}
+
 		View.Location = PivotLocation + PivotRotation.RotateVector(TargetOffset);
 	}
 
@@ -51,13 +69,13 @@ void UECRCameraMode_ThirdPerson::UpdateView(float DeltaTime)
 
 void UECRCameraMode_ThirdPerson::UpdateForTarget(float DeltaTime)
 {
-
 	if (const ACharacter* TargetCharacter = Cast<ACharacter>(GetTargetActor()))
 	{
 		if (TargetCharacter->bIsCrouched)
 		{
 			const ACharacter* TargetCharacterCDO = TargetCharacter->GetClass()->GetDefaultObject<ACharacter>();
-			const float CrouchedHeightAdjustment = TargetCharacterCDO->CrouchedEyeHeight - TargetCharacterCDO->BaseEyeHeight;
+			const float CrouchedHeightAdjustment = TargetCharacterCDO->CrouchedEyeHeight - TargetCharacterCDO->
+				BaseEyeHeight;
 
 			SetTargetCrouchOffset(FVector(0.f, 0.f, CrouchedHeightAdjustment));
 
@@ -81,7 +99,8 @@ void UECRCameraMode_ThirdPerson::UpdateCrouchOffset(float DeltaTime)
 	if (CrouchOffsetBlendPct < 1.0f)
 	{
 		CrouchOffsetBlendPct = FMath::Min(CrouchOffsetBlendPct + DeltaTime * CrouchOffsetBlendMultiplier, 1.0f);
-		CurrentCrouchOffset = FMath::InterpEaseInOut(InitialCrouchOffset, TargetCrouchOffset, CrouchOffsetBlendPct, 1.0f);
+		CurrentCrouchOffset = FMath::InterpEaseInOut(InitialCrouchOffset, TargetCrouchOffset, CrouchOffsetBlendPct,
+		                                             1.0f);
 	}
 	else
 	{
