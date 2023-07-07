@@ -70,7 +70,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "ECR|Character")
 	UECRAbilitySystemComponent* GetECRAbilitySystemComponent() const;
-	
+
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	virtual void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override;
@@ -86,7 +86,6 @@ public:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void Reset() override;
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-	virtual void PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker) override;
 	//~End of AActor interface
 
 	// Interactions
@@ -155,9 +154,6 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
 	UECRCameraComponent* CameraComponent;
 
-	UPROPERTY(Transient, ReplicatedUsing = OnRep_ReplicatedAcceleration)
-	FECRReplicatedAcceleration ReplicatedAcceleration;
-
 	static const FName NAME_ECRAbilityReady;
 
 	UPROPERTY(ReplicatedUsing = OnRep_PawnData, EditAnywhere, BlueprintReadOnly,
@@ -167,10 +163,11 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
 	float StartedFallingTime;
 
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
+	bool bInvertCameraY;
+
 private:
 	UFUNCTION()
 	void OnRep_PawnData();
-
-	UFUNCTION()
-	void OnRep_ReplicatedAcceleration();
 };

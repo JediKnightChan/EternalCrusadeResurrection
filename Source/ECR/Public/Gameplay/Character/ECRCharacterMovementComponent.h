@@ -49,19 +49,16 @@ class ECR_API UECRCharacterMovementComponent : public UCharacterMovementComponen
 public:
 	UECRCharacterMovementComponent(const FObjectInitializer& ObjectInitializer);
 
-	virtual void SimulateMovement(float DeltaTime) override;
-
 	virtual bool CanAttemptJump() const override;
 
 	// Returns the current ground info.  Calling this will update the ground info if it's out of date.
 	UFUNCTION(BlueprintCallable, Category = "ECR|CharacterMovement")
 	const FECRCharacterGroundInfo& GetGroundInfo();
 
-	void SetReplicatedAcceleration(const FVector& InAcceleration);
-
 	//~UMovementComponent interface
 	virtual FRotator GetDeltaRotation(float DeltaTime) const override;
 	virtual float GetMaxSpeed() const override;
+	virtual bool ShouldUsePackedMovementRPCs() const override;
 	//~End of UMovementComponent interface
 
 protected:
@@ -69,7 +66,4 @@ protected:
 protected:
 	// Cached ground info for the character.  Do not access this directly!  It's only updated when accessed via GetGroundInfo().
 	FECRCharacterGroundInfo CachedGroundInfo;
-
-	UPROPERTY(Transient)
-	bool bHasReplicatedAcceleration = false;
 };

@@ -95,7 +95,7 @@ AECRCharacter* UECRGameplayAbility::GetECRCharacterFromActorInfo() const
 	return (CurrentActorInfo ? Cast<AECRCharacter>(CurrentActorInfo->AvatarActor.Get()) : nullptr);
 }
 
-UECRPawnControlComponent* UECRGameplayAbility::GetHeroComponentFromActorInfo() const
+UECRPawnControlComponent* UECRGameplayAbility::GetPawnControlComponentFromActorInfo() const
 {
 	return (CurrentActorInfo
 		        ? UECRPawnControlComponent::FindPawnControlComonent(CurrentActorInfo->AvatarActor.Get())
@@ -121,7 +121,7 @@ void UECRGameplayAbility::ToggleInputDisabled(const bool NewInputDisabled)
 
 void UECRGameplayAbility::ToggleMovementEnabled(const bool bNewEnabled)
 {
-	if (UECRPawnControlComponent* HeroComponent = GetHeroComponentFromActorInfo())
+	if (UECRPawnControlComponent* HeroComponent = GetPawnControlComponentFromActorInfo())
 	{
 		HeroComponent->ToggleMovementInput(bNewEnabled);
 	}
@@ -693,7 +693,7 @@ void UECRGameplayAbility::SetCameraMode(TSubclassOf<UECRCameraMode> CameraMode)
 {
 	ENSURE_ABILITY_IS_INSTANTIATED_OR_RETURN(SetCameraMode,);
 
-	if (UECRPawnControlComponent* HeroComponent = GetHeroComponentFromActorInfo())
+	if (UECRPawnControlComponent* HeroComponent = GetPawnControlComponentFromActorInfo())
 	{
 		HeroComponent->SetAbilityCameraMode(CameraMode, CurrentSpecHandle);
 		ActiveCameraMode = CameraMode;
@@ -706,7 +706,7 @@ void UECRGameplayAbility::ClearCameraMode()
 
 	if (ActiveCameraMode)
 	{
-		if (UECRPawnControlComponent* HeroComponent = GetHeroComponentFromActorInfo())
+		if (UECRPawnControlComponent* HeroComponent = GetPawnControlComponentFromActorInfo())
 		{
 			HeroComponent->ClearAbilityCameraMode(CurrentSpecHandle);
 		}

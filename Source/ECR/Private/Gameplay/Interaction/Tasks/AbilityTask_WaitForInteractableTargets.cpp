@@ -234,9 +234,10 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 		}
 		else
 		{
-			FObjectKey ObjectKey = AbilitiesToRemove.FindRef(Handle);
 			AbilitiesToRemove.Remove(Handle);
-			InteractionAbilityCache.Remove(ObjectKey);
+			// Have to empty whole cache as removal of object key won't work.
+			// Most probable reason: we are client, on server ability already removed => spec invalid
+			InteractionAbilityCache.Empty();
 		}
 	}
 

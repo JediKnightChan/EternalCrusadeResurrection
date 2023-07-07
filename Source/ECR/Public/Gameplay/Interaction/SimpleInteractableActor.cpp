@@ -10,6 +10,7 @@ void ASimpleInteractableActor::GatherInteractionOptions(const FInteractionQuery&
 	TArray<FInteractionOption> InteractionOptions = GetInteractionOptions(InteractQuery);
 	for (FInteractionOption InteractionOption : InteractionOptions)
 	{
+		InteractionOption.AbilitySource = this;
 		OptionBuilder.AddInteractionOption(InteractionOption);
 	}
 }

@@ -43,6 +43,7 @@ that may be useful for a wide range of games.
   two-handed weapon)
 - Gameplay Abilities can asynchronously load montages for different skeletons using cosmetic tags without having to
   create multiple ability instances for them
+- Can temporarily limit yaw and pitch in Pawn Control Component (former Hero Component), Lyra always limits pitch in camera mode
 - Advanced interaction system allows interaction options to be set by actors in blueprints, makes possible interactions
   via input tags and overriding input mappings
 - Advanced melee combat prediction system

@@ -9,7 +9,7 @@
 #include "Gameplay/Player/ECRPlayerState.h"
 #include "Gameplay/Character/ECRPawnExtensionComponent.h"
 #include "Gameplay/Character/ECRPawnData.h"
-#include "Gameplay/Character/ECRCharacter.h"
+#include "CoreExtendingFunctionLibrary.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 #include "Input/ECRInputConfig.h"
 #include "Input/ECRInputComponent.h"
@@ -40,9 +40,12 @@ UECRPawnControlComponent::UECRPawnControlComponent(const FObjectInitializer& Obj
 	bPawnHasInitialized = false;
 	bReadyToBindInputs = false;
 	bMovementInputEnabled = true;
-	
+
 	bListenForAbilityQueue = false;
 	AbilityQueueDeltaTime = 0;
+
+	LookPitchLimit = 180.0f;
+	LookYawLimit = 180.0f;
 }
 
 void UECRPawnControlComponent::OnRegister()
@@ -370,14 +373,39 @@ void UECRPawnControlComponent::Input_LookMouse(const FInputActionValue& InputAct
 
 	const FVector2D Value = InputActionValue.Get<FVector2D>();
 
+	double CurrentPitchDiff, CurrentYawDiff;
+	UCoreExtendingFunctionLibrary::GetPawnAimOffsetDifference(Pawn, CurrentPitchDiff, CurrentYawDiff);
+
 	if (Value.X != 0.0f)
 	{
-		Pawn->AddControllerYawInput(Value.X);
+		if (LookYawLimit != 180.0f)
+		{
+			// Locked yaw, need to check if input is allowed
+			if (FMath::Abs(CurrentYawDiff + Value.X) <= LookYawLimit)
+			{
+				Pawn->AddControllerYawInput(Value.X);
+			}
+		}
+		else
+		{
+			Pawn->AddControllerYawInput(Value.X);
+		}
 	}
 
 	if (Value.Y != 0.0f)
 	{
-		Pawn->AddControllerPitchInput(Value.Y);
+		if (LookPitchLimit != 180.0f)
+		{
+			// Locked pitch, need to check if input is allowed
+			if (FMath::Abs(CurrentPitchDiff + Value.Y) <= LookPitchLimit)
+			{
+				Pawn->AddControllerPitchInput(Value.Y);
+			}
+		}
+		else
+		{
+			Pawn->AddControllerPitchInput(Value.Y);
+		}
 	}
 }
 
@@ -392,17 +420,42 @@ void UECRPawnControlComponent::Input_LookStick(const FInputActionValue& InputAct
 
 	const FVector2D Value = InputActionValue.Get<FVector2D>();
 
+	double CurrentPitchDiff, CurrentYawDiff;
+	UCoreExtendingFunctionLibrary::GetPawnAimOffsetDifference(Pawn, CurrentPitchDiff, CurrentYawDiff);
+
 	const UWorld* World = GetWorld();
 	check(World);
 
 	if (Value.X != 0.0f)
 	{
-		Pawn->AddControllerYawInput(Value.X * ECRHero::LookYawRate * World->GetDeltaSeconds());
+		if (LookYawLimit != 180.0f)
+		{
+			// Locked yaw, need to check if input is allowed
+			if (FMath::Abs(CurrentYawDiff + Value.X) <= LookYawLimit)
+			{
+				Pawn->AddControllerYawInput(Value.X);
+			}
+		}
+		else
+		{
+			Pawn->AddControllerYawInput(Value.X);
+		}
 	}
 
 	if (Value.Y != 0.0f)
 	{
-		Pawn->AddControllerPitchInput(Value.Y * ECRHero::LookPitchRate * World->GetDeltaSeconds());
+		if (LookPitchLimit != 180.0f)
+		{
+			// Locked pitch, need to check if input is allowed
+			if (FMath::Abs(CurrentPitchDiff + Value.Y) <= LookPitchLimit)
+			{
+				Pawn->AddControllerPitchInput(Value.Y);
+			}
+		}
+		else
+		{
+			Pawn->AddControllerPitchInput(Value.Y);
+		}
 	}
 }
 
