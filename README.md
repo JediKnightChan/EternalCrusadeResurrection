@@ -12,11 +12,13 @@ ECR is an attempt of resurrection of an online third-person shooter video game E
 This project can be used as a template for creating a similar genre game, and ECRCommon module contains functionality
 that may be useful for a wide range of games.
 
+Check out our [Wiki](https://github.com/JediKnightChan/EternalCrusadeResurrection/wiki) for using this game code "core" and some useful UE dev tips!
+
 ## Features
 
 - C++ Unreal Engine 5 project
 - Customization system for modular characters (material customization, mesh customization)
-- Epic Online Services P2P matchmaking (users can create their own matches)
+- Epic Online Services P2P matchmaking (users can create their own matches), including Linux Dedicated Servers
 - Python Scripts for automation of restoring non-exportable or hardly-exportable data for an unpacked UE4 game (socket
   data, maps data, materials, references to materials within meshes)
 - Enhanced Input Subsystem is used for input (borrowed from Lyra)
@@ -38,8 +40,8 @@ that may be useful for a wide range of games.
 
 - Several attributes are used to consume damage (First shield, then health, then bleeding health)
 - [QuickBar component](https://github.com/JediKnightChan/EternalCrusadeResurrection/blob/master/Source/ECR/Public/Gameplay/Equipment/ECRQuickBarComponent.h)
-  has multiple channels (eg one for ranged weapons, one for melee), can make many "quick bars"
-- ECREquipmentManagerComponent is capable of hiding equipment by visibility channels (eg LeftHand, RightHand for
+  has multiple channels (e.g. one for ranged weapons, one for melee), can make many "quick bars"
+- ECREquipmentManagerComponent is capable of hiding equipment by visibility channels (e.g. LeftHand, RightHand for
   two-handed weapon)
 - Gameplay Abilities can asynchronously load montages for different skeletons using cosmetic tags without having to
   create multiple ability instances for them
@@ -63,3 +65,20 @@ that may be useful for a wide range of games.
 
 In both this repo and `ECRContent` (in private access) `master` branch is locked, all work should be done
 after creating a new branch based on `dev`
+
+# Related repositories
+
+## Currently maintained
+- [ECRLauncher](https://github.com/JediKnightChan/ECRLauncher) (Public): Launcher for the game, can show news, patch
+notes, install the whole game and patches, verify integrity
+- [ECRContent](https://github.com/JediKnightChan/ECRContent/) (Private): Content folder of the game
+- [ECRSites](https://github.com/JediKnightChan/ECRSites) (Private): Discord bot for running / stopping dedicated server, 
+launcher data, game versioning data, etc.
+- [ECRFModSounds](https://github.com/JediKnightChan/ECRFModSounds) (Private): FMod project for the ECR sounds
+
+## Archived
+- [ECRSoundSorting](https://github.com/JediKnightChan/ECRSoundSorting) (Public): Code of the site which was used for 
+labeling unsorted sounds extracted with basic .bnk .wem converters. Django + Vue.js (CoreUI) + Nginx + Docker compose
+- [WWise-IntegrationDemo-EventExtractor](https://github.com/Waagheur/WWise-IntegrationDemo-EventExtactor) (Public): WWise
+integration demo turned into an extraction tool (knowing the name of the WWise event, such as Play_Fire in the sound 
+bank SNB_DefaultBolter, can extract it)
