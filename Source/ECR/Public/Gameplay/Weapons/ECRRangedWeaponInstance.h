@@ -230,7 +230,12 @@ public:
 	virtual void OnUnequipped();
 	//~End of UECREquipmentInstance interface
 
+	/** Add heat as 1 shot */
+	UFUNCTION(BlueprintCallable)
 	void AddSpread();
+	
+	UFUNCTION(BlueprintCallable)
+	void RemoveHeat(float DeltaHeat);
 
 	//~IECRAbilitySourceInterface interface
 	virtual float GetDistanceAttenuation(float Distance, const FGameplayTagContainer* SourceTags = nullptr,

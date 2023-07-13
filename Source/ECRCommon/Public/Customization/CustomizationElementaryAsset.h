@@ -84,7 +84,7 @@ public:
 	FString MaterialCustomizationNamespace;
 
 	/** Slot names that will be used for applying materials if this mesh is going to be merged with others */
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	TArray<FName> MaterialCustomizationSlotNames;
 
 	/** Array of static attachments */

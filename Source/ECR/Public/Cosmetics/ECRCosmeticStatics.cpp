@@ -25,3 +25,15 @@ void UECRCosmeticStatics::AddMontageToLoadQueueIfNeeded(const TSoftObjectPtr<UAn
 		MontagesToLoad.Add(Montage.ToSoftObjectPath());
 	};
 }
+
+TSubclassOf<AActor> UECRCosmeticStatics::SelectBestActor(const FECRActorSelectionSet Set,
+                                                                  const FGameplayTagContainer& CosmeticTags)
+{
+	return Set.SelectBestActor(CosmeticTags);
+}
+
+TSoftObjectPtr<UAnimMontage> UECRCosmeticStatics::SelectBestMontage(const FECRAnimMontageSelectionSet Set,
+                                                                    FGameplayTagContainer& CosmeticTags)
+{
+	return Set.SelectBestMontage(CosmeticTags);
+}

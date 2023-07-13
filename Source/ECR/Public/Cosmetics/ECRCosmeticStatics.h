@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ECRCosmeticAnimationTypes.h"
 #include "Engine/EngineTypes.h"
 #include "ECRCosmeticStatics.generated.h"
 
@@ -18,4 +19,14 @@ public:
 
 	static void AddMontageToLoadQueueIfNeeded(const TSoftObjectPtr<UAnimMontage>& Montage,
 	                                          TArray<FSoftObjectPath>& MontagesToLoad);
+
+	// Choose the best actor given the tags
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static TSubclassOf<AActor> SelectBestActor(const FECRActorSelectionSet Set,
+	                                           const FGameplayTagContainer& CosmeticTags);
+
+	// Choose the best montage given the tags
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static TSoftObjectPtr<UAnimMontage> SelectBestMontage(const FECRAnimMontageSelectionSet Set,
+	                                                      FGameplayTagContainer& CosmeticTags);
 };
