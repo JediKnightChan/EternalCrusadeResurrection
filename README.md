@@ -7,7 +7,7 @@
 
 ![](https://eternal-crusade.com/dist/images/ec.webp)
 
-ECR is an attempt of resurrection of an online third-person shooter video game Eternal Crusade.
+ECR is the resurrection of an online third-person shooter video game Eternal Crusade.
 
 This project can be used as a template for creating a similar genre game, and ECRCommon module contains functionality
 that may be useful for a wide range of games.
