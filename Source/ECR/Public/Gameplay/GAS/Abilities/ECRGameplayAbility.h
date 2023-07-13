@@ -199,6 +199,7 @@ protected:
 	UFUNCTION()
 	void OnCharacterPartsChanged(UECRPawnComponent_CharacterParts* ComponentWithChangedParts);
 
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	UECRPawnComponent_CharacterParts* GetPawnCustomizationComponent() const;
 	
 	/** Check for ability queue on ASC, if need to activate any queued ability */

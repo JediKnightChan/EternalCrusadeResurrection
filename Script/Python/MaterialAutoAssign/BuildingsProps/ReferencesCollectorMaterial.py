@@ -44,7 +44,7 @@ def collect_material_references_for_directory(root_dir):
 if __name__ == '__main__':
     """Collect material references from meshes in this directory and save them to json file"""
 
-    root_dir = "D:/MyProjects/eternal_crusade/umodel_needed/EternalCrusade_dup/Content/Characters/SpaceMarine/"
+    root_dir = "D:/MyProjects/eternal_crusade/umodel_needed/EternalCrusade_dup/Content/VFX/Particles/"
     data = collect_material_references_for_directory(root_dir)
-    with open("space_marines_material_references.json", "w") as f:
+    with open("../../VFXRecreation/particle_material_refs.json", "w") as f:
         json.dump(data, f, indent=4)

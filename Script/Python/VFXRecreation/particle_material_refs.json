@@ -1,0 +1,3328 @@
+{
+    "/Game/VFX/Particles/MainMenuBrockenPlanetClouds": {
+        "Mi_ZedekParticleClouds": "/Game/Materials/Sky/Mi_ZedekParticleClouds"
+    },
+    "/Game/VFX/Particles/P_AbaddonsGraceMuzzleFlash": {
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_AbaddonsGrace_Projectile_Trail": {
+        "M_AbaddonPhosphorous": "/Game/Materials/VFX/Trail/M_AbaddonPhosphorous",
+        "M_AbaddonsGraceTracer_Smoke": "/Game/Materials/VFX/Trail/M_AbaddonsGraceTracer_Smoke",
+        "M_HeavyTracer_Panning": "/Game/Materials/VFX/Trail/M_HeavyTracer_Panning"
+    },
+    "/Game/VFX/Particles/P_AdrenalGland": {
+        "Mi_AdrenalGlandSmoke": "/Game/Materials/VFX/Mi_AdrenalGlandSmoke",
+        "Mi_tyranidAddonsGlow": "/Game/Materials/VFX/Mi_tyranidAddonsGlow"
+    },
+    "/Game/VFX/Particles/P_Ammo_Up": {
+        "MI_AmmoUp": "/Game/Materials/VFX/MI_AmmoUp",
+        "MI_HealingCross": "/Game/Materials/VFX/MI_HealingCross"
+    },
+    "/Game/VFX/Particles/P_BansheeScream": {
+        "M_Screamed_AT": "/Game/Materials/VFX/Procedural/M_Screamed_AT",
+        "M_WarpSandStorm": "/Game/Materials/VFX/Procedural/M_WarpSandStorm",
+        "M_BansheeScream": "/Game/Materials/VFX/Trail/M_BansheeScream"
+    },
+    "/Game/VFX/Particles/P_BlightGrenadeExplode": {
+        "MI_Blood_Chunks_Unlit_03": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_03",
+        "M_BlightGrenadeRange": "/Game/Materials/VFX/M_BlightGrenadeRange",
+        "Mi_BLightGrenadeFlashStart": "/Game/Materials/VFX/Mi_BLightGrenadeFlashStart",
+        "M_AlphaThreshold_Smoke3": "/Game/Materials/VFX/Procedural/M_AlphaThreshold_Smoke3"
+    },
+    "/Game/VFX/Particles/P_BlightGrenadeTrails": {
+        "Mi_BasicGlow": "/Game/Materials/VFX/Mi_BasicGlow",
+        "Mi_SmokeBLightgrenade": "/Game/Materials/VFX/Mi_SmokeBLightgrenade",
+        "M_BlightNadeTrail": "/Game/Materials/VFX/Trail/M_BlightNadeTrail"
+    },
+    "/Game/VFX/Particles/P_BloodDrops": {
+        "M_BloodPool": "/Game/Materials/VFX/M_BloodPool"
+    },
+    "/Game/VFX/Particles/P_Brazero_Fortress": {
+        "M_FireEmissiveDesaturatedPanner2": "/Game/Materials/VFX/M_FireEmissiveDesaturatedPanner2",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022",
+        "MI_FireCycleFlame": "/Game/Materials/VFX/MI_FireCycleFlame"
+    },
+    "/Game/VFX/Particles/P_BrokenLightSparks": {
+        "MI_Yellow_Electric02": "/Game/Materials/VFX/MI_Yellow_Electric02"
+    },
+    "/Game/VFX/Particles/P_BrokenLightSparks2": {
+        "MI_Yellow_Electric02": "/Game/Materials/VFX/MI_Yellow_Electric02"
+    },
+    "/Game/VFX/Particles/P_BrokenLightSparks3": {
+        "MI_Yellow_Electric02": "/Game/Materials/VFX/MI_Yellow_Electric02"
+    },
+    "/Game/VFX/Particles/P_CapturePointIdle_VectorField_CSM": {
+        "M_AdditiveEmissiveParticle_CApturPointprojetor": "/Game/Materials/VFX/M_AdditiveEmissiveParticle_CApturPointprojetor",
+        "M_SMcapturePointLogo": "/Game/Materials/VFX/M_SMcapturePointLogo",
+        "Mi_Capturepoint_Edges": "/Game/Materials/VFX/Mi_Capturepoint_Edges",
+        "Mi_Capturepoint_EdgesParticles": "/Game/Materials/VFX/Mi_Capturepoint_EdgesParticles",
+        "Mi_VectorParticles": "/Game/Materials/VFX/Mi_VectorParticles",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/P_CapturePointIdle_VectorField_Eldar": {
+        "M_AdditiveEmissiveParticle_CApturPointprojetor": "/Game/Materials/VFX/M_AdditiveEmissiveParticle_CApturPointprojetor",
+        "M_SMcapturePointLogo": "/Game/Materials/VFX/M_SMcapturePointLogo",
+        "Mi_Capturepoint_Edges": "/Game/Materials/VFX/Mi_Capturepoint_Edges",
+        "Mi_Capturepoint_EdgesParticles": "/Game/Materials/VFX/Mi_Capturepoint_EdgesParticles",
+        "Mi_VectorParticles": "/Game/Materials/VFX/Mi_VectorParticles",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/P_CapturePointIdle_VectorField_ORk": {
+        "M_AdditiveEmissiveParticle_CApturPointprojetor": "/Game/Materials/VFX/M_AdditiveEmissiveParticle_CApturPointprojetor",
+        "M_SMcapturePointLogo": "/Game/Materials/VFX/M_SMcapturePointLogo",
+        "Mi_Capturepoint_Edges": "/Game/Materials/VFX/Mi_Capturepoint_Edges",
+        "Mi_Capturepoint_EdgesParticles": "/Game/Materials/VFX/Mi_Capturepoint_EdgesParticles",
+        "Mi_VectorParticles": "/Game/Materials/VFX/Mi_VectorParticles",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/P_CapturePointIdle_VectorField_SM": {
+        "M_AdditiveEmissiveParticle_CApturPointprojetor": "/Game/Materials/VFX/M_AdditiveEmissiveParticle_CApturPointprojetor",
+        "M_SMcapturePointLogo": "/Game/Materials/VFX/M_SMcapturePointLogo",
+        "Mi_Capturepoint_Edges": "/Game/Materials/VFX/Mi_Capturepoint_Edges",
+        "Mi_Capturepoint_EdgesParticles": "/Game/Materials/VFX/Mi_Capturepoint_EdgesParticles",
+        "Mi_VectorParticles": "/Game/Materials/VFX/Mi_VectorParticles",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/P_CervoSkull_SparksElectric": {
+        "Mi_ServoSkullSParkFlash": "/Game/Materials/VFX/Mi_ServoSkullSParkFlash"
+    },
+    "/Game/VFX/Particles/P_ChainAxeCharge01": {},
+    "/Game/VFX/Particles/P_ChainswordCharge01": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_ChaosEyesGlow1": {
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke"
+    },
+    "/Game/VFX/Particles/P_ChaosEyesGlowKhorne": {
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke"
+    },
+    "/Game/VFX/Particles/P_ChaosEyesGlowNurgle": {
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke"
+    },
+    "/Game/VFX/Particles/P_ChaosEyesGlowSlaanesh": {
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke"
+    },
+    "/Game/VFX/Particles/P_ChaosEyesGlowTzeenetch": {
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke"
+    },
+    "/Game/VFX/Particles/P_ChaosScreenBlinkingLight": {},
+    "/Game/VFX/Particles/P_ChaosScreenBloodDrop": {},
+    "/Game/VFX/Particles/P_ChaosScreenFire": {
+        "M_ChaosScreenFire": "/Game/Materials/VFX/Procedural/M_ChaosScreenFire"
+    },
+    "/Game/VFX/Particles/P_CharacterBurning": {
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_CharacterBurning2": {
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_CharacterCreate_BGexplosion": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "Mi_NovaFlat": "/Game/Materials/VFX/Mi_NovaFlat",
+        "Mi_SpaceExplosion": "/Game/Materials/VFX/Mi_SpaceExplosion"
+    },
+    "/Game/VFX/Particles/P_CharacterCreate_Smoke": {
+        "M_Smoke_alphaThreshold": "/Game/Materials/VFX/M_Smoke_alphaThreshold"
+    },
+    "/Game/VFX/Particles/P_CharacterCreate_Smoke2": {
+        "M_Smoke_alphaThreshold": "/Game/Materials/VFX/M_Smoke_alphaThreshold"
+    },
+    "/Game/VFX/Particles/P_characterscreenSmoke": {
+        "MI_DustCycleEternal_Loop": "/Game/Materials/VFX/MI_DustCycleEternal_Loop"
+    },
+    "/Game/VFX/Particles/P_CharacterSelectScreen_Sparks": {
+        "MI_Blue_Electric04": "/Game/Materials/VFX/MI_Blue_Electric04",
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01"
+    },
+    "/Game/VFX/Particles/P_Character_Disintegrate": {},
+    "/Game/VFX/Particles/P_Character_MeltaDeath": {
+        "MI_Rocks": "/Game/Materials/VFX/MI_Rocks",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_CharSelectORK_Fire": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding",
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01",
+        "M_Flame_Final_MAT_Inst": "/Game/Materials/VFX/Procedural/M_Flame_Final_MAT_Inst",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_Chaos_Bronze": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_Chaos_Gold": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_Chaos_Platinum": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_Chaos_Silver": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_eldar": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_eldar_Gold": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_eldar_Platinum": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_eldar_Silver": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_IM_Bronze": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_IM_Gold": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_IM_Platinum": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_IM_Silver": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_ORC_Bronze": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_ORC_Gold": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_ORC_Platinum": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Chest_Opening_ORC_Silver": {
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_Cigar_Embers": {
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_CleanBurner": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "MI_FireCycleFlame": "/Game/Materials/VFX/MI_FireCycleFlame"
+    },
+    "/Game/VFX/Particles/P_CoalBurner": {
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022"
+    },
+    "/Game/VFX/Particles/P_CoreLightning": {
+        "M_TileLightning": "/Game/Materials/VFX/M_TileLightning"
+    },
+    "/Game/VFX/Particles/P_CoverVentSmoke": {
+        "MI_DustCycleEternal_Loop": "/Game/Materials/VFX/MI_DustCycleEternal_Loop"
+    },
+    "/Game/VFX/Particles/P_CSMplasmaGunMuzzle": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion"
+    },
+    "/Game/VFX/Particles/P_CSMplasmaGunMuzzle_noCharge": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_CSMplasmaGun_explosion": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact",
+        "Mi_SMplasmaCannon": "/Game/Materials/VFX/Mi_SMplasmaCannon",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_StarshotExplosion2": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion2"
+    },
+    "/Game/VFX/Particles/P_CSMplasmaGun_explosion_Overcharged": {
+        "Mi_SMplasmaCannon": "/Game/Materials/VFX/Mi_SMplasmaCannon",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_StarshotExplosion2": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion2"
+    },
+    "/Game/VFX/Particles/P_CSM_HellplasmaCannon_explosion": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaBall_translucent": "/Game/Materials/VFX/M_PlasmaBall_translucent",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact",
+        "Mi_SMplasmaCannon": "/Game/Materials/VFX/Mi_SMplasmaCannon",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_StarshotExplosion2": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion2"
+    },
+    "/Game/VFX/Particles/P_CSM_PlasmaBallTrail": {
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_PLasmaguntrail": "/Game/Materials/VFX/Trail/Mi_PLasmaguntrail"
+    },
+    "/Game/VFX/Particles/P_CSM_PlasmaBall_reaperTrail": {
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_PLasmaguntrail": "/Game/Materials/VFX/Trail/Mi_PLasmaguntrail"
+    },
+    "/Game/VFX/Particles/P_CSM_PlasmacannonBall_reaperTrail2": {
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_PLasmaguntrail": "/Game/Materials/VFX/Trail/Mi_PLasmaguntrail"
+    },
+    "/Game/VFX/Particles/P_CSM_plasmaCannon_explosion": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaBall_translucent": "/Game/Materials/VFX/M_PlasmaBall_translucent",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact",
+        "Mi_SMplasmaCannon": "/Game/Materials/VFX/Mi_SMplasmaCannon",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_StarshotExplosion2": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion2"
+    },
+    "/Game/VFX/Particles/P_CSM_PlasmaCannon_MuzzleFlash": {
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_csm_PlasmaGrenade_Pistol": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_BlackBody": "/Game/Materials/VFX/M_BlackBody",
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "MI_ExploAnimDesaturated": "/Game/Materials/VFX/MI_ExploAnimDesaturated",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_CSM_PlasmaGun_charging": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_csm_PlasmaPistolCharging01": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_CSM_PlasmaPistolVentingVapor2": {
+        "M_BillowSteam": "/Game/Materials/VFX/M_BillowSteam"
+    },
+    "/Game/VFX/Particles/P_CSM_plasmaPistol_explosion": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact",
+        "Mi_SMplasmaCannon": "/Game/Materials/VFX/Mi_SMplasmaCannon",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_StarshotExplosion2": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion2"
+    },
+    "/Game/VFX/Particles/P_CSM_plasmaPistol_impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "Mi_chaosPistolImpact": "/Game/Materials/VFX/Mi_chaosPistolImpact",
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "Mi_Pulselaserimpact_Flash": "/Game/Materials/VFX/Mi_Pulselaserimpact_Flash",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_CSM_PlasmaPistol_MuzzleFlash": {
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_CSM_plasmaPistol_trail": {
+        "M_HeavyTracer_Smoke": "/Game/Materials/VFX/Trail/M_HeavyTracer_Smoke",
+        "M_PlasmaTracer_Panning": "/Game/Materials/VFX/Trail/M_PlasmaTracer_Panning"
+    },
+    "/Game/VFX/Particles/P_CSM_Plasma_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_PlasmaFire_Teal": "/Game/Materials/VFX/MI_PlasmaFire_Teal",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion"
+    },
+    "/Game/VFX/Particles/P_CSM_PowerAxeTesla": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03"
+    },
+    "/Game/VFX/Particles/P_Cyclotron": {
+        "M_FireEmissiveDesaturatedPanner2": "/Game/Materials/VFX/M_FireEmissiveDesaturatedPanner2"
+    },
+    "/Game/VFX/Particles/P_DagoldenFixa_Electri": {
+        "MI_Blue_Electric02": "/Game/Materials/VFX/MI_Blue_Electric02",
+        "MI_Blue_Electric04": "/Game/Materials/VFX/MI_Blue_Electric04",
+        "Mi_ServoSkullSParkFlash": "/Game/Materials/VFX/Mi_ServoSkullSParkFlash"
+    },
+    "/Game/VFX/Particles/P_DamnedLegionIdle_Fire": {
+        "Mi_BasicGlow": "/Game/Materials/VFX/Mi_BasicGlow"
+    },
+    "/Game/VFX/Particles/P_DamnedLegionTorchFire": {
+        "Mi_BasicGlow": "/Game/Materials/VFX/Mi_BasicGlow",
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01",
+        "Mi_damnedLegionTorchFire": "/Game/Materials/VFX/Procedural/Mi_damnedLegionTorchFire"
+    },
+    "/Game/VFX/Particles/P_DarkCoalSmoke": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit"
+    },
+    "/Game/VFX/Particles/P_DarkSmoke": {
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit"
+    },
+    "/Game/VFX/Particles/P_DeamonBolt_Impact": {
+        "M_BlackBody": "/Game/Materials/VFX/M_BlackBody",
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "M_ProceduraHandMagic": "/Game/Materials/VFX/Procedural/M_ProceduraHandMagic",
+        "M_ProceduralElectro": "/Game/Materials/VFX/Procedural/M_ProceduralElectro"
+    },
+    "/Game/VFX/Particles/P_DeamonBolt_Muzzle": {
+        "M_FireEmissiveDesaturatedPanner2": "/Game/Materials/VFX/M_FireEmissiveDesaturatedPanner2",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color"
+    },
+    "/Game/VFX/Particles/P_DeamonTrail": {
+        "M_DeamonBall": "/Game/Materials/VFX/Procedural/M_DeamonBall",
+        "M_Procedural_LavaEvil_OverParticleLife_EVIL": "/Game/Materials/VFX/Procedural/M_Procedural_LavaEvil_OverParticleLife_EVIL",
+        "M_ProceduralPossesion_OverParticleLife": "/Game/Materials/VFX/Procedural/M_ProceduralPossesion_OverParticleLife",
+        "M_Tentacles": "/Game/Materials/VFX/Procedural/M_Tentacles"
+    },
+    "/Game/VFX/Particles/P_DefaultMelee_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/P_Default_ShieldHit": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_Default_ShieldHit_Weapon": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "M_Tracer_Beam_Base": "/Game/Materials/VFX/Trail/M_Tracer_Beam_Base"
+    },
+    "/Game/VFX/Particles/P_DefenseRedMyst": {},
+    "/Game/VFX/Particles/P_DeffgunCharge01": {
+        "MI_ChainSword_ChargeGlow": "/Game/Materials/VFX/MZF/MI_ChainSword_ChargeGlow"
+    },
+    "/Game/VFX/Particles/P_DeffgunFullyCharge": {},
+    "/Game/VFX/Particles/P_DeffgunKannonCharge01": {
+        "MI_ChainSword_ChargeGlow": "/Game/Materials/VFX/MZF/MI_ChainSword_ChargeGlow"
+    },
+    "/Game/VFX/Particles/P_DeffgunKannonFullyCharge": {},
+    "/Game/VFX/Particles/P_DemolisherGrenade_andTrail": {
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "M_SmokeTrailDemolisher": "/Game/Materials/VFX/M_SmokeTrailDemolisher",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022"
+    },
+    "/Game/VFX/Particles/P_DemolisherGrenade_Explosion": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit",
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_Rocks": "/Game/Materials/VFX/MI_Rocks"
+    },
+    "/Game/VFX/Particles/P_DemolisherGrenade_HullImpact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_Demolisher_MZF": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "MI_DustCycleEternal_Loop": "/Game/Materials/VFX/MI_DustCycleEternal_Loop"
+    },
+    "/Game/VFX/Particles/P_DerrickGearSparks": {},
+    "/Game/VFX/Particles/P_DestroyableGate_StateB": {
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit"
+    },
+    "/Game/VFX/Particles/P_DestroyableGate_StateC": {
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit"
+    },
+    "/Game/VFX/Particles/P_DestroyableGate_StateD": {
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit",
+        "MI_Rocks": "/Game/Materials/VFX/MI_Rocks"
+    },
+    "/Game/VFX/Particles/P_DestroyableGate_StateF": {
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit",
+        "MI_Rocks": "/Game/Materials/VFX/MI_Rocks"
+    },
+    "/Game/VFX/Particles/P_DomeRain_LightningStrike": {
+        "Mi_LightningStrike": "/Game/Materials/VFX/Mi_LightningStrike"
+    },
+    "/Game/VFX/Particles/P_DomeRain_LightningStrikebEAM": {
+        "M_TileLightning": "/Game/Materials/VFX/M_TileLightning"
+    },
+    "/Game/VFX/Particles/P_DuellingFlagLoop": {
+        "Mi_Weaponskull": "/Game/Materials/VFX/Mi_Weaponskull"
+    },
+    "/Game/VFX/Particles/P_DuellingFlagLoop_OutofBounds": {
+        "MI_Emissive_Spotlight_Red_01": "/Game/Materials/Templates/MI_Emissive_Spotlight_Red_01"
+    },
+    "/Game/VFX/Particles/P_DuellingFlagLoop_OutOfBounds1": {
+        "Mi_Weaponskull": "/Game/Materials/VFX/Mi_Weaponskull"
+    },
+    "/Game/VFX/Particles/P_DustClouds": {
+        "M_FlowmapSwirl": "/Game/Materials/VFX/M_FlowmapSwirl"
+    },
+    "/Game/VFX/Particles/P_DustCloudsMalvoy": {
+        "M_AlphalightClouds": "/Game/Materials/Sky/M_AlphalightClouds"
+    },
+    "/Game/VFX/Particles/P_DustCloudsZedek": {
+        "Mi_ZedekParticleClouds": "/Game/Materials/Sky/Mi_ZedekParticleClouds"
+    },
+    "/Game/VFX/Particles/P_DustFromCeiling": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk",
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit"
+    },
+    "/Game/VFX/Particles/P_DustImpact01": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_DustCycleEternal_Loop": "/Game/Materials/VFX/MI_DustCycleEternal_Loop",
+        "MI_Rocks": "/Game/Materials/VFX/MI_Rocks",
+        "MI_SnowPuff_01": "/Game/Materials/VFX/MI_SnowPuff_01"
+    },
+    "/Game/VFX/Particles/P_DustImpactExecution": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_DustCycleEternal_Loop": "/Game/Materials/VFX/MI_DustCycleEternal_Loop",
+        "MI_Rocks": "/Game/Materials/VFX/MI_Rocks",
+        "MI_SnowPuff_01": "/Game/Materials/VFX/MI_SnowPuff_01"
+    },
+    "/Game/VFX/Particles/P_EldarFlightTrail": {
+        "M_ParticleCamoffset": "/Game/Materials/VFX/M_ParticleCamoffset",
+        "Mi_FlightRail_eldar": "/Game/Materials/VFX/Trail/Mi_FlightRail_eldar"
+    },
+    "/Game/VFX/Particles/P_EldarJinxMuzzle": {
+        "M_InstabilityWarp": "/Game/Materials/VFX/M_InstabilityWarp",
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "Mi_UlthranSymbol": "/Game/Materials/VFX/Mi_UlthranSymbol",
+        "MI_Yellow_Electric01": "/Game/Materials/VFX/MI_Yellow_Electric01"
+    },
+    "/Game/VFX/Particles/P_EldarShacklesBuff": {
+        "M_SHacklesDebuff": "/Game/Materials/VFX/M_SHacklesDebuff",
+        "Mi_RingofThorns": "/Game/Materials/VFX/Mi_RingofThorns"
+    },
+    "/Game/VFX/Particles/P_eldar_motionTrail": {
+        "MI_MotionTrailKnife": "/Game/Materials/VFX/Trail/MI_MotionTrailKnife"
+    },
+    "/Game/VFX/Particles/P_ElevatorSparks": {},
+    "/Game/VFX/Particles/P_El_DustFootStepWalk": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_El_DustFootStep_RUN": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_El_DustFootStep_Sprint": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_Rune01": {
+        "Mi_Rune_Helmet01": "/Game/Materials/VFX/Mi_Rune_Helmet01"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_Rune02": {
+        "Mi_Rune_Helmet02": "/Game/Materials/VFX/Mi_Rune_Helmet02"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_Rune03": {
+        "Mi_Rune_Helmet03": "/Game/Materials/VFX/Mi_Rune_Helmet03"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_Rune04": {
+        "Mi_Rune_Helmet04": "/Game/Materials/VFX/Mi_Rune_Helmet04"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_Rune05": {
+        "Mi_Rune_Helmet05": "/Game/Materials/VFX/Mi_Rune_Helmet05"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_Rune06": {
+        "Mi_Rune_Helmet06": "/Game/Materials/VFX/Mi_Rune_Helmet06"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_Rune07": {
+        "Mi_Rune_Helmet07": "/Game/Materials/VFX/Mi_Rune_Helmet07"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_SuperRune01": {
+        "Mi_Rune_Helmet01": "/Game/Materials/VFX/Mi_Rune_Helmet01"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_SuperRune02": {
+        "Mi_Rune_Helmet02": "/Game/Materials/VFX/Mi_Rune_Helmet02"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_superRune03": {
+        "Mi_Rune_Helmet03": "/Game/Materials/VFX/Mi_Rune_Helmet03"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_superRune04": {
+        "Mi_Rune_Helmet04": "/Game/Materials/VFX/Mi_Rune_Helmet04"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_superRune05": {
+        "Mi_Rune_Helmet05": "/Game/Materials/VFX/Mi_Rune_Helmet05"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_superRune06": {
+        "Mi_superRune_Helmet06": "/Game/Materials/VFX/Mi_superRune_Helmet06"
+    },
+    "/Game/VFX/Particles/P_El_Helmet_superRune07": {
+        "Mi_Rune_Helmet07": "/Game/Materials/VFX/Mi_Rune_Helmet07"
+    },
+    "/Game/VFX/Particles/P_Embolden_AOE": {
+        "M_EmboldenRune": "/Game/Materials/VFX/M_EmboldenRune",
+        "M_NurglehealBubble": "/Game/Materials/VFX/M_NurglehealBubble",
+        "Mi_startGlow": "/Game/Materials/VFX/Mi_startGlow",
+        "Mi_TzeentchSelfHeal": "/Game/Materials/VFX/Mi_TzeentchSelfHeal",
+        "M_EmboldenHealing": "/Game/Materials/VFX/Procedural/M_EmboldenHealing"
+    },
+    "/Game/VFX/Particles/P_EnhanceAOEbuff": {
+        "M_NurglehealBubble": "/Game/Materials/VFX/M_NurglehealBubble",
+        "Mi_Enhance": "/Game/Materials/VFX/Mi_Enhance",
+        "Mi_startGlow": "/Game/Materials/VFX/Mi_startGlow",
+        "M_Enhancebuff": "/Game/Materials/VFX/Procedural/M_Enhancebuff"
+    },
+    "/Game/VFX/Particles/P_FenrisAxe_FullyCharge": {
+        "M_FireEmissiveDesaturatedPanner2": "/Game/Materials/VFX/M_FireEmissiveDesaturatedPanner2",
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/P_Fenris_PowerAxe_Charge01": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion"
+    },
+    "/Game/VFX/Particles/P_Fenris_PowerAxe_Cosmetic": {
+        "M_ProceduralElectroFenris": "/Game/Materials/VFX/Procedural/M_ProceduralElectroFenris"
+    },
+    "/Game/VFX/Particles/P_FireSphereCauseStatus": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding",
+        "M_Flame_Final_MAT": "/Game/Materials/VFX/Procedural/M_Flame_Final_MAT",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_FireSphereNoSmokeCauseStatus": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding",
+        "M_Flame_Final_MAT": "/Game/Materials/VFX/Procedural/M_Flame_Final_MAT",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_FlaconPulseLaser_Muzzle": {
+        "M_PulseRingMesh": "/Game/Materials/VFX/M_PulseRingMesh",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/P_FlaconPulseLaser_Trail": {
+        "M_EldarHeavytracer": "/Game/Materials/VFX/Trail/M_EldarHeavytracer",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/P_FlakImpact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022",
+        "MI_Rocks": "/Game/Materials/VFX/MI_Rocks",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_FlamesCandle": {
+        "MI_CandleCycleFlame": "/Game/Materials/VFX/MI_CandleCycleFlame"
+    },
+    "/Game/VFX/Particles/P_ForceAxe": {
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_ForceSword": {
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "Mi_SwordChaosGlow": "/Game/Materials/VFX/MZF/Mi_SwordChaosGlow"
+    },
+    "/Game/VFX/Particles/P_FragGrenadeExplosion": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_BlackBody": "/Game/Materials/VFX/M_BlackBody",
+        "MI_DustDirectional": "/Game/Materials/VFX/MI_DustDirectional",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_Frost_Ork_pod": {},
+    "/Game/VFX/Particles/P_FusionPistol_WarmUp2": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_FusionPistol_WarmUp_IceHawk": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_GasCloud": {
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "M_SmokeGasUnFogged": "/Game/Materials/VFX/M_SmokeGasUnFogged"
+    },
+    "/Game/VFX/Particles/P_GlassImpact": {
+        "Mi_glassImpact": "/Game/Materials/VFX/BasicMaster/Mi_glassImpact"
+    },
+    "/Game/VFX/Particles/P_GodModeICON": {
+        "Mi_GodStar": "/Game/Materials/VFX/Mi_GodStar"
+    },
+    "/Game/VFX/Particles/P_GooBubbleSlow": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2"
+    },
+    "/Game/VFX/Particles/P_GooBulletImpact": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2",
+        "M_Goo_splashThreshold": "/Game/Materials/VFX/M_Goo_splashThreshold",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas",
+        "Mi_GooImpactFlash": "/Game/Materials/VFX/Mi_GooImpactFlash"
+    },
+    "/Game/VFX/Particles/P_GooFootStepRUN": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2",
+        "M_Goo_splashThreshold": "/Game/Materials/VFX/M_Goo_splashThreshold"
+    },
+    "/Game/VFX/Particles/P_GooFootStepSprint": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2",
+        "M_Goo_splashThreshold": "/Game/Materials/VFX/M_Goo_splashThreshold"
+    },
+    "/Game/VFX/Particles/P_GooFootStepWalk": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2"
+    },
+    "/Game/VFX/Particles/P_GooSewersWaterfalllSplashNomesh": {
+        "M_Goo_splashThreshold": "/Game/Materials/VFX/M_Goo_splashThreshold",
+        "M_ParticleGooSplashMesh": "/Game/Materials/VFX/M_ParticleGooSplashMesh",
+        "MI_WAterfallSplashSmoke": "/Game/Materials/VFX/MI_WAterfallSplashSmoke"
+    },
+    "/Game/VFX/Particles/P_GooWaterfallSplash": {
+        "M_Goo_splashThreshold": "/Game/Materials/VFX/M_Goo_splashThreshold",
+        "M_ParticleGooSplashMesh": "/Game/Materials/VFX/M_ParticleGooSplashMesh",
+        "MI_WAterfallSplashSmoke": "/Game/Materials/VFX/MI_WAterfallSplashSmoke"
+    },
+    "/Game/VFX/Particles/P_GravCannonCharge": {
+        "MI_ChainSword_ChargeGlow": "/Game/Materials/VFX/MZF/MI_ChainSword_ChargeGlow"
+    },
+    "/Game/VFX/Particles/P_GravCannon_Beam": {
+        "Mi_GracgunGlowThresh": "/Game/Materials/VFX/Mi_GracgunGlowThresh",
+        "Mi_GravGlow": "/Game/Materials/VFX/Mi_GravGlow",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort",
+        "Mi_GravgunMuzzlethresh": "/Game/Materials/VFX/Mi_GravgunMuzzlethresh",
+        "M_GravBeam": "/Game/Materials/VFX/Trail/M_GravBeam"
+    },
+    "/Game/VFX/Particles/P_GravCannon_Charge": {
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort"
+    },
+    "/Game/VFX/Particles/P_GravCannon_Charge_Unique": {
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort"
+    },
+    "/Game/VFX/Particles/P_GravCannon_HitLoopUnique": {
+        "M_BaseDistortionRefrac": "/Game/Materials/VFX/M_BaseDistortionRefrac",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3"
+    },
+    "/Game/VFX/Particles/P_GravCannon_Impact": {
+        "M_BaseDistortionRefrac": "/Game/Materials/VFX/M_BaseDistortionRefrac",
+        "Mi_gracglowimpact": "/Game/Materials/VFX/Mi_gracglowimpact",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort"
+    },
+    "/Game/VFX/Particles/P_GravCannon_Impact_Unique": {
+        "M_BaseDistortionRefrac": "/Game/Materials/VFX/M_BaseDistortionRefrac",
+        "Mi_gracglowimpact": "/Game/Materials/VFX/Mi_gracglowimpact",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort"
+    },
+    "/Game/VFX/Particles/P_GravGun_Beam": {
+        "Mi_GracgunGlowThresh": "/Game/Materials/VFX/Mi_GracgunGlowThresh",
+        "Mi_GravGlow": "/Game/Materials/VFX/Mi_GravGlow",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort",
+        "Mi_GravgunMuzzlethresh": "/Game/Materials/VFX/Mi_GravgunMuzzlethresh",
+        "M_GravBeam": "/Game/Materials/VFX/Trail/M_GravBeam"
+    },
+    "/Game/VFX/Particles/P_GravGun_Beam_Execute": {
+        "Mi_GracgunGlowThresh": "/Game/Materials/VFX/Mi_GracgunGlowThresh",
+        "Mi_GravGlow": "/Game/Materials/VFX/Mi_GravGlow",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort",
+        "Mi_GravgunMuzzlethresh": "/Game/Materials/VFX/Mi_GravgunMuzzlethresh",
+        "M_GravBeam": "/Game/Materials/VFX/Trail/M_GravBeam"
+    },
+    "/Game/VFX/Particles/P_GravGun_Charge": {
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort"
+    },
+    "/Game/VFX/Particles/P_GravGun_Exec_Flash": {
+        "Mi_startGlow": "/Game/Materials/VFX/Mi_startGlow"
+    },
+    "/Game/VFX/Particles/P_GravGun_HitLoop": {
+        "M_BaseDistortionRefrac": "/Game/Materials/VFX/M_BaseDistortionRefrac",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2"
+    },
+    "/Game/VFX/Particles/P_GravGun_Impact": {
+        "M_BaseDistortionRefrac": "/Game/Materials/VFX/M_BaseDistortionRefrac",
+        "Mi_gracglowimpact": "/Game/Materials/VFX/Mi_gracglowimpact",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort"
+    },
+    "/Game/VFX/Particles/P_Gravgun_impact_execute": {
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort",
+        "Mi_Gravgunexecutedistortion": "/Game/Materials/VFX/Mi_Gravgunexecutedistortion"
+    },
+    "/Game/VFX/Particles/P_GravPistol_Beam": {
+        "Mi_GracgunGlowThresh": "/Game/Materials/VFX/Mi_GracgunGlowThresh",
+        "Mi_GravGlow": "/Game/Materials/VFX/Mi_GravGlow",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort",
+        "Mi_GravgunMuzzlethresh": "/Game/Materials/VFX/Mi_GravgunMuzzlethresh",
+        "M_GravBeam": "/Game/Materials/VFX/Trail/M_GravBeam"
+    },
+    "/Game/VFX/Particles/P_GravPistol_Charge": {
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort"
+    },
+    "/Game/VFX/Particles/P_GravPistol_HitLoop": {
+        "M_BaseDistortionRefrac": "/Game/Materials/VFX/M_BaseDistortionRefrac",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3"
+    },
+    "/Game/VFX/Particles/P_GravPistol_Impact": {
+        "M_BaseDistortionRefrac": "/Game/Materials/VFX/M_BaseDistortionRefrac",
+        "Mi_gracglowimpact": "/Game/Materials/VFX/Mi_gracglowimpact",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort"
+    },
+    "/Game/VFX/Particles/P_GravTube": {
+        "M_Tracer_Beam_Base": "/Game/Materials/VFX/Trail/M_Tracer_Beam_Base"
+    },
+    "/Game/VFX/Particles/P_GrenadeBlight_BlinkWarning_LightSlow2": {
+        "M_blink_grenade": "/Game/Materials/VFX/M_blink_grenade"
+    },
+    "/Game/VFX/Particles/P_GrenadeFrag_BlinkWarning_Light": {
+        "M_blink_grenade": "/Game/Materials/VFX/M_blink_grenade"
+    },
+    "/Game/VFX/Particles/P_GrenadeFrag_BlinkWarning_LightSlow": {
+        "M_blink_grenade": "/Game/Materials/VFX/M_blink_grenade"
+    },
+    "/Game/VFX/Particles/P_GrenadeKrak_BlinkWarning_Light": {
+        "M_blink_grenade": "/Game/Materials/VFX/M_blink_grenade"
+    },
+    "/Game/VFX/Particles/P_GrenadeKrak_BlinkWarning_LightSlow": {
+        "M_blink_grenade": "/Game/Materials/VFX/M_blink_grenade"
+    },
+    "/Game/VFX/Particles/P_GrenadeMelta_BlinkWarning_Light": {
+        "M_blink_grenade": "/Game/Materials/VFX/M_blink_grenade"
+    },
+    "/Game/VFX/Particles/P_GrenadeMelta_BlinkWarning_LightSlow": {
+        "M_blink_grenade": "/Game/Materials/VFX/M_blink_grenade"
+    },
+    "/Game/VFX/Particles/P_gunwagonExhaust": {},
+    "/Game/VFX/Particles/P_HackBeams_CM": {
+        "M_TileLightning": "/Game/Materials/VFX/M_TileLightning"
+    },
+    "/Game/VFX/Particles/P_HackBeams_EL": {
+        "M_TileLightning": "/Game/Materials/VFX/M_TileLightning"
+    },
+    "/Game/VFX/Particles/P_HackBeams_ORK": {
+        "M_TileLightning": "/Game/Materials/VFX/M_TileLightning"
+    },
+    "/Game/VFX/Particles/P_HarkusSewersGas": {
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas"
+    },
+    "/Game/VFX/Particles/P_HarkusSewersGasBox": {
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas"
+    },
+    "/Game/VFX/Particles/P_HarkusSmoke": {
+        "M_Smoke_alphaThreshold": "/Game/Materials/VFX/M_Smoke_alphaThreshold"
+    },
+    "/Game/VFX/Particles/P_Haywire_Grenade": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_Haywire": "/Game/Materials/VFX/M_Haywire",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "M_ProceduralElectro": "/Game/Materials/VFX/Procedural/M_ProceduralElectro"
+    },
+    "/Game/VFX/Particles/P_Healgrenade": {
+        "M_SmokeGasUnFogged": "/Game/Materials/VFX/M_SmokeGasUnFogged",
+        "Mi_GrenadeHealglow": "/Game/Materials/VFX/Mi_GrenadeHealglow",
+        "Mi_ScatterLaserFlash": "/Game/Materials/VFX/Mi_ScatterLaserFlash"
+    },
+    "/Game/VFX/Particles/P_HealingStation_pulse": {
+        "M_HealStation": "/Game/Materials/VFX/M_HealStation",
+        "M_TargetJumpPack": "/Game/Materials/VFX/M_TargetJumpPack",
+        "MI_HealingCross": "/Game/Materials/VFX/MI_HealingCross"
+    },
+    "/Game/VFX/Particles/P_HealingStation_pulseORK": {
+        "M_HealStation": "/Game/Materials/VFX/M_HealStation",
+        "MI_BeingDizzy": "/Game/Materials/VFX/MI_BeingDizzy",
+        "Mi_HealMyst": "/Game/Materials/VFX/Mi_HealMyst"
+    },
+    "/Game/VFX/Particles/P_Heal_UP": {
+        "MI_HealingCadeuceus": "/Game/Materials/VFX/MI_HealingCadeuceus",
+        "MI_HealingCross": "/Game/Materials/VFX/MI_HealingCross"
+    },
+    "/Game/VFX/Particles/P_Heal_UP_ORK": {
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "MI_BeingDizzy": "/Game/Materials/VFX/MI_BeingDizzy"
+    },
+    "/Game/VFX/Particles/P_HeavyBolterMuzzleFlash": {
+        "MI_MuzzleFlash_Quad": "/Game/Materials/VFX/MZF/MI_MuzzleFlash_Quad",
+        "MI_MuzzleFlashDirectional_Bolter2": "/Game/Materials/VFX/MZF/MI_MuzzleFlashDirectional_Bolter2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_HeavyBolterMuzzleFlash_Owner": {
+        "MI_MuzzleFlash_Quad": "/Game/Materials/VFX/MZF/MI_MuzzleFlash_Quad",
+        "MI_MuzzleFlashDirectional_Bolter2": "/Game/Materials/VFX/MZF/MI_MuzzleFlashDirectional_Bolter2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_HeavyBolter_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_HeavyBolter_Projectile_Trail": {
+        "M_HeavyTracer_Panning": "/Game/Materials/VFX/Trail/M_HeavyTracer_Panning",
+        "M_HeavyTracer_Smoke": "/Game/Materials/VFX/Trail/M_HeavyTracer_Smoke"
+    },
+    "/Game/VFX/Particles/P_HellKissGlow": {
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_HiveComplexLavaSteam": {
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas"
+    },
+    "/Game/VFX/Particles/P_HiveComplexLavaSteamSmall": {},
+    "/Game/VFX/Particles/P_HiveComplexSlowFog": {},
+    "/Game/VFX/Particles/P_InfantryAirstrike": {
+        "M_additiveRadialSmoky": "/Game/Materials/VFX/M_additiveRadialSmoky",
+        "M_BlackBodyDetailed": "/Game/Materials/VFX/M_BlackBodyDetailed",
+        "M_Explosion": "/Game/Materials/VFX/M_Explosion",
+        "M_lightningPan": "/Game/Materials/VFX/M_lightningPan",
+        "M_SoftEdgesMesh": "/Game/Materials/VFX/M_SoftEdgesMesh",
+        "Mi_AlphaBlendedDirt": "/Game/Materials/VFX/Mi_AlphaBlendedDirt",
+        "Mi_GlowLines": "/Game/Materials/VFX/Mi_GlowLines",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "Mi_NovaFlat": "/Game/Materials/VFX/Mi_NovaFlat",
+        "Mi_orbitalStrikeGlow": "/Game/Materials/VFX/Mi_orbitalStrikeGlow",
+        "MI_Rocks": "/Game/Materials/VFX/MI_Rocks",
+        "Mi_startGlow": "/Game/Materials/VFX/Mi_startGlow"
+    },
+    "/Game/VFX/Particles/P_Iron_Halo_Glorious": {
+        "M_IronHalo_Glorious": "/Game/Materials/VFX/Procedural/M_IronHalo_Glorious"
+    },
+    "/Game/VFX/Particles/P_Judex_PowerSword_Cosmetic": {
+        "M_ProceduralElectroJudex": "/Game/Materials/VFX/Procedural/M_ProceduralElectroJudex"
+    },
+    "/Game/VFX/Particles/P_JumpPackTakeOffDust": {
+        "MI_DustCycleDeath": "/Game/Materials/VFX/MI_DustCycleDeath",
+        "MI_DustCycleEternal_Loop": "/Game/Materials/VFX/MI_DustCycleEternal_Loop",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_JumpPack_SmashAttack": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit",
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_Jumppack_Trail": {
+        "M_JumpPack_TracerPanning": "/Game/Materials/VFX/Trail/M_JumpPack_TracerPanning"
+    },
+    "/Game/VFX/Particles/P_Jumppack_Trail_L": {
+        "M_JumpPack_TracerPanning": "/Game/Materials/VFX/Trail/M_JumpPack_TracerPanning"
+    },
+    "/Game/VFX/Particles/P_Jumppack_Trail_R": {
+        "M_JumpPack_TracerPanning": "/Game/Materials/VFX/Trail/M_JumpPack_TracerPanning"
+    },
+    "/Game/VFX/Particles/P_KannonFireGrenade": {
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "M_RockitSmoke": "/Game/Materials/VFX/M_RockitSmoke",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding",
+        "M_Flame_Final_MAT": "/Game/Materials/VFX/Procedural/M_Flame_Final_MAT",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_KannonFireMortar": {
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "M_RockitSmoke": "/Game/Materials/VFX/M_RockitSmoke",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding",
+        "M_Flame_Final_MAT": "/Game/Materials/VFX/Procedural/M_Flame_Final_MAT",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_KannonGrenadeExplosion2": {
+        "M_BlackBody": "/Game/Materials/VFX/M_BlackBody",
+        "MI_DustDirectional": "/Game/Materials/VFX/MI_DustDirectional",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_KannonMortarExplosion3": {
+        "M_BlackBody": "/Game/Materials/VFX/M_BlackBody",
+        "M_RockitSmoke": "/Game/Materials/VFX/M_RockitSmoke",
+        "MI_DustDirectional": "/Game/Materials/VFX/MI_DustDirectional",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_KhorneSigil_Badge": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/P_Khorne_Immune": {
+        "M_Khorne_AntiMage": "/Game/Materials/VFX/M_Khorne_AntiMage",
+        "M_ProceduralElectroStormShield": "/Game/Materials/VFX/Procedural/M_ProceduralElectroStormShield"
+    },
+    "/Game/VFX/Particles/P_KissPlasmaVenting01": {
+        "M_BillowSteam": "/Game/Materials/VFX/M_BillowSteam"
+    },
+    "/Game/VFX/Particles/P_KnifeCharge01": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_KnifeFullyCharge": {},
+    "/Game/VFX/Particles/P_KnifeMotionTrail": {
+        "MI_MotionTrailKnife": "/Game/Materials/VFX/Trail/MI_MotionTrailKnife"
+    },
+    "/Game/VFX/Particles/P_KrakGrenadeExplosion": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_Lamp_ProjectorSmall": {
+        "M_AdditiveEmissiveSoftParticle": "/Game/Materials/VFX/M_AdditiveEmissiveSoftParticle"
+    },
+    "/Game/VFX/Particles/P_Lamp_ProjectorSmallMedusa": {
+        "M_AdditiveEmissiveSoftParticle": "/Game/Materials/VFX/M_AdditiveEmissiveSoftParticle"
+    },
+    "/Game/VFX/Particles/P_LascannonCharge01": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_ChainSword_ChargeGlow": "/Game/Materials/VFX/MZF/MI_ChainSword_ChargeGlow"
+    },
+    "/Game/VFX/Particles/P_LascannonTracer": {
+        "M_LascannonTracer": "/Game/Materials/VFX/Trail/M_LascannonTracer"
+    },
+    "/Game/VFX/Particles/P_LascannonTrail": {
+        "M_LascannonBeam": "/Game/Materials/VFX/Trail/M_LascannonBeam"
+    },
+    "/Game/VFX/Particles/P_Lascannon_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_LascannonImpactAnimated": "/Game/Materials/VFX/MI_LascannonImpactAnimated",
+        "MI_LascannonImpactSphere": "/Game/Materials/VFX/MI_LascannonImpactSphere"
+    },
+    "/Game/VFX/Particles/P_Lascannon_MuzzleFlash": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_LascannonImpactAnimated": "/Game/Materials/VFX/MI_LascannonImpactAnimated",
+        "MI_LascannonImpactSphere": "/Game/Materials/VFX/MI_LascannonImpactSphere"
+    },
+    "/Game/VFX/Particles/P_Lascannon_WarmUp": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_AlphaBlendedSoft_ChanelPanner": "/Game/Materials/VFX/M_AlphaBlendedSoft_ChanelPanner",
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_LascannonImpactAnimated": "/Game/Materials/VFX/MI_LascannonImpactAnimated"
+    },
+    "/Game/VFX/Particles/P_LashofSlaanesh_Trail": {
+        "M_OrganicTrail": "/Game/Materials/VFX/Trail/M_OrganicTrail",
+        "M_PlasmaTracer_Panning": "/Game/Materials/VFX/Trail/M_PlasmaTracer_Panning"
+    },
+    "/Game/VFX/Particles/P_LavaFalling": {},
+    "/Game/VFX/Particles/P_LavaSplashSmall": {},
+    "/Game/VFX/Particles/P_LavaSteam": {},
+    "/Game/VFX/Particles/P_LavenderMyst": {},
+    "/Game/VFX/Particles/P_LavenderMystFalling": {},
+    "/Game/VFX/Particles/P_LeaderBeacon": {
+        "M_LeaderBeacon": "/Game/Materials/VFX/M_LeaderBeacon"
+    },
+    "/Game/VFX/Particles/P_LegionnaireBolter_MuzzleFlash": {
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_LegionnaireBolter_Projectile_Trail": {
+        "M_AbaddonPhosphorous": "/Game/Materials/VFX/Trail/M_AbaddonPhosphorous",
+        "M_AbaddonsGraceTracer_Smoke": "/Game/Materials/VFX/Trail/M_AbaddonsGraceTracer_Smoke",
+        "M_HeavyTracer_Panning": "/Game/Materials/VFX/Trail/M_HeavyTracer_Panning"
+    },
+    "/Game/VFX/Particles/P_Lightglow": {
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01"
+    },
+    "/Game/VFX/Particles/P_LitanyPowerMaul_FullyCharged": {
+        "M_FireEmissiveDesaturatedPanner2": "/Game/Materials/VFX/M_FireEmissiveDesaturatedPanner2",
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/P_Litany_PowerMaul_Cosmetic": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03"
+    },
+    "/Game/VFX/Particles/P_MaineMenuSpacedust": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk"
+    },
+    "/Game/VFX/Particles/P_MedusaBrazero": {
+        "M_AdditiveEmissiveSoftParticle": "/Game/Materials/VFX/M_AdditiveEmissiveSoftParticle",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022",
+        "MI_FireCycleFlame": "/Game/Materials/VFX/MI_FireCycleFlame"
+    },
+    "/Game/VFX/Particles/P_MedusaLavaSteam": {
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas"
+    },
+    "/Game/VFX/Particles/P_MedusaLavaSteamLong": {
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas"
+    },
+    "/Game/VFX/Particles/P_MedusaLavaSteamOpaque": {
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas"
+    },
+    "/Game/VFX/Particles/P_MeleeMitigationBlue": {
+        "M_DistortionCircle": "/Game/Materials/VFX/M_DistortionCircle",
+        "M_ShieldMitigation": "/Game/Materials/VFX/M_ShieldMitigation",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "Mi_MitigationShieldGlow": "/Game/Materials/VFX/Mi_MitigationShieldGlow"
+    },
+    "/Game/VFX/Particles/P_MeleeMitigationShoulderBlue": {
+        "M_DistortionCircle": "/Game/Materials/VFX/M_DistortionCircle",
+        "M_ShieldMitigation": "/Game/Materials/VFX/M_ShieldMitigation",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles",
+        "Mi_MitigationShieldGlow": "/Game/Materials/VFX/Mi_MitigationShieldGlow"
+    },
+    "/Game/VFX/Particles/P_Melee_ShieldHit": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "M_Tracer_Beam_Base": "/Game/Materials/VFX/Trail/M_Tracer_Beam_Base"
+    },
+    "/Game/VFX/Particles/P_MeltaBeam_01": {
+        "M_AFterBurnRing": "/Game/Materials/VFX/M_AFterBurnRing",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_MeltaBeam_TracerPanning": "/Game/Materials/VFX/Trail/M_MeltaBeam_TracerPanning"
+    },
+    "/Game/VFX/Particles/P_MeltaBeam_02": {
+        "M_AFterBurnRing": "/Game/Materials/VFX/M_AFterBurnRing",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_MultiMeltaBeam": "/Game/Materials/VFX/Trail/M_MultiMeltaBeam"
+    },
+    "/Game/VFX/Particles/P_MeltaBeam_Execute": {
+        "M_AFterBurnRing": "/Game/Materials/VFX/M_AFterBurnRing",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_MeltaBeam_TracerPanning": "/Game/Materials/VFX/Trail/M_MeltaBeam_TracerPanning"
+    },
+    "/Game/VFX/Particles/P_MeltaBomb": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit",
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "MI_DustCycleEternal": "/Game/Materials/VFX/MI_DustCycleEternal",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_MeltaCharacterHeat01": {
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_MeltaCharacterHeat02": {
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_Meltagun_WarmUp": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_MeltaMZF": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/P_MeltaToastLoop": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/P_MeltaToastLoopExecute": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/P_MeltaTube": {
+        "M_Tracer_Beam_Base": "/Game/Materials/VFX/Trail/M_Tracer_Beam_Base"
+    },
+    "/Game/VFX/Particles/P_Meteors": {
+        "M_meteorSource": "/Game/Materials/VFX/M_meteorSource",
+        "M_MeteorTrail": "/Game/Materials/VFX/Trail/M_MeteorTrail"
+    },
+    "/Game/VFX/Particles/P_MoonGlow": {
+        "M_moonGlow": "/Game/Materials/VFX/M_moonGlow"
+    },
+    "/Game/VFX/Particles/P_NartheciumBeingHealed": {
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_NartheciumBuff": {
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_NartheciumCharge01": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion"
+    },
+    "/Game/VFX/Particles/P_NartheciumMeleeDamageVial": {
+        "M_nRTHmEllee": "/Game/Materials/VFX/M_nRTHmEllee",
+        "M_ProceduralElectroStormShield": "/Game/Materials/VFX/Procedural/M_ProceduralElectroStormShield"
+    },
+    "/Game/VFX/Particles/P_NartheciumSurvivalVial": {
+        "M_SurvivalVial": "/Game/Materials/VFX/M_SurvivalVial",
+        "Mi_EldarDestrutorLightning": "/Game/Materials/VFX/Mi_EldarDestrutorLightning"
+    },
+    "/Game/VFX/Particles/P_NoMoreAmmo": {
+        "Mi_NoAmmo": "/Game/Materials/VFX/Mi_NoAmmo"
+    },
+    "/Game/VFX/Particles/P_Nurglehealeffect": {
+        "M_BaseCaptureCone": "/Game/Materials/VFX/M_BaseCaptureCone",
+        "M_NurglehealBubble": "/Game/Materials/VFX/M_NurglehealBubble",
+        "Mi_NurgleSymbol": "/Game/Materials/VFX/Mi_NurgleSymbol"
+    },
+    "/Game/VFX/Particles/P_OilLamp": {
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "MI_FireCycleFlame": "/Game/Materials/VFX/MI_FireCycleFlame",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_OilLampWall": {
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_OilPodium": {
+        "M_FireEmissiveDesaturatedPanner2": "/Game/Materials/VFX/M_FireEmissiveDesaturatedPanner2",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022"
+    },
+    "/Game/VFX/Particles/P_OrkActivationHit": {
+        "MI_Yellow_Electric02": "/Game/Materials/VFX/MI_Yellow_Electric02"
+    },
+    "/Game/VFX/Particles/P_OrkTurnTableGas": {
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "MI_Turntablegas": "/Game/Materials/VFX/MI_Turntablegas"
+    },
+    "/Game/VFX/Particles/P_Ork_KnucklesTrail": {
+        "MI_MotionTrailKnife": "/Game/Materials/VFX/Trail/MI_MotionTrailKnife"
+    },
+    "/Game/VFX/Particles/P_PlasGrenade01": {
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "M_PlasmaNoisePanner01": "/Game/Materials/VFX/M_PlasmaNoisePanner01",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit"
+    },
+    "/Game/VFX/Particles/P_PlasmaBall01Trail": {
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "M_SmokeFizzleOut_Light": "/Game/Materials/VFX/M_SmokeFizzleOut_Light"
+    },
+    "/Game/VFX/Particles/P_PlasmaBall01Trail2": {
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_PLasmaguntrail": "/Game/Materials/VFX/Trail/Mi_PLasmaguntrail"
+    },
+    "/Game/VFX/Particles/P_PlasmaCannonCSM_charging": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaCannonSM_charging": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaCannonTrail3": {
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_PLasmaguntrail": "/Game/Materials/VFX/Trail/Mi_PLasmaguntrail"
+    },
+    "/Game/VFX/Particles/P_PlasmaCannon_MuzzleFlash": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_PlasmaCannon_Trail": {
+        "M_HeavyTracer_Smoke": "/Game/Materials/VFX/Trail/M_HeavyTracer_Smoke",
+        "M_PlasmaTracer_Panning": "/Game/Materials/VFX/Trail/M_PlasmaTracer_Panning"
+    },
+    "/Game/VFX/Particles/P_PlasmaCharging01": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "Mi_chaosPistolGrenade": "/Game/Materials/VFX/Mi_chaosPistolGrenade",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaCharging01_Apollo": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaCharging01_DeathWish": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaCharging01_Gun": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaCharging01_Pistol": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaCharging02": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaCharging02_Gun": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaGen01": {
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric022": "/Game/Materials/VFX/MI_Blue_Electric022",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_PlasmaGrenadeEx_01": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_BlackBody": "/Game/Materials/VFX/M_BlackBody",
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "MI_ExploAnimDesaturated": "/Game/Materials/VFX/MI_ExploAnimDesaturated",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_PlasmaGrenadeEx_02": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_BlackBody": "/Game/Materials/VFX/M_BlackBody",
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "M_PlasmaNoisePanner01": "/Game/Materials/VFX/M_PlasmaNoisePanner01",
+        "MI_DustDirectional": "/Game/Materials/VFX/MI_DustDirectional",
+        "MI_ExploAnim02": "/Game/Materials/VFX/MI_ExploAnim02",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_PlasmaGrenadeEx_03": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_BlackBody": "/Game/Materials/VFX/M_BlackBody",
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "MI_ExploAnimDesaturated": "/Game/Materials/VFX/MI_ExploAnimDesaturated",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_PlasmaGrenadeEx_ReaperTongue": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_BlackBody": "/Game/Materials/VFX/M_BlackBody",
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "MI_ExploAnimDesaturated": "/Game/Materials/VFX/MI_ExploAnimDesaturated",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_PlasmaHellBreachCharging": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner_HueShift": "/Game/Materials/VFX/M_PlasmaSpanner_HueShift",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaOverburst": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "MI_ExploAnim02": "/Game/Materials/VFX/MI_ExploAnim02"
+    },
+    "/Game/VFX/Particles/P_PlasmaPistol_MuzzleFlash": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_PlasmaPistol_MuzzleFlashReaperTongue": {
+        "M_PlasmaSpanner_HueShift": "/Game/Materials/VFX/M_PlasmaSpanner_HueShift",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_PlasmaReaperTongueCharging": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner_HueShift": "/Game/Materials/VFX/M_PlasmaSpanner_HueShift",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_PlasmaCharge": "/Game/Materials/VFX/MI_PlasmaCharge"
+    },
+    "/Game/VFX/Particles/P_PlasmaReaperTongue_Trail": {
+        "M_HeavyTracer_Smoke": "/Game/Materials/VFX/Trail/M_HeavyTracer_Smoke",
+        "M_PlasmaTracer_PanningReapertongue": "/Game/Materials/VFX/Trail/M_PlasmaTracer_PanningReapertongue"
+    },
+    "/Game/VFX/Particles/P_PlasmaVentingVapor01": {
+        "M_BillowSteam": "/Game/Materials/VFX/M_BillowSteam"
+    },
+    "/Game/VFX/Particles/P_Plasma_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_PlasmaFire_Teal": "/Game/Materials/VFX/MI_PlasmaFire_Teal",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_Plasma_ImpactReaperTongue": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner_HueShift": "/Game/Materials/VFX/M_PlasmaSpanner_HueShift",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_PlasmaFire_Teal": "/Game/Materials/VFX/MI_PlasmaFire_Teal",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_Poison_pulseORK": {
+        "M_AlphaThreshold_Smoke": "/Game/Materials/VFX/Procedural/M_AlphaThreshold_Smoke",
+        "M_AlphaThreshold_Smoke2": "/Game/Materials/VFX/Procedural/M_AlphaThreshold_Smoke2",
+        "M_AlphaThreshold_Smoke3": "/Game/Materials/VFX/Procedural/M_AlphaThreshold_Smoke3"
+    },
+    "/Game/VFX/Particles/P_PoweFist_Smash": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit",
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_PowerAxeCharge01": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_KnifeChargeGlow": "/Game/Materials/VFX/MZF/MI_KnifeChargeGlow"
+    },
+    "/Game/VFX/Particles/P_PowerFist_Energized": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03"
+    },
+    "/Game/VFX/Particles/P_PowerMaulCharge": {},
+    "/Game/VFX/Particles/P_PowerMaulCharge2": {},
+    "/Game/VFX/Particles/P_PowerMaulTesla2": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03"
+    },
+    "/Game/VFX/Particles/P_PowerMaulTesla3": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03"
+    },
+    "/Game/VFX/Particles/P_PowerMaulTeslaCSM": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03"
+    },
+    "/Game/VFX/Particles/P_PowerMaul_FullyCharged": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/P_PowerMaul_FullyCharged2": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/P_PowerStormShield": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "M_ProceduralElectroStormShield": "/Game/Materials/VFX/Procedural/M_ProceduralElectroStormShield"
+    },
+    "/Game/VFX/Particles/P_PowerStormShieldOut": {
+        "M_ProceduralElectroStormShieldReady": "/Game/Materials/VFX/Procedural/M_ProceduralElectroStormShieldReady"
+    },
+    "/Game/VFX/Particles/P_PowerStormShieldReady": {
+        "M_ProceduralElectroStormShieldReady": "/Game/Materials/VFX/Procedural/M_ProceduralElectroStormShieldReady"
+    },
+    "/Game/VFX/Particles/P_PowerSwordTesla": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03"
+    },
+    "/Game/VFX/Particles/P_PredatorCannon_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding"
+    },
+    "/Game/VFX/Particles/P_PredatorCannon_MuzzleFlash": {},
+    "/Game/VFX/Particles/P_PredatorCannon_Trail": {
+        "M_Tracer_Panning": "/Game/Materials/VFX/Trail/M_Tracer_Panning"
+    },
+    "/Game/VFX/Particles/P_PromethiumTankBOttomNoMagma": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle"
+    },
+    "/Game/VFX/Particles/P_PromethiumUpwardDraft": {},
+    "/Game/VFX/Particles/P_PromethiumVaporFloor": {},
+    "/Game/VFX/Particles/P_PromethiumVaporVent": {},
+    "/Game/VFX/Particles/P_PsychicFlickeringFire_Impact": {
+        "M_FlickeringFireimpact": "/Game/Materials/VFX/M_FlickeringFireimpact",
+        "M_PsychicFire": "/Game/Materials/VFX/M_PsychicFire",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_PsychicFlickeringFire_Muzzle": {
+        "M_DistortionSmoke": "/Game/Materials/VFX/M_DistortionSmoke",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_PsychicFlickeringFire_Trail": {
+        "M_DistortionTrail": "/Game/Materials/VFX/M_DistortionTrail"
+    },
+    "/Game/VFX/Particles/P_PsychoElectro": {
+        "M_Evil_Lightning": "/Game/Materials/VFX/M_Evil_Lightning"
+    },
+    "/Game/VFX/Particles/P_PsychoElectro2": {
+        "M_Evil_Lightning": "/Game/Materials/VFX/M_Evil_Lightning"
+    },
+    "/Game/VFX/Particles/P_PulseLaserCharge": {
+        "Mi_PulseLaser_Charge": "/Game/Materials/VFX/Mi_PulseLaser_Charge",
+        "Mi_PulseLaser_ChargeGlow": "/Game/Materials/VFX/Mi_PulseLaser_ChargeGlow",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact"
+    },
+    "/Game/VFX/Particles/P_QuadGun_Dead": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "M_Flame_Final_MAT": "/Game/Materials/VFX/Procedural/M_Flame_Final_MAT",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_QuadGun_Destroyed": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_QuadGun_MuzzleFlash": {
+        "MI_MuzzleFlash_Quad": "/Game/Materials/VFX/MZF/MI_MuzzleFlash_Quad",
+        "MI_MuzzleFlashDirectional_Bolter2": "/Game/Materials/VFX/MZF/MI_MuzzleFlashDirectional_Bolter2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_QuadGun_trail": {
+        "M_HeavyTracer_Smoke": "/Game/Materials/VFX/Trail/M_HeavyTracer_Smoke",
+        "M_Tracer_Panning": "/Game/Materials/VFX/Trail/M_Tracer_Panning",
+        "M_TracerQuad": "/Game/Materials/VFX/Trail/M_TracerQuad"
+    },
+    "/Game/VFX/Particles/P_ReaperLauncherImpact": {
+        "M_ParticleGlass": "/Game/Materials/VFX/M_ParticleGlass",
+        "M_WhispySmoke": "/Game/Materials/VFX/M_WhispySmoke",
+        "Mi_BasicGlow": "/Game/Materials/VFX/Mi_BasicGlow",
+        "Mi_ReaperImpactFlash": "/Game/Materials/VFX/Mi_ReaperImpactFlash",
+        "Mi_ReaperImpactFlash2": "/Game/Materials/VFX/Mi_ReaperImpactFlash2",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/P_ReaperLauncherMeleeCharge": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_ChainSword_ChargeGlow": "/Game/Materials/VFX/MZF/MI_ChainSword_ChargeGlow"
+    },
+    "/Game/VFX/Particles/P_ReaperLauncherStarShotImpact2": {
+        "M_ParticleGlass": "/Game/Materials/VFX/M_ParticleGlass",
+        "M_WhispySmoke": "/Game/Materials/VFX/M_WhispySmoke",
+        "Mi_BasicGlow": "/Game/Materials/VFX/Mi_BasicGlow",
+        "Mi_ReaperImpactFlash": "/Game/Materials/VFX/Mi_ReaperImpactFlash",
+        "Mi_ReaperImpactFlash2": "/Game/Materials/VFX/Mi_ReaperImpactFlash2",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact"
+    },
+    "/Game/VFX/Particles/P_ReaperLauncherStarShot_Muzzle": {
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "Mi_reaperlauncherStarshotMuzzle": "/Game/Materials/VFX/Mi_reaperlauncherStarshotMuzzle"
+    },
+    "/Game/VFX/Particles/P_ReaperLauncherStarSwarm_Muzzle": {
+        "M_DistortionCircle": "/Game/Materials/VFX/M_DistortionCircle",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "M_WhispySmoke": "/Game/Materials/VFX/M_WhispySmoke"
+    },
+    "/Game/VFX/Particles/P_ReaperLauncherTrail": {
+        "M_DistortionCircle": "/Game/Materials/VFX/M_DistortionCircle",
+        "M_reaperLauncherTrail": "/Game/Materials/VFX/Trail/M_reaperLauncherTrail"
+    },
+    "/Game/VFX/Particles/P_ReaperStarCharging": {
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "Mi_LasBlasterMuzzle": "/Game/Materials/VFX/Mi_LasBlasterMuzzle"
+    },
+    "/Game/VFX/Particles/P_ReaperStarChargingExe": {
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "Mi_LasBlasterMuzzle": "/Game/Materials/VFX/Mi_LasBlasterMuzzle"
+    },
+    "/Game/VFX/Particles/P_ReaperStarshottrail": {
+        "Mi_StarshotFlash": "/Game/Materials/VFX/Mi_StarshotFlash",
+        "M_reaperLauncherTrail": "/Game/Materials/VFX/Trail/M_reaperLauncherTrail"
+    },
+    "/Game/VFX/Particles/P_ReaperSwarmCharging": {
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "Mi_LasBlasterMuzzle": "/Game/Materials/VFX/Mi_LasBlasterMuzzle"
+    },
+    "/Game/VFX/Particles/P_Repair": {
+        "MI_Yellow_Electric02": "/Game/Materials/VFX/MI_Yellow_Electric02"
+    },
+    "/Game/VFX/Particles/P_RequiemInsenceSmoke": {
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "M_SmokeGasUnFogged": "/Game/Materials/VFX/M_SmokeGasUnFogged"
+    },
+    "/Game/VFX/Particles/P_rewardBoxDust": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard"
+    },
+    "/Game/VFX/Particles/P_rewardBoxDustELdar": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard"
+    },
+    "/Game/VFX/Particles/P_RewardScene_CoverVentSmoke2": {
+        "MI_DustCycleEternal_Loop": "/Game/Materials/VFX/MI_DustCycleEternal_Loop"
+    },
+    "/Game/VFX/Particles/P_RewardScene_Frost_CM_pod3": {},
+    "/Game/VFX/Particles/P_RewardScene_Frost_Eldar_pod2": {},
+    "/Game/VFX/Particles/P_RhinoExhaust": {},
+    "/Game/VFX/Particles/P_RhinoRocks": {
+        "M_NoFade_TankTracks": "/Game/Materials/VFX/M_NoFade_TankTracks"
+    },
+    "/Game/VFX/Particles/P_RokkitLauncher_Trail": {
+        "M_DistortionCircle": "/Game/Materials/VFX/M_DistortionCircle",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/P_Ronan_lightning": {
+        "Mi_VortexBeamLightning": "/Game/Materials/VFX/Mi_VortexBeamLightning"
+    },
+    "/Game/VFX/Particles/P_Ronan_lightningStatic": {
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03"
+    },
+    "/Game/VFX/Particles/P_SatelliteMaggon": {},
+    "/Game/VFX/Particles/P_Scatterlaser_Muzzle": {
+        "Mi_ReaperImpactFlash": "/Game/Materials/VFX/Mi_ReaperImpactFlash",
+        "Mi_ScatterLaserFlash": "/Game/Materials/VFX/Mi_ScatterLaserFlash"
+    },
+    "/Game/VFX/Particles/P_Scatterlaser_Trail": {
+        "M_WhispySmoke": "/Game/Materials/VFX/M_WhispySmoke",
+        "Mi_ReaperImpactFlash": "/Game/Materials/VFX/Mi_ReaperImpactFlash",
+        "Mi_ScatterLaserFlash": "/Game/Materials/VFX/Mi_ScatterLaserFlash",
+        "M_Eldar_Scater_Tracer": "/Game/Materials/VFX/Trail/M_Eldar_Scater_Tracer"
+    },
+    "/Game/VFX/Particles/P_SewersSteamPipe": {
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "M_SmokeGasUnFogged": "/Game/Materials/VFX/M_SmokeGasUnFogged"
+    },
+    "/Game/VFX/Particles/P_ShacklesbuffLHand": {
+        "M_SHacklesDebuff": "/Game/Materials/VFX/M_SHacklesDebuff",
+        "Mi_RingofThorns": "/Game/Materials/VFX/Mi_RingofThorns"
+    },
+    "/Game/VFX/Particles/P_ShacklesbuffRhand": {
+        "M_SHacklesDebuff": "/Game/Materials/VFX/M_SHacklesDebuff",
+        "Mi_RingofThorns": "/Game/Materials/VFX/Mi_RingofThorns"
+    },
+    "/Game/VFX/Particles/P_ShurikenCannon_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact"
+    },
+    "/Game/VFX/Particles/P_SkyExplosion1": {
+        "Mi_NovaFlat": "/Game/Materials/VFX/Mi_NovaFlat",
+        "Mi_SpaceExplosion": "/Game/Materials/VFX/Mi_SpaceExplosion"
+    },
+    "/Game/VFX/Particles/P_SkyExplosion2": {
+        "Mi_SpaceExplosion": "/Game/Materials/VFX/Mi_SpaceExplosion",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "M_MeteorTrail": "/Game/Materials/VFX/Trail/M_MeteorTrail"
+    },
+    "/Game/VFX/Particles/P_Slaanesh_Sigil_Badge": {
+        "M_ProceduraHandMagic": "/Game/Materials/VFX/Procedural/M_ProceduraHandMagic",
+        "M_ProceduralElectro": "/Game/Materials/VFX/Procedural/M_ProceduralElectro"
+    },
+    "/Game/VFX/Particles/P_SmallFirePost": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding",
+        "M_Flame_Final_MAT": "/Game/Materials/VFX/Procedural/M_Flame_Final_MAT",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/P_SmokeGrenade": {},
+    "/Game/VFX/Particles/P_SmokeGrenadeVolcano": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022"
+    },
+    "/Game/VFX/Particles/P_SMplasmaCannonMuzzle": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion"
+    },
+    "/Game/VFX/Particles/P_SMplasmaCannon_explosion": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaBall_translucent": "/Game/Materials/VFX/M_PlasmaBall_translucent",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact",
+        "Mi_SMplasmaCannon": "/Game/Materials/VFX/Mi_SMplasmaCannon",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_StarshotExplosion2": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion2"
+    },
+    "/Game/VFX/Particles/P_SMplasmaGunMuzzle1": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion"
+    },
+    "/Game/VFX/Particles/P_SMplasmaGunMuzzle_noSplash": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_SMplasmaGun_explosion": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact",
+        "Mi_StarshotFlash": "/Game/Materials/VFX/Mi_StarshotFlash",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_StarshotExplosion2": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion2"
+    },
+    "/Game/VFX/Particles/P_SMplasmaGun_OverChargedexplosion": {
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_StarshotExplosion2": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion2"
+    },
+    "/Game/VFX/Particles/P_SMplasmaPistolMuzzle2": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion"
+    },
+    "/Game/VFX/Particles/P_SMplasmaPistol_explosion2": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact",
+        "Mi_SMplasmaCannon": "/Game/Materials/VFX/Mi_SMplasmaCannon",
+        "Mi_VeteranEyesSmoke": "/Game/Materials/VFX/Mi_VeteranEyesSmoke",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion",
+        "Mi_StarshotExplosion2": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion2"
+    },
+    "/Game/VFX/Particles/P_SM_DustEvade": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_SM_DustFootStepWalk": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_SM_DustFootStep_RUN": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_SM_DustFootStep_Sprint": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_SM_DustLand": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_SM_DustLandHard": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_SM_healStationGrenade": {
+        "M_HealGrenade": "/Game/Materials/VFX/M_HealGrenade",
+        "M_SmokeGasUnFogged": "/Game/Materials/VFX/M_SmokeGasUnFogged",
+        "M_TargetJumpPack": "/Game/Materials/VFX/M_TargetJumpPack",
+        "Mi_BasicGlow": "/Game/Materials/VFX/Mi_BasicGlow",
+        "MI_HealingCross": "/Game/Materials/VFX/MI_HealingCross",
+        "Mi_ScatterLaserFlash": "/Game/Materials/VFX/Mi_ScatterLaserFlash"
+    },
+    "/Game/VFX/Particles/P_SM_MudFootStep_RUN": {
+        "MI_Blood_Soft_Unlit": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit",
+        "M_MudSplash": "/Game/Materials/VFX/M_MudSplash"
+    },
+    "/Game/VFX/Particles/P_SM_MudFootStep_Sprint": {
+        "MI_Blood_Soft_Unlit": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit",
+        "M_MudSplash": "/Game/Materials/VFX/M_MudSplash"
+    },
+    "/Game/VFX/Particles/P_SM_MudFootStep_Walk": {
+        "MI_Blood_Soft_Unlit": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit",
+        "M_MudSplash": "/Game/Materials/VFX/M_MudSplash"
+    },
+    "/Game/VFX/Particles/P_Sm_plasmaGunImpact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_PlasmaFire_Teal": "/Game/Materials/VFX/MI_PlasmaFire_Teal",
+        "Mi_ServoSkullSParkFlash": "/Game/Materials/VFX/Mi_ServoSkullSParkFlash",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion"
+    },
+    "/Game/VFX/Particles/P_SM_PlasmaGunTrail": {
+        "M_HeavyTracer_Smoke": "/Game/Materials/VFX/Trail/M_HeavyTracer_Smoke",
+        "M_PlasmaTracer_Panning": "/Game/Materials/VFX/Trail/M_PlasmaTracer_Panning"
+    },
+    "/Game/VFX/Particles/P_SnowClouds": {
+        "M_FlowmapSwirl": "/Game/Materials/VFX/M_FlowmapSwirl"
+    },
+    "/Game/VFX/Particles/P_SnowFootStepSprint": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_SnowFootStepSprint_Eldar": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk",
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_snowFootstepsRun": {},
+    "/Game/VFX/Particles/P_snowFootstepsRun_eldar": {},
+    "/Game/VFX/Particles/P_snowFootstepsWalk": {},
+    "/Game/VFX/Particles/P_snowFootstepsWalk_Eldar": {},
+    "/Game/VFX/Particles/P_SpacemarineLandSplash": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2",
+        "M_ParticleGooSplashMesh": "/Game/Materials/VFX/M_ParticleGooSplashMesh",
+        "MI_WAterfallSplashSmoke": "/Game/Materials/VFX/MI_WAterfallSplashSmoke"
+    },
+    "/Game/VFX/Particles/P_SpacemarineLandSplashSoft": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2",
+        "M_ParticleGooSplashMesh": "/Game/Materials/VFX/M_ParticleGooSplashMesh",
+        "MI_WAterfallSplashSmoke": "/Game/Materials/VFX/MI_WAterfallSplashSmoke"
+    },
+    "/Game/VFX/Particles/P_SparksElectric": {
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive"
+    },
+    "/Game/VFX/Particles/P_SpawningPoolSmoke": {},
+    "/Game/VFX/Particles/P_SteamLitHive": {},
+    "/Game/VFX/Particles/P_SteamLitHiveSmall": {},
+    "/Game/VFX/Particles/P_SteamSmokeLit": {},
+    "/Game/VFX/Particles/P_SteamSmokeLitSlow": {},
+    "/Game/VFX/Particles/P_SteamStackSmall": {
+        "MI_DustCycleEternal_Loop": "/Game/Materials/VFX/MI_DustCycleEternal_Loop"
+    },
+    "/Game/VFX/Particles/P_SteamStackSmaller": {
+        "MI_DustCycleEternal_Loop": "/Game/Materials/VFX/MI_DustCycleEternal_Loop"
+    },
+    "/Game/VFX/Particles/P_StormBolter_Projectile_Trail": {
+        "M_HeavyTracer_Panning": "/Game/Materials/VFX/Trail/M_HeavyTracer_Panning",
+        "M_HeavyTracer_Smoke": "/Game/Materials/VFX/Trail/M_HeavyTracer_Smoke"
+    },
+    "/Game/VFX/Particles/P_StormShield_Clang": {
+        "M_PainGate_WorldUvTiling2": "/Game/Materials/VFX/M_PainGate_WorldUvTiling2",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01"
+    },
+    "/Game/VFX/Particles/P_StormShield_DangerZone": {
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_PainGate_WorldUvTiling": "/Game/Materials/VFX/MI_PainGate_WorldUvTiling"
+    },
+    "/Game/VFX/Particles/P_StormShield_Explode": {
+        "M_PainGate_WorldUvTiling": "/Game/Materials/VFX/M_PainGate_WorldUvTiling",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01"
+    },
+    "/Game/VFX/Particles/P_StrikingScorpion_Cloaking": {},
+    "/Game/VFX/Particles/P_SwoopingHawckGrenadePopOut": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact"
+    },
+    "/Game/VFX/Particles/P_Swoop_Grenade": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_TacticalGrenade_Blink": {
+        "MI_TacticalNade_BlinkGlow": "/Game/Materials/VFX/MI_TacticalNade_BlinkGlow"
+    },
+    "/Game/VFX/Particles/P_TacticalGrenade_BlinkLoop": {
+        "MI_ServoSkullCallLight": "/Game/Materials/VFX/MI_ServoSkullCallLight",
+        "MI_TacticalNade_BlinkGlow": "/Game/Materials/VFX/MI_TacticalNade_BlinkGlow"
+    },
+    "/Game/VFX/Particles/P_TacticalNade_start": {
+        "Mi_BasicGlow": "/Game/Materials/VFX/Mi_BasicGlow",
+        "Mi_ScatterLaserFlash": "/Game/Materials/VFX/Mi_ScatterLaserFlash"
+    },
+    "/Game/VFX/Particles/P_Telsla": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion"
+    },
+    "/Game/VFX/Particles/P_TempestLauncherProjectile": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_SmokeFizzleOut_Light": "/Game/Materials/VFX/M_SmokeFizzleOut_Light",
+        "M_TempestTrail": "/Game/Materials/VFX/Trail/M_TempestTrail"
+    },
+    "/Game/VFX/Particles/P_TempestLauncher_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "Mi_EldarDestrutorLightning": "/Game/Materials/VFX/Mi_EldarDestrutorLightning",
+        "Mi_TempestDistortionImpact": "/Game/Materials/VFX/Mi_TempestDistortionImpact",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "Mi_StarshotExplosion": "/Game/Materials/VFX/Procedural/Mi_StarshotExplosion"
+    },
+    "/Game/VFX/Particles/P_tempestLauncher_muzzle": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_TempestLauncher_MuzzleF": {
+        "M_smoke_subUV_blackbody_Color": "/Game/Materials/VFX/M_smoke_subUV_blackbody_Color",
+        "Mi_Pulselaserimpact_Flash": "/Game/Materials/VFX/Mi_Pulselaserimpact_Flash",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_TeslaVapors": {
+        "MI_DustCycleEternal_Loop": "/Game/Materials/VFX/MI_DustCycleEternal_Loop"
+    },
+    "/Game/VFX/Particles/P_ToxicSack": {
+        "Mi_AdrenalGlandSmoke": "/Game/Materials/VFX/Mi_AdrenalGlandSmoke",
+        "Mi_tyranidAddonsGlow": "/Game/Materials/VFX/Mi_tyranidAddonsGlow"
+    },
+    "/Game/VFX/Particles/P_TyranidEggBreak_lvl1": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2",
+        "M_ParticleGooMeshThreshold": "/Game/Materials/VFX/M_ParticleGooMeshThreshold",
+        "MI_WAterfallSplashSmoke": "/Game/Materials/VFX/MI_WAterfallSplashSmoke"
+    },
+    "/Game/VFX/Particles/P_TyranidEggBreak_lvl2": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2",
+        "M_ParticleGooMeshThreshold": "/Game/Materials/VFX/M_ParticleGooMeshThreshold",
+        "MI_WAterfallSplashSmoke": "/Game/Materials/VFX/MI_WAterfallSplashSmoke"
+    },
+    "/Game/VFX/Particles/P_TyranidEggBreak_lvl3": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2",
+        "M_ParticleGooMeshThreshold": "/Game/Materials/VFX/M_ParticleGooMeshThreshold",
+        "MI_WAterfallSplashSmoke": "/Game/Materials/VFX/MI_WAterfallSplashSmoke"
+    },
+    "/Game/VFX/Particles/P_TyranidMeleeMotionTrail": {
+        "MI_MotionTrailKnife": "/Game/Materials/VFX/Trail/MI_MotionTrailKnife"
+    },
+    "/Game/VFX/Particles/P_tyranidSpawnSplash": {
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2"
+    },
+    "/Game/VFX/Particles/P_tzeentchBeingHealed": {
+        "Mi_beinghealed_El": "/Game/Materials/VFX/Mi_beinghealed_El"
+    },
+    "/Game/VFX/Particles/P_TzeentchhealeffectAOE": {
+        "M_BaseCaptureCone": "/Game/Materials/VFX/M_BaseCaptureCone",
+        "M_NurglehealBubble": "/Game/Materials/VFX/M_NurglehealBubble",
+        "Mi_Tzeentch_Symbol": "/Game/Materials/VFX/Mi_Tzeentch_Symbol",
+        "Mi_TzeentchSelfHeal": "/Game/Materials/VFX/Mi_TzeentchSelfHeal",
+        "M_TzeeenchHealing": "/Game/Materials/VFX/Procedural/M_TzeeenchHealing"
+    },
+    "/Game/VFX/Particles/P_Tzeentch_Sigil_badge": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "Mi_PulseLaser_Charge": "/Game/Materials/VFX/Mi_PulseLaser_Charge",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/P_UlthranprotectBubble": {
+        "M_EldarWarlockProtectSmoke": "/Game/Materials/VFX/M_EldarWarlockProtectSmoke",
+        "M_UlthranProtectBubble": "/Game/Materials/VFX/M_UlthranProtectBubble"
+    },
+    "/Game/VFX/Particles/P_uniquegravCannon_beam": {
+        "Mi_GracgunGlowThresh": "/Game/Materials/VFX/Mi_GracgunGlowThresh",
+        "Mi_GravGlow": "/Game/Materials/VFX/Mi_GravGlow",
+        "Mi_GravGlow2": "/Game/Materials/VFX/Mi_GravGlow2",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3",
+        "Mi_GravGunChargeDistort": "/Game/Materials/VFX/Mi_GravGunChargeDistort",
+        "Mi_GravgunMuzzlethresh": "/Game/Materials/VFX/Mi_GravgunMuzzlethresh",
+        "Mi_GravBeam_Unique": "/Game/Materials/VFX/Trail/Mi_GravBeam_Unique"
+    },
+    "/Game/VFX/Particles/P_UniqueMultiMeltaGun_CSM_Beam": {
+        "M_AFterBurnRing": "/Game/Materials/VFX/M_AFterBurnRing",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_MultiMeltaBeam": "/Game/Materials/VFX/Trail/M_MultiMeltaBeam"
+    },
+    "/Game/VFX/Particles/P_UnstableWarpOrigin": {
+        "M_InstabilityWarp": "/Game/Materials/VFX/M_InstabilityWarp",
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_Yellow_Electric01": "/Game/Materials/VFX/MI_Yellow_Electric01"
+    },
+    "/Game/VFX/Particles/P_vehicleDamage01": {
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit"
+    },
+    "/Game/VFX/Particles/P_vehicleDamage03": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit"
+    },
+    "/Game/VFX/Particles/P_VehicleExplosion": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/P_VehicleOwnerBolters_MuzzleFlash": {},
+    "/Game/VFX/Particles/P_VehicleStagered": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03"
+    },
+    "/Game/VFX/Particles/P_VolcanoSpit": {},
+    "/Game/VFX/Particles/P_WarpCrystal_sparks": {
+        "MI_Yellow_Electric02": "/Game/Materials/VFX/MI_Yellow_Electric02"
+    },
+    "/Game/VFX/Particles/P_WarpVenting": {},
+    "/Game/VFX/Particles/P_WaterFootStepSprint": {
+        "MI_PebblesLandHard": "/Game/Materials/VFX/Dust/MI_PebblesLandHard"
+    },
+    "/Game/VFX/Particles/P_waterFootstepsRun": {},
+    "/Game/VFX/Particles/P_waterFootstepsWalk": {},
+    "/Game/VFX/Particles/P_WeaponClang": {
+        "M_LeaderFlare": "/Game/Materials/VFX/M_LeaderFlare",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact"
+    },
+    "/Game/VFX/Particles/P_WitchBladeFullyCharged": {},
+    "/Game/VFX/Particles/P_ZzapDeffgunUnique_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_ZzapDeffgun_WarmUp_Tesla": "/Game/Materials/VFX/M_ZzapDeffgun_WarmUp_Tesla",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01"
+    },
+    "/Game/VFX/Particles/P_ZzapDeffgunUnique_MuzzleFlash": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_ZzapDeffgun_WarmUp_Tesla": "/Game/Materials/VFX/M_ZzapDeffgun_WarmUp_Tesla"
+    },
+    "/Game/VFX/Particles/P_ZzapDeffgunUnique_Trail": {
+        "M_ZzapDeffgunBeam": "/Game/Materials/VFX/Trail/M_ZzapDeffgunBeam"
+    },
+    "/Game/VFX/Particles/P_ZzapDeffgun_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_ZzapDeffgun_WarmUp_Tesla": "/Game/Materials/VFX/M_ZzapDeffgun_WarmUp_Tesla",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01"
+    },
+    "/Game/VFX/Particles/P_ZzapDeffgun_MuzzleFlash": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_ZzapDeffgun_WarmUp_Tesla": "/Game/Materials/VFX/M_ZzapDeffgun_WarmUp_Tesla"
+    },
+    "/Game/VFX/Particles/P_ZzapDeffgun_Trail": {
+        "M_ZzapDeffgunBeam": "/Game/Materials/VFX/Trail/M_ZzapDeffgunBeam"
+    },
+    "/Game/VFX/Particles/P_ZzapDeffgun_WarmUp": {
+        "M_ZzapDeffgun_WarmUp_Tesla": "/Game/Materials/VFX/M_ZzapDeffgun_WarmUp_Tesla",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/P_ZzapDeffTracer": {
+        "M_LascannonTracer": "/Game/Materials/VFX/Trail/M_LascannonTracer"
+    },
+    "/Game/VFX/Particles/Blood/P_Blood_Chain_Execute01": {
+        "MI_Blood_Chunks_Unlit_01": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_01",
+        "MI_Blood_Soft_Unlit_05_Inst5": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_05_Inst5",
+        "MI_Blood_Soft_Unlit_07": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_07"
+    },
+    "/Game/VFX/Particles/Blood/P_Blood_Chain_Execute01_Projection": {
+        "M_Threshold_Blood01": "/Game/Materials/VFX/Blood/M_Threshold_Blood01",
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_05_Inst5": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_05_Inst5"
+    },
+    "/Game/VFX/Particles/Blood/P_Blood_Chain_Execute01_ProjectionB_Trailer": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_05_Inst5": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_05_Inst5",
+        "MI_Blood_Soft_Unlit_08": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_08"
+    },
+    "/Game/VFX/Particles/Blood/P_Blood_Chain_Execute01_ProjectionB_Trailer2": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_05_Inst5": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_05_Inst5",
+        "MI_Blood_Soft_Unlit_08": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_08"
+    },
+    "/Game/VFX/Particles/Blood/P_Blood_El_Knife_Execute01": {
+        "MI_Blood_Chunks_Unlit_01": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_01",
+        "MI_Blood_Soft_Unlit_05_Inst5": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_05_Inst5",
+        "MI_Blood_Soft_Unlit_08": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_08"
+    },
+    "/Game/VFX/Particles/Blood/P_Blood_HeadShot_Trailer": {
+        "MI_Blood_Chunks_Unlit_03": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_03",
+        "MI_Blood_Soft_Unlit": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit",
+        "MI_Blood_Soft_Unlit_06_Inst6": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_06_Inst6",
+        "MI_Blood_Soft_Unlit_07_Inst7": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_07_Inst7",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst"
+    },
+    "/Game/VFX/Particles/Blood/P_Blood_Knife_Execute01": {
+        "MI_Blood_Chunks_Unlit_01": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_01",
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_05_Inst5": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_05_Inst5",
+        "MI_Blood_Soft_Unlit_08": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_08"
+    },
+    "/Game/VFX/Particles/Blood/P_ChainChoppa_Unique01": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_CSM_Chainaxe_Unique01": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_Death_Blood01": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_05_Inst5": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_05_Inst5"
+    },
+    "/Game/VFX/Particles/Blood/P_Default_Blood": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_05_Inst5": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_05_Inst5",
+        "MI_Blood_Soft_Unlit_08": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_08"
+    },
+    "/Game/VFX/Particles/Blood/P_Default_Blood02": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_09": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_09",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst",
+        "M_Blood_Soft_Unlit_SubUv_01": "/Game/Materials/VFX/M_Blood_Soft_Unlit_SubUv_01"
+    },
+    "/Game/VFX/Particles/Blood/P_Default_Blood03": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_02_Inst2": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_02_Inst2",
+        "MI_Blood_Soft_Unlit_02_Inst3": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_02_Inst3",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst",
+        "MI_Blood_Soft_Unlit_SubUv_03_Inst3": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_03_Inst3"
+    },
+    "/Game/VFX/Particles/Blood/P_Default_Blood04": {
+        "MI_Blood_Soft_Unlit_07": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_07",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst",
+        "MI_Blood_Soft_Unlit_SubUv_04_Inst4": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_04_Inst4"
+    },
+    "/Game/VFX/Particles/Blood/P_Default_Blood05": {
+        "MI_Blood_Soft_Unlit": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit",
+        "MI_Blood_Soft_Unlit_04_Inst4": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_04_Inst4",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst"
+    },
+    "/Game/VFX/Particles/Blood/P_Default_Blood06": {
+        "MI_Blood_Soft_Unlit": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit",
+        "MI_Blood_Soft_Unlit_07_Inst7": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_07_Inst7"
+    },
+    "/Game/VFX/Particles/Blood/P_Default_Blood_Grav1": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_05_Inst5": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_05_Inst5",
+        "MI_Blood_Soft_Unlit_08": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_08",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3"
+    },
+    "/Game/VFX/Particles/Blood/P_Default__Grav2": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_09": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_09",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst",
+        "M_Blood_Soft_Unlit_SubUv_01": "/Game/Materials/VFX/M_Blood_Soft_Unlit_SubUv_01",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3"
+    },
+    "/Game/VFX/Particles/Blood/P_Default__Grav3": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_02_Inst2": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_02_Inst2",
+        "MI_Blood_Soft_Unlit_02_Inst3": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_02_Inst3",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst",
+        "MI_Blood_Soft_Unlit_SubUv_03_Inst3": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_03_Inst3",
+        "Mi_GravGlow3": "/Game/Materials/VFX/Mi_GravGlow3"
+    },
+    "/Game/VFX/Particles/Blood/P_Default__GravBloodExecute": {
+        "MI_Blood_Soft_Unlit_02_Inst2": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_02_Inst2",
+        "MI_Blood_Soft_Unlit_02_Inst3": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_02_Inst3",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst",
+        "MI_Blood_Soft_Unlit_SubUv_03_Inst3": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_03_Inst3"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_CSM_ChainAxe": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_CSM_Chainsword": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_CSM_ForceAxe2": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_CSM_ForceSword": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_CSM_PowerFist": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_CSM_PowerMaul": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_Eldar_PowerSword": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_Ork_ChainChoppa": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_Ork_ChoppaAxe": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_Ork_ChoppaBlade": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_Ork_ChoppaClub": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_Ork_Klaw": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_LifeSteal_SM_PowerMaul": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_Melee_Blood": {
+        "MI_Blood_Chunks_Unlit_01": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_01",
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_08": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_08",
+        "M_Blood_Soft_Unlit_SubUv_01": "/Game/Materials/VFX/M_Blood_Soft_Unlit_SubUv_01",
+        "M_BloodMasked": "/Game/Materials/VFX/M_BloodMasked",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact"
+    },
+    "/Game/VFX/Particles/Blood/P_Melee_Blood02": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_09": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_09",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst",
+        "M_Blood_Soft_Unlit_SubUv_01": "/Game/Materials/VFX/M_Blood_Soft_Unlit_SubUv_01",
+        "M_BloodMasked": "/Game/Materials/VFX/M_BloodMasked",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact"
+    },
+    "/Game/VFX/Particles/Blood/P_Melee_Blood03": {
+        "MI_Blood_Soft_Unlit_01_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_01_Inst",
+        "MI_Blood_Soft_Unlit_02_Inst2": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_02_Inst2",
+        "MI_Blood_Soft_Unlit_02_Inst3": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_02_Inst3",
+        "MI_Blood_Soft_Unlit_SubUv_03_Inst3": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_03_Inst3",
+        "M_BloodMasked": "/Game/Materials/VFX/M_BloodMasked",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact"
+    },
+    "/Game/VFX/Particles/Blood/P_Melee_Blood04": {
+        "MI_Blood_Chunks_Unlit_01": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_01",
+        "MI_Blood_Chunks_Unlit_02": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_02",
+        "MI_Blood_Soft_Unlit_07": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_07",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst",
+        "MI_Blood_Soft_Unlit_SubUv_04_Inst4": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_04_Inst4",
+        "M_BloodMasked": "/Game/Materials/VFX/M_BloodMasked",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact"
+    },
+    "/Game/VFX/Particles/Blood/P_Melee_Blood05": {
+        "MI_Blood_Chunks_Unlit_01": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_01",
+        "MI_Blood_Soft_Unlit": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit",
+        "MI_Blood_Soft_Unlit_03_Inst3": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_03_Inst3",
+        "MI_Blood_Soft_Unlit_04_Inst4": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_04_Inst4",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact"
+    },
+    "/Game/VFX/Particles/Blood/P_Melee_Blood06": {
+        "MI_Blood_Chunks_Unlit_03": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_03",
+        "MI_Blood_Soft_Unlit": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit",
+        "MI_Blood_Soft_Unlit_07_Inst7": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_07_Inst7",
+        "MI_Blood_Soft_Unlit_SubUv_02_Inst": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_SubUv_02_Inst",
+        "M_BloodMasked": "/Game/Materials/VFX/M_BloodMasked",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact"
+    },
+    "/Game/VFX/Particles/Blood/P_ORK_ChoppaBlade_Unique01": {
+        "M_SM_Crozius_Unique01": "/Game/Materials/VFX/Procedural/M_SM_Crozius_Unique01"
+    },
+    "/Game/VFX/Particles/Blood/P_ORK_ChoppaClub_Unique01": {
+        "M_ProceduralElectro": "/Game/Materials/VFX/Procedural/M_ProceduralElectro"
+    },
+    "/Game/VFX/Particles/Blood/P_ORK_SpikeKnuckles_Unique01": {
+        "M_ProceduralElectro": "/Game/Materials/VFX/Procedural/M_ProceduralElectro"
+    },
+    "/Game/VFX/Particles/Blood/P_PlagueChainsword_CSM": {
+        "MI_NecroGasChainsword": "/Game/Materials/VFX/MI_NecroGasChainsword",
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_PlagueKnife_CSM": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_PowerFist_Unique01": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_PowerKlaw_Unique01": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_ScorpionChainsword_Eldar": {
+        "M_ProceduralLifeSteal": "/Game/Materials/VFX/Procedural/M_ProceduralLifeSteal"
+    },
+    "/Game/VFX/Particles/Blood/P_SM_Crozius_Unique01": {
+        "M_SM_Crozius_Unique01": "/Game/Materials/VFX/Procedural/M_SM_Crozius_Unique01"
+    },
+    "/Game/VFX/Particles/Blood/P_Tyranid_Blood01": {
+        "M_Tyranids_Blood01": "/Game/Materials/VFX/Blood/M_Tyranids_Blood01",
+        "M_Tyranids_Blood02": "/Game/Materials/VFX/Blood/M_Tyranids_Blood02",
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "Mi_TyranidHitFleshImpact": "/Game/Materials/VFX/Mi_TyranidHitFleshImpact",
+        "Mi_TyranidImpactFlash1": "/Game/Materials/VFX/Mi_TyranidImpactFlash1"
+    },
+    "/Game/VFX/Particles/Blood/P_Tyranid_Death_Blood01": {
+        "M_BloodThreshold_Masked": "/Game/Materials/VFX/Blood/M_BloodThreshold_Masked",
+        "M_Tyranids_Blood01": "/Game/Materials/VFX/Blood/M_Tyranids_Blood01",
+        "MI_Blood_Soft_Unlit_03_Inst3": "/Game/Materials/VFX/Blood/MI_Blood_Soft_Unlit_03_Inst3",
+        "MI_Blood_Tyr01": "/Game/Materials/VFX/Blood/MI_Blood_Tyr01",
+        "MI_Blood_Tyr02": "/Game/Materials/VFX/Blood/MI_Blood_Tyr02",
+        "MI_Blood_Tyr03": "/Game/Materials/VFX/Blood/MI_Blood_Tyr03"
+    },
+    "/Game/VFX/Particles/Bolters/P_AmmoBolter": {
+        "MI_SM_XX_Ammo_Bolt01": "/Game/Characters/SpaceMarine/Weapons/Ammo/SM_XX_Ammo_Bolt01/Materials/MI_SM_XX_Ammo_Bolt01"
+    },
+    "/Game/VFX/Particles/Bolters/P_Bolter_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_Bolter_Impact_Snow": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_Bolter_MuzzleFlash": {
+        "MI_MuzzleFlash_Quad": "/Game/Materials/VFX/MZF/MI_MuzzleFlash_Quad",
+        "MI_MuzzleFlashDirectional_Bolter2": "/Game/Materials/VFX/MZF/MI_MuzzleFlashDirectional_Bolter2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_Bolter_MuzzleFlash_Owner": {
+        "MI_MuzzleFlash_Quad": "/Game/Materials/VFX/MZF/MI_MuzzleFlash_Quad",
+        "MI_MuzzleFlashDirectional_Bolter2": "/Game/Materials/VFX/MZF/MI_MuzzleFlashDirectional_Bolter2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_Bolter_MuzzleFlash_trailer": {
+        "MI_MuzzleFlash_Quad": "/Game/Materials/VFX/MZF/MI_MuzzleFlash_Quad",
+        "MI_MuzzleFlashDirectional_Bolter2": "/Game/Materials/VFX/MZF/MI_MuzzleFlashDirectional_Bolter2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_Bolter_Projectile_Trail": {
+        "M_HeavyTracer_Smoke": "/Game/Materials/VFX/Trail/M_HeavyTracer_Smoke",
+        "M_Tracer_Panning": "/Game/Materials/VFX/Trail/M_Tracer_Panning"
+    },
+    "/Game/VFX/Particles/Bolters/P_DeathSpitter_Impact": {
+        "M_AlphaBlended_Color": "/Game/Materials/VFX/BasicMaster/M_AlphaBlended_Color",
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "M_Goo_splash2": "/Game/Materials/VFX/M_Goo_splash2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_DeathSpitter_Muzzle": {
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "Mi_StarshotFlash": "/Game/Materials/VFX/Mi_StarshotFlash",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_DeathSpitter_Trail": {
+        "M_DeathSpitter_Trail": "/Game/Materials/VFX/Trail/M_DeathSpitter_Trail",
+        "M_OrkTracerSmoke": "/Game/Materials/VFX/Trail/M_OrkTracerSmoke"
+    },
+    "/Game/VFX/Particles/Bolters/P_DeffDakka_MuzzleFlash2": {
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "M_WhispySmoke2": "/Game/Materials/VFX/M_WhispySmoke2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_FleshBorer_Impact": {
+        "M_AlphaBlended_Color": "/Game/Materials/VFX/BasicMaster/M_AlphaBlended_Color",
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_FleshBorer_muzzle": {
+        "M_AlphaBlended_Color": "/Game/Materials/VFX/BasicMaster/M_AlphaBlended_Color",
+        "M_BlackSmokeSwirl": "/Game/Materials/VFX/M_BlackSmokeSwirl",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_FleshBorer_Trail": {
+        "M_TyranidTracer": "/Game/Materials/VFX/Trail/M_TyranidTracer"
+    },
+    "/Game/VFX/Particles/Bolters/P_Loota_MuzzleFlash2": {
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "M_WhispySmoke2": "/Game/Materials/VFX/M_WhispySmoke2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_Loota_Projectile_Trail2": {
+        "M_OrkTracerFire": "/Game/Materials/VFX/Trail/M_OrkTracerFire",
+        "M_OrkTracerSmoke": "/Game/Materials/VFX/Trail/M_OrkTracerSmoke"
+    },
+    "/Game/VFX/Particles/Bolters/P_Shoota_MuzzleFlash": {
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "M_WhispySmoke2": "/Game/Materials/VFX/M_WhispySmoke2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_Shoota_Projectile_Trail": {
+        "M_OrkTracerFire": "/Game/Materials/VFX/Trail/M_OrkTracerFire",
+        "M_OrkTracerSmoke": "/Game/Materials/VFX/Trail/M_OrkTracerSmoke"
+    },
+    "/Game/VFX/Particles/Bolters/P_Slugga_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_Slugga_MuzzleFlash": {
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas",
+        "M_WhispySmoke2": "/Game/Materials/VFX/M_WhispySmoke2",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Bolters/P_Slugga_Projectile_Trail": {
+        "M_OrkTracerSmoke": "/Game/Materials/VFX/Trail/M_OrkTracerSmoke"
+    },
+    "/Game/VFX/Particles/Bolters/P_Stalker_MuzzleFlash": {
+        "MI_MuzzleFlash_Quad": "/Game/Materials/VFX/MZF/MI_MuzzleFlash_Quad",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_BannerMedium_Chaos": {},
+    "/Game/VFX/Particles/CapturePoints/P_BannerMedium_Default": {},
+    "/Game/VFX/Particles/CapturePoints/P_BannerMedium_Eldar": {},
+    "/Game/VFX/Particles/CapturePoints/P_BannerMedium_Marine": {},
+    "/Game/VFX/Particles/CapturePoints/P_BannerMedium_Orc": {},
+    "/Game/VFX/Particles/CapturePoints/P_BannerSmall_Chaos": {},
+    "/Game/VFX/Particles/CapturePoints/P_BannerSmall_Default": {},
+    "/Game/VFX/Particles/CapturePoints/P_BannerSmall_Eldar": {},
+    "/Game/VFX/Particles/CapturePoints/P_BannerSmall_Marine": {},
+    "/Game/VFX/Particles/CapturePoints/P_BannerSmall_Orc": {},
+    "/Game/VFX/Particles/CapturePoints/P_Banner_Chaos": {},
+    "/Game/VFX/Particles/CapturePoints/P_Banner_Default": {},
+    "/Game/VFX/Particles/CapturePoints/P_Banner_Eldar": {},
+    "/Game/VFX/Particles/CapturePoints/P_Banner_Marine": {},
+    "/Game/VFX/Particles/CapturePoints/P_Banner_Orc": {},
+    "/Game/VFX/Particles/CapturePoints/P_CaptureKeyExplosion_CM": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022",
+        "MI_ExploAnim02": "/Game/Materials/VFX/MI_ExploAnim02"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_CaptureKeyExplosion_ELDARS": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022",
+        "MI_ExploAnim02": "/Game/Materials/VFX/MI_ExploAnim02"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_CaptureKeyExplosion_ORCS": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022",
+        "MI_ExploAnim02": "/Game/Materials/VFX/MI_ExploAnim02"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_CaptureKeyExplosion_SM": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022",
+        "MI_ExploAnim02": "/Game/Materials/VFX/MI_ExploAnim02"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_CapturePoint_Capturing_CM": {
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "Mi_Procedural_Capture_Inst": "/Game/Materials/VFX/Procedural/Mi_Procedural_Capture_Inst",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_CapturePoint_Capturing_ELDARS": {
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "Mi_Procedural_Capture_Inst": "/Game/Materials/VFX/Procedural/Mi_Procedural_Capture_Inst",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_CapturePoint_Capturing_ORCS": {
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "Mi_Procedural_Capture_Inst": "/Game/Materials/VFX/Procedural/Mi_Procedural_Capture_Inst",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_CapturePoint_Capturing_SM": {
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "Mi_Procedural_Capture_Inst": "/Game/Materials/VFX/Procedural/Mi_Procedural_Capture_Inst",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_CosmeticLitany": {
+        "M_ProceduralElectroLitany": "/Game/Materials/VFX/Procedural/M_ProceduralElectroLitany"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_CrateSmall_Chaos2": {},
+    "/Game/VFX/Particles/CapturePoints/P_CrateSmall_Eldar2": {},
+    "/Game/VFX/Particles/CapturePoints/P_CrateSmall_Marine2": {},
+    "/Game/VFX/Particles/CapturePoints/P_CrateSmall_Orc2": {},
+    "/Game/VFX/Particles/CapturePoints/P_LaserStart": {
+        "M_tacticalgrenadeScan": "/Game/Materials/VFX/M_tacticalgrenadeScan",
+        "Mi_PulseLaser_ChargeGlow": "/Game/Materials/VFX/Mi_PulseLaser_ChargeGlow",
+        "Mi_StarshotFlash": "/Game/Materials/VFX/Mi_StarshotFlash"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_MaelstromEyes": {
+        "M_BillowSteam": "/Game/Materials/VFX/M_BillowSteam",
+        "M_ProceduralElectroLitany": "/Game/Materials/VFX/Procedural/M_ProceduralElectroLitany",
+        "M_ProceduralElectroMaelStromAxe": "/Game/Materials/VFX/Procedural/M_ProceduralElectroMaelStromAxe"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_ServoSkullExplosion": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022",
+        "MI_ExploAnim02": "/Game/Materials/VFX/MI_ExploAnim02"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_WallCapturePointIdle_VectorField_CSM2": {
+        "M_AdditiveEmissiveParticle_CApturPointprojetor": "/Game/Materials/VFX/M_AdditiveEmissiveParticle_CApturPointprojetor",
+        "M_SMcapturePointLogo": "/Game/Materials/VFX/M_SMcapturePointLogo",
+        "Mi_Capturepoint_Edges": "/Game/Materials/VFX/Mi_Capturepoint_Edges",
+        "Mi_Capturepoint_EdgesParticles": "/Game/Materials/VFX/Mi_Capturepoint_EdgesParticles",
+        "Mi_VectorParticles": "/Game/Materials/VFX/Mi_VectorParticles",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_WallCapturePointIdle_VectorField_Eldar2": {
+        "M_AdditiveEmissiveParticle_CApturPointprojetor": "/Game/Materials/VFX/M_AdditiveEmissiveParticle_CApturPointprojetor",
+        "M_SMcapturePointLogo": "/Game/Materials/VFX/M_SMcapturePointLogo",
+        "Mi_Capturepoint_Edges": "/Game/Materials/VFX/Mi_Capturepoint_Edges",
+        "Mi_Capturepoint_EdgesParticles": "/Game/Materials/VFX/Mi_Capturepoint_EdgesParticles",
+        "Mi_VectorParticles": "/Game/Materials/VFX/Mi_VectorParticles",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_WallCapturePointIdle_VectorField_ORk2": {
+        "M_AdditiveEmissiveParticle_CApturPointprojetor": "/Game/Materials/VFX/M_AdditiveEmissiveParticle_CApturPointprojetor",
+        "M_SMcapturePointLogo": "/Game/Materials/VFX/M_SMcapturePointLogo",
+        "Mi_Capturepoint_Edges": "/Game/Materials/VFX/Mi_Capturepoint_Edges",
+        "Mi_Capturepoint_EdgesParticles": "/Game/Materials/VFX/Mi_Capturepoint_EdgesParticles",
+        "Mi_VectorParticles": "/Game/Materials/VFX/Mi_VectorParticles",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_WallCapturePointIdle_VectorField_SM2": {
+        "M_AdditiveEmissiveParticle_CApturPointprojetor": "/Game/Materials/VFX/M_AdditiveEmissiveParticle_CApturPointprojetor",
+        "M_SMcapturePointLogo": "/Game/Materials/VFX/M_SMcapturePointLogo",
+        "Mi_Capturepoint_Edges": "/Game/Materials/VFX/Mi_Capturepoint_Edges",
+        "Mi_Capturepoint_EdgesParticles": "/Game/Materials/VFX/Mi_Capturepoint_EdgesParticles",
+        "Mi_VectorParticles": "/Game/Materials/VFX/Mi_VectorParticles",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_WallCapturePoint_Capturing_CM": {
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "Mi_Procedural_Capture_Inst": "/Game/Materials/VFX/Procedural/Mi_Procedural_Capture_Inst",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_WallCapturePoint_Capturing_ELDARS": {
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "Mi_Procedural_Capture_Inst": "/Game/Materials/VFX/Procedural/Mi_Procedural_Capture_Inst",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_WallCapturePoint_Capturing_ORCS": {
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "Mi_Procedural_Capture_Inst": "/Game/Materials/VFX/Procedural/Mi_Procedural_Capture_Inst",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/CapturePoints/P_WallCapturePoint_Capturing_SM": {
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "Mi_Procedural_Capture_Inst": "/Game/Materials/VFX/Procedural/Mi_Procedural_Capture_Inst",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChaosBeingHealed": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChaosBeingHealedMedPack": {
+        "M_BaseCaptureCone": "/Game/Materials/VFX/M_BaseCaptureCone",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChaosBeingHealed_Slaanesh": {
+        "M_BaseCaptureCone": "/Game/Materials/VFX/M_BaseCaptureCone",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "M_symbolMaster": "/Game/Materials/VFX/M_symbolMaster",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChaosChainAxeCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChaosChainAxeFullyCharged": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChaosFleshRipperCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChaosFleshRipperFullyCharged": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChaosHeal": {
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChaosHealRibbon": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChaosTzeentchHeal": {
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "M_SOC_Warp": "/Game/Materials/VFX/M_SOC_Warp",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChoppaBladeCharge": {
+        "Mi_ChoppaBladeCharge": "/Game/Materials/VFX/Mi_ChoppaBladeCharge",
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_ChoppaBladeFullyCharged": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_Collar_Sigil_Khorne": {
+        "Mi_eyesGlow": "/Game/Materials/VFX/Mi_eyesGlow",
+        "M_Collar_Sigils_Chaos": "/Game/Materials/VFX/Procedural/M_Collar_Sigils_Chaos",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/Chaos/P_Collar_Sigil_Nurgle": {
+        "Mi_eyesGlow": "/Game/Materials/VFX/Mi_eyesGlow",
+        "M_Collar_Sigils_Chaos": "/Game/Materials/VFX/Procedural/M_Collar_Sigils_Chaos",
+        "M_ProceduralCorruption": "/Game/Materials/VFX/Procedural/M_ProceduralCorruption"
+    },
+    "/Game/VFX/Particles/Chaos/P_Collar_Sigil_Slaanesh": {
+        "Mi_eyesGlow": "/Game/Materials/VFX/Mi_eyesGlow",
+        "M_Collar_Sigils_Chaos": "/Game/Materials/VFX/Procedural/M_Collar_Sigils_Chaos",
+        "M_ProceduralElectro": "/Game/Materials/VFX/Procedural/M_ProceduralElectro"
+    },
+    "/Game/VFX/Particles/Chaos/P_Collar_Sigil_Tzeentch": {
+        "Mi_eyesGlow": "/Game/Materials/VFX/Mi_eyesGlow",
+        "M_Collar_Sigils_Chaos": "/Game/Materials/VFX/Procedural/M_Collar_Sigils_Chaos",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02"
+    },
+    "/Game/VFX/Particles/Chaos/P_EldarBeingHealed": {
+        "M_BaseCaptureCone": "/Game/Materials/VFX/M_BaseCaptureCone",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "M_ShimmerWitchBlade": "/Game/Materials/VFX/M_ShimmerWitchBlade"
+    },
+    "/Game/VFX/Particles/Chaos/P_EldarDestroyerJinxTarget": {
+        "M_BaseCaptureCone": "/Game/Materials/VFX/M_BaseCaptureCone",
+        "M_EldarDestroyer": "/Game/Materials/VFX/M_EldarDestroyer",
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "Mi_UlthranSymbol": "/Game/Materials/VFX/Mi_UlthranSymbol"
+    },
+    "/Game/VFX/Particles/Chaos/P_EldarHeal": {
+        "M_DestroyRenewRune": "/Game/Materials/VFX/M_DestroyRenewRune",
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "M_ShimmerWitchBlade": "/Game/Materials/VFX/M_ShimmerWitchBlade",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/Chaos/P_EldarProtectHealTarget": {
+        "M_ShimmerWitchBlade": "/Game/Materials/VFX/M_ShimmerWitchBlade",
+        "Mi_UlthranSymbol": "/Game/Materials/VFX/Mi_UlthranSymbol"
+    },
+    "/Game/VFX/Particles/Chaos/P_EldarProtectMuzzle": {
+        "M_ShimmerWitchBlade": "/Game/Materials/VFX/M_ShimmerWitchBlade",
+        "Mi_UlthranSymbol": "/Game/Materials/VFX/Mi_UlthranSymbol"
+    },
+    "/Game/VFX/Particles/Chaos/P_Eldar_enhanceCast": {
+        "M_ShimmerWitchBlade": "/Game/Materials/VFX/M_ShimmerWitchBlade",
+        "Mi_Enhance": "/Game/Materials/VFX/Mi_Enhance"
+    },
+    "/Game/VFX/Particles/Chaos/P_Enhancebuff": {
+        "M_UlthranProtectBubble": "/Game/Materials/VFX/M_UlthranProtectBubble",
+        "Mi_Enhance": "/Game/Materials/VFX/Mi_Enhance"
+    },
+    "/Game/VFX/Particles/Chaos/P_Hand_DeamonBolt": {
+        "M_DeamonSigilHand": "/Game/Materials/VFX/M_DeamonSigilHand",
+        "M_ProceduraHandMagic": "/Game/Materials/VFX/Procedural/M_ProceduraHandMagic",
+        "M_ProceduralElectro": "/Game/Materials/VFX/Procedural/M_ProceduralElectro"
+    },
+    "/Game/VFX/Particles/Chaos/P_HellKissEYES": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_NurgleBadgeSmoke_large": {
+        "Mi_NurgleRings": "/Game/Materials/VFX/Mi_NurgleRings",
+        "M_ProceduralCorruption": "/Game/Materials/VFX/Procedural/M_ProceduralCorruption"
+    },
+    "/Game/VFX/Particles/Chaos/P_NurgleBadgeSmoke_large2": {
+        "Mi_NurgleRings": "/Game/Materials/VFX/Mi_NurgleRings",
+        "M_ProceduralCorruption": "/Game/Materials/VFX/Procedural/M_ProceduralCorruption"
+    },
+    "/Game/VFX/Particles/Chaos/P_NurgleBadgeSmoke_large3": {
+        "Mi_NurgleRings": "/Game/Materials/VFX/Mi_NurgleRings",
+        "M_ProceduralCorruption": "/Game/Materials/VFX/Procedural/M_ProceduralCorruption"
+    },
+    "/Game/VFX/Particles/Chaos/P_NurgleSythe_large": {
+        "Mi_NurgleRings": "/Game/Materials/VFX/Mi_NurgleRings",
+        "M_ProceduralCorruption": "/Game/Materials/VFX/Procedural/M_ProceduralCorruption"
+    },
+    "/Game/VFX/Particles/Chaos/P_PowerAttackInterupt": {
+        "Mi_PowerAttackInteruptFlash": "/Game/Materials/VFX/Mi_PowerAttackInteruptFlash",
+        "Mi_Surprised": "/Game/Materials/VFX/Mi_Surprised"
+    },
+    "/Game/VFX/Particles/Chaos/P_PowerAxeDefaultCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_PowerAxeDefaultFullyCharged": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_PowerAxeMaelstormCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_PowerAxeMaelstormFullyCharged": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_ReaperLauncherMeleeFullyCharged": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Chaos/P_ScreamedAt": {
+        "M_Screamed_AT": "/Game/Materials/VFX/Procedural/M_Screamed_AT",
+        "M_BansheeScream": "/Game/Materials/VFX/Trail/M_BansheeScream"
+    },
+    "/Game/VFX/Particles/Chaos/P_ShieldDurabilityBreak": {
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "Mi_ShieldGuardBreak": "/Game/Materials/VFX/Mi_ShieldGuardBreak"
+    },
+    "/Game/VFX/Particles/Chaos/P_SOC_DOT00": {
+        "M_ProceduralCorruption": "/Game/Materials/VFX/Procedural/M_ProceduralCorruption"
+    },
+    "/Game/VFX/Particles/Chaos/P_SOC_DOT01": {
+        "M_ProceduralCorruption": "/Game/Materials/VFX/Procedural/M_ProceduralCorruption"
+    },
+    "/Game/VFX/Particles/Chaos/P_SOC_DOT02": {
+        "M_ProceduralCorruption": "/Game/Materials/VFX/Procedural/M_ProceduralCorruption"
+    },
+    "/Game/VFX/Particles/Chaos/P_SOC_HandPoint": {
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "MI_BeingHealedChaos": "/Game/Materials/VFX/MI_BeingHealedChaos",
+        "M_ProceduralCorruption": "/Game/Materials/VFX/Procedural/M_ProceduralCorruption"
+    },
+    "/Game/VFX/Particles/Chaos/P_StaggeringLong": {
+        "M_ProceduralElectro": "/Game/Materials/VFX/Procedural/M_ProceduralElectro",
+        "M_StaggerWave": "/Game/Materials/VFX/Procedural/M_StaggerWave"
+    },
+    "/Game/VFX/Particles/Chaos/P_StaggeringMed": {
+        "M_ProceduralElectro": "/Game/Materials/VFX/Procedural/M_ProceduralElectro",
+        "M_StaggerWave": "/Game/Materials/VFX/Procedural/M_StaggerWave"
+    },
+    "/Game/VFX/Particles/Chaos/P_TacticalGrenadeHit": {
+        "Mi_Target": "/Game/Materials/VFX/Mi_Target"
+    },
+    "/Game/VFX/Particles/Chaos/P_TzeentchHeal": {
+        "M_BaseCaptureCone": "/Game/Materials/VFX/M_BaseCaptureCone",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_Myst_SoftParticle_Trans_Unlit2": "/Game/Materials/VFX/M_Myst_SoftParticle_Trans_Unlit2",
+        "M_ShieldHit_Refractive": "/Game/Materials/VFX/M_ShieldHit_Refractive",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "Mi_Tzeentch_Symbol": "/Game/Materials/VFX/Mi_Tzeentch_Symbol"
+    },
+    "/Game/VFX/Particles/Chaos/P_WarpInstability": {
+        "M_InstabilityWarp": "/Game/Materials/VFX/M_InstabilityWarp",
+        "MI_Yellow_Electric01": "/Game/Materials/VFX/MI_Yellow_Electric01"
+    },
+    "/Game/VFX/Particles/Chaos/P_WeaponBreak": {
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "Mi_WeapBreak": "/Game/Materials/VFX/Mi_WeapBreak"
+    },
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/Mi_MaggonFireplanetglow": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/Mi_MedusaFirePlanetGlow": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/Mi_MoonGlow2": {
+        "Mi_PlanetRingGlow": "/Game/Materials/VFX/Mi_PlanetRingGlow"
+    },
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/Mi_MoonGlow3": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/Mi_MoonGlowMaggon": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/Mi_ShadowSmoke": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_attentuation_cone_01": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_BloodDrop": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_cloud_Lava": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_cloud_lit": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/m_flare_03": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_radial_ramp": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_rainDropSplashesCharacter": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_raindrop_splash": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_ribbon_smoke": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_SmokeLit": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_SmokeLitUnfog": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_smoke_subUV": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_smoke_subUV_blackbody": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_square_ramp": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Materials/M_square_ramp2": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Meshes/Attenuation_cone_01": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/ParticleSystems/P_LavaSteamwater": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/ParticleSystems/P_LitSteamZedek": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/ParticleSystems/P_LitSteamZedekBig": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/ParticleSystems/P_lit_steamHive2C03": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/ParticleSystems/P_VolcanoSmoke": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_Caustics": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_Caustics_2": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_ceiling_fire_tile": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_DamnedLegionFlames": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_raindrop": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_raindrop_splash": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_raindrop_splash_NRM": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_Smoke2_Tile": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_SmokePuff_001": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_SmokeSubUV_8X8": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_SmokeTile": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_SmokeTile_N": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_Smoke_Tiled_D": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_soft_smoke": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_Sunflare": {},
+    "/Game/VFX/Particles/ContentExample/ExampleContent/Effects/Textures/T_WaterNormal": {},
+    "/Game/VFX/Particles/Eldar/PShurikenCatapult_MuzzleFlash": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "Mi_LasBlasterMuzzle": "/Game/Materials/VFX/Mi_LasBlasterMuzzle"
+    },
+    "/Game/VFX/Particles/Eldar/PShurikenCatapult_MuzzleFlashAsuryan": {
+        "M_PlasmaSpanner": "/Game/Materials/VFX/M_PlasmaSpanner",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "Mi_LasBlasterMuzzle": "/Game/Materials/VFX/Mi_LasBlasterMuzzle"
+    },
+    "/Game/VFX/Particles/Eldar/P_D-CannonCharging": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_AlphaBlendedSoft_ChanelPanner": "/Game/Materials/VFX/M_AlphaBlendedSoft_ChanelPanner",
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "MI_LascannonImpactAnimated": "/Game/Materials/VFX/MI_LascannonImpactAnimated"
+    },
+    "/Game/VFX/Particles/Eldar/P_D-Cannon_Explosion": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_BillowSteam": "/Game/Materials/VFX/M_BillowSteam",
+        "M_DirtBlast_Soft_Unlit": "/Game/Materials/VFX/M_DirtBlast_Soft_Unlit",
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom",
+        "M_ProceduraHandMagic": "/Game/Materials/VFX/Procedural/M_ProceduraHandMagic"
+    },
+    "/Game/VFX/Particles/Eldar/P_D-Cannon_MZF": {
+        "Mi_GlowLines": "/Game/Materials/VFX/Mi_GlowLines",
+        "Mi_startGlow": "/Game/Materials/VFX/Mi_startGlow"
+    },
+    "/Game/VFX/Particles/Eldar/P_DR_Speed_Wargear_LT": {
+        "M_ShimmerDeviceOn": "/Game/Materials/VFX/M_ShimmerDeviceOn",
+        "M_ZzapDeffgunBeam": "/Game/Materials/VFX/Trail/M_ZzapDeffgunBeam"
+    },
+    "/Game/VFX/Particles/Eldar/P_DR_Speed_Wargear_RT": {
+        "M_ShimmerDeviceOn": "/Game/Materials/VFX/M_ShimmerDeviceOn",
+        "M_ZzapDeffgunBeam": "/Game/Materials/VFX/Trail/M_ZzapDeffgunBeam"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarCeremonialKnifeFullyCharged": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarCeremonialKniferCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarForceSword_wraith": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "M_ShimmerWitchBlade": "/Game/Materials/VFX/M_ShimmerWitchBlade"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarHBVeteranEyes3": {
+        "Mi_StarshotFlash": "/Game/Materials/VFX/Mi_StarshotFlash",
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarHBVeteranEyesHelm2": {
+        "Mi_StarshotFlash": "/Game/Materials/VFX/Mi_StarshotFlash",
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarPowerSwordCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarPowerSwordFullyCharged": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarPowerSwordGlow": {
+        "Mi_EldarPowerSword_IdleGlow": "/Game/Materials/VFX/Mi_EldarPowerSword_IdleGlow"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarPowerSwordTesla2": {
+        "Mi_EldarPowerSword_IdleGlow": "/Game/Materials/VFX/Mi_EldarPowerSword_IdleGlow"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarSSVeteranEyes2": {
+        "Mi_StarshotFlash": "/Game/Materials/VFX/Mi_StarshotFlash",
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01"
+    },
+    "/Game/VFX/Particles/Eldar/P_EldarVeteranEyes1": {
+        "Mi_StarshotFlash": "/Game/Materials/VFX/Mi_StarshotFlash",
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01"
+    },
+    "/Game/VFX/Particles/Eldar/P_Eldar_D-Cannon_Beam": {},
+    "/Game/VFX/Particles/Eldar/P_Eldar_DestructorLightning_Beam": {
+        "Mi_EldarDestrutorLightning": "/Game/Materials/VFX/Mi_EldarDestrutorLightning"
+    },
+    "/Game/VFX/Particles/Eldar/P_Eldar_DestructorLightning_Muzzle": {
+        "Mi_EldarDestrutorLightning": "/Game/Materials/VFX/Mi_EldarDestrutorLightning",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact"
+    },
+    "/Game/VFX/Particles/Eldar/P_Eldar_Destructor_impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_WhispySmoke": "/Game/Materials/VFX/M_WhispySmoke",
+        "Mi_orbitalStrikeGlow": "/Game/Materials/VFX/Mi_orbitalStrikeGlow",
+        "M_LasBlaster_impact": "/Game/Materials/VFX/MZF/M_LasBlaster_impact"
+    },
+    "/Game/VFX/Particles/Eldar/P_Eldar_Spirit_Stone": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_EldarFlightTrail": "/Game/Materials/VFX/Trail/M_EldarFlightTrail"
+    },
+    "/Game/VFX/Particles/Eldar/P_Eldar_SS_VeteranEyes2": {
+        "Mi_StarshotFlash": "/Game/Materials/VFX/Mi_StarshotFlash",
+        "Mi_VeteranEyesGlow01": "/Game/Materials/VFX/Mi_VeteranEyesGlow01"
+    },
+    "/Game/VFX/Particles/Eldar/P_FalconAntiGrav": {
+        "M_VortexClouds": "/Game/Materials/VFX/Procedural/M_VortexClouds"
+    },
+    "/Game/VFX/Particles/Eldar/P_FirePike": {
+        "M_AFterBurnRing": "/Game/Materials/VFX/M_AFterBurnRing",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_FirePikeBeam": "/Game/Materials/VFX/Trail/M_FirePikeBeam"
+    },
+    "/Game/VFX/Particles/Eldar/P_FusionGun": {
+        "M_AFterBurnRing": "/Game/Materials/VFX/M_AFterBurnRing",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_FusionGunBeam": "/Game/Materials/VFX/Trail/M_FusionGunBeam"
+    },
+    "/Game/VFX/Particles/Eldar/P_FusionGunExecution": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "M_AFterBurnRing": "/Game/Materials/VFX/M_AFterBurnRing",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset",
+        "M_FusionGunBeam": "/Game/Materials/VFX/Trail/M_FusionGunBeam"
+    },
+    "/Game/VFX/Particles/Eldar/P_FusionMZF": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/Eldar/P_FusionPistol": {
+        "M_AFterBurnRing": "/Game/Materials/VFX/M_AFterBurnRing",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_FusionGunBeam": "/Game/Materials/VFX/Trail/M_FusionGunBeam"
+    },
+    "/Game/VFX/Particles/Eldar/P_FusionPistolMZF": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/Eldar/P_FusionPistolMZF_iceHawk": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/Eldar/P_FusionPistol_Icehawk": {
+        "M_AFterBurnRing": "/Game/Materials/VFX/M_AFterBurnRing",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_FusionGunBeam_Icehawk": "/Game/Materials/VFX/Trail/M_FusionGunBeam_Icehawk"
+    },
+    "/Game/VFX/Particles/Eldar/P_FusionToastLoop": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/Eldar/P_FusionToastLoopExecution": {
+        "M_FlameProcedural02": "/Game/Materials/VFX/Procedural/M_FlameProcedural02",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/Eldar/P_FusionToastLoop_IceHawk": {
+        "M_AdditiveCircle": "/Game/Materials/VFX/M_AdditiveCircle",
+        "M_FlameProcedural_Icehawk": "/Game/Materials/VFX/Procedural/M_FlameProcedural_Icehawk",
+        "M_FlameProceduralNoOffset": "/Game/Materials/VFX/Procedural/M_FlameProceduralNoOffset"
+    },
+    "/Game/VFX/Particles/Eldar/P_HawksTalon_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_SunRifleImpactGlow": "/Game/Materials/VFX/M_SunRifleImpactGlow",
+        "M_WhispySmoke": "/Game/Materials/VFX/M_WhispySmoke",
+        "Mi_GlowLines": "/Game/Materials/VFX/Mi_GlowLines",
+        "Mi_orbitalStrikeGlow": "/Game/Materials/VFX/Mi_orbitalStrikeGlow",
+        "M_LasBlaster_impact": "/Game/Materials/VFX/MZF/M_LasBlaster_impact"
+    },
+    "/Game/VFX/Particles/Eldar/P_HawksTalon_Muzzle": {
+        "M_DistortionCircle": "/Game/Materials/VFX/M_DistortionCircle",
+        "M_LightGlow": "/Game/Materials/VFX/M_LightGlow",
+        "M_WhispySmoke": "/Game/Materials/VFX/M_WhispySmoke",
+        "Mi_ScatterLaserFlash": "/Game/Materials/VFX/Mi_ScatterLaserFlash",
+        "Mi_startGlow": "/Game/Materials/VFX/Mi_startGlow"
+    },
+    "/Game/VFX/Particles/Eldar/P_HawksTalon_Trail": {
+        "M_EldarHeavytracer": "/Game/Materials/VFX/Trail/M_EldarHeavytracer",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer"
+    },
+    "/Game/VFX/Particles/Eldar/P_LasblasterMuzzle": {
+        "M_DistortionCircle": "/Game/Materials/VFX/M_DistortionCircle",
+        "M_WhispySmoke": "/Game/Materials/VFX/M_WhispySmoke",
+        "Mi_GlowLines": "/Game/Materials/VFX/Mi_GlowLines",
+        "Mi_LasBlasterMuzzle": "/Game/Materials/VFX/Mi_LasBlasterMuzzle"
+    },
+    "/Game/VFX/Particles/Eldar/P_LasblasterMuzzleExecution": {
+        "M_DistortionCircle": "/Game/Materials/VFX/M_DistortionCircle",
+        "M_WhispySmoke": "/Game/Materials/VFX/M_WhispySmoke",
+        "Mi_GlowLines": "/Game/Materials/VFX/Mi_GlowLines",
+        "Mi_LasBlasterMuzzle": "/Game/Materials/VFX/Mi_LasBlasterMuzzle",
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer",
+        "M_EldarTracer_smoke": "/Game/Materials/VFX/Trail/M_EldarTracer_smoke"
+    },
+    "/Game/VFX/Particles/Eldar/P_LasBlasterTrail": {
+        "M_Eldartracer": "/Game/Materials/VFX/Trail/M_Eldartracer",
+        "M_EldarTracer_smoke": "/Game/Materials/VFX/Trail/M_EldarTracer_smoke"
+    },
+    "/Game/VFX/Particles/Eldar/P_LasBlaster_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_WhispySmoke": "/Game/Materials/VFX/M_WhispySmoke",
+        "Mi_orbitalStrikeGlow": "/Game/Materials/VFX/Mi_orbitalStrikeGlow",
+        "M_LasBlaster_impact": "/Game/Materials/VFX/MZF/M_LasBlaster_impact"
+    },
+    "/Game/VFX/Particles/Eldar/P_LashOfSlaanesh_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_HoloEladar": "/Game/Materials/VFX/M_HoloEladar",
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact",
+        "M_OrganicTrail_iMPACT": "/Game/Materials/VFX/Trail/M_OrganicTrail_iMPACT"
+    },
+    "/Game/VFX/Particles/Eldar/P_LashOfSlaanesh_Muzzle": {
+        "Mi_GlowLines": "/Game/Materials/VFX/Mi_GlowLines",
+        "Mi_startGlow": "/Game/Materials/VFX/Mi_startGlow"
+    },
+    "/Game/VFX/Particles/Eldar/P_ORK_LightningBlade": {
+        "Mi_EldarDestrutorLightning": "/Game/Materials/VFX/Mi_EldarDestrutorLightning"
+    },
+    "/Game/VFX/Particles/Eldar/P_PulseLaser_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_PulseRingMesh": "/Game/Materials/VFX/M_PulseRingMesh",
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "Mi_Pulselaserimpact_Flash": "/Game/Materials/VFX/Mi_Pulselaserimpact_Flash",
+        "Mi_ReaperRingImpact": "/Game/Materials/VFX/Mi_ReaperRingImpact",
+        "Mi_startGlow": "/Game/Materials/VFX/Mi_startGlow"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShimmerDeviceFizzleOut": {},
+    "/Game/VFX/Particles/Eldar/P_ShimmerDeviceOn": {
+        "M_ShimmerDeviceOn": "/Game/Materials/VFX/M_ShimmerDeviceOn"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShimmerDeviceReady": {
+        "M_ShimmerDeviceOn": "/Game/Materials/VFX/M_ShimmerDeviceOn"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShimmerShield": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_ShimmerShield": "/Game/Materials/VFX/M_ShimmerShield",
+        "MI_ConeCapture": "/Game/Materials/VFX/MI_ConeCapture"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShimmerShieldBreak": {
+        "M_ShimmerShield": "/Game/Materials/VFX/M_ShimmerShield"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShimmerShieldLarge_Center": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_ShimmerShield": "/Game/Materials/VFX/M_ShimmerShield",
+        "MI_ConeCapture": "/Game/Materials/VFX/MI_ConeCapture"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShimmerShieldLarge_Left": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_ShimmerShield": "/Game/Materials/VFX/M_ShimmerShield",
+        "MI_ConeCapture": "/Game/Materials/VFX/MI_ConeCapture"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShimmerShieldLarge_Right": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_ShimmerShield": "/Game/Materials/VFX/M_ShimmerShield",
+        "MI_ConeCapture": "/Game/Materials/VFX/MI_ConeCapture"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShurikenCatapult_Asuryan_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_HoloEladar": "/Game/Materials/VFX/M_HoloEladar",
+        "Mi_ShurikenFlashImpact": "/Game/Materials/VFX/Mi_ShurikenFlashImpact"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShurikenCatapult_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_HoloEladar": "/Game/Materials/VFX/M_HoloEladar",
+        "Mi_ShurikenFlashImpact": "/Game/Materials/VFX/Mi_ShurikenFlashImpact"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShurikenCatapult_Projectile_Trail": {
+        "M_EldarHeavytracer": "/Game/Materials/VFX/Trail/M_EldarHeavytracer",
+        "M_EldarTracer_Panning": "/Game/Materials/VFX/Trail/M_EldarTracer_Panning"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShurikenNew_Projectile_Trail": {
+        "M_EldarHeavytracer": "/Game/Materials/VFX/Trail/M_EldarHeavytracer",
+        "M_EldarTracer_Panning": "/Game/Materials/VFX/Trail/M_EldarTracer_Panning"
+    },
+    "/Game/VFX/Particles/Eldar/P_ShurikenNew_Projectile_Trail_Asuryan": {
+        "M_AbaddonsGraceTracer_Smoke": "/Game/Materials/VFX/Trail/M_AbaddonsGraceTracer_Smoke",
+        "M_EldarTracer_Panning_Dark": "/Game/Materials/VFX/Trail/M_EldarTracer_Panning_Dark"
+    },
+    "/Game/VFX/Particles/Eldar/P_SunRifleImpact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_SunRifleImpactGlow": "/Game/Materials/VFX/M_SunRifleImpactGlow",
+        "Mi_GlowLines": "/Game/Materials/VFX/Mi_GlowLines"
+    },
+    "/Game/VFX/Particles/Eldar/P_SunRifleMuzzle": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_HawksTalonMuzzle": "/Game/Materials/VFX/M_HawksTalonMuzzle",
+        "Mi_GlowLines": "/Game/Materials/VFX/Mi_GlowLines",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Eldar/P_SunRifleMuzzleExecution": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_HawksTalonMuzzle": "/Game/Materials/VFX/M_HawksTalonMuzzle",
+        "Mi_GlowLines": "/Game/Materials/VFX/Mi_GlowLines",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter",
+        "M_EldarTracer_Panning": "/Game/Materials/VFX/Trail/M_EldarTracer_Panning",
+        "M_SunrifletracerSmoke": "/Game/Materials/VFX/Trail/M_SunrifletracerSmoke"
+    },
+    "/Game/VFX/Particles/Eldar/P_SunRifleTrail": {
+        "M_SunRifleTracerBase": "/Game/Materials/VFX/Trail/M_SunRifleTracerBase",
+        "M_SunrifletracerSmoke": "/Game/Materials/VFX/Trail/M_SunrifletracerSmoke"
+    },
+    "/Game/VFX/Particles/Eldar/P_WarlockForceChoke": {
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01"
+    },
+    "/Game/VFX/Particles/Enviro/P_Blizzard_OnlyFlakes": {},
+    "/Game/VFX/Particles/Enviro/P_Blizzard_Snow_Wind": {},
+    "/Game/VFX/Particles/Enviro/P_CharaCreate_Dust": {},
+    "/Game/VFX/Particles/Enviro/P_GooDropsSpawningPool": {},
+    "/Game/VFX/Particles/Enviro/P_HeatWave_FrameBuffer": {
+        "M_HeatShimmer_FrameBuffer": "/Game/Materials/VFX/Trail/M_HeatShimmer_FrameBuffer"
+    },
+    "/Game/VFX/Particles/Enviro/P_HiveComplexDust": {},
+    "/Game/VFX/Particles/Enviro/P_HiveentranceSandStorm": {},
+    "/Game/VFX/Particles/Enviro/P_HiveLavaSpew": {
+        "M_LavaMasked": "/Game/Materials/VFX/M_LavaMasked"
+    },
+    "/Game/VFX/Particles/Enviro/P_HiveLavaSpewSmall": {
+        "M_LavaMasked": "/Game/Materials/VFX/M_LavaMasked"
+    },
+    "/Game/VFX/Particles/Enviro/P_MEdusaVolcanoLava": {
+        "M_LavaMasked": "/Game/Materials/VFX/M_LavaMasked"
+    },
+    "/Game/VFX/Particles/Enviro/P_RainlightningImpact": {
+        "MI_DustLandHard": "/Game/Materials/VFX/Dust/MI_DustLandHard",
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "M_DistortionVFX": "/Game/Materials/VFX/M_DistortionVFX",
+        "M_KrakImplosion": "/Game/Materials/VFX/M_KrakImplosion",
+        "MI_Blue_Electric01": "/Game/Materials/VFX/MI_Blue_Electric01",
+        "MI_Blue_Electric03": "/Game/Materials/VFX/MI_Blue_Electric03",
+        "MI_KrakShrinkBoom": "/Game/Materials/VFX/MI_KrakShrinkBoom"
+    },
+    "/Game/VFX/Particles/Enviro/P_SandBlown": {},
+    "/Game/VFX/Particles/Enviro/P_SandDust": {},
+    "/Game/VFX/Particles/Enviro/P_SandDustSmall": {},
+    "/Game/VFX/Particles/Enviro/P_SmokeOnlyVolcano": {
+        "M_FireEmissivePanner": "/Game/Materials/VFX/M_FireEmissivePanner",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022"
+    },
+    "/Game/VFX/Particles/Enviro/P_ToxicNamco": {
+        "M_ToxicGooBubble": "/Game/Materials/VFX/M_ToxicGooBubble"
+    },
+    "/Game/VFX/Particles/Enviro/P_WarpBlown": {
+        "M_WarpSandStorm": "/Game/Materials/VFX/Procedural/M_WarpSandStorm"
+    },
+    "/Game/VFX/Particles/Enviro/P_WarpPocket": {
+        "M_WarpSandStorm": "/Game/Materials/VFX/Procedural/M_WarpSandStorm"
+    },
+    "/Game/VFX/Particles/Jumpack/P_EldarFalconMainBoostL": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_EldarFalconMainBoostR": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_EldarFalconMainIdle_L": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_EldarFalconMainIdle_R": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_EldarFalconMainThrust_L": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_EldarFalconMainThrust_R": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_EldarFalconSideIdleL": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_EldarFalconSideIdleR": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_EldarFalconSideThrustL": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_EldarFalconSideThrustR": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpackFizzleOut": {
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpackFizzleOut_L": {
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpackFizzleOut_R": {
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpackThrust": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpackThrus_L": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpackThrus_R": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_Jumpack_EmptyBurst": {
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit"
+    },
+    "/Game/VFX/Particles/Jumpack/P_Jumpack_EmptyBurst_L": {
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit"
+    },
+    "/Game/VFX/Particles/Jumpack/P_Jumpack_EmptyBurst_R": {
+        "M_SmokeFizzleOut_SoftParticle_Trans_Unlit": "/Game/Materials/VFX/M_SmokeFizzleOut_SoftParticle_Trans_Unlit"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPackEvadeThrust": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "MI_VentingGas": "/Game/Materials/VFX/MZF/MI_VentingGas"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPackEvadeThrust_L": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "MI_VentingGas": "/Game/Materials/VFX/MZF/MI_VentingGas"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPackEvadeThrust_R": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight",
+        "MI_VentingGas": "/Game/Materials/VFX/MZF/MI_VentingGas"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPackIdleOn": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPackIdleOn_L": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPackIdleOn_R": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPackInnerCore": {
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPackInnerCore_L": {
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPackInnerCore_R": {
+        "MI_PlasmaFire_Purple": "/Game/Materials/VFX/MI_PlasmaFire_Purple",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPack_RechargeBurst": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPack_RechargeBurst_L": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_JumpPack_RechargeBurst_R": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_RockitThrust": {
+        "M_AdditiveEmissiveSoftParticle": "/Game/Materials/VFX/M_AdditiveEmissiveSoftParticle",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas",
+        "MI_NormalThrust": "/Game/Materials/VFX/MZF/MI_NormalThrust",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_Rockit_BoomKannon": {
+        "M_RockitSmoke": "/Game/Materials/VFX/M_RockitSmoke",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_Rockit_BurstRecharge": {
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_Rockit_Idle": {
+        "M_RockitSmoke": "/Game/Materials/VFX/M_RockitSmoke",
+        "MI_PilotLight": "/Game/Materials/VFX/MZF/MI_PilotLight"
+    },
+    "/Game/VFX/Particles/Jumpack/P_Rockit_outOfFuel": {
+        "M_RockitSmoke": "/Game/Materials/VFX/M_RockitSmoke"
+    },
+    "/Game/VFX/Particles/LunchLearn/M_BLack": {},
+    "/Game/VFX/Particles/LunchLearn/M_Offset": {},
+    "/Game/VFX/Particles/LunchLearn/P_Brazero_Fortress_NoOffset": {
+        "M_FireEmissiveDesaturatedPanner2": "/Game/Materials/VFX/M_FireEmissiveDesaturatedPanner2",
+        "MI_BurninateAnim022": "/Game/Materials/VFX/MI_BurninateAnim022"
+    },
+    "/Game/VFX/Particles/LunchLearn/T_Flame_OffsetGradient": {},
+    "/Game/VFX/Particles/Orc/P_ChainChoppaCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Orc/P_ChainChoppaFullyCharged": {},
+    "/Game/VFX/Particles/Orc/P_ChoppaAxeCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Orc/P_ChoppaAxeChargeFullyCharged": {},
+    "/Game/VFX/Particles/Orc/P_ChoppaClubCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Orc/P_ChoppaClubFullyCharged": {},
+    "/Game/VFX/Particles/Orc/P_DaGoldenFixaCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Orc/P_DaGoldenFixaFullyCharged": {},
+    "/Game/VFX/Particles/Orc/P_Kannon_WarmUp": {},
+    "/Game/VFX/Particles/Orc/P_Loota_Impact2": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "MI_FuelExploding": "/Game/Materials/VFX/MI_FuelExploding"
+    },
+    "/Game/VFX/Particles/Orc/P_Pokkit_WarmUp": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare"
+    },
+    "/Game/VFX/Particles/Orc/P_Rokkit_WarmUp": {
+        "M_JetPack_lensFlare": "/Game/Materials/VFX/M_JetPack_lensFlare"
+    },
+    "/Game/VFX/Particles/Orc/P_ServoSquig": {
+        "M_Opaque_Sqig_particle": "/Game/Materials/Templates/M_Opaque_Sqig_particle"
+    },
+    "/Game/VFX/Particles/Orc/P_Shoota_Impact": {
+        "M_AdditiveEmissiveParticle": "/Game/Materials/VFX/M_AdditiveEmissiveParticle",
+        "Mi_Pulselaserimpact_Flash": "/Game/Materials/VFX/Mi_Pulselaserimpact_Flash",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Orc/P_Shoota_MuzzleFlash": {
+        "MI_Blood_Chunks_Unlit_03": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_03",
+        "M_BlackBodyDesatureTex": "/Game/Materials/VFX/M_BlackBodyDesatureTex",
+        "MI_MuzzleFlash_Quad": "/Game/Materials/VFX/MZF/MI_MuzzleFlash_Quad",
+        "MI_MuzzleFlashFire_Bolter": "/Game/Materials/VFX/MZF/MI_MuzzleFlashFire_Bolter"
+    },
+    "/Game/VFX/Particles/Orc/P_SpikeKnucklesCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Orc/P_SpikeKnucklesFullyCharged": {},
+    "/Game/VFX/Particles/Orc/P_UrtiSyringeCharge": {
+        "Mi_mitigationParticles": "/Game/Materials/VFX/Mi_mitigationParticles"
+    },
+    "/Game/VFX/Particles/Orc/P_UrtiSyringeFullyCharged": {},
+    "/Game/VFX/Particles/Orc/P_Waaagh": {
+        "M_ProceduralWaaagh": "/Game/Materials/VFX/Procedural/M_ProceduralWaaagh"
+    },
+    "/Game/VFX/Particles/SkyBox/P_Asteroid": {
+        "MI_DustFootStepWalk": "/Game/Materials/VFX/Dust/MI_DustFootStepWalk",
+        "M_Asteroid": "/Game/Materials/VFX/M_Asteroid"
+    },
+    "/Game/VFX/Particles/SkyBox/P_BlackBoltBlueSun": {
+        "MI_Blood_Chunks_Unlit_03": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_03",
+        "Mi_SunBLue": "/Game/Materials/VFX/Mi_SunBLue"
+    },
+    "/Game/VFX/Particles/SkyBox/P_BlackboltSun": {},
+    "/Game/VFX/Particles/SkyBox/P_BlackBoltsun2": {
+        "Mi_Sun": "/Game/Materials/VFX/Mi_Sun"
+    },
+    "/Game/VFX/Particles/SkyBox/P_BLuesun": {
+        "MI_Blood_Chunks_Unlit_03": "/Game/Materials/VFX/Blood/MI_Blood_Chunks_Unlit_03",
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas",
+        "Mi_PlanetRingGlow": "/Game/Materials/VFX/Mi_PlanetRingGlow",
+        "Mi_SunBLue": "/Game/Materials/VFX/Mi_SunBLue"
+    },
+    "/Game/VFX/Particles/SkyBox/P_CometWtrails": {
+        "M_Comet": "/Game/Materials/VFX/M_Comet",
+        "M_SmokeComet": "/Game/Materials/VFX/M_SmokeComet"
+    },
+    "/Game/VFX/Particles/SkyBox/P_Mainmenu_sunDust": {
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas"
+    },
+    "/Game/VFX/Particles/SkyBox/P_mmSunSpot": {
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas",
+        "Mi_PlanetRingGlow": "/Game/Materials/VFX/Mi_PlanetRingGlow",
+        "Mi_Sun": "/Game/Materials/VFX/Mi_Sun"
+    },
+    "/Game/VFX/Particles/SkyBox/P_planetringGlow": {
+        "M_AdditiveEmissiveSoftParticle": "/Game/Materials/VFX/M_AdditiveEmissiveSoftParticle",
+        "Mi_SideGlowPlanet": "/Game/Materials/VFX/Mi_SideGlowPlanet"
+    },
+    "/Game/VFX/Particles/SkyBox/P_RedSun": {
+        "M_SmokeGas": "/Game/Materials/VFX/M_SmokeGas",
+        "Mi_PlanetRingGlow": "/Game/Materials/VFX/Mi_PlanetRingGlow"
+    },
+    "/Game/VFX/Particles/SkyBox/P_RedSunUnFogged": {
+        "M_SmokeGasUnFogged": "/Game/Materials/VFX/M_SmokeGasUnFogged"
+    },
+    "/Game/VFX/Particles/SkyBox/P_SunGlow": {
+        "MI_MeleeImpact": "/Game/Materials/VFX/MI_MeleeImpact"
+    },
+    "/Game/VFX/Particles/SkyBox/P_Sunsetglow": {
+        "M_Sunspots": "/Game/Materials/VFX/M_Sunspots"
+    },
+    "/Game/VFX/Particles/SkyBox/P_SunspotBlue": {
+        "M_Sunspots": "/Game/Materials/VFX/M_Sunspots"
+    },
+    "/Game/VFX/Particles/SkyBox/P_SunspotYellow": {
+        "M_Sunspots": "/Game/Materials/VFX/M_Sunspots"
+    }
+}

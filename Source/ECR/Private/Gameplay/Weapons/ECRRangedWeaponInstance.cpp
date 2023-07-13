@@ -124,6 +124,17 @@ void UECRRangedWeaponInstance::AddSpread()
 #endif
 }
 
+void UECRRangedWeaponInstance::RemoveHeat(float DeltaHeat)
+{
+	CurrentHeat = ClampHeat(CurrentHeat - DeltaHeat);
+	// Map the heat to the spread angle
+	CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat);
+
+#if WITH_EDITOR
+	UpdateDebugVisualization();
+#endif
+}
+
 float UECRRangedWeaponInstance::GetDistanceAttenuation(float Distance, const FGameplayTagContainer* SourceTags,
                                                        const FGameplayTagContainer* TargetTags) const
 {
