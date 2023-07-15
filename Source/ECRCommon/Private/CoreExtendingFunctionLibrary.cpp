@@ -101,7 +101,7 @@ void UCoreExtendingFunctionLibrary::GetPawnAimOffsetDifference(APawn* Pawn, doub
 		YawDiff = 0;
 	}
 
-	const FRotator BaseAimRotation = Pawn->GetBaseAimRotation();
+	const FRotator BaseAimRotation = Pawn->GetControlRotation();
 	const FRotator ActorRotation = Pawn->GetActorRotation();
 
 	PitchDiff = DegreesToStandardized(BaseAimRotation.Pitch - ActorRotation.Pitch);
