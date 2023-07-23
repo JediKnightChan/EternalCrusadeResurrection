@@ -132,6 +132,9 @@ protected:
 	virtual void HandleReadyToBecomeWounded(AActor* DamageInstigator, AActor* DamageCauser,
 	                                        const FGameplayEffectSpec& DamageEffectSpec, float DamageMagnitude);
 
+	virtual void HandleReadyToBecomeUnwounded(AActor* EffectInstigator, AActor* EffectCauser,
+	                                          const FGameplayEffectSpec& EffectSpec, float EffectMagnitude);
+
 	virtual void HandleStaminaChanged(const FOnAttributeChangeData& ChangeData);
 	virtual void HandleMaxStaminaChanged(const FOnAttributeChangeData& ChangeData);
 

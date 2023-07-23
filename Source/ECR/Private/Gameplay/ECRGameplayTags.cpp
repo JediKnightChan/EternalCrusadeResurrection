@@ -67,6 +67,9 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	       "Event that fires when character movement mode changes.");
 	AddTag(GameplayEvent_Wounded, "GameplayEvent.Wounded",
 	       "Event that fires on becoming wounded. This event only fires on the server.");
+	AddTag(GameplayEvent_WoundedCancel, "GameplayEvent.WoundedCancel", "Event that fires on "
+	       "becoming un wounded from wounded. This event only "
+	       "fires on the server.");
 
 	AddTag(SetByCaller_Damage, "SetByCaller.Damage", "SetByCaller tag used by damage gameplay effects.");
 	AddTag(SetByCaller_Heal, "SetByCaller.Heal", "SetByCaller tag used by healing gameplay effects.");

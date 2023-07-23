@@ -62,7 +62,7 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 	                                     nullptr);
 
 	CharacterHealthSet->OnReadyToBecomeWounded.AddUObject(this, &ThisClass::HandleReadyToBecomeWounded);
-
+	CharacterHealthSet->OnReadyToBecomeUnwounded.AddUObject(this, &ThisClass::HandleReadyToBecomeUnwounded);
 	// Stamina
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetStaminaAttribute()).
 	                        AddUObject(this, &ThisClass::HandleStaminaChanged);
@@ -235,7 +235,8 @@ void UECRCharacterHealthComponent::HandleReadyToBecomeWounded(AActor* DamageInst
 #if WITH_SERVER_CODE
 	if (AbilitySystemComponent)
 	{
-		// Send the "GameplayEvent.Wounded" gameplay event through the owner's ability system.  This can be used to trigger a death gameplay ability.
+		// Send the "GameplayEvent.Wounded" gameplay event through the owner's ability system.
+		// This can be used to trigger Wounded gameplay ability.
 		{
 			FGameplayEventData Payload;
 			Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_Wounded;
@@ -270,6 +271,32 @@ void UECRCharacterHealthComponent::HandleReadyToBecomeWounded(AActor* DamageInst
 	}
 
 #endif // #if WITH_SERVER_CODE
+}
+
+
+void UECRCharacterHealthComponent::HandleReadyToBecomeUnwounded(AActor* EffectInstigator, AActor* EffectCauser,
+	const FGameplayEffectSpec& EffectSpec, float EffectMagnitude)
+{
+#if WITH_SERVER_CODE
+	if (AbilitySystemComponent)
+	{
+		// Send the "GameplayEvent.WoundedCancel" gameplay event through the owner's ability system.
+		{
+			FGameplayEventData Payload;
+			Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_WoundedCancel;
+			Payload.Instigator = EffectInstigator;
+			Payload.Target = AbilitySystemComponent->GetAvatarActor();
+			Payload.OptionalObject = EffectSpec.Def;
+			Payload.ContextHandle = EffectSpec.GetEffectContext();
+			Payload.InstigatorTags = *EffectSpec.CapturedSourceTags.GetAggregatedTags();
+			Payload.TargetTags = *EffectSpec.CapturedTargetTags.GetAggregatedTags();
+			Payload.EventMagnitude = EffectMagnitude;
+
+			FScopedPredictionWindow NewScopedWindow(AbilitySystemComponent, true);
+			AbilitySystemComponent->HandleGameplayEvent(Payload.EventTag, &Payload);
+		}
+	}
+#endif
 }
 
 

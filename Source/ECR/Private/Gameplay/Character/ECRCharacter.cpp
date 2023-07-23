@@ -400,7 +400,6 @@ void AECRCharacter::OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 
 				Payload.Target = this;
 				Payload.EventMagnitude = TimeFalling;
 
-				UE_LOG(LogTemp, Warning, TEXT("sending landed"))
 				UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
 					this, FECRGameplayTags::Get().GameplayEvent_Landed, Payload);
 			}
