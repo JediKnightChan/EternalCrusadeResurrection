@@ -48,6 +48,7 @@ public:
 	FGameplayTag GameplayEvent_RequestReset;
 	FGameplayTag GameplayEvent_Reset;
 	FGameplayTag GameplayEvent_Wounded;
+	FGameplayTag GameplayEvent_WoundedCancel;
 
 	FGameplayTag Cosmetic_Montage;
 	FGameplayTag Cosmetic_AnimStyle;

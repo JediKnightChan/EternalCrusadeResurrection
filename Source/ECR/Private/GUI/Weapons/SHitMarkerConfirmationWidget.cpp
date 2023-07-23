@@ -71,7 +71,6 @@ int32 SHitMarkerConfirmationWidget::OnPaint(const FPaintArgs& Args, const FGeome
 
 				if (LocationMarkerImage == nullptr)
 				{
-					UE_LOG(LogTemp, Warning, TEXT("Loc marker empty"))
 					continue;
 				}
 
@@ -93,10 +92,6 @@ int32 SHitMarkerConfirmationWidget::OnPaint(const FPaintArgs& Args, const FGeome
 			}
 		}
 
-		UE_LOG(LogTemp, Warning, TEXT("Any hits %d, Enemy damage %d friendly %d"),
-		       AnyHitsMarkerImage != nullptr ? 1: 0,
-		       bDealtEnemyDamage ? 1 : 0,
-		       bDealtFriendlyDamage ? 1: 0)
 		if (AnyHitsMarkerImage != nullptr && !bDealtFriendlyDamage && bDealtEnemyDamage)
 		{
 			FLinearColor MarkerColor = bColorAndOpacitySet

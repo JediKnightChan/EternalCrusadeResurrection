@@ -20,6 +20,8 @@ UECRCharacterHealthSet::UECRCharacterHealthSet()
 	  EvasionStamina(3.0f),
 	  MaxEvasionStamina(3.0f)
 {
+	bAlreadyBecameWounded = false;
+	bAlreadyBecameUnwounded = false;
 }
 
 
@@ -53,8 +55,10 @@ bool UECRCharacterHealthSet::GetIsReadyToDie() const
 
 void UECRCharacterHealthSet::CheckIfReadyToBecomeWounded(const FGameplayEffectModCallbackData& Data)
 {
-	if (GetIsReadyToBecomeWounded() && !bReadyToBecomeWounded)
+	if (GetIsReadyToBecomeWounded() && !bAlreadyBecameWounded)
 	{
+		bAlreadyBecameUnwounded = false;
+
 		if (OnReadyToBecomeWounded.IsBound())
 		{
 			const FGameplayEffectContextHandle& EffectContext = Data.EffectSpec.GetEffectContext();
@@ -65,8 +69,22 @@ void UECRCharacterHealthSet::CheckIfReadyToBecomeWounded(const FGameplayEffectMo
 		}
 	}
 
+	if (GetHealth() > 0 && bAlreadyBecameWounded)
+	{
+		bAlreadyBecameUnwounded = true;
+
+		if (OnReadyToBecomeUnwounded.IsBound())
+		{
+			const FGameplayEffectContextHandle& EffectContext = Data.EffectSpec.GetEffectContext();
+			AActor* Instigator = EffectContext.GetOriginalInstigator();
+			AActor* Causer = EffectContext.GetEffectCauser();
+
+			OnReadyToBecomeUnwounded.Broadcast(Instigator, Causer, Data.EffectSpec, Data.EvaluatedData.Magnitude);
+		}
+	}
+
 	// Check health again in case an event above changed it.
-	bReadyToBecomeWounded = GetIsReadyToBecomeWounded();
+	bAlreadyBecameWounded = GetIsReadyToBecomeWounded();
 }
 
 
@@ -164,9 +182,9 @@ void UECRCharacterHealthSet::PostAttributeChange(const FGameplayAttribute& Attri
 	ClampCurrentAttributeOnMaxChange(Attribute, NewValue, GetMaxEvasionStaminaAttribute(),
 	                                 GetEvasionStaminaAttribute(), GetEvasionStamina());
 
-	if (bReadyToBecomeWounded && !GetIsReadyToBecomeWounded())
+	if (bAlreadyBecameWounded && !GetIsReadyToBecomeWounded() && bAlreadyBecameUnwounded)
 	{
-		bReadyToBecomeWounded = false;
+		bAlreadyBecameWounded = false;
 	}
 
 	if (bReadyToDie && !GetIsReadyToDie())

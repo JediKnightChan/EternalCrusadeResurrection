@@ -116,8 +116,10 @@ protected:
 
 protected:
 	// Used to track when the health reaches 0 to trigger ReadyToBecomeWounded event only once
-	bool bReadyToBecomeWounded;
+	bool bAlreadyBecameWounded;
 
+	// Used to track when health becomes > 0 again
+	bool bAlreadyBecameUnwounded;
 public:
 	UECRCharacterHealthSet();
 
@@ -134,4 +136,6 @@ public:
 
 	// Delegate to broadcast when the health attribute reaches zero.
 	mutable FECRAttributeEvent OnReadyToBecomeWounded;
+	// Delegate to broadcast when the health is again above zero.
+	mutable FECRAttributeEvent OnReadyToBecomeUnwounded;
 };
