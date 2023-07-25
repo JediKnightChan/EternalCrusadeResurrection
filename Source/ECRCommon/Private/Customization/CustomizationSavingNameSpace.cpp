@@ -88,12 +88,6 @@ void UCustomizationSavingNameSpace::SaveLoadout(const bool bDoOverwrite)
 }
 
 
-void UCustomizationSavingNameSpace::SaveLoadoutOverwritingExistingModules()
-{
-	SaveLoadout(true);
-}
-
-
 void UCustomizationSavingNameSpace::SaveLoadoutSkippingExistingModules()
 {
 	SaveLoadout(false);

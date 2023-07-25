@@ -26,7 +26,7 @@ public:
 	// Sets default values for this component's properties
 	UCustomizationMaterialNameSpace();
 
-	FCustomizationMaterialNamespaceData GetMaterialCustomizationData() const;
+	FCustomizationMaterialNamespaceData GetMaterialCustomizationData(const FString NamespaceOverride = "") const;
 
 	/** Update child material parameters, pass non empty SlotNames array to limit material names that will be modified */
 	void static ApplyMaterialChanges(USceneComponent* ChildComponent, const TMap<FName, float>& GivenScalarParameters,

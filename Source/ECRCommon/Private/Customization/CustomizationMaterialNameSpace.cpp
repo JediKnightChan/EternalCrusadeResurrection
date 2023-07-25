@@ -7,6 +7,7 @@
 #include "Customization/CustomizationSavingNameSpace.h"
 #include "CustomizationUtilsLibrary.h"
 #include "Components/MeshComponent.h"
+#include "Customization/CustomizationElementaryModule.h"
 #include "Materials/MaterialInstanceDynamic.h"
 
 
@@ -19,7 +20,8 @@ UCustomizationMaterialNameSpace::UCustomizationMaterialNameSpace()
 }
 
 
-FCustomizationMaterialNamespaceData UCustomizationMaterialNameSpace::GetMaterialCustomizationData() const
+FCustomizationMaterialNamespaceData UCustomizationMaterialNameSpace::GetMaterialCustomizationData(
+	const FString NamespaceOverride) const
 {
 	const UCustomizationSavingNameSpace* SavingNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfType<
 		UCustomizationSavingNameSpace>(this);
@@ -30,7 +32,12 @@ FCustomizationMaterialNamespaceData UCustomizationMaterialNameSpace::GetMaterial
 		return {};
 	}
 
-	const FString MyName = UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
+	FString MyName = NamespaceOverride;
+	if (NamespaceOverride.IsEmpty())
+	{
+		MyName = UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
+	}
+
 	if (SavingNamespace->MaterialCustomizationData.Contains(MyName))
 	{
 		return SavingNamespace->MaterialCustomizationData[MyName];
@@ -47,7 +54,20 @@ void UCustomizationMaterialNameSpace::OnChildAttached(USceneComponent* ChildComp
 
 	if (!IsGarbageCollecting())
 	{
-		const FCustomizationMaterialNamespaceData CustomizationData = GetMaterialCustomizationData();
+		FString ChildCustomizationNamespaceOverride = "";
+
+		if (UCustomizationElementaryModule* CustomizationElementaryModule = Cast<UCustomizationElementaryModule>(
+			ChildComponent))
+		{
+			FString SupposedOverride = CustomizationElementaryModule->GetCustomizationNamespaceOverride();
+			if (!SupposedOverride.IsEmpty())
+			{
+				ChildCustomizationNamespaceOverride = SupposedOverride;
+			}
+		}
+
+		const FCustomizationMaterialNamespaceData CustomizationData = GetMaterialCustomizationData(
+			ChildCustomizationNamespaceOverride);
 		ApplyMaterialChanges(ChildComponent, CustomizationData.ScalarParameters, CustomizationData.VectorParameters,
 		                     CustomizationData.TextureParameters, {});
 	}
@@ -92,7 +112,8 @@ void UCustomizationMaterialNameSpace::ApplyMaterialChanges(USceneComponent* Chil
 			{
 				if (SkinnedMeshComponent->GetSkinnedAsset())
 				{
-					TArray<FSkeletalMaterial> SkeletalMaterials = SkinnedMeshComponent->GetSkinnedAsset()->GetMaterials();
+					TArray<FSkeletalMaterial> SkeletalMaterials = SkinnedMeshComponent->GetSkinnedAsset()->
+						GetMaterials();
 					MaterialIndices = UCustomizationUtilsLibrary::GetMaterialIndices(SkeletalMaterials, MaterialName);
 				}
 			}
