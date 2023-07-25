@@ -18,6 +18,7 @@ UCustomizationElementaryModule::UCustomizationElementaryModule()
 {
 	bInheritAnimations = true;
 	MeshMergerNamespace = "";
+	CustomizationNamespaceOverride = "";
 }
 
 
@@ -224,9 +225,16 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 	}
 
 	// Setting material customization namespace
-	FString MaterialCustomizationNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfTypeDisplayNameEnd<
+	if (!CustomizationNamespaceOverride.IsEmpty())
+	{
+		DataAssetSave->MaterialCustomizationNamespace = CustomizationNamespaceOverride;
+	} else
+	{
+		FString MaterialCustomizationNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfTypeDisplayNameEnd<
 		UCustomizationMaterialNameSpace>(this);
-	DataAssetSave->MaterialCustomizationNamespace = MaterialCustomizationNamespace;
+		DataAssetSave->MaterialCustomizationNamespace = MaterialCustomizationNamespace;
+	}
+	
 
 	// Setting material customization slot names
 	DataAssetSave->MaterialCustomizationSlotNames = GetMaterialSlotNames();

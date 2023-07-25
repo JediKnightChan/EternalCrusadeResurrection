@@ -79,11 +79,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TMap<FString, FString> ModuleNamingMapping;
 
-	/** Save every child CustomizationElementaryModule, overwriting if it already exists,
-	 * and produce CustomizationLoaderAsset */
-	UFUNCTION(CallInEditor, BlueprintCallable)
-	void SaveLoadoutOverwritingExistingModules();
-
 	/** Save every child CustomizationElementaryModule, skipping if it already exists,
 	 * and produce CustomizationLoaderAsset */
 	UFUNCTION(CallInEditor, BlueprintCallable)

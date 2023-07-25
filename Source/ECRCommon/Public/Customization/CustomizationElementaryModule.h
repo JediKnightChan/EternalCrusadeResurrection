@@ -27,6 +27,9 @@ class ECRCOMMON_API UCustomizationElementaryModule : public USkeletalMeshCompone
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	TMap<FString, FString> AttachmentsToMaterialNamespaces;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	FString CustomizationNamespaceOverride;
+
 protected:
 	/* Inheriting animations from first SkeletalMeshComponent parent if requested */
 	void InheritAnimationsIfNeeded();
@@ -43,7 +46,6 @@ protected:
 	/** Apply material changes on child attached */
 	virtual void OnChildAttached(USceneComponent* ChildComponent) override;
 
-
 public:
 	UCustomizationElementaryModule();
 
@@ -54,4 +56,9 @@ public:
 	 * callable in Editor */
 	UFUNCTION(CallInEditor, BlueprintCallable)
 	void SaveToDataAsset() const;
+
+	FORCEINLINE FString GetCustomizationNamespaceOverride()
+	{
+		return CustomizationNamespaceOverride;
+	}
 };
