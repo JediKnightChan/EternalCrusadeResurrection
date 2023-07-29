@@ -116,10 +116,7 @@ protected:
 
 protected:
 	// Used to track when the health reaches 0 to trigger ReadyToBecomeWounded event only once
-	bool bAlreadyBecameWounded;
-
-	// Used to track when health becomes > 0 again
-	bool bAlreadyBecameUnwounded;
+	bool bLastTimeWasWounded;
 public:
 	UECRCharacterHealthSet();
 
