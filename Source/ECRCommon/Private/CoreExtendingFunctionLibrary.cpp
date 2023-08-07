@@ -15,6 +15,11 @@ double UCoreExtendingFunctionLibrary::GetCurrentTimeInSeconds()
 	return Result;
 }
 
+int64 UCoreExtendingFunctionLibrary::DateTimeToUnixTimestamp(FDateTime DateTime)
+{
+	return DateTime.ToUnixTimestamp();
+}
+
 
 TMap<UObject*, FString> UCoreExtendingFunctionLibrary::SortUObjectToStringMap(TMap<UObject*, FString> MapToSort)
 {

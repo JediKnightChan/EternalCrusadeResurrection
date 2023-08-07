@@ -7,7 +7,7 @@
 #include "Kismet/BlueprintAsyncActionBase.h"
 #include "NetworkReplayStreaming.h"
 
-#include "AsyncAction_QueryReplays.generated.h"
+#include "AsyncAction_DeleteReplay.generated.h"
 
 class AGameStateBase;
 class UGameInstance;
@@ -17,36 +17,38 @@ class INetworkReplayStreamer;
 class UECRReplayList;
 class UECRReplayListEntry;
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FQueryReplayAsyncDelegate, UECRReplayList*, Results);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDeleteReplayQueryAsyncDelegate, bool, bSuccess);
 
 /**
- * Gets available replays
+ * Deletes replay
  */
 UCLASS()
-class UAsyncAction_QueryReplays : public UBlueprintAsyncActionBase
+class UAsyncAction_DeleteReplay : public UBlueprintAsyncActionBase
 {
 	GENERATED_BODY()
 
 public:
-	UAsyncAction_QueryReplays(const FObjectInitializer& ObjectInitializer);
+	UAsyncAction_DeleteReplay(const FObjectInitializer& ObjectInitializer);
 
-	// Gets available replays
+	// Deletes replay
 	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"))
-	static UAsyncAction_QueryReplays* QueryReplays(APlayerController* PlayerController);
+	static UAsyncAction_DeleteReplay* DeleteReplay(UECRReplayListEntry* Replay);
 
 	virtual void Activate() override;
 
 public:
 	// Called when the replay query completes
 	UPROPERTY(BlueprintAssignable)
-	FQueryReplayAsyncDelegate QueryComplete;
+	FDeleteReplayQueryAsyncDelegate QueryComplete;
+
+	FDeleteFinishedStreamCallback OnDeleteFinishedStreamCompleteDelegate;
 
 private:
-	void OnEnumerateStreamsComplete(const FEnumerateStreamsResult& Result);
+	void OnDeleteFinishedStreamComplete(const FDeleteFinishedStreamResult& Result);
 
 private:
 	UPROPERTY()
-	UECRReplayList* ResultList;
+	UECRReplayListEntry* ReplayToDelete;
 
 	TWeakObjectPtr<APlayerController> PlayerController;
 

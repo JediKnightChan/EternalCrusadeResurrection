@@ -26,6 +26,7 @@ public:
 	//~UObject interface
 	virtual bool IsSupportedForNetworking() const override { return true; }
 	virtual UWorld* GetWorld() const override final;
+	
 	//~End of UObject interface
 
 	UFUNCTION(BlueprintPure, Category=Equipment)

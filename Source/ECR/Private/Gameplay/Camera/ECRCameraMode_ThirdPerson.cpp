@@ -17,8 +17,15 @@ void UECRCameraMode_ThirdPerson::UpdateView(float DeltaTime)
 	UpdateForTarget(DeltaTime);
 	UpdateCrouchOffset(DeltaTime);
 
-	FVector PivotLocation = GetPivotLocation() + CurrentCrouchOffset;
-	FRotator PivotRotation = GetPivotRotation();
+	AActor* TargetActor = GetTargetActor();
+	APawn* TargetPawn = Cast<APawn>(TargetActor);
+	AController* TargetController = TargetPawn ? TargetPawn->GetController() : nullptr;
+
+	CurrentPivotLocation = FMath::VInterpTo(CurrentPivotLocation, GetPivotLocation(), DeltaTime, 20.f);
+	CurrentPivotRotation = FMath::RInterpTo(CurrentPivotRotation, GetPivotRotation(), DeltaTime, 20.f);
+
+	FVector PivotLocation = (!TargetController ? CurrentPivotLocation : GetPivotLocation()) + CurrentCrouchOffset;
+	FRotator PivotRotation = (!TargetController ? CurrentPivotRotation : GetPivotRotation());
 
 	PivotRotation.Pitch = FMath::ClampAngle(PivotRotation.Pitch, ViewPitchMin, ViewPitchMax);
 
@@ -107,4 +114,15 @@ void UECRCameraMode_ThirdPerson::UpdateCrouchOffset(float DeltaTime)
 		CurrentCrouchOffset = TargetCrouchOffset;
 		CrouchOffsetBlendPct = 1.0f;
 	}
+}
+
+FRotator UECRCameraMode_ThirdPerson::GetPivotRotation() const
+{
+	AActor* TargetActor = GetTargetActor();
+	const APawn* TargetPawn = Cast<APawn>(TargetActor);
+	if (AController* TargetController = TargetPawn ? TargetPawn->GetController() : nullptr)
+	{
+		return Super::GetPivotRotation();
+	}
+	return TargetPawn->GetBaseAimRotation();
 }

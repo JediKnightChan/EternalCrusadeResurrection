@@ -39,6 +39,10 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static double GetCurrentTimeInSeconds();
 
+	/** Convert datetime to unix */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static int64 DateTimeToUnixTimestamp(FDateTime DateTime);
+
 	/** Converts degrees to [-180, 180] range */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static double DegreesToStandardized(double Degrees);

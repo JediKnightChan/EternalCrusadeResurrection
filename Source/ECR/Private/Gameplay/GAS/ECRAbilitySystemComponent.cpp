@@ -57,8 +57,10 @@ void UECRAbilitySystemComponent::InitAbilityActorInfo(AActor* InOwnerActor, AAct
 				TArray<UGameplayAbility*> Instances = AbilitySpec.GetAbilityInstances();
 				for (UGameplayAbility* AbilityInstance : Instances)
 				{
-					UECRGameplayAbility* ECRAbilityInstance = CastChecked<UECRGameplayAbility>(AbilityInstance);
-					ECRAbilityInstance->OnPawnAvatarSet();
+					if (UECRGameplayAbility* ECRAbilityInstance = Cast<UECRGameplayAbility>(AbilityInstance))
+					{
+						ECRAbilityInstance->OnPawnAvatarSet();
+					}
 				}
 			}
 			else
