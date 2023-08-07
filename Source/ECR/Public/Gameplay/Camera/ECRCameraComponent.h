@@ -27,12 +27,14 @@ class UECRCameraComponent : public UCameraComponent
 	GENERATED_BODY()
 
 public:
-
 	UECRCameraComponent(const FObjectInitializer& ObjectInitializer);
 
 	// Returns the camera component if one exists on the specified actor.
 	UFUNCTION(BlueprintPure, Category = "ECR|Camera")
-	static UECRCameraComponent* FindCameraComponent(const AActor* Actor) { return (Actor ? Actor->FindComponentByClass<UECRCameraComponent>() : nullptr); }
+	static UECRCameraComponent* FindCameraComponent(const AActor* Actor)
+	{
+		return (Actor ? Actor->FindComponentByClass<UECRCameraComponent>() : nullptr);
+	}
 
 	// Returns the target actor that the camera is looking at.
 	virtual AActor* GetTargetActor() const { return GetOwner(); }
@@ -49,19 +51,19 @@ public:
 	void GetBlendInfo(float& OutWeightOfTopLayer, FGameplayTag& OutTagOfTopLayer) const;
 
 protected:
-
 	virtual void OnRegister() override;
 	virtual void GetCameraView(float DeltaTime, FMinimalViewInfo& DesiredView) override;
 
 	virtual void UpdateCameraModes();
 
-protected:
+	UFUNCTION(BlueprintCallable)
+	void PushCameraMode(TSubclassOf<UECRCameraMode> CameraModeClass);
 
+protected:
 	// Stack used to blend the camera modes.
 	UPROPERTY()
 	UECRCameraModeStack* CameraModeStack;
 
 	// Offset applied to the field of view.  The offset is only for one frame, it gets cleared once it is applied.
 	float FieldOfViewOffset;
-
 };

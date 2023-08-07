@@ -10,6 +10,7 @@
 
 AECRGameMode::AECRGameMode()
 {
+	bHandleDedicatedServerReplays = true;
 }
 
 FString AECRGameMode::InitNewPlayer(APlayerController* NewPlayerController, const FUniqueNetIdRepl& UniqueId,
