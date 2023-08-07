@@ -53,6 +53,10 @@ protected:
 protected:
 	void SetTargetCrouchOffset(FVector NewTargetOffset);
 	void UpdateCrouchOffset(float DeltaTime);
+	virtual FRotator GetPivotRotation() const override;
+
+	FVector CurrentPivotLocation;
+	FRotator CurrentPivotRotation;
 
 	FVector InitialCrouchOffset = FVector::ZeroVector;
 	FVector TargetCrouchOffset = FVector::ZeroVector;
