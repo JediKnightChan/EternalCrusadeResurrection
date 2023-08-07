@@ -77,8 +77,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category=Replays)
 	void ChangeReplayPlayingSpeed(float NewSpeed);
 
-	//void DeleteReplay();
-
 	UFUNCTION(BlueprintCallable, Category=Replays)
 	void SeekInActiveReplay(float TimeInSeconds);
 

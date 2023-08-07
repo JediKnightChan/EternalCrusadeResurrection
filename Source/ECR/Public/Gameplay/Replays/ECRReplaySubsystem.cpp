@@ -83,11 +83,6 @@ void UECRReplaySubsystem::ChangeReplayPlayingSpeed(const float NewSpeed)
 	}
 }
 
-// void UECRReplaySubsystem::DeleteReplay()
-// {
-//	ReplayStreamer->DeleteFinishedStream(SelectedItem->StreamInfo.Name, FDeleteFinishedStreamCallback::CreateSP(this, &SShooterDemoList::OnDeleteFinishedStreamComplete));
-// }
-
 void UECRReplaySubsystem::SeekInActiveReplay(float TimeInSeconds)
 {
 	if (UDemoNetDriver* DemoDriver = GetDemoDriver())
