@@ -31,7 +31,6 @@ void UECRCameraComponent::GetCameraView(float DeltaTime, FMinimalViewInfo& Desir
 
 	UpdateCameraModes();
 
-	
 
 	FECRCameraModeView CameraModeView;
 	CameraModeStack->EvaluateStack(DeltaTime, CameraModeView);
@@ -50,7 +49,6 @@ void UECRCameraComponent::GetCameraView(float DeltaTime, FMinimalViewInfo& Desir
 	CameraModeView.FieldOfView += FieldOfViewOffset;
 	FieldOfViewOffset = 0.0f;
 
-	
 
 	// Keep camera component in sync with the latest view.
 	SetWorldLocationAndRotation(CameraModeView.Location, CameraModeView.Rotation);
@@ -92,6 +90,17 @@ void UECRCameraComponent::UpdateCameraModes()
 	}
 }
 
+void UECRCameraComponent::PushCameraMode(TSubclassOf<UECRCameraMode> CameraModeClass)
+{
+	if (CameraModeStack)
+	{
+		if (CameraModeStack->IsStackActivate())
+		{
+			CameraModeStack->PushCameraMode(CameraModeClass);
+		}
+	}
+}
+
 void UECRCameraComponent::DrawDebug(UCanvas* Canvas) const
 {
 	check(Canvas);
@@ -116,4 +125,3 @@ void UECRCameraComponent::GetBlendInfo(float& OutWeightOfTopLayer, FGameplayTag&
 	check(CameraModeStack);
 	CameraModeStack->GetBlendInfo(/*out*/ OutWeightOfTopLayer, /*out*/ OutTagOfTopLayer);
 }
-

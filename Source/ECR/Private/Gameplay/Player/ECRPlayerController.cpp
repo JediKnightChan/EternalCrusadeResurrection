@@ -174,4 +174,5 @@ void AECRPlayerController::OnEndAutoRun()
 void AECRReplayPlayerController::SetPlayer(UPlayer* InPlayer)
 {
 	Super::SetPlayer(InPlayer);
+	K2_OnPlayerSet();
 }
