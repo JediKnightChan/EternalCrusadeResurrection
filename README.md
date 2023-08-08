@@ -24,6 +24,7 @@ Check out our [Wiki](https://github.com/JediKnightChan/EternalCrusadeResurrectio
 - Enhanced Input Subsystem is used for input (borrowed from Lyra)
 - 3rd person multiplayer shooter and melee combat system based on Lyra's GAS, including combat vehicles
 - Additional plugins for: HTTP requests
+- Replay Subsystem with all needed functions for Blueprint replay setup
 - Cross-platform code (was built for Windows, Linux, Android)
 
 ### GAS differences from Lyra (5.0)
