@@ -9,6 +9,14 @@ public class ECRTarget : TargetRules
 	{
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
+
+		// Enable logs for Shipping builds
+		if (Configuration == UnrealTargetConfiguration.Shipping)
+		{
+			BuildEnvironment = TargetBuildEnvironment.Unique;
+			bUseLoggingInShipping = true;
+		}
+
 		ExtraModuleNames.Add("ECR");
 		RegisterModulesCreatedByRider();
 	}
