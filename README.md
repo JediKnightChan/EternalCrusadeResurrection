@@ -23,8 +23,9 @@ Check out our [Wiki](https://github.com/JediKnightChan/EternalCrusadeResurrectio
   data, maps data, materials, references to materials within meshes)
 - Enhanced Input Subsystem is used for input (borrowed from Lyra)
 - 3rd person multiplayer shooter and melee combat system based on Lyra's GAS, including combat vehicles
-- Additional plugins for: HTTP requests
+- Plugin for HTTP requests
 - Replay Subsystem with all needed functions for Blueprint replay setup
+- Gameplay Analytics Subsystem in a separate plugin for collecting them and sending to API endpoint
 - Cross-platform code (was built for Windows, Linux, Android)
 
 ### GAS differences from Lyra (5.0)
@@ -72,9 +73,9 @@ after creating a new branch based on `dev`
 ## Currently maintained
 - [ECRLauncher](https://github.com/JediKnightChan/ECRLauncher) (Public): Launcher for the game, can show news, patch
 notes, install the whole game and patches, verify integrity
+- [ECRTools](https://github.com/JediKnightChan/ECRTools) (Public): Docker wrapper around Linux dedicated server, discord bot for running / stopping dedicated server,
+  launcher data, game versioning data, scripts for statistical processing of gameplay analytics, deployment
 - [ECRContent](https://github.com/JediKnightChan/ECRContent/) (Private): Content folder of the game
-- [ECRSites](https://github.com/JediKnightChan/ECRSites) (Private): Discord bot for running / stopping dedicated server, 
-launcher data, game versioning data, etc.
 - [ECRFModSounds](https://github.com/JediKnightChan/ECRFModSounds) (Private): FMod project for the ECR sounds
 
 ## Archived
