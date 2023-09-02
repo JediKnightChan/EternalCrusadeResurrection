@@ -137,7 +137,8 @@ struct FECRMatchSettings
 
 
 /**
- * GameInstance Subsystem handling online functionality (logging in, match creation and joining, ...)
+ * GameInstance Subsystem previously handling online functionality (logging in, match creation and joining, ...),
+ * which is now moved to GameInstance to create sessions on dedicated server on GameInstance->Init
  */
 UCLASS()
 // ReSharper disable once CppUE4CodingStandardNamingViolationWarning
