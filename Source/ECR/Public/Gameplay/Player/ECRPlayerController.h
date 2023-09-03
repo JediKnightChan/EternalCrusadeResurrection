@@ -74,6 +74,25 @@ protected:
 
 	UFUNCTION(BlueprintImplementableEvent, meta=(DisplayName="OnEndAutoRun"))
 	void K2_OnEndAutoRun();
+
+public:
+	/** Whether to invert Camera Y location */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bInvertCameraY;
+
+	/** Camera distance current multiplier, interpolates accordingly to DesiredCameraDistanceMultiplier
+	 * with CameraDistanceInterpolationSpeed */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	double CameraDistanceMultiplier;
+
+	/** Camera distance desired multiplier */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	double DesiredCameraDistanceMultiplier;
+
+private:
+	/** Interpolation speed when changing camera distance */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
+	double CameraDistanceInterpolationSpeed;
 };
 
 

@@ -9,13 +9,16 @@
 #include "Framework/Application/NavigationConfig.h"
 #include "Gameplay/Camera/ECRPlayerCameraManager.h"
 #include "Gameplay/Player/ECRPlayerState.h"
-#include "Kismet/KismetMathLibrary.h"
 
 
 AECRPlayerController::AECRPlayerController(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
 	PlayerCameraManagerClass = AECRPlayerCameraManager::StaticClass();
+	bInvertCameraY = false;
+	DesiredCameraDistanceMultiplier = 1.0f;
+	CameraDistanceMultiplier = DesiredCameraDistanceMultiplier;
+	CameraDistanceInterpolationSpeed = 1.0f;
 }
 
 
@@ -86,6 +89,10 @@ void AECRPlayerController::PlayerTick(float DeltaTime)
 			CurrentPawn->AddMovementInput(MovementDirection, 1.0f);
 		}
 	}
+
+	// Interpolating camera distance multiplier
+	CameraDistanceMultiplier = FMath::FInterpTo(CameraDistanceMultiplier, DesiredCameraDistanceMultiplier, DeltaTime,
+	                                            CameraDistanceInterpolationSpeed);
 }
 
 void AECRPlayerController::OnPossess(APawn* InPawn)
@@ -132,7 +139,6 @@ int32 AECRPlayerController::GetInPacketLoss() const
 
 int32 AECRPlayerController::GetOutPacketLoss() const
 {
-	
 	if (const UNetConnection* MyNetConnection = GetNetConnection())
 	{
 		return MyNetConnection->OutPacketsLost;

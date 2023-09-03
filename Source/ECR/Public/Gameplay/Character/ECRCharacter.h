@@ -163,10 +163,6 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
 	float StartedFallingTime;
 
-public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
-	bool bInvertCameraY;
-
 private:
 	UFUNCTION()
 	void OnRep_PawnData();
