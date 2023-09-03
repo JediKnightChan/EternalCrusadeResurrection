@@ -5,6 +5,7 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/Character.h"
 #include "Gameplay/Character/ECRCharacter.h"
+#include "Gameplay/Player/ECRPlayerController.h"
 
 
 UECRCameraMode_ThirdPerson::UECRCameraMode_ThirdPerson()
@@ -41,11 +42,17 @@ void UECRCameraMode_ThirdPerson::UpdateView(float DeltaTime)
 		{
 			FVector TargetOffset = TargetOffsetCurve->GetVectorValue(PivotRotation.Pitch);
 
-			if (const AECRCharacter* TargetCharacter = Cast<AECRCharacter>(GetTargetActor()))
+			if (const APawn* Pawn = Cast<APawn>(GetTargetActor()))
 			{
-				if (TargetCharacter->bInvertCameraY)
+				if (const AECRPlayerController* Controller = Cast<AECRPlayerController>(Pawn->GetController()))
 				{
-					TargetOffset.Y = -1 * TargetOffset.Y;
+					// Apply camera inversion
+					if (Controller->bInvertCameraY)
+					{
+						TargetOffset.Y = -1 * TargetOffset.Y;
+					}
+
+					TargetOffset.X = Controller->CameraDistanceMultiplier * TargetOffset.X;
 				}
 			}
 
@@ -60,11 +67,17 @@ void UECRCameraMode_ThirdPerson::UpdateView(float DeltaTime)
 		TargetOffset.Y = TargetOffsetY.GetRichCurveConst()->Eval(PivotRotation.Pitch);
 		TargetOffset.Z = TargetOffsetZ.GetRichCurveConst()->Eval(PivotRotation.Pitch);
 
-		if (const AECRCharacter* TargetCharacter = Cast<AECRCharacter>(GetTargetActor()))
+		if (const APawn* Pawn = Cast<APawn>(GetTargetActor()))
 		{
-			if (TargetCharacter->bInvertCameraY)
+			if (const AECRPlayerController* Controller = Cast<AECRPlayerController>(Pawn->GetController()))
 			{
-				TargetOffset.Y = -1 * TargetOffset.Y;
+				// Apply camera inversion
+				if (Controller->bInvertCameraY)
+				{
+					TargetOffset.Y = -1 * TargetOffset.Y;
+				}
+
+				TargetOffset.X = Controller->CameraDistanceMultiplier * TargetOffset.X;
 			}
 		}
 
