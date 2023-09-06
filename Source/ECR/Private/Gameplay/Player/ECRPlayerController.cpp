@@ -32,6 +32,7 @@ UECRAbilitySystemComponent* AECRPlayerController::GetECRAbilitySystemComponent()
 	const AECRPlayerState* ECRPS = GetECRPlayerState();
 	if (ECRPS)
 	{
+		// First try to get the pawn ASC
 		if (APawn* MyPawn = ECRPS->GetPawn())
 		{
 			if (IAbilitySystemInterface* ASI = Cast<IAbilitySystemInterface>(MyPawn))
@@ -43,6 +44,8 @@ UECRAbilitySystemComponent* AECRPlayerController::GetECRAbilitySystemComponent()
 				}
 			}
 		}
+		// If didn't manage, return PS ASC
+		return ECRPS->GetECRAbilitySystemComponent();
 	}
 	return nullptr;
 }
@@ -164,7 +167,6 @@ void AECRPlayerController::PostProcessInput(const float DeltaTime, const bool bG
 {
 	if (UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Requesting process from %s"), *GetNameSafe(this))
 		ECRASC->ProcessAbilityInput(DeltaTime, bGamePaused);
 	}
 
