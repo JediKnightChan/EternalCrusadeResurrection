@@ -39,7 +39,8 @@ public class SimpleGameplayAnalytics : ModuleRules
 				"Slate",
 				"SlateCore",
 				"Json", 
-				"JsonUtilities"
+				"JsonUtilities",
+				"JsonBlueprintUtilities"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
