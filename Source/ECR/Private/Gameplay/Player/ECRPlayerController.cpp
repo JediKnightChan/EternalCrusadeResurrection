@@ -30,7 +30,21 @@ AECRPlayerState* AECRPlayerController::GetECRPlayerState() const
 UECRAbilitySystemComponent* AECRPlayerController::GetECRAbilitySystemComponent() const
 {
 	const AECRPlayerState* ECRPS = GetECRPlayerState();
-	return (ECRPS ? ECRPS->GetECRAbilitySystemComponent() : nullptr);
+	if (ECRPS)
+	{
+		if (APawn* MyPawn = ECRPS->GetPawn())
+		{
+			if (IAbilitySystemInterface* ASI = Cast<IAbilitySystemInterface>(MyPawn))
+			{
+				if (UECRAbilitySystemComponent* ECRASC = Cast<UECRAbilitySystemComponent>(
+					ASI->GetAbilitySystemComponent()))
+				{
+					return ECRASC;
+				}
+			}
+		}
+	}
+	return nullptr;
 }
 
 void AECRPlayerController::PreInitializeComponents()
@@ -150,6 +164,7 @@ void AECRPlayerController::PostProcessInput(const float DeltaTime, const bool bG
 {
 	if (UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Requesting process from %s"), *GetNameSafe(this))
 		ECRASC->ProcessAbilityInput(DeltaTime, bGamePaused);
 	}
 
