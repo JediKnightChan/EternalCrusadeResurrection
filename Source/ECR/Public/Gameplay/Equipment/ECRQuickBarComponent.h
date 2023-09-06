@@ -52,7 +52,7 @@ struct FECRQuickBar : public FFastArraySerializer
 	{
 	}
 
-	FECRQuickBar(UControllerComponent* InOwnerComponent)
+	FECRQuickBar(UActorComponent* InOwnerComponent)
 		: OwnerComponent(InOwnerComponent)
 	{
 	}
@@ -89,7 +89,7 @@ private:
 	TArray<FECRQuickBarChannel> Channels;
 
 	UPROPERTY()
-	UControllerComponent* OwnerComponent;
+	UActorComponent* OwnerComponent;
 };
 
 template <>
@@ -100,7 +100,7 @@ struct TStructOpsTypeTraits<FECRQuickBar> : public TStructOpsTypeTraitsBase2<FEC
 
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
-class UECRQuickBarComponent : public UControllerComponent
+class UECRQuickBarComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
@@ -152,5 +152,5 @@ struct FECRQuickBarChannelChangedMessage
 	FName ChannelName;
 
 	UPROPERTY(BlueprintReadOnly, Category=Quickbar)
-	UControllerComponent* QuickBarOwner = nullptr;
+	UActorComponent* QuickBarOwner = nullptr;
 };

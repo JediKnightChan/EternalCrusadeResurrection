@@ -3,6 +3,7 @@
 
 #include "Gameplay/Vehicles/ECRWheeledVehiclePawn.h"
 
+#include "ChaosVehicleMovementComponent.h"
 #include "Gameplay/Camera/ECRCameraComponent.h"
 #include "Gameplay/Character/ECRPawnData.h"
 #include "Gameplay/Character/ECRPawnExtensionComponent.h"
@@ -193,10 +194,12 @@ void AECRWheeledVehiclePawn::GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySet
 
 void AECRWheeledVehiclePawn::OnDeathStarted(AActor* OwningActor)
 {
+	DisableMovementAndCollision();
 }
 
 void AECRWheeledVehiclePawn::OnDeathFinished(AActor* OwningActor)
 {
+	GetWorld()->GetTimerManager().SetTimerForNextTick(this, &ThisClass::DestroyDueToDeath);
 }
 
 void AECRWheeledVehiclePawn::DisableMovementAndCollision()
@@ -205,6 +208,14 @@ void AECRWheeledVehiclePawn::DisableMovementAndCollision()
 	{
 		Controller->SetIgnoreMoveInput(true);
 	}
+
+	USkeletalMeshComponent* SkeletalMeshComponent = GetMesh();
+	check(SkeletalMeshComponent);
+	SkeletalMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	SkeletalMeshComponent->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+	UChaosVehicleMovementComponent* MovementComponent = GetVehicleMovement();
+	MovementComponent->StopMovementImmediately();
 }
 
 void AECRWheeledVehiclePawn::DestroyDueToDeath()

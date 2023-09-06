@@ -107,12 +107,18 @@ void FECRQuickBar::EquipItemInActiveSlot(FECRQuickBarChannel& Channel)
 
 UECREquipmentManagerComponent* FECRQuickBar::FindEquipmentManager() const
 {
+	// If it's on controller
 	if (const AController* OwnerController = Cast<AController>(OwnerComponent->GetOwner()))
 	{
 		if (const APawn* Pawn = OwnerController->GetPawn())
 		{
 			return Pawn->FindComponentByClass<UECREquipmentManagerComponent>();
 		}
+	}
+	// If it's on pawn
+	if (const APawn* Pawn = Cast<APawn>(OwnerComponent->GetOwner()))
+	{
+		return Pawn->FindComponentByClass<UECREquipmentManagerComponent>();
 	}
 	return nullptr;
 }
