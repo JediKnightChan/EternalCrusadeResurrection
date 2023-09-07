@@ -21,7 +21,7 @@ DECLARE_DELEGATE_RetVal(TSubclassOf<UECRCameraMode>, FECRCameraModeDelegate);
  *
  *	The base camera component class used by this project.
  */
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UECRCameraComponent : public UCameraComponent
 {
 	GENERATED_BODY()

@@ -23,7 +23,7 @@ class UECRInputComponent;
  *
  *	A component used to create a player controlled pawns (characters, vehicles, etc..).
  */
-UCLASS(Abstract, Blueprintable, Meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, Meta=(BlueprintSpawnableComponent))
 class UECRPawnControlComponent : public UECRPawnComponent
 {
 	GENERATED_BODY()
