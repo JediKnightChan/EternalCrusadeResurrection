@@ -6,6 +6,7 @@
 #include "AbilitySystemInterface.h"
 #include "GameplayTagAssetInterface.h"
 #include "WheeledVehiclePawn.h"
+#include "Gameplay/Interaction/InteractionQuery.h"
 #include "Gameplay/Interaction/IInteractableTarget.h"
 #include "Gameplay/Player/ECRPlayerController.h"
 #include "ECRWheeledVehiclePawn.generated.h"
