@@ -6,6 +6,7 @@
 #include "Gameplay/Equipment/ECREquipmentInstance.h"
 #include "Cosmetics/ECRCosmeticAnimationTypes.h"
 #include "Cosmetics/ECRPawnComponent_CharacterParts.h"
+#include "Gameplay/GAS/ECRAbilitySourceInterface.h"
 #include "ECRWeaponInstance.generated.h"
 
 /**
@@ -14,7 +15,7 @@
  * A piece of equipment representing a weapon spawned and applied to a pawn
  */
 UCLASS()
-class UECRWeaponInstance : public UECREquipmentInstance
+class UECRWeaponInstance : public UECREquipmentInstance, public IECRAbilitySourceInterface
 {
 	GENERATED_BODY()
 
@@ -41,6 +42,14 @@ public:
 
 	void LinkAnimLayer() const;
 
+	//~IECRAbilitySourceInterface interface
+	virtual float GetDistanceAttenuation(float Distance, const FGameplayTagContainer* SourceTags = nullptr,
+	                                     const FGameplayTagContainer* TargetTags = nullptr) const override;
+	virtual float GetPhysicalMaterialAttenuation(const UPhysicalMaterial* PhysicalMaterial,
+	                                             const FGameplayTagContainer* SourceTags = nullptr,
+	                                             const FGameplayTagContainer* TargetTags = nullptr) const override;
+	virtual float GetArmorPenetration() const override;
+	//~End of IECRAbilitySourceInterface interface
 protected:
 	// Choose the best layer from EquippedAnimSet or UnequippedAnimSet based on the specified gameplay tags
 	UFUNCTION(BlueprintCallable, BlueprintPure=false, Category=Animation)
@@ -65,6 +74,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Animation)
 	FECRAnimMontageSelectionSet VictimExecutionMontageSet;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Damage)
+	float ArmorPenetration;
 
 	double TimeLastEquipped = 0.0;
 	double TimeLastFired = 0.0;

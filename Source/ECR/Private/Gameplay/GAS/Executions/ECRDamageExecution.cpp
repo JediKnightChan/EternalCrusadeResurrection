@@ -12,6 +12,7 @@
 struct FDamageStatics
 {
 	FGameplayEffectAttributeCaptureDefinition BaseDamageDef;
+	FGameplayEffectAttributeCaptureDefinition ArmorDef;
 
 	FDamageStatics()
 	{
@@ -19,6 +20,9 @@ struct FDamageStatics
 		BaseDamageDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetBaseDamageAttribute(),
 		                                                          EGameplayEffectAttributeCaptureSource::Source,
 		                                                          true);
+		ArmorDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetBaseArmorAttribute(),
+		                                                     EGameplayEffectAttributeCaptureSource::Target,
+		                                                     true);
 	}
 };
 
@@ -32,6 +36,7 @@ static FDamageStatics& DamageStatics()
 UECRDamageExecution::UECRDamageExecution()
 {
 	RelevantAttributesToCapture.Add(DamageStatics().BaseDamageDef);
+	RelevantAttributesToCapture.Add(DamageStatics().ArmorDef);
 }
 
 void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
@@ -54,6 +59,9 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	float BaseDamage = 0.0f;
 	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().BaseDamageDef, EvaluateParameters,
 	                                                           BaseDamage);
+	float TargetToughness = 100.0f;
+	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().ArmorDef, EvaluateParameters,
+	                                                           TargetToughness);
 
 	const AActor* EffectCauser = TypedContext->GetEffectCauser();
 	const FHitResult* HitActorResult = TypedContext->GetHitResult();
@@ -108,6 +116,8 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	// Apply ability source modifiers
 	float PhysicalMaterialAttenuation = 1.0f;
 	float DistanceAttenuation = 1.0f;
+	float ToughnessAttenuation = 1.0f;
+
 	if (const IECRAbilitySourceInterface* AbilitySource = TypedContext->GetAbilitySource())
 	{
 		if (const UPhysicalMaterial* PhysMat = TypedContext->GetPhysicalMaterial())
@@ -117,10 +127,18 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 		}
 
 		DistanceAttenuation = AbilitySource->GetDistanceAttenuation(Distance, SourceTags, TargetTags);
+
+		// Now AP and toughness formula for damage reduction
+		float ArmorPenetration = AbilitySource->GetArmorPenetration();
+		// Make sure TargetToughness - ArmorPenetration >= 0 or ArmorPenetration <= TargetToughness
+		ArmorPenetration = FMath::Max(ArmorPenetration, TargetToughness);
+		ToughnessAttenuation = 1 - 2 * (1 / (1 + FMath::Exp(0.015 * (TargetToughness - ArmorPenetration))) - 0.5);
 	}
 	DistanceAttenuation = FMath::Max(DistanceAttenuation, 0.0f);
+	ToughnessAttenuation = FMath::Max(ToughnessAttenuation, 0.0f);
 
-	const float AttenuatedDamage = FMath::Max(0, BaseDamage * DistanceAttenuation * PhysicalMaterialAttenuation);
+	const float AttenuatedDamage = FMath::Max(
+		0, BaseDamage * DistanceAttenuation * PhysicalMaterialAttenuation * ToughnessAttenuation);
 	OutExecutionOutput.AddOutputModifier(
 		FGameplayModifierEvaluatedData(UECRHealthSet::GetDamageAttribute(), EGameplayModOp::Additive,
 		                               AttenuatedDamage));

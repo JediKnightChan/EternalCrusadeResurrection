@@ -262,6 +262,16 @@ void AECRWheeledVehiclePawn::InitPawnDataAndAbilities()
 	ForceNetUpdate();
 }
 
+void AECRWheeledVehiclePawn::GatherInteractionOptions(const FInteractionQuery& InteractQuery,
+	FInteractionOptionBuilder& OptionBuilder)
+{
+	TArray<FInteractionOption> InteractionOptions = GetInteractionOptions(InteractQuery);
+	for (FInteractionOption InteractionOption : InteractionOptions)
+	{
+		OptionBuilder.AddInteractionOption(InteractionOption);
+	}
+}
+
 void AECRWheeledVehiclePawn::OnRep_PawnData()
 {
 }

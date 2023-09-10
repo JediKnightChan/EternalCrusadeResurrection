@@ -130,6 +130,40 @@ bool UECRPawnControlComponent::IsPawnComponentReadyToInitialize() const
 	return true;
 }
 
+void UECRPawnControlComponent::InitInputAndCamera()
+{
+	APawn* Pawn = GetPawn<APawn>();
+	if (!Pawn)
+	{
+		return;
+	}
+	const bool bIsLocallyControlled = Pawn->IsLocallyControlled();
+
+	// Init input
+	if (GetController<AECRPlayerController>())
+	{
+		if (Pawn->InputComponent != nullptr)
+		{
+			InitializePlayerInput(Pawn->InputComponent);
+		}
+	}
+
+	const UECRPawnData* PawnData = nullptr;
+
+	if (const UECRPawnExtensionComponent* PawnExtComp = UECRPawnExtensionComponent::FindPawnExtensionComponent(Pawn))
+	{
+		PawnData = PawnExtComp->GetPawnData<UECRPawnData>();
+	}
+	
+	if (bIsLocallyControlled && PawnData)
+	{
+		if (UECRCameraComponent* CameraComponent = UECRCameraComponent::FindCameraComponent(Pawn))
+		{
+			CameraComponent->DetermineCameraModeDelegate.BindUObject(this, &ThisClass::DetermineCameraMode);
+		}
+	}
+}
+
 void UECRPawnControlComponent::OnPawnReadyToInitialize()
 {
 	if (!ensure(!bPawnHasInitialized))
@@ -143,37 +177,18 @@ void UECRPawnControlComponent::OnPawnReadyToInitialize()
 	{
 		return;
 	}
-	const bool bIsLocallyControlled = Pawn->IsLocallyControlled();
 
 	AECRPlayerState* ECRPS = GetPlayerState<AECRPlayerState>();
 	check(ECRPS);
 
-	const UECRPawnData* PawnData = nullptr;
-
 	if (UECRPawnExtensionComponent* PawnExtComp = UECRPawnExtensionComponent::FindPawnExtensionComponent(Pawn))
 	{
-		PawnData = PawnExtComp->GetPawnData<UECRPawnData>();
-
 		// The player state holds the persistent data for this player (state that persists across deaths and multiple pawns).
 		// The ability system component and attribute sets live on the player state.
 		PawnExtComp->InitializeAbilitySystem(ECRPS->GetECRAbilitySystemComponent(), ECRPS);
 	}
 
-	if (AECRPlayerController* ECRPC = GetController<AECRPlayerController>())
-	{
-		if (Pawn->InputComponent != nullptr)
-		{
-			InitializePlayerInput(Pawn->InputComponent);
-		}
-	}
-
-	if (bIsLocallyControlled && PawnData)
-	{
-		if (UECRCameraComponent* CameraComponent = UECRCameraComponent::FindCameraComponent(Pawn))
-		{
-			CameraComponent->DetermineCameraModeDelegate.BindUObject(this, &ThisClass::DetermineCameraMode);
-		}
-	}
+	InitInputAndCamera();
 
 	bPawnHasInitialized = true;
 }

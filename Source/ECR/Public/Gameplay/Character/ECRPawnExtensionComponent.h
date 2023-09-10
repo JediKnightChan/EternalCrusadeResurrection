@@ -20,7 +20,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FECRDynamicMulticastDelegate);
  *
  *	Component used to add functionality to all Pawn classes.
  */
-UCLASS()
+UCLASS(Blueprintable, Meta=(BlueprintSpawnableComponent))
 class UECRPawnExtensionComponent : public UECRPawnComponent
 {
 	GENERATED_BODY()
@@ -56,7 +56,7 @@ public:
 	// Should be called by the owning pawn when the input component is setup.
 	void SetupPlayerInputComponent();
 
-	// Call this anytime the pawn needs to check if it's ready to be initialized (pawn data assigned, possessed, etc..). 
+	// Call this anytime the pawn needs to check if it's ready to be initialized (pawn data assigned, possessed).
 	bool CheckPawnReadyToInitialize();
 
 	// Returns true if the pawn is ready to be initialized.
@@ -93,8 +93,8 @@ protected:
 
 protected:
 
-	// Pawn data used to create the pawn.  Specified from a spawn function or on a placed instance.
-	UPROPERTY(EditInstanceOnly, ReplicatedUsing = OnRep_PawnData, Category = "ECR|Pawn")
+	// Pawn data used to create the pawn. 
+	UPROPERTY(EditAnywhere, ReplicatedUsing = OnRep_PawnData, Category = "ECR|Pawn")
 	const UECRPawnData* PawnData;
 
 	// Pointer to the ability system component that is cached for convenience.

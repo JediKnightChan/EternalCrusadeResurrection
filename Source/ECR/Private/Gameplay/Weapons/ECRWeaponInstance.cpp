@@ -14,6 +14,7 @@
 UECRWeaponInstance::UECRWeaponInstance(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
+	ArmorPenetration = 100.0f;
 }
 
 void UECRWeaponInstance::LinkAnimLayer() const
@@ -33,6 +34,23 @@ void UECRWeaponInstance::LinkAnimLayer() const
 			}
 		}
 	}
+}
+
+float UECRWeaponInstance::GetDistanceAttenuation(float Distance, const FGameplayTagContainer* SourceTags,
+	const FGameplayTagContainer* TargetTags) const
+{
+	return 1.0f;
+}
+
+float UECRWeaponInstance::GetPhysicalMaterialAttenuation(const UPhysicalMaterial* PhysicalMaterial,
+	const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags) const
+{
+	return 1.0f;
+}
+
+float UECRWeaponInstance::GetArmorPenetration() const
+{
+	return ArmorPenetration;
 }
 
 void UECRWeaponInstance::OnEquipped()
