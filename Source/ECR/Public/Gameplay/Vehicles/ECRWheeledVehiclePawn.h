@@ -6,6 +6,7 @@
 #include "AbilitySystemInterface.h"
 #include "GameplayTagAssetInterface.h"
 #include "WheeledVehiclePawn.h"
+#include "Gameplay/Interaction/IInteractableTarget.h"
 #include "Gameplay/Player/ECRPlayerController.h"
 #include "ECRWheeledVehiclePawn.generated.h"
 
@@ -23,7 +24,7 @@ class UECRSimpleVehicleHealthSet;
  */
 UCLASS()
 class ECR_API AECRWheeledVehiclePawn : public AWheeledVehiclePawn, public IAbilitySystemInterface,
-                                       public IGameplayTagAssetInterface
+                                       public IGameplayTagAssetInterface, public IInteractableTarget
 {
 	GENERATED_BODY()
 
@@ -80,6 +81,15 @@ protected:
 
 	void InitPawnDataAndAbilities();
 
+	// Interactions
+	/** Blueprint implementable event to get interaction options (like entering) */
+	UFUNCTION(BlueprintImplementableEvent)
+	TArray<FInteractionOption> GetInteractionOptions(const FInteractionQuery InteractQuery);
+	
+	//~IInteractableTarget interface
+	virtual void GatherInteractionOptions(const FInteractionQuery& InteractQuery,
+										  FInteractionOptionBuilder& OptionBuilder) override;
+	//~End of IInteractableTarget interface
 private:
 	// The ability system component sub-object used by vehicles.
 	UPROPERTY(VisibleAnywhere, Category = "ECR|Vehicle")
