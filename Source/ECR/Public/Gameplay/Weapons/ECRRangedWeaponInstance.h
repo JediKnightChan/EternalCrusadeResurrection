@@ -6,7 +6,6 @@
 #include "Curves/CurveFloat.h"
 
 #include "ECRWeaponInstance.h"
-#include "Gameplay/GAS/ECRAbilitySourceInterface.h"
 
 #include "ECRRangedWeaponInstance.generated.h"
 
@@ -18,7 +17,7 @@ class UPhysicalMaterial;
  * A piece of equipment representing a ranged weapon spawned and applied to a pawn
  */
 UCLASS()
-class UECRRangedWeaponInstance : public UECRWeaponInstance, public IECRAbilitySourceInterface
+class UECRRangedWeaponInstance : public UECRWeaponInstance
 {
 	GENERATED_BODY()
 

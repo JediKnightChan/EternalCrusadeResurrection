@@ -7,6 +7,7 @@
 UECRCombatSet::UECRCombatSet()
 	: BaseDamage(0.0f)
 	  , BaseHeal(0.0f)
+	  , BaseArmor(100.0f)
 {
 }
 
@@ -16,6 +17,7 @@ void UECRCombatSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, BaseDamage, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, BaseHeal, COND_OwnerOnly, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, BaseArmor, COND_OwnerOnly, REPNOTIFY_Always);
 }
 
 
@@ -28,4 +30,9 @@ void UECRCombatSet::OnRep_BaseDamage(const FGameplayAttributeData& OldValue) con
 void UECRCombatSet::OnRep_BaseHeal(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCombatSet, BaseHeal, OldValue);
+}
+
+void UECRCombatSet::OnRep_BaseArmor(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCombatSet, BaseArmor, OldValue);
 }

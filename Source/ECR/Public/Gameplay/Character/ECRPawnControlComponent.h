@@ -65,6 +65,11 @@ protected:
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
+	/** Initialize input and camera. While GAS only needs to be init once when pawn is ready,
+	 * input and camera need init every time the pawn is possessed (it may be unpossessed for a while) */
+	UFUNCTION(BlueprintCallable)
+	void InitInputAndCamera();
+	
 	virtual void InitializePlayerInput(UInputComponent* PlayerInputComponent);
 	virtual void BindNativeActions(UECRInputComponent* ECRIC, const UECRInputConfig* InputConfig);
 

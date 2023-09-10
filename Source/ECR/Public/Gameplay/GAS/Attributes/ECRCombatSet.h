@@ -8,7 +8,7 @@
 
 
 /**
- *  Defines attributes that are necessary for applying damage or healing.
+ *  Defines attributes that are always necessary for applying / receiving damage or healing.
  */
 UCLASS(BlueprintType)
 class UECRCombatSet : public UECRAttributeSet
@@ -25,15 +25,24 @@ class UECRCombatSet : public UECRAttributeSet
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData BaseHeal;
 
+	// The base amount of healing to apply in the heal execution. Usually overriden in GE.
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_BaseArmor, Category="Attributes",
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData BaseArmor;
+
 protected:
 	UFUNCTION()
 	void OnRep_BaseDamage(const FGameplayAttributeData& OldValue) const;
 
 	UFUNCTION()
 	void OnRep_BaseHeal(const FGameplayAttributeData& OldValue) const;
+
+	UFUNCTION()
+	void OnRep_BaseArmor(const FGameplayAttributeData& OldValue) const;
 public:
 	UECRCombatSet();
 
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, BaseDamage);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, BaseHeal);
+	ATTRIBUTE_ACCESSORS(UECRCombatSet, BaseArmor);
 };
