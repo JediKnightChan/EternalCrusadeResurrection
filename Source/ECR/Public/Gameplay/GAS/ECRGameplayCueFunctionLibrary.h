@@ -13,4 +13,7 @@ class ECR_API UECRGameplayCueFunctionLibrary : public UBlueprintFunctionLibrary
 public:
 	UFUNCTION(BlueprintPure, Category = "GameplayCue")
 	static FGameplayCueParameters MakeGameplayCueParametersFromHitResultIncludingSource(const FHitResult& HitResult);
+	
+	UFUNCTION(BlueprintPure, Category = "GameplayCue")
+    static FGameplayCueParameters MakeGameplayCueParametersFromHitResultIncludingSourceAndCauser(const FHitResult& HitResult, AActor* Causer);
 };
