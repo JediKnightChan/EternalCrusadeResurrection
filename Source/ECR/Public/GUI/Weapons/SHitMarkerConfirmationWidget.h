@@ -18,6 +18,7 @@ class SHitMarkerConfirmationWidget : public SLeafWidget
 	SLATE_BEGIN_ARGS(SHitMarkerConfirmationWidget)
 			: _PerHitMarkerImage(FCoreStyle::Get().GetBrush("Throbber.CircleChunk"))
 			  , _AllyHitMarkerImage(nullptr)
+			  , _NonPenetrationMarkerImage(nullptr)
 			  , _AnyHitsMarkerImage(nullptr)
 			  , _HitNotifyDuration(0.4f)
 		{
@@ -27,6 +28,8 @@ class SHitMarkerConfirmationWidget : public SLeafWidget
 		SLATE_ARGUMENT(const FSlateBrush*, PerHitMarkerImage)
 		/** The marker image to draw for ally hit markers. */
 		SLATE_ARGUMENT(const FSlateBrush*, AllyHitMarkerImage)
+		/** The marker image to draw for non penetration hit markers. */
+		SLATE_ARGUMENT(const FSlateBrush*, NonPenetrationMarkerImage)
 		/** The marker image to draw if there are any hits at all. */
 		SLATE_ARGUMENT(const FSlateBrush*, AnyHitsMarkerImage)
 		/** The duration (in seconds) to display hit notifies (they fade to transparent over this time)  */
@@ -51,6 +54,9 @@ public:
 	//~End of SWidget interface
 
 private:
+	/** The marker image to draw for non penetration. */
+	const FSlateBrush* NonPenetrationMarkerImage = nullptr;
+	
 	/** The marker image to draw for ally hit markers. */
 	const FSlateBrush* AllyHitMarkerImage = nullptr;
 

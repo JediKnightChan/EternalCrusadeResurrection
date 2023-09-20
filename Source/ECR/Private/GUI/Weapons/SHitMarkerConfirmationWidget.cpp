@@ -13,6 +13,7 @@ void SHitMarkerConfirmationWidget::Construct(const FArguments& InArgs, const FLo
 	PerHitMarkerImage = InArgs._PerHitMarkerImage;
 	PerHitMarkerZoneOverrideImages = ZoneOverrideImages;
 	AllyHitMarkerImage = InArgs._AllyHitMarkerImage;
+	NonPenetrationMarkerImage = InArgs._NonPenetrationMarkerImage;
 	AnyHitsMarkerImage = InArgs._AnyHitsMarkerImage;
 	bColorAndOpacitySet = InArgs._ColorAndOpacity.IsSet();
 	ColorAndOpacity = InArgs._ColorAndOpacity;
@@ -44,6 +45,7 @@ int32 SHitMarkerConfirmationWidget::OnPaint(const FPaintArgs& Args, const FGeome
 
 		bool bDealtFriendlyDamage = false;
 		bool bDealtEnemyDamage = false;
+		bool bNonPenetrated = false;
 
 		if (LastWeaponDamageScreenLocations.Num() > 0)
 		{
@@ -53,6 +55,13 @@ int32 SHitMarkerConfirmationWidget::OnPaint(const FPaintArgs& Args, const FGeome
 
 				switch (Hit.HitSuccess)
 				{
+				case Ally:
+					bDealtFriendlyDamage = true;
+					LocationMarkerImage = AllyHitMarkerImage;
+					break;
+				case NonPenetration:
+					bNonPenetrated = true;
+					LocationMarkerImage = NonPenetrationMarkerImage;
 				case Enemy:
 					bDealtEnemyDamage = true;
 					LocationMarkerImage = PerHitMarkerZoneOverrideImages.Find(Hit.HitZone);
@@ -60,10 +69,6 @@ int32 SHitMarkerConfirmationWidget::OnPaint(const FPaintArgs& Args, const FGeome
 					{
 						LocationMarkerImage = PerHitMarkerImage;
 					}
-					break;
-				case Ally:
-					bDealtFriendlyDamage = true;
-					LocationMarkerImage = AllyHitMarkerImage;
 					break;
 				default:
 					break;
@@ -92,7 +97,8 @@ int32 SHitMarkerConfirmationWidget::OnPaint(const FPaintArgs& Args, const FGeome
 			}
 		}
 
-		if (AnyHitsMarkerImage != nullptr && !bDealtFriendlyDamage && bDealtEnemyDamage)
+		// Draw only good hits here
+		if (AnyHitsMarkerImage != nullptr && !bDealtFriendlyDamage && !bNonPenetrated && bDealtEnemyDamage)
 		{
 			FLinearColor MarkerColor = bColorAndOpacitySet
 				                           ? ColorAndOpacity.Get().GetColor(InWidgetStyle)

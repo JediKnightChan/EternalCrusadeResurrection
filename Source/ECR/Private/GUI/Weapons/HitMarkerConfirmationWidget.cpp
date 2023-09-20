@@ -28,6 +28,7 @@ TSharedRef<SWidget> UHitMarkerConfirmationWidget::RebuildWidget()
 	MyMarkerWidget = SNew(SHitMarkerConfirmationWidget, PlayerContextRef, PerHitMarkerZoneOverrideImages)
 		.PerHitMarkerImage(&(this->PerHitMarkerImage))
 		.AllyHitMarkerImage(&(this->AllyHitMarkerImage))
+		.NonPenetrationMarkerImage(&(this->NonPenetrationMarkerImage))
 		.AnyHitsMarkerImage(&(this->AnyHitsMarkerImage))
 		.HitNotifyDuration(this->HitNotifyDuration);
 
