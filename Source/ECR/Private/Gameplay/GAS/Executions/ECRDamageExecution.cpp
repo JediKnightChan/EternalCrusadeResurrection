@@ -141,13 +141,16 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 		float ArmorPenetration = AbilitySource->GetArmorPenetration();
 		// Make sure Toughness - ArmorPenetration >= 0 or ArmorPenetration <= Toughness
 		ArmorPenetration = FMath::Min(ArmorPenetration, TargetToughness);
-		ToughnessAttenuation = 1 - 2 * (1 / (1 + FMath::Exp(0.015 * (TargetToughness - ArmorPenetration))) - 0.5);
+		ToughnessAttenuation = 1 - 2 * (1 / (1 + FMath::Exp(-0.015 * (TargetToughness - ArmorPenetration))) - 0.5);
 
 		// If Armor > ArmorPenetration, then no damage at all
 		if (ArmorPenetration < TargetArmor)
 		{
 			ToughnessAttenuation = 0.0f;
 		}
+
+		UE_LOG(LogTemp, Warning, TEXT("TO %f, AP %f, ARM %f, TA %f"), TargetToughness, ArmorPenetration, TargetArmor,
+			   ToughnessAttenuation)
 	}
 
 	DistanceAttenuation = FMath::Max(DistanceAttenuation, 0.0f);
