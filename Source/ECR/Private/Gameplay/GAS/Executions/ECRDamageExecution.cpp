@@ -12,6 +12,7 @@
 struct FDamageStatics
 {
 	FGameplayEffectAttributeCaptureDefinition BaseDamageDef;
+	FGameplayEffectAttributeCaptureDefinition ToughnessDef;
 	FGameplayEffectAttributeCaptureDefinition ArmorDef;
 
 	FDamageStatics()
@@ -20,7 +21,10 @@ struct FDamageStatics
 		BaseDamageDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetBaseDamageAttribute(),
 		                                                          EGameplayEffectAttributeCaptureSource::Source,
 		                                                          true);
-		ArmorDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetBaseArmorAttribute(),
+		ToughnessDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetToughnessAttribute(),
+		                                                         EGameplayEffectAttributeCaptureSource::Target,
+		                                                         true);
+		ArmorDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetArmorAttribute(),
 		                                                     EGameplayEffectAttributeCaptureSource::Target,
 		                                                     true);
 	}
@@ -36,6 +40,7 @@ static FDamageStatics& DamageStatics()
 UECRDamageExecution::UECRDamageExecution()
 {
 	RelevantAttributesToCapture.Add(DamageStatics().BaseDamageDef);
+	RelevantAttributesToCapture.Add(DamageStatics().ToughnessDef);
 	RelevantAttributesToCapture.Add(DamageStatics().ArmorDef);
 }
 
@@ -60,8 +65,12 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().BaseDamageDef, EvaluateParameters,
 	                                                           BaseDamage);
 	float TargetToughness = 100.0f;
-	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().ArmorDef, EvaluateParameters,
+	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().ToughnessDef, EvaluateParameters,
 	                                                           TargetToughness);
+
+	float TargetArmor = 100.0f;
+	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().ArmorDef, EvaluateParameters,
+	                                                           TargetArmor);
 
 	const AActor* EffectCauser = TypedContext->GetEffectCauser();
 	const FHitResult* HitActorResult = TypedContext->GetHitResult();
@@ -128,12 +137,19 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 
 		DistanceAttenuation = AbilitySource->GetDistanceAttenuation(Distance, SourceTags, TargetTags);
 
-		// Now AP and toughness formula for damage reduction
+		// Now ArmorPenetration and Toughness formula for damage reduction
 		float ArmorPenetration = AbilitySource->GetArmorPenetration();
-		// Make sure TargetToughness - ArmorPenetration >= 0 or ArmorPenetration <= TargetToughness
-		ArmorPenetration = FMath::Max(ArmorPenetration, TargetToughness);
+		// Make sure Toughness - ArmorPenetration >= 0 or ArmorPenetration <= Toughness
+		ArmorPenetration = FMath::Min(ArmorPenetration, TargetToughness);
 		ToughnessAttenuation = 1 - 2 * (1 / (1 + FMath::Exp(0.015 * (TargetToughness - ArmorPenetration))) - 0.5);
+
+		// If Armor > ArmorPenetration, then no damage at all
+		if (ArmorPenetration < TargetArmor)
+		{
+			ToughnessAttenuation = 0.0f;
+		}
 	}
+
 	DistanceAttenuation = FMath::Max(DistanceAttenuation, 0.0f);
 	ToughnessAttenuation = FMath::Max(ToughnessAttenuation, 0.0f);
 

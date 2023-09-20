@@ -46,10 +46,14 @@ public:
 	/** Converts degrees to [-180, 180] range */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static double DegreesToStandardized(double Degrees);
+	
+	/** Legacy broken method: sometimes converts degrees to [-180, 180] range */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static double LegacyBrokenDegreesToStandardized(double Degrees);
 
 	// UE Utils
 
-	/** Returns Pitch difference and Yaw difference for pawn (in [-180, 180] range)*/
+	/** Legacy, possibly broken: returns Pitch difference and Yaw difference for pawn (in [-180, 180] range) */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static void GetPawnAimOffsetDifference(APawn* Pawn, double& PitchDiff, double& YawDiff);
 };

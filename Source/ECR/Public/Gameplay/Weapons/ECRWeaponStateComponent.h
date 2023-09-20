@@ -17,7 +17,8 @@ enum EHitSuccess
 {
 	None = 0,
 	Ally,
-	Enemy
+	Enemy,
+	NonPenetration
 };
 
 // Hit markers are shown for ranged weapon impacts in the reticle

@@ -25,10 +25,15 @@ class UECRCombatSet : public UECRAttributeSet
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData BaseHeal;
 
-	// The base amount of healing to apply in the heal execution. Usually overriden in GE.
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_BaseArmor, Category="Attributes",
+	// Higher (Toughness - WeaponArmorPenetration) -> more damage reduction
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_Toughness, Category="Attributes",
 		Meta=(AllowPrivateAccess="true"))
-	FGameplayAttributeData BaseArmor;
+	FGameplayAttributeData Toughness;
+	
+	// If Armor > WeaponArmorPenetration, then no damage at all
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_Armor, Category="Attributes",
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData Armor;
 
 protected:
 	UFUNCTION()
@@ -38,11 +43,15 @@ protected:
 	void OnRep_BaseHeal(const FGameplayAttributeData& OldValue) const;
 
 	UFUNCTION()
-	void OnRep_BaseArmor(const FGameplayAttributeData& OldValue) const;
+	void OnRep_Toughness(const FGameplayAttributeData& OldValue) const;
+	
+	UFUNCTION()
+	void OnRep_Armor(const FGameplayAttributeData& OldValue) const;
 public:
 	UECRCombatSet();
 
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, BaseDamage);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, BaseHeal);
-	ATTRIBUTE_ACCESSORS(UECRCombatSet, BaseArmor);
+	ATTRIBUTE_ACCESSORS(UECRCombatSet, Toughness);
+	ATTRIBUTE_ACCESSORS(UECRCombatSet, Armor);
 };

@@ -193,6 +193,10 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = Ability, DisplayName = "OnPawnAvatarSet")
 	void K2_OnPawnAvatarSet();
 
+	/** Make correct Effect Context Handle with ECR additional data (like SourceObject as interface) */
+	UFUNCTION(BlueprintCallable, Category = Ability, DisplayName = "MakeEffectContextHandle")
+	FGameplayEffectContextHandle K2_MakeEffectContextHandle();
+	
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Animation")
 	UAnimMontage* GetMontage(const FName MontageCategory) const;
 
@@ -201,7 +205,7 @@ protected:
 
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	UECRPawnComponent_CharacterParts* GetPawnCustomizationComponent() const;
-	
+
 	/** Check for ability queue on ASC, if need to activate any queued ability */
 	void CheckAbilityQueue(const FGameplayAbilityActorInfo* ActorInfo) const;
 

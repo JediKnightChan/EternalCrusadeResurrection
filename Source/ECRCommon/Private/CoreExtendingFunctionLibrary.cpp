@@ -92,7 +92,26 @@ FName UCoreExtendingFunctionLibrary::GetRandomName(TMap<FName, float> NamesToWei
 	return NAME_None;
 }
 
-double UCoreExtendingFunctionLibrary::DegreesToStandardized(const double Degrees)
+double UCoreExtendingFunctionLibrary::DegreesToStandardized(double Degrees)
+{
+	Degrees = UKismetMathLibrary::GenericPercent_FloatFloat(Degrees, 360.0f);
+	// Holy Emperor knows how this works, but we are definitely in [-360, 360]
+
+	if (Degrees > 180.0f)
+	{
+		// We got into (180, 360], will go to (-180, 0]
+		return Degrees - 360.0f;
+	}
+	if (Degrees < -180.0f)
+	{
+		// We got into [-360, -180), will go to [0, 180)
+		return Degrees + 360.0f;
+	}
+	// We got into [-180, 180]
+	return Degrees;
+}
+
+double UCoreExtendingFunctionLibrary::LegacyBrokenDegreesToStandardized(const double Degrees)
 {
 	const double DegreesInCircle = UKismetMathLibrary::GenericPercent_FloatFloat(Degrees, 360.0f);
 	return DegreesInCircle > 180.0f ? DegreesInCircle - 360.0f : DegreesInCircle;

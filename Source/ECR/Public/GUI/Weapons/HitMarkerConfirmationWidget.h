@@ -39,9 +39,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Appearance)
 	FSlateBrush PerHitMarkerImage;
 
-	/** The marker image to draw for individual hit markers. */
+	/** The marker image to draw for ally hit markers. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Appearance)
 	FSlateBrush AllyHitMarkerImage;
+
+	/** The marker image to draw for non penetration hit markers. */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Appearance)
+	FSlateBrush NonPenetrationMarkerImage;
 
 	/** Map from zone tag (e.g., weak spot) to override marker images for individual location hits. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Appearance)
