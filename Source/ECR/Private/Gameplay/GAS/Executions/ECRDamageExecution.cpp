@@ -148,9 +148,6 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 		{
 			ToughnessAttenuation = 0.0f;
 		}
-
-		UE_LOG(LogTemp, Warning, TEXT("TO %f, AP %f, ARM %f, TA %f"), TargetToughness, ArmorPenetration, TargetArmor,
-			   ToughnessAttenuation)
 	}
 
 	DistanceAttenuation = FMath::Max(DistanceAttenuation, 0.0f);
