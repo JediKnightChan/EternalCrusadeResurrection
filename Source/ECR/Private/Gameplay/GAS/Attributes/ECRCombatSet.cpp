@@ -8,6 +8,7 @@ UECRCombatSet::UECRCombatSet()
 	: BaseDamage(0.0f)
 	  , BaseHeal(0.0f)
 	  , Toughness(100.0f)
+      , Armor(100.0f)
 {
 }
 
