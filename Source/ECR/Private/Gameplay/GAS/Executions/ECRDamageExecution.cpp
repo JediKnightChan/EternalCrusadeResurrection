@@ -140,7 +140,7 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 		// Now ArmorPenetration and Toughness formula for damage reduction
 		float ArmorPenetration = AbilitySource->GetArmorPenetration();
 		// Make sure Toughness - ArmorPenetration >= 0 or ArmorPenetration <= Toughness
-		ArmorPenetration = FMath::Max(ArmorPenetration, TargetToughness);
+		ArmorPenetration = FMath::Min(ArmorPenetration, TargetToughness);
 		ToughnessAttenuation = 1 - 2 * (1 / (1 + FMath::Exp(0.015 * (TargetToughness - ArmorPenetration))) - 0.5);
 
 		// If Armor > ArmorPenetration, then no damage at all

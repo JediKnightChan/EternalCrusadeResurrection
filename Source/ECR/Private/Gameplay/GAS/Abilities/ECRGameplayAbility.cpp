@@ -359,7 +359,6 @@ FGameplayEffectContextHandle UECRGameplayAbility::MakeEffectContext(const FGamep
 	UObject* SourceObject = GetSourceObject(Handle, ActorInfo);
 
 	AActor* Instigator = ActorInfo ? ActorInfo->OwnerActor.Get() : nullptr;
-
 	EffectContext->SetAbilitySource(AbilitySource, SourceLevel);
 	EffectContext->AddInstigator(Instigator, EffectCauser);
 	EffectContext->AddSourceObject(SourceObject);
@@ -515,6 +514,14 @@ void UECRGameplayAbility::GetAbilitySource(FGameplayAbilitySpecHandle Handle,
 	OutAbilitySource = Cast<IECRAbilitySourceInterface>(SourceObject);
 }
 
+
+FGameplayEffectContextHandle UECRGameplayAbility::K2_MakeEffectContextHandle()
+{
+	const FGameplayAbilitySpecHandle SpecHandle = GetCurrentAbilitySpecHandle();
+	const FGameplayAbilityActorInfo* GameplayAbilityActorInfo = GetCurrentActorInfo();
+	FGameplayEffectContextHandle EffectContextHandle = MakeEffectContext(SpecHandle, GameplayAbilityActorInfo);
+	return EffectContextHandle;
+}
 
 UAnimMontage* UECRGameplayAbility::GetMontage(const FName MontageCategory) const
 {

@@ -3,10 +3,10 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "GameplayEffectTypes.h"
-#include "ECRGameplayCueFunctionLibrary.generated.h"
+#include "ECRAbilitySystemFunctionLibrary.generated.h"
 
 UCLASS()
-class ECR_API UECRGameplayCueFunctionLibrary : public UBlueprintFunctionLibrary
+class ECR_API UECRAbilitySystemFunctionLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 

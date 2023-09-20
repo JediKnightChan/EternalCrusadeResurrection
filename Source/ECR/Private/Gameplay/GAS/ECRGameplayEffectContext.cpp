@@ -37,7 +37,8 @@ void FECRGameplayEffectContext::SetAbilitySource(const IECRAbilitySourceInterfac
 
 const IECRAbilitySourceInterface* FECRGameplayEffectContext::GetAbilitySource() const
 {
-	return Cast<IECRAbilitySourceInterface>(AbilitySourceObject.Get());
+	const UObject* Source = AbilitySourceObject.Get();
+	return Cast<IECRAbilitySourceInterface>(Source);
 }
 
 
