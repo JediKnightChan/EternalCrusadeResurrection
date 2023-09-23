@@ -191,6 +191,13 @@ void AECRPlayerController::OnEndAutoRun()
 	}
 }
 
+void AECRPlayerController::ChangeCameraDistance(double DesiredMultiplierDelta, double DesiredMultiplierMin,
+                                                double DesiredMultiplierMax)
+{
+	DesiredCameraDistanceMultiplier = FMath::Clamp(DesiredCameraDistanceMultiplier + DesiredMultiplierDelta,
+	                                               DesiredMultiplierMin, DesiredMultiplierMax);
+}
+
 //////////////////////////////////////////////////////////////////////
 // AECRReplayPlayerController
 

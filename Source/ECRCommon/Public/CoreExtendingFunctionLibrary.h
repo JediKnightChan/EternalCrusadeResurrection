@@ -46,10 +46,10 @@ public:
 	/** Converts degrees to [-180, 180] range */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static double DegreesToStandardized(double Degrees);
-	
-	/** Legacy broken method: sometimes converts degrees to [-180, 180] range */
-	UFUNCTION(BlueprintCallable, BlueprintPure)
-	static double LegacyBrokenDegreesToStandardized(double Degrees);
+
+	/** Evaluates the value of a Runtime Float Curve using the given time. */
+	UFUNCTION(BlueprintPure, Category = "Math|RuntimeFloatCurve")
+	static double GetRuntimeFloatCurveValue(const FRuntimeFloatCurve& InCurve, double InTime);
 
 	// UE Utils
 

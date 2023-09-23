@@ -75,6 +75,9 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, meta=(DisplayName="OnEndAutoRun"))
 	void K2_OnEndAutoRun();
 
+	/** Changes Desired Multiplier, adding delta and clamping between min and max */
+	UFUNCTION(BlueprintCallable)
+	void ChangeCameraDistance(double DesiredMultiplierDelta, double DesiredMultiplierMin, double DesiredMultiplierMax);
 public:
 	/** Whether to invert Camera Y location */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
