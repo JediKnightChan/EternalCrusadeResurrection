@@ -111,11 +111,12 @@ double UCoreExtendingFunctionLibrary::DegreesToStandardized(double Degrees)
 	return Degrees;
 }
 
-double UCoreExtendingFunctionLibrary::LegacyBrokenDegreesToStandardized(const double Degrees)
+
+double UCoreExtendingFunctionLibrary::GetRuntimeFloatCurveValue(const FRuntimeFloatCurve& InCurve, double InTime)
 {
-	const double DegreesInCircle = UKismetMathLibrary::GenericPercent_FloatFloat(Degrees, 360.0f);
-	return DegreesInCircle > 180.0f ? DegreesInCircle - 360.0f : DegreesInCircle;
+	return InCurve.GetRichCurveConst()->Eval(InTime);
 }
+
 
 void UCoreExtendingFunctionLibrary::GetPawnAimOffsetDifference(APawn* Pawn, double& PitchDiff, double& YawDiff)
 {

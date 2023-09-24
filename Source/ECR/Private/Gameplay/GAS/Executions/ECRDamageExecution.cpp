@@ -2,7 +2,7 @@
 
 #include "Gameplay/GAS/Executions/ECRDamageExecution.h"
 #include "GameplayEffectTypes.h"
-#include "Gameplay/Character/ECRCharacter.h"
+#include "Gameplay/ECRGameplayBlueprintLibrary.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Gameplay/GAS/ECRGameplayEffectContext.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
@@ -137,17 +137,8 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 
 		DistanceAttenuation = AbilitySource->GetDistanceAttenuation(Distance, SourceTags, TargetTags);
 
-		// Now ArmorPenetration and Toughness formula for damage reduction
-		float ArmorPenetration = AbilitySource->GetArmorPenetration();
-		// Make sure Toughness - ArmorPenetration >= 0 or ArmorPenetration <= Toughness
-		ArmorPenetration = FMath::Min(ArmorPenetration, TargetToughness);
-		ToughnessAttenuation = 1 - 2 * (1 / (1 + FMath::Exp(-0.015 * (TargetToughness - ArmorPenetration))) - 0.5);
-
-		// If Armor > ArmorPenetration, then no damage at all
-		if (ArmorPenetration < TargetArmor)
-		{
-			ToughnessAttenuation = 0.0f;
-		}
+		ToughnessAttenuation = UECRGameplayBlueprintLibrary::CalculateDamageAttenuationForArmorPenetration(
+			AbilitySource->GetArmorPenetration(), TargetToughness, TargetArmor);
 	}
 
 	DistanceAttenuation = FMath::Max(DistanceAttenuation, 0.0f);

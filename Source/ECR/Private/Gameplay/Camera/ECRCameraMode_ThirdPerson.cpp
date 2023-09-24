@@ -137,5 +137,5 @@ FRotator UECRCameraMode_ThirdPerson::GetPivotRotation() const
 	{
 		return Super::GetPivotRotation();
 	}
-	return TargetPawn->GetBaseAimRotation();
+	return NullifyRotatorRollIfNeeded(TargetPawn->GetBaseAimRotation());
 }

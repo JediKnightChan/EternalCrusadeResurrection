@@ -14,9 +14,9 @@
 //////////////////////////////////////////////////////////////////////////
 FECRCameraModeView::FECRCameraModeView()
 	: Location(ForceInit)
-	, Rotation(ForceInit)
-	, ControlRotation(ForceInit)
-	, FieldOfView(ECR_CAMERA_DEFAULT_FOV)
+	  , Rotation(ForceInit)
+	  , ControlRotation(ForceInit)
+	  , FieldOfView(ECR_CAMERA_DEFAULT_FOV)
 {
 }
 
@@ -53,6 +53,7 @@ UECRCameraMode::UECRCameraMode()
 	ViewPitchMin = ECR_CAMERA_DEFAULT_PITCH_MIN;
 	ViewPitchMax = ECR_CAMERA_DEFAULT_PITCH_MAX;
 
+	bAlwaysZeroRoll = true;
 	BlendTime = 0.5f;
 	BlendFunction = EECRCameraModeBlendFunction::EaseOut;
 	BlendExponent = 4.0f;
@@ -116,10 +117,10 @@ FRotator UECRCameraMode::GetPivotRotation() const
 
 	if (const APawn* TargetPawn = Cast<APawn>(TargetActor))
 	{
-		return TargetPawn->GetViewRotation();
+		return NullifyRotatorRollIfNeeded(TargetPawn->GetViewRotation());
 	}
 
-	return TargetActor->GetActorRotation();
+	return NullifyRotatorRollIfNeeded(TargetActor->GetActorRotation());
 }
 
 void UECRCameraMode::UpdateCameraMode(float DeltaTime)
@@ -218,6 +219,15 @@ void UECRCameraMode::DrawDebug(UCanvas* Canvas) const
 
 	DisplayDebugManager.SetDrawColor(FColor::White);
 	DisplayDebugManager.DrawString(FString::Printf(TEXT("      ECRCameraMode: %s (%f)"), *GetName(), BlendWeight));
+}
+
+FRotator UECRCameraMode::NullifyRotatorRollIfNeeded(FRotator InputRot) const
+{
+	if (bAlwaysZeroRoll)
+	{
+		InputRot.Roll = 0;
+	}
+	return InputRot;
 }
 
 

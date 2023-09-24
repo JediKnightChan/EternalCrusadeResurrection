@@ -30,7 +30,7 @@ enum class EECRCameraModeBlendFunction : uint8
 	// Smoothly accelerates and decelerates.  Ease amount controlled by the exponent.
 	EaseInOut,
 
-	COUNT	UMETA(Hidden)
+	COUNT UMETA(Hidden)
 };
 
 
@@ -42,13 +42,11 @@ enum class EECRCameraModeBlendFunction : uint8
 struct FECRCameraModeView
 {
 public:
-
 	FECRCameraModeView();
 
 	void Blend(const FECRCameraModeView& Other, float OtherWeight);
 
 public:
-
 	FVector Location;
 	FRotator Rotation;
 	FRotator ControlRotation;
@@ -67,7 +65,6 @@ class ECR_API UECRCameraMode : public UObject
 	GENERATED_BODY()
 
 public:
-
 	UECRCameraMode();
 
 	UECRCameraComponent* GetECRCameraComponent() const;
@@ -79,10 +76,14 @@ public:
 	const FECRCameraModeView& GetCameraModeView() const { return View; }
 
 	// Called when this camera mode is activated on the camera mode stack.
-	virtual void OnActivation() {};
+	virtual void OnActivation()
+	{
+	};
 
 	// Called when this camera mode is deactivated on the camera mode stack.
-	virtual void OnDeactivation() {};
+	virtual void OnDeactivation()
+	{
+	};
 
 	void UpdateCameraMode(float DeltaTime);
 
@@ -98,6 +99,7 @@ public:
 	virtual void DrawDebug(UCanvas* Canvas) const;
 
 protected:
+	FRotator NullifyRotatorRollIfNeeded(FRotator InputRot) const;
 
 	virtual FVector GetPivotLocation() const;
 	virtual FRotator GetPivotRotation() const;
@@ -114,16 +116,23 @@ protected:
 	// View output produced by the camera mode.
 	FECRCameraModeView View;
 
+	// Whether camera roll should always be zero
+	UPROPERTY(EditDefaultsOnly, Category = "View")
+	bool bAlwaysZeroRoll;
+
 	// The horizontal field of view (in degrees).
-	UPROPERTY(EditDefaultsOnly, Category = "View", Meta = (UIMin = "5.0", UIMax = "170", ClampMin = "5.0", ClampMax = "170.0"))
+	UPROPERTY(EditDefaultsOnly, Category = "View",
+		Meta = (UIMin = "5.0", UIMax = "170", ClampMin = "5.0", ClampMax = "170.0"))
 	float FieldOfView;
 
 	// Minimum view pitch (in degrees).
-	UPROPERTY(EditDefaultsOnly, Category = "View", Meta = (UIMin = "-89.9", UIMax = "89.9", ClampMin = "-89.9", ClampMax = "89.9"))
+	UPROPERTY(EditDefaultsOnly, Category = "View",
+		Meta = (UIMin = "-89.9", UIMax = "89.9", ClampMin = "-89.9", ClampMax = "89.9"))
 	float ViewPitchMin;
 
 	// Maximum view pitch (in degrees).
-	UPROPERTY(EditDefaultsOnly, Category = "View", Meta = (UIMin = "-89.9", UIMax = "89.9", ClampMin = "-89.9", ClampMax = "89.9"))
+	UPROPERTY(EditDefaultsOnly, Category = "View",
+		Meta = (UIMin = "-89.9", UIMax = "89.9", ClampMin = "-89.9", ClampMax = "89.9"))
 	float ViewPitchMax;
 
 	// How long it takes to blend in this mode.
@@ -162,7 +171,6 @@ class UECRCameraModeStack : public UObject
 	GENERATED_BODY()
 
 public:
-
 	UECRCameraModeStack();
 
 	void ActivateStack();
@@ -180,14 +188,12 @@ public:
 	void GetBlendInfo(float& OutWeightOfTopLayer, FGameplayTag& OutTagOfTopLayer) const;
 
 protected:
-
 	UECRCameraMode* GetCameraModeInstance(TSubclassOf<UECRCameraMode> CameraModeClass);
 
 	void UpdateStack(float DeltaTime);
 	void BlendStack(FECRCameraModeView& OutCameraModeView) const;
 
 protected:
-
 	bool bIsActive;
 
 	UPROPERTY()
