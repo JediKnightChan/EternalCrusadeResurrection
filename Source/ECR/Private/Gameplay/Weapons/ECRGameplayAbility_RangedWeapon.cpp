@@ -690,7 +690,7 @@ void UECRGameplayAbility_RangedWeapon::StartRangedWeaponTargeting()
 	const bool bProjectileWeapon = false;
 	if (!bProjectileWeapon && (WeaponStateComponent != nullptr))
 	{
-		WeaponStateComponent->AddUnconfirmedServerSideHitMarkers(TargetData, FoundHits);
+		WeaponStateComponent->AddUnconfirmedServerSideHitMarkers(GetCurrentSourceObject(), TargetData, FoundHits);
 	}
 
 	// Process the target data immediately

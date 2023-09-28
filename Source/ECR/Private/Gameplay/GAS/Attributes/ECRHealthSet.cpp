@@ -96,7 +96,7 @@ void UECRHealthSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackDa
 	if (Data.EvaluatedData.Attribute == GetDamageAttribute())
 	{
 		// Send a standardized verb message that other systems can observe
-		if (Data.EvaluatedData.Magnitude < 0.0f)
+		if (Data.EvaluatedData.Magnitude > 0.0f)
 		{
 			SendDamageMessage(Data);
 		}

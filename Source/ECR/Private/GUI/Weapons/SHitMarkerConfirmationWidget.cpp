@@ -62,6 +62,7 @@ int32 SHitMarkerConfirmationWidget::OnPaint(const FPaintArgs& Args, const FGeome
 				case NonPenetration:
 					bNonPenetrated = true;
 					LocationMarkerImage = NonPenetrationMarkerImage;
+					break;
 				case Enemy:
 					bDealtEnemyDamage = true;
 					LocationMarkerImage = PerHitMarkerZoneOverrideImages.Find(Hit.HitZone);
