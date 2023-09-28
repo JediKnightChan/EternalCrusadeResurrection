@@ -62,8 +62,17 @@ public:
 	//~End of UMovementComponent interface
 
 protected:
+	virtual void ApplyImpactPhysicsForces(const FHitResult& Impact, const FVector& ImpactAcceleration,
+	                                      const FVector& ImpactVelocity) override;
+
+
 	virtual void InitializeComponent() override;
+
 protected:
 	// Cached ground info for the character.  Do not access this directly!  It's only updated when accessed via GetGroundInfo().
 	FECRCharacterGroundInfo CachedGroundInfo;
+
+private:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	bool bDontApplyImpactOnVehicles;
 };
