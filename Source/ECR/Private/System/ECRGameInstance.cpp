@@ -107,6 +107,7 @@ FString UECRGameInstance::GetMatchFactionString(
 void UECRGameInstance::CreateMatch(const FString GameVersion, const FName ModeName, const FName MapName,
                                    const FString MapPath, const FName MissionName,
                                    const FName RegionName, const double TimeDelta,
+                                   const FName WeatherName, const FName DayTimeName,
                                    const TArray<FFactionAlliance> Alliances,
                                    const TMap<FName, int32> FactionNamesToCapacities,
                                    const TMap<FName, FText> FactionNamesToShortTexts)
@@ -131,8 +132,8 @@ void UECRGameInstance::CreateMatch(const FString GameVersion, const FName ModeNa
 		{
 			// Saving match creation settings for use in delegate and after map load
 			MatchCreationSettings = FECRMatchSettings{
-				GameVersion, ModeName, MapName, MapPath, MissionName, RegionName, TimeDelta, Alliances,
-				FactionNamesToCapacities, FactionNamesToShortTexts
+				GameVersion, ModeName, MapName, MapPath, MissionName, RegionName, WeatherName, DayTimeName, TimeDelta,
+				Alliances, FactionNamesToCapacities, FactionNamesToShortTexts
 			};
 			FOnlineSessionSettings SessionSettings = GetSessionSettings();
 			OnlineSessionPtr->OnCreateSessionCompleteDelegates.AddUObject(
@@ -218,6 +219,12 @@ void UECRGameInstance::UpdateSessionCurrentPlayerAmount(const int32 NewPlayerAmo
 void UECRGameInstance::UpdateSessionMatchStartedTimestamp(const double NewTimestamp)
 {
 	MatchCreationSettings.MatchStartedTime = NewTimestamp;
+	UpdateSessionSettings();
+}
+
+void UECRGameInstance::UpdateSessionDayTime(const FName NewDayTime)
+{
+	MatchCreationSettings.DayTimeName = NewDayTime;
 	UpdateSessionSettings();
 }
 
@@ -375,6 +382,10 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_GAME_VERSION, MatchCreationSettings.GameVersion,
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_WEATHER_NAME, MatchCreationSettings.WeatherName.ToString(),
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_DAYTIME_NAME, MatchCreationSettings.DayTimeName.ToString(),
+						EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_REGION, MatchCreationSettings.Region.ToString(),
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
 

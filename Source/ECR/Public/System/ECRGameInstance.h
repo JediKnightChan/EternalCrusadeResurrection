@@ -76,8 +76,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void CreateMatch(const FString GameVersion, const FName ModeName,
 	                 const FName MapName, const FString MapPath, const FName MissionName,
-	                 const FName RegionName, const double TimeDelta, const TArray<FFactionAlliance> Alliances,
-	                 const TMap<FName, int32>
+	                 const FName RegionName, const double TimeDelta, const FName WeatherName,
+	                 const FName DayTimeName, const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
 	                 FactionNamesToCapacities, const TMap<FName, FText> FactionNamesToShortTexts);
 
 	/** Create match, by player (P2P) or dedicated server */
@@ -100,6 +100,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void UpdateSessionMatchStartedTimestamp(double NewTimestamp);
 
+	/** Update current player amount */
+	UFUNCTION(BlueprintCallable)
+	void UpdateSessionDayTime(FName NewDayTime);
+	
 	/** Leave match */
 	UFUNCTION(BlueprintCallable)
 	void DestroySession();

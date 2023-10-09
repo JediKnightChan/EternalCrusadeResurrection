@@ -50,6 +50,12 @@ struct FECRMatchResult
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FName Region;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FName Weather;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FName DayTime;
+
 	/** For some reason getting int in EOS doesn't work */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FString CurrentPlayerAmount;
@@ -78,7 +84,8 @@ struct FECRMatchSettings
 	// Real constructor
 	FECRMatchSettings(const FString& GameVersion, const FName& GameMode, const FName& MapName, const FString& MapPath,
 	                  const FName& GameMission,
-	                  const FName& Region, const double TimeDelta, const TArray<FFactionAlliance>& Alliances,
+	                  const FName& Region, const FName& WeatherName, const FName& DayTimeName, const double TimeDelta,
+	                  const TArray<FFactionAlliance>& Alliances,
 	                  const TMap<FName, int32>& FactionNamesToCapacities,
 	                  const TMap<FName, FText>& FactionNamesToShortTexts)
 		: GameVersion(GameVersion),
@@ -87,6 +94,8 @@ struct FECRMatchSettings
 		  MapPath(MapPath),
 		  GameMission(GameMission),
 		  Region(Region),
+		  WeatherName(WeatherName),
+		  DayTimeName(DayTimeName),
 		  TimeDelta(TimeDelta),
 		  Alliances(Alliances),
 		  FactionNamesToCapacities(FactionNamesToCapacities),
@@ -115,6 +124,12 @@ struct FECRMatchSettings
 	FName Region;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FName WeatherName;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FName DayTimeName;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	double TimeDelta;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -127,7 +142,7 @@ struct FECRMatchSettings
 	TMap<FName, FText> FactionNamesToShortTexts;
 
 	// Updatable stats
-	
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	int32 CurrentPlayerAmount;
 
