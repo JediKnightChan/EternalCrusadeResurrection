@@ -62,7 +62,8 @@ public:
 	UFUNCTION(Client, Reliable)
 	void ClientConfirmTargetData(uint16 UniqueId, bool bSuccess, const TArray<uint8>& HitReplaces);
 
-	void AddUnconfirmedServerSideHitMarkers(const FGameplayAbilityTargetDataHandle& InTargetData,
+	void AddUnconfirmedServerSideHitMarkers(const UObject* SourceObject,
+	                                        const FGameplayAbilityTargetDataHandle& InTargetData,
 	                                        const TArray<FHitResult>& FoundHits);
 
 	/** Updates this player's last damage instigated time */
@@ -87,7 +88,7 @@ protected:
 	// The default behavior is to treat it as a success if being done to a team actor that belongs to a different team
 	// to the owning controller's pawn
 	UFUNCTION(BlueprintNativeEvent)
-	EHitSuccess ShouldShowHitAsSuccess(const FHitResult& Hit) const;
+	EHitSuccess ShouldShowHitAsSuccess(const UObject* SourceObject, const FHitResult& Hit) const;
 
 	UFUNCTION(BlueprintNativeEvent)
 	bool ShouldUpdateDamageInstigatedTime(const FGameplayEffectContextHandle& EffectContext) const;

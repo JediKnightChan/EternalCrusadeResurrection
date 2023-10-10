@@ -201,6 +201,7 @@ protected:
 
 private:
 	// The current heat
+	UPROPERTY(Replicated)
 	float CurrentHeat = 0.0f;
 
 	// The current spread angle (in degrees, diametrical)
@@ -230,10 +231,10 @@ public:
 	//~End of UECREquipmentInstance interface
 
 	/** Add heat as 1 shot */
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void AddSpread();
 	
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void RemoveHeat(float DeltaHeat);
 
 	//~IECRAbilitySourceInterface interface
@@ -243,6 +244,8 @@ public:
 	                                             const FGameplayTagContainer* SourceTags = nullptr,
 	                                             const FGameplayTagContainer* TargetTags = nullptr) const override;
 	//~End of IECRAbilitySourceInterface interface
+
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 private:
 	void ComputeSpreadRange(float& MinSpread, float& MaxSpread);

@@ -24,15 +24,18 @@ UECRWeaponStateComponent::UECRWeaponStateComponent(const FObjectInitializer& Obj
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-void UECRWeaponStateComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UECRWeaponStateComponent::TickComponent(float DeltaTime, enum ELevelTick TickType,
+                                             FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	if (APawn* Pawn = GetPawn<APawn>())
 	{
-		if (UECREquipmentManagerComponent* EquipmentManager = Pawn->FindComponentByClass<UECREquipmentManagerComponent>())
+		if (UECREquipmentManagerComponent* EquipmentManager = Pawn->FindComponentByClass<
+			UECREquipmentManagerComponent>())
 		{
-			if (UECRRangedWeaponInstance* CurrentWeapon = Cast<UECRRangedWeaponInstance>(EquipmentManager->GetFirstInstanceOfType(UECRRangedWeaponInstance::StaticClass())))
+			if (UECRRangedWeaponInstance* CurrentWeapon = Cast<UECRRangedWeaponInstance>(
+				EquipmentManager->GetFirstInstanceOfType(UECRRangedWeaponInstance::StaticClass())))
 			{
 				CurrentWeapon->Tick(DeltaTime);
 			}
@@ -40,7 +43,8 @@ void UECRWeaponStateComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 	}
 }
 
-void UECRWeaponStateComponent::ClientConfirmTargetData_Implementation(uint16 UniqueId, bool bSuccess, const TArray<uint8>& HitReplaces)
+void UECRWeaponStateComponent::ClientConfirmTargetData_Implementation(uint16 UniqueId, bool bSuccess,
+                                                                      const TArray<uint8>& HitReplaces)
 {
 	for (int i = 0; i < UnconfirmedServerSideHitMarkers.Num(); i++)
 	{
@@ -77,23 +81,28 @@ void UECRWeaponStateComponent::ClientConfirmTargetData_Implementation(uint16 Uni
 	}
 }
 
-void UECRWeaponStateComponent::AddUnconfirmedServerSideHitMarkers(const FGameplayAbilityTargetDataHandle& InTargetData, const TArray<FHitResult>& FoundHits)
+void UECRWeaponStateComponent::AddUnconfirmedServerSideHitMarkers(const UObject* SourceObject,
+                                                                  const FGameplayAbilityTargetDataHandle& InTargetData,
+                                                                  const TArray<FHitResult>& FoundHits)
 {
-	FECRServerSideHitMarkerBatch& NewUnconfirmedHitMarker = UnconfirmedServerSideHitMarkers.Emplace_GetRef(InTargetData.UniqueId);
+	FECRServerSideHitMarkerBatch& NewUnconfirmedHitMarker = UnconfirmedServerSideHitMarkers.Emplace_GetRef(
+		InTargetData.UniqueId);
 
 	if (APlayerController* OwnerPC = GetController<APlayerController>())
 	{
 		for (const FHitResult& Hit : FoundHits)
 		{
 			FVector2D HitScreenLocation;
-			if (UGameplayStatics::ProjectWorldToScreen(OwnerPC, Hit.Location, /*out*/ HitScreenLocation, /*bPlayerViewportRelative=*/ false))
+			if (UGameplayStatics::ProjectWorldToScreen(OwnerPC, Hit.Location, /*out*/ HitScreenLocation,
+			                                           /*bPlayerViewportRelative=*/ false))
 			{
 				FECRScreenSpaceHitLocation& Entry = NewUnconfirmedHitMarker.Markers.AddDefaulted_GetRef();
 				Entry.Location = HitScreenLocation;
-				Entry.HitSuccess = ShouldShowHitAsSuccess(Hit);
+				Entry.HitSuccess = ShouldShowHitAsSuccess(SourceObject, Hit);
 
 				// Determine the hit zone
-				if (const UPhysicalMaterialWithTags* PhysMatWithTags = Cast<const UPhysicalMaterialWithTags>(Hit.PhysMaterial.Get()))
+				if (const UPhysicalMaterialWithTags* PhysMatWithTags = Cast<const UPhysicalMaterialWithTags>(
+					Hit.PhysMaterial.Get()))
 				{
 					for (const FGameplayTag MaterialTag : PhysMatWithTags->Tags)
 					{
@@ -140,7 +149,7 @@ double UECRWeaponStateComponent::GetTimeSinceLastHitNotification() const
 	return World->TimeSince(LastWeaponDamageInstigatedTime);
 }
 
-EHitSuccess UECRWeaponStateComponent::ShouldShowHitAsSuccess_Implementation(const FHitResult& Hit) const
+EHitSuccess UECRWeaponStateComponent::ShouldShowHitAsSuccess_Implementation(const UObject* SourceObject, const FHitResult& Hit) const
 {
 	return None;
 }

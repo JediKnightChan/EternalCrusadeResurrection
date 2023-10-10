@@ -7,6 +7,7 @@
 #include "AbilitySystemGlobals.h"
 #include "NativeGameplayTags.h"
 #include "AbilitySystemComponent.h"
+#include "WheeledVehiclePawn.h"
 
 UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_MovementStopped, "Gameplay.MovementStopped");
 
@@ -22,6 +23,7 @@ namespace ECRCharacter
 UECRCharacterMovementComponent::UECRCharacterMovementComponent(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
+	bDontApplyImpactOnVehicles = false;
 }
 
 bool UECRCharacterMovementComponent::CanAttemptJump() const
@@ -119,4 +121,15 @@ float UECRCharacterMovementComponent::GetMaxSpeed() const
 bool UECRCharacterMovementComponent::ShouldUsePackedMovementRPCs() const
 {
 	return false;
+}
+
+void UECRCharacterMovementComponent::ApplyImpactPhysicsForces(const FHitResult& Impact,
+                                                              const FVector& ImpactAcceleration,
+                                                              const FVector& ImpactVelocity)
+{
+	const bool bTargetIsVehicle = IsValid(Cast<AWheeledVehiclePawn>(Impact.GetActor()));
+	if (!bDontApplyImpactOnVehicles || !bTargetIsVehicle)
+	{
+		Super::ApplyImpactPhysicsForces(Impact, ImpactAcceleration, ImpactVelocity);
+	}
 }

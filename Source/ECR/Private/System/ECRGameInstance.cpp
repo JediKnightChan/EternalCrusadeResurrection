@@ -17,6 +17,19 @@ UECRGameInstance::UECRGameInstance()
 	OnlineSubsystem = IOnlineSubsystem::Get();
 }
 
+void UECRGameInstance::LogOut()
+{
+	// Login
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
+		{
+			OnlineIdentityPtr->OnLogoutCompleteDelegates->AddUObject(this, &UECRGameInstance::OnLogoutComplete);
+			OnlineIdentityPtr->Logout(0);
+		}
+	}
+}
+
 
 void UECRGameInstance::LoginViaEpic(const FString PlayerName)
 {
@@ -85,6 +98,30 @@ void UECRGameInstance::OnLoginComplete(int32 LocalUserNum, const bool bWasSucces
 	}
 }
 
+void UECRGameInstance::OnLogoutComplete(int32 LocalUserNum, bool bWasSuccessful)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
+		{
+			OnlineIdentityPtr->ClearOnLogoutCompleteDelegates(0, this);
+		}
+	}
+
+	if (AECRGUIPlayerController* GUISupervisor = UECRUtilsLibrary::GetGUISupervisor(GetWorld()))
+	{
+		if (bWasSuccessful)
+		{
+			bIsLoggedIn = false;
+			GUISupervisor->HandleLogoutSuccess();
+		} else
+		{
+			GUISupervisor->HandleLogoutFailure();
+		}
+	}
+	
+}
+
 
 FString UECRGameInstance::GetMatchFactionString(
 	const TArray<FFactionAlliance>& FactionAlliances, const TMap<FName, FText>& FactionNamesToShortTexts)
@@ -107,6 +144,7 @@ FString UECRGameInstance::GetMatchFactionString(
 void UECRGameInstance::CreateMatch(const FString GameVersion, const FName ModeName, const FName MapName,
                                    const FString MapPath, const FName MissionName,
                                    const FName RegionName, const double TimeDelta,
+                                   const FName WeatherName, const FName DayTimeName,
                                    const TArray<FFactionAlliance> Alliances,
                                    const TMap<FName, int32> FactionNamesToCapacities,
                                    const TMap<FName, FText> FactionNamesToShortTexts)
@@ -131,8 +169,8 @@ void UECRGameInstance::CreateMatch(const FString GameVersion, const FName ModeNa
 		{
 			// Saving match creation settings for use in delegate and after map load
 			MatchCreationSettings = FECRMatchSettings{
-				GameVersion, ModeName, MapName, MapPath, MissionName, RegionName, TimeDelta, Alliances,
-				FactionNamesToCapacities, FactionNamesToShortTexts
+				GameVersion, ModeName, MapName, MapPath, MissionName, RegionName, WeatherName, DayTimeName, TimeDelta,
+				Alliances, FactionNamesToCapacities, FactionNamesToShortTexts
 			};
 			FOnlineSessionSettings SessionSettings = GetSessionSettings();
 			OnlineSessionPtr->OnCreateSessionCompleteDelegates.AddUObject(
@@ -218,6 +256,12 @@ void UECRGameInstance::UpdateSessionCurrentPlayerAmount(const int32 NewPlayerAmo
 void UECRGameInstance::UpdateSessionMatchStartedTimestamp(const double NewTimestamp)
 {
 	MatchCreationSettings.MatchStartedTime = NewTimestamp;
+	UpdateSessionSettings();
+}
+
+void UECRGameInstance::UpdateSessionDayTime(const FName NewDayTime)
+{
+	MatchCreationSettings.DayTimeName = NewDayTime;
 	UpdateSessionSettings();
 }
 
@@ -375,6 +419,10 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_GAME_VERSION, MatchCreationSettings.GameVersion,
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_WEATHER_NAME, MatchCreationSettings.WeatherName.ToString(),
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_DAYTIME_NAME, MatchCreationSettings.DayTimeName.ToString(),
+						EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_REGION, MatchCreationSettings.Region.ToString(),
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
 

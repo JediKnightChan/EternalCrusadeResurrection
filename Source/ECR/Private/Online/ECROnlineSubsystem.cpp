@@ -31,6 +31,12 @@ FECRMatchResult::FECRMatchResult(const FBlueprintSessionResult BlueprintSessionI
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_REGION, StringBuffer);
 	Region = FName{*StringBuffer};
 
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_WEATHER_NAME, StringBuffer);
+	Weather = FName{*StringBuffer};
+
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_DAYTIME_NAME, StringBuffer);
+	DayTime = FName{*StringBuffer};
+
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_CURRENT_PLAYER_AMOUNT, CurrentPlayerAmount);
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_STARTED_TIME, MatchStartedTimestamp);
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_FACTIONS, FactionsString);

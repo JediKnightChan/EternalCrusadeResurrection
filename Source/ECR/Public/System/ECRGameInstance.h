@@ -43,6 +43,9 @@ protected:
 	/** When OnLoginComplete fires, show main menu if success, or show error with GUISupervisor */
 	void OnLoginComplete(int32 LocalUserNum, bool bWasSuccessful, const FUniqueNetId& UserId, const FString& Error);
 
+	/** On logout event */
+	void OnLogoutComplete(int32 LocalUserNum, bool bWasSuccessful);
+
 	/** When OnCreateMatchComplete fires, save match creation parameters and travel to match map */
 	void OnCreateMatchComplete(FName SessionName, bool bWasSuccessful);
 
@@ -60,6 +63,10 @@ protected:
 public:
 	UECRGameInstance();
 
+	/** Log Out */
+	UFUNCTION(BlueprintCallable)
+	void LogOut();
+
 	/** Login user via Epic Account */
 	UFUNCTION(BlueprintCallable)
 	void LoginViaEpic(FString PlayerName);
@@ -76,8 +83,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void CreateMatch(const FString GameVersion, const FName ModeName,
 	                 const FName MapName, const FString MapPath, const FName MissionName,
-	                 const FName RegionName, const double TimeDelta, const TArray<FFactionAlliance> Alliances,
-	                 const TMap<FName, int32>
+	                 const FName RegionName, const double TimeDelta, const FName WeatherName,
+	                 const FName DayTimeName, const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
 	                 FactionNamesToCapacities, const TMap<FName, FText> FactionNamesToShortTexts);
 
 	/** Create match, by player (P2P) or dedicated server */
@@ -99,6 +106,10 @@ public:
 	/** Update match started timestamp */
 	UFUNCTION(BlueprintCallable)
 	void UpdateSessionMatchStartedTimestamp(double NewTimestamp);
+
+	/** Update current player amount */
+	UFUNCTION(BlueprintCallable)
+	void UpdateSessionDayTime(FName NewDayTime);
 
 	/** Leave match */
 	UFUNCTION(BlueprintCallable)
