@@ -17,6 +17,19 @@ UECRGameInstance::UECRGameInstance()
 	OnlineSubsystem = IOnlineSubsystem::Get();
 }
 
+void UECRGameInstance::LogOut()
+{
+	// Login
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
+		{
+			OnlineIdentityPtr->OnLogoutCompleteDelegates->AddUObject(this, &UECRGameInstance::OnLogoutComplete);
+			OnlineIdentityPtr->Logout(0);
+		}
+	}
+}
+
 
 void UECRGameInstance::LoginViaEpic(const FString PlayerName)
 {
@@ -83,6 +96,30 @@ void UECRGameInstance::OnLoginComplete(int32 LocalUserNum, const bool bWasSucces
 			GUISupervisor->HandleLoginFailed(Error);
 		}
 	}
+}
+
+void UECRGameInstance::OnLogoutComplete(int32 LocalUserNum, bool bWasSuccessful)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
+		{
+			OnlineIdentityPtr->ClearOnLogoutCompleteDelegates(0, this);
+		}
+	}
+
+	if (AECRGUIPlayerController* GUISupervisor = UECRUtilsLibrary::GetGUISupervisor(GetWorld()))
+	{
+		if (bWasSuccessful)
+		{
+			bIsLoggedIn = false;
+			GUISupervisor->HandleLogoutSuccess();
+		} else
+		{
+			GUISupervisor->HandleLogoutFailure();
+		}
+	}
+	
 }
 
 

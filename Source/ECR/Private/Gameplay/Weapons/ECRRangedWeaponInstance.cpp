@@ -10,6 +10,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/Camera/ECRCameraComponent.h"
+#include "Net/UnrealNetwork.h"
 #include "Physics/PhysicalMaterialWithTags.h"
 
 UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_ECR_Weapon_SteadyAimingCamera, "ECR.Weapon.SteadyAimingCamera");
@@ -161,6 +162,13 @@ float UECRRangedWeaponInstance::GetPhysicalMaterialAttenuation(const UPhysicalMa
 	return CombinedMultiplier;
 }
 
+void UECRRangedWeaponInstance::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ThisClass, CurrentHeat);
+}
+
 bool UECRRangedWeaponInstance::UpdateSpread(float DeltaSeconds)
 {
 	const float TimeSinceFired = GetWorld()->TimeSince(TimeLastFired);
@@ -168,7 +176,13 @@ bool UECRRangedWeaponInstance::UpdateSpread(float DeltaSeconds)
 	if (TimeSinceFired > SpreadRecoveryCooldownDelay)
 	{
 		const float CooldownRate = HeatToCoolDownPerSecondCurve.GetRichCurveConst()->Eval(CurrentHeat);
-		CurrentHeat = ClampHeat(CurrentHeat - (CooldownRate * DeltaSeconds));
+
+		// Update heat only on server
+		if (GetWorld()->GetNetMode() < NM_Client)
+		{
+			CurrentHeat = ClampHeat(CurrentHeat - (CooldownRate * DeltaSeconds));
+		}
+
 		CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat);
 	}
 

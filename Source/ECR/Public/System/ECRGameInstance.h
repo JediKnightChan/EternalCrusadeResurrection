@@ -43,6 +43,9 @@ protected:
 	/** When OnLoginComplete fires, show main menu if success, or show error with GUISupervisor */
 	void OnLoginComplete(int32 LocalUserNum, bool bWasSuccessful, const FUniqueNetId& UserId, const FString& Error);
 
+	/** On logout event */
+	void OnLogoutComplete(int32 LocalUserNum, bool bWasSuccessful);
+
 	/** When OnCreateMatchComplete fires, save match creation parameters and travel to match map */
 	void OnCreateMatchComplete(FName SessionName, bool bWasSuccessful);
 
@@ -59,6 +62,10 @@ protected:
 
 public:
 	UECRGameInstance();
+
+	/** Log Out */
+	UFUNCTION(BlueprintCallable)
+	void LogOut();
 
 	/** Login user via Epic Account */
 	UFUNCTION(BlueprintCallable)
@@ -103,7 +110,7 @@ public:
 	/** Update current player amount */
 	UFUNCTION(BlueprintCallable)
 	void UpdateSessionDayTime(FName NewDayTime);
-	
+
 	/** Leave match */
 	UFUNCTION(BlueprintCallable)
 	void DestroySession();
