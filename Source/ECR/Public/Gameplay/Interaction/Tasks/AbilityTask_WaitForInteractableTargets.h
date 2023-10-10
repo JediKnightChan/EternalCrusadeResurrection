@@ -47,6 +47,9 @@ protected:
 	void GrantAbilitiesToAbilitySystem(const FInteractionQuery& InteractQuery,
 	                                   const TArray<TScriptInterface<IInteractableTarget>>& InteractableTargets);
 
+	UFUNCTION(BlueprintCallable)
+	void ClearCache();
+	
 	// Does the trace affect the aiming pitch
 	bool bTraceAffectsAimPitch = true;
 

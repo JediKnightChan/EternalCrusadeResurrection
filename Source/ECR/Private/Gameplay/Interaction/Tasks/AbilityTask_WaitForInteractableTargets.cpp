@@ -329,3 +329,8 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 
 	LastUpdateOptions = Options;
 }
+
+void UAbilityTask_WaitForInteractableTargets::ClearCache()
+{
+	InteractionAbilityCache.Empty();
+}
