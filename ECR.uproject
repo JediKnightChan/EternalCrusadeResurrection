@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{E556D182-4ACA-68CD-7B6A-3FB68156C360}",
+	"EngineAssociation": "5.3",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -48,7 +48,7 @@
 			"Enabled": true
 		},
 		{
-			"Name": "MyOnlineSubsystemEOS",
+			"Name": "OnlineSubsystemEOS",
 			"Enabled": true
 		},
 		{

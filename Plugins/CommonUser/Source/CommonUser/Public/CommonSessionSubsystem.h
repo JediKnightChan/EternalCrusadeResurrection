@@ -10,7 +10,7 @@
 #if COMMONUSER_OSSV1
 #include "OnlineSubsystemTypes.h"
 #include "Interfaces/OnlineSessionInterface.h"
-#include "Public/OnlineSessionSettings.h"
+#include "OnlineSessionSettings.h"
 #else
 #include "Online/Lobbies.h"
 #endif // COMMONUSER_OSSV1

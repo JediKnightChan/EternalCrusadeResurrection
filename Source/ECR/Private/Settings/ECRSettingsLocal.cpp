@@ -136,10 +136,10 @@ void UECRSettingsLocal::AddOrUpdateCustomKeyboardBindings(const FName MappingNam
 			{
 				// Make sure that the mapping has a valid name, its possible to have an empty name
 				// if someone has marked a mapping as "Player Mappabe" but deleted the default field value
-				if (Mapping.PlayerMappableOptions.Name != NAME_None)
-				{
-					CustomKeyboardConfig.Add(Mapping.PlayerMappableOptions.Name, Mapping.Key);
-				}
+				if (Mapping.GetMappingName() != NAME_None)
+                {
+					CustomKeyboardConfig.Add(Mapping.GetMappingName(), Mapping.Key);
+                }
 			}
 		}
 
