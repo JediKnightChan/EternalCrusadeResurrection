@@ -85,6 +85,9 @@ AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 
 	BaseEyeHeight = 80.0f;
 	CrouchedEyeHeight = 50.0f;
+
+	GoingBackwardMultiplier = 1.0f;
+	GoingSidewaysMultiplier = 1.0f;
 }
 
 void AECRCharacter::PreInitializeComponents()

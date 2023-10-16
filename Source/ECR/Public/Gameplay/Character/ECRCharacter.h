@@ -78,6 +78,9 @@ public:
 	virtual bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override;
 	virtual bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override;
 
+	FORCEINLINE float GetGoingBackwardMultiplier() const { return GoingBackwardMultiplier; }
+	FORCEINLINE float GetGoingSidewaysMultiplier() const { return GoingSidewaysMultiplier; }
+
 	void ToggleCrouch();
 
 	//~AActor interface
@@ -162,6 +165,14 @@ private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
 	float StartedFallingTime;
+
+	/** Multiplier for input value when going backwards */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
+	float GoingBackwardMultiplier;
+
+	/** Multiplier for input value when going left or right */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
+	float GoingSidewaysMultiplier;
 
 private:
 	UFUNCTION()
