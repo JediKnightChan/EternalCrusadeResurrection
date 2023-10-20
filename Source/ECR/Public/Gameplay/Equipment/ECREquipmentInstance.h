@@ -26,7 +26,7 @@ public:
 	//~UObject interface
 	virtual bool IsSupportedForNetworking() const override { return true; }
 	virtual UWorld* GetWorld() const override final;
-	
+
 	//~End of UObject interface
 
 	UFUNCTION(BlueprintPure, Category=Equipment)
@@ -81,11 +81,12 @@ private:
 	TArray<FName> VisibilityChannels;
 
 protected:
-	UPROPERTY(ReplicatedUsing=OnRep_bVisible)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"), ReplicatedUsing=OnRep_bVisible)
 	bool bVisible = true;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	bool bEquipped = false;
-	
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	bool bVisibleOnEquip = true;

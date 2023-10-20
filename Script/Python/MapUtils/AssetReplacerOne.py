@@ -18,8 +18,8 @@ def get_path_from_ref(string):
 
 
 
-asset_to_replace_from = "/Script/Engine.StaticMesh'/Game/PROPS/Gameplay/SM_PROP_Tank_Barrier_01.SM_PROP_Tank_Barrier_01'"
-asset_to_replace_to = "/Script/Engine.Blueprint'/Game/Blueprints/InWorldAssets/Blockers/B_WA_Tank_Blocker_Barrier1.B_WA_Tank_Blocker_Barrier1'"
+asset_to_replace_from = "/Script/Engine.StaticMesh'/Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_Pipes_01.SM_ControlCenter_Pipes_01'"
+asset_to_replace_to = "/Script/Engine.Blueprint'/Game/Blueprints/InWorldAssets/Traps/B_A_Trap_BigFlamethrower.B_A_Trap_BigFlamethrower'"
 actors_to_replace = []
 
 asset_to_replace_from = get_path_from_ref(asset_to_replace_from)

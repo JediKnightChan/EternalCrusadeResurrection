@@ -1,8 +1,8 @@
 import json
 import os.path
 
-raw_filename = "Raw/Medusa/medusa_background.raw.json"
-new_filename = "Usual/Medusa/medusa_background.json"
+raw_filename = "Raw/Arena5v5/arena5v5_gm.json"
+new_filename = "Usual/Arena5v5/arena5v5_gm.json"
 
 with open(raw_filename, "rb") as f:
     data = json.load(f)
@@ -100,6 +100,9 @@ for i, export_struc in enumerate(data["Exports"]):
         sm_ref = export_struc["Data"][0]["Value"]
         if sm_ref > 0:
             print("SM_REF > 0", sm_ref)
+            continue
+        if -sm_ref not in import_map:
+            print("! Skipping")
             continue
         sm_name = import_map[-sm_ref]
         sm_full_name = f"{buildings_imports.get(sm_name, sm_name)}.{sm_name}"

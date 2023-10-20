@@ -8,13 +8,13 @@ import re
 
 # Change me!
 map_data_filepath = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                    "MapData/Maps/Usual/Medusa/medusa_background.json"
+                    "MapData/Maps/Usual/Arena5v5/arena5v5_gm.json"
 
 EXCLUDE_ENGINE_ASSETS = True
 
 level_library = unreal.EditorLevelLibrary
 editor_asset_library = unreal.EditorAssetLibrary
-# relative_offset = unreal.Vector(-167598.703125, -1021464.375, +96750.0)
+# relative_offset_loc = unreal.Vector(787400, 787400, 0)
 relative_offset_loc = unreal.Vector(0, 0, 0)
 
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/"
@@ -35,10 +35,13 @@ for element in data:
             continue
         asset = editor_asset_library.find_asset_data(path).get_asset()
         actor = level_library.spawn_actor_from_object(asset, transform["loc"])
-        actor.set_actor_rotation(
-            unreal.Rotator(pitch=transform["rot"][0], roll=transform["rot"][1], yaw=transform["rot"][2]), True)
-        actor.set_actor_scale3d(transform["scale"])
-        current_location = actor.get_actor_location()
-        actor.set_actor_location(current_location + relative_offset_loc, False, False)
+        if actor:
+            actor.set_actor_rotation(
+                unreal.Rotator(pitch=transform["rot"][0], roll=transform["rot"][1], yaw=transform["rot"][2]), True)
+            actor.set_actor_scale3d(transform["scale"])
+            current_location = actor.get_actor_location()
+            actor.set_actor_location(current_location + relative_offset_loc, False, False)
+        else:
+            print(f"Error: Couldn't spawn actor for {path}")
     else:
         print(f"Error: Asset {path} doesn't exist")

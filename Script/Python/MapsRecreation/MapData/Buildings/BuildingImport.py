@@ -11,9 +11,9 @@ import unreal
 DO_DELETE_IF_EXISTS = False
 ASSET_DIR = "/Game/Buildings/Blueprints/"
 # ASSET_DIR = "/Game/PROPS/GamePlay/"
-# ASSET_DIR = "/Game/Graybox/Buildings/"
+# ASSET_DIR = "/Game/Graybox/GB_Defense/"
 JSON_FILEPATH = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                "MapData/Buildings/Files/BP_CaputurePoint_Building_48x48.json"
+                "MapData/Buildings/Files/BP_STRUC_RooftopVent_01.json"
 ASSET_NAME_OVERRIDE = ""
 if ASSET_NAME_OVERRIDE:
     ASSET_NAME = ASSET_NAME_OVERRIDE

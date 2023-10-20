@@ -1,7 +1,7 @@
 import json
 import os.path
 
-raw_filename = "Files/BP_CaputurePoint_Building_48x48.raw.json"
+raw_filename = "Files/BP_STRUC_RooftopVent_01.raw.json"
 filename = raw_filename.replace(".raw.json", ".json")
 
 with open(raw_filename, "rb") as f:
