@@ -2,6 +2,7 @@
 
 #include "ECRCharacter.h"
 #include "EnhancedInputComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/Player/ECRPlayerController.h"
 #include "Input/ECRInputComponent.h"
@@ -38,6 +39,21 @@ void UECRHeroComponent::Input_Move(const FInputActionValue& InputActionValue)
 		ECRController->SetIsAutoRunning(false);
 	}
 
+	float BackwardsMultiplier = 1.0f;
+	float SidewaysMultiplier = 1.0f;
+	bool OrientsToMovement = false;
+	
+	if (AECRCharacter* Character = Cast<AECRCharacter>(Pawn))
+	{
+		BackwardsMultiplier = Character->GetGoingBackwardMultiplier();
+		SidewaysMultiplier = Character->GetGoingSidewaysMultiplier();
+		
+		if (UCharacterMovementComponent* CharMoveComp = Cast<UCharacterMovementComponent>(Character->GetMovementComponent()))
+		{
+			OrientsToMovement = CharMoveComp->bOrientRotationToMovement;
+		}
+	}
+
 	if (Controller)
 	{
 		const FVector2D Value = InputActionValue.Get<FVector2D>();
@@ -46,13 +62,23 @@ void UECRHeroComponent::Input_Move(const FInputActionValue& InputActionValue)
 		if (Value.X != 0.0f)
 		{
 			const FVector MovementDirection = MovementRotation.RotateVector(FVector::RightVector);
-			Pawn->AddMovementInput(MovementDirection, Value.X);
+			float XScaleValue = FMath::Clamp(Value.X, -1.0f, 1.0f);
+			if (!OrientsToMovement)
+			{
+				XScaleValue = XScaleValue * SidewaysMultiplier;
+			}
+			Pawn->AddMovementInput(MovementDirection, XScaleValue);
 		}
 
 		if (Value.Y != 0.0f)
 		{
 			const FVector MovementDirection = MovementRotation.RotateVector(FVector::ForwardVector);
-			Pawn->AddMovementInput(MovementDirection, Value.Y);
+			float YScaleValue = FMath::Clamp(Value.Y, -1.0f, 1.0f);
+			if (!OrientsToMovement && YScaleValue < 0)
+			{
+				YScaleValue = YScaleValue * BackwardsMultiplier;
+			}
+			Pawn->AddMovementInput(MovementDirection, YScaleValue);
 		}
 	}
 }

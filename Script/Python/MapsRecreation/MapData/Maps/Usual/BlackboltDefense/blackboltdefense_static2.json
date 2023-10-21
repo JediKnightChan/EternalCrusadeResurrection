@@ -1,0 +1,3762 @@
+[
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                423979.0,
+                -457431.125,
+                -79345.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                120.00000762939453
+            ],
+            "scale": [
+                1.0,
+                47.5,
+                19.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                420489.90625,
+                -456477.9375,
+                -79345.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -149.9999542236328
+            ],
+            "scale": [
+                1.0,
+                47.5,
+                19.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                440407.15625,
+                -447890.53125,
+                -76830.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                30.000070571899414
+            ],
+            "scale": [
+                22.624576568603516,
+                6.473274230957031,
+                6.617183208465576
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                438034.1875,
+                -449260.53125,
+                -76830.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                30.000070571899414
+            ],
+            "scale": [
+                18.329153060913086,
+                6.473274230957031,
+                6.617183208465576
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                406792.125,
+                -480864.6875,
+                -80273.34375
+            ],
+            "rot": [
+                0.0003961509501095861,
+                -179.99989318847656,
+                -149.9994354248047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                406349.375,
+                -482497.8125,
+                -80323.3359375
+            ],
+            "rot": [
+                0.0,
+                4.095599251741078e-06,
+                30.0002384185791
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_TOPWallBroken_6m_A.SM_TOPWallBroken_6m_A",
+        "transform": {
+            "loc": [
+                406901.40625,
+                -478653.875,
+                -80273.3359375
+            ],
+            "rot": [
+                0.0004234717052895576,
+                89.99995422363281,
+                -59.99990463256836
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_TOPWallBroken_3m_A.SM_TOPWallBroken_3m_A",
+        "transform": {
+            "loc": [
+                407292.65625,
+                -479201.65625,
+                -80273.3359375
+            ],
+            "rot": [
+                0.0004234717052895576,
+                89.99995422363281,
+                -59.99990463256836
+            ],
+            "scale": [
+                1.272413969039917,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_02.SM_Floor_MetalMesh_6m_02",
+        "transform": {
+            "loc": [
+                407454.84375,
+                -482716.46875,
+                -80308.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.268126470677089e-05,
+                -149.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_02.SM_Floor_MetalMesh_6m_02",
+        "transform": {
+            "loc": [
+                407240.75,
+                -483173.71875,
+                -80308.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.84514031188155e-07,
+                119.99972534179688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                404552.875,
+                -479386.25,
+                -79123.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737594938196708e-05,
+                -59.999839782714844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_E.SM_DAMAGE_FloorTile_12x12_E",
+        "transform": {
+            "loc": [
+                406348.375,
+                -482497.28125,
+                -79123.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737594938196708e-05,
+                -59.999839782714844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                406792.125,
+                -480864.6875,
+                -79073.34375
+            ],
+            "rot": [
+                0.0003961509501095861,
+                -179.99989318847656,
+                -149.9994354248047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                406349.375,
+                -482497.8125,
+                -79123.3359375
+            ],
+            "rot": [
+                0.0,
+                4.095599251741078e-06,
+                30.0002384185791
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_TOPWallBroken_6m_A.SM_TOPWallBroken_6m_A",
+        "transform": {
+            "loc": [
+                405591.34375,
+                -478786.78125,
+                -79073.3359375
+            ],
+            "rot": [
+                7.51320767449215e-05,
+                89.99994659423828,
+                -59.999969482421875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_TOPWallBroken_3m_A.SM_TOPWallBroken_3m_A",
+        "transform": {
+            "loc": [
+                405889.25,
+                -479302.90625,
+                -79073.3359375
+            ],
+            "rot": [
+                7.51320767449215e-05,
+                89.99994659423828,
+                -59.999969482421875
+            ],
+            "scale": [
+                1.269631028175354,
+                1.0,
+                0.7341390252113342
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_TOPWallBroken_6m_A.SM_TOPWallBroken_6m_A",
+        "transform": {
+            "loc": [
+                407387.78125,
+                -481898.3125,
+                -79123.3359375
+            ],
+            "rot": [
+                -3.415094397496432e-05,
+                -89.99958038330078,
+                120.00055694580078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_TOPWallBroken_6m_A.SM_TOPWallBroken_6m_A",
+        "transform": {
+            "loc": [
+                406795.875,
+                -480873.0,
+                -79073.3359375
+            ],
+            "rot": [
+                -0.00026637734845280647,
+                89.99993896484375,
+                -59.999725341796875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                407591.28125,
+                -482840.8125,
+                -79099.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.268126470677089e-05,
+                -149.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                407412.625,
+                -482283.53125,
+                -79099.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.268126470677089e-05,
+                -149.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                407395.625,
+                -480043.96875,
+                -80292.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.84513235380291e-07,
+                119.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_3mx3mx0m_A.SM_WallBroken_3mx3mx0m_A",
+        "transform": {
+            "loc": [
+                406672.625,
+                -480657.6875,
+                -79123.34375
+            ],
+            "rot": [
+                -0.0006352075724862516,
+                -89.99955749511719,
+                120.00066375732422
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_E.SM_DAMAGE_FloorTile_12x12_E",
+        "transform": {
+            "loc": [
+                406672.625,
+                -480657.6875,
+                -79073.34375
+            ],
+            "rot": [
+                0.0005600755102932453,
+                -179.99949645996094,
+                30.001232147216797
+            ],
+            "scale": [
+                0.25,
+                0.25,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_TOPWallBroken_6m_A.SM_TOPWallBroken_6m_A",
+        "transform": {
+            "loc": [
+                406219.375,
+                -479874.5,
+                -79073.3359375
+            ],
+            "rot": [
+                -0.00026637734845280647,
+                89.99993896484375,
+                -59.999725341796875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                408150.03125,
+                -482556.5,
+                -79099.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.268126470677089e-05,
+                -149.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DoorBroken_6X6_D.SM_DoorBroken_6X6_D",
+        "transform": {
+            "loc": [
+                406505.53125,
+                -480970.1875,
+                -80272.734375
+            ],
+            "rot": [
+                -0.00045079246046952903,
+                -0.00017042382387444377,
+                -150.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx1_5m_A.SM_WallBroken_6mx3mx1_5m_A",
+        "transform": {
+            "loc": [
+                406716.75,
+                -480848.21875,
+                -80272.734375
+            ],
+            "rot": [
+                -0.00045079246046952903,
+                -0.00017042382387444377,
+                -150.00009155273438
+            ],
+            "scale": [
+                0.8596090078353882,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3m_A.SM_WallBroken_6mx3m_A",
+        "transform": {
+            "loc": [
+                406000.625,
+                -481261.71875,
+                -80272.734375
+            ],
+            "rot": [
+                -0.00045079246046952903,
+                -0.00017042382387444377,
+                -150.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                406132.96875,
+                -479835.75,
+                -81472.5078125
+            ],
+            "rot": [
+                -0.0004234717052895576,
+                -179.99989318847656,
+                -59.9997673034668
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                406733.8125,
+                -480874.40625,
+                -81522.5078125
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681277439696714e-05,
+                -149.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_D.SM_DAMAGE_FloorTile_12x12_D",
+        "transform": {
+            "loc": [
+                406733.8125,
+                -480874.40625,
+                -81522.5078125
+            ],
+            "rot": [
+                0.0,
+                4.0956001612357795e-06,
+                30.0002384185791
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                406733.8125,
+                -480874.40625,
+                -81522.5078125
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737594938196708e-05,
+                -59.999839782714844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                404493.75,
+                -479396.5625,
+                -81522.5078125
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737594938196708e-05,
+                -59.999839782714844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                406575.625,
+                -478204.875,
+                -81523.3203125
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681298358074855e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx3m_B.SM_WallBroken_6mx3mx3m_B",
+        "transform": {
+            "loc": [
+                406504.625,
+                -480970.65625,
+                -79674.734375
+            ],
+            "rot": [
+                -0.00045079246046952903,
+                -0.00017042382387444377,
+                -150.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_TOPWallBroken_6m_A.SM_TOPWallBroken_6m_A",
+        "transform": {
+            "loc": [
+                406504.625,
+                -480970.65625,
+                -79972.734375
+            ],
+            "rot": [
+                90.0,
+                149.9988250732422,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx0m_A.SM_WallBroken_6mx3mx0m_A",
+        "transform": {
+            "loc": [
+                405752.0,
+                -481405.1875,
+                -79118.734375
+            ],
+            "rot": [
+                0.00040298112435266376,
+                179.99949645996094,
+                30.00031089782715
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                406488.15625,
+                -480406.25,
+                -79096.3359375
+            ],
+            "rot": [
+                0.00018441509746480733,
+                -179.99989318847656,
+                -149.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                406210.65625,
+                -479925.59375,
+                -79096.3359375
+            ],
+            "rot": [
+                0.0001707547198748216,
+                -179.99989318847656,
+                -60.00016403198242
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                405976.125,
+                -478883.25,
+                -79096.3359375
+            ],
+            "rot": [
+                0.00018441509746480733,
+                -179.99989318847656,
+                -150.00022888183594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                406814.28125,
+                -479836.90625,
+                -79096.3359375
+            ],
+            "rot": [
+                0.0001707547198748216,
+                -179.99989318847656,
+                -60.00016403198242
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                407084.625,
+                -480349.40625,
+                -79096.3359375
+            ],
+            "rot": [
+                0.00018441509746480733,
+                -179.99989318847656,
+                -150.00022888183594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                406220.59375,
+                -479396.78125,
+                -79096.3359375
+            ],
+            "rot": [
+                0.00018441509746480733,
+                -179.99989318847656,
+                -150.00022888183594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx6mx0m_A.SM_WallBroken_6mx6mx0m_A",
+        "transform": {
+            "loc": [
+                406806.90625,
+                -480850.375,
+                -80272.734375
+            ],
+            "rot": [
+                -0.00045762263471260667,
+                -0.00017900968668982387,
+                30.00008201599121
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9495850205421448
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                406502.875,
+                -481001.75,
+                -79399.3359375
+            ],
+            "rot": [
+                -90.0,
+                120.00099182128906,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                405991.09375,
+                -481297.15625,
+                -79549.3359375
+            ],
+            "rot": [
+                0.00022539623023476452,
+                90.00007629394531,
+                30.000295639038086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                407047.5625,
+                -480687.1875,
+                -79417.3359375
+            ],
+            "rot": [
+                9.56226431299001e-05,
+                -89.99933624267578,
+                -149.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx0m_B.SM_WallBroken_6mx3mx0m_B",
+        "transform": {
+            "loc": [
+                406781.96875,
+                -480807.0625,
+                -79120.734375
+            ],
+            "rot": [
+                0.0006147170206531882,
+                179.999755859375,
+                30.000669479370117
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9714329838752747
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                405943.0625,
+                -478555.96875,
+                -79496.3359375
+            ],
+            "rot": [
+                0.0004781132156495005,
+                -89.99950408935547,
+                -149.99957275390625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                406146.5,
+                -478438.5,
+                -79886.3359375
+            ],
+            "rot": [
+                -0.0006693585310131311,
+                89.99994659423828,
+                30.000097274780273
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_02.SM_Floor_MetalMesh_6m_02",
+        "transform": {
+            "loc": [
+                408295.0,
+                -482831.8125,
+                -79533.3359375
+            ],
+            "rot": [
+                -90.0,
+                -59.998870849609375,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_02.SM_Floor_MetalMesh_6m_02",
+        "transform": {
+            "loc": [
+                408793.0,
+                -482544.28125,
+                -79533.3359375
+            ],
+            "rot": [
+                90.0,
+                -119.99981689453125,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_02.SM_Floor_MetalMesh_6m_02",
+        "transform": {
+            "loc": [
+                408793.0,
+                -482544.28125,
+                -80113.3359375
+            ],
+            "rot": [
+                -90.0,
+                30.00177001953125,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_02.SM_Floor_MetalMesh_6m_02",
+        "transform": {
+            "loc": [
+                408295.0,
+                -482831.8125,
+                -80113.3359375
+            ],
+            "rot": [
+                90.0,
+                -101.565185546875,
+                18.434955596923828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_02.SM_Floor_MetalMesh_6m_02",
+        "transform": {
+            "loc": [
+                407792.75,
+                -483121.75,
+                -79668.3359375
+            ],
+            "rot": [
+                90.0,
+                -129.46249389648438,
+                -9.462335586547852
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                406968.59375,
+                -478698.25,
+                -79417.3359375
+            ],
+            "rot": [
+                0.00010245283192489296,
+                -89.99935913085938,
+                120.00025939941406
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                407693.1875,
+                -479953.125,
+                -79641.3359375
+            ],
+            "rot": [
+                2.7320755179971457e-05,
+                90.00065612792969,
+                -60.0000114440918
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                407405.96875,
+                -479456.0,
+                -79805.3359375
+            ],
+            "rot": [
+                -90.0,
+                30.000877380371094,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                407116.125,
+                -478953.71875,
+                -79958.3359375
+            ],
+            "rot": [
+                0.00013660377589985728,
+                90.00040435791016,
+                -59.999820709228516
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                405568.34375,
+                -481181.09375,
+                -80652.3359375
+            ],
+            "rot": [
+                90.0,
+                98.6597900390625,
+                -51.3402099609375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_02.SM_Floor_MetalMesh_6m_02",
+        "transform": {
+            "loc": [
+                405730.78125,
+                -481462.40625,
+                -81153.3359375
+            ],
+            "rot": [
+                -0.00011611320951487869,
+                90.00021362304688,
+                -59.999725341796875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                406823.0625,
+                -478446.28125,
+                -78553.3359375
+            ],
+            "rot": [
+                -90.0,
+                30.00095558166504,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_E.SM_DAMAGE_FloorTile_12x12_E",
+        "transform": {
+            "loc": [
+                406157.4375,
+                -479845.40625,
+                -80323.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                2.5068495233426802e-05,
+                120.00029754638672
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_E.SM_DAMAGE_FloorTile_12x12_E",
+        "transform": {
+            "loc": [
+                406349.3125,
+                -482499.0625,
+                -80323.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737594938196708e-05,
+                -59.999839782714844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_D.SM_DAMAGE_FloorTile_12x12_D",
+        "transform": {
+            "loc": [
+                406187.0625,
+                -479816.8125,
+                -80323.3359375
+            ],
+            "rot": [
+                0.0,
+                4.0956001612357795e-06,
+                30.0002384185791
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                405268.9375,
+                -478926.46875,
+                -80323.3359375
+            ],
+            "rot": [
+                7.000000096013537e-06,
+                2.499999936844688e-05,
+                120.00029754638672
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_01.SM_Floor_MetalMesh_6m_01",
+        "transform": {
+            "loc": [
+                406698.625,
+                -478448.8125,
+                -80292.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.268123378395103e-05,
+                -150.00022888183594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_05.SM_Floor_MetalMesh_6m_05",
+        "transform": {
+            "loc": [
+                407071.84375,
+                -480823.1875,
+                -80292.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.84513235380291e-07,
+                119.99986267089844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                405788.5,
+                -478626.46875,
+                -80323.3359375
+            ],
+            "rot": [
+                7.000000096013537e-06,
+                2.499999936844688e-05,
+                120.00029754638672
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_03.SM_Floor_MetalMesh_6m_03",
+        "transform": {
+            "loc": [
+                404922.65625,
+                -479426.53125,
+                -80323.3359375
+            ],
+            "rot": [
+                7.000000096013537e-06,
+                2.499999936844688e-05,
+                120.00029754638672
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_02.SM_Floor_MetalMesh_6m_02",
+        "transform": {
+            "loc": [
+                404652.65625,
+                -478958.875,
+                -80323.3359375
+            ],
+            "rot": [
+                7.000000096013537e-06,
+                2.499999936844688e-05,
+                120.00029754638672
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_E.SM_DAMAGE_FloorTile_12x12_E",
+        "transform": {
+            "loc": [
+                406187.0625,
+                -479816.8125,
+                -80323.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737613128090743e-05,
+                -60.00014877319336
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_24X3_Plain_A.SM_STRUC_DAMAGE_Building_Wall_24X3_Plain_A",
+        "transform": {
+            "loc": [
+                406626.375,
+                -478177.53125,
+                -79078.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681277439696714e-05,
+                -149.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_3mx3mx0m_A.SM_WallBroken_3mx3mx0m_A",
+        "transform": {
+            "loc": [
+                406787.15625,
+                -480856.0,
+                -80273.3359375
+            ],
+            "rot": [
+                0.0004234717052895576,
+                89.99995422363281,
+                -59.99990463256836
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_A.SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_A",
+        "transform": {
+            "loc": [
+                405902.34375,
+                -481724.84375,
+                -81473.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A",
+        "transform": {
+            "loc": [
+                406502.375,
+                -482764.09375,
+                -80873.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_B.SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_B",
+        "transform": {
+            "loc": [
+                406952.34375,
+                -483543.46875,
+                -81473.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_A.SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_A",
+        "transform": {
+            "loc": [
+                406371.875,
+                -478336.71875,
+                -80273.3359375
+            ],
+            "rot": [
+                0.0,
+                4.0956001612357795e-06,
+                30.0002384185791
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_Window_6X6_Plain_A1.SM_STRUC_DAMAGE_Building_Wall_Window_6X6_Plain_A1",
+        "transform": {
+            "loc": [
+                405332.40625,
+                -478936.28125,
+                -80273.3359375
+            ],
+            "rot": [
+                0.0,
+                4.0956001612357795e-06,
+                30.0002384185791
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx0m_B.SM_WallBroken_6mx3mx0m_B",
+        "transform": {
+            "loc": [
+                405729.875,
+                -481426.0,
+                -81473.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx0m_B.SM_WallBroken_6mx3mx0m_B",
+        "transform": {
+            "loc": [
+                405307.375,
+                -478892.96875,
+                -80273.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681199223152362e-05,
+                -150.000244140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx0m_A.SM_WallBroken_6mx3mx0m_A",
+        "transform": {
+            "loc": [
+                404553.875,
+                -479327.9375,
+                -79073.3359375
+            ],
+            "rot": [
+                0.00028003775514662266,
+                -179.99937438964844,
+                30.000289916992188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_A.SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_A",
+        "transform": {
+            "loc": [
+                406638.625,
+                -478182.71875,
+                -80273.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737613128090743e-05,
+                -60.00016403198242
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_E.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_E",
+        "transform": {
+            "loc": [
+                406783.71875,
+                -478444.15625,
+                -80273.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737613128090743e-05,
+                -60.00016403198242
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx0m_B.SM_WallBroken_6mx3mx0m_B",
+        "transform": {
+            "loc": [
+                406787.125,
+                -478442.125,
+                -79676.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737613128090743e-05,
+                -60.00016403198242
+            ],
+            "scale": [
+                0.8099340200424194,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx3m_B.SM_WallBroken_6mx3mx3m_B",
+        "transform": {
+            "loc": [
+                407053.75,
+                -478911.78125,
+                -80273.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737613128090743e-05,
+                -60.00016403198242
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx6m_A.SM_WallBroken_6mx6m_A",
+        "transform": {
+            "loc": [
+                407501.25,
+                -479686.875,
+                -80273.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737613128090743e-05,
+                -60.00016403198242
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx3m_C.SM_WallBroken_6mx3mx3m_C",
+        "transform": {
+            "loc": [
+                407352.71875,
+                -479429.71875,
+                -80273.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737613128090743e-05,
+                -60.00016403198242
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx6mx0m_A.SM_WallBroken_6mx6mx0m_A",
+        "transform": {
+            "loc": [
+                406643.28125,
+                -478200.75,
+                -81478.34375
+            ],
+            "rot": [
+                0.0003415094397496432,
+                4.0737555536907166e-05,
+                -60.00025939941406
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Railing01_BeamSupport01_12_A.SM_STRUC_DAMAGE_Railing01_BeamSupport01_12_A",
+        "transform": {
+            "loc": [
+                406357.375,
+                -482512.90625,
+                -80293.3359375
+            ],
+            "rot": [
+                0.0,
+                4.095584699825849e-06,
+                30.000394821166992
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Railing01_BeamSupport01_12_A.SM_STRUC_DAMAGE_Railing01_BeamSupport01_12_A",
+        "transform": {
+            "loc": [
+                406957.375,
+                -483552.15625,
+                -80293.3359375
+            ],
+            "rot": [
+                0.0,
+                4.095584699825849e-06,
+                30.000394821166992
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_E.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_E",
+        "transform": {
+            "loc": [
+                406639.75,
+                -478194.71875,
+                -79088.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737613128090743e-05,
+                -60.00016403198242
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx6mx0m_A.SM_WallBroken_6mx6mx0m_A",
+        "transform": {
+            "loc": [
+                406911.75,
+                -478665.84375,
+                -79088.3359375
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737613128090743e-05,
+                -60.00016403198242
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_ControlCenter_damage_V2_24x12_Wall_03.SM_ControlCenter_damage_V2_24x12_Wall_03",
+        "transform": {
+            "loc": [
+                406309.03125,
+                -482529.15625,
+                -79073.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_ControlCenter_damage_V2_24x12_Wall_01.SM_ControlCenter_damage_V2_24x12_Wall_01",
+        "transform": {
+            "loc": [
+                405084.09375,
+                -480407.4375,
+                -79073.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_ControlCenter_damage_V2_24x12_Wall_02.SM_ControlCenter_damage_V2_24x12_Wall_02",
+        "transform": {
+            "loc": [
+                405122.875,
+                -480472.75,
+                -80285.078125
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx0m_B.SM_WallBroken_6mx3mx0m_B",
+        "transform": {
+            "loc": [
+                407012.5,
+                -483577.53125,
+                -80235.078125
+            ],
+            "rot": [
+                0.0,
+                4.0956001612357795e-06,
+                30.0002384185791
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_ControlCenter_damage_V2_24x12_Wall_02.SM_ControlCenter_damage_V2_24x12_Wall_02",
+        "transform": {
+            "loc": [
+                406314.65625,
+                -482538.71875,
+                -80285.078125
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx6m_A.SM_WallBroken_6mx6m_A",
+        "transform": {
+            "loc": [
+                407992.5,
+                -483011.75,
+                -79141.9609375
+            ],
+            "rot": [
+                3.415094397496432e-05,
+                -179.999755859375,
+                -149.99957275390625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx3m_B.SM_WallBroken_6mx3mx3m_B",
+        "transform": {
+            "loc": [
+                407484.09375,
+                -483305.3125,
+                -79139.703125
+            ],
+            "rot": [
+                3.415094397496432e-05,
+                -179.999755859375,
+                -149.99957275390625
+            ],
+            "scale": [
+                0.9100840091705322,
+                1.0,
+                0.9411709904670715
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx6mx3m_A.SM_WallBroken_6mx6mx3m_A",
+        "transform": {
+            "loc": [
+                407471.5625,
+                -483312.5625,
+                -80287.9921875
+            ],
+            "rot": [
+                -0.00021856604143977165,
+                0.00039309513522312045,
+                29.999937057495117
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9101409912109375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_TOPWallBroken_6m_A.SM_TOPWallBroken_6m_A",
+        "transform": {
+            "loc": [
+                407472.78125,
+                -483311.78125,
+                -80213.6171875
+            ],
+            "rot": [
+                90.0,
+                -30.00054931640625,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A",
+        "transform": {
+            "loc": [
+                406202.34375,
+                -482244.5,
+                -80873.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A",
+        "transform": {
+            "loc": [
+                406802.375,
+                -483283.6875,
+                -80873.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx3m_A.SM_WallBroken_6mx3mx3m_A",
+        "transform": {
+            "loc": [
+                406371.875,
+                -478336.71875,
+                -79073.3359375
+            ],
+            "rot": [
+                8.879245433490723e-05,
+                -179.999755859375,
+                -149.9994354248047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx3m_B.SM_WallBroken_6mx3mx3m_B",
+        "transform": {
+            "loc": [
+                405852.09375,
+                -478636.65625,
+                -80275.3359375
+            ],
+            "rot": [
+                0.0,
+                4.0956001612357795e-06,
+                30.0002384185791
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A",
+        "transform": {
+            "loc": [
+                407498.65625,
+                -483239.59375,
+                -80873.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681277439696714e-05,
+                -149.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx0m_B.SM_WallBroken_6mx3mx0m_B",
+        "transform": {
+            "loc": [
+                406759.0,
+                -483308.8125,
+                -80873.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                -179.9999542236328,
+                120.00035095214844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx0m_A.SM_WallBroken_6mx3mx0m_A",
+        "transform": {
+            "loc": [
+                406159.0,
+                -482269.4375,
+                -80873.3359375
+            ],
+            "rot": [
+                -90.0,
+                120.00068664550781,
+                180.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_Window_6X6_Plain_A.SM_STRUC_DAMAGE_Building_Wall_Window_6X6_Plain_A",
+        "transform": {
+            "loc": [
+                406203.25,
+                -482243.9375,
+                -81473.3359375
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845400654739933e-07,
+                120.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A",
+        "transform": {
+            "loc": [
+                407498.15625,
+                -483238.71875,
+                -81473.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681277439696714e-05,
+                -149.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X12_Plain_A.SM_STRUC_DAMAGE_Building_Wall_6X12_Plain_A",
+        "transform": {
+            "loc": [
+                407961.46875,
+                -482971.3125,
+                -81473.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681277439696714e-05,
+                -149.99984741210938
+            ],
+            "scale": [
+                0.8993459939956665,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X12_Plain_A1.SM_STRUC_DAMAGE_Building_Wall_6X12_Plain_A1",
+        "transform": {
+            "loc": [
+                409013.71875,
+                -482363.75,
+                -81473.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681277439696714e-05,
+                -149.99984741210938
+            ],
+            "scale": [
+                0.8993459939956665,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X12_Plain_A.SM_STRUC_DAMAGE_Building_Wall_6X12_Plain_A",
+        "transform": {
+            "loc": [
+                408546.09375,
+                -482633.78125,
+                -81473.3359375
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681277439696714e-05,
+                -149.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_B.SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_B",
+        "transform": {
+            "loc": [
+                405323.1875,
+                -480804.46875,
+                -79223.0
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737596757186111e-05,
+                -59.999977111816406
+            ],
+            "scale": [
+                1.0,
+                0.22432099282741547,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_B.SM_STRUC_DAMAGE_Building_Wall_3X12_Plain_B",
+        "transform": {
+            "loc": [
+                405196.75,
+                -480585.34375,
+                -79136.0
+            ],
+            "rot": [
+                -0.00026637734845280647,
+                179.99993896484375,
+                120.000244140625
+            ],
+            "scale": [
+                1.0,
+                0.22432099282741547,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_Ex_W10_a.SM_PROP_AMB_Rubble_Ex_W10_a",
+        "transform": {
+            "loc": [
+                407870.59375,
+                -481812.71875,
+                -80502.2265625
+            ],
+            "rot": [
+                15.762272834777832,
+                -109.65769958496094,
+                157.25244140625
+            ],
+            "scale": [
+                0.4717029929161072,
+                1.0,
+                0.4071919918060303
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_Ex_W9_a.SM_PROP_AMB_Rubble_Ex_W9_a",
+        "transform": {
+            "loc": [
+                404928.875,
+                -480181.15625,
+                -80322.296875
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                89.99994659423828,
+                -149.9998321533203
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_Ex_W2_a.SM_PROP_AMB_Rubble_Ex_W2_a",
+        "transform": {
+            "loc": [
+                405513.71875,
+                -481194.46875,
+                -80322.296875
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                89.99994659423828,
+                -149.9998321533203
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_C.SM_PROP_AMB_Rubble_EXT_C",
+        "transform": {
+            "loc": [
+                405824.75,
+                -481673.09375,
+                -81475.0
+            ],
+            "rot": [
+                90.0,
+                -30.000396728515625,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_EXT_D_b.SM_PROP_AMB_Rubble_EXT_D_b",
+        "transform": {
+            "loc": [
+                407567.375,
+                -483215.375,
+                -81488.0
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737594938196708e-05,
+                -59.999839782714844
+            ],
+            "scale": [
+                0.8259959816932678,
+                0.8259959816932678,
+                0.8259959816932678
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                406806.75,
+                -478603.875,
+                -81486.0
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                1.4737594938196708e-05,
+                -59.999839782714844
+            ],
+            "scale": [
+                0.8259959816932678,
+                0.8259959816932678,
+                0.8259959816932678
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B",
+        "transform": {
+            "loc": [
+                406715.59375,
+                -480884.03125,
+                -81486.0
+            ],
+            "rot": [
+                0.0,
+                6.789226517867064e-06,
+                5.000093460083008
+            ],
+            "scale": [
+                0.8259959816932678,
+                0.8259959816932678,
+                0.8259959816932678
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B",
+        "transform": {
+            "loc": [
+                407225.90625,
+                -482697.8125,
+                -80285.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                8.346437425643671e-06,
+                -179.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A.SM_PROP_AMB_Rubble_L_A",
+        "transform": {
+            "loc": [
+                406531.90625,
+                -481017.78125,
+                -79045.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681277439696714e-05,
+                -149.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                407076.09375,
+                -480298.28125,
+                -80285.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                8.346437425643671e-06,
+                -179.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_L_A_half_d.SM_PROP_AMB_Rubble_L_A_half_d",
+        "transform": {
+            "loc": [
+                405535.125,
+                -478751.5,
+                -80285.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_A.SM_PROP_AMB_Rubble_S_A",
+        "transform": {
+            "loc": [
+                406722.5625,
+                -481254.0,
+                -80285.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_GPLAY_FortifiedCover_05.SM_PROP_GPLAY_FortifiedCover_05",
+        "transform": {
+            "loc": [
+                412170.875,
+                -473786.4375,
+                -81455.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -60.000457763671875
+            ],
+            "scale": [
+                0.8596798777580261,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_GPLAY_FortifiedCoverFlatCorner_01.SM_PROP_GPLAY_FortifiedCoverFlatCorner_01",
+        "transform": {
+            "loc": [
+                410186.96875,
+                -475247.25,
+                -81452.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -60.0015869140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_F.SM_STRUC_DAMAGE_Building_PillarBroken_6m_F",
+        "transform": {
+            "loc": [
+                407853.84375,
+                -480219.6875,
+                -80278.0
+            ],
+            "rot": [
+                -0.0003210188588127494,
+                89.99982452392578,
+                30.000272750854492
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_E.SM_STRUC_DAMAGE_Building_PillarBroken_6m_E",
+        "transform": {
+            "loc": [
+                407811.5,
+                -480244.21875,
+                -80278.0
+            ],
+            "rot": [
+                -0.0003073585103265941,
+                89.9998779296875,
+                120.00029754638672
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_6m_H.SM_STRUC_DAMAGE_Building_Pillar_6m_H",
+        "transform": {
+            "loc": [
+                406649.15625,
+                -478159.09375,
+                -79120.0
+            ],
+            "rot": [
+                0.00046445283805951476,
+                -89.99961853027344,
+                30.00010871887207
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_E.SM_STRUC_DAMAGE_Building_PillarBroken_6m_E",
+        "transform": {
+            "loc": [
+                406946.25,
+                -478673.46875,
+                -79120.0
+            ],
+            "rot": [
+                0.00046445283805951476,
+                -89.99961853027344,
+                30.00010871887207
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                406657.84375,
+                -478154.0625,
+                -79690.0
+            ],
+            "rot": [
+                0.0,
+                4.0955519580165856e-06,
+                30.000669479370117
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_E.SM_STRUC_DAMAGE_Building_PillarBroken_6m_E",
+        "transform": {
+            "loc": [
+                406657.84375,
+                -478154.0625,
+                -78498.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845621207205113e-07,
+                120.00045776367188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.4226889610290527
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                406663.375,
+                -478149.6875,
+                -79197.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845482509263093e-07,
+                120.000244140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_6m_A.SM_STRUC_DAMAGE_Building_Pillar_6m_A",
+        "transform": {
+            "loc": [
+                405728.75,
+                -481446.71875,
+                -81492.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                405741.09375,
+                -481466.1875,
+                -80891.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845539352681953e-07,
+                120.00038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_E.SM_STRUC_DAMAGE_Building_PillarBroken_6m_E",
+        "transform": {
+            "loc": [
+                404535.25,
+                -479379.5625,
+                -78500.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_E.SM_STRUC_DAMAGE_Building_PillarBroken_6m_E",
+        "transform": {
+            "loc": [
+                405740.25,
+                -481466.8125,
+                -78500.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                405741.09375,
+                -481466.1875,
+                -79695.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681314728979487e-05,
+                -149.99957275390625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                405739.25,
+                -481464.9375,
+                -80357.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                405739.25,
+                -481464.9375,
+                -79197.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_6m_A.SM_STRUC_DAMAGE_Building_Pillar_6m_A",
+        "transform": {
+            "loc": [
+                406944.21875,
+                -483552.09375,
+                -81492.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                406956.625,
+                -483571.4375,
+                -80891.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845539352681953e-07,
+                120.00038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_E.SM_STRUC_DAMAGE_Building_PillarBroken_6m_E",
+        "transform": {
+            "loc": [
+                406955.875,
+                -483572.03125,
+                -78500.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                406956.625,
+                -483571.4375,
+                -79695.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681314728979487e-05,
+                -149.99957275390625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                406954.71875,
+                -483570.28125,
+                -80357.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                404536.125,
+                -479379.03125,
+                -79695.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681314728979487e-05,
+                -149.99957275390625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                406954.71875,
+                -483570.28125,
+                -79197.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_6m_A.SM_STRUC_DAMAGE_Building_Pillar_6m_A",
+        "transform": {
+            "loc": [
+                409079.53125,
+                -482344.625,
+                -81492.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845514341577655e-07,
+                120.00038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                409060.125,
+                -482356.96875,
+                -80891.0
+            ],
+            "rot": [
+                0.0,
+                4.095584699825849e-06,
+                30.000394821166992
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_E.SM_STRUC_DAMAGE_Building_PillarBroken_6m_E",
+        "transform": {
+            "loc": [
+                409059.6875,
+                -482356.0625,
+                -78500.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845514341577655e-07,
+                120.00038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                409060.125,
+                -482356.96875,
+                -79695.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845693966781255e-07,
+                120.00051879882812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                409057.84375,
+                -482357.15625,
+                -80357.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845514341577655e-07,
+                120.00038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                409061.375,
+                -482355.125,
+                -79197.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845514341577655e-07,
+                120.00038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                406658.75,
+                -478153.59375,
+                -80281.0
+            ],
+            "rot": [
+                0.00046445283805951476,
+                -89.99961853027344,
+                30.00010871887207
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_D.SM_STRUC_DAMAGE_Building_PillarBroken_6m_D",
+        "transform": {
+            "loc": [
+                407257.875,
+                -479193.28125,
+                -80281.0
+            ],
+            "rot": [
+                0.00046445283805951476,
+                -89.99961853027344,
+                30.00010871887207
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_6m_G.SM_STRUC_DAMAGE_Building_Pillar_6m_G",
+        "transform": {
+            "loc": [
+                406168.25,
+                -479820.0625,
+                -80147.0
+            ],
+            "rot": [
+                0.0,
+                4.0955519580165856e-06,
+                30.000669479370117
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                404534.21875,
+                -479377.84375,
+                -79197.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                406169.375,
+                -479818.15625,
+                -80280.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845482509263093e-07,
+                120.000244140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_D.SM_STRUC_DAMAGE_Building_PillarBroken_6m_D",
+        "transform": {
+            "loc": [
+                406167.21875,
+                -479818.3125,
+                -79546.0
+            ],
+            "rot": [
+                0.0,
+                4.0955519580165856e-06,
+                30.000669479370117
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                406763.28125,
+                -480850.59375,
+                -80147.0
+            ],
+            "rot": [
+                0.0,
+                4.0955519580165856e-06,
+                30.000669479370117
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_F.SM_STRUC_DAMAGE_Building_PillarBroken_6m_F",
+        "transform": {
+            "loc": [
+                406763.96875,
+                -480847.90625,
+                -78951.0
+            ],
+            "rot": [
+                0.0,
+                4.0955519580165856e-06,
+                30.000669479370117
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                409060.125,
+                -482356.96875,
+                -79118.0
+            ],
+            "rot": [
+                -0.00036200002068653703,
+                89.99994659423828,
+                120.000244140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                408020.8125,
+                -482956.96875,
+                -79118.0
+            ],
+            "rot": [
+                -0.00036200002068653703,
+                89.99994659423828,
+                120.000244140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                408013.5,
+                -482960.0625,
+                -79197.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845514341577655e-07,
+                120.00038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                409056.625,
+                -482358.96875,
+                -80278.0
+            ],
+            "rot": [
+                -90.0,
+                -59.999481201171875,
+                -90.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                408017.375,
+                -482958.96875,
+                -80278.0
+            ],
+            "rot": [
+                90.0,
+                -30.001708984375,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                408010.0,
+                -482962.125,
+                -80357.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845514341577655e-07,
+                120.00038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                408004.40625,
+                -482966.4375,
+                -80316.0
+            ],
+            "rot": [
+                0.0,
+                4.095584699825849e-06,
+                30.000394821166992
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Pillar_12m_F.SM_STRUC_DAMAGE_Building_Pillar_12m_F",
+        "transform": {
+            "loc": [
+                408004.40625,
+                -482966.4375,
+                -81511.0
+            ],
+            "rot": [
+                0.0,
+                4.095584699825849e-06,
+                30.000394821166992
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                408013.5,
+                -482960.0625,
+                -81437.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845514341577655e-07,
+                120.00038146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_F.SM_STRUC_DAMAGE_Building_PillarBroken_6m_F",
+        "transform": {
+            "loc": [
+                409074.21875,
+                -482375.40625,
+                -80279.0
+            ],
+            "rot": [
+                -90.0,
+                -45.9630126953125,
+                165.96372985839844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBase_01_A.SM_STRUC_DAMAGE_Building_PillarBase_01_A",
+        "transform": {
+            "loc": [
+                407854.03125,
+                -480222.0,
+                -80357.0
+            ],
+            "rot": [
+                2.0490566384978592e-05,
+                9.845482509263093e-07,
+                120.000244140625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_PillarBroken_6m_D.SM_STRUC_DAMAGE_Building_PillarBroken_6m_D",
+        "transform": {
+            "loc": [
+                407853.84375,
+                -480219.6875,
+                -80152.0
+            ],
+            "rot": [
+                0.0,
+                4.0955519580165856e-06,
+                30.000669479370117
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_24X6_Detail_A.SM_STRUC_DAMAGE_Building_Wall_24X6_Detail_A",
+        "transform": {
+            "loc": [
+                408986.84375,
+                -482329.96875,
+                -79070.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                1.2681291991611943e-05,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_6x6_02_A.SM_STRUC_CATH_Wall_6x6_02_A",
+        "transform": {
+            "loc": [
+                447568.84375,
+                -438265.65625,
+                -77125.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -149.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_6x6_02_A.SM_STRUC_CATH_Wall_6x6_02_A",
+        "transform": {
+            "loc": [
+                444730.96875,
+                -438830.25,
+                -77125.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                119.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx6m_A.SM_WallBroken_6mx6m_A",
+        "transform": {
+            "loc": [
+                407566.375,
+                -482258.71875,
+                -80324.1484375
+            ],
+            "rot": [
+                0.00021856604143977165,
+                -115.97444915771484,
+                120.0002670288086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_6mx3mx0m_A.SM_WallBroken_6mx3mx0m_A",
+        "transform": {
+            "loc": [
+                405697.53125,
+                -481440.625,
+                -80283.0
+            ],
+            "rot": [
+                -0.0003073585103265941,
+                179.999755859375,
+                120.00051879882812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_3mx3mx0m_A.SM_WallBroken_3mx3mx0m_A",
+        "transform": {
+            "loc": [
+                405133.5,
+                -480463.6875,
+                -80283.0
+            ],
+            "rot": [
+                -90.0,
+                -23.129730224609375,
+                -36.8698844909668
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_Ex_W7_a.SM_PROP_AMB_Rubble_Ex_W7_a",
+        "transform": {
+            "loc": [
+                404694.125,
+                -479723.28125,
+                -79150.0
+            ],
+            "rot": [
+                7.51320767449215e-05,
+                89.99994659423828,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_Ex_W6_a.SM_PROP_AMB_Rubble_Ex_W6_a",
+        "transform": {
+            "loc": [
+                405119.15625,
+                -480459.46875,
+                -79150.0
+            ],
+            "rot": [
+                7.51320767449215e-05,
+                89.99994659423828,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_Ex_W7_a.SM_PROP_AMB_Rubble_Ex_W7_a",
+        "transform": {
+            "loc": [
+                405844.125,
+                -481715.1875,
+                -79150.0
+            ],
+            "rot": [
+                7.51320767449215e-05,
+                89.99994659423828,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_Ex_W6_a.SM_PROP_AMB_Rubble_Ex_W6_a",
+        "transform": {
+            "loc": [
+                405559.125,
+                -481221.53125,
+                -79150.0
+            ],
+            "rot": [
+                7.51320767449215e-05,
+                89.99994659423828,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_Ex_W7_a.SM_PROP_AMB_Rubble_Ex_W7_a",
+        "transform": {
+            "loc": [
+                406284.15625,
+                -482477.25,
+                -79150.0
+            ],
+            "rot": [
+                7.51320767449215e-05,
+                89.99994659423828,
+                -149.9997100830078
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

@@ -85,6 +85,9 @@ AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 
 	BaseEyeHeight = 80.0f;
 	CrouchedEyeHeight = 50.0f;
+
+	GoingBackwardMultiplier = 1.0f;
+	GoingSidewaysMultiplier = 1.0f;
 }
 
 void AECRCharacter::PreInitializeComponents()
@@ -106,6 +109,8 @@ void AECRCharacter::BeginPlay()
 			//@TODO: SignificanceManager->RegisterObject(this, (EFortSignificanceType)SignificanceType);
 		}
 	}
+
+	StartedFallingZ = GetActorLocation().Z;
 }
 
 void AECRCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -385,6 +390,7 @@ void AECRCharacter::OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 
 	if (ECRMoveComp->MovementMode == MOVE_Falling)
 	{
 		StartedFallingTime = GetWorld()->GetTimeSeconds();
+		StartedFallingZ = GetActorLocation().Z;
 	}
 	else if (ECRMoveComp->MovementMode == MOVE_Walking)
 	{
@@ -393,12 +399,13 @@ void AECRCharacter::OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 
 			if (GetECRAbilitySystemComponent())
 			{
 				const float TimeFalling = GetWorld()->GetTimeSeconds() - StartedFallingTime;
+				const float DistanceFalling = StartedFallingZ - GetActorLocation().Z;
 
 				// Sending gameplay event for landing
 				FGameplayEventData Payload;
 				Payload.EventTag = FECRGameplayTags::Get().GameplayEvent_Landed;
 				Payload.Target = this;
-				Payload.EventMagnitude = TimeFalling;
+				Payload.EventMagnitude = DistanceFalling;
 
 				UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
 					this, FECRGameplayTags::Get().GameplayEvent_Landed, Payload);
