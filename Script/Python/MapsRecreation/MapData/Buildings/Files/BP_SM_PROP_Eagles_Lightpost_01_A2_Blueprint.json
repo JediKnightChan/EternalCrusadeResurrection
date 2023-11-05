@@ -1,0 +1,62 @@
+[
+    {
+        "path": "StaticMesh LightCone2.LightCone2",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                4000.0
+            ],
+            "scale": [
+                3.189951181411743,
+                3.189951181411743,
+                2.2381508350372314
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh LightCone2.LightCone2",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                5300.0
+            ],
+            "scale": [
+                1.8759461641311646,
+                1.8759461641311646,
+                2.5999643802642822
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/GamePlay/SM_PROP_Eagles_Lightpost_01_A.SM_PROP_Eagles_Lightpost_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

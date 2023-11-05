@@ -1,8 +1,8 @@
 import json
 import os.path
 
-raw_filename = "Raw/Arena5v5/arena5v5_gm.json"
-new_filename = "Usual/Arena5v5/arena5v5_gm.json"
+raw_filename = "Raw/Torias/torias_static1.json"
+new_filename = "Usual/Torias/torias_static1.json"
 
 with open(raw_filename, "rb") as f:
     data = json.load(f)
@@ -12,7 +12,7 @@ for i, import_struc in enumerate(data["Imports"]):
     asset_path = import_struc["ObjectName"]
     import_map[i + 1] = asset_path
 
-buildings_imports = {"Cube": "/Engine/BasicShapes/Cube.Cube"}
+buildings_imports = {"Cube": "/Engine/BasicShapes/Cube.Cube", "Sphere": "/Engine/BasicShapes/Sphere.Sphere"}
 for i, import_struc in enumerate(data["Imports"]):
     asset_path = import_struc["ObjectName"]
     buildings_prefixes = ["/Game/Buildings/", "/Game/PROPS/", "/Game/Blueprints/", "/Game/Graybox/",

@@ -1,0 +1,1182 @@
+[
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/Interior/Models/BP_SM_PROP_Int_OilLamp_02.BP_SM_PROP_Int_OilLamp_02",
+        "transform": {
+            "loc": [
+                151006.15625,
+                995485.0,
+                -59231.6171875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/Interior/Models/BP_SM_PROP_Wall_OilLamp_2.BP_SM_PROP_Wall_OilLamp_2",
+        "transform": {
+            "loc": [
+                147957.6875,
+                994305.9375,
+                -58475.5390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/Interior/Models/BP_SM_PROP_Wall_OilLamp_2.BP_SM_PROP_Wall_OilLamp_2",
+        "transform": {
+            "loc": [
+                149243.75,
+                1034200.9375,
+                -60950.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                10.000041961669922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/Interior/Models/BP_SM_PROP_Wall_OilLamp_2.BP_SM_PROP_Wall_OilLamp_2",
+        "transform": {
+            "loc": [
+                147648.375,
+                1033919.625,
+                -60950.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                10.000041961669922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Buildings/Structures/BP_SM_STRUC_PipeCover_Lrg_01.BP_SM_STRUC_PipeCover_Lrg_01",
+        "transform": {
+            "loc": [
+                154550.015625,
+                994153.0,
+                -61200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0002019999665208161
+            ],
+            "scale": [
+                2.75,
+                2.75,
+                2.75
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Buildings/Structures/BP_SM_STRUC_PipeCover_Lrg_01.BP_SM_STRUC_PipeCover_Lrg_01",
+        "transform": {
+            "loc": [
+                154550.0,
+                996607.0,
+                -61200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99962615966797
+            ],
+            "scale": [
+                2.75,
+                2.75,
+                2.75
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Buildings/Structures/BP_SM_STRUC_PipeCover_Lrg_01.BP_SM_STRUC_PipeCover_Lrg_01",
+        "transform": {
+            "loc": [
+                154550.0,
+                995382.0,
+                -61200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0002019999665208161
+            ],
+            "scale": [
+                2.75,
+                2.75,
+                2.75
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_LOD_Test_01.SM_LOD_Test_01",
+        "transform": {
+            "loc": [
+                154993.0,
+                998334.0,
+                -60358.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                153332.015625,
+                1022470.0625,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                153585.953125,
+                1022292.25,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                153839.890625,
+                1022114.4375,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                154093.828125,
+                1021936.625,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                154347.765625,
+                1021758.8125,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                154601.703125,
+                1021581.0,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                154855.640625,
+                1021403.1875,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                155109.578125,
+                1021225.4375,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                155363.515625,
+                1021047.625,
+                -62380.0
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                15.00007152557373,
+                54.999961853027344
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                155608.796875,
+                1020875.875,
+                -62299.765625
+            ],
+            "rot": [
+                1.3660377589985728e-05,
+                15.00007152557373,
+                54.999961853027344
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                155854.078125,
+                1020704.125,
+                -62219.5
+            ],
+            "rot": [
+                2.7320755179971457e-05,
+                24.999935150146484,
+                54.99983596801758
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                156084.21875,
+                1020542.9375,
+                -62088.48828125
+            ],
+            "rot": [
+                2.7320755179971457e-05,
+                24.999935150146484,
+                54.99983596801758
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                156314.375,
+                1020381.8125,
+                -61957.4453125
+            ],
+            "rot": [
+                2.7320755179971457e-05,
+                29.99994468688965,
+                54.99972915649414
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                156534.28125,
+                1020227.8125,
+                -61802.4453125
+            ],
+            "rot": [
+                2.7320755179971457e-05,
+                29.99994468688965,
+                54.99972915649414
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                156754.203125,
+                1020073.8125,
+                -61647.4453125
+            ],
+            "rot": [
+                2.7320755179971457e-05,
+                29.999893188476562,
+                54.999671936035156
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                156974.125,
+                1019919.8125,
+                -61492.4453125
+            ],
+            "rot": [
+                2.7320755179971457e-05,
+                29.999893188476562,
+                54.999671936035156
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                157194.03125,
+                1019765.8125,
+                -61337.4453125
+            ],
+            "rot": [
+                2.7320755179971457e-05,
+                14.999895095825195,
+                54.99949264526367
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                157439.3125,
+                1019594.0625,
+                -61257.2109375
+            ],
+            "rot": [
+                2.7320755179971457e-05,
+                14.999895095825195,
+                54.99949264526367
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                151303.0,
+                1023890.6875,
+                -62407.015625
+            ],
+            "rot": [
+                0.0,
+                5.000005722045898,
+                55.00001907348633
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                151554.453125,
+                1023714.6875,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                151808.390625,
+                1023536.875,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                152062.328125,
+                1023359.0625,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                152316.265625,
+                1023181.25,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                152570.203125,
+                1023003.4375,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                152824.140625,
+                1022825.625,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PORP_Interior_OverheadRail_9m_A.SM_PORP_Interior_OverheadRail_9m_A",
+        "transform": {
+            "loc": [
+                153078.078125,
+                1022647.875,
+                -62380.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                55.000030517578125
+            ],
+            "scale": [
+                0.34375,
+                0.34450000524520874,
+                0.34375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_05.SM_PROP_AMB_Rock_XLarge_05",
+        "transform": {
+            "loc": [
+                158387.15625,
+                992921.0,
+                -59354.2109375
+            ],
+            "rot": [
+                -28.124961853027344,
+                6.776583632017719e-06,
+                43.92450714111328
+            ],
+            "scale": [
+                4.25,
+                6.25,
+                4.25
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XXLarge_07.SM_PROP_AMB_Rock_XXLarge_07",
+        "transform": {
+            "loc": [
+                108131.859375,
+                1024513.875,
+                -61365.41796875
+            ],
+            "rot": [
+                -1.2637351751327515,
+                -1.075448751449585,
+                -129.0010986328125
+            ],
+            "scale": [
+                0.5,
+                0.5,
+                0.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_RockWall_a_2.SM_PROP_AMB_RockWall_a_2",
+        "transform": {
+            "loc": [
+                100979.828125,
+                1009817.75,
+                -59654.50390625
+            ],
+            "rot": [
+                1.1078907251358032,
+                -1.2356836795806885,
+                -37.534297943115234
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_RockWall_e_2.SM_PROP_AMB_RockWall_e_2",
+        "transform": {
+            "loc": [
+                103857.515625,
+                1019918.75,
+                -61749.859375
+            ],
+            "rot": [
+                -1.6591757535934448,
+                -0.010248005390167236,
+                -169.0577392578125
+            ],
+            "scale": [
+                2.1305606365203857,
+                1.3708992004394531,
+                1.3708992004394531
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_RockWall_a_2.SM_PROP_AMB_RockWall_a_2",
+        "transform": {
+            "loc": [
+                104438.21875,
+                1006416.5,
+                -59664.09375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -34.25109100341797
+            ],
+            "scale": [
+                0.8310369849205017,
+                0.8310369849205017,
+                0.8310369849205017
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_FloorSquare_01.SM_STRUC_AQ_STRHOLD_MED_FloorSquare_01",
+        "transform": {
+            "loc": [
+                154696.0,
+                990802.0,
+                -59148.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_MED_FloorSquare_01.SM_STRUC_AQ_STRHOLD_MED_FloorSquare_01",
+        "transform": {
+            "loc": [
+                154696.0,
+                990802.0,
+                -60361.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_SMALL_WallAngle_02.SM_STRUC_AQ_STRHOLD_SMALL_WallAngle_02",
+        "transform": {
+            "loc": [
+                155492.0,
+                999668.0,
+                -61155.78125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.5,
+                1.25,
+                1.25
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_SMALL_WallAngle_02.SM_STRUC_AQ_STRHOLD_SMALL_WallAngle_02",
+        "transform": {
+            "loc": [
+                154593.0,
+                999668.0,
+                -61155.78125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.5,
+                1.25,
+                1.25
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_AQ_STRHOLD_SMALL_WallAngle_02.SM_STRUC_AQ_STRHOLD_SMALL_WallAngle_02",
+        "transform": {
+            "loc": [
+                153689.0,
+                999668.0,
+                -61155.78125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.5,
+                1.25,
+                1.25
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_Door_01.SM_STRUC_Bastion_Door_01",
+        "transform": {
+            "loc": [
+                154994.0,
+                989142.0,
+                -60358.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Bastion_Door_01.SM_STRUC_Bastion_Door_01",
+        "transform": {
+            "loc": [
+                153634.0,
+                990505.0,
+                -60358.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Block_MED_01_A.SM_STRUC_Garage_Block_MED_01_A",
+        "transform": {
+            "loc": [
+                147884.640625,
+                1034443.375,
+                -59729.93359375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -79.26547241210938
+            ],
+            "scale": [
+                0.8125,
+                0.8125,
+                0.8125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Block_MED_01_A.SM_STRUC_Garage_Block_MED_01_A",
+        "transform": {
+            "loc": [
+                148311.25,
+                1034524.25,
+                -59729.93359375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -79.26547241210938
+            ],
+            "scale": [
+                0.8125,
+                0.8125,
+                0.8125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Block_MED_01_A.SM_STRUC_Garage_Block_MED_01_A",
+        "transform": {
+            "loc": [
+                148760.15625,
+                1034609.25,
+                -59729.93359375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -79.26547241210938
+            ],
+            "scale": [
+                0.8125,
+                0.8125,
+                0.8125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Column_LARGE_03_A.SM_STRUC_Garage_Column_LARGE_03_A",
+        "transform": {
+            "loc": [
+                147571.078125,
+                1034438.9375,
+                -60713.09375
+            ],
+            "rot": [
+                -1.44476318359375,
+                1.0041612386703491,
+                -79.26531982421875
+            ],
+            "scale": [
+                0.875,
+                0.8125,
+                0.8125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Column_LARGE_03_A.SM_STRUC_Garage_Column_LARGE_03_A",
+        "transform": {
+            "loc": [
+                149153.59375,
+                1034703.625,
+                -60732.22265625
+            ],
+            "rot": [
+                -1.44476318359375,
+                1.0041612386703491,
+                -79.26531982421875
+            ],
+            "scale": [
+                0.84375,
+                0.8125,
+                0.8125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_1_5M_01_A.SM_STRUC_PROM_Railing_1_5M_01_A",
+        "transform": {
+            "loc": [
+                174524.5,
+                1007881.125,
+                -59453.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -134.99990844726562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_WallBroken_3mx1_5m_A.SM_WallBroken_3mx1_5m_A",
+        "transform": {
+            "loc": [
+                150181.734375,
+                993425.0,
+                -58604.046875
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                89.99994659423828,
+                -179.99978637695312
+            ],
+            "scale": [
+                3.53125,
+                12.5625,
+                7.40625
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
+        "transform": {
+            "loc": [
+                174504.0,
+                1008024.0,
+                -59463.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -92.81243133544922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
+        "transform": {
+            "loc": [
+                174504.0,
+                1008024.0,
+                -59298.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -92.81243896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
+        "transform": {
+            "loc": [
+                174479.4375,
+                1012028.0,
+                -59463.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -70.312255859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
+        "transform": {
+            "loc": [
+                174479.4375,
+                1012028.0,
+                -59298.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -70.312255859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
+        "transform": {
+            "loc": [
+                174334.953125,
+                1012318.0,
+                -59463.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -53.437259674072266
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
+        "transform": {
+            "loc": [
+                174334.953125,
+                1012318.0,
+                -59298.703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -53.437259674072266
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

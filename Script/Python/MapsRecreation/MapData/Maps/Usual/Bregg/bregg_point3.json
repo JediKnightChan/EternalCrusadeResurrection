@@ -1,0 +1,5782 @@
+[
+    {
+        "path": "Blueprint /Game/Graybox/GB_Promethium/BP_Promethium_Z04.BP_Promethium_Z04",
+        "transform": {
+            "loc": [
+                148566.03125,
+                980636.0,
+                -58786.1875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -100.97657775878906
+            ],
+            "scale": [
+                1.2250139713287354,
+                1.2250139713287354,
+                1.2250139713287354
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Graybox/GB_Promethium/BP_Promethium_Z04.BP_Promethium_Z04",
+        "transform": {
+            "loc": [
+                147421.40625,
+                974237.625,
+                -58786.1875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -100.97657775878906
+            ],
+            "scale": [
+                1.2250139713287354,
+                1.2250139713287354,
+                1.2250139713287354
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Graybox/GB_Promethium/BP_Promethium_Z04.BP_Promethium_Z04",
+        "transform": {
+            "loc": [
+                134326.609375,
+                1017323.75,
+                -59186.28125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -96.40132904052734
+            ],
+            "scale": [
+                1.2250139713287354,
+                1.2250139713287354,
+                1.2250139713287354
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Graybox/GB_Promethium/BP_Promethium_Z04.BP_Promethium_Z04",
+        "transform": {
+            "loc": [
+                133696.015625,
+                1010854.4375,
+                -59186.28125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -96.40132904052734
+            ],
+            "scale": [
+                1.2250139713287354,
+                1.2250139713287354,
+                1.2250139713287354
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_Prop_OilPodium_01.BP_Prop_OilPodium_01",
+        "transform": {
+            "loc": [
+                148588.96875,
+                980658.75,
+                -56024.4375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -102.05536651611328
+            ],
+            "scale": [
+                0.8500139713287354,
+                0.8500139713287354,
+                0.8500139713287354
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_Prop_OilPodium_01.BP_Prop_OilPodium_01",
+        "transform": {
+            "loc": [
+                147444.3125,
+                974260.3125,
+                -56024.4375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -102.05536651611328
+            ],
+            "scale": [
+                0.8500139713287354,
+                0.8500139713287354,
+                0.8500139713287354
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_Prop_OilPodium_01.BP_Prop_OilPodium_01",
+        "transform": {
+            "loc": [
+                134347.65625,
+                1017348.25,
+                -56424.53125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -97.48028564453125
+            ],
+            "scale": [
+                0.8500139713287354,
+                0.8500139713287354,
+                0.8500139713287354
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_Prop_OilPodium_01.BP_Prop_OilPodium_01",
+        "transform": {
+            "loc": [
+                133717.046875,
+                1010878.875,
+                -56424.53125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -97.48028564453125
+            ],
+            "scale": [
+                0.8500139713287354,
+                0.8500139713287354,
+                0.8500139713287354
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_STRUC_FortWall01.BP_STRUC_FortWall01",
+        "transform": {
+            "loc": [
+                149034.25,
+                983095.0625,
+                -58991.3828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                79.85665130615234
+            ],
+            "scale": [
+                1.125,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_STRUC_FortWall01.BP_STRUC_FortWall01",
+        "transform": {
+            "loc": [
+                149034.25,
+                983095.0625,
+                -60191.3828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                79.85665130615234
+            ],
+            "scale": [
+                1.125,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_STRUC_FortWall01.BP_STRUC_FortWall01",
+        "transform": {
+            "loc": [
+                149034.25,
+                983095.0625,
+                -57841.3828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                79.85665130615234
+            ],
+            "scale": [
+                1.125,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_STRUC_FortWall01.BP_STRUC_FortWall01",
+        "transform": {
+            "loc": [
+                134597.1875,
+                1019812.3125,
+                -59391.4765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                84.4326171875
+            ],
+            "scale": [
+                1.125,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_STRUC_FortWall01.BP_STRUC_FortWall01",
+        "transform": {
+            "loc": [
+                134597.1875,
+                1019812.3125,
+                -60591.4765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                84.4326171875
+            ],
+            "scale": [
+                1.125,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_STRUC_FortWall01.BP_STRUC_FortWall01",
+        "transform": {
+            "loc": [
+                134597.1875,
+                1019812.3125,
+                -58241.4765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                84.4326171875
+            ],
+            "scale": [
+                1.125,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_STRUC_FortWall01.BP_STRUC_FortWall01",
+        "transform": {
+            "loc": [
+                133547.1875,
+                1009962.3125,
+                -59391.4765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                84.4326171875
+            ],
+            "scale": [
+                1.125,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_STRUC_FortWall01.BP_STRUC_FortWall01",
+        "transform": {
+            "loc": [
+                133547.1875,
+                1009962.3125,
+                -60591.4765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                84.4326171875
+            ],
+            "scale": [
+                1.125,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_STRUC_FortWall01.BP_STRUC_FortWall01",
+        "transform": {
+            "loc": [
+                133547.1875,
+                1009962.3125,
+                -58241.4765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                84.4326171875
+            ],
+            "scale": [
+                1.125,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                96082.78125,
+                1015948.25,
+                -56935.86328125
+            ],
+            "rot": [
+                1.5136176347732544,
+                -0.6808090806007385,
+                -13.62527084350586
+            ],
+            "scale": [
+                77.75,
+                40.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                168254.9375,
+                1015688.4375,
+                -61070.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                7.798973083496094
+            ],
+            "scale": [
+                1.0,
+                2.803985118865967,
+                3.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                168284.046875,
+                1016039.3125,
+                -61070.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -7.566742897033691
+            ],
+            "scale": [
+                1.0,
+                4.879706859588623,
+                3.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                174280.0,
+                1012080.0,
+                -60960.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                174280.0,
+                1010750.0,
+                -61550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                174280.0,
+                1008070.0,
+                -60960.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                174280.0,
+                1009380.0,
+                -60960.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnStrata_12M_01.SM_ControlCenter_ColumnStrata_12M_01",
+        "transform": {
+            "loc": [
+                174280.0,
+                1010750.0,
+                -60960.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                174280.0,
+                1012080.0,
+                -61550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                174280.0,
+                1009380.0,
+                -61550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Signature/SIG_ControlCenter_01/SM_ControlCenter_ColumnBase_01.SM_ControlCenter_ColumnBase_01",
+        "transform": {
+            "loc": [
+                174280.0,
+                1008070.0,
+                -61550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_01.SM_PROP_AMB_Rock_Large_01",
+        "transform": {
+            "loc": [
+                162190.625,
+                1027787.1875,
+                -61866.7734375
+            ],
+            "rot": [
+                11.825331687927246,
+                -39.27357864379883,
+                54.24656677246094
+            ],
+            "scale": [
+                9.227821350097656,
+                9.227821350097656,
+                9.227821350097656
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                163260.0,
+                1023840.0,
+                -61930.0
+            ],
+            "rot": [
+                5.366527080535889,
+                75.1662368774414,
+                -170.07948303222656
+            ],
+            "scale": [
+                5.5258588790893555,
+                5.5258588790893555,
+                5.5258588790893555
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                153316.78125,
+                1033091.1875,
+                -62203.32421875
+            ],
+            "rot": [
+                -3.79248309135437,
+                -4.661334991455078,
+                -39.051414489746094
+            ],
+            "scale": [
+                7.8777689933776855,
+                7.8777689933776855,
+                7.8777689933776855
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                155702.953125,
+                1033432.4375,
+                -62589.73828125
+            ],
+            "rot": [
+                -3.7923390865325928,
+                -21.7031307220459,
+                -39.04914855957031
+            ],
+            "scale": [
+                7.8777689933776855,
+                7.8777689933776855,
+                7.8777689933776855
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                162360.0,
+                1027870.0,
+                -62080.0
+            ],
+            "rot": [
+                24.928077697753906,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                5.069863796234131,
+                5.069863796234131,
+                5.069863796234131
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                158542.015625,
+                1020810.125,
+                -61099.8515625
+            ],
+            "rot": [
+                21.85811424255371,
+                26.024080276489258,
+                12.879368782043457
+            ],
+            "scale": [
+                9.470251083374023,
+                9.470251083374023,
+                9.470251083374023
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_02.SM_PROP_AMB_Rock_Large_02",
+        "transform": {
+            "loc": [
+                179454.765625,
+                1004854.25,
+                -62052.3046875
+            ],
+            "rot": [
+                22.5389461517334,
+                4.8000001697801054e-05,
+                -29.752296447753906
+            ],
+            "scale": [
+                17.929365158081055,
+                17.929365158081055,
+                17.929365158081055
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                184069.296875,
+                999616.75,
+                -61250.015625
+            ],
+            "rot": [
+                0.0,
+                13.614118576049805,
+                96.467041015625
+            ],
+            "scale": [
+                1.7130659818649292,
+                2.628257989883423,
+                2.628257989883423
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_01.SM_PROP_AMB_Rock_Large_01",
+        "transform": {
+            "loc": [
+                184004.3125,
+                999550.75,
+                -61166.26171875
+            ],
+            "rot": [
+                18.40106201171875,
+                -24.592464447021484,
+                157.61221313476562
+            ],
+            "scale": [
+                2.4561290740966797,
+                2.4561290740966797,
+                2.4561290740966797
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                164599.734375,
+                977909.875,
+                -61757.48828125
+            ],
+            "rot": [
+                0.0,
+                121.95120239257812,
+                0.0
+            ],
+            "scale": [
+                6.237036228179932,
+                6.237036228179932,
+                6.237036228179932
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_01.SM_PROP_AMB_Rock_Large_01",
+        "transform": {
+            "loc": [
+                159568.75,
+                1019982.0,
+                -61105.90234375
+            ],
+            "rot": [
+                -36.996559143066406,
+                -82.01011657714844,
+                42.33184051513672
+            ],
+            "scale": [
+                11.295214653015137,
+                11.295214653015137,
+                11.295214653015137
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                168989.5625,
+                1014098.0,
+                -60665.35546875
+            ],
+            "rot": [
+                1.642393946647644,
+                3.1585938930511475,
+                -35.76883316040039
+            ],
+            "scale": [
+                4.86306095123291,
+                4.86306095123291,
+                4.86306095123291
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                164424.171875,
+                977484.375,
+                -61537.4375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                7.652076721191406,
+                7.652076721191406,
+                7.652076721191406
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Medium_01.SM_PROP_AMB_Rock_Medium_01",
+        "transform": {
+            "loc": [
+                164177.5625,
+                977445.0625,
+                -61853.73828125
+            ],
+            "rot": [
+                -6.275454521179199,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                18.84906578063965,
+                18.84906578063965,
+                18.84906578063965
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_MXLarge_07.SM_PROP_AMB_Rock_MXLarge_07",
+        "transform": {
+            "loc": [
+                169720.5,
+                1013271.125,
+                -61603.34375
+            ],
+            "rot": [
+                3.8410799503326416,
+                -14.5111083984375,
+                104.51082611083984
+            ],
+            "scale": [
+                0.6964939832687378,
+                0.6663690209388733,
+                0.6821489930152893
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_MXLarge_07.SM_PROP_AMB_Rock_MXLarge_07",
+        "transform": {
+            "loc": [
+                171747.8125,
+                1014115.125,
+                -60888.73046875
+            ],
+            "rot": [
+                14.477438926696777,
+                0.5047169923782349,
+                -86.03289794921875
+            ],
+            "scale": [
+                0.6964939832687378,
+                0.6663690209388733,
+                0.6821489930152893
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_MXLarge_07.SM_PROP_AMB_Rock_MXLarge_07",
+        "transform": {
+            "loc": [
+                161344.109375,
+                1027221.25,
+                -62475.8125
+            ],
+            "rot": [
+                0.5958930253982544,
+                -2.224247932434082,
+                32.20481491088867
+            ],
+            "scale": [
+                0.8296869993209839,
+                0.8296869993209839,
+                0.8385589718818665
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_MXLarge_06.SM_PROP_AMB_Rock_MXLarge_06",
+        "transform": {
+            "loc": [
+                152970.0,
+                1032360.0,
+                -62330.0
+            ],
+            "rot": [
+                -8.711503028869629,
+                11.297600746154785,
+                17.534048080444336
+            ],
+            "scale": [
+                4.645080089569092,
+                4.645080089569092,
+                4.645080089569092
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_MXLarge_013.SM_PROP_AMB_Rock_MXLarge_013",
+        "transform": {
+            "loc": [
+                170768.40625,
+                1020295.875,
+                -61675.625
+            ],
+            "rot": [
+                -78.15998077392578,
+                98.7472152709961,
+                -43.091392517089844
+            ],
+            "scale": [
+                0.2735300064086914,
+                0.2735300064086914,
+                0.2735300064086914
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_MXLarge_07.SM_PROP_AMB_Rock_MXLarge_07",
+        "transform": {
+            "loc": [
+                168764.109375,
+                986135.375,
+                -61311.30859375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                28.129581451416016
+            ],
+            "scale": [
+                0.9923959970474243,
+                0.9923959970474243,
+                0.9923959970474243
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_MXLarge_07.SM_PROP_AMB_Rock_MXLarge_07",
+        "transform": {
+            "loc": [
+                189840.0,
+                997990.0,
+                -61600.0
+            ],
+            "rot": [
+                -2.7204298973083496,
+                -5.250378131866455,
+                152.68365478515625
+            ],
+            "scale": [
+                0.7689210176467896,
+                0.7689210176467896,
+                0.7689210176467896
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Single_2.SM_PROP_AMB_Rock_Single_2",
+        "transform": {
+            "loc": [
+                169640.0,
+                1014910.0,
+                -60954.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Single_2.SM_PROP_AMB_Rock_Single_2",
+        "transform": {
+            "loc": [
+                169144.0625,
+                1016068.625,
+                -60974.91796875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Single_5.SM_PROP_AMB_Rock_Single_5",
+        "transform": {
+            "loc": [
+                168798.03125,
+                1015224.5,
+                -61106.80859375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -106.51300048828125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                2.6436030864715576
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Single_5.SM_PROP_AMB_Rock_Single_5",
+        "transform": {
+            "loc": [
+                169106.0625,
+                1016379.125,
+                -61080.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -146.04843139648438
+            ],
+            "scale": [
+                1.7017430067062378,
+                1.7017430067062378,
+                2.3102989196777344
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Medium_01.SM_PROP_AMB_Rock_Medium_01",
+        "transform": {
+            "loc": [
+                171582.9375,
+                1021542.6875,
+                -62690.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -19.291080474853516
+            ],
+            "scale": [
+                15.609230995178223,
+                15.609230995178223,
+                15.609230995178223
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                171609.625,
+                1019682.5,
+                -61201.5
+            ],
+            "rot": [
+                0.0,
+                -109.08302307128906,
+                0.0
+            ],
+            "scale": [
+                3.1099510192871094,
+                3.1099510192871094,
+                3.1099510192871094
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Small_05.SM_PROP_AMB_Rock_Small_05",
+        "transform": {
+            "loc": [
+                177589.5,
+                1000705.1875,
+                -59750.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                52.73905944824219
+            ],
+            "scale": [
+                29.083026885986328,
+                29.083026885986328,
+                29.083026885986328
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_03.SM_PROP_AMB_Rock_Large_03",
+        "transform": {
+            "loc": [
+                170518.140625,
+                1020388.375,
+                -61823.8046875
+            ],
+            "rot": [
+                7.878671169281006,
+                -37.0184440612793,
+                175.505615234375
+            ],
+            "scale": [
+                2.858346939086914,
+                3.8576979637145996,
+                4.305510997772217
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Small_01.SM_PROP_AMB_Rock_Small_01",
+        "transform": {
+            "loc": [
+                172000.0,
+                1019640.0,
+                -61310.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Medium_01.SM_PROP_AMB_Rock_Medium_01",
+        "transform": {
+            "loc": [
+                171959.828125,
+                1019590.6875,
+                -60965.05078125
+            ],
+            "rot": [
+                15.297943115234375,
+                11.127971649169922,
+                -82.3989028930664
+            ],
+            "scale": [
+                11.117637634277344,
+                11.117637634277344,
+                11.117637634277344
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_01.SM_PROP_AMB_Rock_XLarge_01",
+        "transform": {
+            "loc": [
+                169998.53125,
+                1012895.375,
+                -59461.15234375
+            ],
+            "rot": [
+                4.829224109649658,
+                9.94499683380127,
+                63.70319747924805
+            ],
+            "scale": [
+                4.256471157073975,
+                4.256471157073975,
+                4.256471157073975
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Small_05.SM_PROP_AMB_Rock_Small_05",
+        "transform": {
+            "loc": [
+                171617.890625,
+                1019623.9375,
+                -61579.76171875
+            ],
+            "rot": [
+                -24.74321937561035,
+                170.39138793945312,
+                -173.80905151367188
+            ],
+            "scale": [
+                20.176525115966797,
+                20.176525115966797,
+                20.176525115966797
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Small_05.SM_PROP_AMB_Rock_Small_05",
+        "transform": {
+            "loc": [
+                172230.5625,
+                1019490.875,
+                -60965.0
+            ],
+            "rot": [
+                43.4658317565918,
+                33.39433288574219,
+                15.089442253112793
+            ],
+            "scale": [
+                17.557462692260742,
+                17.557462692260742,
+                17.557462692260742
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_03.SM_PROP_AMB_Rock_XLarge_03",
+        "transform": {
+            "loc": [
+                169760.546875,
+                1007894.25,
+                -59480.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -76.87483215332031
+            ],
+            "scale": [
+                3.46875,
+                3.0240368843078613,
+                3.0240368843078613
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_02.SM_PROP_AMB_Rock_XLarge_02",
+        "transform": {
+            "loc": [
+                168838.140625,
+                1018442.9375,
+                -61100.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -51.7042350769043
+            ],
+            "scale": [
+                4.63075590133667,
+                4.63075590133667,
+                4.63075590133667
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_03.SM_PROP_AMB_Rock_XLarge_03",
+        "transform": {
+            "loc": [
+                169450.0,
+                1013510.0,
+                -59580.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.9896459579467773,
+                1.9896459579467773,
+                1.9896459579467773
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_03.SM_PROP_AMB_Rock_XLarge_03",
+        "transform": {
+            "loc": [
+                167980.09375,
+                1016363.3125,
+                -61120.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -21.588268280029297
+            ],
+            "scale": [
+                2.6047720909118652,
+                2.6047720909118652,
+                2.6047720909118652
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_03.SM_PROP_AMB_Rock_XLarge_03",
+        "transform": {
+            "loc": [
+                177005.828125,
+                1001091.0625,
+                -59614.1953125
+            ],
+            "rot": [
+                28.751392364501953,
+                -99.57003784179688,
+                0.44276800751686096
+            ],
+            "scale": [
+                5.206283092498779,
+                5.206283092498779,
+                5.206283092498779
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_01.SM_PROP_AMB_Rock_XLarge_01",
+        "transform": {
+            "loc": [
+                168345.828125,
+                1015698.1875,
+                -61041.9609375
+            ],
+            "rot": [
+                -26.930252075195312,
+                93.9323501586914,
+                6.082393169403076
+            ],
+            "scale": [
+                3.02626895904541,
+                5.016273021697998,
+                3.02626895904541
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_01.SM_PROP_AMB_Rock_XLarge_01",
+        "transform": {
+            "loc": [
+                177420.078125,
+                1001258.0625,
+                -59514.1484375
+            ],
+            "rot": [
+                17.091310501098633,
+                -21.2877140045166,
+                1.0844810009002686
+            ],
+            "scale": [
+                5.851881980895996,
+                5.851881980895996,
+                5.851881980895996
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_03.SM_PROP_AMB_Rock_XLarge_03",
+        "transform": {
+            "loc": [
+                176390.0,
+                1010250.0,
+                -63180.0
+            ],
+            "rot": [
+                -1.9897160530090332,
+                48.94550704956055,
+                91.73220825195312
+            ],
+            "scale": [
+                4.75,
+                4.75,
+                4.75
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_03.SM_PROP_AMB_Rock_XLarge_03",
+        "transform": {
+            "loc": [
+                181019.28125,
+                1003097.375,
+                -62010.0
+            ],
+            "rot": [
+                -59.69770050048828,
+                -89.4169921875,
+                64.70571899414062
+            ],
+            "scale": [
+                3.5,
+                3.5,
+                3.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_05.SM_PROP_AMB_Rock_XLarge_05",
+        "transform": {
+            "loc": [
+                181059.546875,
+                1002136.5625,
+                -61764.41015625
+            ],
+            "rot": [
+                -3.630265951156616,
+                23.041215896606445,
+                -40.04839324951172
+            ],
+            "scale": [
+                3.25,
+                3.5,
+                3.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_01.SM_PROP_AMB_Rock_XLarge_01",
+        "transform": {
+            "loc": [
+                152210.0,
+                1032060.0,
+                -61880.0
+            ],
+            "rot": [
+                -17.50647735595703,
+                2.360661029815674,
+                79.91439819335938
+            ],
+            "scale": [
+                6.2375922203063965,
+                6.2375922203063965,
+                6.2375922203063965
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_03.SM_PROP_AMB_Rock_XLarge_03",
+        "transform": {
+            "loc": [
+                170583.8125,
+                1020258.8125,
+                -61724.0078125
+            ],
+            "rot": [
+                17.81192398071289,
+                -100.04052734375,
+                25.701841354370117
+            ],
+            "scale": [
+                1.475288987159729,
+                1.475288987159729,
+                1.475288987159729
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_03.SM_PROP_AMB_Rock_XLarge_03",
+        "transform": {
+            "loc": [
+                191680.0,
+                998080.0,
+                -61520.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.3232619762420654,
+                2.3232619762420654,
+                2.3232619762420654
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_01.SM_PROP_AMB_Rock_XLarge_01",
+        "transform": {
+            "loc": [
+                190910.0,
+                997950.0,
+                -61230.0
+            ],
+            "rot": [
+                44.1808967590332,
+                -13.422938346862793,
+                33.30665969848633
+            ],
+            "scale": [
+                5.418831825256348,
+                5.418831825256348,
+                5.418831825256348
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_03.SM_PROP_AMB_Rock_XLarge_03",
+        "transform": {
+            "loc": [
+                171330.0,
+                1014600.0,
+                -59460.0
+            ],
+            "rot": [
+                0.0,
+                30.000083923339844,
+                0.0
+            ],
+            "scale": [
+                3.0913240909576416,
+                3.0913240909576416,
+                3.0913240909576416
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XLarge_03.SM_PROP_AMB_Rock_XLarge_03",
+        "transform": {
+            "loc": [
+                168280.25,
+                1016128.0,
+                -61170.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                79.82434844970703
+            ],
+            "scale": [
+                1.9321759939193726,
+                1.9321759939193726,
+                1.9321759939193726
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XXLarge_01.SM_PROP_AMB_Rock_XXLarge_01",
+        "transform": {
+            "loc": [
+                183918.703125,
+                1003546.5,
+                -62399.91796875
+            ],
+            "rot": [
+                -9.599427223205566,
+                1.738342046737671,
+                -70.30215454101562
+            ],
+            "scale": [
+                4.25,
+                4.25,
+                4.25
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XXLarge_01.SM_PROP_AMB_Rock_XXLarge_01",
+        "transform": {
+            "loc": [
+                176192.3125,
+                1000975.25,
+                -60203.6484375
+            ],
+            "rot": [
+                -53.91947555541992,
+                50.60615921020508,
+                4.145730972290039
+            ],
+            "scale": [
+                1.9731969833374023,
+                1.9731969833374023,
+                1.9731969833374023
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XXLarge_01.SM_PROP_AMB_Rock_XXLarge_01",
+        "transform": {
+            "loc": [
+                174805.46875,
+                1012445.3125,
+                -63250.2578125
+            ],
+            "rot": [
+                55.03316879272461,
+                2.6203529834747314,
+                27.180387496948242
+            ],
+            "scale": [
+                5.0,
+                5.0,
+                5.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_XXLarge_06.SM_PROP_AMB_Rock_XXLarge_06",
+        "transform": {
+            "loc": [
+                167982.484375,
+                1016022.875,
+                -61243.3359375
+            ],
+            "rot": [
+                12.534605026245117,
+                7.000000096013537e-06,
+                -25.108808517456055
+            ],
+            "scale": [
+                0.43215298652648926,
+                0.43215298652648926,
+                0.43215298652648926
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_RockPile_01.SM_PROP_AMB_RockPile_01",
+        "transform": {
+            "loc": [
+                177300.0,
+                1006230.0,
+                -63220.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.75,
+                2.75,
+                1.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/GamePlay/Overpass/Models/SM_PROP_GAM_SectionOverpass.SM_PROP_GAM_SectionOverpass",
+        "transform": {
+            "loc": [
+                134194.953125,
+                1015387.5,
+                -58703.4765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -95.56732940673828
+            ],
+            "scale": [
+                1.125,
+                1.125,
+                1.125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/GamePlay/Overpass/Models/SM_PROP_GAM_SectionOverpass.SM_PROP_GAM_SectionOverpass",
+        "transform": {
+            "loc": [
+                147813.65625,
+                976107.875,
+                -58303.3828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -100.14249420166016
+            ],
+            "scale": [
+                1.125,
+                1.125,
+                1.125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/GamePlay/Overpass/Models/SM_PROP_GAM_SectionOverpass.SM_PROP_GAM_SectionOverpass",
+        "transform": {
+            "loc": [
+                148280.34375,
+                978716.4375,
+                -58303.3828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -100.14249420166016
+            ],
+            "scale": [
+                1.125,
+                1.125,
+                1.125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/GamePlay/Overpass/Models/SM_PROP_GAM_SectionOverpass.SM_PROP_GAM_SectionOverpass",
+        "transform": {
+            "loc": [
+                133937.828125,
+                1012750.0,
+                -58703.4765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -95.56732940673828
+            ],
+            "scale": [
+                1.125,
+                1.125,
+                1.125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Small_Crate01.SM_PROP_Small_Crate01",
+        "transform": {
+            "loc": [
+                160690.3125,
+                974413.75,
+                -61597.80078125
+            ],
+            "rot": [
+                -1.8515340089797974,
+                -1.2362070083618164,
+                -21.698040008544922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Small_Crate01.SM_PROP_Small_Crate01",
+        "transform": {
+            "loc": [
+                160306.46875,
+                974446.0625,
+                -61588.36328125
+            ],
+            "rot": [
+                -1.1873400211334229,
+                -1.8832370042800903,
+                2.336024045944214
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Small_Crate01.SM_PROP_Small_Crate01",
+        "transform": {
+            "loc": [
+                160509.359375,
+                974437.125,
+                -61296.23828125
+            ],
+            "rot": [
+                -1.5645500421524048,
+                -1.5833890438079834,
+                -10.09461498260498
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                173737.5,
+                1007130.875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                174180.265625,
+                1012564.8125,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                173756.0,
+                1012989.0625,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                173331.734375,
+                1013413.3125,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                172914.546875,
+                1013830.5,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                172490.28125,
+                1014254.8125,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                173313.234375,
+                1006706.5625,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                169136.03125,
+                1010452.875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.097316026687622,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                169136.03125,
+                1011052.875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.097316026687622,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                169136.03125,
+                1009852.875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.097316026687622,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                174586.03125,
+                1010383.1875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                169136.03125,
+                1011642.875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.097316026687622,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                169556.09375,
+                1012060.1875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -134.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                169980.359375,
+                1012484.4375,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -134.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                170396.015625,
+                1012903.1875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -134.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                174586.03125,
+                1012173.1875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                169543.171875,
+                1008793.25,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.999786376953125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                169125.96875,
+                1009210.4375,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -44.999786376953125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                174586.03125,
+                1010983.1875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                174586.03125,
+                1009183.1875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                174586.03125,
+                1009783.1875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                174586.03125,
+                1011583.1875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                174586.03125,
+                1008583.1875,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                174161.765625,
+                1007555.125,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/STRUC_Building_Depot_Modules_B/SM_STRUC_Building_Wall_6x3_Plain_01_B.SM_STRUC_Building_Wall_6x3_Plain_01_B",
+        "transform": {
+            "loc": [
+                174586.03125,
+                1007979.375,
+                -59763.0234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                154288.921875,
+                998986.6875,
+                -61155.44921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.0001220703125
+            ],
+            "scale": [
+                3.462224006652832,
+                3.462224006652832,
+                3.462224006652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                173402.59375,
+                1012786.25,
+                -59470.10546875
+            ],
+            "rot": [
+                0.0,
+                -0.008484000340104103,
+                89.58486938476562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173402.59375,
+                1012786.25,
+                -59470.10546875
+            ],
+            "rot": [
+                -0.008483000099658966,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                172806.953125,
+                1013390.625,
+                -59470.9609375
+            ],
+            "rot": [
+                -0.18024200201034546,
+                -0.008484000340104103,
+                89.58489227294922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172806.953125,
+                1013390.5625,
+                -59470.9609375
+            ],
+            "rot": [
+                -0.008483000099658966,
+                0.18023300170898438,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172802.59375,
+                1012790.625,
+                -59470.015625
+            ],
+            "rot": [
+                -0.008483000099658966,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                172759.09375,
+                1006790.75,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41521498560905457
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                173363.4375,
+                1007386.375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41521498560905457
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173363.421875,
+                1007386.375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.41526794433594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                173967.765625,
+                1007982.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41521498560905457
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173967.75,
+                1007982.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.41526794433594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173367.796875,
+                1007986.375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.41526794433594
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173376.515625,
+                1009186.3125,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173976.515625,
+                1009182.0,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                173402.59375,
+                1012786.25,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.58486938476562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173402.59375,
+                1012786.25,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                172806.953125,
+                1013390.5625,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.58486938476562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172806.953125,
+                1013390.5625,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172802.59375,
+                1012790.625,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                172759.09375,
+                1006790.75,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.4152219891548157
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                173363.4375,
+                1007386.375,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.4152219891548157
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173363.421875,
+                1007386.375,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.415283203125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                173967.765625,
+                1007982.0,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.4152219891548157
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173967.75,
+                1007982.0,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.415283203125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173367.796875,
+                1007986.375,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.415283203125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173989.546875,
+                1010981.9375,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172785.21875,
+                1010390.625,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173385.21875,
+                1010386.3125,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173985.203125,
+                1010381.9375,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172780.875,
+                1009790.625,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173380.859375,
+                1009786.3125,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173980.859375,
+                1009782.0,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172793.90625,
+                1011590.625,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173393.890625,
+                1011586.25,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172772.171875,
+                1008590.6875,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173372.15625,
+                1008586.3125,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                173998.234375,
+                1012181.875,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.58486938476562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170986.578125,
+                1009203.625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171586.5625,
+                1009199.3125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172186.5625,
+                1009195.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170990.9375,
+                1009803.5625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171590.921875,
+                1009799.25,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172190.921875,
+                1009794.9375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170982.234375,
+                1008603.625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171582.21875,
+                1008599.3125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172182.21875,
+                1008595.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170973.53125,
+                1007403.6875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171573.515625,
+                1007399.375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172173.515625,
+                1007395.0625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170977.875,
+                1008003.625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171577.875,
+                1007999.3125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172177.875,
+                1007995.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170969.1875,
+                1006803.6875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171569.171875,
+                1006799.375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172169.171875,
+                1006795.0625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170999.625,
+                1011003.5625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171599.609375,
+                1010999.25,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172199.609375,
+                1010994.9375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171003.96875,
+                1011603.5625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171603.953125,
+                1011599.25,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172203.953125,
+                1011594.9375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170995.265625,
+                1010403.5625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171595.25,
+                1010399.25,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172195.25,
+                1010394.9375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171012.65625,
+                1012803.5,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171612.65625,
+                1012799.1875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172212.65625,
+                1012794.875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171017.015625,
+                1013403.5,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171617.0,
+                1013399.1875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172217.0,
+                1013394.875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171008.3125,
+                1012203.5625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171608.296875,
+                1012199.25,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172208.296875,
+                1012194.9375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170977.90625,
+                1008003.625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170382.265625,
+                1008608.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.41504669189453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170982.25,
+                1008603.625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170986.609375,
+                1009203.625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170990.9375,
+                1009803.625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170995.296875,
+                1010403.5625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170999.640625,
+                1011003.5625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                169786.625,
+                1009212.3125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.4150390625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170382.265625,
+                1008608.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170386.609375,
+                1009208.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170390.953125,
+                1009808.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170395.296875,
+                1010407.9375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                169786.625,
+                1009212.3125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                169790.96875,
+                1009812.3125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                169795.3125,
+                1010412.3125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170399.640625,
+                1011007.9375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                169799.65625,
+                1011012.3125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                169804.015625,
+                1011612.25,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.5848388671875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                170408.34375,
+                1012207.875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.5848388671875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171003.984375,
+                1011603.5625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170403.984375,
+                1011607.9375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171008.328125,
+                1012203.5625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171012.671875,
+                1012803.5625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170969.21875,
+                1006803.6875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170973.546875,
+                1007403.6875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170964.875,
+                1006203.6875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170369.21875,
+                1006808.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170373.5625,
+                1007408.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170364.875,
+                1006208.0625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                169769.234375,
+                1006812.375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                169769.234375,
+                1006812.375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.41504669189453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171016.9375,
+                1013393.5,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171021.28125,
+                1013993.5,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170416.953125,
+                1013397.875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171616.921875,
+                1013389.1875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                171621.265625,
+                1013989.1875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172216.90625,
+                1013384.8125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172221.265625,
+                1013984.8125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                172221.234375,
+                1013984.875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.58486938476562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                169786.625,
+                1009212.3125,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.4150390625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                169786.625,
+                1009212.3125,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                169790.96875,
+                1009812.3125,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                169795.3125,
+                1010412.3125,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                169799.65625,
+                1011012.3125,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                169804.015625,
+                1011612.25,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.5848388671875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170386.625,
+                1009212.3125,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170390.96875,
+                1009812.3125,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170395.3125,
+                1010412.3125,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170399.65625,
+                1011012.3125,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                170399.65625,
+                1011612.3125,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                170414.015625,
+                1012212.25,
+                -59730.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.5848388671875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                170421.3125,
+                1013997.875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                171025.5625,
+                1014593.4375,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                169816.96875,
+                1013412.125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.58489990234375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173398.25,
+                1012186.25,
+                -59470.10546875
+            ],
+            "rot": [
+                -0.008484000340104103,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172798.25,
+                1012190.625,
+                -59470.015625
+            ],
+            "rot": [
+                -0.008484000340104103,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173998.21875,
+                1012181.875,
+                -59470.1953125
+            ],
+            "rot": [
+                -0.008484000340104103,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173398.25,
+                1012186.25,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173998.234375,
+                1012181.875,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172798.265625,
+                1012190.5625,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172221.34375,
+                1013994.875,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                152212.046875,
+                1005218.625,
+                -61155.44921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                3.462224006652832,
+                3.462224006652832,
+                3.462224006652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172789.578125,
+                1010990.625,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                152211.578125,
+                998986.1875,
+                -61155.44921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.9998779296875
+            ],
+            "scale": [
+                3.462224006652832,
+                3.462224006652832,
+                3.462224006652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                154288.921875,
+                998986.6875,
+                -61155.44921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.9998779296875
+            ],
+            "scale": [
+                3.462224006652832,
+                3.462224006652832,
+                3.462224006652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                154288.90625,
+                1001063.5625,
+                -61155.44921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.9998779296875
+            ],
+            "scale": [
+                3.462224006652832,
+                3.462224006652832,
+                3.462224006652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                156366.25,
+                1001064.0,
+                -61155.44921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.9998779296875
+            ],
+            "scale": [
+                3.462224006652832,
+                3.462224006652832,
+                3.462224006652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FloorTiles_01/SM_STRUC_FloorTiles_6X6_04_B.SM_STRUC_FloorTiles_6X6_04_B",
+        "transform": {
+            "loc": [
+                152211.5625,
+                1003140.8125,
+                -61155.44921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.9998779296875
+            ],
+            "scale": [
+                3.462224006652832,
+                3.462224006652832,
+                3.462224006652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FloorTiles_01/SM_STRUC_FloorTiles_6X6_04_B.SM_STRUC_FloorTiles_6X6_04_B",
+        "transform": {
+            "loc": [
+                154288.890625,
+                1003140.8125,
+                -61155.44921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.9998779296875
+            ],
+            "scale": [
+                3.462224006652832,
+                3.462224006652832,
+                3.462224006652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173389.5625,
+                1010986.25,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173972.140625,
+                1008582.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41515401005744934
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173993.875,
+                1011581.875,
+                -59470.1953125
+            ],
+            "rot": [
+                -0.008483000099658966,
+                0.0,
+                -0.41515401005744934
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173972.140625,
+                1008582.0,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173993.875,
+                1011581.875,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172776.53125,
+                1009190.625,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173376.515625,
+                1009186.3125,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                173976.515625,
+                1009182.0,
+                -59470.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorTile_MED_01_A.SM_STRUC_FortWalls_FloorTile_MED_01_A",
+        "transform": {
+            "loc": [
+                172776.53125,
+                1009190.625,
+                -59740.23828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.41516101360321045
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_FloorHalf_MED_01_A.SM_STRUC_FortWalls_FloorHalf_MED_01_A",
+        "transform": {
+            "loc": [
+                173998.234375,
+                1012181.875,
+                -59470.1953125
+            ],
+            "rot": [
+                0.0,
+                -0.008484000340104103,
+                89.58486938476562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                173158.859375,
+                1006495.375,
+                -59450.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                45.00001907348633
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                173583.125,
+                1006919.625,
+                -59450.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                45.00001907348633
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                174007.390625,
+                1007343.875,
+                -59450.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                45.00001907348633
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                174602.3125,
+                1008125.1875,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                174602.3125,
+                1008725.1875,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                174602.3125,
+                1009325.1875,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                174602.3125,
+                1009925.1875,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                174602.3125,
+                1010525.1875,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                174602.3125,
+                1011125.1875,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_3M_01_B.SM_STRUC_PROM_Railing_3M_01_B",
+        "transform": {
+            "loc": [
+                174602.3125,
+                1011725.1875,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                173158.859375,
+                1013637.125,
+                -59450.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.00008773803711
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                173583.125,
+                1013212.875,
+                -59450.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.00008773803711
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                174007.390625,
+                1012788.625,
+                -59450.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -45.00008773803711
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                169152.3125,
+                1010410.0,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                172558.8125,
+                1013652.625,
+                -59450.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -1.62890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                169152.3125,
+                1011010.0,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                169152.3125,
+                1009210.0,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                169152.3125,
+                1009810.0,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                169150.0,
+                1011604.375,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.999961853027344
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                169574.25,
+                1012028.625,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.999961853027344
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                169997.484375,
+                1008377.0,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                134.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_6M_01_A.SM_STRUC_PROM_Railing_6M_01_A",
+        "transform": {
+            "loc": [
+                169573.21875,
+                1008801.25,
+                -59465.75390625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                134.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

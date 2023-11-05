@@ -111,6 +111,10 @@
 		{
 			"Name": "SimpleGameplayAnalytics",
 			"Enabled": true
+		},
+		{
+			"Name": "Water",
+			"Enabled": true
 		}
 	]
 }

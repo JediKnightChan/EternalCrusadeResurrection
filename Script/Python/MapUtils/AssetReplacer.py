@@ -19,8 +19,6 @@ with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapUt
     data = json.load(f)
 
 for asset_to_replace_from, asset_to_replace_to in data.items():
-    # asset_to_replace_from = "/Script/Engine.StaticMesh'/Game/PROPS/Gameplay/SM_PROP_Cover_9x3x3_Promethium_Tank_01.SM_PROP_Cover_9x3x3_Promethium_Tank_01'"
-    # asset_to_replace_to = "/Script/Engine.Blueprint'/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Cover_9x3x3_Promethium_Tank_01.B_WA_VaultOn_High_Cover_9x3x3_Promethium_Tank_01'"
     actors_to_replace = []
 
     asset_to_replace_from = get_path_from_ref(asset_to_replace_from)
