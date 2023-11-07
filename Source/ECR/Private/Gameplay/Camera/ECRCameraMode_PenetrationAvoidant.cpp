@@ -127,7 +127,14 @@ void UECRCameraMode_PenetrationAvoidant::PreventCameraPenetration(class AActor c
 		                             : PenetrationAvoidanceFeelers.Num();
 	FCollisionQueryParams SphereParams(SCENE_QUERY_STAT(CameraPen), false, nullptr/*PlayerCamera*/);
 
+	// Ignore view target
 	SphereParams.AddIgnoredActor(&ViewTarget);
+
+	// And it's parent actor if it exists
+	if (AActor* AttachParentActor = ViewTarget.GetAttachParentActor())
+	{
+		SphereParams.AddIgnoredActor(AttachParentActor);
+	}
 
 	//TODO IECRCameraTarget.GetIgnoredActorsForCameraPentration();
 	//if (IgnoreActorForCameraPenetration)
