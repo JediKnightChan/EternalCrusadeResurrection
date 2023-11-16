@@ -11,7 +11,7 @@ import bpy
 import json
 
 root_dir = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/Blender/BoneStructureRecreation"
-with open(f"{root_dir}/space_marine_bone_mapping.json", "r") as f:
+with open(f"{root_dir}/terminator_bone_mapping.json", "r") as f:
     original_bone_names_to_indices_names = json.load(f)
 
 indices_names_to_original_bone_names = {v: k for k, v in original_bone_names_to_indices_names.items()}
