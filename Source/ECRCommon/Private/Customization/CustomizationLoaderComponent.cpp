@@ -187,7 +187,8 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
                                                                         MaterialNamespacesToData)
 {
 	// Attaching skeletal meshes to sockets
-	for (auto [SkeletalMesh, SocketName, SocketTransform, DefaultCustomizationNamespace, SlotNamesToNamespaces] : MeshesForAttach)
+	for (auto [SkeletalMesh, SocketName, SocketTransform, DefaultCustomizationNamespace, SlotNamesToNamespaces] :
+	     MeshesForAttach)
 	{
 		SocketName = GetExistingSocketNameOrNameNone(Component, SocketName);
 		USkeletalMeshComponent* SkeletalMeshComponent = SpawnChildComponent<USkeletalMeshComponent>(
@@ -208,7 +209,7 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
 			{
 				CustomizationNamespace = SlotNamesToNamespaces[SlotName];
 			}
-			
+
 			if (MaterialNamespacesToData.Contains(CustomizationNamespace))
 			{
 				const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
@@ -230,7 +231,8 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
                                                                       MaterialNamespacesToData)
 {
 	// Attaching skeletal meshes to sockets
-	for (auto [StaticMesh, SocketName, SocketTransform, DefaultCustomizationNamespace, SlotNamesToNamespaces] : MeshesForAttach)
+	for (auto [StaticMesh, SocketName, SocketTransform, DefaultCustomizationNamespace, SlotNamesToNamespaces] :
+	     MeshesForAttach)
 	{
 		SocketName = GetExistingSocketNameOrNameNone(Component, SocketName);
 		UStaticMeshComponent* StaticMeshComponent = SpawnChildComponent<UStaticMeshComponent>(
@@ -251,7 +253,7 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
 			{
 				CustomizationNamespace = SlotNamesToNamespaces[SlotName];
 			}
-			
+
 			// Applying material changes
 			if (MaterialNamespacesToData.Contains(CustomizationNamespace))
 			{
@@ -293,11 +295,14 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 				if (!ElementaryAsset->SlotNamesToMaterialNamespaceOverrides.Contains(SlotName))
 				{
 					// Not overriden, use default material namespace
-					MaterialNamespacesToSlotNames.FindOrAdd(ElementaryAsset->MaterialCustomizationNamespace).Add(SlotName);
-				} else
+					MaterialNamespacesToSlotNames.FindOrAdd(ElementaryAsset->MaterialCustomizationNamespace).Add(
+						SlotName);
+				}
+				else
 				{
 					// Namespace for this slot name is overriden
-					MaterialNamespacesToSlotNames.FindOrAdd(ElementaryAsset->SlotNamesToMaterialNamespaceOverrides[SlotName]).Add(SlotName);
+					MaterialNamespacesToSlotNames.FindOrAdd(
+						ElementaryAsset->SlotNamesToMaterialNamespaceOverrides[SlotName]).Add(SlotName);
 				}
 			}
 		}
@@ -409,11 +414,21 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 				{
 					CustomizationNamespace = Asset->SlotNamesToMaterialNamespaceOverrides[SlotName];
 				}
-				
-				const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
-				UCustomizationMaterialNameSpace::ApplyMaterialChanges(ChildComponent, MaterialData->ScalarParameters,
-				                                                      MaterialData->VectorParameters,
-				                                                      MaterialData->TextureParameters, {SlotName});
+
+				if (MaterialNamespacesToData.Contains(CustomizationNamespace))
+				{
+					const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
+					UCustomizationMaterialNameSpace::ApplyMaterialChanges(
+						ChildComponent, MaterialData->ScalarParameters,
+						MaterialData->VectorParameters,
+						MaterialData->TextureParameters, {SlotName});
+				}
+				else
+				{
+					UE_LOG(LogTemp, Warning, TEXT("Couldn't find material namespace %s for %s"),
+					       *CustomizationNamespace,
+					       *(UKismetSystemLibrary::GetDisplayName(this)))
+				}
 			}
 		}
 
