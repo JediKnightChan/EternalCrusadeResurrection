@@ -25,9 +25,13 @@ struct ECRCOMMON_API FCustomizationElementarySubmoduleStatic
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FTransform AttachTransform;
 
-	/** Static mesh */
+	/** Default customization namespace */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString CustomizationNamespace;
+
+	/** Overrides of material namespace for concise slot names */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	TMap<FName, FString> SlotNamesToMaterialNamespaceOverrides;
 };
 
 
@@ -49,9 +53,13 @@ struct ECRCOMMON_API FCustomizationElementarySubmoduleSkeletal
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FTransform AttachTransform;
 
-	/** Static mesh */
+	/** Default customization namespace */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString CustomizationNamespace;
+
+	/** Overrides of material namespace for concise slot names */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	TMap<FName, FString> SlotNamesToMaterialNamespaceOverrides;
 };
 
 
@@ -87,6 +95,10 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	TArray<FName> MaterialCustomizationSlotNames;
 
+	/** Overrides of material namespace for concise slot names */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	TMap<FName, FString> SlotNamesToMaterialNamespaceOverrides;
+	
 	/** Array of static attachments */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TArray<FCustomizationElementarySubmoduleStatic> StaticAttachments;
