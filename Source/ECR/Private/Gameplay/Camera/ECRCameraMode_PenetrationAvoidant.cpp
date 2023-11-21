@@ -2,6 +2,7 @@
 #include "GameFramework/CameraBlockingVolume.h"
 #include "Gameplay/Camera/ECRCameraAssistInterface.h"
 #include "Engine/Canvas.h"
+#include "Gameplay/Player/ECRPlayerController.h"
 
 namespace ECRCameraMode_PenetrationAvoidant_Statics
 {
@@ -134,6 +135,18 @@ void UECRCameraMode_PenetrationAvoidant::PreventCameraPenetration(class AActor c
 	if (AActor* AttachParentActor = ViewTarget.GetAttachParentActor())
 	{
 		SphereParams.AddIgnoredActor(AttachParentActor);
+	}
+
+	// And some additional actors stored on controller
+	if (const APawn* Pawn = Cast<APawn>(GetTargetActor()))
+	{
+		if (const AECRPlayerController* Controller = Cast<AECRPlayerController>(Pawn->GetController()))
+		{
+			for (auto Obstacle : Controller->IgnoredCameraObstacles)
+			{
+				SphereParams.AddIgnoredActor(Obstacle);
+			}
+		}
 	}
 
 	//TODO IECRCameraTarget.GetIgnoredActorsForCameraPentration();
