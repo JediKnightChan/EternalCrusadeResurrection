@@ -332,5 +332,31 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 
 void UAbilityTask_WaitForInteractableTargets::ClearCache()
 {
+
+	// Queueing all ability specs for remove 
+	for (FInteractionOption& LastUpdateOption : LastUpdateOptions)
+	{
+		FObjectKey ObjectKey(LastUpdateOption.InteractionAbilityToGrant);
+		FGameplayAbilitySpecHandle SpecHandle = InteractionAbilityCache.FindRef(ObjectKey);
+
+		// Queueing for remove
+		AbilitiesToRemove.Add(SpecHandle, ObjectKey);
+
+		// Removing mapping context if present
+		APlayerController* Controller = Ability->GetActorInfo().PlayerController.Get();
+		if (Controller)
+		{
+			if (const ULocalPlayer* LocalPlayer = Controller->GetLocalPlayer())
+			{
+				if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<
+					UEnhancedInputLocalPlayerSubsystem>())
+				{
+					Subsystem->RemoveMappingContext(LastUpdateOption.MappingContext);
+				}
+			}
+		}
+	}
+
+	LastUpdateOptions.Empty();
 	InteractionAbilityCache.Empty();
 }

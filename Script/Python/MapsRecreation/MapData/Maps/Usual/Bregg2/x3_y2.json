@@ -1,0 +1,162 @@
+[
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_Torche.BP_Torche",
+        "transform": {
+            "loc": [
+                38422.9140625,
+                35185.63671875,
+                -65370.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                78.7499008178711
+            ],
+            "scale": [
+                0.53125,
+                0.53125,
+                0.53125
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_Torche.BP_Torche",
+        "transform": {
+            "loc": [
+                38326.734375,
+                34702.12109375,
+                -65370.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                78.7499008178711
+            ],
+            "scale": [
+                0.53125,
+                0.53125,
+                0.53125
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_Torche.BP_Torche",
+        "transform": {
+            "loc": [
+                38210.0703125,
+                34115.61328125,
+                -65370.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                78.7499008178711
+            ],
+            "scale": [
+                0.53125,
+                0.53125,
+                0.53125
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_Torche.BP_Torche",
+        "transform": {
+            "loc": [
+                38102.5703125,
+                33575.19921875,
+                -65370.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                78.7499008178711
+            ],
+            "scale": [
+                0.53125,
+                0.53125,
+                0.53125
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_Torche.BP_Torche",
+        "transform": {
+            "loc": [
+                38008.921875,
+                33104.4453125,
+                -65370.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                78.7499008178711
+            ],
+            "scale": [
+                0.53125,
+                0.53125,
+                0.53125
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_Prop_Interior_Medbay_Console_A.SM_Prop_Interior_Medbay_Console_A",
+        "transform": {
+            "loc": [
+                35310.7109375,
+                35498.22265625,
+                -65524.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                78.75009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_Prop_Interior_Medbay_Console_B.SM_Prop_Interior_Medbay_Console_B",
+        "transform": {
+            "loc": [
+                34897.2890625,
+                33936.35546875,
+                -65524.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                78.74976348876953
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/SM_Prop_Interior_Medbay_Screen_B2.SM_Prop_Interior_Medbay_Screen_B2",
+        "transform": {
+            "loc": [
+                35231.015625,
+                34706.0390625,
+                -65047.00390625
+            ],
+            "rot": [
+                6.830188794992864e-06,
+                -5.625019073486328,
+                78.74966430664062
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

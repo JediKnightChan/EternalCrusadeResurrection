@@ -55,6 +55,7 @@ void UCustomizationMaterialNameSpace::OnChildAttached(USceneComponent* ChildComp
 	if (!IsGarbageCollecting())
 	{
 		FString ChildCustomizationNamespaceOverride = "";
+		TMap<FName, FString> SlotNamesCustomizationNamespacesOverride = {};
 
 		if (UCustomizationElementaryModule* CustomizationElementaryModule = Cast<UCustomizationElementaryModule>(
 			ChildComponent))
@@ -64,12 +65,29 @@ void UCustomizationMaterialNameSpace::OnChildAttached(USceneComponent* ChildComp
 			{
 				ChildCustomizationNamespaceOverride = SupposedOverride;
 			}
+
+			SlotNamesCustomizationNamespacesOverride = CustomizationElementaryModule->GetSlotNamesNamespacesOverride();
 		}
 
-		const FCustomizationMaterialNamespaceData CustomizationData = GetMaterialCustomizationData(
-			ChildCustomizationNamespaceOverride);
-		ApplyMaterialChanges(ChildComponent, CustomizationData.ScalarParameters, CustomizationData.VectorParameters,
-		                     CustomizationData.TextureParameters, {});
+
+		if (UMeshComponent* MeshComponent = Cast<UMeshComponent>(ChildComponent))
+		{
+			TArray<FName> SlotNames = MeshComponent->GetMaterialSlotNames();
+			for (auto SlotName : SlotNames)
+			{
+				FString MaterialNamespace = ChildCustomizationNamespaceOverride;
+				if (SlotNamesCustomizationNamespacesOverride.Contains(SlotName))
+				{
+					MaterialNamespace = SlotNamesCustomizationNamespacesOverride[SlotName];
+				}
+
+				const FCustomizationMaterialNamespaceData CustomizationData = GetMaterialCustomizationData(
+					MaterialNamespace);
+				ApplyMaterialChanges(MeshComponent, CustomizationData.ScalarParameters,
+				                     CustomizationData.VectorParameters,
+				                     CustomizationData.TextureParameters, {SlotName});
+			}
+		}
 	}
 }
 

@@ -187,7 +187,8 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
                                                                         MaterialNamespacesToData)
 {
 	// Attaching skeletal meshes to sockets
-	for (auto [SkeletalMesh, SocketName, SocketTransform, CustomizationNamespace] : MeshesForAttach)
+	for (auto [SkeletalMesh, SocketName, SocketTransform, DefaultCustomizationNamespace, SlotNamesToNamespaces] :
+	     MeshesForAttach)
 	{
 		SocketName = GetExistingSocketNameOrNameNone(Component, SocketName);
 		USkeletalMeshComponent* SkeletalMeshComponent = SpawnChildComponent<USkeletalMeshComponent>(
@@ -200,13 +201,23 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
 			SkeletalMeshComponent->SetCollisionProfileName(CollisionProfileName);
 		}
 
-		if (MaterialNamespacesToData.Contains(CustomizationNamespace))
+		TArray<FName> MaterialSlotNames = SkeletalMeshComponent->GetMaterialSlotNames();
+		for (auto SlotName : MaterialSlotNames)
 		{
-			const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
-			UCustomizationMaterialNameSpace::ApplyMaterialChanges(SkeletalMeshComponent,
-			                                                      MaterialData->ScalarParameters,
-			                                                      MaterialData->VectorParameters,
-			                                                      MaterialData->TextureParameters, {});
+			FString CustomizationNamespace = DefaultCustomizationNamespace;
+			if (SlotNamesToNamespaces.Contains(SlotName))
+			{
+				CustomizationNamespace = SlotNamesToNamespaces[SlotName];
+			}
+
+			if (MaterialNamespacesToData.Contains(CustomizationNamespace))
+			{
+				const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
+				UCustomizationMaterialNameSpace::ApplyMaterialChanges(SkeletalMeshComponent,
+				                                                      MaterialData->ScalarParameters,
+				                                                      MaterialData->VectorParameters,
+				                                                      MaterialData->TextureParameters, {SlotName});
+			}
 		}
 	}
 }
@@ -220,7 +231,8 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
                                                                       MaterialNamespacesToData)
 {
 	// Attaching skeletal meshes to sockets
-	for (auto [StaticMesh, SocketName, SocketTransform, CustomizationNamespace] : MeshesForAttach)
+	for (auto [StaticMesh, SocketName, SocketTransform, DefaultCustomizationNamespace, SlotNamesToNamespaces] :
+	     MeshesForAttach)
 	{
 		SocketName = GetExistingSocketNameOrNameNone(Component, SocketName);
 		UStaticMeshComponent* StaticMeshComponent = SpawnChildComponent<UStaticMeshComponent>(
@@ -233,15 +245,24 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
 			StaticMeshComponent->SetCollisionProfileName(CollisionProfileName);
 		}
 
-
-		// Applying material changes
-		if (MaterialNamespacesToData.Contains(CustomizationNamespace))
+		TArray<FName> MaterialSlotNames = StaticMeshComponent->GetMaterialSlotNames();
+		for (auto SlotName : MaterialSlotNames)
 		{
-			const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
-			UCustomizationMaterialNameSpace::ApplyMaterialChanges(StaticMeshComponent,
-			                                                      MaterialData->ScalarParameters,
-			                                                      MaterialData->VectorParameters,
-			                                                      MaterialData->TextureParameters, {});
+			FString CustomizationNamespace = DefaultCustomizationNamespace;
+			if (SlotNamesToNamespaces.Contains(SlotName))
+			{
+				CustomizationNamespace = SlotNamesToNamespaces[SlotName];
+			}
+
+			// Applying material changes
+			if (MaterialNamespacesToData.Contains(CustomizationNamespace))
+			{
+				const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
+				UCustomizationMaterialNameSpace::ApplyMaterialChanges(StaticMeshComponent,
+				                                                      MaterialData->ScalarParameters,
+				                                                      MaterialData->VectorParameters,
+				                                                      MaterialData->TextureParameters, {SlotName});
+			}
 		}
 	}
 }
@@ -268,8 +289,22 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 
 		if (ElementaryAsset->MaterialCustomizationNamespace != "")
 		{
-			MaterialNamespacesToSlotNames.FindOrAdd(ElementaryAsset->MaterialCustomizationNamespace).Append(
-				ElementaryAsset->MaterialCustomizationSlotNames);
+			TArray<FName> NotOverridenSlotNames;
+			for (auto SlotName : ElementaryAsset->MaterialCustomizationSlotNames)
+			{
+				if (!ElementaryAsset->SlotNamesToMaterialNamespaceOverrides.Contains(SlotName))
+				{
+					// Not overriden, use default material namespace
+					MaterialNamespacesToSlotNames.FindOrAdd(ElementaryAsset->MaterialCustomizationNamespace).Add(
+						SlotName);
+				}
+				else
+				{
+					// Namespace for this slot name is overriden
+					MaterialNamespacesToSlotNames.FindOrAdd(
+						ElementaryAsset->SlotNamesToMaterialNamespaceOverrides[SlotName]).Add(SlotName);
+				}
+			}
 		}
 
 		StaticMeshesForAttach.Append(ElementaryAsset->StaticAttachments);
@@ -369,13 +404,32 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 		}
 
 		// Applying materials
-		if (MaterialNamespacesToData.Contains(Asset->MaterialCustomizationNamespace))
+		TArray<FName> MaterialSlotNames = ChildComponent->GetMaterialSlotNames();
+		for (auto SlotName : MaterialSlotNames)
 		{
-			const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[Asset->
-				MaterialCustomizationNamespace];
-			UCustomizationMaterialNameSpace::ApplyMaterialChanges(ChildComponent, MaterialData->ScalarParameters,
-			                                                      MaterialData->VectorParameters,
-			                                                      MaterialData->TextureParameters, {});
+			if (MaterialNamespacesToData.Contains(Asset->MaterialCustomizationNamespace))
+			{
+				FString CustomizationNamespace = Asset->MaterialCustomizationNamespace;
+				if (Asset->SlotNamesToMaterialNamespaceOverrides.Contains(SlotName))
+				{
+					CustomizationNamespace = Asset->SlotNamesToMaterialNamespaceOverrides[SlotName];
+				}
+
+				if (MaterialNamespacesToData.Contains(CustomizationNamespace))
+				{
+					const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
+					UCustomizationMaterialNameSpace::ApplyMaterialChanges(
+						ChildComponent, MaterialData->ScalarParameters,
+						MaterialData->VectorParameters,
+						MaterialData->TextureParameters, {SlotName});
+				}
+				else
+				{
+					UE_LOG(LogTemp, Warning, TEXT("Couldn't find material namespace %s for %s"),
+					       *CustomizationNamespace,
+					       *(UKismetSystemLibrary::GetDisplayName(this)))
+				}
+			}
 		}
 
 		// Process attaching static meshes to child component

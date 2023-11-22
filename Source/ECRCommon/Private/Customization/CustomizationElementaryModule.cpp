@@ -228,16 +228,20 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 	if (!CustomizationNamespaceOverride.IsEmpty())
 	{
 		DataAssetSave->MaterialCustomizationNamespace = CustomizationNamespaceOverride;
-	} else
+	}
+	else
 	{
-		FString MaterialCustomizationNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfTypeDisplayNameEnd<
-		UCustomizationMaterialNameSpace>(this);
+		FString MaterialCustomizationNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfTypeDisplayNameEnd
+		<
+			UCustomizationMaterialNameSpace>(this);
 		DataAssetSave->MaterialCustomizationNamespace = MaterialCustomizationNamespace;
 	}
-	
 
 	// Setting material customization slot names
 	DataAssetSave->MaterialCustomizationSlotNames = GetMaterialSlotNames();
+
+	// Saving namespace overrides for slot names
+	DataAssetSave->SlotNamesToMaterialNamespaceOverrides = SlotNamesNamespacesOverride;
 
 	// Processing children
 	for (TObjectPtr<USceneComponent> ChildComponent : AllChildren)
@@ -291,7 +295,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 			{
 				continue;
 			}
-			
+
 			// Getting material namespace for child
 			FString ChildSkeletalMeshComponentName =
 				UCustomizationUtilsLibrary::GetDisplayNameEnd(

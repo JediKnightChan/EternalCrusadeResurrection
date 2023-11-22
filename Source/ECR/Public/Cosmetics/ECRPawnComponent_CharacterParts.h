@@ -180,10 +180,6 @@ private:
 	UPROPERTY(Replicated)
 	FECRCharacterPartList CharacterPartList;
 
-	// Rules for how to pick a body style mesh for animation to play on, based on character part cosmetics tags
-	UPROPERTY(EditAnywhere, Category=Cosmetics)
-	FECRAnimBodyStyleSelectionSet BodyMeshes;
-
 	// Additional cosmetic tags not depending on spawned character parts
 	UPROPERTY(ReplicatedUsing=OnRep_AdditionalCosmeticTags)
 	FGameplayTagContainer AdditionalCosmeticTags;

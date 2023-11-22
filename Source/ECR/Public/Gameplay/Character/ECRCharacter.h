@@ -80,6 +80,10 @@ public:
 
 	FORCEINLINE float GetGoingBackwardMultiplier() const { return GoingBackwardMultiplier; }
 	FORCEINLINE float GetGoingSidewaysMultiplier() const { return GoingSidewaysMultiplier; }
+	FORCEINLINE float GetOrientationToMovementOrientedRequirementAlpha() const
+	{
+		return OrientationToMovementOrientedRequirementAlpha;
+	}
 
 	void ToggleCrouch();
 
@@ -176,6 +180,10 @@ private:
 	/** Multiplier for input value when going left or right */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
 	float GoingSidewaysMultiplier;
+
+	/** When rotation is oriented to movement, defines slowness when rotated not in movement direction (in order to first rotate, then move) */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
+	float OrientationToMovementOrientedRequirementAlpha;
 
 private:
 	UFUNCTION()

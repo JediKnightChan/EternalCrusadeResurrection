@@ -92,6 +92,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	double DesiredCameraDistanceMultiplier;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	TArray<AActor*> IgnoredCameraObstacles;
 private:
 	/** Interpolation speed when changing camera distance */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))

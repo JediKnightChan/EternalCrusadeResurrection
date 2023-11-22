@@ -20,5 +20,5 @@ for i, bone in enumerate(obj.pose.bones):
     original_bone_names_to_indices_names[bone.name] = index_name
 
 root_dir = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/Blender/BoneStructureRecreation"
-with open(f"{root_dir}/space_marine_bone_mapping.json", "w") as f:
+with open(f"{root_dir}/terminator_bone_mapping.json", "w") as f:
     json.dump(original_bone_names_to_indices_names, f, indent=4)

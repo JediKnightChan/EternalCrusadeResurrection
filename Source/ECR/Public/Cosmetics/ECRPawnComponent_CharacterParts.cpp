@@ -183,7 +183,7 @@ bool FECRCharacterPartList::SpawnActorForEntry(FECRAppliedCharacterPartEntry& En
 			PartComponent->SetupAttachment(ComponentToAttachTo, Entry.Part.SocketName);
 			PartComponent->SetChildActorClass(Entry.Part.PartClass);
 			PartComponent->RegisterComponent();
-
+			UE_LOG(LogTemp, Warning, TEXT("Trying to spawn actor for %s"), *GetNameSafe(Entry.Part.PartClass))
 			if (AActor* SpawnedActor = PartComponent->GetChildActor())
 			{
 				switch (Entry.Part.CollisionMode)
@@ -354,25 +354,6 @@ void UECRPawnComponent_CharacterParts::UpdatePlayerStateOnEntries()
 
 void UECRPawnComponent_CharacterParts::BroadcastChanged()
 {
-	const bool bReinitPose = true;
-
-	// Check to see if the body type has changed
-	if (USkeletalMeshComponent* MeshComponent = GetParentMeshComponent())
-	{
-		// Determine the mesh to use based on cosmetic part tags
-		const FGameplayTagContainer MergedTags = GetCombinedTags(FGameplayTag());
-		USkeletalMesh* DesiredMesh = BodyMeshes.SelectBestBodyStyle(MergedTags);
-
-		// Apply the desired mesh (this call is a no-op if the mesh hasn't changed)
-		MeshComponent->SetSkeletalMesh(DesiredMesh, /*bReinitPose=*/ bReinitPose);
-
-		// Apply the desired physics asset if there's a forced override independent of the one from the mesh
-		if (UPhysicsAsset* PhysicsAsset = BodyMeshes.ForcedPhysicsAsset)
-		{
-			MeshComponent->SetPhysicsAsset(PhysicsAsset, /*bForceReInit=*/ bReinitPose);
-		}
-	}
-
 	// Let observers know, e.g., if they need to apply team coloring or similar
 	OnCharacterPartsChanged.Broadcast(this);
 }

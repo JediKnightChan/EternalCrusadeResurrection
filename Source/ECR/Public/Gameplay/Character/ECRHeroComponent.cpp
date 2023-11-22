@@ -6,6 +6,7 @@
 #include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/Player/ECRPlayerController.h"
 #include "Input/ECRInputComponent.h"
+#include "Kismet/KismetMathLibrary.h"
 
 
 UECRHeroComponent::UECRHeroComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
@@ -31,6 +32,7 @@ void UECRHeroComponent::Input_Move(const FInputActionValue& InputActionValue)
 	}
 
 	APawn* Pawn = GetPawn<APawn>();
+	const FVector PawnForwardVector = Pawn ? Pawn->GetActorForwardVector() : FVector::Zero();
 	AController* Controller = Pawn ? Pawn->GetController() : nullptr;
 
 	// If the player has attempted to move again then cancel auto running
@@ -41,14 +43,17 @@ void UECRHeroComponent::Input_Move(const FInputActionValue& InputActionValue)
 
 	float BackwardsMultiplier = 1.0f;
 	float SidewaysMultiplier = 1.0f;
+	float OrientationToMovementOrientedRequirementAlpha = 0.0f;
 	bool OrientsToMovement = false;
-	
+
 	if (AECRCharacter* Character = Cast<AECRCharacter>(Pawn))
 	{
 		BackwardsMultiplier = Character->GetGoingBackwardMultiplier();
 		SidewaysMultiplier = Character->GetGoingSidewaysMultiplier();
-		
-		if (UCharacterMovementComponent* CharMoveComp = Cast<UCharacterMovementComponent>(Character->GetMovementComponent()))
+		OrientationToMovementOrientedRequirementAlpha = Character->GetOrientationToMovementOrientedRequirementAlpha();
+
+		if (UCharacterMovementComponent* CharMoveComp = Cast<UCharacterMovementComponent>(
+			Character->GetMovementComponent()))
 		{
 			OrientsToMovement = CharMoveComp->bOrientRotationToMovement;
 		}
@@ -63,7 +68,14 @@ void UECRHeroComponent::Input_Move(const FInputActionValue& InputActionValue)
 		{
 			const FVector MovementDirection = MovementRotation.RotateVector(FVector::RightVector);
 			float XScaleValue = FMath::Clamp(Value.X, -1.0f, 1.0f);
-			if (!OrientsToMovement)
+			if (OrientsToMovement)
+			{
+				const float AngleToForwardCos = UKismetMathLibrary::Dot_VectorVector(
+					PawnForwardVector, MovementDirection);
+				XScaleValue = FMath::Lerp(XScaleValue, XScaleValue * FMath::Max(AngleToForwardCos, 0.01f),
+				                          OrientationToMovementOrientedRequirementAlpha);
+			}
+			else
 			{
 				XScaleValue = XScaleValue * SidewaysMultiplier;
 			}
@@ -74,9 +86,19 @@ void UECRHeroComponent::Input_Move(const FInputActionValue& InputActionValue)
 		{
 			const FVector MovementDirection = MovementRotation.RotateVector(FVector::ForwardVector);
 			float YScaleValue = FMath::Clamp(Value.Y, -1.0f, 1.0f);
-			if (!OrientsToMovement && YScaleValue < 0)
+			if (OrientsToMovement)
 			{
-				YScaleValue = YScaleValue * BackwardsMultiplier;
+				const float AngleToForwardCos = UKismetMathLibrary::Dot_VectorVector(
+					PawnForwardVector, MovementDirection);
+				YScaleValue = FMath::Lerp(YScaleValue, YScaleValue * FMath::Max(AngleToForwardCos, 0.01f),
+										  OrientationToMovementOrientedRequirementAlpha);
+			}
+			else
+			{
+				if (YScaleValue < 0)
+				{
+					YScaleValue = YScaleValue * BackwardsMultiplier;
+				}
 			}
 			Pawn->AddMovementInput(MovementDirection, YScaleValue);
 		}

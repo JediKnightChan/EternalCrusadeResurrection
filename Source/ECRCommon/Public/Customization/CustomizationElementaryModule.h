@@ -24,12 +24,17 @@ class ECRCOMMON_API UCustomizationElementaryModule : public USkeletalMeshCompone
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	FString MeshMergerNamespace;
 
+	/** Material namespaces for attachments */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	TMap<FString, FString> AttachmentsToMaterialNamespaces;
 
+	/** This will override material namespace (one that this module is attached to) */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	FString CustomizationNamespaceOverride;
 
+	/** This will override material namespace for concise slot names */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	TMap<FName, FString> SlotNamesNamespacesOverride;
 protected:
 	/* Inheriting animations from first SkeletalMeshComponent parent if requested */
 	void InheritAnimationsIfNeeded();
@@ -60,5 +65,10 @@ public:
 	FORCEINLINE FString GetCustomizationNamespaceOverride()
 	{
 		return CustomizationNamespaceOverride;
+	}
+
+	FORCEINLINE TMap<FName, FString> GetSlotNamesNamespacesOverride()
+	{
+		return SlotNamesNamespacesOverride;
 	}
 };

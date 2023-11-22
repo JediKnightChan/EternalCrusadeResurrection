@@ -8,14 +8,16 @@ import re
 
 # Change me!
 map_data_filepath = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                    "MapData/Maps/Usual/Arena5v5/arena5v5_gm.json"
+                    "MapData/Maps/Usual/Torias/torias_static3.json"
 
-EXCLUDE_ENGINE_ASSETS = True
+EXCLUDE_ENGINE_ASSETS = False
 
 level_library = unreal.EditorLevelLibrary
 editor_asset_library = unreal.EditorAssetLibrary
-# relative_offset_loc = unreal.Vector(787400, 787400, 0)
-relative_offset_loc = unreal.Vector(0, 0, 0)
+relative_offset_loc = unreal.Vector(0, 0, 0) + unreal.Vector(-152400,
+                                                             -1066800,
+                                                             0)
+# relative_offset_loc = unreal.Vector(0, 0, 0)
 
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/"
           "MapData/Maps/path_replacing_map.json", "r") as f:

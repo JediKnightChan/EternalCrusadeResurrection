@@ -88,6 +88,7 @@ AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 
 	GoingBackwardMultiplier = 1.0f;
 	GoingSidewaysMultiplier = 1.0f;
+	OrientationToMovementOrientedRequirementAlpha = 0.0f;
 }
 
 void AECRCharacter::PreInitializeComponents()
