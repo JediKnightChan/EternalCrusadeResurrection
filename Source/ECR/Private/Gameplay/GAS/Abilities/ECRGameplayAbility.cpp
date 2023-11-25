@@ -557,13 +557,9 @@ UECRPawnComponent_CharacterParts* UECRGameplayAbility::GetPawnCustomizationCompo
 		return nullptr;
 	}
 
-	if (const AECRPlayerState* PS = Cast<AECRPlayerState>(CurrentActorInfo->OwnerActor))
+	if (const APawn* Pawn = Cast<APawn>(CurrentActorInfo->OwnerActor))
 	{
-		if (const APawn* Pawn = PS->GetPawn())
-		{
-			return Pawn->FindComponentByClass<UECRPawnComponent_CharacterParts>();
-		}
-		return nullptr;
+		return Pawn->FindComponentByClass<UECRPawnComponent_CharacterParts>();
 	}
 	return nullptr;
 }

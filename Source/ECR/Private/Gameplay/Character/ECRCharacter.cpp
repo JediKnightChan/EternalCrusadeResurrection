@@ -196,11 +196,7 @@ UECRAbilitySystemComponent* AECRCharacter::GetECRAbilitySystemComponent() const
 
 UAbilitySystemComponent* AECRCharacter::GetAbilitySystemComponent() const
 {
-	if (PawnExtComponent)
-	{
-		return PawnExtComponent->GetECRAbilitySystemComponent();
-	}
-	return nullptr;
+	return GetECRAbilitySystemComponent();
 }
 
 void AECRCharacter::OnAbilitySystemInitialized()
@@ -233,6 +229,8 @@ void AECRCharacter::PossessedBy(AController* NewController)
 	{
 		PawnExtComponent->SetPawnData(PawnData);
 	}
+
+	SetOwner(NewController);
 }
 
 void AECRCharacter::UnPossessed()
