@@ -3,30 +3,14 @@
 #include "Gameplay/Player/ECRPlayerState.h"
 
 #include "OnlineSubsystemTypes.h"
-#include "System/ECRLogChannels.h"
 #include "Net/UnrealNetwork.h"
 #include "Gameplay/Character/ECRPawnExtensionComponent.h"
-#include "Gameplay/GAS/ECRAbilitySystemComponent.h"
-
-#include "Gameplay/GAS/Attributes/ECRHealthSet.h"
-#include "Gameplay/GAS/Attributes/ECRCombatSet.h"
 #include "Components/GameFrameworkComponentManager.h"
-#include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 
 
 AECRPlayerState::AECRPlayerState(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	AbilitySystemComponent = ObjectInitializer.CreateDefaultSubobject<UECRAbilitySystemComponent>(
-		this, TEXT("AbilitySystemComponent"));
-	AbilitySystemComponent->SetIsReplicated(true);
-	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
-
-	CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("CharacterHealthSet"));
-	CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatSet"));
-
-	// AbilitySystemComponent needs to be updated at a high frequency.
-	NetUpdateFrequency = 100.0f;
 }
 
 
@@ -82,15 +66,7 @@ int32 AECRPlayerState::GetStatTagStackCount(FGameplayTag Tag) const
 	return StatTags.GetStackCount(Tag);
 }
 
-UAbilitySystemComponent* AECRPlayerState::GetAbilitySystemComponent() const
-{
-	return GetECRAbilitySystemComponent();
-}
-
 void AECRPlayerState::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
-
-	check(AbilitySystemComponent);
-	AbilitySystemComponent->InitAbilityActorInfo(this, GetPawn());
 }

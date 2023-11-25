@@ -154,7 +154,7 @@ void UECRPawnControlComponent::InitInputAndCamera()
 	{
 		PawnData = PawnExtComp->GetPawnData<UECRPawnData>();
 	}
-	
+
 	if (bIsLocallyControlled && PawnData)
 	{
 		if (UECRCameraComponent* CameraComponent = UECRCameraComponent::FindCameraComponent(Pawn))
@@ -183,9 +183,15 @@ void UECRPawnControlComponent::OnPawnReadyToInitialize()
 
 	if (UECRPawnExtensionComponent* PawnExtComp = UECRPawnExtensionComponent::FindPawnExtensionComponent(Pawn))
 	{
-		// The player state holds the persistent data for this player (state that persists across deaths and multiple pawns).
-		// The ability system component and attribute sets live on the player state.
-		PawnExtComp->InitializeAbilitySystem(ECRPS->GetECRAbilitySystemComponent(), ECRPS);
+		if (const IAbilitySystemInterface* AbilitySystemInterface = Cast<IAbilitySystemInterface>(Pawn))
+		{
+			if (UECRAbilitySystemComponent* EASC = Cast<UECRAbilitySystemComponent>(
+				AbilitySystemInterface->GetAbilitySystemComponent()))
+			{
+				PawnExtComp->InitializeAbilitySystem(EASC, Pawn);
+			}
+			
+		}
 	}
 
 	InitInputAndCamera();

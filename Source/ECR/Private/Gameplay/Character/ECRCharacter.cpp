@@ -21,6 +21,8 @@
 #include "Gameplay/ECRGameState.h"
 #include "Gameplay/Character/ECRPawnData.h"
 #include "Gameplay/GAS/ECRAbilitySet.h"
+#include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
+#include "Gameplay/GAS/Attributes/ECRCombatSet.h"
 #include "Gameplay/GAS/Components/ECRCharacterHealthComponent.h"
 #include "Gameplay/Interaction/InteractionQuery.h"
 
@@ -38,7 +40,18 @@ AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 	PrimaryActorTick.bCanEverTick = false;
 	PrimaryActorTick.bStartWithTickEnabled = false;
 
+	// AbilitySystemComponent needs to be updated at a high frequency.
+	NetUpdateFrequency = 100.0f;
 	NetCullDistanceSquared = 900000000.0f;
+
+	// Ability system component
+	AbilitySystemComponent = ObjectInitializer.CreateDefaultSubobject<UECRAbilitySystemComponent>(
+		this, TEXT("AbilitySystemComponent"));
+	AbilitySystemComponent->SetIsReplicated(true);
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
+
+	CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("CharacterHealthSet"));
+	CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatSet"));
 
 	UCapsuleComponent* CapsuleComp = GetCapsuleComponent();
 	check(CapsuleComp);
@@ -94,6 +107,14 @@ AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 void AECRCharacter::PreInitializeComponents()
 {
 	Super::PreInitializeComponents();
+}
+
+void AECRCharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	check(AbilitySystemComponent);
+	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 }
 
 void AECRCharacter::BeginPlay()
@@ -170,7 +191,7 @@ AECRPlayerState* AECRCharacter::GetECRPlayerState() const
 
 UECRAbilitySystemComponent* AECRCharacter::GetECRAbilitySystemComponent() const
 {
-	return Cast<UECRAbilitySystemComponent>(GetAbilitySystemComponent());
+	return AbilitySystemComponent;
 }
 
 UAbilitySystemComponent* AECRCharacter::GetAbilitySystemComponent() const
@@ -519,8 +540,7 @@ void AECRCharacter::GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySets) const
 	{
 		if (AbilitySet)
 		{
-			UECRAbilitySystemComponent* ECRAbilitySystemComponent = GetECRPlayerState()->GetECRAbilitySystemComponent();
-			AbilitySet->GiveToAbilitySystem(ECRAbilitySystemComponent, nullptr);
+			AbilitySet->GiveToAbilitySystem(AbilitySystemComponent, nullptr);
 		}
 	}
 }
