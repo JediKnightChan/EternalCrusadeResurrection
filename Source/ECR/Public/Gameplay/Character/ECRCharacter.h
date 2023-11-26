@@ -89,6 +89,7 @@ public:
 
 	//~AActor interface
 	virtual void PreInitializeComponents() override;
+	virtual void PostInitializeComponents() override;
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void Reset() override;
@@ -152,6 +153,10 @@ protected:
 	void InitPawnDataAndAbilities();
 
 private:
+	// The ability system component sub-object used by vehicles.
+	UPROPERTY(VisibleAnywhere, Category = "ECR|Vehicle")
+	UECRAbilitySystemComponent* AbilitySystemComponent;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
 	UECRPawnExtensionComponent* PawnExtComponent;
 
