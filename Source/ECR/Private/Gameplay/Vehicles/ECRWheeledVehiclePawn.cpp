@@ -120,7 +120,6 @@ void AECRWheeledVehiclePawn::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 
 void AECRWheeledVehiclePawn::OnAbilitySystemInitialized()
 {
-	UE_LOG(LogTemp, Warning, TEXT("vehicle Abilitysystem initialized"))
 	UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent();
 	check(ECRASC);
 

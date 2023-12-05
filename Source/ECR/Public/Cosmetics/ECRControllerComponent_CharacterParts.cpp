@@ -108,26 +108,26 @@ void UECRControllerComponent_CharacterParts::SetAdditionalCosmeticTags(const FGa
 void UECRControllerComponent_CharacterParts::OnPossessedPawnChanged(APawn* OldPawn, APawn* NewPawn)
 {
 	// Remove parts from the old pawn
-	if (UECRPawnComponent_CharacterParts* OldCustomizer = OldPawn ? OldPawn->FindComponentByClass<UECRPawnComponent_CharacterParts>() : nullptr)
-	{
-		for (FECRControllerCharacterPartEntry& Entry : CharacterParts)
-		{
-			OldCustomizer->RemoveCharacterPart(Entry.Handle);
-			Entry.Handle.Reset();
-		}
-	}
+	// if (UECRPawnComponent_CharacterParts* OldCustomizer = OldPawn ? OldPawn->FindComponentByClass<UECRPawnComponent_CharacterParts>() : nullptr)
+	// {
+	// 	for (FECRControllerCharacterPartEntry& Entry : CharacterParts)
+	// 	{
+	// 		OldCustomizer->RemoveCharacterPart(Entry.Handle);
+	// 		Entry.Handle.Reset();
+	// 	}
+	// }
 
 	// Apply parts to the new pawn
-	if (UECRPawnComponent_CharacterParts* NewCustomizer = NewPawn ? NewPawn->FindComponentByClass<UECRPawnComponent_CharacterParts>() : nullptr)
-	{
-		for (FECRControllerCharacterPartEntry& Entry : CharacterParts)
-		{
-			ensure(!Entry.Handle.IsValid());
-
-			if (Entry.Source != ECharacterPartSource::NaturalSuppressedViaCheat)
-			{
-				Entry.Handle = NewCustomizer->AddCharacterPart(Entry.Part);
-			}
-		}
-	}
+	// if (UECRPawnComponent_CharacterParts* NewCustomizer = NewPawn ? NewPawn->FindComponentByClass<UECRPawnComponent_CharacterParts>() : nullptr)
+	// {
+	// 	for (FECRControllerCharacterPartEntry& Entry : CharacterParts)
+	// 	{
+	// 		ensure(!Entry.Handle.IsValid());
+	//
+	// 		if (Entry.Source != ECharacterPartSource::NaturalSuppressedViaCheat)
+	// 		{
+	// 			Entry.Handle = NewCustomizer->AddCharacterPart(Entry.Part);
+	// 		}
+	// 	}
+	// }
 }
