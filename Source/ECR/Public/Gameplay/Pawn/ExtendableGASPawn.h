@@ -59,9 +59,6 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	UECRAbilitySystemComponent* AbilitySystemComponent;
 
-	UPROPERTY(VisibleAnywhere)
-	UECRSimpleVehicleHealthSet* HealthSet;
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Vehicle", Meta = (AllowPrivateAccess = "true"))
 	UECRHealthComponent* HealthComponent;
 

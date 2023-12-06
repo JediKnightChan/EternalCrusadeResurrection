@@ -32,31 +32,6 @@ class ECR_API UECRCharacterHealthSet : public UECRHealthSet
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_MaxBleedingHealth,
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData MaxBleedingHealth;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_RootMotionScale,
-		Meta=(AllowPrivateAccess="true"))
-	FGameplayAttributeData RootMotionScale;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_WalkSpeed,
-		Meta=(AllowPrivateAccess="true"))
-	FGameplayAttributeData WalkSpeed;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_Stamina,
-		Meta=(AllowPrivateAccess="true"))
-	FGameplayAttributeData Stamina;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_MaxStamina,
-		Meta=(AllowPrivateAccess="true"))
-	FGameplayAttributeData MaxStamina;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_EvasionStamina,
-		Meta=(AllowPrivateAccess="true"))
-	FGameplayAttributeData EvasionStamina;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_MaxEvasionStamina,
-		Meta=(AllowPrivateAccess="true"))
-	FGameplayAttributeData MaxEvasionStamina;
-
 protected:
 	/** Returns if ready to become wounded */
 	virtual bool GetIsReadyToBecomeWounded() const;
@@ -95,25 +70,6 @@ protected:
 
 	UFUNCTION()
 	void OnRep_MaxBleedingHealth(const FGameplayAttributeData& OldValue) const;
-
-	UFUNCTION()
-	void OnRep_RootMotionScale(const FGameplayAttributeData& OldValue) const;
-
-	UFUNCTION()
-	void OnRep_WalkSpeed(const FGameplayAttributeData& OldValue) const;
-
-	UFUNCTION()
-	void OnRep_Stamina(const FGameplayAttributeData& OldValue) const;
-
-	UFUNCTION()
-	void OnRep_MaxStamina(const FGameplayAttributeData& OldValue) const;
-
-	UFUNCTION()
-	void OnRep_EvasionStamina(const FGameplayAttributeData& OldValue) const;
-
-	UFUNCTION()
-	void OnRep_MaxEvasionStamina(const FGameplayAttributeData& OldValue) const;
-
 protected:
 	// Used to track when the health reaches 0 to trigger ReadyToBecomeWounded event only once
 	bool bLastTimeWasWounded;
@@ -124,12 +80,6 @@ public:
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxShield);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, BleedingHealth);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxBleedingHealth);
-	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, RootMotionScale);
-	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, WalkSpeed);
-	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, Stamina);
-	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxStamina);
-	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, EvasionStamina);
-	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxEvasionStamina);
 
 	// Delegate to broadcast when the health attribute reaches zero.
 	mutable FECRAttributeEvent OnReadyToBecomeWounded;

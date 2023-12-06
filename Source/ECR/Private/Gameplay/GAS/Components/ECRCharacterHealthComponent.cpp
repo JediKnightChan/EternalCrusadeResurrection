@@ -8,6 +8,7 @@
 #include "System/ECRLogChannels.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
+#include "Gameplay/GAS/Attributes/ECRMovementSet.h"
 #include "System/Messages/ECRVerbMessage.h"
 #include "System/Messages/ECRVerbMessageHelpers.h"
 
@@ -20,6 +21,7 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 	Super::InitializeWithAbilitySystem(InASC);
 
 	CharacterHealthSet = Cast<UECRCharacterHealthSet>(HealthSet);
+	CharacterMovementSet = AbilitySystemComponent->GetSet<UECRMovementSet>();
 	if (!CharacterHealthSet)
 	{
 		UE_LOG(LogECR, Error,
@@ -31,14 +33,14 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 
 	// Root motion scale
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		UECRCharacterHealthSet::GetRootMotionScaleAttribute()).AddUObject(
+		UECRMovementSet::GetRootMotionScaleAttribute()).AddUObject(
 		this, &ThisClass::HandleRootMotionScaleChanged);
-	ChangeCharacterRootMotionScale(CharacterHealthSet->GetRootMotionScale());
+	ChangeCharacterRootMotionScale(CharacterMovementSet->GetRootMotionScale());
 
 	// Speed
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetWalkSpeedAttribute()).
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRMovementSet::GetWalkSpeedAttribute()).
 	                        AddUObject(this, &ThisClass::HandleWalkSpeedChanged);
-	ChangeCharacterSpeed(CharacterHealthSet->GetWalkSpeed());
+	ChangeCharacterSpeed(CharacterMovementSet->GetWalkSpeed());
 
 	// Shield
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetShieldAttribute()).
@@ -63,26 +65,27 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 
 	CharacterHealthSet->OnReadyToBecomeWounded.AddUObject(this, &ThisClass::HandleReadyToBecomeWounded);
 	CharacterHealthSet->OnReadyToBecomeUnwounded.AddUObject(this, &ThisClass::HandleReadyToBecomeUnwounded);
+
 	// Stamina
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetStaminaAttribute()).
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRMovementSet::GetStaminaAttribute()).
 	                        AddUObject(this, &ThisClass::HandleStaminaChanged);
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetMaxStaminaAttribute()).
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRMovementSet::GetMaxStaminaAttribute()).
 	                        AddUObject(this, &ThisClass::HandleMaxStaminaChanged);
-	OnStaminaChanged.Broadcast(this, CharacterHealthSet->GetStamina(), CharacterHealthSet->GetStamina(), nullptr);
-	OnMaxStaminaChanged.Broadcast(this, CharacterHealthSet->GetMaxStamina(), CharacterHealthSet->GetMaxStamina(),
+	OnStaminaChanged.Broadcast(this, CharacterMovementSet->GetStamina(), CharacterMovementSet->GetStamina(), nullptr);
+	OnMaxStaminaChanged.Broadcast(this, CharacterMovementSet->GetMaxStamina(), CharacterMovementSet->GetMaxStamina(),
 	                              nullptr);
 
 	// Evasion stamina
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		                        UECRCharacterHealthSet::GetEvasionStaminaAttribute()).
+		                        UECRMovementSet::GetEvasionStaminaAttribute()).
 	                        AddUObject(this, &ThisClass::HandleEvasionStaminaChanged);
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		                        UECRCharacterHealthSet::GetMaxEvasionStaminaAttribute()).
+		                        UECRMovementSet::GetMaxEvasionStaminaAttribute()).
 	                        AddUObject(this, &ThisClass::HandleMaxEvasionStaminaChanged);
-	OnEvasionStaminaChanged.Broadcast(this, CharacterHealthSet->GetEvasionStamina(),
-	                                  CharacterHealthSet->GetEvasionStamina(), nullptr);
-	OnMaxEvasionStaminaChanged.Broadcast(this, CharacterHealthSet->GetMaxEvasionStamina(),
-	                                     CharacterHealthSet->GetMaxEvasionStamina(), nullptr);
+	OnEvasionStaminaChanged.Broadcast(this, CharacterMovementSet->GetEvasionStamina(),
+	                                  CharacterMovementSet->GetEvasionStamina(), nullptr);
+	OnMaxEvasionStaminaChanged.Broadcast(this, CharacterMovementSet->GetMaxEvasionStamina(),
+	                                     CharacterMovementSet->GetMaxEvasionStamina(), nullptr);
 }
 
 void UECRCharacterHealthComponent::UninitializeFromAbilitySystem()
@@ -128,12 +131,12 @@ float UECRCharacterHealthComponent::GetBleedingHealthNormalized() const
 
 float UECRCharacterHealthComponent::GetStamina() const
 {
-	return (CharacterHealthSet ? CharacterHealthSet->GetStamina() : 0.0f);
+	return (CharacterMovementSet ? CharacterMovementSet->GetStamina() : 0.0f);
 }
 
 float UECRCharacterHealthComponent::GetMaxStamina() const
 {
-	return (CharacterHealthSet ? CharacterHealthSet->GetMaxStamina() : 0.0f);
+	return (CharacterMovementSet ? CharacterMovementSet->GetMaxStamina() : 0.0f);
 }
 
 float UECRCharacterHealthComponent::GetStaminaNormalized() const
@@ -143,12 +146,12 @@ float UECRCharacterHealthComponent::GetStaminaNormalized() const
 
 float UECRCharacterHealthComponent::GetEvasionStamina() const
 {
-	return (CharacterHealthSet ? CharacterHealthSet->GetEvasionStamina() : 0.0f);
+	return (CharacterMovementSet ? CharacterMovementSet->GetEvasionStamina() : 0.0f);
 }
 
 float UECRCharacterHealthComponent::GetMaxEvasionStamina() const
 {
-	return (CharacterHealthSet ? CharacterHealthSet->GetMaxEvasionStamina() : 0.0f);
+	return (CharacterMovementSet ? CharacterMovementSet->GetMaxEvasionStamina() : 0.0f);
 }
 
 float UECRCharacterHealthComponent::GetEvasionStaminaNormalized() const

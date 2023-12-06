@@ -3,7 +3,8 @@
 #include "Gameplay/Character/ECRPawnData.h"
 #include "Gameplay/GAS/ECRAbilitySet.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
-#include "Gameplay/GAS/Attributes/ECRSimpleVehicleHealthSet.h"
+#include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
+#include "Gameplay/GAS/Attributes/ECRCombatSet.h"
 #include "Gameplay/GAS/Components/ECRHealthComponent.h"
 #include "Net/UnrealNetwork.h"
 
@@ -14,7 +15,8 @@ AExtendableGASPawn::AExtendableGASPawn(const FObjectInitializer& ObjectInitializ
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
-	HealthSet = CreateDefaultSubobject<UECRSimpleVehicleHealthSet>(TEXT("HealthSet"));
+	CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("HealthSet"));
+	CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatSet"));
 
 	PawnExtComponent->OnAbilitySystemInitialized_RegisterAndCall(
 		FSimpleMulticastDelegate::FDelegate::CreateUObject(this, &ThisClass::OnAbilitySystemInitialized));
