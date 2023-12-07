@@ -5,6 +5,7 @@
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
+#include "Gameplay/GAS/Components/ECRCharacterHealthComponent.h"
 #include "Gameplay/GAS/Components/ECRHealthComponent.h"
 #include "Net/UnrealNetwork.h"
 
@@ -23,9 +24,7 @@ AExtendableGASPawn::AExtendableGASPawn(const FObjectInitializer& ObjectInitializ
 	PawnExtComponent->OnAbilitySystemUninitialized_Register(
 		FSimpleMulticastDelegate::FDelegate::CreateUObject(this, &ThisClass::OnAbilitySystemUninitialized));
 
-	HealthComponent = CreateDefaultSubobject<UECRHealthComponent>(TEXT("HealthComponent"));
-	HealthComponent->OnDeathStarted.AddDynamic(this, &ThisClass::K2_OnDeathStarted);
-	HealthComponent->OnDeathFinished.AddDynamic(this, &ThisClass::K2_OnDeathFinished);
+	HealthComponent = CreateDefaultSubobject<UECRCharacterHealthComponent>(TEXT("HealthComponent"));
 }
 
 UECRAbilitySystemComponent* AExtendableGASPawn::GetECRAbilitySystemComponent() const

@@ -31,24 +31,15 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 		return;
 	}
 
-	// Root motion scale
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		UECRMovementSet::GetRootMotionScaleAttribute()).AddUObject(
-		this, &ThisClass::HandleRootMotionScaleChanged);
-	ChangeCharacterRootMotionScale(CharacterMovementSet->GetRootMotionScale());
-
-	// Speed
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRMovementSet::GetWalkSpeedAttribute()).
-	                        AddUObject(this, &ThisClass::HandleWalkSpeedChanged);
-	ChangeCharacterSpeed(CharacterMovementSet->GetWalkSpeed());
-
 	// Shield
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetShieldAttribute()).
 	                        AddUObject(this, &ThisClass::HandleShieldChanged);
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetMaxShieldAttribute()).
-	                        AddUObject(this, &ThisClass::HandleMaxShieldChanged);
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRCharacterHealthSet::GetMaxShieldAttribute())
+	                      .
+	                      AddUObject(this, &ThisClass::HandleMaxShieldChanged);
 	OnShieldChanged.Broadcast(this, CharacterHealthSet->GetShield(), CharacterHealthSet->GetShield(), nullptr);
-	OnMaxShieldChanged.Broadcast(this, CharacterHealthSet->GetMaxShield(), CharacterHealthSet->GetMaxShield(), nullptr);
+	OnMaxShieldChanged.Broadcast(this, CharacterHealthSet->GetMaxShield(), CharacterHealthSet->GetMaxShield(),
+	                             nullptr);
 
 	// Bleeding health
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
@@ -66,26 +57,43 @@ void UECRCharacterHealthComponent::InitializeWithAbilitySystem(UECRAbilitySystem
 	CharacterHealthSet->OnReadyToBecomeWounded.AddUObject(this, &ThisClass::HandleReadyToBecomeWounded);
 	CharacterHealthSet->OnReadyToBecomeUnwounded.AddUObject(this, &ThisClass::HandleReadyToBecomeUnwounded);
 
-	// Stamina
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRMovementSet::GetStaminaAttribute()).
-	                        AddUObject(this, &ThisClass::HandleStaminaChanged);
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRMovementSet::GetMaxStaminaAttribute()).
-	                        AddUObject(this, &ThisClass::HandleMaxStaminaChanged);
-	OnStaminaChanged.Broadcast(this, CharacterMovementSet->GetStamina(), CharacterMovementSet->GetStamina(), nullptr);
-	OnMaxStaminaChanged.Broadcast(this, CharacterMovementSet->GetMaxStamina(), CharacterMovementSet->GetMaxStamina(),
-	                              nullptr);
 
-	// Evasion stamina
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		                        UECRMovementSet::GetEvasionStaminaAttribute()).
-	                        AddUObject(this, &ThisClass::HandleEvasionStaminaChanged);
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		                        UECRMovementSet::GetMaxEvasionStaminaAttribute()).
-	                        AddUObject(this, &ThisClass::HandleMaxEvasionStaminaChanged);
-	OnEvasionStaminaChanged.Broadcast(this, CharacterMovementSet->GetEvasionStamina(),
-	                                  CharacterMovementSet->GetEvasionStamina(), nullptr);
-	OnMaxEvasionStaminaChanged.Broadcast(this, CharacterMovementSet->GetMaxEvasionStamina(),
-	                                     CharacterMovementSet->GetMaxEvasionStamina(), nullptr);
+	if (CharacterMovementSet)
+	{
+		// Root motion scale
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
+			UECRMovementSet::GetRootMotionScaleAttribute()).AddUObject(
+			this, &ThisClass::HandleRootMotionScaleChanged);
+		ChangeCharacterRootMotionScale(CharacterMovementSet->GetRootMotionScale());
+
+		// Speed
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRMovementSet::GetWalkSpeedAttribute()).
+		                        AddUObject(this, &ThisClass::HandleWalkSpeedChanged);
+		ChangeCharacterSpeed(CharacterMovementSet->GetWalkSpeed());
+
+		// Stamina
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRMovementSet::GetStaminaAttribute()).
+		                        AddUObject(this, &ThisClass::HandleStaminaChanged);
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UECRMovementSet::GetMaxStaminaAttribute()).
+		                        AddUObject(this, &ThisClass::HandleMaxStaminaChanged);
+		OnStaminaChanged.Broadcast(this, CharacterMovementSet->GetStamina(), CharacterMovementSet->GetStamina(),
+		                           nullptr);
+		OnMaxStaminaChanged.Broadcast(this, CharacterMovementSet->GetMaxStamina(),
+		                              CharacterMovementSet->GetMaxStamina(),
+		                              nullptr);
+
+		// Evasion stamina
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
+			                        UECRMovementSet::GetEvasionStaminaAttribute()).
+		                        AddUObject(this, &ThisClass::HandleEvasionStaminaChanged);
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
+			                        UECRMovementSet::GetMaxEvasionStaminaAttribute()).
+		                        AddUObject(this, &ThisClass::HandleMaxEvasionStaminaChanged);
+		OnEvasionStaminaChanged.Broadcast(this, CharacterMovementSet->GetEvasionStamina(),
+		                                  CharacterMovementSet->GetEvasionStamina(), nullptr);
+		OnMaxEvasionStaminaChanged.Broadcast(this, CharacterMovementSet->GetMaxEvasionStamina(),
+		                                     CharacterMovementSet->GetMaxEvasionStamina(), nullptr);
+	}
 }
 
 void UECRCharacterHealthComponent::UninitializeFromAbilitySystem()
@@ -278,7 +286,8 @@ void UECRCharacterHealthComponent::HandleReadyToBecomeWounded(AActor* DamageInst
 
 
 void UECRCharacterHealthComponent::HandleReadyToBecomeUnwounded(AActor* EffectInstigator, AActor* EffectCauser,
-	const FGameplayEffectSpec& EffectSpec, float EffectMagnitude)
+                                                                const FGameplayEffectSpec& EffectSpec,
+                                                                float EffectMagnitude)
 {
 #if WITH_SERVER_CODE
 	if (AbilitySystemComponent)

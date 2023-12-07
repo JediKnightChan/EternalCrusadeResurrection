@@ -9,7 +9,7 @@
 class UECRAbilitySet;
 class UECRAbilitySystemComponent;
 class UECRSimpleVehicleHealthSet;
-class UECRHealthComponent;
+class UECRCharacterHealthComponent;
 class UECRPawnData;
 
 /**
@@ -60,7 +60,7 @@ private:
 	UECRAbilitySystemComponent* AbilitySystemComponent;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Vehicle", Meta = (AllowPrivateAccess = "true"))
-	UECRHealthComponent* HealthComponent;
+	UECRCharacterHealthComponent* HealthComponent;
 
 	UPROPERTY(ReplicatedUsing = OnRep_PawnData, EditAnywhere, BlueprintReadOnly,
 		meta=(AllowPrivateAccess="true", ExposeOnSpawn="true"))
