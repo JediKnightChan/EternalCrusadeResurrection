@@ -5,9 +5,6 @@
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
 
-#define MAX_ALLOWED_WalkSpeed (2000.0f)
-#define MAX_ALLOWED_RootMotionScale (3.0f)
-
 UECRCharacterHealthSet::UECRCharacterHealthSet()
 	: Shield(100.0f),
 	  MaxShield(100.0f),

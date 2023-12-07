@@ -27,13 +27,18 @@ void UECRCosmeticStatics::AddMontageToLoadQueueIfNeeded(const TSoftObjectPtr<UAn
 }
 
 TSubclassOf<AActor> UECRCosmeticStatics::SelectBestActor(const FECRActorSelectionSet Set,
-                                                                  const FGameplayTagContainer& CosmeticTags)
+                                                         const FGameplayTagContainer CosmeticTags)
 {
 	return Set.SelectBestActor(CosmeticTags);
 }
 
 TSoftObjectPtr<UAnimMontage> UECRCosmeticStatics::SelectBestMontage(const FECRAnimMontageSelectionSet Set,
-                                                                    FGameplayTagContainer& CosmeticTags)
+                                                                    FGameplayTagContainer CosmeticTags)
 {
 	return Set.SelectBestMontage(CosmeticTags);
+}
+
+USkeletalMesh* UECRCosmeticStatics::SelectBestMesh(const FECRMeshSelectionSet Set, FGameplayTagContainer CosmeticTags)
+{
+	return Set.SelectBestMesh(CosmeticTags);
 }
