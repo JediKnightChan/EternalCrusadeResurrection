@@ -66,3 +66,16 @@ USkeletalMesh* FECRMeshSelectionSet::SelectBestMesh(const FGameplayTagContainer&
 
 	return DefaultMesh;
 }
+
+TSubclassOf<UAnimInstance> FECRAnimInstanceSelectionSet::SelectBestAnimInstance(const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const auto& [AnimInstance, RequiredTags] : AnimInstanceRules)
+	{
+		if ((AnimInstance != nullptr) && CosmeticTags.HasAll(RequiredTags))
+		{
+			return AnimInstance;
+		}
+	}
+
+	return DefaultAnimInstance;
+}

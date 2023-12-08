@@ -104,7 +104,7 @@ struct FECRActorSelectionSet
 	GENERATED_BODY()
 
 	// List of actor rules to apply, first one that matches will be used
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Mesh))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Actor))
 	TArray<FECRActorSelectionEntry> ActorRules;
 
 	// The actor to use if none of the ActorRules matches
@@ -147,4 +147,39 @@ struct FECRMeshSelectionSet
 
 	// Choose the best actor class given the rules
 	USkeletalMesh* SelectBestMesh(const FGameplayTagContainer& CosmeticTags) const;
+};
+
+
+//////////////////////////////////////////////////////////////////////
+
+USTRUCT(BlueprintType)
+struct FECRAnimInstanceSelectionEntry
+{
+	GENERATED_BODY()
+
+	// Animation blueprint select if tags match
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<UAnimInstance> AnimInstance = nullptr;
+
+	// Cosmetic tags required (all of these must be present to be considered a match)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Categories="Cosmetic"))
+	FGameplayTagContainer RequiredTags;
+};
+
+
+USTRUCT(BlueprintType)
+struct FECRAnimInstanceSelectionSet
+{
+	GENERATED_BODY()
+
+	// List of animation blueprint rules to apply, first one that matches will be used
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=AnimInstance))
+	TArray<FECRAnimInstanceSelectionEntry> AnimInstanceRules;
+
+	// The animation blueprint to use if none of the MeshRules matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<UAnimInstance> DefaultAnimInstance = nullptr;
+
+	// Choose the best animation blueprint given the rules
+	TSubclassOf<UAnimInstance> SelectBestAnimInstance(const FGameplayTagContainer& CosmeticTags) const;
 };

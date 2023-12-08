@@ -42,3 +42,9 @@ USkeletalMesh* UECRCosmeticStatics::SelectBestMesh(const FECRMeshSelectionSet Se
 {
 	return Set.SelectBestMesh(CosmeticTags);
 }
+
+TSubclassOf<UAnimInstance> UECRCosmeticStatics::SelectBestAnimInstance(const FECRAnimInstanceSelectionSet Set,
+                                                           FGameplayTagContainer CosmeticTags)
+{
+	return Set.SelectBestAnimInstance(CosmeticTags);
+}

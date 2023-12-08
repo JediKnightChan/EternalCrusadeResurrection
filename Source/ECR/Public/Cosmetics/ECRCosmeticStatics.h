@@ -34,4 +34,9 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static USkeletalMesh* SelectBestMesh(const FECRMeshSelectionSet Set,
 	                                     FGameplayTagContainer CosmeticTags);
+
+	// Choose the best anim instance given the tags
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static TSubclassOf<UAnimInstance> SelectBestAnimInstance(const FECRAnimInstanceSelectionSet Set,
+	                                             FGameplayTagContainer CosmeticTags);
 };
