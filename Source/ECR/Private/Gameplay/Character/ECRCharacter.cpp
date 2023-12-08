@@ -23,6 +23,7 @@
 #include "Gameplay/GAS/ECRAbilitySet.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
+#include "Gameplay/GAS/Attributes/ECRMovementSet.h"
 #include "Gameplay/GAS/Components/ECRCharacterHealthComponent.h"
 #include "Gameplay/Interaction/InteractionQuery.h"
 
@@ -52,6 +53,7 @@ AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 
 	CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("CharacterHealthSet"));
 	CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatSet"));
+	CreateDefaultSubobject<UECRMovementSet>(TEXT("MovementSet"));
 
 	UCapsuleComponent* CapsuleComp = GetCapsuleComponent();
 	check(CapsuleComp);

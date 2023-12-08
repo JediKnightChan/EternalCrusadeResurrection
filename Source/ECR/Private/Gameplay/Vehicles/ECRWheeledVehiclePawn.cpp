@@ -34,8 +34,8 @@ AECRWheeledVehiclePawn::AECRWheeledVehiclePawn(const FObjectInitializer& ObjectI
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
-	HealthSet = CreateDefaultSubobject<UECRSimpleVehicleHealthSet>(TEXT("HealthSet"));
-	CombatSet = CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatSet"));
+	CreateDefaultSubobject<UECRSimpleVehicleHealthSet>(TEXT("HealthSet"));
+	CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatSet"));
 
 	PawnExtComponent = CreateDefaultSubobject<UECRPawnExtensionComponent>(TEXT("PawnExtensionComponent"));
 	PawnExtComponent->OnAbilitySystemInitialized_RegisterAndCall(
@@ -120,7 +120,6 @@ void AECRWheeledVehiclePawn::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 
 void AECRWheeledVehiclePawn::OnAbilitySystemInitialized()
 {
-	UE_LOG(LogTemp, Warning, TEXT("vehicle Abilitysystem initialized"))
 	UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent();
 	check(ECRASC);
 

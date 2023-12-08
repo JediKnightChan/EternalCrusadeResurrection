@@ -24,14 +24,7 @@ class UECRPawnData : public UPrimaryDataAsset
 	GENERATED_BODY()
 
 public:
-
 	UECRPawnData(const FObjectInitializer& ObjectInitializer);
-
-public:
-
-	// Class to instantiate for this pawn (should usually derive from AECRPawn or AECRCharacter).
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "ECR|Pawn")
-	TSubclassOf<APawn> PawnClass;
 
 	// Ability sets to grant to this pawn's ability system.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "ECR|Abilities")

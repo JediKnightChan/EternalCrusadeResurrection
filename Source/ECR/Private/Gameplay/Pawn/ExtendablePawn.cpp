@@ -1,4 +1,4 @@
-﻿#include "ExtendablePawn.h"
+﻿#include "Gameplay/Pawn/ExtendablePawn.h"
 
 #include "Gameplay/Character/ECRPawnExtensionComponent.h"
 

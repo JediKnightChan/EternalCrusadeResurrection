@@ -15,18 +15,6 @@ TSubclassOf<UAnimInstance> FECRAnimLayerSelectionSet::SelectBestLayer(const FGam
 	return DefaultLayer;
 }
 
-USkeletalMesh* FECRAnimBodyStyleSelectionSet::SelectBestBodyStyle(const FGameplayTagContainer& CosmeticTags) const
-{
-	for (const FECRAnimBodyStyleSelectionEntry& Rule : MeshRules)
-	{
-		if ((Rule.Mesh != nullptr) && CosmeticTags.HasAll(Rule.RequiredTags))
-		{
-			return Rule.Mesh;
-		}
-	}
-
-	return DefaultMesh;
-}
 
 TSoftObjectPtr<UAnimMontage> FECRAnimMontageSelectionSet::SelectBestMontage(
 	const FGameplayTagContainer& CosmeticTags) const
@@ -64,4 +52,30 @@ TSubclassOf<AActor> FECRActorSelectionSet::SelectBestActor(const FGameplayTagCon
 	}
 
 	return DefaultActorClass;
+}
+
+USkeletalMesh* FECRMeshSelectionSet::SelectBestMesh(const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const auto& [Mesh, RequiredTags] : MeshRules)
+	{
+		if ((Mesh != nullptr) && CosmeticTags.HasAll(RequiredTags))
+		{
+			return Mesh;
+		}
+	}
+
+	return DefaultMesh;
+}
+
+TSubclassOf<UAnimInstance> FECRAnimInstanceSelectionSet::SelectBestAnimInstance(const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const auto& [AnimInstance, RequiredTags] : AnimInstanceRules)
+	{
+		if ((AnimInstance != nullptr) && CosmeticTags.HasAll(RequiredTags))
+		{
+			return AnimInstance;
+		}
+	}
+
+	return DefaultAnimInstance;
 }

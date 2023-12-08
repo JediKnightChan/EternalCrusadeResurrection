@@ -96,12 +96,6 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "ECR|Vehicle")
 	UECRAbilitySystemComponent* AbilitySystemComponent;
 
-	UPROPERTY(VisibleAnywhere, Category="ECR|Vehicle")
-	UECRSimpleVehicleHealthSet* HealthSet;
-
-	UPROPERTY(VisibleAnywhere, Category="ECR|Vehicle")
-	UECRCombatSet* CombatSet;
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ECR|Vehicle", Meta = (AllowPrivateAccess = "true"))
 	UECRPawnExtensionComponent* PawnExtComponent;
 

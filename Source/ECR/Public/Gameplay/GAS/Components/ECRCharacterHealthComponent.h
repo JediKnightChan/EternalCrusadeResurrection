@@ -7,6 +7,7 @@
 #include "ECRCharacterHealthComponent.generated.h"
 
 
+class UECRMovementSet;
 class UECRCharacterHealthSet;
 
 /**
@@ -147,4 +148,8 @@ protected:
 	// Health set used by this component. Duplicates HealthSet.
 	UPROPERTY()
 	const UECRCharacterHealthSet* CharacterHealthSet;
+
+	// Movement set used by this component.
+	UPROPERTY()
+	const UECRMovementSet* CharacterMovementSet;
 };
