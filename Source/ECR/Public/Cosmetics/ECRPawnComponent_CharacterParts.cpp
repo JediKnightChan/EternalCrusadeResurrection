@@ -183,7 +183,7 @@ bool FECRCharacterPartList::SpawnActorForEntry(FECRAppliedCharacterPartEntry& En
 			PartComponent->SetupAttachment(ComponentToAttachTo, Entry.Part.SocketName);
 			PartComponent->SetChildActorClass(Entry.Part.PartClass);
 			PartComponent->RegisterComponent();
-			UE_LOG(LogTemp, Warning, TEXT("Trying to spawn actor for %s"), *GetNameSafe(Entry.Part.PartClass))
+			
 			if (AActor* SpawnedActor = PartComponent->GetChildActor())
 			{
 				switch (Entry.Part.CollisionMode)
@@ -304,11 +304,19 @@ USkeletalMeshComponent* UECRPawnComponent_CharacterParts::GetParentMeshComponent
 {
 	if (AActor* OwnerActor = GetOwner())
 	{
-		if (ACharacter* OwningCharacter = Cast<ACharacter>(OwnerActor))
+		if (const ACharacter* OwningCharacter = Cast<ACharacter>(OwnerActor))
 		{
-			if (USkeletalMeshComponent* MeshComponent = OwningCharacter->GetMesh())
+			if (USkeletalMeshComponent* CharMeshComponent = OwningCharacter->GetMesh())
 			{
-				return MeshComponent;
+				return CharMeshComponent;
+			}
+		}
+		
+		if (const APawn* OwningPawn  = Cast<APawn>(OwnerActor))
+		{
+			if (USkeletalMeshComponent* PawnMeshComponent = OwningPawn->FindComponentByClass<USkeletalMeshComponent>())
+			{
+				return PawnMeshComponent;
 			}
 		}
 	}
