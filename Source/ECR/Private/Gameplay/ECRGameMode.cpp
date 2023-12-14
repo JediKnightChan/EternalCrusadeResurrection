@@ -1,6 +1,8 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "Gameplay/ECRGameMode.h"
+
+#include "GameFramework/CheatManager.h"
 #include "System/ECRLogChannels.h"
 #include "GameFramework/PlayerState.h"
 #include "Gameplay/Character/ECRCharacter.h"
@@ -11,6 +13,48 @@
 AECRGameMode::AECRGameMode()
 {
 	bHandleDedicatedServerReplays = true;
+}
+
+void AECRGameMode::HandleMatchHasStarted()
+{
+	// start human players first
+	for( FConstPlayerControllerIterator Iterator = GetWorld()->GetPlayerControllerIterator(); Iterator; ++Iterator )
+	{
+		APlayerController* PlayerController = Iterator->Get();
+		if (PlayerController && (PlayerController->GetPawn() == nullptr) && PlayerCanRestart(PlayerController))
+		{
+			RestartPlayer(PlayerController);
+		}
+	}
+
+	// Make sure level streaming is up to date before triggering NotifyMatchStarted
+	GEngine->BlockTillLevelStreamingCompleted(GetWorld());
+
+	// First fire BeginPlay, if we haven't already in waiting to start match
+	GetWorldSettings()->NotifyBeginPlay();
+
+	// Then fire off match started
+	GetWorldSettings()->NotifyMatchStarted();
+
+	// if passed in bug info, send player to right location
+	const FString BugLocString = UGameplayStatics::ParseOption(OptionsString, TEXT("BugLoc"));
+	const FString BugRotString = UGameplayStatics::ParseOption(OptionsString, TEXT("BugRot"));
+	if( !BugLocString.IsEmpty() || !BugRotString.IsEmpty() )
+	{
+		for( FConstPlayerControllerIterator Iterator = GetWorld()->GetPlayerControllerIterator(); Iterator; ++Iterator )
+		{
+			APlayerController* PlayerController = Iterator->Get();
+			if (PlayerController &&  PlayerController->CheatManager != nullptr)
+			{
+				PlayerController->CheatManager->BugItGoString( BugLocString, BugRotString );
+			}
+		}
+	}
+
+	if (IsHandlingReplays() && GetGameInstance() != nullptr)
+	{
+		GetGameInstance()->StartRecordingReplay(GetWorld()->GetMapName(), GetWorld()->GetMapName());
+	}
 }
 
 FString AECRGameMode::InitNewPlayer(APlayerController* NewPlayerController, const FUniqueNetIdRepl& UniqueId,
