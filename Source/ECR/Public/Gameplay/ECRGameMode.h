@@ -16,6 +16,9 @@ class AECRGameMode : public AGameMode
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	TMap<AController*, FString> ControllersToDisplayNames;
 
+	/** Was overriden not to notify online session about match start, because it removes match then
+	 * (even with join in progress set to true) */
+	virtual void HandleMatchHasStarted() override;
 protected:
 	virtual FString InitNewPlayer(APlayerController* NewPlayerController, const FUniqueNetIdRepl& UniqueId,
 	                              const FString& Options, const FString& Portal) override;
