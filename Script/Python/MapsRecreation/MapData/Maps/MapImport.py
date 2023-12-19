@@ -8,15 +8,14 @@ import re
 
 # Change me!
 map_data_filepath = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                    "MapData/Maps/Usual/Torias/torias_static3.json"
-
+                    "MapData/Maps/Usual/Maggon/maggon_static.json"
+PATH_TO_FILTER = "/Game/Graybox/Buildings/BP_Garage"
 EXCLUDE_ENGINE_ASSETS = False
-
 level_library = unreal.EditorLevelLibrary
 editor_asset_library = unreal.EditorAssetLibrary
-relative_offset_loc = unreal.Vector(0, 0, 0) + unreal.Vector(-152400,
-                                                             -1066800,
-                                                             0)
+relative_offset_loc = unreal.Vector(0, 0, 0)  # + unreal.Vector(25400,
+#              -76200,
+#             0)
 # relative_offset_loc = unreal.Vector(0, 0, 0)
 
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/"
@@ -30,8 +29,11 @@ for element in data:
     path, transform = element["path"], element["transform"]
     path = re.search(r"\w+\s(?P<path>[\/\w]+).\w+", path).group("path")
     path = path_replacing_map.get(path, path)
-    print(path)
 
+    if PATH_TO_FILTER and path != PATH_TO_FILTER:
+        continue
+
+    print(path)
     if path.startswith("/") and editor_asset_library.does_asset_exist(path):
         if path.startswith("/Engine/") and EXCLUDE_ENGINE_ASSETS:
             continue

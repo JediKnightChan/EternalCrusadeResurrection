@@ -9,11 +9,11 @@ import unreal
 
 # Change me!
 DO_DELETE_IF_EXISTS = False
-# ASSET_DIR = "/Game/Buildings/Signature/SIG_ControlCenter_01/"
-ASSET_DIR = "/Game/PROPS/Gameplay/"
-# ASSET_DIR = "/Game/Graybox/GB_Defense/"
+# ASSET_DIR = "/Game/Buildings/Blueprints/"
+# ASSET_DIR = "/Game/PROPS/Ambiance/"
+ASSET_DIR = "/Game/Graybox/Buildings/"
 JSON_FILEPATH = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                "MapData/Buildings/Files/BP_SM_PROP_Eagles_Lightpost_01_A2_Blueprint.json"
+                "MapData/Buildings/Files/BP_Garage.json"
 ASSET_NAME_OVERRIDE = ""
 if ASSET_NAME_OVERRIDE:
     ASSET_NAME = ASSET_NAME_OVERRIDE

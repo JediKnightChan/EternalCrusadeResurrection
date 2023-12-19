@@ -1,0 +1,2142 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_6x6_A.SM_STRUC_Sewers_Floor_02_6x6_A",
+        "transform": {
+            "loc": [
+                0.0,
+                -0.0010728836059570312,
+                50.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Railing01_BeamSupport01_06_A.SM_STRUC_Railing01_BeamSupport01_06_A",
+        "transform": {
+            "loc": [
+                1220.0,
+                0.0,
+                25.0
+            ],
+            "scale": [
+                1.100000023841858,
+                1.100000023841858,
+                1.100000023841858
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Railing01_BeamSupport01_24_A.SM_STRUC_Railing01_BeamSupport01_24_A",
+        "transform": {
+            "loc": [
+                -1824.997802734375,
+                3600.0,
+                -570.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99978637695312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Railing01_BeamSupport01_06_A.SM_STRUC_Railing01_BeamSupport01_06_A",
+        "transform": {
+            "loc": [
+                0.00020563602447509766,
+                2975.0,
+                -570.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Column_02_C.SM_STRUC_Sewers_Column_02_C",
+        "transform": {
+            "loc": [
+                -1695.0,
+                1730.0,
+                -595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_EagleHead_01_A.SM_STRUC_Sewers_EagleHead_01_A",
+        "transform": {
+            "loc": [
+                -1765.00048828125,
+                2315.0029296875,
+                -165.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99988555908203
+            ],
+            "scale": [
+                0.5,
+                0.25,
+                0.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_02_B_3m.SM_STRUC_Sewers_Wall_02_B_3m",
+        "transform": {
+            "loc": [
+                -1635.003662109375,
+                1825.000732421875,
+                -590.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99978637695312
+            ],
+            "scale": [
+                0.5,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A2.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A2",
+        "transform": {
+            "loc": [
+                -600.0,
+                600.0,
+                45.00099182128906
+            ],
+            "rot": [
+                0.0,
+                90.00009155273438,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                1845.3115234375,
+                -2.44052791595459,
+                40.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_C.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_C",
+        "transform": {
+            "loc": [
+                -600.0,
+                550.0,
+                -550.000732421875
+            ],
+            "rot": [
+                0.0,
+                89.99996185302734,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2395.0,
+                -0.0018138508312404156,
+                40.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Stair_12X6X6_A.SM_STRUC_Building_Stair_12X6X6_A",
+        "transform": {
+            "loc": [
+                1849.9996337890625,
+                1799.9970703125,
+                -600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Column_02_A_01.SM_STRUC_Sewers_Column_02_A_01",
+        "transform": {
+            "loc": [
+                -1695.0,
+                2215.0,
+                -595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99946594238281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Stair_12X6X6_A.SM_STRUC_Building_Stair_12X6X6_A",
+        "transform": {
+            "loc": [
+                -3045.00048828125,
+                1799.9970703125,
+                -600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2995.0,
+                -0.002815208863466978,
+                40.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_02_B.SM_STRUC_Sewers_Wall_02_B",
+        "transform": {
+            "loc": [
+                -1635.003662109375,
+                860.0006713867188,
+                -590.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99978637695312
+            ],
+            "scale": [
+                0.5,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_01.SM_STRUC_Sewers_Wall_01",
+        "transform": {
+            "loc": [
+                -730.0001831054688,
+                919.9989624023438,
+                -600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Column_02_A_01.SM_STRUC_Sewers_Column_02_A_01",
+        "transform": {
+            "loc": [
+                -1695.0,
+                3210.0,
+                -595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99942016601562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_EagleHead_01_A.SM_STRUC_Sewers_EagleHead_01_A",
+        "transform": {
+            "loc": [
+                -1765.0003662109375,
+                3115.0029296875,
+                -165.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00007629394531
+            ],
+            "scale": [
+                0.5,
+                0.25,
+                0.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Column_02_C.SM_STRUC_Sewers_Column_02_C",
+        "transform": {
+            "loc": [
+                -830.0037231445312,
+                2640.009521484375,
+                -595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99942016601562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Column_02_C.SM_STRUC_Sewers_Column_02_C",
+        "transform": {
+            "loc": [
+                226.7156982421875,
+                2635.589111328125,
+                -595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99942016601562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_6x6_A.SM_STRUC_Sewers_Floor_02_6x6_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                35.0,
+                -565.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                1179.1502685546875,
+                2148.5556640625,
+                44.67744445800781
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9997787475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_HoleWallBroken_6x6_A.SM_HoleWallBroken_6x6_A",
+        "transform": {
+            "loc": [
+                -599.9996948242188,
+                2405.0,
+                -5.0
+            ],
+            "rot": [
+                -3.0517578125e-05,
+                -90.00006103515625,
+                -6.103515625e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                -1799.9942626953125,
+                2399.996826171875,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00023651123047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                -1777.848388671875,
+                2098.568115234375,
+                44.67744827270508
+            ],
+            "rot": [
+                0.00021856604143977165,
+                -179.99989318847656,
+                89.99987030029297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                -1777.8487548828125,
+                2098.567626953125,
+                44.67744445800781
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9997787475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                -1777.8475341796875,
+                2697.5673828125,
+                44.67744445800781
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9997787475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                -1777.849853515625,
+                1498.568115234375,
+                44.6751594543457
+            ],
+            "rot": [
+                0.00021856604143977165,
+                -179.99989318847656,
+                89.99987030029297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_B.SM_DAMAGE_FloorTile_12x12_B",
+        "transform": {
+            "loc": [
+                -1800.0018310546875,
+                1199.99609375,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -89.9998779296875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                -1777.851318359375,
+                898.568115234375,
+                44.67287063598633
+            ],
+            "rot": [
+                0.00021856604143977165,
+                -179.99989318847656,
+                89.99987030029297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                -1777.846923828125,
+                2698.568115234375,
+                44.67973709106445
+            ],
+            "rot": [
+                0.00021856604143977165,
+                -179.99989318847656,
+                89.99987030029297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                -1777.845458984375,
+                3298.568115234375,
+                44.68202590942383
+            ],
+            "rot": [
+                0.00021856604143977165,
+                -179.99989318847656,
+                89.99987030029297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                1179.152099609375,
+                2746.5556640625,
+                44.67744445800781
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9997787475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_C.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_C",
+        "transform": {
+            "loc": [
+                -600.0,
+                1750.0,
+                -599.9996948242188
+            ],
+            "rot": [
+                0.0,
+                -90.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_D.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_D",
+        "transform": {
+            "loc": [
+                -0.0002503397990949452,
+                1750.0,
+                -600.0005493164062
+            ],
+            "rot": [
+                4.0981132769957185e-05,
+                -89.99993896484375,
+                179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_HoleWallBroken_6x6_A.SM_HoleWallBroken_6x6_A",
+        "transform": {
+            "loc": [
+                -599.9993286132812,
+                2950.0,
+                -599.9990234375
+            ],
+            "rot": [
+                -3.415094397496432e-05,
+                -90.00007629394531,
+                -5.735234299208969e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                -1777.8515625,
+                900.56884765625,
+                44.67744445800781
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9997787475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                -1777.8509521484375,
+                1499.566650390625,
+                44.67744445800781
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9997787475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A",
+        "transform": {
+            "loc": [
+                -599.9985961914062,
+                3600.0,
+                -599.9983520507812
+            ],
+            "rot": [
+                -3.0517578125e-05,
+                -90.00006103515625,
+                -6.103515625e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Overpass/Models/SM_XX_Gam_BridgeColumn_MED_01_A.SM_XX_Gam_BridgeColumn_MED_01_A",
+        "transform": {
+            "loc": [
+                -1474.4979248046875,
+                3600.650390625,
+                -899.0006713867188
+            ],
+            "rot": [
+                0.0,
+                -89.99993896484375,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Overpass/Models/SM_XX_Gam_BridgeColumn_MED_01_A.SM_XX_Gam_BridgeColumn_MED_01_A",
+        "transform": {
+            "loc": [
+                -1474.4981689453125,
+                2399.6484375,
+                -899.0006713867188
+            ],
+            "rot": [
+                0.0,
+                -89.99993896484375,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A2.SM_STRUC_DAMAGE_Building_Wall_6X6_Plain_A2",
+        "transform": {
+            "loc": [
+                -599.998291015625,
+                3605.0,
+                -5.0
+            ],
+            "rot": [
+                -3.0517578125e-05,
+                -90.00006103515625,
+                -6.103515625e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_6x6_A.SM_STRUC_Sewers_Floor_02_6x6_A",
+        "transform": {
+            "loc": [
+                -0.00238037109375,
+                2405.0,
+                50.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                1179.1488037109375,
+                1549.5548095703125,
+                44.67744445800781
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9997787475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Railing_3M_01_A.SM_STRUC_PROM_Railing_3M_01_A",
+        "transform": {
+            "loc": [
+                1185.994140625,
+                3299.998291015625,
+                -550.0001220703125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Column_02_A_01.SM_STRUC_Sewers_Column_02_A_01",
+        "transform": {
+            "loc": [
+                1100.0,
+                3210.0283203125,
+                -595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00051879882812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Railing01_BeamSupport01_12_A.SM_STRUC_Railing01_BeamSupport01_12_A",
+        "transform": {
+            "loc": [
+                -1749.994140625,
+                2420.001220703125,
+                25.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_C.SM_DAMAGE_FloorTile_12x12_C",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Stair_12X6X6_A.SM_STRUC_Building_Stair_12X6X6_A",
+        "transform": {
+            "loc": [
+                1249.9996337890625,
+                1799.9970703125,
+                -600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_B.SM_DAMAGE_FloorTile_12x12_B",
+        "transform": {
+            "loc": [
+                -1799.9998779296875,
+                1199.999755859375,
+                -599.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_B.SM_DAMAGE_FloorTile_12x12_B",
+        "transform": {
+            "loc": [
+                0.0,
+                1199.9998779296875,
+                -599.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_B.SM_DAMAGE_FloorTile_12x12_B",
+        "transform": {
+            "loc": [
+                -0.00018310546875,
+                2399.9970703125,
+                -599.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_B.SM_DAMAGE_FloorTile_12x12_B",
+        "transform": {
+            "loc": [
+                -1799.9998779296875,
+                2399.996826171875,
+                -599.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Railing01_BeamSupport01_24_A.SM_STRUC_Railing01_BeamSupport01_24_A",
+        "transform": {
+            "loc": [
+                1225.002197265625,
+                3599.98876953125,
+                -570.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99978637695312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                1245.0,
+                0.004261054564267397,
+                40.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Stair_12X6X6_A.SM_STRUC_Building_Stair_12X6X6_A",
+        "transform": {
+            "loc": [
+                -2450.00048828125,
+                1799.9970703125,
+                -600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_EagleHead_01_A.SM_STRUC_Sewers_EagleHead_01_A",
+        "transform": {
+            "loc": [
+                1159.9996337890625,
+                3115.000732421875,
+                -165.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00006103515625
+            ],
+            "scale": [
+                0.5,
+                0.25,
+                0.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                1254.9969482421875,
+                2400.004638671875,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2445.003662109375,
+                2399.998046875,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_B.SM_DAMAGE_FloorTile_12x12_B",
+        "transform": {
+            "loc": [
+                -0.00018310546875,
+                2399.9970703125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_A.SM_DAMAGE_FloorTile_12x12_A",
+        "transform": {
+            "loc": [
+                -1799.9998779296875,
+                2399.9970703125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                -1777.8489990234375,
+                3297.5673828125,
+                44.67744445800781
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9997787475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                1179.150390625,
+                3346.555419921875,
+                44.67744445800781
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9997787475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                1179.1527099609375,
+                2746.555419921875,
+                44.676517486572266
+            ],
+            "rot": [
+                8.879245433490723e-05,
+                179.99989318847656,
+                90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                1179.157470703125,
+                1549.555419921875,
+                44.6746711730957
+            ],
+            "rot": [
+                8.879245433490723e-05,
+                179.99989318847656,
+                90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                1179.148193359375,
+                950.556884765625,
+                44.67744445800781
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9997787475586
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                1179.159912109375,
+                950.555419921875,
+                44.67374038696289
+            ],
+            "rot": [
+                8.879245433490723e-05,
+                179.99989318847656,
+                90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_04.SM_Floor_MetalMesh_6m_04",
+        "transform": {
+            "loc": [
+                -300.0033264160156,
+                1170.000244140625,
+                -555.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_02_B.SM_STRUC_Sewers_Wall_02_B",
+        "transform": {
+            "loc": [
+                1065.0009765625,
+                1809.99072265625,
+                -590.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.00027918393607251346
+            ],
+            "scale": [
+                0.5,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_B.SM_DAMAGE_FloorTile_12x12_B",
+        "transform": {
+            "loc": [
+                -1799.9998779296875,
+                50.0,
+                -599.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_B.SM_DAMAGE_FloorTile_12x12_B",
+        "transform": {
+            "loc": [
+                6.103515625e-05,
+                49.9998779296875,
+                -599.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Overpass/Models/SM_XX_Gam_BridgeColumn_MED_01_A.SM_XX_Gam_BridgeColumn_MED_01_A",
+        "transform": {
+            "loc": [
+                877.4993286132812,
+                1199.641357421875,
+                -899.000732421875
+            ],
+            "rot": [
+                -6.830188794992864e-06,
+                -89.99993133544922,
+                -1.2074180631316267e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Overpass/Models/SM_XX_Gam_BridgeColumn_MED_01_A.SM_XX_Gam_BridgeColumn_MED_01_A",
+        "transform": {
+            "loc": [
+                -1474.4979248046875,
+                1199.6484375,
+                -899.0006713867188
+            ],
+            "rot": [
+                0.0,
+                -89.99993896484375,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_01.SM_STRUC_Sewers_Wall_01",
+        "transform": {
+            "loc": [
+                219.99981689453125,
+                920.0006713867188,
+                -600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_01.SM_STRUC_Sewers_Wall_01",
+        "transform": {
+            "loc": [
+                1075.0006103515625,
+                -20.00242042541504,
+                -600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Column_02_B.SM_STRUC_Sewers_Column_02_B",
+        "transform": {
+            "loc": [
+                -795.0,
+                865.0,
+                -595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99990844726562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                1179.150390625,
+                3346.555419921875,
+                44.67744445800781
+            ],
+            "rot": [
+                8.879245433490723e-05,
+                179.99989318847656,
+                90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Column_02_B.SM_STRUC_Sewers_Column_02_B",
+        "transform": {
+            "loc": [
+                204.99993896484375,
+                864.9984741210938,
+                -595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99990844726562
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Column_02_A_01.SM_STRUC_Sewers_Column_02_A_01",
+        "transform": {
+            "loc": [
+                1100.0029296875,
+                1735.01806640625,
+                -595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00040435791016
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_02_B_3m.SM_STRUC_Sewers_Wall_02_B_3m",
+        "transform": {
+            "loc": [
+                1029.9990234375,
+                2134.97998046875,
+                -590.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.0004576226056087762
+            ],
+            "scale": [
+                0.5,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Column_02_A_01.SM_STRUC_Sewers_Column_02_A_01",
+        "transform": {
+            "loc": [
+                1099.99951171875,
+                2230.01806640625,
+                -595.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.00019124527170788497
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_EagleHead_01_A.SM_STRUC_Sewers_EagleHead_01_A",
+        "transform": {
+            "loc": [
+                1159.9996337890625,
+                2314.996826171875,
+                -165.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99988555908203
+            ],
+            "scale": [
+                0.5,
+                0.25,
+                0.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_6x6_A.SM_STRUC_Sewers_Floor_02_6x6_A",
+        "transform": {
+            "loc": [
+                -0.003238677978515625,
+                1205.0,
+                50.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_6m_04.SM_Floor_MetalMesh_6m_04",
+        "transform": {
+            "loc": [
+                -300.00262451171875,
+                2105.000244140625,
+                25.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_DAMAGE_FloorTile_12x12_B.SM_DAMAGE_FloorTile_12x12_B",
+        "transform": {
+            "loc": [
+                -0.000244140625,
+                1199.9970703125,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_12m_01.SM_Floor_MetalMesh_12m_01",
+        "transform": {
+            "loc": [
+                -277.690673828125,
+                2570.607666015625,
+                -554.999755859375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_01.SM_STRUC_Sewers_Wall_01",
+        "transform": {
+            "loc": [
+                -1730.000244140625,
+                919.997314453125,
+                -600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Cover_MED_01_A.SM_STRUC_PROMPUMP_Cover_MED_01_A",
+        "transform": {
+            "loc": [
+                1179.155029296875,
+                2148.555419921875,
+                44.67559051513672
+            ],
+            "rot": [
+                8.879245433490723e-05,
+                179.99989318847656,
+                90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Railing01_BeamSupport01_12_A.SM_STRUC_Railing01_BeamSupport01_12_A",
+        "transform": {
+            "loc": [
+                0.00554656982421875,
+                2420.005615234375,
+                25.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_01.SM_STRUC_Sewers_Wall_01",
+        "transform": {
+            "loc": [
+                -1674.9998779296875,
+                879.99560546875,
+                -600.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.00017288913659285754
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Railing01_BeamSupport01_12_A.SM_STRUC_Railing01_BeamSupport01_12_A",
+        "transform": {
+            "loc": [
+                0.008836746215820312,
+                1220.0057373046875,
+                25.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Railing01_BeamSupport01_12_A.SM_STRUC_Railing01_BeamSupport01_12_A",
+        "transform": {
+            "loc": [
+                -1749.9910888671875,
+                1220.001220703125,
+                25.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99984741210938
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2445.0029296875,
+                1799.998046875,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -2445.004150390625,
+                2999.998046875,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3045.004150390625,
+                2999.99755859375,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3045.003173828125,
+                2399.99755859375,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_3M_02_A.SM_STRUC_PROM_Damage_Railing_3M_02_A",
+        "transform": {
+            "loc": [
+                -1769.005859375,
+                3300.0,
+                -550.0001220703125
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Overpass/Models/SM_XX_Gam_BridgeColumn_MED_01_A.SM_XX_Gam_BridgeColumn_MED_01_A",
+        "transform": {
+            "loc": [
+                877.4993286132812,
+                2399.641357421875,
+                -899.000732421875
+            ],
+            "rot": [
+                -6.830188794992864e-06,
+                -89.99993133544922,
+                -1.2074180631316267e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                -3045.00244140625,
+                1799.99755859375,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                1254.995849609375,
+                3000.004638671875,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                1254.998046875,
+                1800.004638671875,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                1854.998046875,
+                1800.0057373046875,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                1854.9971923828125,
+                2400.005859375,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_Grid_MED_01_A.SM_STRUC_PROMPUMP_Grid_MED_01_A",
+        "transform": {
+            "loc": [
+                1854.99609375,
+                3000.005859375,
+                -560.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Overpass/Models/SM_XX_Gam_BridgeColumn_MED_01_A.SM_XX_Gam_BridgeColumn_MED_01_A",
+        "transform": {
+            "loc": [
+                877.5018310546875,
+                3601.642578125,
+                -899.000732421875
+            ],
+            "rot": [
+                -6.830188794992864e-06,
+                -89.99993133544922,
+                -1.2074180631316267e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AirVent_02.SM_XX_PROP_AirVent_02",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

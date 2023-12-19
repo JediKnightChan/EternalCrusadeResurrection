@@ -1,8 +1,11 @@
 import json
 import os.path
 
-raw_filename = "Raw/Torias/torias_static1.json"
-new_filename = "Usual/Torias/torias_static1.json"
+raw_filename = "Raw/Maggon/maggon_static.json"
+new_filename = "Usual/Maggon/maggon_static.json"
+
+need_log = False
+log_content = ""
 
 with open(raw_filename, "rb") as f:
     data = json.load(f)
@@ -78,6 +81,7 @@ def resolve_parent_transform(export_struc):
     # Try to find attach parent transform
     parent_struc = export_struc
     transform_ = get_default_transform()
+    parent_transforms = []
     while True:
         parent_struc = get_attach_parent(parent_struc)
         if parent_struc is None:
@@ -85,12 +89,14 @@ def resolve_parent_transform(export_struc):
         parent_transform_ = get_export_struc_transform(parent_struc)
         if parent_transform_ is None:
             parent_transform_ = get_default_transform()
+        parent_transforms.append(parent_transform_)
         transform_ = merge_two_transforms(parent_transform_, transform_)
-    return transform_
+    return transform_, parent_transforms
 
 
 result = []
 blueprints_unique = []
+asset_counters = {}
 for i, export_struc in enumerate(data["Exports"]):
     if len(export_struc["Data"]) == 0 or not isinstance(export_struc["Data"], list):
         continue
@@ -108,7 +114,7 @@ for i, export_struc in enumerate(data["Exports"]):
         sm_full_name = f"{buildings_imports.get(sm_name, sm_name)}.{sm_name}"
 
         # Try to find attach parent transform
-        parent_transform = resolve_parent_transform(export_struc)
+        parent_transform, all_parent_transforms = resolve_parent_transform(export_struc)
 
         # Get self rel transform
         self_rel_transform = get_export_struc_transform(export_struc)
@@ -117,6 +123,7 @@ for i, export_struc in enumerate(data["Exports"]):
 
         # Merge parent and self transform
         transform = merge_two_transforms(parent_transform, self_rel_transform)
+        # transform = self_rel_transform
         # if sm_name.startswith("SM_PROP_Magnetic_Elevator"):
         #     print(i+1, sm_name, self_rel_transform)
         sm_data = {"path": f"StaticMesh {sm_full_name}", "transform": transform}
@@ -136,7 +143,7 @@ for i, export_struc in enumerate(data["Exports"]):
                 root_component_struc = data["Exports"][root_ref]
 
                 # Try to find attach parent transform
-                parent_transform = resolve_parent_transform(root_component_struc)
+                parent_transform, all_parent_transforms = resolve_parent_transform(root_component_struc)
                 # Get self rel transform
                 self_rel_transform = get_export_struc_transform(root_component_struc)
                 if self_rel_transform is None:
@@ -154,10 +161,30 @@ for i, export_struc in enumerate(data["Exports"]):
             "path": f"Blueprint {sm_full_name}",
             "transform": transform
         }
+
         print("Blueprint", sm_full_name)
         if sm_full_name not in blueprints_unique:
             blueprints_unique.append(sm_full_name)
         result.append(sm_data)
+    else:
+        continue
+
+    asset_counters[sm_full_name] = asset_counters.get(sm_full_name, 0) + 1
+    actor_name = f"{sm_name}.{asset_counters[sm_full_name]}"
+    log_content += f"Mesh {actor_name}, final transform {sm_data['transform']}, relative {self_rel_transform}, transforms {all_parent_transforms}\n"
+
+    if actor_name == "SM_STRUC_PROM_AngleRailing_12M_A.44":
+        strucs = [export_struc]
+        parent_struc = export_struc
+
+        while True:
+            parent_struc = get_attach_parent(parent_struc)
+            strucs.append(parent_struc)
+            if parent_struc is None:
+                break
+
+        with open("temp.json", "w") as f:
+            json.dump(strucs, f, indent=4, ensure_ascii=False)
 
 with open(new_filename, "w") as f:
     json.dump(result, f, ensure_ascii=False, indent=4)
@@ -165,3 +192,6 @@ with open(new_filename, "w") as f:
 print("=" * 40 + " Unique Blueprints " + "=" * 40)
 for el in blueprints_unique:
     print(el)
+
+with open("map_convert.log", "w") as f:
+    f.write(log_content)
