@@ -63,6 +63,7 @@ public:
 	FGameplayTag Status_Crouching;
 	FGameplayTag Status_ADS;
 	FGameplayTag Status_AutoRunning;
+	FGameplayTag Status_Bracing;
 	FGameplayTag Status_Death;
 	FGameplayTag Status_Death_Dying;
 	FGameplayTag Status_Death_Dead;

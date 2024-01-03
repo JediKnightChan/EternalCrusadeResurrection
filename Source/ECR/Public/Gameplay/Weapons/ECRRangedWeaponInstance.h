@@ -141,6 +141,10 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Spread|Player Params", meta=(ForceUnits=x))
 	float SpreadAngleMultiplier_Aiming = 1.0f;
 
+	// Multiplier when in bracing mode
+	UPROPERTY(EditAnywhere, Category="Spread|Player Params", meta=(ForceUnits=x))
+	float SpreadAngleMultiplier_Bracing = 1.0f;
+
 	// Multiplier when standing still or moving very slowly
 	// (starts to fade out at StandingStillSpeedThreshold, and is gone completely by StandingStillSpeedThreshold + StandingStillToMovingSpeedRange)
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params", meta=(ForceUnits=x))
