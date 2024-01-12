@@ -12,7 +12,7 @@
 
 AECRGameMode::AECRGameMode()
 {
-	bHandleDedicatedServerReplays = true;
+	bHandleDedicatedServerReplays = false;
 }
 
 void AECRGameMode::HandleMatchHasStarted()
