@@ -1,0 +1,142 @@
+[
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_02.SM_PROP_AMB_Rock_Large_02",
+        "transform": {
+            "loc": [
+                156285.6875,
+                -59290.0,
+                -72622.9375
+            ],
+            "rot": [
+                53.06649398803711,
+                -99.3907470703125,
+                -97.53038787841797
+            ],
+            "scale": [
+                2.5,
+                2.5,
+                2.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Large_02.SM_PROP_AMB_Rock_Large_02",
+        "transform": {
+            "loc": [
+                156285.6875,
+                -59290.0,
+                -72622.9375
+            ],
+            "rot": [
+                53.06649398803711,
+                -99.3907470703125,
+                -97.53038787841797
+            ],
+            "scale": [
+                2.5,
+                2.5,
+                2.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rock_MXLarge_06.SM_PROP_AMB_Rock_MXLarge_06",
+        "transform": {
+            "loc": [
+                150096.375,
+                -103644.671875,
+                -74754.65625
+            ],
+            "rot": [
+                0.0,
+                -7.003063678741455,
+                -14.263908386230469
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_RockWall_e_2.SM_PROP_AMB_RockWall_e_2",
+        "transform": {
+            "loc": [
+                151572.625,
+                -104030.7109375,
+                -76304.40625
+            ],
+            "rot": [
+                1.727962613105774,
+                -11.840971946716309,
+                -40.14897155761719
+            ],
+            "scale": [
+                0.5,
+                0.71875,
+                0.5625
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_RockWall_g_02.SM_PROP_AMB_RockWall_g_02",
+        "transform": {
+            "loc": [
+                150253.984375,
+                -103497.390625,
+                -74614.6015625
+            ],
+            "rot": [
+                -0.5779500603675842,
+                -169.6925506591797,
+                142.7923583984375
+            ],
+            "scale": [
+                0.25,
+                0.25,
+                0.375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Overpass/Models/SM_PROP_GAM_SectionOverpass_skull_wall_dress.SM_PROP_GAM_SectionOverpass_skull_wall_dress",
+        "transform": {
+            "loc": [
+                155155.0,
+                -76774.0,
+                -75974.0
+            ],
+            "rot": [
+                90.0,
+                -0.0003662109375,
+                90.0
+            ],
+            "scale": [
+                6.5,
+                6.5,
+                6.5
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/Overpass/Models/SM_PROP_GAM_SectionOverpass_skull_wall_dress.SM_PROP_GAM_SectionOverpass_skull_wall_dress",
+        "transform": {
+            "loc": [
+                155155.0,
+                -79285.0,
+                -75974.0
+            ],
+            "rot": [
+                90.0,
+                89.99971008300781,
+                0.0
+            ],
+            "scale": [
+                6.5,
+                6.5,
+                6.5
+            ]
+        }
+    }
+]

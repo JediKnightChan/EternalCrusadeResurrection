@@ -1,0 +1,182 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_01_A_3m.SM_STRUC_Sewers_Floor_01_A_3m",
+        "transform": {
+            "loc": [
+                85.0,
+                -480.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_AirLock_wall.SM_STRUC_Sewers_AirLock_wall",
+        "transform": {
+            "loc": [
+                85.0,
+                420.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.9998779296875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_3m.SM_STRUC_Sewers_Wall_3m",
+        "transform": {
+            "loc": [
+                85.0,
+                -480.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_3m.SM_STRUC_Sewers_Wall_3m",
+        "transform": {
+            "loc": [
+                385.0,
+                425.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00019073486328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_AirLock_wall.SM_STRUC_Sewers_AirLock_wall",
+        "transform": {
+            "loc": [
+                -515.0,
+                -480.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Ceiling_A_Straight_3m.SM_STRUC_Sewers_Ceiling_A_Straight_3m",
+        "transform": {
+            "loc": [
+                385.0,
+                -480.0,
+                590.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Deco_01.SM_STRUC_Sewers_Wall_Deco_01",
+        "transform": {
+            "loc": [
+                235.0,
+                -470.0,
+                370.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Deco_01.SM_STRUC_Sewers_Wall_Deco_01",
+        "transform": {
+            "loc": [
+                235.0,
+                410.0,
+                370.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993133544922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_AirLock_wall.SM_STRUC_Sewers_AirLock_wall",
+        "transform": {
+            "loc": [
+                385.0008239746094,
+                -480.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

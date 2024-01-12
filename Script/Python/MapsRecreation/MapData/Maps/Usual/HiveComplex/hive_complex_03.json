@@ -1,0 +1,202 @@
+[
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                -21580.0,
+                -3890.0,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                -20580.0,
+                -4290.0,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                -21580.0,
+                -3890.0,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                -22180.0,
+                -3590.0,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_DamageZone.BP_DamageZone",
+        "transform": {
+            "loc": [
+                1270.0,
+                -8410.0,
+                -4569.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                300.0,
+                300.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_Door.BP_Door",
+        "transform": {
+            "loc": [
+                -21580.0,
+                -3890.0,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_Door.BP_Door",
+        "transform": {
+            "loc": [
+                -21580.0,
+                -3890.0,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Corridors/BP_SectorLock.BP_SectorLock",
+        "transform": {
+            "loc": [
+                -21580.0,
+                -3890.0,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                1512.132080078125,
+                13112.1318359375,
+                900.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99999237060547
+            ],
+            "scale": [
+                1.15625,
+                11.28125,
+                7.09375
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                912.1325073242188,
+                13512.1318359375,
+                900.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.15625,
+                11.28125,
+                7.09375
+            ]
+        }
+    }
+]

@@ -1,0 +1,3882 @@
+[
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect_3m.BP_SewersEffect_3m",
+        "transform": {
+            "loc": [
+                -7250.19873046875,
+                7349.21484375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect_3m.BP_SewersEffect_3m",
+        "transform": {
+            "loc": [
+                -9050.1455078125,
+                7349.306640625,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect_3m.BP_SewersEffect_3m",
+        "transform": {
+            "loc": [
+                -8150.19287109375,
+                9449.3046875,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.000744490185752511
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect_3m.BP_SewersEffect_3m",
+        "transform": {
+            "loc": [
+                -7850.11669921875,
+                -1050.01171875,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00035095214844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect_3m.BP_SewersEffect_3m",
+        "transform": {
+            "loc": [
+                -6350.13525390625,
+                449.88671875,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint BP_SewersEffect_6m.BP_SewersEffect_6m",
+        "transform": {
+            "loc": [
+                -7250.12060546875,
+                -1050.109375,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00035095214844
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint BP_SewersEffect_6m.BP_SewersEffect_6m",
+        "transform": {
+            "loc": [
+                -6350.13330078125,
+                -150.04296875,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -7250.12060546875,
+                -1949.986328125,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99956512451172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -6350.15673828125,
+                4649.396484375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -5450.36376953125,
+                4649.3984375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -5450.38671875,
+                3749.400390625,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99974822998047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -4550.4111328125,
+                5549.34765625,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -4550.38134765625,
+                4649.41796875,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -6350.1904296875,
+                5549.33984375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99962615966797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -8150.1884765625,
+                5549.392578125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99962615966797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -7250.1416015625,
+                5549.375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -9050.080078125,
+                5549.421875,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99962615966797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -8150.1845703125,
+                5549.4296875,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99949645996094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -7250.16796875,
+                6449.21484375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -7250.19677734375,
+                7649.208984375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -9050.138671875,
+                8549.296875,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -9950.13671875,
+                6449.291015625,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9996337890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -9050.146484375,
+                6449.306640625,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -9050.1416015625,
+                7649.30859375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99974822998047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -8150.1904296875,
+                8549.306640625,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.000744490185752511
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -8150.134765625,
+                9749.314453125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -6.103515261202119e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -9050.083984375,
+                10649.314453125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -16249.935546875,
+                7049.29296875,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9996337890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -15349.9375,
+                8849.240234375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -13549.9951171875,
+                7949.2109375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -13549.9814453125,
+                7049.216796875,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0003551697009243071
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -15349.9072265625,
+                6149.30859375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99962615966797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -14449.958984375,
+                6149.279296875,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99962615966797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -16249.865234375,
+                7949.462890625,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9998016357422
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -14449.9658203125,
+                8849.30859375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00041198730469
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -15349.9072265625,
+                7049.30859375,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99962615966797
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -11750.0517578125,
+                9749.314453125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -9950.0703125,
+                10649.314453125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -11750.076171875,
+                10649.314453125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00013732910156
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -11750.0546875,
+                7949.314453125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                6.147167005110532e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -11750.0546875,
+                8849.314453125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                6.147167005110532e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -12649.962890625,
+                7049.314453125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99983978271484
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -12649.9130859375,
+                7949.314453125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.0000991821289
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -16249.8837890625,
+                7949.31640625,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -17149.904296875,
+                7949.31640625,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00013732910156
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -17149.884765625,
+                6149.31640625,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                6.147167005110532e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -18049.85546875,
+                5249.36328125,
+                -2050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99983978271484
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -7250.13330078125,
+                -150.04296875,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99949645996094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -6350.12060546875,
+                -1949.986328125,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99956512451172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_SewersEffect.BP_SewersEffect",
+        "transform": {
+            "loc": [
+                -5450.19287109375,
+                -1049.986328125,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0004781130701303482
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ControlPanel_01.SM_PROP_AMB_ControlPanel_01",
+        "transform": {
+            "loc": [
+                -8784.322265625,
+                6183.513671875,
+                327.333984375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.9998779296875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ControlPanel_01.SM_PROP_AMB_ControlPanel_01",
+        "transform": {
+            "loc": [
+                -8784.259765625,
+                5823.95703125,
+                330.3330078125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.9998779296875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ControlPanel_01.SM_PROP_AMB_ControlPanel_01",
+        "transform": {
+            "loc": [
+                -10814.8017578125,
+                7199.66796875,
+                350.52783203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993133544922
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ControlPanel_01.SM_PROP_AMB_ControlPanel_01",
+        "transform": {
+            "loc": [
+                -9802.34375,
+                5514.40234375,
+                644.77783203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Rubble_S_B.SM_PROP_AMB_Rubble_S_B",
+        "transform": {
+            "loc": [
+                -6843.63525390625,
+                1768.037109375,
+                -1452.180908203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                30.00067138671875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.5323779582977295
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -8218.755859375,
+                7764.98828125,
+                -1533.508544921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.7021241784095764,
+                0.7021241784095764,
+                0.7021241784095764
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -7974.5146484375,
+                7764.98828125,
+                -1533.508544921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.7021239995956421,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -7447.361328125,
+                7764.904296875,
+                -1533.508544921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.7021239995956421,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -7446.9755859375,
+                7925.67578125,
+                -1533.508544921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.4506800174713135,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -8013.7138671875,
+                7925.759765625,
+                -1533.508544921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -8282.3818359375,
+                8392.798828125,
+                -1533.508544921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -8.879242523107678e-05
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -8282.380859375,
+                8760.712890625,
+                -1533.508544921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.00011611317313509062
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -8282.380859375,
+                8581.873046875,
+                -1533.508544921875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.00011611317313509062
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -7322.7197265625,
+                6379.40625,
+                -1524.6226806640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -7906.291015625,
+                6379.501953125,
+                -1524.6226806640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -8129.892578125,
+                6379.501953125,
+                -1524.6226806640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -6930.16259765625,
+                6301.8828125,
+                -1524.6226806640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -6551.81787109375,
+                6301.8828125,
+                -1524.6226806640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -6186.99755859375,
+                6301.8828125,
+                -1544.216796875
+            ],
+            "rot": [
+                -4.999998569488525,
+                -2.142587192111023e-07,
+                90.00001525878906
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -5856.51953125,
+                6301.880859375,
+                -1524.6226806640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -5497.91015625,
+                6301.880859375,
+                -1524.6226806640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -5379.2236328125,
+                5752.607421875,
+                -1524.6226806640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                8.879242523107678e-05
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_AirVent_Support_SMALL_01_A.SM_PROP_Interior_AirVent_Support_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -5379.2236328125,
+                5543.404296875,
+                -1524.6226806640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                8.879242523107678e-05
+            ],
+            "scale": [
+                0.4506799876689911,
+                0.7021239995956421,
+                0.7021239995956421
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_Armoiries_03.SM_PROP_Interior_Armoiries_03",
+        "transform": {
+            "loc": [
+                -6350.12353515625,
+                4050.544921875,
+                -221.800048828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -8336.880859375,
+                6449.767578125,
+                -1543.7965087890625
+            ],
+            "rot": [
+                0.0003893207758665085,
+                89.99674224853516,
+                179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -8439.888671875,
+                6449.767578125,
+                -1603.352783203125
+            ],
+            "rot": [
+                -90.0,
+                -90.00009155273438,
+                0.0
+            ],
+            "scale": [
+                1.4461859464645386,
+                1.4461859464645386,
+                1.4461859464645386
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -8754.4853515625,
+                6449.767578125,
+                -1603.352783203125
+            ],
+            "rot": [
+                -90.0,
+                -90.00009155273438,
+                0.0
+            ],
+            "scale": [
+                1.4461859464645386,
+                1.4461859464645386,
+                1.4461859464645386
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -8898.8759765625,
+                6449.767578125,
+                -1603.352783203125
+            ],
+            "rot": [
+                -90.0,
+                -90.00009155273438,
+                0.0
+            ],
+            "scale": [
+                1.4461859464645386,
+                1.4461859464645386,
+                1.4461859464645386
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -8903.9755859375,
+                7648.314453125,
+                -1603.352783203125
+            ],
+            "rot": [
+                -90.0,
+                -179.999755859375,
+                -90.0
+            ],
+            "scale": [
+                1.4461859464645386,
+                1.4461859464645386,
+                1.4461859464645386
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -8759.5810546875,
+                7648.31640625,
+                -1603.352783203125
+            ],
+            "rot": [
+                -90.0,
+                -179.999755859375,
+                -90.0
+            ],
+            "scale": [
+                1.4461859464645386,
+                1.4461859464645386,
+                1.4461859464645386
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -8300.59375,
+                7648.314453125,
+                -1553.91015625
+            ],
+            "rot": [
+                0.0004439622862264514,
+                -89.99652862548828,
+                -179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -8281.1025390625,
+                7999.244140625,
+                -1553.9083251953125
+            ],
+            "rot": [
+                -0.0005873962072655559,
+                90.00040435791016,
+                179.9998016357422
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -8281.1015625,
+                8770.357421875,
+                -1553.9083251953125
+            ],
+            "rot": [
+                0.0006283773691393435,
+                -89.99922943115234,
+                -179.999755859375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -8408.7333984375,
+                7731.34375,
+                -1553.91015625
+            ],
+            "rot": [
+                0.0004439622862264514,
+                -89.99652862548828,
+                -179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -7137.3408203125,
+                6449.66796875,
+                -1543.7965087890625
+            ],
+            "rot": [
+                -0.00040981132769957185,
+                -90.00040435791016,
+                8.879245433490723e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -7046.41845703125,
+                6379.46875,
+                -1543.7965087890625
+            ],
+            "rot": [
+                0.0004234717052895576,
+                89.9994888305664,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -5450.861328125,
+                6304.390625,
+                -1543.7965087890625
+            ],
+            "rot": [
+                -0.00010928302071988583,
+                -89.99734497070312,
+                89.99994659423828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_90Degree_SMALL_01.SM_STRUC_Pipe_90Degree_SMALL_01",
+        "transform": {
+            "loc": [
+                -5450.8876953125,
+                5425.123046875,
+                -1543.7965087890625
+            ],
+            "rot": [
+                0.00035516981733962893,
+                89.9994888305664,
+                -89.99994659423828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -8208.2734375,
+                5888.474609375,
+                114.78515625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.10000000149011612,
+                0.10000000149011612,
+                0.10000000149011612
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -8208.2734375,
+                5963.546875,
+                114.78515625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.10000000149011612,
+                0.10000000149011612,
+                0.10000000149011612
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -8208.2734375,
+                6039.60546875,
+                114.78515625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.10000000149011612,
+                0.10000000149011612,
+                0.10000000149011612
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -8209.03515625,
+                6115.96875,
+                114.78515625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.10000000149011612,
+                0.10000000149011612,
+                0.10000000149011612
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -8152.53125,
+                6666.498046875,
+                -1691.0205078125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00013732910156
+            ],
+            "scale": [
+                0.40646031498908997,
+                0.40646031498908997,
+                0.40646031498908997
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -8152.53076171875,
+                7116.349609375,
+                -1691.0205078125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00011444091797
+            ],
+            "scale": [
+                0.4064599871635437,
+                0.4064599871635437,
+                0.4064599871635437
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -9045.6865234375,
+                7116.349609375,
+                -1691.0205078125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.9998779296875
+            ],
+            "scale": [
+                0.4064599871635437,
+                0.4064599871635437,
+                0.4064599871635437
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -7250.44677734375,
+                7849.455078125,
+                -1731.078369140625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00001525878906
+            ],
+            "scale": [
+                0.32031989097595215,
+                0.32031989097595215,
+                0.32031989097595215
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -9698.1318359375,
+                8551.587890625,
+                -1696.13330078125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99993896484375
+            ],
+            "scale": [
+                0.3203200101852417,
+                0.3203200101852417,
+                0.3203200101852417
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -9271.078125,
+                8551.587890625,
+                -1696.13330078125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99993896484375
+            ],
+            "scale": [
+                0.3203200101852417,
+                0.3203200101852417,
+                0.3203200101852417
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -5450.61376953125,
+                4874.892578125,
+                -1696.504638671875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00001525878906
+            ],
+            "scale": [
+                0.3689279854297638,
+                0.3689279854297638,
+                0.3689279854297638
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Grill_LARGE_01.SM_STRUC_Pipe_Grill_LARGE_01",
+        "transform": {
+            "loc": [
+                -5242.505859375,
+                3749.6640625,
+                -1696.504638671875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -5.464149217004888e-05
+            ],
+            "scale": [
+                0.3689279854297638,
+                0.3689279854297638,
+                0.3689279854297638
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_01.SM_STRUC_Pipe_Straight_SMALL_01",
+        "transform": {
+            "loc": [
+                -8225.7109375,
+                7722.591796875,
+                -1553.9088134765625
+            ],
+            "rot": [
+                -0.00012294339830987155,
+                -89.99625396728516,
+                89.99954223632812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.6207388639450073
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_01.SM_STRUC_Pipe_Straight_SMALL_01",
+        "transform": {
+            "loc": [
+                -8205.607421875,
+                7923.8828125,
+                -1553.9088134765625
+            ],
+            "rot": [
+                0.00031418868456967175,
+                89.9980239868164,
+                -89.9997329711914
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.5976245403289795
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_01.SM_STRUC_Pipe_Straight_SMALL_01",
+        "transform": {
+            "loc": [
+                -8281.4912109375,
+                7998.38671875,
+                -1553.9088134765625
+            ],
+            "rot": [
+                -0.00017758490866981447,
+                -89.99652862548828,
+                179.99949645996094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.289924144744873
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_01.SM_STRUC_Pipe_Straight_SMALL_01",
+        "transform": {
+            "loc": [
+                -8333.8486328125,
+                7805.623046875,
+                -1553.9088134765625
+            ],
+            "rot": [
+                -0.00012294339830987155,
+                -89.99625396728516,
+                89.99954223632812
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.8106682300567627
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_01.SM_STRUC_Pipe_Straight_SMALL_01",
+        "transform": {
+            "loc": [
+                -8262.005859375,
+                6375.388671875,
+                -1543.7965087890625
+            ],
+            "rot": [
+                0.00040981132769957185,
+                89.9994888305664,
+                -89.99994659423828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_01.SM_STRUC_Pipe_Straight_SMALL_01",
+        "transform": {
+            "loc": [
+                -7662.1220703125,
+                6375.38671875,
+                -1543.7965087890625
+            ],
+            "rot": [
+                0.0002868679293897003,
+                89.99726867675781,
+                -89.99994659423828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.749756395816803
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_01.SM_STRUC_Pipe_Straight_SMALL_01",
+        "transform": {
+            "loc": [
+                -6971.06494140625,
+                6304.39453125,
+                -1543.7965087890625
+            ],
+            "rot": [
+                0.0002868679293897003,
+                89.99726867675781,
+                -89.99994659423828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_01.SM_STRUC_Pipe_Straight_SMALL_01",
+        "transform": {
+            "loc": [
+                -6371.28466796875,
+                6304.39453125,
+                -1543.7965087890625
+            ],
+            "rot": [
+                0.037750452756881714,
+                95.805908203125,
+                -92.64530181884766
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.8006898164749146
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_01.SM_STRUC_Pipe_Straight_SMALL_01",
+        "transform": {
+            "loc": [
+                -5376.037109375,
+                6229.349609375,
+                -1543.7965087890625
+            ],
+            "rot": [
+                0.0004234717052895576,
+                89.9994888305664,
+                -179.9999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.2183729410171509
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_01.SM_STRUC_Pipe_Straight_SMALL_01",
+        "transform": {
+            "loc": [
+                -5887.140625,
+                6304.390625,
+                -1543.7965087890625
+            ],
+            "rot": [
+                0.0002868679293897003,
+                89.99726867675781,
+                -89.99994659423828
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.7275369763374329
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8208.66796875,
+                6115.865234375,
+                114.568359375
+            ],
+            "rot": [
+                -6.830188794992864e-06,
+                89.99818420410156,
+                -90.0002670288086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8208.669921875,
+                6038.47265625,
+                114.568359375
+            ],
+            "rot": [
+                -6.830188794992864e-06,
+                89.99818420410156,
+                -90.0002670288086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8208.669921875,
+                5963.111328125,
+                114.568359375
+            ],
+            "rot": [
+                -6.830188794992864e-06,
+                89.99818420410156,
+                -90.0002670288086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8208.669921875,
+                5887.203125,
+                114.568359375
+            ],
+            "rot": [
+                -6.830188794992864e-06,
+                89.99818420410156,
+                -90.0002670288086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8439.888671875,
+                6341.33984375,
+                -1496.4129638671875
+            ],
+            "rot": [
+                0.0003073585103265941,
+                0.0005639878800138831,
+                -89.99995422363281
+            ],
+            "scale": [
+                1.4461859464645386,
+                1.4461859464645386,
+                1.4461859464645386
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8754.486328125,
+                6341.33984375,
+                -1496.4129638671875
+            ],
+            "rot": [
+                0.0003073585103265941,
+                0.0005639878800138831,
+                -89.99995422363281
+            ],
+            "scale": [
+                1.4461859464645386,
+                1.4461859464645386,
+                1.4461859464645386
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8898.8759765625,
+                6341.33984375,
+                -1496.4129638671875
+            ],
+            "rot": [
+                0.0003073585103265941,
+                0.0005639878800138831,
+                -89.99995422363281
+            ],
+            "scale": [
+                1.4461859464645386,
+                1.4461859464645386,
+                1.4461859464645386
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8903.9755859375,
+                7756.744140625,
+                -1496.4129638671875
+            ],
+            "rot": [
+                0.0003073585103265941,
+                0.0005639704177156091,
+                89.99981689453125
+            ],
+            "scale": [
+                1.4461859464645386,
+                1.4461859464645386,
+                1.4461859464645386
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8759.5810546875,
+                7756.7421875,
+                -1496.4129638671875
+            ],
+            "rot": [
+                0.0003073585103265941,
+                0.0005639704177156091,
+                89.99981689453125
+            ],
+            "scale": [
+                1.4461859464645386,
+                1.4461859464645386,
+                1.4461859464645386
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8205.87890625,
+                8844.474609375,
+                -1553.9083251953125
+            ],
+            "rot": [
+                0.0006283773691393435,
+                -89.99662017822266,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.66203773021698
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -8408.7333984375,
+                7649.408203125,
+                -1553.91015625
+            ],
+            "rot": [
+                0.0004439622862264514,
+                -89.99652862548828,
+                -179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                2.4506866931915283
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_Pipe_Straight_SMALL_02.SM_STRUC_Pipe_Straight_SMALL_02",
+        "transform": {
+            "loc": [
+                -7046.416015625,
+                6449.92578125,
+                -1543.7965087890625
+            ],
+            "rot": [
+                0.0004234717052895576,
+                89.9994888305664,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                2.134586811065674
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_MechanicusLogo_Small_01_A.SM_STRUC_PROMPUMP_MechanicusLogo_Small_01_A",
+        "transform": {
+            "loc": [
+                -8750.46875,
+                6001.357421875,
+                507.777587890625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.9998779296875
+            ],
+            "scale": [
+                0.59614497423172,
+                0.59614497423172,
+                0.59614497423172
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -8737.6474609375,
+                6456.94921875,
+                -1795.0491943359375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993133544922
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -8331.85546875,
+                6456.94921875,
+                -1628.61474609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993133544922
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -8331.85546875,
+                6456.94921875,
+                -1707.84619140625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993133544922
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -8461.8251953125,
+                7641.130859375,
+                -1715.8177490234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -8461.8251953125,
+                7641.130859375,
+                -1795.0491943359375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -8739.0888671875,
+                7641.1328125,
+                -1715.8177490234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -8739.0888671875,
+                7641.1328125,
+                -1795.0491943359375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -8826.4248046875,
+                7641.1328125,
+                -1715.8177490234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -8826.4248046875,
+                7641.1328125,
+                -1795.0491943359375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -5459.9287109375,
+                5417.662109375,
+                -1632.536865234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.00012294335465412587
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -5459.9287109375,
+                5417.662109375,
+                -1711.768310546875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.00012294335465412587
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -5459.9287109375,
+                5417.662109375,
+                -1791.4486083984375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.00012294335465412587
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_01.SM_STRUC_Sewers_Wall_Pipes_Component_01",
+        "transform": {
+            "loc": [
+                -8737.6474609375,
+                6456.94921875,
+                -1715.8177490234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99993133544922
+            ],
+            "scale": [
+                1.346053957939148,
+                1.346053957939148,
+                1.346053957939148
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_03.SM_STRUC_Sewers_Wall_Pipes_Component_03",
+        "transform": {
+            "loc": [
+                -8323.701171875,
+                7648.525390625,
+                -1661.7012939453125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.907938003540039,
+                1.907938003540039,
+                1.907938003540039
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_03.SM_STRUC_Sewers_Wall_Pipes_Component_03",
+        "transform": {
+            "loc": [
+                -8323.701171875,
+                7648.525390625,
+                -1807.1973876953125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.907938003540039,
+                1.907938003540039,
+                1.907938003540039
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_03.SM_STRUC_Sewers_Wall_Pipes_Component_03",
+        "transform": {
+            "loc": [
+                -5452.6123046875,
+                5279.533203125,
+                -1635.7618408203125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                6.147167732706293e-05
+            ],
+            "scale": [
+                1.907938003540039,
+                1.907938003540039,
+                1.907938003540039
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_03.SM_STRUC_Sewers_Wall_Pipes_Component_03",
+        "transform": {
+            "loc": [
+                -8875.7705078125,
+                6449.556640625,
+                -1719.042724609375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -89.99995422363281
+            ],
+            "scale": [
+                1.9079375267028809,
+                1.9079375267028809,
+                1.9079375267028809
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A.SM_STRUC_Shrine_DecoWall_MED_01_A",
+        "transform": {
+            "loc": [
+                -6968.8837890625,
+                6449.46875,
+                -1687.3492431640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                0.4379650056362152,
+                0.4379650056362152,
+                0.4379650056362152
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A.SM_STRUC_Shrine_DecoWall_MED_01_A",
+        "transform": {
+            "loc": [
+                -5714.13671875,
+                6449.466796875,
+                -1687.3492431640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99989318847656
+            ],
+            "scale": [
+                0.4379650056362152,
+                0.4379650056362152,
+                0.4379650056362152
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A.SM_STRUC_Shrine_DecoWall_MED_01_A",
+        "transform": {
+            "loc": [
+                -5714.1630859375,
+                5551.83984375,
+                -1687.3492431640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                2.7320742447045632e-05
+            ],
+            "scale": [
+                0.4379650056362152,
+                0.4379650056362152,
+                0.4379650056362152
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A.SM_STRUC_Shrine_DecoWall_MED_01_A",
+        "transform": {
+            "loc": [
+                -6977.90869140625,
+                5551.84375,
+                -1687.3492431640625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -5.464149217004888e-05
+            ],
+            "scale": [
+                0.4379650056362152,
+                0.4379650056362152,
+                0.4379650056362152
+            ]
+        }
+    }
+]

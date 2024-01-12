@@ -1,8 +1,8 @@
 import json
 import os.path
 
-raw_filename = "Raw/Maggon/maggon_static.json"
-new_filename = "Usual/Maggon/maggon_static.json"
+raw_filename = "Raw/HiveComplex01/r05.json"
+new_filename = "Usual/HiveComplex01/r05.json"
 
 need_log = False
 log_content = ""
@@ -193,5 +193,6 @@ print("=" * 40 + " Unique Blueprints " + "=" * 40)
 for el in blueprints_unique:
     print(el)
 
-with open("map_convert.log", "w") as f:
-    f.write(log_content)
+if need_log:
+    with open("map_convert.log", "w") as f:
+        f.write(log_content)
