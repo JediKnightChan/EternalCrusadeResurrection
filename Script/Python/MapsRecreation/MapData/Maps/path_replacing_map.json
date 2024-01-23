@@ -21,5 +21,8 @@
   "/Game/Blueprints/BP_STRUC_RooftopCage02": "/Game/Buildings/Blueprints/BP_STRUC_RooftopCage02",
   "/Game/Blueprints/BP_STRUC_RooftopVent_01": "/Game/Buildings/Blueprints/BP_STRUC_RooftopVent_01",
   "SM_PROP_AMB_Rock01_Medium": "/Game/PROPS/Ambiance/SM_PROP_AMB_Rock_Medium_01",
-  "SM_Aquila_Symbol": "/Game/PROPS/Ambiance/SM_Aquila_Symbol"
+  "SM_Aquila_Symbol": "/Game/PROPS/Ambiance/SM_Aquila_Symbol",
+  "/Game/Blueprints/PVE/LevelDesign/Corridors/Corridor_Structure_9m": "/Game/Buildings/Blueprints/PvE/Corridor_Structure_9m",
+  "/Game/Blueprints/PVE/LevelDesign/Corridors/BP_SectorLock": "/Game/Buildings/Blueprints/PvE/BP_SectorLock",
+  "": ""
 }

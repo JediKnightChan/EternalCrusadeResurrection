@@ -37,13 +37,14 @@ void UECRWeaponInstance::LinkAnimLayer() const
 }
 
 float UECRWeaponInstance::GetDistanceAttenuation(float Distance, const FGameplayTagContainer* SourceTags,
-	const FGameplayTagContainer* TargetTags) const
+                                                 const FGameplayTagContainer* TargetTags) const
 {
 	return 1.0f;
 }
 
 float UECRWeaponInstance::GetPhysicalMaterialAttenuation(const UPhysicalMaterial* PhysicalMaterial,
-	const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags) const
+                                                         const FGameplayTagContainer* SourceTags,
+                                                         const FGameplayTagContainer* TargetTags) const
 {
 	return 1.0f;
 }
@@ -63,7 +64,8 @@ void UECRWeaponInstance::OnEquipped()
 
 	LoadMontages();
 
-	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(GetPawn()))
+	if (UECRPawnComponent_CharacterParts* CosmeticComp =
+		UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(GetPawn()))
 	{
 		CosmeticComp->OnCharacterPartsChanged.AddDynamic(this, &ThisClass::OnCharacterPartsChanged);
 	}
@@ -78,7 +80,8 @@ void UECRWeaponInstance::OnUnequipped()
 {
 	Super::OnUnequipped();
 
-	if (UECRPawnComponent_CharacterParts* CosmeticComp = UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(GetPawn()))
+	if (UECRPawnComponent_CharacterParts* CosmeticComp =
+		UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(GetPawn()))
 	{
 		CosmeticComp->OnCharacterPartsChanged.RemoveDynamic(this, &ThisClass::OnCharacterPartsChanged);
 	}
@@ -116,18 +119,23 @@ TSubclassOf<UAnimInstance> UECRWeaponInstance::PickBestAnimLayer(const FGameplay
 	return SetToQuery.SelectBestLayer(CosmeticTags);
 }
 
+UAnimMontage* UECRWeaponInstance::GetSwitchToExecutionMontage() const
+{
+	return GetMontageFromSet(SwitchToMontageSet, GetPawn());
+}
+
 UAnimMontage* UECRWeaponInstance::GetKillerExecutionMontage() const
 {
-	return GetExecutionMontage(KillerExecutionMontageSet, GetPawn());
+	return GetMontageFromSet(KillerExecutionMontageSet, GetPawn());
 }
 
 UAnimMontage* UECRWeaponInstance::GetVictimExecutionMontage(AActor* TargetActor) const
 {
-	return GetExecutionMontage(VictimExecutionMontageSet, TargetActor);
+	return GetMontageFromSet(VictimExecutionMontageSet, TargetActor);
 }
 
-UAnimMontage* UECRWeaponInstance::GetExecutionMontage(const FECRAnimMontageSelectionSet& SelectionSet,
-                                                      AActor* TargetActor) const
+UAnimMontage* UECRWeaponInstance::GetMontageFromSet(const FECRAnimMontageSelectionSet& SelectionSet,
+                                                    AActor* TargetActor) const
 {
 	if (const UECRPawnComponent_CharacterParts* CosmeticsComponent =
 		UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(TargetActor))
@@ -154,14 +162,22 @@ void UECRWeaponInstance::LoadMontages()
 	{
 		const FGameplayTagContainer PawnCosmeticTags = CosmeticsComponent->GetCombinedTags(
 			FECRGameplayTags::Get().Cosmetic_Montage);
+
+		// Load only 1 montage for execution killer
 		const TSoftObjectPtr<UAnimMontage> KillerAnimMontage = KillerExecutionMontageSet.SelectBestMontage(
 			PawnCosmeticTags);
 		UECRCosmeticStatics::AddMontageToLoadQueueIfNeeded(KillerAnimMontage, MontagesToLoad);
 
+		// Load all montages for execution victims (we don't know possible victims as it's not owner)
 		for (TSoftObjectPtr<UAnimMontage>& VictimAnimMontage : VictimExecutionMontageSet.GetAllMontages())
 		{
 			UECRCosmeticStatics::AddMontageToLoadQueueIfNeeded(VictimAnimMontage, MontagesToLoad);
 		}
+
+		// Load one montage for switch to action
+		const TSoftObjectPtr<UAnimMontage> SwitchToMontage = SwitchToMontageSet.SelectBestMontage(
+			PawnCosmeticTags);
+		UECRCosmeticStatics::AddMontageToLoadQueueIfNeeded(SwitchToMontage, MontagesToLoad);
 	}
 
 	if (MontagesToLoad.Num() > 0)

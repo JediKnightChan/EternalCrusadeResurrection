@@ -1,0 +1,82 @@
+[
+    {
+        "path": "Blueprint /Game/Blueprints/BP_DamageZone.BP_DamageZone",
+        "transform": {
+            "loc": [
+                -1430.0,
+                13360.0,
+                -7010.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_DamageZone.BP_DamageZone",
+        "transform": {
+            "loc": [
+                -1430.0,
+                -16130.0,
+                -7010.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                12680.0,
+                35000.0,
+                200.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                9.0,
+                9.0,
+                9.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                0.0,
+                -350.0,
+                -1150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                3.0,
+                0.25,
+                1.0
+            ]
+        }
+    }
+]

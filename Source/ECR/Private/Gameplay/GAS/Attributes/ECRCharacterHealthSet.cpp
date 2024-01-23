@@ -28,12 +28,12 @@ void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 
 bool UECRCharacterHealthSet::GetIsReadyToBecomeWounded() const
 {
-	return GetHealth() <= 0;
+	return GetMaxBleedingHealth() > 0 ? GetHealth() <= 0 : false;
 }
 
 bool UECRCharacterHealthSet::GetIsReadyToDie() const
 {
-	return GetBleedingHealth() <= 0;
+	return GetMaxBleedingHealth() > 0 ? GetBleedingHealth() <= 0 : GetHealth() <= 0;
 }
 
 
@@ -177,8 +177,8 @@ void UECRCharacterHealthSet::ClampAttribute(const FGameplayAttribute& Attribute,
 	}
 	else if (Attribute == GetMaxShieldAttribute())
 	{
-		// Do not allow max shield to drop below 1.
-		NewValue = FMath::Max(NewValue, 1.0f);
+		// Do not allow max shield to drop below 0.
+		NewValue = FMath::Max(NewValue, 0.0f);
 	}
 	else if (Attribute == GetBleedingHealthAttribute())
 	{
@@ -187,8 +187,8 @@ void UECRCharacterHealthSet::ClampAttribute(const FGameplayAttribute& Attribute,
 	}
 	else if (Attribute == GetMaxBleedingHealthAttribute())
 	{
-		// Do not allow max bleeding health to drop below 1.
-		NewValue = FMath::Max(NewValue, 1.0f);
+		// Do not allow max bleeding health to drop below 0.
+		NewValue = FMath::Max(NewValue, 0.0f);
 	}
 }
 

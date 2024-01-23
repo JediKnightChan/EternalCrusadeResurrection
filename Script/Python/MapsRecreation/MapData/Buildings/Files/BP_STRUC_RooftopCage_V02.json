@@ -1,0 +1,262 @@
+[
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_COMMSTATION_01/SM_STRUC_COMMSTATION_OctogonQuarter_SMALL_01_A.SM_STRUC_COMMSTATION_OctogonQuarter_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -840.0905151367188,
+                445.32049560546875,
+                -597.6126708984375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                179.99989318847656
+            ],
+            "scale": [
+                1.3242051601409912,
+                1.3242051601409912,
+                1.3242051601409912
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreBase_01.SM_PROPS_PlasmaCoreBase_01",
+        "transform": {
+            "loc": [
+                -880.1304321289062,
+                423.8889465332031,
+                -288.2592468261719
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.3242051601409912,
+                1.3242051601409912,
+                1.3242051601409912
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_SinglePlasmaCore_01.SM_PROPS_SinglePlasmaCore_01",
+        "transform": {
+            "loc": [
+                -866.703369140625,
+                289.8130187988281,
+                -228.1595001220703
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.3242051601409912,
+                1.3242051601409912,
+                1.3242051601409912
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_SinglePlasmaCore_01.SM_PROPS_SinglePlasmaCore_01",
+        "transform": {
+            "loc": [
+                -866.5646362304688,
+                413.2044677734375,
+                -228.15940856933594
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.3242051601409912,
+                1.3242051601409912,
+                1.3242051601409912
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco_MED_01_A.SM_STRUC_PROMPUMP_PipesDeco_MED_01_A",
+        "transform": {
+            "loc": [
+                -1304.388916015625,
+                1251.038818359375,
+                -0.00016164613771252334
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_SinglePlasmaCore_01.SM_PROPS_SinglePlasmaCore_01",
+        "transform": {
+            "loc": [
+                -866.5914306640625,
+                536.3092041015625,
+                -228.15966796875
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                89.9999771118164
+            ],
+            "scale": [
+                1.3242051601409912,
+                1.3242051601409912,
+                1.3242051601409912
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_COMMSTATION_01/SM_STRUC_COMMSTATION_OctogonQuarter_SMALL_01_A.SM_STRUC_COMMSTATION_OctogonQuarter_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -840.0905151367188,
+                445.32049560546875,
+                -597.6126708984375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                -90.00016021728516
+            ],
+            "scale": [
+                1.3242051601409912,
+                1.3242051601409912,
+                1.3242051601409912
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco_MED_01_A.SM_STRUC_PROMPUMP_PipesDeco_MED_01_A",
+        "transform": {
+            "loc": [
+                -372.0245361328125,
+                1251.158935546875,
+                -8.082306885626167e-05
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Block_MED_02_A.SM_STRUC_Garage_Block_MED_02_A",
+        "transform": {
+            "loc": [
+                -839.02783203125,
+                67.94282531738281,
+                611.8854370117188
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.00000762939453
+            ],
+            "scale": [
+                1.3242051601409912,
+                1.3242051601409912,
+                1.3242051601409912
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco_MED_01_A.SM_STRUC_PROMPUMP_PipesDeco_MED_01_A",
+        "transform": {
+            "loc": [
+                -0.07864084839820862,
+                933.3463134765625,
+                0.0003232922754250467
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                1.0245283192489296e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_COMMSTATION_01/SM_STRUC_COMMSTATION_OctogonQuarter_SMALL_01_A.SM_STRUC_COMMSTATION_OctogonQuarter_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -840.0905151367188,
+                445.32049560546875,
+                -597.6126708984375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                9.220754145644605e-05
+            ],
+            "scale": [
+                1.3242051601409912,
+                1.3242051601409912,
+                1.3242051601409912
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_COMMSTATION_01/SM_STRUC_COMMSTATION_OctogonQuarter_SMALL_01_A.SM_STRUC_COMMSTATION_OctogonQuarter_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -840.0905151367188,
+                445.32049560546875,
+                -597.6126708984375
+            ],
+            "rot": [
+                0.0,
+                -0.0,
+                90.0000228881836
+            ],
+            "scale": [
+                1.3242051601409912,
+                1.3242051601409912,
+                1.3242051601409912
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_PipesDeco_MED_01_A.SM_STRUC_PROMPUMP_PipesDeco_MED_01_A",
+        "transform": {
+            "loc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

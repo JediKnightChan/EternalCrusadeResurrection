@@ -246,12 +246,29 @@ bool UECRRangedWeaponInstance::UpdateMultipliers(float DeltaSeconds)
 	const bool bAimingMultiplierAtTarget = FMath::IsNearlyEqual(AimingMultiplier, SpreadAngleMultiplier_Aiming,
 	                                                            KINDA_SMALL_NUMBER);
 
+	// Determine if we are bracing
+	float BracingAlpha = 0.0f;
+	if (UAbilitySystemComponent* ASC = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(Pawn))
+	{
+		if (ASC->HasMatchingGameplayTag(FECRGameplayTags::Get().Status_Bracing))
+		{
+			BracingAlpha = 1.0f;
+		}
+	}
+	
+	const float BracingMultiplier = FMath::GetMappedRangeValueClamped(
+		/*InputRange=*/ FVector2D(0.0f, 1.0f),
+						/*OutputRange=*/ FVector2D(1.0f, SpreadAngleMultiplier_Bracing),
+						/*Alpha=*/ BracingAlpha);
+	const bool bBracingAlphaMultiplierAtTarget = FMath::IsNearlyEqual(BracingMultiplier, SpreadAngleMultiplier_Bracing,
+																KINDA_SMALL_NUMBER);
+
 	// Combine all the multipliers
 	const float CombinedMultiplier = AimingMultiplier * StandingStillMultiplier * CrouchingMultiplier *
-		JumpFallMultiplier;
+		JumpFallMultiplier * BracingMultiplier;
 	CurrentSpreadAngleMultiplier = CombinedMultiplier;
 
 	// need to handle these spread multipliers indicating we are not at min spread
 	return bStandingStillMultiplierAtMin && bCrouchingMultiplierAtTarget && bJumpFallMultiplerIs1 &&
-		bAimingMultiplierAtTarget;
+		bAimingMultiplierAtTarget && bBracingAlphaMultiplierAtTarget;
 }

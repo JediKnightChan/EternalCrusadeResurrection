@@ -1,0 +1,302 @@
+[
+    {
+        "path": "Blueprint /Game/Blueprints/BP_DamageZone.BP_DamageZone",
+        "transform": {
+            "loc": [
+                1270.0,
+                -8410.0,
+                -4569.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                300.0,
+                300.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_Door.BP_Door",
+        "transform": {
+            "loc": [
+                4839.9873046875,
+                9599.9384765625,
+                320.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FloorTiles_01/SM_STRUC_FloorTiles_6X6_06_A.SM_STRUC_FloorTiles_6X6_06_A",
+        "transform": {
+            "loc": [
+                -12499.41796875,
+                23289.912109375,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.9996337890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_3x6_A.SM_STRUC_Sewers_Floor_02_3x6_A",
+        "transform": {
+            "loc": [
+                -13100.0009765625,
+                23289.99609375,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00006103515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_3x6_A.SM_STRUC_Sewers_Floor_02_3x6_A",
+        "transform": {
+            "loc": [
+                -13100.0,
+                24189.998046875,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00006103515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_3x6_A.SM_STRUC_Sewers_Floor_02_3x6_A",
+        "transform": {
+            "loc": [
+                -12500.001953125,
+                23289.994140625,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.000152587890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_3x6_A.SM_STRUC_Sewers_Floor_02_3x6_A",
+        "transform": {
+            "loc": [
+                -13400.0029296875,
+                23289.994140625,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.000152587890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_Corner_01_3x3_A.SM_STRUC_Sewers_Floor_Corner_01_3x3_A",
+        "transform": {
+            "loc": [
+                -13100.0029296875,
+                23889.998046875,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00006103515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_Corner_01_3x3_A.SM_STRUC_Sewers_Floor_Corner_01_3x3_A",
+        "transform": {
+            "loc": [
+                -12500.0029296875,
+                23290.0,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_Corner_01_3x3_A.SM_STRUC_Sewers_Floor_Corner_01_3x3_A",
+        "transform": {
+            "loc": [
+                -13100.00390625,
+                23289.998046875,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.000152587890625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_Corner_01_3x3_A.SM_STRUC_Sewers_Floor_Corner_01_3x3_A",
+        "transform": {
+            "loc": [
+                -12499.9990234375,
+                23889.998046875,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9998016357422
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_Corner_01_3x3_A.SM_STRUC_Sewers_Floor_Corner_01_3x3_A",
+        "transform": {
+            "loc": [
+                -12200.001953125,
+                22989.998046875,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_Corner_01_3x3_A.SM_STRUC_Sewers_Floor_Corner_01_3x3_A",
+        "transform": {
+            "loc": [
+                -13400.001953125,
+                24189.998046875,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_Corner_01_3x3_A.SM_STRUC_Sewers_Floor_Corner_01_3x3_A",
+        "transform": {
+            "loc": [
+                -12200.00390625,
+                24189.998046875,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.0003662109375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_Corner_01_3x3_A.SM_STRUC_Sewers_Floor_Corner_01_3x3_A",
+        "transform": {
+            "loc": [
+                -13400.001953125,
+                22989.998046875,
+                1550.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

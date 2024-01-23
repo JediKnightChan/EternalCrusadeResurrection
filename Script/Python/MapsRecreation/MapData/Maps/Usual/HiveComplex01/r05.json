@@ -1,0 +1,7102 @@
+[
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_ActivationPoint.BP_ActivationPoint",
+        "transform": {
+            "loc": [
+                -2172.0732421875,
+                10347.9248046875,
+                2150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99960327148438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_ActivationPoint.BP_ActivationPoint",
+        "transform": {
+            "loc": [
+                3757.928955078125,
+                14282.9287109375,
+                1250.0001220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0004119873047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_ActivationPoint.BP_ActivationPoint",
+        "transform": {
+            "loc": [
+                -6692.0712890625,
+                1362.9287109375,
+                350.0000915527344
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99961471557617
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_ActivationPoint.BP_ActivationPoint",
+        "transform": {
+            "loc": [
+                -3042.0712890625,
+                10602.9287109375,
+                1250.0001220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99945068359375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_ActivationPoint.BP_ActivationPoint",
+        "transform": {
+            "loc": [
+                -720.563720703125,
+                10983.4306640625,
+                50.0001220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99982452392578
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_ActivationPoint.BP_ActivationPoint",
+        "transform": {
+            "loc": [
+                -1197.426513671875,
+                4447.5732421875,
+                50.0001220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_ActivationPoint.BP_ActivationPoint",
+        "transform": {
+            "loc": [
+                -1987.071044921875,
+                4622.9287109375,
+                1850.0001220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                -720.563720703125,
+                10983.4306640625,
+                50.0001220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99982452392578
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                3757.928955078125,
+                14282.9287109375,
+                1250.0001220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.0004119873047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                -3042.0712890625,
+                10602.9287109375,
+                1250.0001220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99945068359375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                -6692.0712890625,
+                1362.9287109375,
+                350.0000915527344
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                44.99961471557617
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                -1197.426513671875,
+                4447.5732421875,
+                50.0001220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                -1987.071044921875,
+                4622.9287109375,
+                1850.0001220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -135.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch.BP_BasicSwitch",
+        "transform": {
+            "loc": [
+                -2172.0732421875,
+                10347.9248046875,
+                2150.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99960327148438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch_Deliver.BP_BasicSwitch_Deliver",
+        "transform": {
+            "loc": [
+                -60.0,
+                5250.0,
+                1850.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.00025177001953125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_BasicSwitch_Deliver.BP_BasicSwitch_Deliver",
+        "transform": {
+            "loc": [
+                -2340.0,
+                5250.0,
+                1850.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9999237060547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_DamageZone.BP_DamageZone",
+        "transform": {
+            "loc": [
+                -1195.0,
+                5865.0,
+                -819.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                10.0,
+                5.0,
+                0.6060606241226196
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_DamageZone.BP_DamageZone",
+        "transform": {
+            "loc": [
+                -1195.0,
+                10565.0,
+                -659.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                10.0,
+                5.0,
+                0.6060609817504883
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_DeliverableObject.BP_DeliverableObject",
+        "transform": {
+            "loc": [
+                -1200.0,
+                6240.5,
+                20.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_DeliverableObject.BP_DeliverableObject",
+        "transform": {
+            "loc": [
+                -1200.0,
+                11340.5,
+                20.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_DeliverableObjective.BP_DeliverableObjective",
+        "transform": {
+            "loc": [
+                -1200.0,
+                6490.0,
+                430.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/LevelDesign/Objectives/BP_DeliverableObjective.BP_DeliverableObjective",
+        "transform": {
+            "loc": [
+                -1200.0,
+                11490.0,
+                430.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Floor_Small.BP_TyranidPool_Floor_Small",
+        "transform": {
+            "loc": [
+                4330.0,
+                7930.0,
+                -160.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Big.BP_TyranidPool_Wall_Big",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Big.BP_TyranidPool_Wall_Big",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Large.BP_TyranidPool_Wall_Large",
+        "transform": {
+            "loc": [
+                -1320.0,
+                15300.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Large.BP_TyranidPool_Wall_Large",
+        "transform": {
+            "loc": [
+                -7222.85205078125,
+                6280.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Large.BP_TyranidPool_Wall_Large",
+        "transform": {
+            "loc": [
+                4798.29541015625,
+                9520.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Large.BP_TyranidPool_Wall_Large",
+        "transform": {
+            "loc": [
+                3430.0,
+                13900.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Large.BP_TyranidPool_Wall_Large",
+        "transform": {
+            "loc": [
+                -4700.0,
+                14390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Large.BP_TyranidPool_Wall_Large",
+        "transform": {
+            "loc": [
+                2080.0,
+                2340.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Large.BP_TyranidPool_Wall_Large",
+        "transform": {
+            "loc": [
+                3800.0,
+                2390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                75.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Medium.BP_TyranidPool_Wall_Medium",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Medium.BP_TyranidPool_Wall_Medium",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Medium.BP_TyranidPool_Wall_Medium",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Small.BP_TyranidPool_Wall_Small",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Small.BP_TyranidPool_Wall_Small",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Small.BP_TyranidPool_Wall_Small",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Small.BP_TyranidPool_Wall_Small",
+        "transform": {
+            "loc": [
+                880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Small.BP_TyranidPool_Wall_Small",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Small.BP_TyranidPool_Wall_Small",
+        "transform": {
+            "loc": [
+                2079.9999990463257,
+                12242.9287039375,
+                647.3085327148438
+            ],
+            "rot": [
+                0.0005938301765127108,
+                179.999756336212,
+                -179.9998168945276
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/PVE/VFX/BP_TyranidPool_Wall_Small.BP_TyranidPool_Wall_Small",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4330.0,
+                7930.0,
+                -160.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4330.0,
+                7930.0,
+                -160.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4330.0,
+                7930.0,
+                -160.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4330.0,
+                7930.0,
+                -160.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4330.0,
+                7930.0,
+                -160.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4330.0,
+                7930.0,
+                -160.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                6580.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3880.0,
+                15230.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                13520.0,
+                2740.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2079.9999990463257,
+                12242.9287039375,
+                647.3085327148438
+            ],
+            "rot": [
+                0.0005938301765127108,
+                179.999756336212,
+                -179.9998168945276
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2079.9999990463257,
+                12242.9287039375,
+                647.3085327148438
+            ],
+            "rot": [
+                0.0005938301765127108,
+                179.999756336212,
+                -179.9998168945276
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2079.9999990463257,
+                12242.9287039375,
+                647.3085327148438
+            ],
+            "rot": [
+                0.0005938301765127108,
+                179.999756336212,
+                -179.9998168945276
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2079.9999990463257,
+                12242.9287039375,
+                647.3085327148438
+            ],
+            "rot": [
+                0.0005938301765127108,
+                179.999756336212,
+                -179.9998168945276
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2079.9999990463257,
+                12242.9287039375,
+                647.3085327148438
+            ],
+            "rot": [
+                0.0005938301765127108,
+                179.999756336212,
+                -179.9998168945276
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4800.0,
+                10300.0,
+                3040.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00021362304688
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7200.0,
+                10300.0,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99995422363281
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -1320.0,
+                15300.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -1320.0,
+                15300.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -1320.0,
+                15300.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -1320.0,
+                15300.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -1320.0,
+                15300.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -1320.0,
+                15300.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -1320.0,
+                15300.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3430.0,
+                13900.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3430.0,
+                13900.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3430.0,
+                13900.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3430.0,
+                13900.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3430.0,
+                13900.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3430.0,
+                13900.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3430.0,
+                13900.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -4700.0,
+                14390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -4700.0,
+                14390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -4700.0,
+                14390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -4700.0,
+                14390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -4700.0,
+                14390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -4700.0,
+                14390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -4700.0,
+                14390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2080.0,
+                2340.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2080.0,
+                2340.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2080.0,
+                2340.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2080.0,
+                2340.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2080.0,
+                2340.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2080.0,
+                2340.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                2080.0,
+                2340.0,
+                45.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3800.0,
+                2390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                75.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3800.0,
+                2390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                75.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3800.0,
+                2390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                75.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3800.0,
+                2390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                75.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3800.0,
+                2390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                75.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3800.0,
+                2390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                75.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                3800.0,
+                2390.0,
+                30.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                75.00001525878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7222.85205078125,
+                6280.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7222.85205078125,
+                6280.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7222.85205078125,
+                6280.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7222.85205078125,
+                6280.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7222.85205078125,
+                6280.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7222.85205078125,
+                6280.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                -7222.85205078125,
+                6280.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4798.29541015625,
+                9520.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4798.29541015625,
+                9520.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4798.29541015625,
+                9520.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4798.29541015625,
+                9520.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4798.29541015625,
+                9520.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4798.29541015625,
+                9520.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_VEins_Decals.BP_VEins_Decals",
+        "transform": {
+            "loc": [
+                4798.29541015625,
+                9520.0,
+                640.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00005340576172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "Blueprint ChildActorComponent.ChildActorComponent",
+        "transform": {
+            "loc": [
+                0,
+                0,
+                0
+            ],
+            "rot": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                4489.99609375,
+                12040.001953125,
+                1950.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.00024900000425986946
+            ],
+            "scale": [
+                5.0,
+                16.8125,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                4489.984375,
+                14700.001953125,
+                1950.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.00024900000425986946
+            ],
+            "scale": [
+                5.0,
+                13.0,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                2839.983154296875,
+                14979.99609375,
+                1950.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.0001449584961
+            ],
+            "scale": [
+                5.0,
+                3.5,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                1649.983154296875,
+                14979.994140625,
+                1950.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.0001449584961
+            ],
+            "scale": [
+                5.0,
+                3.5,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                -150.01675415039062,
+                14979.990234375,
+                1950.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.0001449584961
+            ],
+            "scale": [
+                5.0,
+                3.5,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                -6740.01611328125,
+                14559.9755859375,
+                1950.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.0001449584961
+            ],
+            "scale": [
+                20.0,
+                15.0,
+                40.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                2101.987060546875,
+                12904.99609375,
+                500.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.0001449584961
+            ],
+            "scale": [
+                0.20000000298023224,
+                6.0,
+                15.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/GB_Floor_3X6_A.GB_Floor_3X6_A",
+        "transform": {
+            "loc": [
+                -600.001953125,
+                8100.0009765625,
+                2100.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/GB_Floor_3X6_A.GB_Floor_3X6_A",
+        "transform": {
+            "loc": [
+                -1200.001953125,
+                8100.0009765625,
+                2100.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/GB_Floor_3X6_A.GB_Floor_3X6_A",
+        "transform": {
+            "loc": [
+                -1200.001953125,
+                6600.0009765625,
+                1800.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/GB_Floor_3X6_A.GB_Floor_3X6_A",
+        "transform": {
+            "loc": [
+                -600.001953125,
+                6600.0009765625,
+                1800.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/GB_Floor_6X6_A.GB_Floor_6X6_A",
+        "transform": {
+            "loc": [
+                -600.001953125,
+                6900.0009765625,
+                1800.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/GB_Floor_6X6_A.GB_Floor_6X6_A",
+        "transform": {
+            "loc": [
+                -1200.001953125,
+                6900.0009765625,
+                1800.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/GB_Floor_6X6_A.GB_Floor_6X6_A",
+        "transform": {
+            "loc": [
+                -600.001953125,
+                8400.0009765625,
+                2100.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/GB_Floor_6X6_A.GB_Floor_6X6_A",
+        "transform": {
+            "loc": [
+                -1200.001953125,
+                8400.0009765625,
+                2100.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/Dummies/GB_SpawnPoint.GB_SpawnPoint",
+        "transform": {
+            "loc": [
+                -1150.0,
+                3950.0,
+                1850.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/Dummies/GB_SpawnPoint.GB_SpawnPoint",
+        "transform": {
+            "loc": [
+                -450.0,
+                6150.0,
+                50.25
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/Dummies/GB_SpawnPoint.GB_SpawnPoint",
+        "transform": {
+            "loc": [
+                -999.9943237304688,
+                165.0,
+                50.25
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/Dummies/GB_SpawnPoint.GB_SpawnPoint",
+        "transform": {
+            "loc": [
+                680.0,
+                14110.0,
+                50.25
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/GB_Stairs_6X3_A.GB_Stairs_6X3_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                7500.0,
+                1800.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9998016357422
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Graybox/GB_LD_BuildingBlocks/GB_Stairs_6X3_A.GB_Stairs_6X3_A",
+        "transform": {
+            "loc": [
+                -1200.0,
+                7500.0,
+                1800.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9998016357422
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Sphere.Sphere.Sphere",
+        "transform": {
+            "loc": [
+                -1200.0,
+                6550.0,
+                1850.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_Floor_MetalMesh_12m_01.SM_Floor_MetalMesh_12m_01",
+        "transform": {
+            "loc": [
+                -1198.0,
+                7768.130859375,
+                2811.7275390625
+            ],
+            "rot": [
+                0.0,
+                -26.896942138671875,
+                0.0
+            ],
+            "scale": [
+                0.9097920060157776,
+                1.3638039827346802,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -1899.9970703125,
+                8535.001953125,
+                3091.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -1899.9970703125,
+                8535.001953125,
+                4867.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -113.9990234375,
+                7070.0,
+                4546.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -510.9990234375,
+                7070.0,
+                2771.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -510.9990234375,
+                7070.0,
+                4547.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -114.99609375,
+                7073.0009765625,
+                2772.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -2293.9990234375,
+                7074.0009765625,
+                4553.125
+            ],
+            "rot": [
+                90.0,
+                35.264408111572266,
+                35.26439666748047
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -1895.9990234375,
+                7074.001953125,
+                2769.125
+            ],
+            "rot": [
+                90.0,
+                35.264408111572266,
+                35.26439666748047
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -1895.9990234375,
+                7074.001953125,
+                4545.125
+            ],
+            "rot": [
+                90.0,
+                35.264408111572266,
+                35.26439666748047
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -2288.998046875,
+                7073.001953125,
+                2771.125
+            ],
+            "rot": [
+                90.0,
+                35.264408111572266,
+                35.26439666748047
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -104.0,
+                8531.0,
+                4865.125
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -504.0,
+                8530.0,
+                3089.125
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -504.0,
+                8530.0,
+                4865.125
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -104.0,
+                8531.0,
+                3089.125
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -2288.9970703125,
+                8535.001953125,
+                3091.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_Chain_9m_01.SM_PROP_AMB_Chain_9m_01",
+        "transform": {
+            "loc": [
+                -2288.9970703125,
+                8535.001953125,
+                4867.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ChainBase_01.SM_PROP_AMB_ChainBase_01",
+        "transform": {
+            "loc": [
+                -2288.9970703125,
+                8535.001953125,
+                3045.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ChainBase_01.SM_PROP_AMB_ChainBase_01",
+        "transform": {
+            "loc": [
+                -1899.9970703125,
+                8533.001953125,
+                3045.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ChainBase_01.SM_PROP_AMB_ChainBase_01",
+        "transform": {
+            "loc": [
+                -113.9990234375,
+                7070.0,
+                2725.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ChainBase_01.SM_PROP_AMB_ChainBase_01",
+        "transform": {
+            "loc": [
+                -510.9990234375,
+                7070.0,
+                2724.125
+            ],
+            "rot": [
+                90.0,
+                160.52874755859375,
+                160.52879333496094
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ChainBase_01.SM_PROP_AMB_ChainBase_01",
+        "transform": {
+            "loc": [
+                -1895.9990234375,
+                7074.001953125,
+                2722.125
+            ],
+            "rot": [
+                90.0,
+                35.264408111572266,
+                35.26439666748047
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ChainBase_01.SM_PROP_AMB_ChainBase_01",
+        "transform": {
+            "loc": [
+                -104.0001220703125,
+                8531.0,
+                3045.125
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ChainBase_01.SM_PROP_AMB_ChainBase_01",
+        "transform": {
+            "loc": [
+                -504.0001220703125,
+                8530.0,
+                3045.125
+            ],
+            "rot": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_ChainBase_01.SM_PROP_AMB_ChainBase_01",
+        "transform": {
+            "loc": [
+                -2293.9990234375,
+                7074.0009765625,
+                2724.125
+            ],
+            "rot": [
+                90.0,
+                35.2643928527832,
+                35.26439666748047
+            ],
+            "scale": [
+                2.0,
+                2.0,
+                2.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Stair_6X3X6_A.SM_STRUC_Building_Stair_6X3X6_A",
+        "transform": {
+            "loc": [
+                -1200.0,
+                7500.0,
+                2700.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9998016357422
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Stair_6X3X6_A.SM_STRUC_Building_Stair_6X3X6_A",
+        "transform": {
+            "loc": [
+                -600.0,
+                7500.0,
+                2700.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.9998016357422
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_CannonBase_Lrg_01.SM_STRUC_CannonBase_Lrg_01",
+        "transform": {
+            "loc": [
+                -311.83203125,
+                7071.728515625,
+                5376.00146484375
+            ],
+            "rot": [
+                0.0003279999946244061,
+                -179.99989318847656,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                0.16497300565242767,
+                0.16497300565242767,
+                0.16497300565242767
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_CannonBase_Lrg_01.SM_STRUC_CannonBase_Lrg_01",
+        "transform": {
+            "loc": [
+                -2093.271484375,
+                7071.83251953125,
+                5375.99755859375
+            ],
+            "rot": [
+                -0.000213623046875,
+                -179.99989318847656,
+                179.9998779296875
+            ],
+            "scale": [
+                0.16497300565242767,
+                0.16497300565242767,
+                0.16497300565242767
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_CannonBase_Lrg_01.SM_STRUC_CannonBase_Lrg_01",
+        "transform": {
+            "loc": [
+                -307.83343505859375,
+                8526.728515625,
+                5376.00244140625
+            ],
+            "rot": [
+                0.0003279999946244061,
+                -179.9999237060547,
+                -3.0517578125e-05
+            ],
+            "scale": [
+                0.16497300565242767,
+                0.16497300565242767,
+                0.16497300565242767
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_CannonBase_Lrg_01.SM_STRUC_CannonBase_Lrg_01",
+        "transform": {
+            "loc": [
+                -2092.2705078125,
+                8526.830078125,
+                5375.99853515625
+            ],
+            "rot": [
+                -0.0001220703125,
+                -179.999755859375,
+                179.99989318847656
+            ],
+            "scale": [
+                0.16497300565242767,
+                0.16497300565242767,
+                0.16497300565242767
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_MED_01_A.SM_STRUC_CATH_Pipe90D_MED_01_A",
+        "transform": {
+            "loc": [
+                -340.99993896484375,
+                8385.0,
+                2867.0
+            ],
+            "rot": [
+                3.400000059627928e-05,
+                89.99983978271484,
+                89.99994659423828
+            ],
+            "scale": [
+                0.5740537643432617,
+                0.5740537643432617,
+                0.5740537643432617
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_MED_01_A.SM_STRUC_CATH_Pipe90D_MED_01_A",
+        "transform": {
+            "loc": [
+                -2191.999755859375,
+                8384.0,
+                2940.005126953125
+            ],
+            "rot": [
+                3.415094397496432e-05,
+                -89.99996948242188,
+                89.99996185302734
+            ],
+            "scale": [
+                0.8687130212783813,
+                0.8687130212783813,
+                0.8687130212783813
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_MED_01_A.SM_STRUC_CATH_Pipe90D_MED_01_A",
+        "transform": {
+            "loc": [
+                -2058.0,
+                8385.0,
+                2867.005126953125
+            ],
+            "rot": [
+                4.0981132769957185e-05,
+                -90.0,
+                89.99994659423828
+            ],
+            "scale": [
+                0.5740540027618408,
+                0.5740540027618408,
+                0.5740540027618408
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_MED_01_A.SM_STRUC_CATH_Pipe90D_MED_01_A",
+        "transform": {
+            "loc": [
+                -205.999755859375,
+                8384.0,
+                2940.0
+            ],
+            "rot": [
+                3.415094397496432e-05,
+                89.99983978271484,
+                89.99994659423828
+            ],
+            "scale": [
+                0.8687129020690918,
+                0.8687129020690918,
+                0.8687129020690918
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -132.0,
+                8385.0009765625,
+                2845.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -2264.99951171875,
+                7215.0,
+                2580.999755859375
+            ],
+            "rot": [
+                0.0,
+                -179.9998016357422,
+                -179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -131.9991455078125,
+                7215.0009765625,
+                2581.0
+            ],
+            "rot": [
+                0.0,
+                -179.9998016357422,
+                -179.9999542236328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -2265.0,
+                8385.0,
+                2845.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -179.99996948242188
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_COMMSTATION_01/SM_STRUC_COMMSTATION_Radar_XL_Gear_01_A.SM_STRUC_COMMSTATION_Radar_XL_Gear_01_A",
+        "transform": {
+            "loc": [
+                -2092.2666015625,
+                8526.830078125,
+                4853.99853515625
+            ],
+            "rot": [
+                -0.0001220703125,
+                -179.999755859375,
+                179.99989318847656
+            ],
+            "scale": [
+                0.14555799961090088,
+                0.14555799961090088,
+                0.14555799961090088
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_COMMSTATION_01/SM_STRUC_COMMSTATION_Radar_XL_Gear_01_A.SM_STRUC_COMMSTATION_Radar_XL_Gear_01_A",
+        "transform": {
+            "loc": [
+                -307.83074951171875,
+                8526.73046875,
+                4854.00244140625
+            ],
+            "rot": [
+                0.0003279999946244061,
+                -179.9999237060547,
+                -3.0517578125e-05
+            ],
+            "scale": [
+                0.14555799961090088,
+                0.14555799961090088,
+                0.14555799961090088
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_COMMSTATION_01/SM_STRUC_COMMSTATION_Radar_XL_Gear_01_A.SM_STRUC_COMMSTATION_Radar_XL_Gear_01_A",
+        "transform": {
+            "loc": [
+                -311.8271484375,
+                7071.73291015625,
+                4854.00146484375
+            ],
+            "rot": [
+                0.0003279999946244061,
+                -179.99989318847656,
+                -9.1552734375e-05
+            ],
+            "scale": [
+                0.14555799961090088,
+                0.14555799961090088,
+                0.14555799961090088
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_COMMSTATION_01/SM_STRUC_COMMSTATION_Radar_XL_Gear_01_A.SM_STRUC_COMMSTATION_Radar_XL_Gear_01_A",
+        "transform": {
+            "loc": [
+                -2093.2666015625,
+                7071.83251953125,
+                4853.99755859375
+            ],
+            "rot": [
+                -0.000213623046875,
+                -179.99989318847656,
+                179.99989318847656
+            ],
+            "scale": [
+                0.14555799961090088,
+                0.14555799961090088,
+                0.14555799961090088
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Railing01_BeamSupport01_06_A.SM_STRUC_DAMAGE_Railing01_BeamSupport01_06_A",
+        "transform": {
+            "loc": [
+                -1209.0,
+                7600.15771484375,
+                2733.45068359375
+            ],
+            "rot": [
+                -27.03582763671875,
+                179.999755859375,
+                -89.99990844726562
+            ],
+            "scale": [
+                1.0,
+                0.8639299869537354,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Railing01_BeamSupport01_06_A.SM_STRUC_DAMAGE_Railing01_BeamSupport01_06_A",
+        "transform": {
+            "loc": [
+                -1209.00048828125,
+                7989.40283203125,
+                2932.087646484375
+            ],
+            "rot": [
+                -27.03582763671875,
+                179.999755859375,
+                -89.99990844726562
+            ],
+            "scale": [
+                1.0,
+                0.8639299869537354,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Railing01_BeamSupport01_06_A.SM_STRUC_DAMAGE_Railing01_BeamSupport01_06_A",
+        "transform": {
+            "loc": [
+                -670.0,
+                7600.15771484375,
+                2733.45166015625
+            ],
+            "rot": [
+                -27.03582763671875,
+                179.999755859375,
+                -89.99990844726562
+            ],
+            "scale": [
+                1.0,
+                0.8639299869537354,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Railing01_BeamSupport01_06_A.SM_STRUC_DAMAGE_Railing01_BeamSupport01_06_A",
+        "transform": {
+            "loc": [
+                -670.00048828125,
+                7989.40283203125,
+                2932.088623046875
+            ],
+            "rot": [
+                -27.03582763671875,
+                179.999755859375,
+                -89.99990844726562
+            ],
+            "scale": [
+                1.0,
+                0.8639299869537354,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Railing01_BeamSupport01_12_A.SM_STRUC_DAMAGE_Railing01_BeamSupport01_12_A",
+        "transform": {
+            "loc": [
+                -1199.0,
+                8220.1357421875,
+                3045.344970703125
+            ],
+            "rot": [
+                0.0,
+                152.9641876220703,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                0.8639299869537354,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Railing01_BeamSupport01_12_A.SM_STRUC_DAMAGE_Railing01_BeamSupport01_12_A",
+        "transform": {
+            "loc": [
+                -1742.0,
+                8220.1357421875,
+                3045.344970703125
+            ],
+            "rot": [
+                0.0,
+                152.9641876220703,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                0.8639299869537354,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_DAMAGE_Railing01_BeamSupport01_12_A.SM_STRUC_DAMAGE_Railing01_BeamSupport01_12_A",
+        "transform": {
+            "loc": [
+                -657.0,
+                8220.1357421875,
+                3045.344970703125
+            ],
+            "rot": [
+                0.0,
+                152.9641876220703,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                0.8639299869537354,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FloorTiles_01/SM_STRUC_FloorTiles_6x6_01_A.SM_STRUC_FloorTiles_6x6_01_A",
+        "transform": {
+            "loc": [
+                -1800.001953125,
+                6900.0009765625,
+                2750.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FloorTiles_01/SM_STRUC_FloorTiles_6x6_01_A.SM_STRUC_FloorTiles_6x6_01_A",
+        "transform": {
+            "loc": [
+                -1200.001953125,
+                8400.0009765625,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FloorTiles_01/SM_STRUC_FloorTiles_6x6_01_A.SM_STRUC_FloorTiles_6x6_01_A",
+        "transform": {
+            "loc": [
+                -1800.001953125,
+                8400.0009765625,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FloorTiles_01/SM_STRUC_FloorTiles_6x6_01_A.SM_STRUC_FloorTiles_6x6_01_A",
+        "transform": {
+            "loc": [
+                -1200.001953125,
+                6900.0009765625,
+                2750.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_Logo_MED_01_A.SM_STRUC_FortWalls_Logo_MED_01_A",
+        "transform": {
+            "loc": [
+                -2099.0,
+                8688.0,
+                2879.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                0.7394260168075562,
+                0.7394260168075562,
+                0.7394260168075562
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_Logo_MED_01_A.SM_STRUC_FortWalls_Logo_MED_01_A",
+        "transform": {
+            "loc": [
+                -308.0,
+                6926.0,
+                2572.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                180.0
+            ],
+            "scale": [
+                0.7394260168075562,
+                0.7394260168075562,
+                0.7394260168075562
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_Logo_MED_01_A.SM_STRUC_FortWalls_Logo_MED_01_A",
+        "transform": {
+            "loc": [
+                -2099.0,
+                6926.0,
+                2572.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                180.0
+            ],
+            "scale": [
+                0.7394260168075562,
+                0.7394260168075562,
+                0.7394260168075562
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_FortWalls_01/SM_STRUC_FortWalls_Logo_MED_01_A.SM_STRUC_FortWalls_Logo_MED_01_A",
+        "transform": {
+            "loc": [
+                -308.0,
+                8688.0,
+                2879.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                0.7394258975982666,
+                0.7394258975982666,
+                0.7394258975982666
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Tile_MED_01_B.SM_STRUC_Garage_Tile_MED_01_B",
+        "transform": {
+            "loc": [
+                -595.998046875,
+                7393.0,
+                2426.99560546875
+            ],
+            "rot": [
+                0.0003420000139158219,
+                -179.9999542236328,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                0.9905740022659302,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Tile_MED_01_B.SM_STRUC_Garage_Tile_MED_01_B",
+        "transform": {
+            "loc": [
+                -1196.0029296875,
+                8863.0,
+                2726.99853515625
+            ],
+            "rot": [
+                0.0003420000139158219,
+                -179.9999542236328,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                0.9905740022659302,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Tile_MED_01_B.SM_STRUC_Garage_Tile_MED_01_B",
+        "transform": {
+            "loc": [
+                -596.00390625,
+                8863.0,
+                2726.99560546875
+            ],
+            "rot": [
+                0.0003420000139158219,
+                -179.9999542236328,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                0.9905740022659302,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Tile_MED_01_B.SM_STRUC_Garage_Tile_MED_01_B",
+        "transform": {
+            "loc": [
+                -1195.9970703125,
+                7393.0,
+                2426.99853515625
+            ],
+            "rot": [
+                0.0003420000139158219,
+                -179.9999542236328,
+                -179.99989318847656
+            ],
+            "scale": [
+                1.0,
+                0.9905740022659302,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Till_SMALL_01_A.SM_STRUC_Garage_Till_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -9.5712890625,
+                7220.0087890625,
+                2430.0
+            ],
+            "rot": [
+                90.0,
+                -0.000213623046875,
+                -90.0
+            ],
+            "scale": [
+                0.9812089800834656,
+                0.9864130020141602,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Till_SMALL_01_A.SM_STRUC_Garage_Till_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -9.5771484375,
+                8690.0078125,
+                2730.0
+            ],
+            "rot": [
+                90.0,
+                -0.000213623046875,
+                -90.0
+            ],
+            "scale": [
+                0.9812089800834656,
+                0.9864130020141602,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Till_SMALL_01_A.SM_STRUC_Garage_Till_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -9.5760498046875,
+                8394.0078125,
+                2730.0
+            ],
+            "rot": [
+                90.0,
+                33.68988037109375,
+                -56.309906005859375
+            ],
+            "scale": [
+                0.9812089800834656,
+                0.9864130020141602,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Till_SMALL_01_A.SM_STRUC_Garage_Till_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1802.5771484375,
+                8690.0029296875,
+                2730.0
+            ],
+            "rot": [
+                90.0,
+                33.68988037109375,
+                -56.309906005859375
+            ],
+            "scale": [
+                0.9812089800834656,
+                0.9864130020141602,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Till_SMALL_01_A.SM_STRUC_Garage_Till_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1802.575927734375,
+                8394.0029296875,
+                2730.0
+            ],
+            "rot": [
+                90.0,
+                44.99978256225586,
+                -45.0
+            ],
+            "scale": [
+                0.9812089800834656,
+                0.9864130020141602,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Till_SMALL_01_A.SM_STRUC_Garage_Till_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -9.5701904296875,
+                6932.0087890625,
+                2430.0
+            ],
+            "rot": [
+                90.0,
+                33.68988037109375,
+                -56.309906005859375
+            ],
+            "scale": [
+                0.9812089800834656,
+                0.9864130020141602,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Till_SMALL_01_A.SM_STRUC_Garage_Till_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1799.9990234375,
+                6932.00048828125,
+                2430.0
+            ],
+            "rot": [
+                90.0,
+                -0.000213623046875,
+                -90.0
+            ],
+            "scale": [
+                0.9812089800834656,
+                0.9913409948348999,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Till_SMALL_01_A.SM_STRUC_Garage_Till_SMALL_01_A",
+        "transform": {
+            "loc": [
+                -1800.0,
+                7220.00048828125,
+                2430.0
+            ],
+            "rot": [
+                90.0,
+                44.99978256225586,
+                -45.0
+            ],
+            "scale": [
+                0.9812089800834656,
+                0.9913409948348999,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_AngleRailing_6M_01_B.SM_STRUC_PROM_Damage_AngleRailing_6M_01_B",
+        "transform": {
+            "loc": [
+                -1784.9833984375,
+                7500.0439453125,
+                1850.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99909973144531
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_AngleRailing_6M_01_B.SM_STRUC_PROM_Damage_AngleRailing_6M_01_B",
+        "transform": {
+            "loc": [
+                -604.9833984375,
+                7500.0439453125,
+                1850.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99909973144531
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_AngleRailing_6M_01_B.SM_STRUC_PROM_Damage_AngleRailing_6M_01_B",
+        "transform": {
+            "loc": [
+                -610.9835205078125,
+                7481.0439453125,
+                2750.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99916076660156
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_AngleRailing_6M_01_B.SM_STRUC_PROM_Damage_AngleRailing_6M_01_B",
+        "transform": {
+            "loc": [
+                -1785.9833984375,
+                7480.0439453125,
+                2750.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99907684326172
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_3M_03_B.SM_STRUC_PROM_Damage_Railing_3M_03_B",
+        "transform": {
+            "loc": [
+                -2.9833984375,
+                14091.0439453125,
+                1250.0626220703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -0.00054931640625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_6M_01_B.SM_STRUC_PROM_Damage_Railing_6M_01_B",
+        "transform": {
+            "loc": [
+                -1794.9833984375,
+                8700.0439453125,
+                2150.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00084686279297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_6M_01_B.SM_STRUC_PROM_Damage_Railing_6M_01_B",
+        "transform": {
+            "loc": [
+                -604.9833984375,
+                8100.0439453125,
+                2150.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.9992904663086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_6M_01_B.SM_STRUC_PROM_Damage_Railing_6M_01_B",
+        "transform": {
+            "loc": [
+                -604.9833984375,
+                6900.0439453125,
+                1850.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.9992904663086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_6M_01_B.SM_STRUC_PROM_Damage_Railing_6M_01_B",
+        "transform": {
+            "loc": [
+                -1789.9833984375,
+                7500.0439453125,
+                1850.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00084686279297
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_6M_01_B.SM_STRUC_PROM_Damage_Railing_6M_01_B",
+        "transform": {
+            "loc": [
+                -1789.9835205078125,
+                7474.0439453125,
+                2750.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.0008544921875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_6M_01_B.SM_STRUC_PROM_Damage_Railing_6M_01_B",
+        "transform": {
+            "loc": [
+                -610.9833984375,
+                6875.0439453125,
+                2750.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.9992904663086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_6M_01_B.SM_STRUC_PROM_Damage_Railing_6M_01_B",
+        "transform": {
+            "loc": [
+                -1794.9833984375,
+                8686.0439453125,
+                3050.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.0008544921875
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_6M_01_B.SM_STRUC_PROM_Damage_Railing_6M_01_B",
+        "transform": {
+            "loc": [
+                -611.9834594726562,
+                8083.0439453125,
+                3050.0625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.9992904663086
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_post_01_B.SM_STRUC_PROM_Damage_Railing_post_01_B",
+        "transform": {
+            "loc": [
+                -1785.0,
+                8687.0,
+                3052.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_post_01_B.SM_STRUC_PROM_Damage_Railing_post_01_B",
+        "transform": {
+            "loc": [
+                -1785.0,
+                8079.0,
+                3052.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_post_01_B.SM_STRUC_PROM_Damage_Railing_post_01_B",
+        "transform": {
+            "loc": [
+                -1785.0,
+                7476.0,
+                2749.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_post_01_B.SM_STRUC_PROM_Damage_Railing_post_01_B",
+        "transform": {
+            "loc": [
+                -1785.0,
+                6869.0,
+                2749.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_post_01_B.SM_STRUC_PROM_Damage_Railing_post_01_B",
+        "transform": {
+            "loc": [
+                -616.0,
+                8687.0,
+                3052.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_post_01_B.SM_STRUC_PROM_Damage_Railing_post_01_B",
+        "transform": {
+            "loc": [
+                -616.0,
+                8079.0,
+                3052.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_post_01_B.SM_STRUC_PROM_Damage_Railing_post_01_B",
+        "transform": {
+            "loc": [
+                -616.0,
+                7476.0,
+                2749.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_PROM_Damage_Railing_post_01_B.SM_STRUC_PROM_Damage_Railing_post_01_B",
+        "transform": {
+            "loc": [
+                -616.0,
+                6869.0,
+                2749.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_3x6_A.SM_STRUC_Sewers_Floor_02_3x6_A",
+        "transform": {
+            "loc": [
+                -606.99951171875,
+                8700.00390625,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_3x6_A.SM_STRUC_Sewers_Floor_02_3x6_A",
+        "transform": {
+            "loc": [
+                -2399.99951171875,
+                8700.0126953125,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -90.00027465820312
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_3x6_A.SM_STRUC_Sewers_Floor_02_3x6_A",
+        "transform": {
+            "loc": [
+                -600.001953125,
+                6600.0009765625,
+                2750.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_3x6_A.SM_STRUC_Sewers_Floor_02_3x6_A",
+        "transform": {
+            "loc": [
+                -1200.001953125,
+                6600.0009765625,
+                2750.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_3x6_A.SM_STRUC_Sewers_Floor_02_3x6_A",
+        "transform": {
+            "loc": [
+                -600.001953125,
+                8100.0009765625,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Floor_02_3x6_A.SM_STRUC_Sewers_Floor_02_3x6_A",
+        "transform": {
+            "loc": [
+                -1200.001953125,
+                8100.0009765625,
+                3050.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_03_D.SM_STRUC_Sewers_Wall_03_D",
+        "transform": {
+            "loc": [
+                3598.546875,
+                3284.994140625,
+                3350.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99974822998047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_03_D.SM_STRUC_Sewers_Wall_03_D",
+        "transform": {
+            "loc": [
+                3598.55224609375,
+                4484.9921875,
+                3350.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99974822998047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_03_D.SM_STRUC_Sewers_Wall_03_D",
+        "transform": {
+            "loc": [
+                3598.55615234375,
+                5684.99609375,
+                3350.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99974822998047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_03_D.SM_STRUC_Sewers_Wall_03_D",
+        "transform": {
+            "loc": [
+                3598.55615234375,
+                6884.99609375,
+                3350.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                89.99974822998047
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Border_01.SM_STRUC_Sewers_Wall_Border_01",
+        "transform": {
+            "loc": [
+                -1800.0009765625,
+                8238.998046875,
+                3024.998779296875
+            ],
+            "rot": [
+                0.0,
+                179.99989318847656,
+                -89.99981689453125
+            ],
+            "scale": [
+                1.8788180351257324,
+                1.3350000381469727,
+                1.7997690439224243
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Border_01.SM_STRUC_Sewers_Wall_Border_01",
+        "transform": {
+            "loc": [
+                -601.0029296875,
+                8851.998046875,
+                3025.0
+            ],
+            "rot": [
+                -9.1552734375e-05,
+                -179.99989318847656,
+                90.00009155273438
+            ],
+            "scale": [
+                1.4795080423355103,
+                1.3300000429153442,
+                1.7997690439224243
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Border_01.SM_STRUC_Sewers_Wall_Border_01",
+        "transform": {
+            "loc": [
+                -1799.9990234375,
+                6768.99755859375,
+                2724.998779296875
+            ],
+            "rot": [
+                0.0,
+                179.99989318847656,
+                -89.99981689453125
+            ],
+            "scale": [
+                1.8788180351257324,
+                1.3350000381469727,
+                1.7997690439224243
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Border_01.SM_STRUC_Sewers_Wall_Border_01",
+        "transform": {
+            "loc": [
+                -600.9970703125,
+                7382.00146484375,
+                2725.0
+            ],
+            "rot": [
+                -9.1552734375e-05,
+                -179.99989318847656,
+                90.00009155273438
+            ],
+            "scale": [
+                1.4795080423355103,
+                1.3300000429153442,
+                1.7997690439224243
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_05_B.SM_STRUC_Sewers_Wall_Column_05_B",
+        "transform": {
+            "loc": [
+                -1847.197265625,
+                7289.224609375,
+                2430.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                24.99993896484375
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9809460043907166
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_05_B.SM_STRUC_Sewers_Wall_Column_05_B",
+        "transform": {
+            "loc": [
+                -529.73046875,
+                7286.783203125,
+                2430.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -65.00009155273438
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9809460043907166
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_05_B.SM_STRUC_Sewers_Wall_Column_05_B",
+        "transform": {
+            "loc": [
+                -542.1661987304688,
+                8332.2705078125,
+                2730.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -154.99981689453125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9809460043907166
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_05_B.SM_STRUC_Sewers_Wall_Column_05_B",
+        "transform": {
+            "loc": [
+                -1856.9150390625,
+                8335.9765625,
+                2730.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                114.99998474121094
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9809460043907166
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -1198.0029296875,
+                8564.0,
+                3027.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -1798.001953125,
+                8864.001953125,
+                3027.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -1198.0009765625,
+                8864.0009765625,
+                3027.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -2397.9970703125,
+                7223.001953125,
+                2727.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -1797.998046875,
+                7094.0,
+                2727.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -1197.9970703125,
+                7094.0,
+                2727.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -1797.99609375,
+                7394.0009765625,
+                2727.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -1197.99609375,
+                7394.0009765625,
+                2727.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -608.005859375,
+                8693.0,
+                3027.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -2398.0048828125,
+                8693.0,
+                3027.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -1798.0029296875,
+                8564.0,
+                3027.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Column_06_3x6_A.SM_STRUC_Sewers_Wall_Column_06_3x6_A",
+        "transform": {
+            "loc": [
+                -607.998046875,
+                7223.0,
+                2727.0
+            ],
+            "rot": [
+                -90.0,
+                178.10157775878906,
+                -178.10157775878906
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_03_B.SM_STRUC_Sewers_Wall_Pipes_03_B",
+        "transform": {
+            "loc": [
+                -2399.998046875,
+                7070.0,
+                2486.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99978637695312
+            ],
+            "scale": [
+                1.228963017463684,
+                1.228963017463684,
+                1.228963017463684
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_03_B.SM_STRUC_Sewers_Wall_Pipes_03_B",
+        "transform": {
+            "loc": [
+                -10.00390625,
+                8540.0,
+                2786.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.228963017463684,
+                1.228963017463684,
+                1.228963017463684
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_03_B.SM_STRUC_Sewers_Wall_Pipes_03_B",
+        "transform": {
+            "loc": [
+                -2400.0029296875,
+                8540.0,
+                2786.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99978637695312
+            ],
+            "scale": [
+                1.228963017463684,
+                1.228963017463684,
+                1.228963017463684
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_03_B.SM_STRUC_Sewers_Wall_Pipes_03_B",
+        "transform": {
+            "loc": [
+                -9.998046875,
+                7070.0009765625,
+                2486.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.228963017463684,
+                1.228963017463684,
+                1.228963017463684
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_03.SM_STRUC_Sewers_Wall_Pipes_Component_03",
+        "transform": {
+            "loc": [
+                -2399.998046875,
+                7070.0,
+                2641.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99978637695312
+            ],
+            "scale": [
+                2.241520881652832,
+                2.241520881652832,
+                2.241520881652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_03.SM_STRUC_Sewers_Wall_Pipes_Component_03",
+        "transform": {
+            "loc": [
+                -10.00390625,
+                8540.0,
+                2941.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.241520881652832,
+                2.241520881652832,
+                2.241520881652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_03.SM_STRUC_Sewers_Wall_Pipes_Component_03",
+        "transform": {
+            "loc": [
+                -2400.0029296875,
+                8540.0,
+                2941.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                179.99978637695312
+            ],
+            "scale": [
+                2.241520881652832,
+                2.241520881652832,
+                2.241520881652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Sewers/SM_STRUC_Sewers_Wall_Pipes_Component_03.SM_STRUC_Sewers_Wall_Pipes_Component_03",
+        "transform": {
+            "loc": [
+                -9.998046875,
+                7070.0009765625,
+                2641.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                2.241520881652832,
+                2.241520881652832,
+                2.241520881652832
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Sphere.Sphere.Sphere",
+        "transform": {
+            "loc": [
+                -1200.0,
+                7200.0,
+                3300.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Sphere.Sphere.Sphere",
+        "transform": {
+            "loc": [
+                -1200.0,
+                7750.0,
+                2150.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/PVE_Assets/Models/XX_XX_DeliveryGoal01.XX_XX_DeliveryGoal01",
+        "transform": {
+            "loc": [
+                -1200.0,
+                11400.0,
+                50.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/PVE_Assets/Models/XX_XX_DeliveryGoal01.XX_XX_DeliveryGoal01",
+        "transform": {
+            "loc": [
+                -1200.0,
+                6300.0,
+                50.5
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/PVE_Assets/Models/XX_XX_DeliveryPedestal01.XX_XX_DeliveryPedestal01",
+        "transform": {
+            "loc": [
+                -1200.0,
+                6300.5,
+                50.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/PVE_Assets/Models/XX_XX_DeliveryPedestal01.XX_XX_DeliveryPedestal01",
+        "transform": {
+            "loc": [
+                -120.0,
+                5310.5,
+                1830.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/PVE_Assets/Models/XX_XX_DeliveryPedestal01.XX_XX_DeliveryPedestal01",
+        "transform": {
+            "loc": [
+                -1200.0,
+                11400.5,
+                50.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/PVE_Assets/Models/XX_XX_DeliveryPedestal01.XX_XX_DeliveryPedestal01",
+        "transform": {
+            "loc": [
+                -2279.0,
+                5311.5,
+                1830.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/PVE_Assets/Models/XX_XX_DeliveryWheel01.XX_XX_DeliveryWheel01",
+        "transform": {
+            "loc": [
+                -1200.0,
+                6300.5,
+                50.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Gameplay/PVE_Assets/Models/XX_XX_DeliveryWheel01.XX_XX_DeliveryWheel01",
+        "transform": {
+            "loc": [
+                -1200.0,
+                11400.5,
+                50.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]

@@ -1,7 +1,7 @@
 import json
 import os.path
 
-raw_filename = "Files/BP_SM_PROP_Eagles_Lightpost_01_A2_Blueprint.raw.json"
+raw_filename = "Files/BP_Door.raw.json"
 filename = raw_filename.replace(".raw.json", ".json")
 
 with open(raw_filename, "rb") as f:
@@ -42,7 +42,6 @@ for i, export_struc in enumerate(data["Exports"]):
             if prop not in sm_data["transform"]:
                 sm_data["transform"][prop] = [fill_value] * 3
             sm_data["transform"][prop] = [float(v) for v in sm_data["transform"][prop]]
-            print(sm_data)
         result.append(sm_data)
 
 with open(filename, "w") as f:

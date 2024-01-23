@@ -1,0 +1,402 @@
+[
+    {
+        "path": "Blueprint /Game/Blueprints/BP_FireSphereNoSmoke_1m2.BP_FireSphereNoSmoke_1m2",
+        "transform": {
+            "loc": [
+                -173009.625,
+                53361.3515625,
+                -12151.9296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.78125,
+                1.78125,
+                1.78125
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/Blueprints/BP_FireSphereNoSmoke_1m2.BP_FireSphereNoSmoke_1m2",
+        "transform": {
+            "loc": [
+                -173009.625,
+                51156.328125,
+                -10722.6748046875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.78125,
+                1.78125,
+                1.78125
+            ]
+        }
+    },
+    {
+        "path": "Blueprint BP_OceanSystem_OpaqueLOW.BP_OceanSystem_OpaqueLOW",
+        "transform": {
+            "loc": [
+                -121747.15625,
+                88740.890625,
+                -17409.0703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                100.0,
+                100.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint BP_OceanSystem_OpaqueLOW.BP_OceanSystem_OpaqueLOW",
+        "transform": {
+            "loc": [
+                -178174.578125,
+                108696.375,
+                -15040.4404296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                5.0,
+                5.8125,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/VFX/Blueprints/BP_satelliteLaser.BP_satelliteLaser",
+        "transform": {
+            "loc": [
+                -170416.125,
+                65935.9453125,
+                -5134.90869140625
+            ],
+            "rot": [
+                1.148038625717163,
+                61.34754180908203,
+                -27.547840118408203
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_SM_PROP_SearchLight.BP_SM_PROP_SearchLight",
+        "transform": {
+            "loc": [
+                -137242.40625,
+                86692.796875,
+                -11905.5546875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -88.97662353515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_SM_PROP_SearchLight.BP_SM_PROP_SearchLight",
+        "transform": {
+            "loc": [
+                -123955.265625,
+                96409.5703125,
+                -11356.6865234375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                -88.97662353515625
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_SM_PROP_SearchLight.BP_SM_PROP_SearchLight",
+        "transform": {
+            "loc": [
+                -165686.765625,
+                102178.7734375,
+                -6522.3134765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                90.9385986328125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_SM_PROP_SearchLight.BP_SM_PROP_SearchLight",
+        "transform": {
+            "loc": [
+                -176482.859375,
+                82611.984375,
+                -8847.927734375
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_SM_PROP_SearchLight.BP_SM_PROP_SearchLight",
+        "transform": {
+            "loc": [
+                -153391.421875,
+                62280.5390625,
+                -14214.0615234375
+            ],
+            "rot": [
+                0.0,
+                6.1960039138793945,
+                -63.40663146972656
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_SM_PROP_SearchLight.BP_SM_PROP_SearchLight",
+        "transform": {
+            "loc": [
+                -179596.5625,
+                99319.4921875,
+                -9206.05078125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "Blueprint /Game/PROPS/Ambiance/BP_SM_PROP_SearchLight.BP_SM_PROP_SearchLight",
+        "transform": {
+            "loc": [
+                -181407.140625,
+                72348.6953125,
+                -10852.8779296875
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                -121747.15625,
+                88740.890625,
+                -17982.0703125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                10000.0,
+                10000.0,
+                14.35091781616211
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Engine/BasicShapes/Cube.Cube.Cube",
+        "transform": {
+            "loc": [
+                -152569.0,
+                163563.0,
+                -29000.0
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh MatineeCam_SM.MatineeCam_SM",
+        "transform": {
+            "loc": [
+                -143105.984375,
+                78927.9453125,
+                -14523.5048828125
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/Interior/Models/SM_PROP_Interior_FloorLight_MED_02_A.SM_PROP_Interior_FloorLight_MED_02_A",
+        "transform": {
+            "loc": [
+                -168698.921875,
+                79327.203125,
+                -9086.3564453125
+            ],
+            "rot": [
+                0.0,
+                90.00000762939453,
+                -5.492015361785889
+            ],
+            "scale": [
+                1.6875,
+                1.6875,
+                1.6875
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_ShrineWalls_DecoBoxLight_01_A.SM_STRUC_ShrineWalls_DecoBoxLight_01_A",
+        "transform": {
+            "loc": [
+                -165498.15625,
+                78953.6328125,
+                -9290.509765625
+            ],
+            "rot": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_A.SM_PROPS_Rhino_WRECK_A",
+        "transform": {
+            "loc": [
+                -146478.828125,
+                78079.8203125,
+                -14905.751953125
+            ],
+            "rot": [
+                3.840970277786255,
+                -0.4891970753669739,
+                75.48906707763672
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_G.SM_PROPS_Rhino_WRECK_G",
+        "transform": {
+            "loc": [
+                -162794.390625,
+                64795.7890625,
+                -13446.0361328125
+            ],
+            "rot": [
+                -5.654720306396484,
+                2.1235687732696533,
+                33.70683670043945
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    },
+    {
+        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_Rhino_WRECK_B.SM_PROPS_Rhino_WRECK_B",
+        "transform": {
+            "loc": [
+                -161368.40625,
+                84982.140625,
+                -9542.759765625
+            ],
+            "rot": [
+                -0.8210433125495911,
+                0.7725356817245483,
+                -56.38995361328125
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    }
+]
