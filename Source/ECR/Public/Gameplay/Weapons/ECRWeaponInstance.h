@@ -35,6 +35,9 @@ public:
 	float GetTimeSinceLastInteractedWith() const;
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category=Animation)
+	UAnimMontage* GetSwitchToExecutionMontage() const;
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category=Animation)
 	UAnimMontage* GetKillerExecutionMontage() const;
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category=Animation)
@@ -55,7 +58,7 @@ protected:
 	UFUNCTION(BlueprintCallable, BlueprintPure=false, Category=Animation)
 	TSubclassOf<UAnimInstance> PickBestAnimLayer(const FGameplayTagContainer& CosmeticTags) const;
 
-	UAnimMontage* GetExecutionMontage(const FECRAnimMontageSelectionSet& SelectionSet, AActor* TargetActor) const;
+	UAnimMontage* GetMontageFromSet(const FECRAnimMontageSelectionSet& SelectionSet, AActor* TargetActor) const;
 
 	void LoadMontages();
 
@@ -74,6 +77,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Animation)
 	FECRAnimMontageSelectionSet VictimExecutionMontageSet;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Animation)
+	FECRAnimMontageSelectionSet SwitchToMontageSet;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Damage)
 	float ArmorPenetration;
