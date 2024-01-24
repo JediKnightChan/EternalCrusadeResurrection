@@ -132,3 +132,12 @@ void UCoreExtendingFunctionLibrary::GetPawnAimOffsetDifference(APawn* Pawn, doub
 	PitchDiff = DegreesToStandardized(BaseAimRotation.Pitch - ActorRotation.Pitch);
 	YawDiff = DegreesToStandardized(BaseAimRotation.Yaw - ActorRotation.Yaw);
 }
+
+bool UCoreExtendingFunctionLibrary::IsActorOfClass(AActor* Actor, const TSubclassOf<AActor> Class)
+{
+	if (Actor)
+	{
+		return Actor->IsA(Class);
+	}
+	return false;
+}

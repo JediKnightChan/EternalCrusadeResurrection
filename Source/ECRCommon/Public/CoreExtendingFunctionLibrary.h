@@ -56,4 +56,7 @@ public:
 	/** Legacy, possibly broken: returns Pitch difference and Yaw difference for pawn (in [-180, 180] range) */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static void GetPawnAimOffsetDifference(APawn* Pawn, double& PitchDiff, double& YawDiff);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static bool IsActorOfClass(AActor* Actor, TSubclassOf<AActor> Class);
 };
