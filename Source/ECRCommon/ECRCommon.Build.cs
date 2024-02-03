@@ -19,7 +19,8 @@ public class ECRCommon : ModuleRules
 				"CoreUObject",
 				"Engine",
 				"Slate",
-				"SlateCore"
+				"SlateCore",
+				"ApplicationCore"
 			}
 		);
 	}
