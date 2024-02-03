@@ -59,4 +59,10 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static bool IsActorOfClass(AActor* Actor, TSubclassOf<AActor> Class);
+
+	UFUNCTION(BlueprintCallable)
+	static void CopyStringToClipboard(FString String);
+
+	UFUNCTION(BlueprintCallable)
+	static FString GetStringFromClipboard();
 };

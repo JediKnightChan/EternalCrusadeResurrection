@@ -3,7 +3,9 @@
 
 #include "CoreExtendingFunctionLibrary.h"
 
+#include "GenericPlatform/GenericPlatformApplicationMisc.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Windows/WindowsPlatformApplicationMisc.h"
 
 
 double UCoreExtendingFunctionLibrary::GetCurrentTimeInSeconds()
@@ -140,4 +142,16 @@ bool UCoreExtendingFunctionLibrary::IsActorOfClass(AActor* Actor, const TSubclas
 		return Actor->IsA(Class);
 	}
 	return false;
+}
+
+void UCoreExtendingFunctionLibrary::CopyStringToClipboard(const FString String)
+{
+	FPlatformApplicationMisc::ClipboardCopy(*String);
+}
+
+FString UCoreExtendingFunctionLibrary::GetStringFromClipboard()
+{
+	FString NewString;
+	FPlatformApplicationMisc::ClipboardPaste(NewString);
+	return NewString;
 }
