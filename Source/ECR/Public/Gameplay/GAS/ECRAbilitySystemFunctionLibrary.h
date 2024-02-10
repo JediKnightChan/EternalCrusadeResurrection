@@ -16,4 +16,7 @@ public:
 	
 	UFUNCTION(BlueprintPure, Category = "GameplayCue")
     static FGameplayCueParameters MakeGameplayCueParametersFromHitResultIncludingSourceAndCauser(const FHitResult& HitResult, AActor* Causer);
+
+	UFUNCTION(BlueprintCallable, Category = "GameplayEffect")
+	static void SetEffectContextSourceObject(FGameplayEffectContextHandle Handle, UObject* Object);
 };

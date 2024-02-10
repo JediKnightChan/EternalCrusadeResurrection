@@ -20,3 +20,8 @@ FGameplayCueParameters UECRAbilitySystemFunctionLibrary::MakeGameplayCueParamete
 	CueParameters.EffectCauser = MakeWeakObjectPtr(Cast<AActor>(Causer));
 	return CueParameters;
 }
+
+void UECRAbilitySystemFunctionLibrary::SetEffectContextSourceObject(FGameplayEffectContextHandle Handle, UObject* Object)
+{
+	Handle.AddSourceObject(Object);
+}
