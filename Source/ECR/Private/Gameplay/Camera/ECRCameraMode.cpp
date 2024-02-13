@@ -54,6 +54,7 @@ UECRCameraMode::UECRCameraMode()
 	ViewPitchMax = ECR_CAMERA_DEFAULT_PITCH_MAX;
 
 	bAlwaysZeroRoll = true;
+	bUseParentActorAsTarget = false;
 	BlendTime = 0.5f;
 	BlendFunction = EECRCameraModeBlendFunction::EaseOut;
 	BlendExponent = 4.0f;
@@ -75,7 +76,14 @@ AActor* UECRCameraMode::GetTargetActor() const
 {
 	const UECRCameraComponent* ECRCameraComponent = GetECRCameraComponent();
 
-	return ECRCameraComponent->GetTargetActor();
+	AActor* TargetActor = ECRCameraComponent->GetTargetActor();
+	AActor* ParentActor = TargetActor ? TargetActor->GetParentActor() : nullptr;
+
+	if (bUseParentActorAsTarget && ParentActor)
+	{
+		return ParentActor;
+	}
+	return TargetActor;
 }
 
 FVector UECRCameraMode::GetPivotLocation() const

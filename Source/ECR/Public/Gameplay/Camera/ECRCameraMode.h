@@ -120,6 +120,10 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "View")
 	bool bAlwaysZeroRoll;
 
+	// Whether instead of target actor use its parent
+	UPROPERTY(EditDefaultsOnly, Category = "View")
+	bool bUseParentActorAsTarget;
+	
 	// The horizontal field of view (in degrees).
 	UPROPERTY(EditDefaultsOnly, Category = "View",
 		Meta = (UIMin = "5.0", UIMax = "170", ClampMin = "5.0", ClampMax = "170.0"))
