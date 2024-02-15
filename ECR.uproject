@@ -119,6 +119,10 @@
 		{
 			"Name": "DlgSystem",
 			"Enabled": true
+		},
+                {
+			"Name": "SmoothSyncPlugin",
+			"Enabled": true
 		}
 	]
 }

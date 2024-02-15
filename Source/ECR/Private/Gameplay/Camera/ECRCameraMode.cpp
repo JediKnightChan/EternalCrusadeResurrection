@@ -55,6 +55,7 @@ UECRCameraMode::UECRCameraMode()
 
 	bAlwaysZeroRoll = true;
 	bUseParentActorAsTarget = false;
+	PivotOffset = {0.0f, 0.0f, 0.0f};
 	BlendTime = 0.5f;
 	BlendFunction = EECRCameraModeBlendFunction::EaseOut;
 	BlendExponent = 4.0f;
@@ -76,19 +77,28 @@ AActor* UECRCameraMode::GetTargetActor() const
 {
 	const UECRCameraComponent* ECRCameraComponent = GetECRCameraComponent();
 
-	AActor* TargetActor = ECRCameraComponent->GetTargetActor();
-	AActor* ParentActor = TargetActor ? TargetActor->GetParentActor() : nullptr;
+	return ECRCameraComponent->GetTargetActor();
+}
 
-	if (bUseParentActorAsTarget && ParentActor)
-	{
-		return ParentActor;
-	}
-	return TargetActor;
+AActor* UECRCameraMode::GetTargetActorParent() const
+{
+	AActor* TargetActor = GetTargetActor();
+	return TargetActor ? TargetActor->GetParentActor() : nullptr;
 }
 
 FVector UECRCameraMode::GetPivotLocation() const
 {
 	const AActor* TargetActor = GetTargetActor();
+
+	if (bUseParentActorAsTarget)
+	{
+		TargetActor = GetTargetActorParent();
+		if (!TargetActor)
+		{
+			TargetActor = GetTargetActor();
+		}
+	}
+
 	check(TargetActor);
 
 	if (const APawn* TargetPawn = Cast<APawn>(TargetActor))
@@ -109,13 +119,13 @@ FVector UECRCameraMode::GetPivotLocation() const
 			const float ActualHalfHeight = CapsuleComp->GetUnscaledCapsuleHalfHeight();
 			const float HeightAdjustment = (DefaultHalfHeight - ActualHalfHeight) + TargetCharacterCDO->BaseEyeHeight;
 
-			return TargetCharacter->GetActorLocation() + (FVector::UpVector * HeightAdjustment);
+			return TargetCharacter->GetActorLocation() + (FVector::UpVector * HeightAdjustment) + PivotOffset;
 		}
 
-		return TargetPawn->GetPawnViewLocation();
+		return TargetPawn->GetPawnViewLocation() + PivotOffset;
 	}
 
-	return TargetActor->GetActorLocation();
+	return TargetActor->GetActorLocation() + PivotOffset;
 }
 
 FRotator UECRCameraMode::GetPivotRotation() const

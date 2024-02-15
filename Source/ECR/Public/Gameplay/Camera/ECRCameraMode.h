@@ -73,6 +73,8 @@ public:
 
 	AActor* GetTargetActor() const;
 
+	AActor* GetTargetActorParent() const;
+
 	const FECRCameraModeView& GetCameraModeView() const { return View; }
 
 	// Called when this camera mode is activated on the camera mode stack.
@@ -123,6 +125,10 @@ protected:
 	// Whether instead of target actor use its parent
 	UPROPERTY(EditDefaultsOnly, Category = "View")
 	bool bUseParentActorAsTarget;
+
+	// Offset to the pivot itself
+	UPROPERTY(EditDefaultsOnly, Category = "View")
+	FVector PivotOffset;
 	
 	// The horizontal field of view (in degrees).
 	UPROPERTY(EditDefaultsOnly, Category = "View",
