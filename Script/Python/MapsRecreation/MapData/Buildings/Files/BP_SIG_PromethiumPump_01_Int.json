@@ -1,6 +1,5 @@
 [
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A.SM_STRUC_Shrine_DecoWall_MED_01_A",
         "transform": {
             "loc": [
                 1164.0625,
@@ -17,10 +16,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_WaterFilterUnit_SkullTile_01.SM_STRUC_WaterFilterUnit_SkullTile_01",
         "transform": {
             "loc": [
                 1164.0625,
@@ -37,10 +37,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_WaterFilterUnit_SkullTile_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_WaterFilterUnit_SkullTile_01.SM_STRUC_WaterFilterUnit_SkullTile_01",
         "transform": {
             "loc": [
                 1164.0625,
@@ -57,10 +58,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_WaterFilterUnit_SkullTile_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_WaterFilterUnit_TileVent_Small_01.SM_STRUC_WaterFilterUnit_TileVent_Small_01",
         "transform": {
             "loc": [
                 2515.3125,
@@ -77,10 +79,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_WaterFilterUnit_TileVent_Small_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Stairs_Med_01_A.SM_STRUC_PROM_Stairs_Med_01_A",
         "transform": {
             "loc": [
                 3486.25,
@@ -97,10 +100,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_PROM_Stairs_Med_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 3737.875,
@@ -117,10 +121,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 3737.875732421875,
@@ -137,10 +142,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 3731.0693359375,
@@ -157,10 +163,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Stairs_Med_01_A.SM_STRUC_PROM_Stairs_Med_01_A",
         "transform": {
             "loc": [
                 3342.5,
@@ -177,10 +184,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_PROM_Stairs_Med_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 4035.440185546875,
@@ -197,10 +205,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 4035.44091796875,
@@ -217,10 +226,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 4007.922119140625,
@@ -237,10 +247,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 3737.875,
@@ -257,10 +268,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallFoundation_Large_01_A.SM_STRUC_Shrine_WallFoundation_Large_01_A",
         "transform": {
             "loc": [
                 -5579.1875,
@@ -277,10 +289,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallFoundation_Large_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 4005.440185546875,
@@ -297,10 +310,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 1172.065185546875,
@@ -317,10 +331,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 1472.065185546875,
@@ -337,10 +352,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 1772.065185546875,
@@ -357,10 +373,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 2072.06494140625,
@@ -377,10 +394,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 2372.0634765625,
@@ -397,10 +415,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 2672.0625,
@@ -417,10 +436,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 2972.0625,
@@ -437,10 +457,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreTower_01.SM_PROPS_PlasmaCoreTower_01",
         "transform": {
             "loc": [
                 -4320.31298828125,
@@ -457,10 +478,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreTower_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 3552.0625,
@@ -477,10 +499,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 3552.0625,
@@ -497,10 +520,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 3552.0625,
@@ -517,10 +541,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 2972.0625,
@@ -537,10 +562,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 2972.0625,
@@ -557,10 +583,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 2972.0625,
@@ -577,10 +604,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3552.0625,
@@ -597,10 +625,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3552.0625,
@@ -617,10 +646,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3552.0625,
@@ -637,10 +667,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3582.0625,
@@ -657,10 +688,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreTower_01.SM_PROPS_PlasmaCoreTower_01",
         "transform": {
             "loc": [
                 -3503.727294921875,
@@ -677,10 +709,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreTower_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3582.25,
@@ -697,10 +730,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3582.4375,
@@ -717,10 +751,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3582.5,
@@ -737,10 +772,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 2972.0625,
@@ -757,10 +793,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 2972.0625,
@@ -777,10 +814,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 4152.0625,
@@ -797,10 +835,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 4152.0625,
@@ -817,10 +856,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 4148.875,
@@ -837,10 +877,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 4148.875,
@@ -857,10 +898,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 3852.0,
@@ -877,10 +919,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 4152.0625,
@@ -897,10 +940,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 2942.9375,
@@ -917,10 +961,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3253.9375,
@@ -937,10 +982,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 4152.0625,
@@ -957,10 +1003,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 4152.25,
@@ -977,10 +1024,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 4152.4375,
@@ -997,10 +1045,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 4152.5,
@@ -1017,10 +1066,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 2966.1875,
@@ -1037,10 +1087,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3273.5,
@@ -1057,10 +1108,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 -5445.3125,
@@ -1077,10 +1129,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -5280.0625,
@@ -1097,10 +1150,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 -5403.5,
@@ -1117,10 +1171,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 -5361.8125,
@@ -1137,10 +1192,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -5164.625,
@@ -1157,10 +1213,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -5031.5,
@@ -1177,10 +1234,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -4879.5625,
@@ -1197,10 +1255,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -4802.8125,
@@ -1217,10 +1276,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 -6023.423828125,
@@ -1237,10 +1297,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -5853.4580078125,
@@ -1257,10 +1318,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 -5981.611328125,
@@ -1277,10 +1339,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 -5939.923828125,
@@ -1297,10 +1360,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -5762.375,
@@ -1317,10 +1381,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -5655.9375,
@@ -1337,10 +1402,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -5530.1875,
@@ -1357,10 +1423,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -5465.75,
@@ -1377,10 +1444,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 -5305.3125,
@@ -1397,10 +1465,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag01.SM_XX_PROP_GAM_Straight_SandBag01",
         "transform": {
             "loc": [
                 1553.07666015625,
@@ -1417,10 +1486,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Small_Crate01.SM_PROP_Small_Crate01",
         "transform": {
             "loc": [
                 1374.8746337890625,
@@ -1437,10 +1507,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Box_Small_Crate01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 3669.4375,
@@ -1457,10 +1528,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 2977.8125,
@@ -1477,10 +1549,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 1580.8468017578125,
@@ -1497,10 +1570,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 1286.7843017578125,
@@ -1517,10 +1591,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 1152.0625,
@@ -1537,10 +1612,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 1452.0625,
@@ -1557,10 +1633,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 1752.0625,
@@ -1577,10 +1654,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 2052.0625,
@@ -1597,10 +1675,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 2352.0625,
@@ -1617,10 +1696,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 2652.0625,
@@ -1637,10 +1717,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 2952.0625,
@@ -1657,10 +1738,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Railing_Small_01_A.SM_STRUC_PROM_Railing_Small_01_A",
         "transform": {
             "loc": [
                 3252.0625,
@@ -1677,10 +1759,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_Railing_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
         "transform": {
             "loc": [
                 1472.125,
@@ -1697,10 +1780,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/PROPS/Ambiance/BP_SM_XX_PROP_AMB_Crate_01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
         "transform": {
             "loc": [
                 1483.625,
@@ -1717,10 +1801,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/PROPS/Ambiance/BP_SM_XX_PROP_AMB_Crate_01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02",
         "transform": {
             "loc": [
                 1413.625,
@@ -1737,10 +1822,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02",
         "transform": {
             "loc": [
                 1527.3125,
@@ -1757,10 +1843,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Corner_SandBag01.SM_XX_PROP_GAM_Corner_SandBag01",
         "transform": {
             "loc": [
                 1448.0625,
@@ -1777,10 +1864,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Corner_SandBag01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Corner_SandBag01.SM_XX_PROP_GAM_Corner_SandBag01",
         "transform": {
             "loc": [
                 1281.875,
@@ -1797,10 +1885,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Corner_SandBag01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 1163.875,
@@ -1817,10 +1906,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 1112.1875,
@@ -1837,10 +1927,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 1090.9375,
@@ -1857,10 +1948,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 1119.8125,
@@ -1877,10 +1969,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
         "transform": {
             "loc": [
                 1006.75,
@@ -1897,10 +1990,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/PROPS/Ambiance/BP_SM_XX_PROP_AMB_Crate_01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02",
         "transform": {
             "loc": [
                 963.0625,
@@ -1917,10 +2011,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
         "transform": {
             "loc": [
                 -2106.529541015625,
@@ -1937,10 +2032,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/PROPS/Ambiance/BP_SM_XX_PROP_AMB_Crate_01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreBase_01.SM_PROPS_PlasmaCoreBase_01",
         "transform": {
             "loc": [
                 2080.4375,
@@ -1957,10 +2053,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreBase_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
         "transform": {
             "loc": [
                 -1078.0625,
@@ -1977,10 +2074,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Logo_Small_01_A.SM_STRUC_PROM_Logo_Small_01_A",
         "transform": {
             "loc": [
                 -1078.125,
@@ -1997,10 +2095,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_PROM_Logo_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
         "transform": {
             "loc": [
                 742.5625,
@@ -2017,10 +2116,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Logo_Small_01_A.SM_STRUC_PROM_Logo_Small_01_A",
         "transform": {
             "loc": [
                 741.375,
@@ -2037,10 +2137,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_PROM_Logo_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreBase_01.SM_PROPS_PlasmaCoreBase_01",
         "transform": {
             "loc": [
                 -3950.14990234375,
@@ -2057,10 +2158,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreBase_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A.SM_STRUC_Shrine_DecoWall_MED_01_A",
         "transform": {
             "loc": [
                 2638.0625,
@@ -2077,10 +2179,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_DecoWall_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallFoundation_Large_01_A.SM_STRUC_Shrine_WallFoundation_Large_01_A",
         "transform": {
             "loc": [
                 4173.0625,
@@ -2097,10 +2200,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Shrine_01/SM_STRUC_Shrine_WallFoundation_Large_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A.SM_STRUC_Garage_Triangle_SMALL_01_A",
         "transform": {
             "loc": [
                 4168.0625,
@@ -2117,10 +2221,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A.SM_STRUC_Garage_Triangle_SMALL_01_A",
         "transform": {
             "loc": [
                 4168.0625,
@@ -2137,10 +2242,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A.SM_STRUC_Garage_Triangle_SMALL_01_A",
         "transform": {
             "loc": [
                 4168.0625,
@@ -2157,10 +2263,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A.SM_STRUC_Garage_Triangle_SMALL_01_A",
         "transform": {
             "loc": [
                 4168.0625,
@@ -2177,10 +2284,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A.SM_STRUC_Garage_Triangle_SMALL_01_A",
         "transform": {
             "loc": [
                 4168.0625,
@@ -2197,10 +2305,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A.SM_STRUC_Garage_Triangle_SMALL_01_A",
         "transform": {
             "loc": [
                 4168.0625,
@@ -2217,10 +2326,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Triangle_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 3526.50244140625,
@@ -2237,10 +2347,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROP_AMB_BreakWall08.SM_PROP_AMB_BreakWall08",
         "transform": {
             "loc": [
                 1665.1219482421875,
@@ -2257,10 +2368,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_PROP_AMB_BreakWall08"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 1259.6593017578125,
@@ -2277,10 +2389,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 1263.2218017578125,
@@ -2297,10 +2410,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02",
         "transform": {
             "loc": [
                 1428.0625,
@@ -2317,10 +2431,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
         "transform": {
             "loc": [
                 -411.625,
@@ -2337,10 +2452,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Corner_SandBag01.SM_XX_PROP_GAM_Corner_SandBag01",
         "transform": {
             "loc": [
                 1650.75,
@@ -2357,10 +2473,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Corner_SandBag01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 1860.375,
@@ -2377,10 +2494,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreBase_01.SM_PROPS_PlasmaCoreBase_01",
         "transform": {
             "loc": [
                 2170.501220703125,
@@ -2397,10 +2515,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_PROPS_PlasmaCoreBase_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
         "transform": {
             "loc": [
                 2270.0625,
@@ -2417,10 +2536,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
         "transform": {
             "loc": [
                 3075.0625,
@@ -2437,10 +2557,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 -1667.0625,
@@ -2457,10 +2578,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
         "transform": {
             "loc": [
                 -141.9375,
@@ -2477,10 +2599,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/PROPS/Ambiance/BP_SM_XX_PROP_AMB_Crate_01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02",
         "transform": {
             "loc": [
                 -71.9375,
@@ -2497,10 +2620,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3544.203125,
@@ -2517,10 +2641,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3476.1875,
@@ -2537,10 +2662,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3398.75,
@@ -2557,10 +2683,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
         "transform": {
             "loc": [
                 -5248.75,
@@ -2577,10 +2704,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/PROPS/Ambiance/BP_SM_XX_PROP_AMB_Crate_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 3321.125,
@@ -2597,10 +2725,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 2993.125,
@@ -2617,10 +2746,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 2915.625,
@@ -2637,10 +2767,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 2838.1875,
@@ -2657,10 +2788,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_RailingStairs_Small_01_A.SM_STRUC_PROM_RailingStairs_Small_01_A",
         "transform": {
             "loc": [
                 2760.5625,
@@ -2677,10 +2809,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_PROM_RailingStairs_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_WaterFilterUnit_Pipes_Med_01.SM_STRUC_WaterFilterUnit_Pipes_Med_01",
         "transform": {
             "loc": [
                 -2042.6875,
@@ -2697,10 +2830,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_WaterFilterUnit_Pipes_Med_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 -5730.875,
@@ -2717,10 +2851,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
         "transform": {
             "loc": [
                 -5406.375,
@@ -2737,10 +2872,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/PROPS/Ambiance/BP_SM_XX_PROP_AMB_Crate_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_VentBlock_Med_01_A.SM_STRUC_PROM_VentBlock_Med_01_A",
         "transform": {
             "loc": [
                 -4477.125,
@@ -2757,10 +2893,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_PROM_VentBlock_Med_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_VentBlock_Med_01_A.SM_STRUC_PROM_VentBlock_Med_01_A",
         "transform": {
             "loc": [
                 -3146.375,
@@ -2777,10 +2914,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_PROM_VentBlock_Med_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_MechanicusLogo_Small_01_A.SM_STRUC_PROMPUMP_MechanicusLogo_Small_01_A",
         "transform": {
             "loc": [
                 -4900.875,
@@ -2797,10 +2935,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_MechanicusLogo_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
         "transform": {
             "loc": [
                 -5737.9375,
@@ -2817,10 +2956,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
         "transform": {
             "loc": [
                 -4872.875,
@@ -2837,10 +2977,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
         "transform": {
             "loc": [
                 -3799.5625,
@@ -2857,10 +2998,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_02_A.SM_STRUC_PROMPUMP_SpotLight_Small_02_A",
         "transform": {
             "loc": [
                 -2281.9375,
@@ -2877,10 +3019,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_02_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02",
         "transform": {
             "loc": [
                 -5534.54248046875,
@@ -2897,10 +3040,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 -5382.77392578125,
@@ -2917,10 +3061,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 -5494.3125,
@@ -2937,10 +3082,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 -5541.625,
@@ -2957,10 +3103,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 -5440.05078125,
@@ -2977,10 +3124,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 -5434.30908203125,
@@ -2997,10 +3145,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 -5385.8857421875,
@@ -3017,10 +3166,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 -6009.875,
@@ -3037,10 +3187,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 -1996.3980712890625,
@@ -3057,10 +3208,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Small_Crate01.SM_PROP_Small_Crate01",
         "transform": {
             "loc": [
                 -2143.6748046875,
@@ -3077,10 +3229,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Box_Small_Crate01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Small_Crate01.SM_PROP_Small_Crate01",
         "transform": {
             "loc": [
                 -2143.6748046875,
@@ -3097,10 +3250,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Box_Small_Crate01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/SM_STRUC_PROM_Logo_Small_01_A.SM_STRUC_PROM_Logo_Small_01_A",
         "transform": {
             "loc": [
                 -2795.0,
@@ -3117,10 +3271,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/SM_STRUC_PROM_Logo_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
         "transform": {
             "loc": [
                 3912.043701171875,
@@ -3137,10 +3292,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/PROPS/Ambiance/BP_SM_XX_PROP_AMB_Crate_01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag01.SM_XX_PROP_GAM_Straight_SandBag01",
         "transform": {
             "loc": [
                 3518.5625,
@@ -3157,10 +3313,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag02.SM_XX_PROP_GAM_Straight_SandBag02",
         "transform": {
             "loc": [
                 3529.625,
@@ -3177,10 +3334,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag02"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Garage_01/SM_STRUC_Garage_Cube_SMALL_01_A.SM_STRUC_Garage_Cube_SMALL_01_A",
         "transform": {
             "loc": [
                 3417.785888671875,
@@ -3197,10 +3355,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Garage_Cube_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02.SM_XX_PROP_AMB_Crate_02",
         "transform": {
             "loc": [
                 3373.125,
@@ -3217,10 +3376,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_02"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A.SM_STRUC_PROM_Barrel_Small_01_A",
         "transform": {
             "loc": [
                 3551.412841796875,
@@ -3237,10 +3397,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Ambiance/SM_STRUC_PROM_Barrel_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_Small_Crate01.SM_PROP_Small_Crate01",
         "transform": {
             "loc": [
                 3109.2880859375,
@@ -3257,10 +3418,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/High/B_WA_VaultOn_High_Box_Small_Crate01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag01.SM_XX_PROP_GAM_Straight_SandBag01",
         "transform": {
             "loc": [
                 3535.375,
@@ -3277,10 +3439,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag01.SM_XX_PROP_GAM_Straight_SandBag01",
         "transform": {
             "loc": [
                 3532.5625,
@@ -3297,10 +3460,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag01"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Ambiance/SM_XX_PROP_AMB_Crate_01.SM_XX_PROP_AMB_Crate_01",
         "transform": {
             "loc": [
                 3855.19921875,
@@ -3317,10 +3481,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/PROPS/Ambiance/BP_SM_XX_PROP_AMB_Crate_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
         "transform": {
             "loc": [
                 1160.0625,
@@ -3337,10 +3502,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag01.SM_XX_PROP_GAM_Straight_SandBag01",
         "transform": {
             "loc": [
                 3259.5625,
@@ -3357,10 +3523,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Gameplay/DefenseWalls/SM_XX_PROP_GAM_Straight_SandBag01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A.SM_STRUC_PROMPUMP_SpotLight_Small_01_A",
         "transform": {
             "loc": [
                 1160.0625,
@@ -3377,6 +3544,8 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_PromethiumPump_01/SM_STRUC_PROMPUMP_SpotLight_Small_01_A"
     }
 ]

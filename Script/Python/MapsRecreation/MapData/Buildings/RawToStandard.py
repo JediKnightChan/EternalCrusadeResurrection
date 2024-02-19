@@ -1,8 +1,20 @@
 import json
 import os.path
+import re
 
-raw_filename = "Files/BP_Door.raw.json"
+
+raw_filename = "Files/BP_SIG_PromethiumPump_01_Int.raw.json"
 filename = raw_filename.replace(".raw.json", ".json")
+PATH_REPLACING_JSON = "../../../MapUtils/assets_to_replace.json"
+
+with open(PATH_REPLACING_JSON, "rb") as f:
+    path_replacing_map = json.load(f)
+
+    def pp(string):
+        t = re.search(r"\w+'(?P<path>[\/\w]+).\w+", string)
+        return t.group("path") if t else ""
+
+    path_replacing_map = {pp(k): pp(v) for k, v in path_replacing_map.items()}
 
 with open(raw_filename, "rb") as f:
     data = json.load(f)
@@ -25,8 +37,12 @@ for i, export_struc in enumerate(data["Exports"]):
     if export_struc["Data"][0]["Name"] == "StaticMesh":
         sm_ref = export_struc["Data"][0]["Value"]
         sm_name = import_map[-sm_ref]
-        sm_full_name = f"{buildings_imports.get(sm_name, sm_name)}.{sm_name}"
-        sm_data = {"path": f"StaticMesh {sm_full_name}", "transform": {}}
+        sm_full_name = f"{buildings_imports.get(sm_name, sm_name)}"
+        sm_data = {"transform": {}}
+
+        sm_data["want_child_actor"] = sm_full_name in path_replacing_map
+        sm_data["path"] = path_replacing_map.get(sm_full_name, sm_full_name)
+
 
         for data_piece in export_struc["Data"]:
             if data_piece["Name"] == "RelativeLocation":

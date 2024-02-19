@@ -1,6 +1,5 @@
 [
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_A.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_A",
         "transform": {
             "loc": [
                 -1809.999755859375,
@@ -17,10 +16,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C",
         "transform": {
             "loc": [
                 -1809.999755859375,
@@ -37,10 +37,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile45D_MED_01_A.SM_STRUC_CATH_FloorTile45D_MED_01_A",
         "transform": {
             "loc": [
                 1790.9925537109375,
@@ -57,10 +58,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile45D_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 -2409.999755859375,
@@ -77,10 +79,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A.SM_STRUC_Building_Wall_6X6_Plain_A",
         "transform": {
             "loc": [
                 -2409.999755859375,
@@ -97,10 +100,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A"
     },
     {
-        "path": "StaticMesh SM_BoxTrigger.SM_BoxTrigger",
         "transform": {
             "loc": [
                 0.0,
@@ -117,10 +121,11 @@
                 0.0,
                 0.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "SM_BoxTrigger"
     },
     {
-        "path": "StaticMesh /Game/PROPS/Gameplay/SM_PROP_CapturePoint_PowerSource_01.SM_PROP_CapturePoint_PowerSource_01",
         "transform": {
             "loc": [
                 -14.983474731445312,
@@ -137,10 +142,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/PROPS/Gameplay/SM_PROP_CapturePoint_PowerSource_01"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_MED_01_A.SM_STRUC_CATH_Alcove_MED_01_A",
         "transform": {
             "loc": [
                 -2414.0,
@@ -157,10 +163,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C",
         "transform": {
             "loc": [
                 -610.999755859375,
@@ -177,10 +184,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A.SM_STRUC_CATH_Stairs_MED_01_A",
         "transform": {
             "loc": [
                 2390.01611328125,
@@ -197,10 +205,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 1789.999755859375,
@@ -217,10 +226,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A.SM_STRUC_Building_Wall_6X12_Plain_A",
         "transform": {
             "loc": [
                 1789.99951171875,
@@ -237,10 +247,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 359.999755859375,
@@ -257,10 +268,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 -380.000244140625,
@@ -277,10 +289,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 278.000244140625,
@@ -297,10 +310,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 -10.000244140625,
@@ -317,10 +331,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Railing_MED_01_B.SM_STRUC_CATH_Railing_MED_01_B",
         "transform": {
             "loc": [
                 1755.3140869140625,
@@ -337,10 +352,11 @@
                 1.0374501943588257,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Railing_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A.SM_STRUC_Building_Wall_6X12_Plain_A",
         "transform": {
             "loc": [
                 2390.003662109375,
@@ -357,10 +373,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 2390.003662109375,
@@ -377,10 +394,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A.SM_STRUC_Building_Wall_6X6_Plain_A",
         "transform": {
             "loc": [
                 2390.003662109375,
@@ -397,10 +415,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A.SM_STRUC_Building_Wall_6X6_Plain_A",
         "transform": {
             "loc": [
                 -1809.9927978515625,
@@ -417,10 +436,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 -1210.000244140625,
@@ -437,10 +457,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 2390.003662109375,
@@ -457,10 +478,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C",
         "transform": {
             "loc": [
                 2390.00732421875,
@@ -477,10 +499,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.6719970703125,
@@ -497,10 +520,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1209.99951171875,
@@ -517,10 +541,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -609.99951171875,
@@ -537,10 +562,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 2390.00732421875,
@@ -557,10 +583,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -9.9996337890625,
@@ -577,10 +604,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 590.000244140625,
@@ -597,10 +625,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1190.000244140625,
@@ -617,10 +646,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1790.000244140625,
@@ -637,10 +667,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1190.000244140625,
@@ -657,10 +688,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 590.000244140625,
@@ -677,10 +709,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -9.9996337890625,
@@ -697,10 +730,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -609.99951171875,
@@ -717,10 +751,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1209.99951171875,
@@ -737,10 +772,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_A.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_A",
         "transform": {
             "loc": [
                 -621.999755859375,
@@ -757,10 +793,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -2409.99951171875,
@@ -777,10 +814,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1790.000244140625,
@@ -797,10 +835,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 590.000244140625,
@@ -817,10 +856,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -9.9996337890625,
@@ -837,10 +877,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -609.99951171875,
@@ -857,10 +898,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1809.99951171875,
@@ -877,10 +919,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1209.99951171875,
@@ -897,10 +940,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -2409.99951171875,
@@ -917,10 +961,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1790.000244140625,
@@ -937,10 +982,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1190.000244140625,
@@ -957,10 +1003,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C",
         "transform": {
             "loc": [
                 -2399.9853515625,
@@ -977,10 +1024,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -9.9996337890625,
@@ -997,10 +1045,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -609.99951171875,
@@ -1017,10 +1066,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1809.99951171875,
@@ -1037,10 +1087,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1209.99951171875,
@@ -1057,10 +1108,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -2409.99951171875,
@@ -1077,10 +1129,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1790.000244140625,
@@ -1097,10 +1150,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1190.000244140625,
@@ -1117,10 +1171,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 590.000244140625,
@@ -1137,10 +1192,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -609.99951171875,
@@ -1157,10 +1213,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1809.99951171875,
@@ -1177,10 +1234,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_B.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_B",
         "transform": {
             "loc": [
                 -2399.986328125,
@@ -1197,10 +1255,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1209.99951171875,
@@ -1217,10 +1276,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -2409.99951171875,
@@ -1237,10 +1297,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1790.000244140625,
@@ -1257,10 +1318,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1190.000244140625,
@@ -1277,10 +1339,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 590.000244140625,
@@ -1297,10 +1360,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -9.9996337890625,
@@ -1317,10 +1381,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1190.000244140625,
@@ -1337,10 +1402,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 590.000244140625,
@@ -1357,10 +1423,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -9.9996337890625,
@@ -1377,10 +1444,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -609.99951171875,
@@ -1397,10 +1465,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_A.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_A",
         "transform": {
             "loc": [
                 -2409.997802734375,
@@ -1417,10 +1486,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1209.99951171875,
@@ -1437,10 +1507,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1809.99951171875,
@@ -1457,10 +1528,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -2409.99951171875,
@@ -1477,10 +1549,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1790.000244140625,
@@ -1497,10 +1570,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 590.000244140625,
@@ -1517,10 +1591,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -9.9996337890625,
@@ -1537,10 +1612,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -609.99951171875,
@@ -1557,10 +1633,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1209.99951171875,
@@ -1577,10 +1654,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1809.99951171875,
@@ -1597,10 +1675,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -2409.99951171875,
@@ -1617,10 +1696,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C",
         "transform": {
             "loc": [
                 -2409.995849609375,
@@ -1637,10 +1717,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1790.000244140625,
@@ -1657,10 +1738,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1190.000244140625,
@@ -1677,10 +1759,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -9.9996337890625,
@@ -1697,10 +1780,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -609.99951171875,
@@ -1717,10 +1801,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1209.99951171875,
@@ -1737,10 +1822,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1809.99951171875,
@@ -1757,10 +1843,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -2409.99951171875,
@@ -1777,10 +1864,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1790.000244140625,
@@ -1797,10 +1885,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1190.000244140625,
@@ -1817,10 +1906,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 590.000244140625,
@@ -1837,10 +1927,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B",
         "transform": {
             "loc": [
                 578.000244140625,
@@ -1857,10 +1948,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B",
         "transform": {
             "loc": [
                 2390.012451171875,
@@ -1877,10 +1969,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B",
         "transform": {
             "loc": [
                 2390.002685546875,
@@ -1897,10 +1990,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A.SM_STRUC_Building_Wall_6X12_Plain_A",
         "transform": {
             "loc": [
                 2389.999755859375,
@@ -1917,10 +2011,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 2400.015380859375,
@@ -1937,10 +2032,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 2400.005615234375,
@@ -1957,10 +2053,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 2400.005615234375,
@@ -1977,10 +2074,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 2400.00390625,
@@ -1997,10 +2095,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 2400.00634765625,
@@ -2017,10 +2116,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -1810.2105712890625,
@@ -2037,10 +2137,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A.SM_STRUC_Building_Wall_6X12_Plain_A",
         "transform": {
             "loc": [
                 2390.00732421875,
@@ -2057,10 +2158,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -1810.2095947265625,
@@ -2077,10 +2179,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -1810.2100830078125,
@@ -2097,10 +2200,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -1810.2115478515625,
@@ -2117,10 +2221,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -1309.999755859375,
@@ -2137,10 +2242,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 -2410.001708984375,
@@ -2157,10 +2263,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 -321.999755859375,
@@ -2177,10 +2284,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -1814.2115478515625,
@@ -2197,10 +2305,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -2409.999267578125,
@@ -2217,10 +2326,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -2409.99951171875,
@@ -2237,10 +2347,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 -1809.9927978515625,
@@ -2257,10 +2368,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -205.999755859375,
@@ -2277,10 +2389,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C",
         "transform": {
             "loc": [
                 2390.00732421875,
@@ -2297,10 +2410,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 -1809.9927978515625,
@@ -2317,10 +2431,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 2390.00732421875,
@@ -2337,10 +2452,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A.SM_STRUC_Building_Wall_6X6_Plain_A",
         "transform": {
             "loc": [
                 2390.00732421875,
@@ -2357,10 +2473,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 -840.000244140625,
@@ -2377,10 +2494,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 1789.999755859375,
@@ -2397,10 +2515,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A.SM_STRUC_Building_Wall_6X6_Plain_A",
         "transform": {
             "loc": [
                 1789.999755859375,
@@ -2417,10 +2536,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 -2409.995849609375,
@@ -2437,10 +2557,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 1190.0001220703125,
@@ -2457,10 +2578,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 -2630.06640625,
@@ -2477,10 +2599,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe_SMALL_01_A.SM_STRUC_CATH_Pipe_SMALL_01_A",
         "transform": {
             "loc": [
                 -2631.683349609375,
@@ -2497,10 +2620,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_B.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_B",
         "transform": {
             "loc": [
                 1789.000244140625,
@@ -2517,10 +2641,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -9.999488830566406,
@@ -2537,10 +2662,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 -2631.683349609375,
@@ -2557,10 +2683,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 -2268.6962890625,
@@ -2577,10 +2704,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -1810.0003662109375,
@@ -2597,10 +2725,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -1810.001220703125,
@@ -2617,10 +2746,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -1214.2115478515625,
@@ -2637,10 +2767,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_B.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_B",
         "transform": {
             "loc": [
                 -2399.984619140625,
@@ -2657,10 +2788,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 -1844.2115478515625,
@@ -2677,10 +2809,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -2410.002197265625,
@@ -2697,10 +2830,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -1810.0032958984375,
@@ -2717,10 +2851,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -1810.004150390625,
@@ -2737,10 +2872,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -1810.0052490234375,
@@ -2757,10 +2893,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -1810.0059814453125,
@@ -2777,10 +2914,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -1210.006103515625,
@@ -2797,10 +2935,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -610.0062866210938,
@@ -2817,10 +2956,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -10.006492614746094,
@@ -2837,10 +2977,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 589.9933471679688,
@@ -2857,10 +2998,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 1189.9931640625,
@@ -2877,10 +3019,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C",
         "transform": {
             "loc": [
                 -2410.0,
@@ -2897,10 +3040,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 1789.9930419921875,
@@ -2917,10 +3061,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 2389.99267578125,
@@ -2937,10 +3082,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 -2632.522705078125,
@@ -2957,10 +3103,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 1755.5626220703125,
@@ -2977,10 +3124,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -614.2115478515625,
@@ -2997,10 +3145,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -1626.3304443359375,
@@ -3017,10 +3166,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -14.2115478515625,
@@ -3037,10 +3187,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_Corner_In_6X3_Plain_A.SM_STRUC_Building_Wall_Corner_In_6X3_Plain_A",
         "transform": {
             "loc": [
                 -1789.9970703125,
@@ -3057,10 +3208,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_Corner_In_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 -2459.0,
@@ -3077,10 +3229,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A.SM_STRUC_CATH_Wall_MEDLow_01_A",
         "transform": {
             "loc": [
                 -9.998405456542969,
@@ -3097,10 +3250,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -1404.999755859375,
@@ -3117,10 +3271,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 -2134.0,
@@ -3137,10 +3292,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 -2244.0,
@@ -3157,10 +3313,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
         "transform": {
             "loc": [
                 -2180.023193359375,
@@ -3177,10 +3334,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 2131.0,
@@ -3197,10 +3355,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
         "transform": {
             "loc": [
                 2179.976806640625,
@@ -3217,10 +3376,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A.SM_STRUC_Building_Wall_6X6_Plain_A",
         "transform": {
             "loc": [
                 -589.998046875,
@@ -3237,10 +3397,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 2241.0,
@@ -3257,10 +3418,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 -2459.00341796875,
@@ -3277,10 +3439,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_MED_01_A.SM_STRUC_CATH_Alcove_MED_01_A",
         "transform": {
             "loc": [
                 -2414.00341796875,
@@ -3297,10 +3460,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 -2459.00341796875,
@@ -3317,10 +3481,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -1004.999755859375,
@@ -3337,10 +3502,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_MED_01_A.SM_STRUC_CATH_Alcove_MED_01_A",
         "transform": {
             "loc": [
                 2425.944580078125,
@@ -3357,10 +3523,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 2430.99658203125,
@@ -3377,10 +3544,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_MED_01_A.SM_STRUC_CATH_Alcove_MED_01_A",
         "transform": {
             "loc": [
                 2432.11865234375,
@@ -3397,10 +3565,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 2431.0,
@@ -3417,10 +3586,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 2431.0,
@@ -3437,10 +3607,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 2430.99658203125,
@@ -3457,10 +3628,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 2131.00537109375,
@@ -3477,10 +3649,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
         "transform": {
             "loc": [
                 2179.982177734375,
@@ -3497,10 +3670,11 @@
                 0.0,
                 0.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 -2118.99462890625,
@@ -3517,10 +3691,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 -2228.99462890625,
@@ -3537,10 +3712,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -605.999755859375,
@@ -3557,10 +3733,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A.SM_STRUC_CATH_SpotLight_SMALL_01_A",
         "transform": {
             "loc": [
                 -2180.017822265625,
@@ -3577,10 +3754,11 @@
                 0.0,
                 0.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_SpotLight_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 2241.00537109375,
@@ -3597,10 +3775,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 585.7884521484375,
@@ -3617,10 +3796,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A.SM_STRUC_CATH_Wall_MEDLow_01_A",
         "transform": {
             "loc": [
                 -1819.9974365234375,
@@ -3637,10 +3817,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 -1819.9974365234375,
@@ -3657,10 +3838,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A.SM_STRUC_CATH_ColumnCorner_LARGE_01_A",
         "transform": {
             "loc": [
                 2500.0048828125,
@@ -3677,10 +3859,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 -1910.02294921875,
@@ -3697,10 +3880,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 2476.976318359375,
@@ -3717,10 +3901,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A.SM_STRUC_CATH_ColumnCorner_LARGE_01_A",
         "transform": {
             "loc": [
                 2478.976806640625,
@@ -3737,10 +3922,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 1899.9775390625,
@@ -3757,10 +3943,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 1375.27685546875,
@@ -3777,10 +3964,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 1899.9775390625,
@@ -3797,10 +3985,11 @@
                 0.0,
                 0.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 1185.7884521484375,
@@ -3817,10 +4006,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -609.2086791992188,
@@ -3837,10 +4027,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -9.208671569824219,
@@ -3857,10 +4048,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 615.7901611328125,
@@ -3877,10 +4069,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 -1219.6849365234375,
@@ -3897,10 +4090,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 -601.6851196289062,
@@ -3917,10 +4111,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 588.3150024414062,
@@ -3937,10 +4132,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 1197.147705078125,
@@ -3957,10 +4153,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 1889.97705078125,
@@ -3977,10 +4174,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 194.000244140625,
@@ -3997,10 +4195,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 2477.00439453125,
@@ -4017,10 +4216,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C",
         "transform": {
             "loc": [
                 589.000244140625,
@@ -4037,10 +4237,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A.SM_STRUC_Building_Wall_6X12_Plain_A",
         "transform": {
             "loc": [
                 -1809.9927978515625,
@@ -4057,10 +4258,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 1745.8629150390625,
@@ -4077,10 +4279,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A.SM_STRUC_CATH_ColumnCorner_LARGE_01_A",
         "transform": {
             "loc": [
                 2500.0048828125,
@@ -4097,10 +4300,11 @@
                 1.0,
                 1.0499999523162842
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 1900.005126953125,
@@ -4117,10 +4321,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 1900.005126953125,
@@ -4137,10 +4342,11 @@
                 1.0,
                 1.0499999523162842
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_LARGE_01_A.SM_STRUC_CATH_Alcove_LARGE_01_A",
         "transform": {
             "loc": [
                 2170.0048828125,
@@ -4157,10 +4363,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 1890.00439453125,
@@ -4177,10 +4384,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1899.994873046875,
@@ -4197,10 +4405,11 @@
                 1.0,
                 1.0499999523162842
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_LARGE_01_A.SM_STRUC_CATH_Alcove_LARGE_01_A",
         "transform": {
             "loc": [
                 -2179.9951171875,
@@ -4217,10 +4426,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A.SM_STRUC_CATH_ColumnCorner_LARGE_01_A",
         "transform": {
             "loc": [
                 -2517.9951171875,
@@ -4237,10 +4447,11 @@
                 1.0,
                 1.0499999523162842
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A.SM_STRUC_CATH_ColumnCorner_LARGE_01_A",
         "transform": {
             "loc": [
                 -2517.9951171875,
@@ -4257,10 +4468,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 -2429.9990234375,
@@ -4277,10 +4489,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C",
         "transform": {
             "loc": [
                 2390.012451171875,
@@ -4297,10 +4510,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 -2521.99560546875,
@@ -4317,10 +4531,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 -1899.99560546875,
@@ -4337,10 +4552,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1899.994873046875,
@@ -4357,10 +4573,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_LARGE_01_A.SM_STRUC_CATH_Alcove_LARGE_01_A",
         "transform": {
             "loc": [
                 2184.976806640625,
@@ -4377,10 +4594,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A.SM_STRUC_CATH_ColumnCorner_LARGE_01_A",
         "transform": {
             "loc": [
                 2478.976806640625,
@@ -4397,10 +4615,11 @@
                 1.0,
                 1.0499999523162842
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_LARGE_01_A.SM_STRUC_CATH_Alcove_LARGE_01_A",
         "transform": {
             "loc": [
                 -2180.023193359375,
@@ -4417,10 +4636,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Alcove_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A.SM_STRUC_Building_Wall_6X12_Plain_A",
         "transform": {
             "loc": [
                 -2409.9921875,
@@ -4437,10 +4657,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 -2522.023681640625,
@@ -4457,10 +4678,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1900.0224609375,
@@ -4477,10 +4699,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1900.0224609375,
@@ -4497,10 +4720,11 @@
                 0.0,
                 0.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A.SM_STRUC_CATH_ColumnCorner_LARGE_01_A",
         "transform": {
             "loc": [
                 -2518.023193359375,
@@ -4517,10 +4741,11 @@
                 0.0,
                 0.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A.SM_STRUC_CATH_ColumnCorner_LARGE_01_A",
         "transform": {
             "loc": [
                 -2518.023193359375,
@@ -4537,10 +4762,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnCorner_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -2493.997314453125,
@@ -4557,10 +4783,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 -2511.997802734375,
@@ -4577,10 +4804,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -2493.997314453125,
@@ -4597,10 +4825,11 @@
                 1.0,
                 1.0499999523162842
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 -2512.00390625,
@@ -4617,10 +4846,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -2494.00341796875,
@@ -4637,10 +4867,11 @@
                 1.0,
                 1.0499999523162842
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -2494.00341796875,
@@ -4657,10 +4888,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 2473.002685546875,
@@ -4677,10 +4909,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 2477.002197265625,
@@ -4697,10 +4930,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B.SM_STRUC_CATH_Spike_MED_01_B",
         "transform": {
             "loc": [
                 2476.99609375,
@@ -4717,10 +4951,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Spike_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A.SM_STRUC_Building_Wall_6X6_Plain_A",
         "transform": {
             "loc": [
                 -2409.993408203125,
@@ -4737,10 +4972,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 2472.99658203125,
@@ -4757,10 +4993,11 @@
                 1.0,
                 1.0499999523162842
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 2472.99658203125,
@@ -4777,10 +5014,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 2473.002685546875,
@@ -4797,10 +5035,11 @@
                 1.0,
                 1.0499999523162842
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 2620.00390625,
@@ -4817,10 +5056,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe_SMALL_01_A.SM_STRUC_CATH_Pipe_SMALL_01_A",
         "transform": {
             "loc": [
                 2620.00390625,
@@ -4837,10 +5077,11 @@
                 2.197265625,
                 2.197265625
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 2620.00390625,
@@ -4857,10 +5098,11 @@
                 2.197265625,
                 2.197265625
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 2261.3740234375,
@@ -4877,10 +5119,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 2619.93359375,
@@ -4897,10 +5140,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe_SMALL_01_A.SM_STRUC_CATH_Pipe_SMALL_01_A",
         "transform": {
             "loc": [
                 2619.93359375,
@@ -4917,10 +5161,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 2619.93359375,
@@ -4937,10 +5182,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 -2429.99853515625,
@@ -4957,10 +5203,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 2261.3037109375,
@@ -4977,10 +5224,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 1192.1981201171875,
@@ -4997,10 +5245,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A.SM_STRUC_CATH_Stairs_MED_01_A",
         "transform": {
             "loc": [
                 1795.016845703125,
@@ -5017,10 +5266,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A.SM_STRUC_CATH_Stairs_MED_01_A",
         "transform": {
             "loc": [
                 595.0166015625,
@@ -5037,10 +5287,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 1795.016845703125,
@@ -5057,10 +5308,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 1195.0166015625,
@@ -5077,10 +5329,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A.SM_STRUC_CATH_Wall_MEDLow_01_A",
         "transform": {
             "loc": [
                 1790.0172119140625,
@@ -5097,10 +5350,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 1195.0172119140625,
@@ -5117,10 +5371,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A.SM_STRUC_CATH_Wall_MEDLow_01_A",
         "transform": {
             "loc": [
                 1790.01611328125,
@@ -5137,10 +5392,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A.SM_STRUC_CATH_Wall_MEDLow_01_A",
         "transform": {
             "loc": [
                 1744.01611328125,
@@ -5157,10 +5413,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -759.999755859375,
@@ -5177,10 +5434,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 1160.673828125,
@@ -5197,10 +5455,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Railing_MED_01_B.SM_STRUC_CATH_Railing_MED_01_B",
         "transform": {
             "loc": [
                 1770.3116455078125,
@@ -5217,10 +5476,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Railing_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A.SM_STRUC_CATH_Wall26D_MED_01_A",
         "transform": {
             "loc": [
                 1793.97802734375,
@@ -5237,10 +5497,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 1790.01611328125,
@@ -5257,10 +5518,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 12.01611328125,
@@ -5277,10 +5539,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 12.01611328125,
@@ -5297,10 +5560,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 1196.330810546875,
@@ -5317,10 +5581,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 591.330810546875,
@@ -5337,10 +5602,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A.SM_STRUC_CATH_Wall_MEDLow_01_A",
         "transform": {
             "loc": [
                 1744.01611328125,
@@ -5357,10 +5623,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 1744.01611328125,
@@ -5377,10 +5644,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.670166015625,
@@ -5397,10 +5665,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Railing_MED_01_B.SM_STRUC_CATH_Railing_MED_01_B",
         "transform": {
             "loc": [
                 1200.3115234375,
@@ -5417,10 +5686,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Railing_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Railing_MED_01_B.SM_STRUC_CATH_Railing_MED_01_B",
         "transform": {
             "loc": [
                 1200.312744140625,
@@ -5437,10 +5707,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Railing_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A.SM_STRUC_CATH_Wall26D_MED_01_A",
         "transform": {
             "loc": [
                 1195.018310546875,
@@ -5457,10 +5728,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A.SM_STRUC_CATH_Wall26D_MED_01_A",
         "transform": {
             "loc": [
                 1795.0172119140625,
@@ -5477,10 +5749,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A.SM_STRUC_CATH_Wall26D_MED_01_A",
         "transform": {
             "loc": [
                 1195.0172119140625,
@@ -5497,10 +5770,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A.SM_STRUC_CATH_Wall26D_MED_01_A",
         "transform": {
             "loc": [
                 1795.0181884765625,
@@ -5517,10 +5791,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Railing_MED_01_B.SM_STRUC_CATH_Railing_MED_01_B",
         "transform": {
             "loc": [
                 600.3128051757812,
@@ -5537,10 +5812,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Railing_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Railing_MED_01_B.SM_STRUC_CATH_Railing_MED_01_B",
         "transform": {
             "loc": [
                 600.3115844726562,
@@ -5557,10 +5833,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Railing_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 12.01611328125,
@@ -5577,10 +5854,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 615.7928466796875,
@@ -5597,10 +5875,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 594.000244140625,
@@ -5617,10 +5896,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 1772.312744140625,
@@ -5637,10 +5917,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 2343.79296875,
@@ -5657,10 +5938,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 1743.63134765625,
@@ -5677,10 +5959,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.670166015625,
@@ -5697,10 +5980,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.670166015625,
@@ -5717,10 +6001,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.6719970703125,
@@ -5737,10 +6022,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.670166015625,
@@ -5757,10 +6043,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.6710205078125,
@@ -5777,10 +6064,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.6719970703125,
@@ -5797,10 +6085,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 -2410.003173828125,
@@ -5817,10 +6106,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.6710205078125,
@@ -5837,10 +6127,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.6710205078125,
@@ -5857,10 +6148,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.6710205078125,
@@ -5877,10 +6169,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 1762.01611328125,
@@ -5897,10 +6190,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 12.01611328125,
@@ -5917,10 +6211,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 1762.01611328125,
@@ -5937,10 +6232,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 1762.01611328125,
@@ -5957,10 +6253,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 1762.01611328125,
@@ -5977,10 +6274,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 -1819.9962158203125,
@@ -5997,10 +6295,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A.SM_STRUC_CATH_Wall_MEDLow_01_A",
         "transform": {
             "loc": [
                 -1819.9962158203125,
@@ -6017,10 +6316,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -2409.99853515625,
@@ -6037,10 +6337,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 1765.7901611328125,
@@ -6057,10 +6358,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 1765.7928466796875,
@@ -6077,10 +6379,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -2409.998046875,
@@ -6097,10 +6400,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -2409.997314453125,
@@ -6117,10 +6421,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A.SM_STRUC_Building_Wall_6X6_Plain_A",
         "transform": {
             "loc": [
                 2389.999755859375,
@@ -6137,10 +6442,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_LARGELow_01_A.SM_STRUC_CATH_Wall_LARGELow_01_A",
         "transform": {
             "loc": [
                 -1792.051513671875,
@@ -6157,10 +6463,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_LARGELow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -2409.99658203125,
@@ -6177,10 +6484,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 1790.0,
@@ -6197,10 +6505,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -2409.99609375,
@@ -6217,10 +6526,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A.SM_STRUC_Building_Wall_6X6_Plain_A",
         "transform": {
             "loc": [
                 -2410.003173828125,
@@ -6237,10 +6547,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X6_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A.SM_STRUC_Building_Wall_6X12_Plain_A",
         "transform": {
             "loc": [
                 -2410.001953125,
@@ -6257,10 +6568,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 1790.0,
@@ -6277,10 +6589,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 -2410.001708984375,
@@ -6297,10 +6610,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C",
         "transform": {
             "loc": [
                 -609.999755859375,
@@ -6317,10 +6631,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 577.7708129882812,
@@ -6337,10 +6652,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 2389.999755859375,
@@ -6357,10 +6673,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 977.770751953125,
@@ -6377,10 +6694,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C",
         "transform": {
             "loc": [
                 590.000244140625,
@@ -6397,10 +6715,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 1377.770751953125,
@@ -6417,10 +6736,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 2398.8642578125,
@@ -6437,10 +6757,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 -1844.9971923828125,
@@ -6457,10 +6778,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 2398.8642578125,
@@ -6477,10 +6799,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 2398.865478515625,
@@ -6497,10 +6820,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 2398.86669921875,
@@ -6517,10 +6841,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 -2629.99609375,
@@ -6537,10 +6862,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A.SM_STRUC_CATH_Pipe90D_SMALL_01_A",
         "transform": {
             "loc": [
                 -2268.6259765625,
@@ -6557,10 +6883,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe90D_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL_01_C.SM_STRUC_CATH_Cover_SMALL_01_C",
         "transform": {
             "loc": [
                 -1810.177978515625,
@@ -6577,10 +6904,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -2409.995361328125,
@@ -6597,10 +6925,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 2398.869384765625,
@@ -6617,10 +6946,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C",
         "transform": {
             "loc": [
                 -1809.999755859375,
@@ -6637,10 +6967,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 2398.87060546875,
@@ -6657,10 +6988,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 2398.8681640625,
@@ -6677,10 +7009,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B",
         "transform": {
             "loc": [
                 -559.999755859375,
@@ -6697,10 +7030,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe_SMALL_01_A.SM_STRUC_CATH_Pipe_SMALL_01_A",
         "transform": {
             "loc": [
                 -2632.522705078125,
@@ -6717,10 +7051,11 @@
                 2.197266101837158,
                 2.197266101837158
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Pipe_SMALL_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -2409.99951171875,
@@ -6737,10 +7072,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1809.99951171875,
@@ -6757,10 +7093,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -1209.9991455078125,
@@ -6777,10 +7114,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 2389.999755859375,
@@ -6797,10 +7135,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 -1809.9991455078125,
@@ -6817,10 +7156,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile45D_MED_01_A.SM_STRUC_CATH_FloorTile45D_MED_01_A",
         "transform": {
             "loc": [
                 -1810.0064697265625,
@@ -6837,10 +7177,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile45D_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A.SM_STRUC_CATH_Wall26D_MED_01_A",
         "transform": {
             "loc": [
                 590.0014038085938,
@@ -6857,10 +7198,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 -1844.996337890625,
@@ -6877,10 +7219,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_Corner_In_6X6_Plain_A.SM_STRUC_Building_Wall_Corner_In_6X6_Plain_A",
         "transform": {
             "loc": [
                 -1789.9970703125,
@@ -6897,10 +7240,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_Corner_In_6X6_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 590.00048828125,
@@ -6917,10 +7261,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A.SM_STRUC_CATH_FloorTile_MED_01_A",
         "transform": {
             "loc": [
                 1790.0,
@@ -6937,10 +7282,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_FloorTile_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 1464.7303466796875,
@@ -6957,10 +7303,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A.SM_STRUC_CATH_Wall_MEDLow_01_A",
         "transform": {
             "loc": [
                 590.0015869140625,
@@ -6977,10 +7324,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall_MEDLow_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A.SM_FloorTile_6x6_A",
         "transform": {
             "loc": [
                 -1809.99951171875,
@@ -6997,10 +7345,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_FloorTile_6x6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A.SM_STRUC_CATH_Stairs_MED_01_A",
         "transform": {
             "loc": [
                 1180.0157470703125,
@@ -7017,10 +7366,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A.SM_STRUC_CATH_CoverEnd_MED_01_A",
         "transform": {
             "loc": [
                 -1834.6790771484375,
@@ -7037,10 +7387,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverEnd_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A.SM_STRUC_CATH_Wall26D_MED_01_A",
         "transform": {
             "loc": [
                 1790.997314453125,
@@ -7057,10 +7408,11 @@
                 -1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Wall26D_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 -2409.999755859375,
@@ -7077,10 +7429,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A.SM_STRUC_CATH_Buttress_SMALL_02_A",
         "transform": {
             "loc": [
                 -2459.0,
@@ -7097,10 +7450,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Buttress_SMALL_02_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Stair_6X3X6_A.SM_STRUC_Building_Stair_6X3X6_A",
         "transform": {
             "loc": [
                 -611.9842529296875,
@@ -7117,10 +7471,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Stair_6X3X6_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Railing_MED_01_B.SM_STRUC_CATH_Railing_MED_01_B",
         "transform": {
             "loc": [
                 -602.68505859375,
@@ -7137,10 +7492,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Railing_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Railing_MED_01_B.SM_STRUC_CATH_Railing_MED_01_B",
         "transform": {
             "loc": [
                 1199.3150634765625,
@@ -7157,10 +7513,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Railing_MED_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A.SM_STRUC_CATH_Stairs_MED_01_A",
         "transform": {
             "loc": [
                 1195.0166015625,
@@ -7177,10 +7534,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Stairs_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -603.669189453125,
@@ -7197,10 +7555,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A.SM_STRUC_CATH_CoverHigh_MED_01_A",
         "transform": {
             "loc": [
                 1164.001220703125,
@@ -7217,10 +7576,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_CoverHigh_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A.SM_STRUC_Building_Wall_6X3_Plain_A",
         "transform": {
             "loc": [
                 540.004638671875,
@@ -7237,10 +7597,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X3_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_SMALL4m_01_A.SM_STRUC_CATH_Cover_SMALL4m_01_A",
         "transform": {
             "loc": [
                 -2409.999267578125,
@@ -7257,10 +7618,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_SMALL4m_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A.SM_STRUC_Building_Wall_6X12_Plain_A",
         "transform": {
             "loc": [
                 -2409.999755859375,
@@ -7277,10 +7639,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Building_Depot_Modules/SM_STRUC_Building_Wall_6X12_Plain_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B.SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B",
         "transform": {
             "loc": [
                 590.000244140625,
@@ -7297,10 +7660,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGELow_01_B"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 40.000244140625,
@@ -7317,10 +7681,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A.SM_STRUC_CATH_Door_MED_01_A",
         "transform": {
             "loc": [
                 1190.000244140625,
@@ -7337,10 +7702,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Door_MED_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_Cover_MED_01_C.SM_STRUC_CATH_Cover_MED_01_C",
         "transform": {
             "loc": [
                 -1810.2110595703125,
@@ -7357,10 +7723,11 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": true,
+        "path": "/Game/Blueprints/InWorldAssets/VaultOvers/OverLows/B_WA_VaultOver_Low_SM_STRUC_CATH_Cover_MED_01_C"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A.SM_STRUC_CATH_ColumnSide_LARGE_01_A",
         "transform": {
             "loc": [
                 -1783.6719970703125,
@@ -7377,10 +7744,11 @@
                 0.5,
                 0.5
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_ColumnSide_LARGE_01_A"
     },
     {
-        "path": "StaticMesh /Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C.SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C",
         "transform": {
             "loc": [
                 2390.002685546875,
@@ -7397,6 +7765,8 @@
                 1.0,
                 1.0
             ]
-        }
+        },
+        "want_child_actor": false,
+        "path": "/Game/Buildings/Structures/STRUC_Cathedral_01/SM_STRUC_CATH_WallDoorFrame_LARGEHigh_01_C"
     }
 ]

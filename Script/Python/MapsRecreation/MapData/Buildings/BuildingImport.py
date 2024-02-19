@@ -9,11 +9,11 @@ import unreal
 
 # Change me!
 DO_DELETE_IF_EXISTS = False
-ASSET_DIR = "/Game/Buildings/Blueprints/PvE/"
+ASSET_DIR = "/Game/Buildings/Signature/"
 # ASSET_DIR = "/Game/PROPS/Ambiance/"
-# ASSET_DIR = "/Game/Graybox/Buildings/"
+# ASSET_DIR = "/Game/Graybox/GB_Promethium/"
 JSON_FILEPATH = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                "MapData/Buildings/Files/BP_Door.json"
+                "MapData/Buildings/Files/BP_SIG_PromethiumPump_01_Int.json"
 ASSET_NAME_OVERRIDE = ""
 if ASSET_NAME_OVERRIDE:
     ASSET_NAME = ASSET_NAME_OVERRIDE
@@ -65,34 +65,41 @@ def add_components_to_blueprint(blueprint):
         data = json.load(f)
 
     for i, element in enumerate(data):
-        path, transform = element["path"], element["transform"]
-        path = re.search(r"\w+\s(?P<path>[\/\w]+).\w+", path).group("path")
+        path, transform, want_child_actor = element["path"], element["transform"], element.get("want_child_actor", False)
+        t = re.search(r"\w+\s(?P<path>[\/\w]+).\w+", path)
+        path = t.group("path") if t else path
 
         if path.startswith("/") and unreal.EditorAssetLibrary.does_asset_exist(path):
-            sub_handle, static_mesh_comp = add_component(
+            my_class = unreal.StaticMeshComponent if not want_child_actor else unreal.ChildActorComponent
+            sub_handle, building_component = add_component(
                 scene_handle,
                 subsystem=SDS,
                 blueprint=blueprint,
-                new_class=unreal.StaticMeshComponent,
-                name=f"StaticMesh{i + 1}")
+                new_class=my_class,
+                name=f"StaticMesh{i + 1}" if not want_child_actor else f"ChildActor{i + 1}")
 
-            assert isinstance(static_mesh_comp, unreal.StaticMeshComponent)
+            if want_child_actor:
+                assert isinstance(building_component, unreal.ChildActorComponent)
+                bp_class = unreal.EditorAssetLibrary.load_blueprint_class(path)
+                building_component.set_child_actor_class(bp_class)
+            else:
+                assert isinstance(building_component, unreal.StaticMeshComponent)
+                mesh = unreal.EditorAssetLibrary.find_asset_data(path).get_asset()
+                building_component.set_static_mesh(mesh)
 
-            mesh = unreal.EditorAssetLibrary.find_asset_data(path).get_asset()
-            static_mesh_comp.set_static_mesh(mesh)
-            static_mesh_comp.set_editor_property(
+            building_component.set_editor_property(
                 name="relative_location",
                 value=unreal.Vector(transform["loc"][0],
                                     transform["loc"][1],
                                     transform["loc"][2])
             )
-            static_mesh_comp.set_editor_property(
+            building_component.set_editor_property(
                 name="relative_rotation",
                 value=unreal.Rotator(pitch=transform["rot"][0],
                                      roll=transform["rot"][1],
                                      yaw=transform["rot"][2])
             )
-            static_mesh_comp.set_editor_property(
+            building_component.set_editor_property(
                 name="relative_scale3d",
                 value=unreal.Vector(transform["scale"][0],
                                     transform["scale"][1],
