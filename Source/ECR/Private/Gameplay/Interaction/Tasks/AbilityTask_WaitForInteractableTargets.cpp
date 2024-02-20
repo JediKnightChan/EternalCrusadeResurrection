@@ -135,6 +135,7 @@ void UAbilityTask_WaitForInteractableTargets::UpdateInteractableOptions(const FI
 {
 	TArray<FInteractionOption> NewOptions;
 
+	// UE_LOG(LogTemp, Warning, TEXT("%d Interable targets len %d"), AbilitySystemComponent->IsOwnerActorAuthoritative() ? 1 : 0, InteractableTargets.Num())
 	GrantAbilitiesToAbilitySystem(InteractQuery, InteractableTargets);
 
 	for (const TScriptInterface<IInteractableTarget>& InteractiveTarget : InteractableTargets)
@@ -175,7 +176,11 @@ void UAbilityTask_WaitForInteractableTargets::UpdateInteractableOptions(const FI
 				if (InteractionAbilitySpec->Ability->CanActivateAbility(InteractionAbilitySpec->Handle,
 				                                                        AbilitySystemComponent->AbilityActorInfo.Get()))
 				{
+					// UE_LOG(LogTemp, Warning, TEXT("Adding option %s"), *GetNameSafe(InteractionAbilitySpec->Ability))
 					NewOptions.Add(Option);
+				} else
+				{
+					// UE_LOG(LogTemp, Warning, TEXT("Can't activate ability option %s"), *GetNameSafe(InteractionAbilitySpec->Ability))
 				}
 			}
 		}
@@ -226,6 +231,8 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 		{
 			if (!Spec->IsActive())
 			{
+				// UE_LOG(LogTemp, Warning, TEXT("Removing ability %s"), *GetNameSafe(Spec->Ability))
+				
 				AbilitySystemComponent->ClearAbility(Handle);
 				FObjectKey ObjectKey = AbilitiesToRemove.FindRef(Handle);
 				AbilitiesToRemove.Remove(Handle);
@@ -234,6 +241,7 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 		}
 		else
 		{
+			// UE_LOG(LogTemp, Warning, TEXT("Couldn't find spec, emptying cache"))
 			AbilitiesToRemove.Remove(Handle);
 			// Have to empty whole cache as removal of object key won't work.
 			// Most probable reason: we are client, on server ability already removed => spec invalid
@@ -268,6 +276,8 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 			// Queueing for remove
 			AbilitiesToRemove.Add(SpecHandle, ObjectKey);
 
+			// UE_LOG(LogTemp, Warning, TEXT("Queuing for remove ability %s"), *GetNameSafe(LastUpdateOption.InteractionAbilityToGrant))
+			
 			// Removing mapping context if present
 			APlayerController* Controller = Ability->GetActorInfo().PlayerController.Get();
 			if (Controller)
@@ -284,6 +294,7 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 		}
 	}
 
+	// UE_LOG(LogTemp, Warning, TEXT("%d Options len %d"), AbilitySystemComponent->IsOwnerActorAuthoritative() ? 1 : 0, Options.Num())
 	// Check if any of the options need to grant the ability to the user before they can be used.
 	for (FInteractionOption& Option : Options)
 	{
@@ -317,13 +328,20 @@ void UAbilityTask_WaitForInteractableTargets::GrantAbilitiesToAbilitySystem(cons
 				if (AbilitySystemComponent->IsOwnerActorAuthoritative())
 				{
 					FGameplayAbilitySpecHandle Handle = AbilitySystemComponent->GiveAbility(Spec);
+					// UE_LOG(LogTemp, Warning, TEXT("Granting ability %s"), *GetNameSafe(Spec.Ability))
 					InteractionAbilityCache.Add(ObjectKey, Handle);
 				}
 				else
 				{
 					InteractionAbilityCache.Add(ObjectKey, FGameplayAbilitySpecHandle{});
 				}
+			} else
+			{
+				// UE_LOG(LogTemp, Warning, TEXT("%d Ability already exists"), AbilitySystemComponent->IsOwnerActorAuthoritative() ? 1 : 0)
 			}
+		} else
+		{
+			// UE_LOG(LogTemp, Warning, TEXT("%d No ability to grant"), AbilitySystemComponent->IsOwnerActorAuthoritative() ? 1 : 0)
 		}
 	}
 
