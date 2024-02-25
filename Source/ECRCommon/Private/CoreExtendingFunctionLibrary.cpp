@@ -4,6 +4,7 @@
 #include "CoreExtendingFunctionLibrary.h"
 #include "Kismet/KismetMathLibrary.h"
 
+
 #if PLATFORM_WINDOWS
 #include "Windows/WindowsPlatformApplicationMisc.h"
 #endif

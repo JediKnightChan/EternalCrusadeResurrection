@@ -2,13 +2,11 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 
 #if COMMONUSER_OSSV1
 
 // Online Subsystem (OSS v1) includes and forward declares
 #include "OnlineSubsystemTypes.h"
-#include "Interfaces/OnlineIdentityInterface.h"
 class IOnlineSubsystem;
 struct FOnlineError;
 using FOnlineErrorType = FOnlineError;
@@ -31,9 +29,9 @@ namespace UE::Online
 	struct FAuthLogin;
 	struct FConnectionStatusChanged;
 	struct FExternalUIShowLoginUI;
-	struct FLoginStatusChanged;
+	struct FAuthLoginStatusChanged;
 	struct FQueryUserPrivilege;
-	class FAccountInfo;
+	struct FAccountInfo;
 }
 using FOnlineErrorType = UE::Online::FOnlineError;
 using ELoginStatusType = UE::Online::ELoginStatus;
@@ -192,4 +190,29 @@ enum class ECommonUserAsyncTaskState : uint8
 	Done,
 	/** The task failed to complete */
 	Failed
+};
+
+/** Detailed information about the online error. Effectively a wrapper for FOnlineError. */
+USTRUCT(BlueprintType)
+struct FOnlineResultInformation
+{
+	GENERATED_BODY()
+
+	/** Whether the operation was successful or not. If it was successful, the error fields of this struct will not contain extra information. */
+	UPROPERTY(BlueprintReadOnly)
+	bool bWasSuccessful = true;
+
+	/** The unique error id. Can be used to compare against specific handled errors. */
+	UPROPERTY(BlueprintReadOnly)
+	FString ErrorId;
+
+	/** Error text to display to the user. */
+	UPROPERTY(BlueprintReadOnly)
+	FText ErrorText;
+
+	/**
+	 * Initialize this from an FOnlineErrorType
+	 * @param InOnlineError the online error to initialize from
+	 */
+	void COMMONUSER_API FromOnlineError(const FOnlineErrorType& InOnlineError);
 };

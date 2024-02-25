@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{E556D182-4ACA-68CD-7B6A-3FB68156C360}",
+	"EngineAssociation": "{AF8BA7A1-4998-8E7B-4B08-218F75ED5BEF}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -120,7 +120,7 @@
 			"Name": "DlgSystem",
 			"Enabled": true
 		},
-                {
+		{
 			"Name": "SmoothSyncPlugin",
 			"Enabled": true
 		}

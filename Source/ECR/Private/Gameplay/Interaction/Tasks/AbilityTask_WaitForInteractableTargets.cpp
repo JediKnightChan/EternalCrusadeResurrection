@@ -140,7 +140,7 @@ void UAbilityTask_WaitForInteractableTargets::UpdateInteractableOptions(const FI
 	{
 		ServerGrantAbilitiesToAbilitySystem(InteractQuery, InteractableTargets);
 	}
-	
+
 	OwnerUpdateAbilities(InteractQuery, InteractableTargets);
 
 	for (const TScriptInterface<IInteractableTarget>& InteractiveTarget : InteractableTargets)
@@ -227,6 +227,8 @@ void UAbilityTask_WaitForInteractableTargets::ServerGrantAbilitiesToAbilitySyste
 		IInteractableTarget>>&
 	InteractableTargets)
 {
+	FString DebugString = "";
+
 	// Gathering options
 	TArray<FInteractionOption> Options;
 	for (const TScriptInterface<IInteractableTarget>& InteractiveTarget : InteractableTargets)
@@ -235,24 +237,45 @@ void UAbilityTask_WaitForInteractableTargets::ServerGrantAbilitiesToAbilitySyste
 		InteractiveTarget->GatherInteractionOptions(InteractQuery, InteractionBuilder);
 	}
 
+	DebugString += FString::Printf(TEXT("Options length: %d\n"), Options.Num());
+
 	// Queueing ability specs from options that disappeared for remove
-	for (FInteractionOption& LastUpdateOption : LastUpdateOptions)
+	TMap<FObjectKey, FGameplayAbilitySpecHandle> OptionsForRemove;
+	for (TTuple<FObjectKey, FGameplayAbilitySpecHandle> Option : ServerInteractionAbilityCache)
 	{
 		bool bKeepLastUpdateOptionAbility = false;
-		for (FInteractionOption& NewOption : Options)
+
+		// If any new option has same ability as old option, keep old option, else remove it
+		for (const FInteractionOption& NewOption : Options)
 		{
-			if (NewOption.InteractionAbilityToGrant == LastUpdateOption.InteractionAbilityToGrant)
+			FObjectKey ObjectKey(NewOption.InteractionAbilityToGrant);
+			if (ObjectKey == Option.Key)
 			{
 				bKeepLastUpdateOptionAbility = true;
 			}
 		}
+
 		if (!bKeepLastUpdateOptionAbility)
 		{
-			FObjectKey ObjectKey(LastUpdateOption.InteractionAbilityToGrant);
-			FGameplayAbilitySpecHandle SpecHandle = ServerInteractionAbilityCache.FindRef(ObjectKey);
+			OptionsForRemove.Add(Option.Key, Option.Value);
+		}
+	}
 
-			// Queueing for remove
-			AbilitiesToRemove.Add(SpecHandle, ObjectKey);
+	for (TTuple<FObjectKey, FGameplayAbilitySpecHandle> Option : OptionsForRemove)
+	{
+		DebugString += FString::Printf(TEXT("Removing abilities: %d\n"), OptionsForRemove.Num());
+		FGameplayAbilitySpecHandle Handle = Option.Value;
+		if (const FGameplayAbilitySpec* Spec = AbilitySystemComponent->FindAbilitySpecFromHandle(Handle))
+		{
+			if (!Spec->IsActive())
+			{
+				AbilitySystemComponent->ClearAbility(Handle);
+				ServerInteractionAbilityCache.Remove(Option.Key);
+			}
+		}
+		else
+		{
+			ServerInteractionAbilityCache.Remove(Option.Key);
 		}
 	}
 
@@ -263,8 +286,13 @@ void UAbilityTask_WaitForInteractableTargets::ServerGrantAbilitiesToAbilitySyste
 		{
 			// Grant the ability to the GAS, otherwise it won't be able to do whatever the interaction is.
 			FObjectKey ObjectKey(Option.InteractionAbilityToGrant);
+
+			// Grant if it was not granted yet
 			if (!ServerInteractionAbilityCache.Find(ObjectKey))
 			{
+				DebugString +=
+					FString::Printf(TEXT("Granting: %s\n"), *(GetNameSafe(Option.InteractionAbilityToGrant)));
+
 				FGameplayAbilitySpec Spec(Option.InteractionAbilityToGrant, 1);
 				Spec.SourceObject = Option.AbilitySource ? Option.AbilitySource : this;
 				if (Option.InputTag.IsValid())
@@ -275,33 +303,16 @@ void UAbilityTask_WaitForInteractableTargets::ServerGrantAbilitiesToAbilitySyste
 				FGameplayAbilitySpecHandle Handle = AbilitySystemComponent->GiveAbility(Spec);
 				ServerInteractionAbilityCache.Add(ObjectKey, Handle);
 			}
-		}
-	}
-
-	// Removing abilities queued for removal
-	TArray<FGameplayAbilitySpecHandle> HandlesToRemove;
-	AbilitiesToRemove.GetKeys(HandlesToRemove);
-
-	for (FGameplayAbilitySpecHandle Handle : HandlesToRemove)
-	{
-		FGameplayAbilitySpec* Spec = AbilitySystemComponent->FindAbilitySpecFromHandle(Handle);
-		if (Spec)
-		{
-			if (!Spec->IsActive())
+			else
 			{
-				AbilitySystemComponent->ClearAbility(Handle);
-				FObjectKey ObjectKey = AbilitiesToRemove.FindRef(Handle);
-				AbilitiesToRemove.Remove(Handle);
-				ServerInteractionAbilityCache.Remove(ObjectKey);
+				DebugString += FString::Printf(
+					TEXT("Already in cache: %s\n"), *(GetNameSafe(Option.InteractionAbilityToGrant)));
 			}
 		}
-		else
-		{
-			AbilitiesToRemove.Remove(Handle);
-		}
 	}
 
-	LastUpdateOptions = Options;
+	GrantingDebugString = DebugString;
+	GrantingDebugStringChanged.Broadcast();
 }
 
 void UAbilityTask_WaitForInteractableTargets::OwnerUpdateAbilities(const FInteractionQuery& InteractQuery,
@@ -317,7 +328,7 @@ void UAbilityTask_WaitForInteractableTargets::OwnerUpdateAbilities(const FIntera
 	}
 
 	// Removing mapping contexts
-	for (FInteractionOption& LastUpdateOption : LastUpdateOptions)
+	for (FInteractionOption& LastUpdateOption : OwnerLastUpdateOptions)
 	{
 		bool bKeepLastUpdateOptionAbility = false;
 		for (FInteractionOption& NewOption : Options)
@@ -366,7 +377,7 @@ void UAbilityTask_WaitForInteractableTargets::OwnerUpdateAbilities(const FIntera
 		}
 	}
 
-	LastUpdateOptions = Options;
+	OwnerLastUpdateOptions = Options;
 }
 
 void UAbilityTask_WaitForInteractableTargets::ClearCache()

@@ -2,11 +2,18 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
-#include "Engine/CancellableAsyncAction.h"
 #include "CommonUserSubsystem.h"
+#include "Engine/CancellableAsyncAction.h"
 
 #include "AsyncAction_CommonUserInitialize.generated.h"
+
+enum class ECommonUserOnlineContext : uint8;
+enum class ECommonUserPrivilege : uint8;
+struct FInputDeviceId;
+
+class FText;
+class UObject;
+struct FFrame;
 
 /**
  * Async action to handle different functions for initializing users
@@ -22,11 +29,11 @@ public:
 	 * When the process has succeeded or failed, it will broadcast the OnInitializationComplete delegate.
 	 *
 	 * @param LocalPlayerIndex	Desired index of ULocalPlayer in Game Instance, 0 will be primary player and 1+ for local multiplayer
-	 * @param ControllerId		Number of local user according to online system, will match physical Controller Id
+	 * @param PrimaryInputDevice Primary input device for the user, if invalid will use the system default
 	 * @param bCanUseGuestLogin	If true, this player can be a guest without a real system net id
 	 */
-	UFUNCTION(BlueprintCallable, Category = CommonUser, meta=(BlueprintInternalUseOnly="true"))
-	static UAsyncAction_CommonUserInitialize* InitializeForLocalPlay(UCommonUserSubsystem* Target, int32 LocalPlayerIndex, int32 ControllerId, bool bCanUseGuestLogin);
+	UFUNCTION(BlueprintCallable, Category = CommonUser, meta = (BlueprintInternalUseOnly = "true"))
+	static UAsyncAction_CommonUserInitialize* InitializeForLocalPlay(UCommonUserSubsystem* Target, int32 LocalPlayerIndex, FInputDeviceId PrimaryInputDevice, bool bCanUseGuestLogin);
 
 	/**
 	 * Attempts to log an existing user into the platform-specific online backend to enable full online play

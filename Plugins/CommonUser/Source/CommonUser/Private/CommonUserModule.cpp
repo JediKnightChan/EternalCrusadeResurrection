@@ -2,6 +2,8 @@
 
 #include "CommonUserModule.h"
 
+#include "Modules/ModuleManager.h"
+
 #define LOCTEXT_NAMESPACE "FCommonUserModule"
 
 void FCommonUserModule::StartupModule()
