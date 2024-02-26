@@ -1,8 +1,9 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "AsyncMixin.h"
-#include "Containers/Ticker.h"
+
 #include "Engine/AssetManager.h"
+#include "Engine/StreamableManager.h"
 #include "Stats/Stats.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogAsyncMixin, Log, All);
@@ -239,7 +240,10 @@ void FAsyncMixin::FLoadingState::AsyncLoad(FSoftObjectPath SoftObjectPath, const
 
 void FAsyncMixin::FLoadingState::AsyncLoad(const TArray<FSoftObjectPath>& SoftObjectPaths, const FSimpleDelegate& DelegateToCall)
 {
-	UE_LOG(LogAsyncMixin, Verbose, TEXT("[0x%X] AsyncLoad [%s]"), this, *FString::JoinBy(SoftObjectPaths, TEXT(", "), [](const FSoftObjectPath& SoftObjectPath) { return FString::Printf(TEXT("'%s'"), *SoftObjectPath.ToString()); }));
+	{
+		const FString& Paths = FString::JoinBy(SoftObjectPaths, TEXT(", "), [](const FSoftObjectPath& SoftObjectPath) { return FString::Printf(TEXT("'%s'"), *SoftObjectPath.ToString()); });
+		UE_LOG(LogAsyncMixin, Verbose, TEXT("[0x%X] AsyncLoad [%s]"), this, *Paths);
+	}
 
 	AsyncSteps.Add(
 		MakeUnique<FAsyncStep>(
@@ -253,11 +257,11 @@ void FAsyncMixin::FLoadingState::AsyncLoad(const TArray<FSoftObjectPath>& SoftOb
 
 void FAsyncMixin::FLoadingState::AsyncPreloadPrimaryAssetsAndBundles(const TArray<FPrimaryAssetId>& AssetIds, const TArray<FName>& LoadBundles, const FSimpleDelegate& DelegateToCall)
 {
-	UE_LOG(LogAsyncMixin, Verbose, TEXT("[0x%X]  AsyncPreload Assets [%s], Bundles[%s]"),
-		this,
-		*FString::JoinBy(AssetIds, TEXT(", "), [](const FPrimaryAssetId& AssetId) { return *AssetId.ToString(); }),
-		*FString::JoinBy(LoadBundles, TEXT(", "), [](const FName& LoadBundle) { return *LoadBundle.ToString(); })
-	);
+	{		
+		const FString& Assets = FString::JoinBy(AssetIds, TEXT(", "), [](const FPrimaryAssetId& AssetId) { return AssetId.ToString(); });
+		const FString& Bundles = FString::JoinBy(LoadBundles, TEXT(", "), [](const FName& LoadBundle) { return LoadBundle.ToString(); });
+		UE_LOG(LogAsyncMixin, Verbose, TEXT("[0x%X]  AsyncPreload Assets [%s], Bundles[%s]"), this, *Assets, *Bundles);
+	}
 
 	TSharedPtr<FStreamableHandle> StreamingHandle;
 

@@ -2,14 +2,15 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
-#include "UObject/StrongObjectPtr.h"
-#include "Engine/AssetManager.h"
-#include "Async/Future.h"
 #include "Containers/Ticker.h"
+#include "UObject/SoftObjectPtr.h"
 
 class FAsyncCondition;
+class FName;
 class UPrimaryDataAsset;
+struct FPrimaryAssetId;
+struct FStreamableHandle;
+template <class TClass> class TSubclassOf;
 
 DECLARE_DELEGATE_OneParam(FStreamableHandleDelegate, TSharedPtr<FStreamableHandle>)
 
