@@ -35,7 +35,7 @@ SceneComponentClass* UCustomizationLoaderComponent::SpawnChildComponent(USkeleta
                                                                         const FTransform RelativeTransform)
 {
 	SceneComponentClass* ChildComponent = NewObject<SceneComponentClass>(
-		Component, SceneComponentClass::StaticClass(), FName{Name});
+		Component, SceneComponentClass::StaticClass(), NAME_None);
 
 	ChildComponent->RegisterComponent();
 	ChildComponent->SetRelativeTransform(RelativeTransform);
