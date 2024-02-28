@@ -8,7 +8,8 @@ UECRCombatSet::UECRCombatSet()
 	: BaseDamage(0.0f)
 	  , BaseHeal(0.0f)
 	  , Toughness(100.0f)
-      , Armor(100.0f)
+	  , Armor(100.0f),
+	  SpreadMultiplier(1.0f)
 {
 }
 
@@ -16,9 +17,10 @@ void UECRCombatSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	// These attributes are supplementary and therefore only for owner
+	// These attributes are only for owner
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, BaseDamage, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, BaseHeal, COND_OwnerOnly, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, SpreadMultiplier, COND_OwnerOnly, REPNOTIFY_Always);
 
 	// These attributes are important for everyone
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, Toughness, COND_None, REPNOTIFY_Always);
@@ -45,4 +47,9 @@ void UECRCombatSet::OnRep_Toughness(const FGameplayAttributeData& OldValue) cons
 void UECRCombatSet::OnRep_Armor(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCombatSet, Armor, OldValue);
+}
+
+void UECRCombatSet::OnRep_SpreadMultiplier(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCombatSet, SpreadMultiplier, OldValue);
 }

@@ -10,6 +10,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/Camera/ECRCameraComponent.h"
+#include "Gameplay/GAS/Attributes/ECRCombatSet.h"
 #include "Net/UnrealNetwork.h"
 #include "Physics/PhysicalMaterialWithTags.h"
 
@@ -262,10 +263,20 @@ bool UECRRangedWeaponInstance::UpdateMultipliers(float DeltaSeconds)
 						/*Alpha=*/ BracingAlpha);
 	const bool bBracingAlphaMultiplierAtTarget = FMath::IsNearlyEqual(BracingMultiplier, SpreadAngleMultiplier_Bracing,
 																KINDA_SMALL_NUMBER);
-
+	
+	// Determine spread multiplier from ASC
+	float AscBracingMultiplier = 1.0f;
+	if (const UAbilitySystemComponent* ASC = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(Pawn))
+	{
+		if (const float NumericAttribute = ASC->GetNumericAttribute(UECRCombatSet::GetSpreadMultiplierAttribute()))
+		{
+			AscBracingMultiplier = NumericAttribute;
+		}
+	}
+	
 	// Combine all the multipliers
 	const float CombinedMultiplier = AimingMultiplier * StandingStillMultiplier * CrouchingMultiplier *
-		JumpFallMultiplier * BracingMultiplier;
+		JumpFallMultiplier * BracingMultiplier * AscBracingMultiplier;
 	CurrentSpreadAngleMultiplier = CombinedMultiplier;
 
 	// need to handle these spread multipliers indicating we are not at min spread

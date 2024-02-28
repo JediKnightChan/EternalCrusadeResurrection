@@ -203,6 +203,9 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Weapon Config")
 	TMap<FGameplayTag, float> MaterialDamageMultiplier;
 
+	// Whether want weapon to be up and ready before shooting (for heavy weapons)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config")
+	bool bWantWeaponUp = false;
 private:
 	// The current heat
 	UPROPERTY(Replicated)
@@ -237,7 +240,7 @@ public:
 	/** Add heat as 1 shot */
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void AddSpread();
-	
+
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void RemoveHeat(float DeltaHeat);
 
