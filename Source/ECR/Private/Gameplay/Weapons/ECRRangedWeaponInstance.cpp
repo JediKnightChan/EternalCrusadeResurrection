@@ -256,30 +256,38 @@ bool UECRRangedWeaponInstance::UpdateMultipliers(float DeltaSeconds)
 			BracingAlpha = 1.0f;
 		}
 	}
-	
+
 	const float BracingMultiplier = FMath::GetMappedRangeValueClamped(
 		/*InputRange=*/ FVector2D(0.0f, 1.0f),
-						/*OutputRange=*/ FVector2D(1.0f, SpreadAngleMultiplier_Bracing),
-						/*Alpha=*/ BracingAlpha);
+		                /*OutputRange=*/ FVector2D(1.0f, SpreadAngleMultiplier_Bracing),
+		                /*Alpha=*/ BracingAlpha);
 	const bool bBracingAlphaMultiplierAtTarget = FMath::IsNearlyEqual(BracingMultiplier, SpreadAngleMultiplier_Bracing,
-																KINDA_SMALL_NUMBER);
-	
+	                                                                  KINDA_SMALL_NUMBER);
+
 	// Determine spread multiplier from ASC
-	float AscBracingMultiplier = 1.0f;
+	float AscMultiplierTarget = 1.0f;
 	if (const UAbilitySystemComponent* ASC = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(Pawn))
 	{
 		if (const float NumericAttribute = ASC->GetNumericAttribute(UECRCombatSet::GetSpreadMultiplierAttribute()))
 		{
-			AscBracingMultiplier = NumericAttribute;
+			AscMultiplierTarget = NumericAttribute;
 		}
 	}
-	
+
+	AscMultiplier = FMath::FInterpTo(AscMultiplier, AscMultiplierTarget, DeltaSeconds,
+	                                 TransitionRate_AscMultiplier);
+	const bool bAscMultiplierLessThan1 = AscMultiplier <= 1.0f + KINDA_SMALL_NUMBER;
+
+
 	// Combine all the multipliers
 	const float CombinedMultiplier = AimingMultiplier * StandingStillMultiplier * CrouchingMultiplier *
-		JumpFallMultiplier * BracingMultiplier * AscBracingMultiplier;
-	CurrentSpreadAngleMultiplier = CombinedMultiplier;
+		JumpFallMultiplier * BracingMultiplier * AscMultiplier;
+
+	// Clamping spread angle multiplier
+	CurrentSpreadAngleMultiplier = FMath::Clamp(CombinedMultiplier, SpreadAngleMultiplier_Min,
+	                                            SpreadAngleMultiplier_Max);
 
 	// need to handle these spread multipliers indicating we are not at min spread
 	return bStandingStillMultiplierAtMin && bCrouchingMultiplierAtTarget && bJumpFallMultiplerIs1 &&
-		bAimingMultiplierAtTarget && bBracingAlphaMultiplierAtTarget;
+		bAimingMultiplierAtTarget && bBracingAlphaMultiplierAtTarget && bAscMultiplierLessThan1;
 }

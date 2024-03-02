@@ -171,7 +171,18 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params")
 	float TransitionRate_Crouching = 5.0f;
 
+	// Minimum spread multiplier possible
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params", meta=(ForceUnits=x))
+	float SpreadAngleMultiplier_Min = 0.2f;
 
+	// Maximum spread multiplier possible
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params", meta=(ForceUnits=x))
+	float SpreadAngleMultiplier_Max = 5.0f;
+
+	// Rate at which we transition to/from the ASC multiplier (higher values are faster, though zero is instant; @see FInterpTo)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params")
+	float TransitionRate_AscMultiplier = 5.0f;
+	
 	// Spread multiplier while jumping/falling, smoothly blended to based on TransitionRate_JumpingOrFalling
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params", meta=(ForceUnits=x))
 	float SpreadAngleMultiplier_JumpingOrFalling = 1.0f;
@@ -206,6 +217,7 @@ protected:
 	// Whether want weapon to be up and ready before shooting (for heavy weapons)
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config")
 	bool bWantWeaponUp = false;
+
 private:
 	// The current heat
 	UPROPERTY(Replicated)
@@ -219,6 +231,9 @@ private:
 
 	// The current *combined* spread angle multiplier
 	float CurrentSpreadAngleMultiplier = 1.0f;
+
+	// The current ASC multiplier for spread
+	float AscMultiplier = 1.0f;
 
 	// The current standing still multiplier
 	float StandingStillMultiplier = 1.0f;
