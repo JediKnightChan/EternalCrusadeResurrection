@@ -3,13 +3,13 @@
 #pragma once
 
 #include "CommonUserSubsystem.h"
+#include "CommonUserTypes.h"
 #include "Engine/CancellableAsyncAction.h"
+#include "HAL/Platform.h"
+#include "UObject/UObjectGlobals.h"
+#include "UObject/WeakObjectPtrTemplates.h"
 
 #include "AsyncAction_CommonUserInitialize.generated.h"
-
-enum class ECommonUserOnlineContext : uint8;
-enum class ECommonUserPrivilege : uint8;
-struct FInputDeviceId;
 
 class FText;
 class UObject;

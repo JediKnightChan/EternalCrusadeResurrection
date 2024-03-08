@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.3.3+5.3",
+	"VersionName": "1.3.0+5.1",
 	"FriendlyName": "TargetSystem",
 	"Description": "Dark Souls inspired Camera Lock On / Targeting system",
 	"Category": "Targeting",
@@ -10,7 +10,7 @@
 	"DocsURL": "https://github.com/mklabs/ue4-targetsystemplugin/wiki",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/6bd21ce58d6e4cb295f71bd370233f53",
 	"SupportURL": "https://github.com/mklabs/ue4-targetsystemplugin/issues",
-	"EngineVersion": "5.3.0",
+	"EngineVersion": "5.1.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [

@@ -2,8 +2,13 @@
 
 #include "AsyncAction_CommonUserInitialize.h"
 
+#include "Delegates/Delegate.h"
 #include "GenericPlatform/GenericPlatformInputDeviceMapper.h"
+#include "Internationalization/Internationalization.h"
+#include "Internationalization/Text.h"
+#include "Misc/AssertionMacros.h"
 #include "TimerManager.h"
+#include "UObject/WeakObjectPtr.h"
 
 #include UE_INLINE_GENERATED_CPP_BY_NAME(AsyncAction_CommonUserInitialize)
 
