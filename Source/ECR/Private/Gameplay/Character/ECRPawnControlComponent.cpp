@@ -190,7 +190,6 @@ void UECRPawnControlComponent::OnPawnReadyToInitialize()
 			{
 				PawnExtComp->InitializeAbilitySystem(EASC, Pawn);
 			}
-			
 		}
 	}
 
@@ -397,6 +396,9 @@ void UECRPawnControlComponent::Input_LookMouse(const FInputActionValue& InputAct
 	double CurrentPitchDiff, CurrentYawDiff;
 	UCoreExtendingFunctionLibrary::GetPawnAimOffsetDifference(Pawn, CurrentPitchDiff, CurrentYawDiff);
 
+	float AddedX = 0.0f;
+	float AddedY = 0.0f;
+
 	if (Value.X != 0.0f)
 	{
 		if (LookYawLimit != 180.0f)
@@ -405,11 +407,13 @@ void UECRPawnControlComponent::Input_LookMouse(const FInputActionValue& InputAct
 			if (FMath::Abs(CurrentYawDiff + Value.X) <= LookYawLimit)
 			{
 				Pawn->AddControllerYawInput(Value.X);
+				AddedX = Value.X;
 			}
 		}
 		else
 		{
 			Pawn->AddControllerYawInput(Value.X);
+			AddedX = Value.X;
 		}
 	}
 
@@ -421,12 +425,19 @@ void UECRPawnControlComponent::Input_LookMouse(const FInputActionValue& InputAct
 			if (FMath::Abs(CurrentPitchDiff + Value.Y) <= LookPitchLimit)
 			{
 				Pawn->AddControllerPitchInput(Value.Y);
+				AddedY = Value.Y;
 			}
 		}
 		else
 		{
 			Pawn->AddControllerPitchInput(Value.Y);
+			AddedY = Value.Y;
 		}
+	}
+
+	if (AECRPlayerController* PC = Cast<AECRPlayerController>(Pawn->GetController()))
+	{
+		PC->MouseOrStickMovedEvent.Broadcast(AddedX, AddedY);
 	}
 }
 
@@ -447,6 +458,9 @@ void UECRPawnControlComponent::Input_LookStick(const FInputActionValue& InputAct
 	const UWorld* World = GetWorld();
 	check(World);
 
+	float AddedX = 0.0f;
+	float AddedY = 0.0f;
+
 	if (Value.X != 0.0f)
 	{
 		if (LookYawLimit != 180.0f)
@@ -455,11 +469,13 @@ void UECRPawnControlComponent::Input_LookStick(const FInputActionValue& InputAct
 			if (FMath::Abs(CurrentYawDiff + Value.X) <= LookYawLimit)
 			{
 				Pawn->AddControllerYawInput(Value.X);
+				AddedX = Value.X;
 			}
 		}
 		else
 		{
 			Pawn->AddControllerYawInput(Value.X);
+			AddedX = Value.X;
 		}
 	}
 
@@ -471,13 +487,22 @@ void UECRPawnControlComponent::Input_LookStick(const FInputActionValue& InputAct
 			if (FMath::Abs(CurrentPitchDiff + Value.Y) <= LookPitchLimit)
 			{
 				Pawn->AddControllerPitchInput(Value.Y);
+				AddedY = Value.Y;
 			}
 		}
 		else
 		{
 			Pawn->AddControllerPitchInput(Value.Y);
+			AddedY = Value.Y;
 		}
 	}
+
+
+	if (AECRPlayerController* PC = Cast<AECRPlayerController>(Pawn->GetController()))
+	{
+		PC->MouseOrStickMovedEvent.Broadcast(AddedX, AddedY);
+	}
+	
 }
 
 
