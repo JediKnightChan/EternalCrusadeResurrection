@@ -25,6 +25,16 @@ int64 UCoreExtendingFunctionLibrary::DateTimeToUnixTimestamp(FDateTime DateTime)
 }
 
 
+TMap<FUniqueNetIdRepl, int32> UCoreExtendingFunctionLibrary::SortPlayersToIntMap(TMap<FUniqueNetIdRepl, int32> MapToSort)
+{
+	MapToSort.ValueSort([](const int32& A, const int32& B)
+	{
+		// Sort numbers
+		return A < B;
+	});
+	return MapToSort;
+}
+
 TMap<UObject*, FString> UCoreExtendingFunctionLibrary::SortUObjectToStringMap(TMap<UObject*, FString> MapToSort)
 {
 	MapToSort.ValueSort([](const FString& A, const FString& B)
