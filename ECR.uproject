@@ -123,6 +123,10 @@
 		{
 			"Name": "SmoothSyncPlugin",
 			"Enabled": true
+		},
+		{
+			"Name": "CharacterOptimizer",
+			"Enabled": true
 		}
 	]
 }
