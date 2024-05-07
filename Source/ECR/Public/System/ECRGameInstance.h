@@ -27,7 +27,7 @@ class ECR_API UECRGameInstance : public UGameInstance
 	class IOnlineSubsystem* OnlineSubsystem;
 
 	/** Whether user is logged in */
-	bool bIsLoggedIn;
+	bool bDeprecatedIsLoggedIn;
 
 	/** Session search object */
 	TSharedPtr<class FOnlineSessionSearch> SessionSearchSettings;
@@ -117,12 +117,23 @@ public:
 
 	/** Get whether the player is logged in */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	FORCEINLINE bool GetIsLoggedIn() const { return bIsLoggedIn; }
+	FORCEINLINE bool GetDeprecatedIsLoggedIn() const { return bDeprecatedIsLoggedIn; }
 
 	/** Get player nickname */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetPlayerNickname();
 
+	/** Get if player is logged in */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	bool GetIsLoggedIn();
+
+	/** Get player account id */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FString GetUserAccountID();
+
+	/** Get player account auth token */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FString GetUserAuthToken();
 public:
 	virtual void Init() override;
 

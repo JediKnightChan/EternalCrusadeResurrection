@@ -7,6 +7,34 @@
 #include "Customization/CustomizationElementaryAsset.h"
 
 
+TArray<UCustomizationElementaryAsset*> FCustomizationElementaryAssetsSelectionSet::SelectBestAsset(
+	const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const FCustomizationElementaryAssetsSelectionEntry& Rule : CeaRules)
+	{
+		if ((!Rule.Assets.IsEmpty()) && CosmeticTags.HasAll(Rule.RequiredTags))
+		{
+			return Rule.Assets;
+		}
+	}
+
+	return DefaultAssets;
+}
+
+TArray<UCustomizationMaterialAsset*> FCustomizationMaterialAssetsSelectionSet::SelectBestAsset(
+	const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const FCustomizationMaterialAssetsSelectionEntry& Rule : CmaRules)
+	{
+		if ((!Rule.Assets.IsEmpty()) && CosmeticTags.HasAll(Rule.RequiredTags))
+		{
+			return Rule.Assets;
+		}
+	}
+
+	return DefaultAssets;
+}
+
 USkeletalMesh* UMeshMergeFunctionLibrary::MergeMeshes(const FSkeletalMeshMergeParams& Params)
 {
 	TArray<USkeletalMesh*> MeshesToMergeCopy = Params.MeshesToMerge;
@@ -99,4 +127,16 @@ TArray<UCustomizationMaterialAsset*> UMeshMergeFunctionLibrary::MergeCustomizati
 	ResultMap.GenerateValueArray(ResultArray);
 
 	return ResultArray;
+}
+
+TArray<UCustomizationElementaryAsset*> UMeshMergeFunctionLibrary::SelectBestCeaArray(
+	const FCustomizationElementaryAssetsSelectionSet Set, FGameplayTagContainer CosmeticTags)
+{
+	return Set.SelectBestAsset(CosmeticTags);
+}
+
+TArray<UCustomizationMaterialAsset*> UMeshMergeFunctionLibrary::SelectBestCmaArray(
+	const FCustomizationMaterialAssetsSelectionSet Set, FGameplayTagContainer CosmeticTags)
+{
+	return Set.SelectBestAsset(CosmeticTags);
 }

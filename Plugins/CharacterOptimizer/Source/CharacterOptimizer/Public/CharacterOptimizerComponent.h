@@ -57,6 +57,10 @@ private:
 	/** Whether to apply optimization */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	bool bOptimizationEnabled;
+
+	/** If char is not in viewport and further than this distance, we'll apply last wave settings to him */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	double NotInViewportDistance;
 	
 	/** Optimization settings applied to char if he is closer than FirstWaveDistance */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))

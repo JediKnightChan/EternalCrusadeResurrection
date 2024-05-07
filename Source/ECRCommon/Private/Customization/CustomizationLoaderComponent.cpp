@@ -126,7 +126,7 @@ void UCustomizationLoaderComponent::LoadFromAsset(TArray<UCustomizationElementar
 			continue;
 		}
 
-		if (ElementaryAsset->MeshMergeNamespace != "")
+		if (ElementaryAsset->MeshMergeNamespace != "" && ElementaryAsset->MaterialOverrides.IsEmpty())
 		{
 			MergeNamespaceToModules.FindOrAdd(ElementaryAsset->MeshMergeNamespace).Add(ElementaryAsset);
 		}
@@ -418,13 +418,13 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 					CustomizationNamespace = Asset->SlotNamesToMaterialNamespaceOverrides[SlotName];
 				}
 
-				if (MaterialNamespacesToData.Contains(CustomizationNamespace))
+				const UCustomizationMaterialAsset* MaterialData = nullptr;
+				if (Asset->MaterialOverrides.Contains(CustomizationNamespace))
 				{
-					const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
-					UCustomizationMaterialNameSpace::ApplyMaterialChanges(
-						ChildComponent, MaterialData->ScalarParameters,
-						MaterialData->VectorParameters,
-						MaterialData->TextureParameters, {SlotName});
+					MaterialData = Asset->MaterialOverrides[CustomizationNamespace];
+				} else if (MaterialNamespacesToData.Contains(CustomizationNamespace))
+				{
+					MaterialData = MaterialNamespacesToData[CustomizationNamespace];
 				}
 				else
 				{
@@ -432,7 +432,21 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 					       *CustomizationNamespace,
 					       *(UKismetSystemLibrary::GetDisplayName(this)))
 				}
+
+				if (MaterialData)
+				{
+					UCustomizationMaterialNameSpace::ApplyMaterialChanges(
+						ChildComponent, MaterialData->ScalarParameters,
+						MaterialData->VectorParameters,
+						MaterialData->TextureParameters, {SlotName});
+				}
 			}
+		}
+
+		// Overriding material data with data from asset iself
+		for (TTuple<FString, UCustomizationMaterialAsset*> MaterialOverrideTuple : Asset->MaterialOverrides)
+		{
+			MaterialNamespacesToData.Add(MaterialOverrideTuple.Key, MaterialOverrideTuple.Value);
 		}
 
 		// Process attaching static meshes to child component

@@ -11,6 +11,41 @@
 class USkeletalMesh;
 class UPhysicsAsset;
 
+
+//////////////////////////////////////////////////////////////////////
+
+USTRUCT(BlueprintType)
+struct FECRSoftTexture2DSelectionEntry
+{
+	GENERATED_BODY()
+
+	// Texture to apply if the tag matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSoftObjectPtr<UTexture2D> Texture;
+
+	// Cosmetic tags required (all of these must be present to be considered a match)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Categories="Cosmetic"))
+	FGameplayTagContainer RequiredTags;
+};
+
+USTRUCT(BlueprintType)
+struct FECRSoftTexture2DSelectionSet
+{
+	GENERATED_BODY()
+
+	// List of texture rules to apply, first one that matches will be used
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=RequiredTags))
+	TArray<FECRSoftTexture2DSelectionEntry> TextureRules;
+
+	// The texture to use if none of the LayerRules matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSoftObjectPtr<UTexture2D> DefaultTexture;
+
+	// Choose the best texture given the rules
+	TSoftObjectPtr<UTexture2D> SelectBestTexture(const FGameplayTagContainer& CosmeticTags) const;
+};
+
+
 //////////////////////////////////////////////////////////////////////
 
 USTRUCT(BlueprintType)
@@ -33,7 +68,7 @@ struct FECRAnimLayerSelectionSet
 	GENERATED_BODY()
 
 	// List of layer rules to apply, first one that matches will be used
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Layer))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=RequiredTags))
 	TArray<FECRAnimLayerSelectionEntry> LayerRules;
 
 	// The layer to use if none of the LayerRules matches

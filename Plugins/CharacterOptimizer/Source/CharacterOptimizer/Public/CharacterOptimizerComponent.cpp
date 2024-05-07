@@ -8,15 +8,17 @@
 UCharacterOptimizerComponent::UCharacterOptimizerComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
+	PrimaryComponentTick.bAllowTickOnDedicatedServer = false;
 	bAutoRegister = true;
 	bAutoActivate = true;
 
 	bOptimizationEnabled = true;
+	NotInViewportDistance = 2000.f;
 	ZeroWaveSettings = FCharOptimizationSettings{0.0f, 0.0f, true};
 	FirstWaveDistance = 5000.0f;
-	FirstWaveSettings = FCharOptimizationSettings{0.05, 0.0f, false};
-	SecondWaveDistance = 10000.0f;
-	SecondWaveSettings = FCharOptimizationSettings{0.1, 0.05f, false};
+	FirstWaveSettings = FCharOptimizationSettings{0.04f, 0.0f, false};
+	SecondWaveDistance = 15000.0f;
+	SecondWaveSettings = FCharOptimizationSettings{0.1, 0.0f, false};
 }
 
 void UCharacterOptimizerComponent::OnRegister()
@@ -68,21 +70,49 @@ void UCharacterOptimizerComponent::TickComponent(float DeltaTime, ELevelTick Tic
 				FRotator Rot;
 				PlayerController->GetActorEyesViewPoint(Loc, Rot);
 
-				const double VectorDistance = UKismetMathLibrary::Vector_Distance(Loc, Char->GetActorLocation());
-				if (VectorDistance < FirstWaveDistance || Char->IsLocallyControlled())
+				FVector2D ScreenLocation;
+				PlayerController->ProjectWorldLocationToScreen(Char->GetActorLocation(), ScreenLocation);
+
+				bool bIsInViewport;
+				if (const UGameViewportClient* GameViewportClient = GetWorld()->GetGameViewport())
 				{
-					ApplyOptimizationSettingsToChar(ZeroWaveSettings);
-				}
-				else if (VectorDistance < SecondWaveDistance)
-				{
-					// UE_LOG(LogTemp, Warning, TEXT("First wave"))
-					ApplyOptimizationSettingsToChar(FirstWaveSettings);
+					FVector2D ViewportSize;
+					GameViewportClient->GetViewportSize(ViewportSize);
+					bIsInViewport = ScreenLocation.X > 0 && ScreenLocation.Y > 0 && ScreenLocation.X < ViewportSize.X
+						&& ScreenLocation.Y < ViewportSize.Y;
 				}
 				else
 				{
-					// UE_LOG(LogTemp, Warning, TEXT("Second wave"))
-					ApplyOptimizationSettingsToChar(SecondWaveSettings);
+					bIsInViewport = true;
 				}
+
+				const double VectorDistance = UKismetMathLibrary::Vector_Distance(Loc, Char->GetActorLocation());
+
+				FCharOptimizationSettings Settings;
+				if (Char->IsLocallyControlled())
+				{
+					Settings = ZeroWaveSettings;
+				}
+				else if (!bIsInViewport && VectorDistance >= NotInViewportDistance)
+				{
+					Settings = SecondWaveSettings;
+				}
+				else
+				{
+					if (VectorDistance < FirstWaveDistance)
+					{
+						Settings = ZeroWaveSettings;
+					}
+					else if (VectorDistance < SecondWaveDistance)
+					{
+						Settings = FirstWaveSettings;
+					}
+					else
+					{
+						Settings = SecondWaveSettings;
+					}
+				}
+				ApplyOptimizationSettingsToChar(Settings);
 			}
 		}
 	}

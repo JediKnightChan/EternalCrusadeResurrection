@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "Customization/CustomizationMaterialAsset.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "MeshMergeFunctionLibrary.generated.h"
@@ -42,6 +43,75 @@ struct ECRCOMMON_API FSkeletalMeshMergeParams
 	USkeleton* Skeleton;
 };
 
+//////////////////////////////////////////////////////////////////////
+
+USTRUCT(BlueprintType)
+struct FCustomizationElementaryAssetsSelectionEntry
+{
+	GENERATED_BODY()
+
+	// Assets to apply if the tag matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<UCustomizationElementaryAsset*> Assets;
+
+	// Cosmetic tags required (all of these must be present to be considered a match)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Categories="Cosmetic"))
+	FGameplayTagContainer RequiredTags;
+};
+
+USTRUCT(BlueprintType)
+struct FCustomizationElementaryAssetsSelectionSet
+{
+	GENERATED_BODY()
+
+	// List of CEA rules to apply, first one that matches will be used
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=RequiredTags))
+	TArray<FCustomizationElementaryAssetsSelectionEntry> CeaRules;
+
+	// The assets to use if none of the CeaRules matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<UCustomizationElementaryAsset*> DefaultAssets;
+
+	// Choose the best assets given the rules
+	TArray<UCustomizationElementaryAsset*> SelectBestAsset(const FGameplayTagContainer& CosmeticTags) const;
+};
+
+//////////////////////////////////////////////////////////////////////
+
+USTRUCT(BlueprintType)
+struct FCustomizationMaterialAssetsSelectionEntry
+{
+	GENERATED_BODY()
+
+	// Assets to apply if the tag matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<UCustomizationMaterialAsset*> Assets;
+
+	// Cosmetic tags required (all of these must be present to be considered a match)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Categories="Cosmetic"))
+	FGameplayTagContainer RequiredTags;
+};
+
+USTRUCT(BlueprintType)
+struct FCustomizationMaterialAssetsSelectionSet
+{
+	GENERATED_BODY()
+
+	// List of CMA rules to apply, first one that matches will be used
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=RequiredTags))
+	TArray<FCustomizationMaterialAssetsSelectionEntry> CmaRules;
+
+	// The assets to use if none of the CmaRules matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<UCustomizationMaterialAsset*> DefaultAssets;
+
+	// Choose the best assets given the rules
+	TArray<UCustomizationMaterialAsset*> SelectBestAsset(const FGameplayTagContainer& CosmeticTags) const;
+};
+
+//////////////////////////////////////////////////////////////////////
+
+
 /**
 *
 */
@@ -66,4 +136,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 	static TArray<UCustomizationMaterialAsset*> MergeCustomizationMaterialAssets(
 		TArray<UCustomizationMaterialAsset*> Materials1, TArray<UCustomizationMaterialAsset*> Materials2);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static TArray<UCustomizationElementaryAsset*> SelectBestCeaArray(
+		const FCustomizationElementaryAssetsSelectionSet Set,
+		FGameplayTagContainer CosmeticTags);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static TArray<UCustomizationMaterialAsset*> SelectBestCmaArray(const FCustomizationMaterialAssetsSelectionSet Set,
+	                                                                 FGameplayTagContainer CosmeticTags);
 };
