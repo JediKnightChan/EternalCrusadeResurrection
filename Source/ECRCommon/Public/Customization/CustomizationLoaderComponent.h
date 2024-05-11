@@ -7,6 +7,18 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "CustomizationLoaderComponent.generated.h"
 
+
+/** Container to store CMA overrides  */
+USTRUCT(BlueprintType)
+struct ECRCOMMON_API FCustomizationMaterialAssetMap
+{
+	GENERATED_BODY()
+
+	/** Map of CMA namespaces to CMAs */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TMap<FString, UCustomizationMaterialAsset*> Map;
+};
+
 /**
  * 
  */
@@ -53,7 +65,8 @@ protected:
 	void ProcessAttachmentModule(const FName SocketName, TArray<UCustomizationElementaryAsset*>& SocketNameAssets,
 	                             USkeletalMeshComponent*
 	                             SkeletalMeshParentComponent,
-	                             TMap<FString, UCustomizationMaterialAsset*>& MaterialNamespacesToData);
+	                             TMap<FString, UCustomizationMaterialAsset*>& MaterialNamespacesToData,
+	                             TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap> NewMaterialConfigsOverrides);
 
 	/** Merge meshes within one merger namespace and process their attachments and materials */
 	void ProcessMeshMergeModule(const FString Namespace, TArray<UCustomizationElementaryAsset*>& NamespaceAssets,
@@ -82,7 +95,8 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	void LoadFromAsset(
 		TArray<UCustomizationElementaryAsset*> NewElementaryAssets,
-		TArray<UCustomizationMaterialAsset*> NewMaterialConfigs);
+		TArray<UCustomizationMaterialAsset*> NewMaterialConfigs,
+		TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap> NewMaterialConfigsOverrides);
 
 	UFUNCTION(BlueprintCallable)
 	void UnloadPreviousCustomization();

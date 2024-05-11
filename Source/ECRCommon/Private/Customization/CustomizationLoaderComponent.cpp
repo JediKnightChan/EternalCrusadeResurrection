@@ -24,7 +24,7 @@ void UCustomizationLoaderComponent::BeginPlay()
 	Super::BeginPlay();
 	if (bLoadOnBeginPlay)
 	{
-		LoadFromAsset({}, {});
+		LoadFromAsset({}, {}, {});
 	}
 }
 
@@ -59,7 +59,8 @@ SceneComponentClass* UCustomizationLoaderComponent::SpawnChildComponent(USkeleta
 
 
 void UCustomizationLoaderComponent::LoadFromAsset(TArray<UCustomizationElementaryAsset*> NewElementaryAssets,
-                                                  TArray<UCustomizationMaterialAsset*> NewMaterialConfigs)
+TArray<UCustomizationMaterialAsset*> NewMaterialConfigs,
+TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap> NewMaterialConfigsOverrides)
 {
 	// Setting new elementary assets if passed or old from config
 	TArray<UCustomizationElementaryAsset*> ElementaryAssets;
@@ -126,7 +127,7 @@ void UCustomizationLoaderComponent::LoadFromAsset(TArray<UCustomizationElementar
 			continue;
 		}
 
-		if (ElementaryAsset->MeshMergeNamespace != "" && ElementaryAsset->MaterialOverrides.IsEmpty())
+		if (ElementaryAsset->MeshMergeNamespace != "" && NewMaterialConfigsOverrides.FindRef(ElementaryAsset).Map.IsEmpty())
 		{
 			MergeNamespaceToModules.FindOrAdd(ElementaryAsset->MeshMergeNamespace).Add(ElementaryAsset);
 		}
@@ -147,7 +148,7 @@ void UCustomizationLoaderComponent::LoadFromAsset(TArray<UCustomizationElementar
 	for (TTuple<FName, TArray<UCustomizationElementaryAsset*>> AttachSocketNameAndModule : AttachSocketNameToModules)
 	{
 		ProcessAttachmentModule(AttachSocketNameAndModule.Key, AttachSocketNameAndModule.Value,
-		                        SkeletalMeshParentComponent, MaterialNamespacesToData);
+		                        SkeletalMeshParentComponent, MaterialNamespacesToData, NewMaterialConfigsOverrides);
 	}
 }
 
@@ -381,7 +382,8 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
                                                             TArray<UCustomizationElementaryAsset*>& SocketNameAssets,
                                                             USkeletalMeshComponent* SkeletalMeshParentComponent,
                                                             TMap<FString, UCustomizationMaterialAsset*>&
-                                                            MaterialNamespacesToData)
+                                                            MaterialNamespacesToData,
+                                                            TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap> NewMaterialConfigsOverrides)
 {
 	for (const UCustomizationElementaryAsset* Asset : SocketNameAssets)
 	{
@@ -419,9 +421,9 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 				}
 
 				const UCustomizationMaterialAsset* MaterialData = nullptr;
-				if (Asset->MaterialOverrides.Contains(CustomizationNamespace))
+				if (NewMaterialConfigsOverrides.FindRef(Asset).Map.Contains(CustomizationNamespace))
 				{
-					MaterialData = Asset->MaterialOverrides[CustomizationNamespace];
+					MaterialData = NewMaterialConfigsOverrides.FindRef(Asset).Map[CustomizationNamespace];
 				} else if (MaterialNamespacesToData.Contains(CustomizationNamespace))
 				{
 					MaterialData = MaterialNamespacesToData[CustomizationNamespace];
@@ -443,8 +445,8 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 			}
 		}
 
-		// Overriding material data with data from asset iself
-		for (TTuple<FString, UCustomizationMaterialAsset*> MaterialOverrideTuple : Asset->MaterialOverrides)
+		// Overriding material data with override map
+		for (TTuple<FString, UCustomizationMaterialAsset*> MaterialOverrideTuple : NewMaterialConfigsOverrides.FindRef(Asset).Map)
 		{
 			MaterialNamespacesToData.Add(MaterialOverrideTuple.Key, MaterialOverrideTuple.Value);
 		}

@@ -160,7 +160,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 		ModuleCustomizationName = UCustomizationUtilsLibrary::GetDisplayNameEnd(CustomizationSavingNameSpace);
 	}
 
-	const FString SaveDestinationFilename = "CEA_" + ModuleCustomizationName + "_" + ModuleTypeName;
+	const FString SaveDestinationFilename = "CEA_" + ModuleTypeName + "_" + ModuleCustomizationName;
 	const FString SaveRelativePath = "Modules/" + ModuleTypeName + "/" + SaveDestinationFilename;
 
 	const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(

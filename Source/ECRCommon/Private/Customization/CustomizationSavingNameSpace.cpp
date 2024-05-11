@@ -102,13 +102,15 @@ void UCustomizationSavingNameSpace::SaveMaterialCustomizationData(bool bDoOverwr
 		TArray<TObjectPtr<USceneComponent>> DirectChildren;
 		GetChildrenComponents(false, DirectChildren);
 
+		FString SaveDestinationRelFilepath = "/CMA/" + CmaGroup + "/CMA_" + CmaGroup + "_" + Namespace + "_" + CustomizationData.CmaName;
+
 		const FString DestinationFilename = UCustomizationUtilsLibrary::GetFilenameFromRelativePath(
-			CustomizationData.RelativeSavePath);
+			SaveDestinationRelFilepath);
 		const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(
-			SaveDestinationRootDirectory, CustomizationData.RelativeSavePath);
+			SaveDestinationRootDirectory, SaveDestinationRelFilepath);
 
 		// Return if invalid package path
-		if (CustomizationData.RelativeSavePath == "" || !FPackageName::IsValidLongPackageName(
+		if (SaveDestinationRelFilepath == "" || !FPackageName::IsValidLongPackageName(
 			SaveDestinationPackagePath))
 		{
 			UE_LOG(LogTemp, Error,

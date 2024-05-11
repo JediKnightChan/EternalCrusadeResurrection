@@ -107,8 +107,4 @@ public:
 	/** Array of skeletal attachments */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TArray<FCustomizationElementarySubmoduleSkeletal> SkeletalAttachments;
-	
-	/** Overrides for material data. WARNING: this will prevent mesh merging (MeshMergeNamespace will be set to None) */
-	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
-	TMap<FString, UCustomizationMaterialAsset*> MaterialOverrides;
 };

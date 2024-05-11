@@ -15,7 +15,7 @@ struct ECRCOMMON_API FCustomizationMaterialNamespaceData
 
 	FCustomizationMaterialNamespaceData()
 	{
-		RelativeSavePath = "";
+		CmaName = "";
 		ScalarParameters = {};
 		VectorParameters = {};
 		TextureParameters = {};
@@ -27,9 +27,9 @@ struct ECRCOMMON_API FCustomizationMaterialNamespaceData
 		return (ScalarParameters.Num() == 0 && VectorParameters.Num() == 0 && TextureParameters.Num() == 0);
 	}
 
-	/** Relative path in CustomizationSavingNameSpace root directory to save asset to */
+	/** CMA instance name, eg MKVII (will appear in the end of the filename after save) */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
-	FString RelativeSavePath;
+	FString CmaName;
 
 	/** Map of Scalar Material Parameter Name to its Value */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
@@ -61,6 +61,10 @@ public:
 	/* Save destination root directory for customization assets (eg, /Game/Characters/SpaceMarine/Customization/) */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString SaveDestinationRootDirectory;
+
+	/* Group of CMA assets (eg Ultramarines) */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FString CmaGroup;
 
 	/** Save destination filename for CLA asset (will be placed into <SaveDestinationRootDirectory>/CLA/ folder).
 	 *  Leave empty if you don't need to save loadout */
