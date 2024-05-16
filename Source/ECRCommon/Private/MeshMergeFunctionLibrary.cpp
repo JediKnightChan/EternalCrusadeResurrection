@@ -35,6 +35,20 @@ TArray<UCustomizationMaterialAsset*> FCustomizationMaterialAssetsSelectionSet::S
 	return DefaultAssets;
 }
 
+TArray<UCustomizationAttachmentAsset*> FCustomizationAttachmentAssetsSelectionSet::SelectBestAsset(
+	const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const FCustomizationAttachmentAssetsSelectionEntry& Rule : CaaRules)
+	{
+		if ((!Rule.Assets.IsEmpty()) && CosmeticTags.HasAll(Rule.RequiredTags))
+		{
+			return Rule.Assets;
+		}
+	}
+
+	return DefaultAssets;
+}
+
 USkeletalMesh* UMeshMergeFunctionLibrary::MergeMeshes(const FSkeletalMeshMergeParams& Params)
 {
 	TArray<USkeletalMesh*> MeshesToMergeCopy = Params.MeshesToMerge;
@@ -137,6 +151,12 @@ TArray<UCustomizationElementaryAsset*> UMeshMergeFunctionLibrary::SelectBestCeaA
 
 TArray<UCustomizationMaterialAsset*> UMeshMergeFunctionLibrary::SelectBestCmaArray(
 	const FCustomizationMaterialAssetsSelectionSet Set, FGameplayTagContainer CosmeticTags)
+{
+	return Set.SelectBestAsset(CosmeticTags);
+}
+
+TArray<UCustomizationAttachmentAsset*> UMeshMergeFunctionLibrary::SelectBestCaaArray(
+	const FCustomizationAttachmentAssetsSelectionSet Set, FGameplayTagContainer CosmeticTags)
 {
 	return Set.SelectBestAsset(CosmeticTags);
 }

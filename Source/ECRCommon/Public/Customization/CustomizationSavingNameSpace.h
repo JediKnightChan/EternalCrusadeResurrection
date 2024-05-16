@@ -16,6 +16,7 @@ struct ECRCOMMON_API FCustomizationMaterialNamespaceData
 	FCustomizationMaterialNamespaceData()
 	{
 		CmaName = "";
+		CmaGroupOverride = "";
 		ScalarParameters = {};
 		VectorParameters = {};
 		TextureParameters = {};
@@ -30,6 +31,10 @@ struct ECRCOMMON_API FCustomizationMaterialNamespaceData
 	/** CMA instance name, eg MKVII (will appear in the end of the filename after save) */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	FString CmaName;
+
+	/** CMA group instance name override, eg Ultramarines */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	FString CmaGroupOverride;
 
 	/** Map of Scalar Material Parameter Name to its Value */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
@@ -71,6 +76,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString SaveDestinationFilename;
 
+	/** This limits allowed namespaces for CMA */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TArray<FString> AllowedMaterialNamespaces;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TMap<FString, FCustomizationMaterialNamespaceData> MaterialCustomizationData;
 
@@ -78,6 +87,10 @@ public:
 	 *  You can override it for specific modules in ModuleNamingMapping  */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString CommonModuleNaming;
+
+	/** This limits allowed CEA modules */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TArray<FString> AllowedModuleNames;
 
 	/** Overrides CommonModuleNaming for specific modules */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
@@ -89,4 +102,7 @@ public:
 	void SaveLoadoutSkippingExistingModules();
 
 	void SaveMaterialCustomizationData(bool bDoOverwrite) const;
+
+	void SaveCertainMaterialCustomizationData(FString Namespace, FCustomizationMaterialNamespaceData CustomizationData,
+	                                          bool bDoOverwrite) const;
 };

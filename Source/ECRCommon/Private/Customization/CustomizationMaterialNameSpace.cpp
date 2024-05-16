@@ -38,7 +38,7 @@ FCustomizationMaterialNamespaceData UCustomizationMaterialNameSpace::GetMaterial
 		MyName = UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
 	}
 
-	if (SavingNamespace->MaterialCustomizationData.Contains(MyName))
+	if (SavingNamespace->MaterialCustomizationData.Contains(MyName) && SavingNamespace->AllowedMaterialNamespaces.Contains(MyName))
 	{
 		return SavingNamespace->MaterialCustomizationData[MyName];
 	}
@@ -192,5 +192,27 @@ void UCustomizationMaterialNameSpace::ApplyMaterialChanges(USceneComponent* Chil
 				}
 			}
 		}
+	}
+}
+
+void UCustomizationMaterialNameSpace::SaveCMA()
+{
+	const UCustomizationSavingNameSpace* SavingNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfType<
+		UCustomizationSavingNameSpace>(this);
+
+	if (SavingNamespace)
+	{
+		FString MyName = UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
+
+		if (SavingNamespace->MaterialCustomizationData.Contains(MyName))
+		{
+			SavingNamespace->SaveCertainMaterialCustomizationData(MyName, SavingNamespace->MaterialCustomizationData[MyName], true);
+		} else
+		{
+			UE_LOG(LogTemp, Error, TEXT("CustomizationMaterialNamespace %s not found in parent CustomizationSavingNamespace"), *(GetNameSafe(this)));
+		}
+	} else
+	{
+		UE_LOG(LogTemp, Error, TEXT("CustomizationMaterialNamespace %s doesn't have parent of type CustomizationSavingNamespace"), *(GetNameSafe(this)))
 	}
 }

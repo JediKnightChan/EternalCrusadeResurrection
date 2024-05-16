@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CustomizationAttachmentAsset.h"
 #include "CustomizationElementaryAsset.h"
 #include "CustomizationSavingNameSpace.h"
 #include "Components/SkeletalMeshComponent.h"
@@ -35,6 +36,14 @@ class ECRCOMMON_API UCustomizationElementaryModule : public USkeletalMeshCompone
 	/** This will override material namespace for concise slot names */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	TMap<FName, FString> SlotNamesNamespacesOverride;
+
+	/** Required for saving a CAA */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	FString CustomizationAttachmentAssetName;
+
+	/** Attachments to exclude from saving in CEA (use this for CAA attachments) */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	TArray<FString> AttachmentsToSkipInCEA;
 protected:
 	/* Inheriting animations from first SkeletalMeshComponent parent if requested */
 	void InheritAnimationsIfNeeded();
@@ -57,10 +66,18 @@ public:
 	/* Save this module into a CustomizationElementaryAsset */
 	UCustomizationElementaryAsset* SaveToDataAsset(bool bDoOverwrite) const;
 
+	/* Save this module into a CustomizationElementaryAsset */
+	UCustomizationAttachmentAsset* SaveAttachmentsToDataAsset() const;
+
 	/* Save this module into a CustomizationElementaryAsset, overwriting it if it already exists,
 	 * callable in Editor */
 	UFUNCTION(CallInEditor, BlueprintCallable)
 	void SaveToDataAsset() const;
+
+	/* Save this module into a CustomizationAttachmentAsset, overwriting it if it already exists,
+	 * callable in Editor */
+	UFUNCTION(CallInEditor, BlueprintCallable)
+	void SaveToAttachmentAsset() const;
 
 	FORCEINLINE FString GetCustomizationNamespaceOverride()
 	{

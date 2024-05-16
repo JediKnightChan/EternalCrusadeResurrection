@@ -33,4 +33,8 @@ public:
 	                                 const TMap<FName, FLinearColor>& GivenVectorParameters,
 	                                 const TMap<FName, UTexture*>& GivenTextureParameters,
 	                                 const TArray<FName> SlotNames);
+
+	/** Save CMA for this namespace */
+	UFUNCTION(CallInEditor, BlueprintCallable)
+	void SaveCMA();
 };

@@ -9,6 +9,7 @@
 #include "Customization/CustomizationMaterialNameSpace.h"
 #include "CustomizationUtilsLibrary.h"
 #include "MeshMergeFunctionLibrary.h"
+#include "Customization/CustomizationAttachmentAsset.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 
@@ -24,7 +25,9 @@ void UCustomizationLoaderComponent::BeginPlay()
 	Super::BeginPlay();
 	if (bLoadOnBeginPlay)
 	{
-		LoadFromAsset({}, {}, {});
+		TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap> NewMaterialConfigsOverrides = {};
+TMap<UCustomizationElementaryAsset*, FCustomizationAttachmentAssetArray> NewExternalAttachments = {};
+		LoadFromAsset({}, {}, NewMaterialConfigsOverrides, NewExternalAttachments);
 	}
 }
 
@@ -60,7 +63,8 @@ SceneComponentClass* UCustomizationLoaderComponent::SpawnChildComponent(USkeleta
 
 void UCustomizationLoaderComponent::LoadFromAsset(TArray<UCustomizationElementaryAsset*> NewElementaryAssets,
 TArray<UCustomizationMaterialAsset*> NewMaterialConfigs,
-TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap> NewMaterialConfigsOverrides)
+const TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap>& NewMaterialConfigsOverrides,
+const TMap<UCustomizationElementaryAsset*, FCustomizationAttachmentAssetArray>& NewExternalAttachments)
 {
 	// Setting new elementary assets if passed or old from config
 	TArray<UCustomizationElementaryAsset*> ElementaryAssets;
@@ -141,14 +145,14 @@ TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap> NewMaterial
 	for (TTuple<FString, TArray<UCustomizationElementaryAsset*>>& MergeNamespaceAndModule : MergeNamespaceToModules)
 	{
 		ProcessMeshMergeModule(MergeNamespaceAndModule.Key, MergeNamespaceAndModule.Value, SkeletalMeshParentComponent,
-		                       MaterialNamespacesToData);
+		                       MaterialNamespacesToData, NewExternalAttachments);
 	}
 
 	// Processing mesh attaches
 	for (TTuple<FName, TArray<UCustomizationElementaryAsset*>> AttachSocketNameAndModule : AttachSocketNameToModules)
 	{
 		ProcessAttachmentModule(AttachSocketNameAndModule.Key, AttachSocketNameAndModule.Value,
-		                        SkeletalMeshParentComponent, MaterialNamespacesToData, NewMaterialConfigsOverrides);
+		                        SkeletalMeshParentComponent, MaterialNamespacesToData, NewMaterialConfigsOverrides, NewExternalAttachments);
 	}
 }
 
@@ -277,7 +281,8 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
                                                            NamespaceAssets,
                                                            USkeletalMeshComponent* SkeletalMeshParentComponent,
                                                            TMap<FString, UCustomizationMaterialAsset*>&
-                                                           MaterialNamespacesToData)
+                                                           MaterialNamespacesToData,
+                                                           const TMap<UCustomizationElementaryAsset*, FCustomizationAttachmentAssetArray>& NewExternalAttachments)
 {
 	TArray<USkeletalMesh*> MeshesForMerge;
 	TArray<FCustomizationElementarySubmoduleStatic> StaticMeshesForAttach;
@@ -313,6 +318,19 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 
 		StaticMeshesForAttach.Append(ElementaryAsset->StaticAttachments);
 		SkeletalMeshesForAttach.Append(ElementaryAsset->SkeletalAttachments);
+
+		FCustomizationAttachmentAssetArray CAAArray = NewExternalAttachments.FindRef(ElementaryAsset);
+		if (!CAAArray.Array.IsEmpty())
+		{
+			for (UCustomizationAttachmentAsset* AttachmentAsset : CAAArray.Array)
+			{
+				if (AttachmentAsset)
+				{
+					StaticMeshesForAttach.Append(AttachmentAsset->StaticAttachments);
+					SkeletalMeshesForAttach.Append(AttachmentAsset->SkeletalAttachments);
+				}
+			}
+		}
 	}
 
 	USkeletalMesh* MergedSkeletalMesh = nullptr;
@@ -383,7 +401,8 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
                                                             USkeletalMeshComponent* SkeletalMeshParentComponent,
                                                             TMap<FString, UCustomizationMaterialAsset*>&
                                                             MaterialNamespacesToData,
-                                                            TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap> NewMaterialConfigsOverrides)
+                                                            const TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap>& NewMaterialConfigsOverrides,
+                                                            const TMap<UCustomizationElementaryAsset*, FCustomizationAttachmentAssetArray>& NewExternalAttachments)
 {
 	for (const UCustomizationElementaryAsset* Asset : SocketNameAssets)
 	{
@@ -458,5 +477,21 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 		// Process attaching skeletal meshes to child component
 		ProcessSkeletalAttachesForComponent(ChildComponent, Asset->SkeletalAttachments, Namespace,
 		                                    MaterialNamespacesToData);
+
+		// Process external attachments (CAAs)
+		FCustomizationAttachmentAssetArray CustomizationAttachmentAssetArray = NewExternalAttachments.FindRef(Asset);
+		if (!CustomizationAttachmentAssetArray.Array.IsEmpty())
+		{
+			for (UCustomizationAttachmentAsset* CAA : CustomizationAttachmentAssetArray.Array)
+			{
+				if (CAA)
+				{
+					ProcessStaticAttachesForComponent(ChildComponent, CAA->StaticAttachments, Namespace,
+										  MaterialNamespacesToData);
+					ProcessSkeletalAttachesForComponent(ChildComponent, CAA->SkeletalAttachments, Namespace,
+														MaterialNamespacesToData);
+				}
+			}
+		}
 	}
 }

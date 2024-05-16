@@ -3,6 +3,7 @@
 
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
+#include "Customization/CustomizationAttachmentAsset.h"
 #include "Customization/CustomizationMaterialAsset.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "MeshMergeFunctionLibrary.generated.h"
@@ -71,7 +72,7 @@ struct FCustomizationElementaryAssetsSelectionSet
 	// The assets to use if none of the CeaRules matches
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<UCustomizationElementaryAsset*> DefaultAssets;
-
+	
 	// Choose the best assets given the rules
 	TArray<UCustomizationElementaryAsset*> SelectBestAsset(const FGameplayTagContainer& CosmeticTags) const;
 };
@@ -105,8 +106,53 @@ struct FCustomizationMaterialAssetsSelectionSet
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<UCustomizationMaterialAsset*> DefaultAssets;
 
+	// Modules to apply selected CMA to
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<FString> Modules;
+
+	// Comment to describe this set
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString Comment;
+	
 	// Choose the best assets given the rules
 	TArray<UCustomizationMaterialAsset*> SelectBestAsset(const FGameplayTagContainer& CosmeticTags) const;
+};
+
+//////////////////////////////////////////////////////////////////////
+
+USTRUCT(BlueprintType)
+struct FCustomizationAttachmentAssetsSelectionEntry
+{
+	GENERATED_BODY()
+
+	// Assets to apply if the tag matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<UCustomizationAttachmentAsset*> Assets;
+
+	// Cosmetic tags required (all of these must be present to be considered a match)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Categories="Cosmetic"))
+	FGameplayTagContainer RequiredTags;
+};
+
+USTRUCT(BlueprintType)
+struct FCustomizationAttachmentAssetsSelectionSet
+{
+	GENERATED_BODY()
+
+	// List of CAA rules to apply, first one that matches will be used
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=RequiredTags))
+	TArray<FCustomizationAttachmentAssetsSelectionEntry> CaaRules;
+
+	// The assets to use if none of the CaaRules matches
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<UCustomizationAttachmentAsset*> DefaultAssets;
+
+	// Comment to describe this set
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString Comment;
+
+	// Choose the best assets given the rules
+	TArray<UCustomizationAttachmentAsset*> SelectBestAsset(const FGameplayTagContainer& CosmeticTags) const;
 };
 
 //////////////////////////////////////////////////////////////////////
@@ -144,5 +190,10 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static TArray<UCustomizationMaterialAsset*> SelectBestCmaArray(const FCustomizationMaterialAssetsSelectionSet Set,
-	                                                                 FGameplayTagContainer CosmeticTags);
+	                                                               FGameplayTagContainer CosmeticTags);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static TArray<UCustomizationAttachmentAsset*> SelectBestCaaArray(
+		const FCustomizationAttachmentAssetsSelectionSet Set,
+		FGameplayTagContainer CosmeticTags);
 };

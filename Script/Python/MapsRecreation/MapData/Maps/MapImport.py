@@ -8,7 +8,7 @@ import re
 
 # Change me!
 map_data_filepath = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                    "MapData/Maps/Usual/HiveComplex01/x01_static.json"
+                    "MapData/Maps/Usual/HiveComplex01/r05.json"
 PATH_TO_FILTER = None
 EXCLUDE_ENGINE_ASSETS = False
 level_library = unreal.EditorLevelLibrary
