@@ -108,7 +108,7 @@ struct FCustomizationMaterialAssetsSelectionSet
 
 	// Modules to apply selected CMA to
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FString> Modules;
+	TArray<FName> Modules;
 
 	// Comment to describe this set
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

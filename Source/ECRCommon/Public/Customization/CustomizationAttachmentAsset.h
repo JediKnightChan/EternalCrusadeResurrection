@@ -16,7 +16,7 @@ class ECRCOMMON_API UCustomizationAttachmentAsset : public UPrimaryDataAsset
 
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
-	FString ModuleName;
+	FName ModuleName;
 
 	/** Array of static attachments */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))

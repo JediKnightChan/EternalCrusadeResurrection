@@ -23,19 +23,19 @@ class ECRCOMMON_API UCustomizationElementaryModule : public USkeletalMeshCompone
 
 	/** Modules with common non-empty MeshMergerNamespace will be merged as one skeletal mesh */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
-	FString MeshMergerNamespace;
+	FName MeshMergerNamespace;
 
 	/** Material namespaces for attachments */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
-	TMap<FString, FString> AttachmentsToMaterialNamespaces;
+	TMap<FString, FName> AttachmentsToMaterialNamespaces;
 
 	/** This will override material namespace (one that this module is attached to) */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
-	FString CustomizationNamespaceOverride;
+	FName CustomizationNamespaceOverride;
 
 	/** This will override material namespace for concise slot names */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
-	TMap<FName, FString> SlotNamesNamespacesOverride;
+	TMap<FName, FName> SlotNamesNamespacesOverride;
 
 	/** Required for saving a CAA */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
@@ -43,7 +43,7 @@ class ECRCOMMON_API UCustomizationElementaryModule : public USkeletalMeshCompone
 
 	/** Attachments to exclude from saving in CEA (use this for CAA attachments) */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
-	TArray<FString> AttachmentsToSkipInCEA;
+	TArray<FName> AttachmentsToSkipInCEA;
 protected:
 	/* Inheriting animations from first SkeletalMeshComponent parent if requested */
 	void InheritAnimationsIfNeeded();
@@ -52,7 +52,7 @@ protected:
 	FString GetFirstMaterialNameSpaceRaw(const USceneComponent* GivenComponent) const;
 
 	/** Get material customization data for given material namespace */
-	FCustomizationMaterialNamespaceData GetMaterialCustomizationData(FString MaterialNamespace) const;
+	FCustomizationMaterialNamespaceData GetMaterialCustomizationData(FName MaterialNamespace) const;
 
 	/** Inherit animations on register */
 	virtual void OnRegister() override;
@@ -79,12 +79,12 @@ public:
 	UFUNCTION(CallInEditor, BlueprintCallable)
 	void SaveToAttachmentAsset() const;
 
-	FORCEINLINE FString GetCustomizationNamespaceOverride()
+	FORCEINLINE FName GetCustomizationNamespaceOverride()
 	{
 		return CustomizationNamespaceOverride;
 	}
 
-	FORCEINLINE TMap<FName, FString> GetSlotNamesNamespacesOverride()
+	FORCEINLINE TMap<FName, FName> GetSlotNamesNamespacesOverride()
 	{
 		return SlotNamesNamespacesOverride;
 	}

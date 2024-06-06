@@ -78,10 +78,10 @@ public:
 
 	/** This limits allowed namespaces for CMA */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TArray<FString> AllowedMaterialNamespaces;
+	TArray<FName> AllowedMaterialNamespaces;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TMap<FString, FCustomizationMaterialNamespaceData> MaterialCustomizationData;
+	TMap<FName, FCustomizationMaterialNamespaceData> MaterialCustomizationData;
 
 	/** This will be added to Elementary Module asset name (CEA_<CommonModuleNaming>_<ModuleName>).
 	 *  You can override it for specific modules in ModuleNamingMapping  */
@@ -90,11 +90,11 @@ public:
 
 	/** This limits allowed CEA modules */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TArray<FString> AllowedModuleNames;
+	TArray<FName> AllowedModuleNames;
 
 	/** Overrides CommonModuleNaming for specific modules */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TMap<FString, FString> ModuleNamingMapping;
+	TMap<FName, FString> ModuleNamingMapping;
 
 	/** Save every child CustomizationElementaryModule, skipping if it already exists,
 	 * and produce CustomizationLoaderAsset */
@@ -103,6 +103,6 @@ public:
 
 	void SaveMaterialCustomizationData(bool bDoOverwrite) const;
 
-	void SaveCertainMaterialCustomizationData(FString Namespace, FCustomizationMaterialNamespaceData CustomizationData,
+	void SaveCertainMaterialCustomizationData(FName Namespace, FCustomizationMaterialNamespaceData CustomizationData,
 	                                          bool bDoOverwrite) const;
 };

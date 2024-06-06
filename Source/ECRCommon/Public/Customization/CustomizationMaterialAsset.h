@@ -17,7 +17,7 @@ class ECRCOMMON_API UCustomizationMaterialAsset : public UPrimaryDataAsset
 public:
 	/** Namespace where loader should apply this customization */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	FString MaterialNamespace;
+	FName MaterialNamespace;
 	
 	/** Map of Scalar Material Parameter Name to its Value */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)

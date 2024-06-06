@@ -17,7 +17,7 @@ struct ECRCOMMON_API FCustomizationMaterialAssetMap
 
 	/** Map of CMA namespaces to CMAs */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TMap<FString, UCustomizationMaterialAsset*> Map;
+	TMap<FName, UCustomizationMaterialAsset*> Map;
 };
 
 /** Container to store CMA overrides  */
@@ -40,6 +40,10 @@ class ECRCOMMON_API UCustomizationLoaderComponent : public USceneComponent
 {
 	GENERATED_BODY()
 
+	/** Whether to print detailed debug about loading*/
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	bool bDebugLoading;
+
 	/** Whether to load customization on BeginPlay or load function will be called externally */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	bool bLoadOnBeginPlay;
@@ -56,14 +60,6 @@ class ECRCOMMON_API UCustomizationLoaderComponent : public USceneComponent
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	FName CollisionProfileName;
 
-	/** Modular mesh customization config we want to load */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
-	class UCustomizationLoaderAsset* AssetConfig;
-
-	/** Material customization configs we want to load */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
-	TArray<class UCustomizationMaterialAsset*> MaterialConfigs;
-
 	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TArray<USceneComponent*> SpawnedComponents;
 
@@ -78,28 +74,31 @@ protected:
 	void ProcessAttachmentModule(const FName SocketName, TArray<UCustomizationElementaryAsset*>& SocketNameAssets,
 	                             USkeletalMeshComponent*
 	                             SkeletalMeshParentComponent,
-	                             TMap<FString, UCustomizationMaterialAsset*>& MaterialNamespacesToData,
-	                             const TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap>& NewMaterialConfigsOverrides,
-	                             const TMap<UCustomizationElementaryAsset*, FCustomizationAttachmentAssetArray>& NewExternalAttachments);
+	                             TMap<FName, UCustomizationMaterialAsset*>& MaterialNamespacesToData,
+	                             const TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap>&
+	                             NewMaterialConfigsOverrides,
+	                             const TMap<UCustomizationElementaryAsset*, FCustomizationAttachmentAssetArray>&
+	                             NewExternalAttachments);
 
 	/** Merge meshes within one merger namespace and process their attachments and materials */
-	void ProcessMeshMergeModule(const FString Namespace, TArray<UCustomizationElementaryAsset*>& NamespaceAssets,
+	void ProcessMeshMergeModule(const FName Namespace, TArray<UCustomizationElementaryAsset*>& NamespaceAssets,
 	                            USkeletalMeshComponent*
 	                            SkeletalMeshParentComponent,
-	                            TMap<FString, UCustomizationMaterialAsset*>& MaterialNamespacesToData,
-	                            const TMap<UCustomizationElementaryAsset*, FCustomizationAttachmentAssetArray>& NewExternalAttachments);
+	                            TMap<FName, UCustomizationMaterialAsset*>& MaterialNamespacesToData,
+	                            const TMap<UCustomizationElementaryAsset*, FCustomizationAttachmentAssetArray>&
+	                            NewExternalAttachments);
 
 	/** For given map of socket names to skeletal meshes for attachment, attach to the Component */
 	void ProcessSkeletalAttachesForComponent(USkeletalMeshComponent* Component,
 	                                         const TArray<FCustomizationElementarySubmoduleSkeletal>& MeshesForAttach,
 	                                         const FString NameEnding,
-	                                         TMap<FString, UCustomizationMaterialAsset*>& MaterialNamespacesToData);
+	                                         TMap<FName, UCustomizationMaterialAsset*>& MaterialNamespacesToData);
 
 	/** For given array of socket names and skeletal meshes for attachment, attach to the Component */
 	void ProcessStaticAttachesForComponent(USkeletalMeshComponent* Component,
 	                                       const TArray<FCustomizationElementarySubmoduleStatic>& MeshesForAttach,
 	                                       const FString NameEnding,
-	                                       TMap<FString, UCustomizationMaterialAsset*>& MaterialNamespacesToData);
+	                                       TMap<FName, UCustomizationMaterialAsset*>& MaterialNamespacesToData);
 
 	/** Check if socket exists, if it does, return socket name, else return NAME_None and print warning */
 	template <class ComponentClass>

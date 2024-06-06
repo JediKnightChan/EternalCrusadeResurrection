@@ -102,14 +102,15 @@ void UCustomizationSavingNameSpace::SaveMaterialCustomizationData(bool bDoOverwr
 	}
 }
 
-void UCustomizationSavingNameSpace::SaveCertainMaterialCustomizationData(FString Namespace,
+void UCustomizationSavingNameSpace::SaveCertainMaterialCustomizationData(FName Namespace,
                                                                          FCustomizationMaterialNamespaceData
                                                                          CustomizationData, bool bDoOverwrite) const
 {
 	if (!AllowedMaterialNamespaces.Contains(Namespace))
 	{
 		UE_LOG(LogTemp, Error, TEXT("Namespace %s not allowed, it should be set in AllowedMaterialNamespaces!"),
-		       *(Namespace))
+		       *(Namespace.ToString()))
+		return;
 	}
 
 	FString CmaGroupToUse = CmaGroup;
@@ -118,7 +119,7 @@ void UCustomizationSavingNameSpace::SaveCertainMaterialCustomizationData(FString
 		CmaGroupToUse = CustomizationData.CmaGroupOverride;
 	}
 
-	FString SaveDestinationRelFilepath = "/CMA/" + CmaGroupToUse + "/CMA_" + CmaGroupToUse + "_" + Namespace + "_" +
+	FString SaveDestinationRelFilepath = "/CMA/" + CmaGroupToUse + "/CMA_" + CmaGroupToUse + "_" + Namespace.ToString() + "_" +
 		CustomizationData.CmaName;
 
 	if (CmaGroupToUse.IsEmpty())
@@ -130,7 +131,7 @@ void UCustomizationSavingNameSpace::SaveCertainMaterialCustomizationData(FString
 	if (CustomizationData.CmaName.IsEmpty())
 	{
 		UE_LOG(LogTemp, Warning,
-		       TEXT("CMA %s has no specified CmaName and won't be saved"), *(Namespace));
+		       TEXT("CMA %s has no specified CmaName and won't be saved"), *(Namespace.ToString()));
 		return;
 	}
 
