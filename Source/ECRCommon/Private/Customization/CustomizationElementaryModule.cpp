@@ -266,7 +266,7 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 	for (TObjectPtr<USceneComponent> ChildComponent : AllChildren)
 	{
 		FString ChildName = UCustomizationUtilsLibrary::GetDisplayNameEnd(ChildComponent);
-		if (AttachmentsToSkipInCEA.Contains(FName{ChildName}))
+		if (AttachmentsForCAA.Contains(FName{ChildName}))
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Skipping attachment %s for saving in CEA"), *(ChildName))
 			continue;
@@ -437,6 +437,12 @@ UCustomizationAttachmentAsset* UCustomizationElementaryModule::SaveAttachmentsTo
 	for (TObjectPtr<USceneComponent> ChildComponent : AllChildren)
 	{
 		FString ChildName = UCustomizationUtilsLibrary::GetDisplayNameEnd(ChildComponent);
+
+		if (!AttachmentsForCAA.Contains(FName{ChildName}))
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Attachment %s is not included in AttachmentsToSkipInCEA and won't be saved in CAA"), *(ChildName))
+			continue;
+		}
 
 		// Checking if it's static mesh
 		UStaticMeshComponent* ChildStaticMeshComponent = Cast<

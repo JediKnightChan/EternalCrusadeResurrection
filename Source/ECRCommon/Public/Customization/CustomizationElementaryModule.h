@@ -43,7 +43,7 @@ class ECRCOMMON_API UCustomizationElementaryModule : public USkeletalMeshCompone
 
 	/** Attachments to exclude from saving in CEA (use this for CAA attachments) */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
-	TArray<FName> AttachmentsToSkipInCEA;
+	TArray<FName> AttachmentsForCAA;
 protected:
 	/* Inheriting animations from first SkeletalMeshComponent parent if requested */
 	void InheritAnimationsIfNeeded();
