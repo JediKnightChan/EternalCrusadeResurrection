@@ -270,7 +270,10 @@ public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 private:
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	void ComputeSpreadRange(float& MinSpread, float& MaxSpread);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	void ComputeHeatRange(float& MinHeat, float& MaxHeat);
 
 	inline float ClampHeat(float NewHeat)
