@@ -76,7 +76,7 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 
 	AddTag(Status_Crouching, "Status.Crouching", "Target is crouching.");
 	AddTag(Status_ADS, "Status.ADS", "Target is in ADS mode.");
-	AddTag(Status_ADS, "Status.Bracing", "Target is in bracing mode.");
+	AddTag(Status_Bracing, "Status.Bracing", "Target is in bracing mode.");
 	AddTag(Status_AutoRunning, "Status.AutoRunning", "Target is auto-running.");
 	AddTag(Status_Death, "Status.Death", "Target has the death status.");
 	AddTag(Status_Death_Dying, "Status.Death.Dying", "Target has begun the death process.");
