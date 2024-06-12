@@ -18,4 +18,7 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static double
 	CalculateDamageAttenuationForArmorPenetration(double ArmorPenetration, double Toughness, double Armor);
+
+	UFUNCTION(BlueprintCallable, blueprintPure)
+	static FVector VRandConeNormalDistribution(const FVector& Dir, const float ConeHalfAngleRad, const float Exponent);
 };

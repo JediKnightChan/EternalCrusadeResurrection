@@ -37,12 +37,14 @@ public:
 		return BulletsPerCartridge;
 	}
 
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	/** Returns the current spread angle (in degrees, diametrical) */
 	float GetCalculatedSpreadAngle() const
 	{
 		return CurrentSpreadAngle;
 	}
 
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	float GetCalculatedSpreadAngleMultiplier() const
 	{
 		return bHasFirstShotAccuracy ? 0.0f : CurrentSpreadAngleMultiplier;
@@ -182,7 +184,7 @@ protected:
 	// Rate at which we transition to/from the ASC multiplier (higher values are faster, though zero is instant; @see FInterpTo)
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params")
 	float TransitionRate_AscMultiplier = 5.0f;
-	
+
 	// Spread multiplier while jumping/falling, smoothly blended to based on TransitionRate_JumpingOrFalling
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params", meta=(ForceUnits=x))
 	float SpreadAngleMultiplier_JumpingOrFalling = 1.0f;
