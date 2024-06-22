@@ -172,6 +172,17 @@ void UECRRangedWeaponInstance::GetLifetimeReplicatedProps(TArray<FLifetimeProper
 
 bool UECRRangedWeaponInstance::UpdateSpread(float DeltaSeconds)
 {
+	if (APawn* Pawn = GetPawn())
+	{
+		if (UAbilitySystemComponent* ASC = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(Pawn))
+		{
+			if (ASC->HasMatchingGameplayTag(FECRGameplayTags::Get().Status_NoWeaponHeatRemove))
+			{
+				UpdateFiringTime();
+			}
+		}
+	}
+
 	const float TimeSinceFired = GetWorld()->TimeSince(TimeLastFired);
 
 	if (TimeSinceFired > SpreadRecoveryCooldownDelay)

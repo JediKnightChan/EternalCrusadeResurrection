@@ -91,9 +91,10 @@ void UECRWeaponInstance::OnUnequipped()
 
 void UECRWeaponInstance::UpdateFiringTime()
 {
-	UWorld* World = GetWorld();
-	check(World);
-	TimeLastFired = World->GetTimeSeconds();
+	if (UWorld* World = GetWorld())
+	{
+		TimeLastFired = World->GetTimeSeconds();
+	}
 }
 
 float UECRWeaponInstance::GetTimeSinceLastInteractedWith() const
