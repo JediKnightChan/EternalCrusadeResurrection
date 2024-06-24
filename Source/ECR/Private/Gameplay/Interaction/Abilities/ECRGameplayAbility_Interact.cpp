@@ -12,7 +12,6 @@
 
 UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_Ability_Interaction_Activate, "Ability.Interaction.Activate");
 UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_Indicator_Category_Interaction, "GUI.Indicators.Category.Interaction");
-UE_DEFINE_GAMEPLAY_TAG(TAG_INTERACTION_DURATION_MESSAGE, "Ability.Interaction.Duration.Message");
 
 UECRGameplayAbility_Interact::UECRGameplayAbility_Interact(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)

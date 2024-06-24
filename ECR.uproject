@@ -127,6 +127,10 @@
 		{
 			"Name": "CharacterOptimizer",
 			"Enabled": true
+		},
+		{
+			"Name": "SimpleActorPooling",
+			"Enabled": true
 		}
 	]
 }

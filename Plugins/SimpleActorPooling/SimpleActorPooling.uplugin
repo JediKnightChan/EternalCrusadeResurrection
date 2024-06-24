@@ -1,0 +1,23 @@
+﻿{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "SimpleActorPooling",
+	"Description": "Simple plugin for reusing (pooling) actors to improve performance for actor spawning",
+	"Category": "Other",
+	"CreatedBy": "JediKnight",
+	"CreatedByURL": "https://github.com/JediKnightChan/",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "SimpleActorPooling",
+			"Type": "Runtime",
+			"LoadingPhase": "PreLoadingScreen"
+		}
+	]
+}
