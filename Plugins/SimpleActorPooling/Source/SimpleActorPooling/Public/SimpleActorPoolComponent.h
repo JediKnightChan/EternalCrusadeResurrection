@@ -20,6 +20,9 @@ struct FActorPool
 /**
  * Simple storage of several actor pools of different classes, allowing to
  * retrieve an actor from pool or return it there after usage
+ *
+ * Need to store array on something that isn't destroyed, Player Controller for map (recommended)
+ * or GameInstance for the whole game
  */
 UCLASS(Blueprintable, Meta=(BlueprintSpawnableComponent))
 class SIMPLEACTORPOOLING_API USimpleActorPoolComponent : public UActorComponent
