@@ -11,7 +11,7 @@ USimpleActorPoolComponent::USimpleActorPoolComponent()
 {
 }
 
-AActor* USimpleActorPoolComponent::RetrieveActorFromPool(UClass* ActorClass, FTransform SpawnTransform)
+AActor* USimpleActorPoolComponent::RetrieveActorFromPool(UClass* ActorClass, FTransform SpawnTransform, bool bLogDebug)
 {
 	// First try to return a free actor from pool
 	if (FActorPool* Pool = PoolMap.Find(ActorClass))
@@ -21,13 +21,12 @@ AActor* USimpleActorPoolComponent::RetrieveActorFromPool(UClass* ActorClass, FTr
 			AActor* Actor = Pool->ActorArray.Pop();
 			if (Actor)
 			{
-				Actor->SetActorTransform(SpawnTransform);
-
-				if (IPoolableActor* PoolableActor = Cast<IPoolableActor>(Actor))
+				if (bLogDebug)
 				{
-					PoolableActor->OnSpawnedFromPool(false);
+					UE_LOG(LogTemp, Warning, TEXT("SimplePool: retrieved actor from pool"))
 				}
-
+				Actor->SetActorTransform(SpawnTransform);
+				IPoolableActor::Execute_OnSpawnedFromPool(Actor, false);
 				return Actor;
 			}
 		}
@@ -39,27 +38,37 @@ AActor* USimpleActorPoolComponent::RetrieveActorFromPool(UClass* ActorClass, FTr
 		FActorSpawnParameters Params;
 		Params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
 		AActor* SpawnedActor = World->SpawnActor<AActor>(ActorClass, Params);
-
+		if (bLogDebug)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("SimplePool: had to spawn new actor"))
+		}
 		if (SpawnedActor)
 		{
 			SpawnedActor->SetActorTransform(SpawnTransform);
-
-			if (IPoolableActor* PoolableSpawnedActor = Cast<IPoolableActor>(SpawnedActor))
-			{
-				PoolableSpawnedActor->OnSpawnedFromPool(true);
-			}
+			IPoolableActor::Execute_OnSpawnedFromPool(SpawnedActor, true);
 
 			if (!PoolMap.Contains(ActorClass))
 			{
 				PoolMap.Add(ActorClass, {});
 			}
+
+			return SpawnedActor;
+		} else
+		{
+			UE_LOG(LogTemp, Error, TEXT("SimplePool: SPAWNED ACTOR NULL"))
+		}
+	} else
+	{
+		if (bLogDebug)
+		{
+			UE_LOG(LogTemp, Error, TEXT("SimplePool: WORLD NULL"))
 		}
 	}
 
 	return nullptr;
 }
 
-void USimpleActorPoolComponent::ReturnActorToPool(AActor* Actor)
+void USimpleActorPoolComponent::ReturnActorToPool(AActor* Actor, bool bLogDebug)
 {
 	if (!Actor)
 	{
@@ -71,10 +80,19 @@ void USimpleActorPoolComponent::ReturnActorToPool(AActor* Actor)
 	// Only return to pool if pool map already knows about this class
 	if (FActorPool* Pool = PoolMap.Find(ActorClass))
 	{
-		Pool->ActorArray.AddUnique(Actor);
-		if (IPoolableActor* PoolableActor = Cast<IPoolableActor>(Actor))
+		if (bLogDebug)
 		{
-			PoolableActor->OnReturnedToPool();
+			UE_LOG(LogTemp, Warning, TEXT("SimplePool: returned actor to pool"))
+		}
+
+		Pool->ActorArray.AddUnique(Actor);
+		IPoolableActor::Execute_OnReturnedToPool(Actor);
+	}
+	else
+	{
+		if (bLogDebug)
+		{
+			UE_LOG(LogTemp, Error, TEXT("SimplePool: RETURN FAILED: NO KEY!"))
 		}
 	}
 }

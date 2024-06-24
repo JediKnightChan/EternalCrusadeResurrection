@@ -30,11 +30,28 @@ class SIMPLEACTORPOOLING_API USimpleActorPoolComponent : public UActorComponent
 
 protected:
 	UFUNCTION(BlueprintCallable)
-	AActor* RetrieveActorFromPool(UClass* ActorClass, FTransform SpawnTransform);
+	AActor* RetrieveActorFromPool(UClass* ActorClass, FTransform SpawnTransform, bool bLogDebug = false);
 
 	UFUNCTION(BlueprintCallable)
-	void ReturnActorToPool(AActor* Actor);
+	void ReturnActorToPool(AActor* Actor, bool bLogDebug = false);
 
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE TArray<UClass*> GetPoolMapCurrentKeys() const
+	{
+		TArray<UClass*> Out;
+		PoolMap.GetKeys(Out);
+		return Out;
+	}
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE int32 GetPoolMapCurrentValueSize(UClass* Class) const
+	{
+		if (const FActorPool* ActorPool = PoolMap.Find(Class))
+		{
+			return ActorPool->ActorArray.Num();
+		}
+		return -1;
+	}
 private:
 	UPROPERTY()
 	TMap<UClass*, FActorPool> PoolMap;
