@@ -20,7 +20,8 @@ public class ECRCommon : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
-				"ApplicationCore"
+				"ApplicationCore",
+				"GameplayTags"
 			}
 		);
 	}

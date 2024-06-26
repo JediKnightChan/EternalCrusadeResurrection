@@ -148,7 +148,7 @@ void UECRAbilitySystemComponent::CancelAbilitiesByFunc(TShouldCancelAbilityFunc 
 
 void UECRAbilitySystemComponent::CancelInputActivatedAbilities(bool bReplicateCancelAbility)
 {
-	TShouldCancelAbilityFunc ShouldCancelFunc = [this](const UECRGameplayAbility* ECRAbility,
+	auto ShouldCancelFunc = [this](const UECRGameplayAbility* ECRAbility,
 	                                                   FGameplayAbilitySpecHandle Handle)
 	{
 		const EECRAbilityActivationPolicy ActivationPolicy = ECRAbility->GetActivationPolicy();
@@ -514,8 +514,7 @@ void UECRAbilitySystemComponent::CancelActivationGroupAbilities(EECRAbilityActiv
                                                                 UECRGameplayAbility* IgnoreECRAbility,
                                                                 bool bReplicateCancelAbility)
 {
-	TShouldCancelAbilityFunc ShouldCancelFunc = [this, Group, IgnoreECRAbility](
-		const UECRGameplayAbility* ECRAbility, FGameplayAbilitySpecHandle Handle)
+	auto ShouldCancelFunc = [this, Group, IgnoreECRAbility](const UECRGameplayAbility* ECRAbility, FGameplayAbilitySpecHandle Handle)
 	{
 		return ((ECRAbility->GetActivationGroup() == Group) && (ECRAbility != IgnoreECRAbility));
 	};

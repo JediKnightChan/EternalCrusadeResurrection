@@ -26,11 +26,15 @@ public:
 	// Sets default values for this component's properties
 	UCustomizationMaterialNameSpace();
 
-	FCustomizationMaterialNamespaceData GetMaterialCustomizationData(const FString NamespaceOverride = "") const;
+	FCustomizationMaterialNamespaceData GetMaterialCustomizationData(const FName NamespaceOverride = "") const;
 
 	/** Update child material parameters, pass non empty SlotNames array to limit material names that will be modified */
 	void static ApplyMaterialChanges(USceneComponent* ChildComponent, const TMap<FName, float>& GivenScalarParameters,
 	                                 const TMap<FName, FLinearColor>& GivenVectorParameters,
 	                                 const TMap<FName, UTexture*>& GivenTextureParameters,
 	                                 const TArray<FName> SlotNames);
+
+	/** Save CMA for this namespace */
+	UFUNCTION(CallInEditor, BlueprintCallable)
+	void SaveCMA();
 };

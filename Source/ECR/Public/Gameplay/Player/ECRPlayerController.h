@@ -8,6 +8,8 @@
 #include "Gameplay/Camera/ECRCameraAssistInterface.h"
 #include "ECRPlayerController.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMouseOrStickMoved, float, X, float, Y);
+
 class AECRPlayerState;
 class UECRAbilitySystemComponent;
 class APawn;
@@ -94,6 +96,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	TArray<AActor*> IgnoredCameraObstacles;
+	
+	UPROPERTY(BlueprintAssignable)
+	FMouseOrStickMoved MouseOrStickMovedEvent;
 private:
 	/** Interpolation speed when changing camera distance */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))

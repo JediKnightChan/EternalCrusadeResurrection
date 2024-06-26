@@ -21,9 +21,9 @@ public:
 	TArray<UCustomizationElementaryAsset*> ElementaryAssets;
 
 	/** Get contents of this asset as map for merging */
-	FORCEINLINE TMap<FString, UCustomizationElementaryAsset*> GetAssetsAsMap()
+	FORCEINLINE TMap<FName, UCustomizationElementaryAsset*> GetAssetsAsMap()
 	{
-		TMap<FString, UCustomizationElementaryAsset*> Result;
+		TMap<FName, UCustomizationElementaryAsset*> Result;
 		for (UCustomizationElementaryAsset* Asset : ElementaryAssets)
 		{
 			Result[Asset->ModuleName] = Asset;

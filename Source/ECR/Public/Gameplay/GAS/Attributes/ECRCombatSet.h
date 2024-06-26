@@ -35,6 +35,11 @@ class UECRCombatSet : public UECRAttributeSet
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData Armor;
 
+	// Spread multiplier for shooting
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_SpreadMultiplier, Category="Attributes",
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData SpreadMultiplier;
+
 protected:
 	UFUNCTION()
 	void OnRep_BaseDamage(const FGameplayAttributeData& OldValue) const;
@@ -47,6 +52,9 @@ protected:
 	
 	UFUNCTION()
 	void OnRep_Armor(const FGameplayAttributeData& OldValue) const;
+
+	UFUNCTION()
+	void OnRep_SpreadMultiplier(const FGameplayAttributeData& OldValue) const;
 public:
 	UECRCombatSet();
 
@@ -54,4 +62,5 @@ public:
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, BaseHeal);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, Toughness);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, Armor);
+	ATTRIBUTE_ACCESSORS(UECRCombatSet, SpreadMultiplier);
 };

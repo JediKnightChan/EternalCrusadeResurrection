@@ -17,6 +17,10 @@ class ECRCOMMON_API UCoreExtendingFunctionLibrary : public UBlueprintFunctionLib
 public:
 	// Sorting
 
+	/** Sort Unique Player Net IDs according to their integer parameter exposed as value in map - without changing original map */
+	UFUNCTION(BlueprintCallable)
+	static TMap<FUniqueNetIdRepl, int32> SortPlayersToIntMap(TMap<FUniqueNetIdRepl, int32> MapToSort);
+	
 	/** Sort UObjects according to their string parameter exposed as value in map - without changing original map */
 	UFUNCTION(BlueprintCallable)
 	static TMap<UObject*, FString> SortUObjectToStringMap(TMap<UObject*, FString> MapToSort);

@@ -1,10 +1,25 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "AsyncAction_CommonUserInitialize.h"
-#include "TimerManager.h"
 
-UAsyncAction_CommonUserInitialize* UAsyncAction_CommonUserInitialize::InitializeForLocalPlay(UCommonUserSubsystem* Target, int32 LocalPlayerIndex, int32 ControllerId, bool bCanUseGuestLogin)
+#include "Delegates/Delegate.h"
+#include "GenericPlatform/GenericPlatformInputDeviceMapper.h"
+#include "Internationalization/Internationalization.h"
+#include "Internationalization/Text.h"
+#include "Misc/AssertionMacros.h"
+#include "TimerManager.h"
+#include "UObject/WeakObjectPtr.h"
+
+#include UE_INLINE_GENERATED_CPP_BY_NAME(AsyncAction_CommonUserInitialize)
+
+UAsyncAction_CommonUserInitialize* UAsyncAction_CommonUserInitialize::InitializeForLocalPlay(UCommonUserSubsystem* Target, int32 LocalPlayerIndex, FInputDeviceId PrimaryInputDevice, bool bCanUseGuestLogin)
 {
+	if (!PrimaryInputDevice.IsValid())
+	{
+		// Set to default device
+		PrimaryInputDevice = IPlatformInputDeviceMapper::Get().GetDefaultInputDevice();
+	}
+
 	UAsyncAction_CommonUserInitialize* Action = NewObject<UAsyncAction_CommonUserInitialize>();
 
 	Action->RegisterWithGameInstance(Target);
@@ -15,7 +30,7 @@ UAsyncAction_CommonUserInitialize* UAsyncAction_CommonUserInitialize::Initialize
 		
 		Action->Params.RequestedPrivilege = ECommonUserPrivilege::CanPlay;
 		Action->Params.LocalPlayerIndex = LocalPlayerIndex;
-		Action->Params.ControllerId = ControllerId;
+		Action->Params.PrimaryInputDevice = PrimaryInputDevice;
 		Action->Params.bCanUseGuestLogin = bCanUseGuestLogin;
 		Action->Params.bCanCreateNewLocalPlayer = true;
 	}
@@ -92,3 +107,4 @@ void UAsyncAction_CommonUserInitialize::Activate()
 		SetReadyToDestroy();
 	}	
 }
+

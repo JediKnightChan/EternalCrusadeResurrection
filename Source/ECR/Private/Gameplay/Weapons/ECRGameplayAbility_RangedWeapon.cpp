@@ -14,6 +14,7 @@
 #include "Gameplay/GAS/ECRGameplayEffectContext.h"
 #include "Gameplay/GAS/ECRGameplayAbilityTargetData_SingleTargetHit.h"
 #include "DrawDebugHelpers.h"
+#include "Gameplay/ECRGameplayBlueprintLibrary.h"
 
 namespace ECRConsoleVariables
 {
@@ -44,34 +45,6 @@ namespace ECRConsoleVariables
 UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_WeaponFireBlocked, "Ability.Weapon.NoFiring");
 
 //////////////////////////////////////////////////////////////////////
-
-FVector VRandConeNormalDistribution(const FVector& Dir, const float ConeHalfAngleRad, const float Exponent)
-{
-	if (ConeHalfAngleRad > 0.f)
-	{
-		const float ConeHalfAngleDegrees = FMath::RadiansToDegrees(ConeHalfAngleRad);
-
-		// consider the cone a concatenation of two rotations. one "away" from the center line, and another "around" the circle
-		// apply the exponent to the away-from-center rotation. a larger exponent will cluster points more tightly around the center
-		const float FromCenter = FMath::Pow(FMath::FRand(), Exponent);
-		const float AngleFromCenter = FromCenter * ConeHalfAngleDegrees;
-		const float AngleAround = FMath::FRand() * 360.0f;
-
-		FRotator Rot = Dir.Rotation();
-		FQuat DirQuat(Rot);
-		FQuat FromCenterQuat(FRotator(0.0f, AngleFromCenter, 0.0f));
-		FQuat AroundQuat(FRotator(0.0f, 0.0, AngleAround));
-		FQuat FinalDirectionQuat = DirQuat * AroundQuat * FromCenterQuat;
-		FinalDirectionQuat.Normalize();
-
-		return FinalDirectionQuat.RotateVector(FVector::ForwardVector);
-	}
-	else
-	{
-		return Dir.GetSafeNormal();
-	}
-}
-
 
 UECRGameplayAbility_RangedWeapon::UECRGameplayAbility_RangedWeapon(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
@@ -469,7 +442,7 @@ void UECRGameplayAbility_RangedWeapon::TraceBulletsInCartridge(const FRangedWeap
 
 		const float HalfSpreadAngleInRadians = FMath::DegreesToRadians(ActualSpreadAngle * 0.5f);
 
-		const FVector BulletDir = VRandConeNormalDistribution(InputData.AimDir, HalfSpreadAngleInRadians,
+		const FVector BulletDir = UECRGameplayBlueprintLibrary::VRandConeNormalDistribution(InputData.AimDir, HalfSpreadAngleInRadians,
 		                                                      WeaponData->GetSpreadExponent());
 
 		const FVector EndTrace = InputData.StartTrace + (BulletDir * WeaponData->GetMaxDamageRange());

@@ -7,6 +7,48 @@
 #include "Customization/CustomizationElementaryAsset.h"
 
 
+TArray<UCustomizationElementaryAsset*> FCustomizationElementaryAssetsSelectionSet::SelectBestAsset(
+	const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const FCustomizationElementaryAssetsSelectionEntry& Rule : CeaRules)
+	{
+		if ((!Rule.Assets.IsEmpty()) && CosmeticTags.HasAll(Rule.RequiredTags))
+		{
+			return Rule.Assets;
+		}
+	}
+
+	return DefaultAssets;
+}
+
+TArray<UCustomizationMaterialAsset*> FCustomizationMaterialAssetsSelectionSet::SelectBestAsset(
+	const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const FCustomizationMaterialAssetsSelectionEntry& Rule : CmaRules)
+	{
+		if ((!Rule.Assets.IsEmpty()) && CosmeticTags.HasAll(Rule.RequiredTags))
+		{
+			return Rule.Assets;
+		}
+	}
+
+	return DefaultAssets;
+}
+
+TArray<UCustomizationAttachmentAsset*> FCustomizationAttachmentAssetsSelectionSet::SelectBestAsset(
+	const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const FCustomizationAttachmentAssetsSelectionEntry& Rule : CaaRules)
+	{
+		if ((!Rule.Assets.IsEmpty()) && CosmeticTags.HasAll(Rule.RequiredTags))
+		{
+			return Rule.Assets;
+		}
+	}
+
+	return DefaultAssets;
+}
+
 USkeletalMesh* UMeshMergeFunctionLibrary::MergeMeshes(const FSkeletalMeshMergeParams& Params)
 {
 	TArray<USkeletalMesh*> MeshesToMergeCopy = Params.MeshesToMerge;
@@ -46,7 +88,7 @@ USkeletalMesh* UMeshMergeFunctionLibrary::MergeMeshes(const FSkeletalMeshMergePa
 TArray<UCustomizationElementaryAsset*> UMeshMergeFunctionLibrary::MergeCustomizationElementaryAssets(
 	TArray<UCustomizationElementaryAsset*> Assets1, TArray<UCustomizationElementaryAsset*> Assets2)
 {
-	TMap<FString, UCustomizationElementaryAsset*> ResultMap;
+	TMap<FName, UCustomizationElementaryAsset*> ResultMap;
 	TArray<UCustomizationElementaryAsset*> ResultArray;
 
 	for (UCustomizationElementaryAsset* Asset : Assets1)
@@ -75,7 +117,7 @@ TArray<UCustomizationElementaryAsset*> UMeshMergeFunctionLibrary::MergeCustomiza
 TArray<UCustomizationMaterialAsset*> UMeshMergeFunctionLibrary::MergeCustomizationMaterialAssets(
 	TArray<UCustomizationMaterialAsset*> Materials1, TArray<UCustomizationMaterialAsset*> Materials2)
 {
-	TMap<FString, UCustomizationMaterialAsset*> ResultMap;
+	TMap<FName, UCustomizationMaterialAsset*> ResultMap;
 	TArray<UCustomizationMaterialAsset*> ResultArray;
 
 	for (UCustomizationMaterialAsset* Material : Materials1)
@@ -99,4 +141,22 @@ TArray<UCustomizationMaterialAsset*> UMeshMergeFunctionLibrary::MergeCustomizati
 	ResultMap.GenerateValueArray(ResultArray);
 
 	return ResultArray;
+}
+
+TArray<UCustomizationElementaryAsset*> UMeshMergeFunctionLibrary::SelectBestCeaArray(
+	const FCustomizationElementaryAssetsSelectionSet Set, FGameplayTagContainer CosmeticTags)
+{
+	return Set.SelectBestAsset(CosmeticTags);
+}
+
+TArray<UCustomizationMaterialAsset*> UMeshMergeFunctionLibrary::SelectBestCmaArray(
+	const FCustomizationMaterialAssetsSelectionSet Set, FGameplayTagContainer CosmeticTags)
+{
+	return Set.SelectBestAsset(CosmeticTags);
+}
+
+TArray<UCustomizationAttachmentAsset*> UMeshMergeFunctionLibrary::SelectBestCaaArray(
+	const FCustomizationAttachmentAssetsSelectionSet Set, FGameplayTagContainer CosmeticTags)
+{
+	return Set.SelectBestAsset(CosmeticTags);
 }

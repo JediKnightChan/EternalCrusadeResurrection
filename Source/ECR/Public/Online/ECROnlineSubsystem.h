@@ -161,6 +161,7 @@ class ECR_API UECROnlineSubsystem : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
 
+public:
 	/** Convert NetID to string */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static FString NetIdToString(FUniqueNetIdRepl NetId);

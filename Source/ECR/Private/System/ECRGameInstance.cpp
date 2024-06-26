@@ -9,11 +9,13 @@
 #include "OnlineSubsystem.h"
 #include "Algo/Accumulate.h"
 #include "Interfaces/OnlineIdentityInterface.h"
+#include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 
 UECRGameInstance::UECRGameInstance()
 {
-	bIsLoggedIn = false;
+	bDeprecatedIsLoggedIn = false;
 	OnlineSubsystem = IOnlineSubsystem::Get();
 }
 
@@ -75,7 +77,7 @@ void UECRGameInstance::Login(FString PlayerName, FString LoginType, FString Id, 
 void UECRGameInstance::OnLoginComplete(int32 LocalUserNum, const bool bWasSuccessful, const FUniqueNetId& UserId,
                                        const FString& Error)
 {
-	bIsLoggedIn = bWasSuccessful;
+	bDeprecatedIsLoggedIn = bWasSuccessful;
 
 	if (OnlineSubsystem)
 	{
@@ -112,14 +114,14 @@ void UECRGameInstance::OnLogoutComplete(int32 LocalUserNum, bool bWasSuccessful)
 	{
 		if (bWasSuccessful)
 		{
-			bIsLoggedIn = false;
+			bDeprecatedIsLoggedIn = false;
 			GUISupervisor->HandleLogoutSuccess();
-		} else
+		}
+		else
 		{
 			GUISupervisor->HandleLogoutFailure();
 		}
 	}
-	
 }
 
 
@@ -156,7 +158,7 @@ void UECRGameInstance::CreateMatch(const FString GameVersion, const FName ModeNa
 	else
 	{
 		// Check if logged in
-		if (!bIsLoggedIn)
+		if (!GetIsLoggedIn())
 		{
 			UE_LOG(LogECR, Error, TEXT("Attempt to create match, but not logged in!"));
 			return;
@@ -422,7 +424,7 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	SessionSettings.Set(SETTING_WEATHER_NAME, MatchCreationSettings.WeatherName.ToString(),
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_DAYTIME_NAME, MatchCreationSettings.DayTimeName.ToString(),
-						EOnlineDataAdvertisementType::ViaOnlineService);
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_REGION, MatchCreationSettings.Region.ToString(),
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
 
@@ -460,10 +462,37 @@ FString UECRGameInstance::GetPlayerNickname()
 	{
 		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
 		{
-			if (bIsLoggedIn)
-			{
-				return OnlineIdentityPtr->GetPlayerNickname(0);
-			}
+			return OnlineIdentityPtr->GetPlayerNickname(0);
+		}
+	}
+	return "";
+}
+
+bool UECRGameInstance::GetIsLoggedIn()
+{
+	return UKismetSystemLibrary::IsLoggedIn(GetPrimaryPlayerController());
+}
+
+FString UECRGameInstance::GetUserAccountID()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
+		{
+			const FUniqueNetIdPtr UniqueNetIdPtr = OnlineIdentityPtr->GetUniquePlayerId(0);
+			return UECROnlineSubsystem::NetIdToString(UniqueNetIdPtr);
+		}
+	}
+	return "";
+}
+
+FString UECRGameInstance::GetUserAuthToken()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
+		{
+			return OnlineIdentityPtr->GetAuthToken(0);
 		}
 	}
 	return "";

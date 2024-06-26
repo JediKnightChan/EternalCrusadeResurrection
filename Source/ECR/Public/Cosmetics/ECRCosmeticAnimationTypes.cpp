@@ -2,6 +2,19 @@
 
 #include "ECRCosmeticAnimationTypes.h"
 
+TSoftObjectPtr<UTexture2D> FECRSoftTexture2DSelectionSet::SelectBestTexture(const FGameplayTagContainer& CosmeticTags) const
+{
+	for (const FECRSoftTexture2DSelectionEntry& Rule : TextureRules)
+	{
+		if ((Rule.Texture != nullptr) && CosmeticTags.HasAll(Rule.RequiredTags))
+		{
+			return Rule.Texture;
+		}
+	}
+
+	return DefaultTexture;
+}
+
 TSubclassOf<UAnimInstance> FECRAnimLayerSelectionSet::SelectBestLayer(const FGameplayTagContainer& CosmeticTags) const
 {
 	for (const FECRAnimLayerSelectionEntry& Rule : LayerRules)

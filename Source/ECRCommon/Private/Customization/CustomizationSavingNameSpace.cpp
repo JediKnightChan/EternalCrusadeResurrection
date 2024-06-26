@@ -98,63 +98,94 @@ void UCustomizationSavingNameSpace::SaveMaterialCustomizationData(bool bDoOverwr
 {
 	for (auto [Namespace, CustomizationData] : MaterialCustomizationData)
 	{
-		// Getting direct children components
-		TArray<TObjectPtr<USceneComponent>> DirectChildren;
-		GetChildrenComponents(false, DirectChildren);
-
-		const FString DestinationFilename = UCustomizationUtilsLibrary::GetFilenameFromRelativePath(
-			CustomizationData.RelativeSavePath);
-		const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(
-			SaveDestinationRootDirectory, CustomizationData.RelativeSavePath);
-
-		// Return if invalid package path
-		if (CustomizationData.RelativeSavePath == "" || !FPackageName::IsValidLongPackageName(
-			SaveDestinationPackagePath))
-		{
-			UE_LOG(LogTemp, Error,
-			       TEXT("SaveDestinationRootDirectory of CustomizationSavingNameSpace and relative path property of"
-				       " materials namespace give invalid save package path: %s or "
-				       "one of them is empty string"), *(SaveDestinationPackagePath));
-			return;
-		}
-
-		// Return if overwriting disabled, but package already exists
-		if (!bDoOverwrite && FPackageName::DoesPackageExist(SaveDestinationPackagePath))
-		{
-			UE_LOG(LogTemp, Warning,
-			       TEXT("Package %s already exists and overwriting not requested, not saving"),
-			       *(SaveDestinationPackagePath));
-			continue;;
-		}
-
-		// Creating package for saving data
-		UPackage* NewPackage = CreatePackage(*SaveDestinationPackagePath);
-		UCustomizationMaterialAsset* DataAssetSave = NewObject<UCustomizationMaterialAsset>(
-			NewPackage, *DestinationFilename,
-			EObjectFlags::RF_Public |
-			EObjectFlags::RF_Standalone |
-			RF_MarkAsRootSet);
-
-		// Setting material namespace
-		DataAssetSave->MaterialNamespace = Namespace;
-
-		// Setting parameters
-		DataAssetSave->ScalarParameters = CustomizationData.ScalarParameters;
-		DataAssetSave->VectorParameters = CustomizationData.VectorParameters;
-		DataAssetSave->TextureParameters = CustomizationData.TextureParameters;
-
-
-		// Saving package
-		FString const PackageName = NewPackage->GetName();
-		FString const PackageFileName = FPackageName::LongPackageNameToFilename(
-			PackageName, FPackageName::GetAssetPackageExtension());
-
-		// NewPackage->SetDirtyFlag(true);
-		FAssetRegistryModule::AssetCreated(DataAssetSave);
-
-		FSavePackageArgs SavePackageArgs;
-		SavePackageArgs.TopLevelFlags = RF_Public | RF_Standalone;
-		SavePackageArgs.SaveFlags = SAVE_NoError;
-		UPackage::SavePackage(NewPackage, DataAssetSave, *PackageFileName, SavePackageArgs);
+		SaveCertainMaterialCustomizationData(Namespace, CustomizationData, bDoOverwrite);
 	}
+}
+
+void UCustomizationSavingNameSpace::SaveCertainMaterialCustomizationData(FName Namespace,
+                                                                         FCustomizationMaterialNamespaceData
+                                                                         CustomizationData, bool bDoOverwrite) const
+{
+	if (!AllowedMaterialNamespaces.Contains(Namespace))
+	{
+		UE_LOG(LogTemp, Error, TEXT("Namespace %s not allowed, it should be set in AllowedMaterialNamespaces!"),
+		       *(Namespace.ToString()))
+		return;
+	}
+
+	FString CmaGroupToUse = CmaGroup;
+	if (!CustomizationData.CmaGroupOverride.IsEmpty())
+	{
+		CmaGroupToUse = CustomizationData.CmaGroupOverride;
+	}
+
+	FString SaveDestinationRelFilepath = "/CMA/" + CmaGroupToUse + "/CMA_" + CmaGroupToUse + "_" + Namespace.ToString() + "_" +
+		CustomizationData.CmaName;
+
+	if (CmaGroupToUse.IsEmpty())
+	{
+		UE_LOG(LogTemp, Error, TEXT("CMA group is not specified (both base and override), exiting saving CMA"));
+		return;
+	}
+
+	if (CustomizationData.CmaName.IsEmpty())
+	{
+		UE_LOG(LogTemp, Warning,
+		       TEXT("CMA %s has no specified CmaName and won't be saved"), *(Namespace.ToString()));
+		return;
+	}
+
+	const FString DestinationFilename = UCustomizationUtilsLibrary::GetFilenameFromRelativePath(
+		SaveDestinationRelFilepath);
+	const FString SaveDestinationPackagePath = UCustomizationUtilsLibrary::GetFullSavePath(
+		SaveDestinationRootDirectory, SaveDestinationRelFilepath);
+
+	// Return if invalid package path
+	if (SaveDestinationRelFilepath == "" || !FPackageName::IsValidLongPackageName(
+		SaveDestinationPackagePath))
+	{
+		UE_LOG(LogTemp, Error,
+		       TEXT("SaveDestinationRootDirectory of CustomizationSavingNameSpace and relative path property of"
+			       " materials namespace give invalid save package path: %s or "
+			       "one of them is empty string"), *(SaveDestinationPackagePath));
+		return;
+	}
+
+	// Return if overwriting disabled, but package already exists
+	if (!bDoOverwrite && FPackageName::DoesPackageExist(SaveDestinationPackagePath))
+	{
+		UE_LOG(LogTemp, Warning,
+		       TEXT("Package %s already exists and overwriting not requested, not saving"),
+		       *(SaveDestinationPackagePath));
+		return;
+	}
+
+	// Creating package for saving data
+	UPackage* NewPackage = CreatePackage(*SaveDestinationPackagePath);
+	UCustomizationMaterialAsset* DataAssetSave = NewObject<UCustomizationMaterialAsset>(
+		NewPackage, *DestinationFilename,
+		EObjectFlags::RF_Public |
+		EObjectFlags::RF_Standalone |
+		RF_MarkAsRootSet);
+
+	// Setting material namespace
+	DataAssetSave->MaterialNamespace = Namespace;
+
+	// Setting parameters
+	DataAssetSave->ScalarParameters = CustomizationData.ScalarParameters;
+	DataAssetSave->VectorParameters = CustomizationData.VectorParameters;
+	DataAssetSave->TextureParameters = CustomizationData.TextureParameters;
+
+	// Saving package
+	FString const PackageName = NewPackage->GetName();
+	FString const PackageFileName = FPackageName::LongPackageNameToFilename(
+		PackageName, FPackageName::GetAssetPackageExtension());
+
+	// NewPackage->SetDirtyFlag(true);
+	FAssetRegistryModule::AssetCreated(DataAssetSave);
+
+	FSavePackageArgs SavePackageArgs;
+	SavePackageArgs.TopLevelFlags = RF_Public | RF_Standalone;
+	SavePackageArgs.SaveFlags = SAVE_NoError;
+	UPackage::SavePackage(NewPackage, DataAssetSave, *PackageFileName, SavePackageArgs);
 }

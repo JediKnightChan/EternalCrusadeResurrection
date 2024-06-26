@@ -10,6 +10,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/Camera/ECRCameraComponent.h"
+#include "Gameplay/GAS/Attributes/ECRCombatSet.h"
 #include "Net/UnrealNetwork.h"
 #include "Physics/PhysicalMaterialWithTags.h"
 
@@ -171,6 +172,17 @@ void UECRRangedWeaponInstance::GetLifetimeReplicatedProps(TArray<FLifetimeProper
 
 bool UECRRangedWeaponInstance::UpdateSpread(float DeltaSeconds)
 {
+	if (APawn* Pawn = GetPawn())
+	{
+		if (UAbilitySystemComponent* ASC = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(Pawn))
+		{
+			if (ASC->HasMatchingGameplayTag(FECRGameplayTags::Get().Status_NoWeaponHeatRemove))
+			{
+				UpdateFiringTime();
+			}
+		}
+	}
+
 	const float TimeSinceFired = GetWorld()->TimeSince(TimeLastFired);
 
 	if (TimeSinceFired > SpreadRecoveryCooldownDelay)
@@ -255,20 +267,38 @@ bool UECRRangedWeaponInstance::UpdateMultipliers(float DeltaSeconds)
 			BracingAlpha = 1.0f;
 		}
 	}
-	
+
 	const float BracingMultiplier = FMath::GetMappedRangeValueClamped(
 		/*InputRange=*/ FVector2D(0.0f, 1.0f),
-						/*OutputRange=*/ FVector2D(1.0f, SpreadAngleMultiplier_Bracing),
-						/*Alpha=*/ BracingAlpha);
+		                /*OutputRange=*/ FVector2D(1.0f, SpreadAngleMultiplier_Bracing),
+		                /*Alpha=*/ BracingAlpha);
 	const bool bBracingAlphaMultiplierAtTarget = FMath::IsNearlyEqual(BracingMultiplier, SpreadAngleMultiplier_Bracing,
-																KINDA_SMALL_NUMBER);
+	                                                                  KINDA_SMALL_NUMBER);
+
+	// Determine spread multiplier from ASC
+	float AscMultiplierTarget = 1.0f;
+	if (const UAbilitySystemComponent* ASC = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(Pawn))
+	{
+		if (const float NumericAttribute = ASC->GetNumericAttribute(UECRCombatSet::GetSpreadMultiplierAttribute()))
+		{
+			AscMultiplierTarget = NumericAttribute;
+		}
+	}
+
+	AscMultiplier = FMath::FInterpTo(AscMultiplier, AscMultiplierTarget, DeltaSeconds,
+	                                 TransitionRate_AscMultiplier);
+	const bool bAscMultiplierLessThan1 = AscMultiplier <= 1.0f + KINDA_SMALL_NUMBER;
+
 
 	// Combine all the multipliers
 	const float CombinedMultiplier = AimingMultiplier * StandingStillMultiplier * CrouchingMultiplier *
-		JumpFallMultiplier * BracingMultiplier;
-	CurrentSpreadAngleMultiplier = CombinedMultiplier;
+		JumpFallMultiplier * BracingMultiplier * AscMultiplier;
+
+	// Clamping spread angle multiplier
+	CurrentSpreadAngleMultiplier = FMath::Clamp(CombinedMultiplier, SpreadAngleMultiplier_Min,
+	                                            SpreadAngleMultiplier_Max);
 
 	// need to handle these spread multipliers indicating we are not at min spread
 	return bStandingStillMultiplierAtMin && bCrouchingMultiplierAtTarget && bJumpFallMultiplerIs1 &&
-		bAimingMultiplierAtTarget && bBracingAlphaMultiplierAtTarget;
+		bAimingMultiplierAtTarget && bBracingAlphaMultiplierAtTarget && bAscMultiplierLessThan1;
 }

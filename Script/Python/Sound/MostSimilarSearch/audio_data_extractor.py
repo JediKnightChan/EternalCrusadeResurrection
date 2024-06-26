@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 
 ROOT_DIR = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/Sound/Files/Windows/"
-SNB_DIR = os.path.join(ROOT_DIR, "SNB_FleshBorer_TYR")
+SNB_DIR = os.path.join(ROOT_DIR, "SNB_ChainSword_IM")
 AUDIO_DIRECTORY = SNB_DIR
 AUDIO_DATAFILE = os.path.join(SNB_DIR, "audio_data.pickle")
 

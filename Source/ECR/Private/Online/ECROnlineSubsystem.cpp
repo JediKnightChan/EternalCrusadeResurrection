@@ -46,6 +46,9 @@ FECRMatchResult::FECRMatchResult(const FBlueprintSessionResult BlueprintSessionI
 
 FECRMatchSettings::FECRMatchSettings()
 {
+	MatchStartedTime = 0.0f;
+	TimeDelta = 0.0f;
+	CurrentPlayerAmount = 0;
 }
 
 

@@ -9,6 +9,7 @@
 #include "Customization/CustomizationMaterialNameSpace.h"
 #include "CustomizationUtilsLibrary.h"
 #include "MeshMergeFunctionLibrary.h"
+#include "Customization/CustomizationAttachmentAsset.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 
@@ -17,6 +18,7 @@ UCustomizationLoaderComponent::UCustomizationLoaderComponent()
 	bInheritParentAnimations = true;
 	bUseParentSkeleton = true;
 	bLoadOnBeginPlay = false;
+	bDebugLoading = false;
 }
 
 void UCustomizationLoaderComponent::BeginPlay()
@@ -24,7 +26,9 @@ void UCustomizationLoaderComponent::BeginPlay()
 	Super::BeginPlay();
 	if (bLoadOnBeginPlay)
 	{
-		LoadFromAsset({}, {});
+		TMap<UCustomizationElementaryAsset*, FCustomizationMaterialAssetMap> NewMaterialConfigsOverrides = {};
+		TMap<UCustomizationElementaryAsset*, FCustomizationAttachmentAssetArray> NewExternalAttachments = {};
+		LoadFromAsset({}, {}, NewMaterialConfigsOverrides, NewExternalAttachments);
 	}
 }
 
@@ -35,11 +39,14 @@ SceneComponentClass* UCustomizationLoaderComponent::SpawnChildComponent(USkeleta
                                                                         const FTransform RelativeTransform)
 {
 	SceneComponentClass* ChildComponent = NewObject<SceneComponentClass>(
-		Component, SceneComponentClass::StaticClass(), FName{Name});
+		Component, SceneComponentClass::StaticClass(), NAME_None);
+
+	// Don't tick every frame customization component
+	ChildComponent->SetComponentTickInterval(1.0f);
 
 	ChildComponent->RegisterComponent();
 	ChildComponent->SetRelativeTransform(RelativeTransform);
-	if (SocketName != "" && SocketName != "None")
+	if (!SocketName.IsNone())
 	{
 		ChildComponent->AttachToComponent(Component, FAttachmentTransformRules::KeepRelativeTransform,
 		                                  SocketName);
@@ -56,35 +63,17 @@ SceneComponentClass* UCustomizationLoaderComponent::SpawnChildComponent(USkeleta
 
 
 void UCustomizationLoaderComponent::LoadFromAsset(TArray<UCustomizationElementaryAsset*> NewElementaryAssets,
-                                                  TArray<UCustomizationMaterialAsset*> NewMaterialConfigs)
+                                                  TArray<UCustomizationMaterialAsset*> NewMaterialConfigs,
+                                                  const TMap<UCustomizationElementaryAsset*,
+                                                             FCustomizationMaterialAssetMap>&
+                                                  NewMaterialConfigsOverrides,
+                                                  const TMap<UCustomizationElementaryAsset*,
+                                                             FCustomizationAttachmentAssetArray>&
+                                                  NewExternalAttachments)
 {
 	// Setting new elementary assets if passed or old from config
-	TArray<UCustomizationElementaryAsset*> ElementaryAssets;
-	if (!NewElementaryAssets.IsEmpty())
-	{
-		ElementaryAssets = NewElementaryAssets;
-	}
-	else
-	{
-		// Use elementary assets from asset config
-		if (AssetConfig == nullptr)
-		{
-			UE_LOG(LogTemp, Warning,
-			       TEXT("AssetConfig of CustomizationLoaderComponent %s is not specified, but tried to load it. "
-				       "Stopping loading it"),
-			       *(UKismetSystemLibrary::GetDisplayName(this)))
-			return;
-		}
-		AssetConfig->GetAssetsAsMap().GenerateValueArray(ElementaryAssets);
-	}
 
-	// Setting materials if overriden
-	if (!NewMaterialConfigs.IsEmpty())
-	{
-		MaterialConfigs = NewMaterialConfigs;
-	}
-
-	TMap<FString, TArray<UCustomizationElementaryAsset*>> MergeNamespaceToModules;
+	TMap<FName, TArray<UCustomizationElementaryAsset*>> MergeNamespaceToModules;
 	TMap<FName, TArray<UCustomizationElementaryAsset*>> AttachSocketNameToModules;
 
 	// Retrieving first parent skeletal mesh: for attaching created components to it
@@ -99,8 +88,8 @@ void UCustomizationLoaderComponent::LoadFromAsset(TArray<UCustomizationElementar
 	}
 
 	// Material namespace data
-	TMap<FString, UCustomizationMaterialAsset*> MaterialNamespacesToData;
-	for (UCustomizationMaterialAsset* Config : MaterialConfigs)
+	TMap<FName, UCustomizationMaterialAsset*> MaterialNamespacesToData = {};
+	for (UCustomizationMaterialAsset* Config : NewMaterialConfigs)
 	{
 		if (!Config)
 		{
@@ -111,40 +100,54 @@ void UCustomizationLoaderComponent::LoadFromAsset(TArray<UCustomizationElementar
 		MaterialNamespacesToData.Add(Config->MaterialNamespace, Config);
 	}
 
+	if (bDebugLoading)
+	{
+		UE_LOG(LogTemp, Display, TEXT("DEBUG: CLC STARTING LOAD"))
+	}
+
 	// Fill array of modules for attachment and merge 
-	for (UCustomizationElementaryAsset* ElementaryAsset : ElementaryAssets)
+	for (UCustomizationElementaryAsset* ElementaryAsset : NewElementaryAssets)
 	{
 		if (!ElementaryAsset)
 		{
-			if (NewElementaryAssets.IsEmpty())
-			{
-				UE_LOG(LogAssetData, Warning, TEXT("Elementary asset is null in %s"), *(GetNameSafe(AssetConfig)));
-			}
 			continue;
 		}
 
-		if (ElementaryAsset->MeshMergeNamespace != "")
+		if (!ElementaryAsset->MeshMergeNamespace.IsNone() && NewMaterialConfigsOverrides.FindRef(ElementaryAsset).Map.
+			IsEmpty())
 		{
+			if (bDebugLoading)
+			{
+				UE_LOG(LogTemp, Display, TEXT("DEBUG: Adding CEA %s to merger namespace %s"),
+				       *(GetNameSafe(ElementaryAsset)),
+				       *(ElementaryAsset->MeshMergeNamespace.ToString()))
+			}
 			MergeNamespaceToModules.FindOrAdd(ElementaryAsset->MeshMergeNamespace).Add(ElementaryAsset);
 		}
 		else
 		{
+			if (bDebugLoading)
+			{
+				UE_LOG(LogTemp, Display, TEXT("DEBUG: Adding CEA %s as separate asset"),
+				       *(GetNameSafe(ElementaryAsset)))
+			}
 			AttachSocketNameToModules.FindOrAdd(ElementaryAsset->ParentAttachName).Add(ElementaryAsset);
 		}
 	}
 
 	// Processing mesh merges
-	for (TTuple<FString, TArray<UCustomizationElementaryAsset*>>& MergeNamespaceAndModule : MergeNamespaceToModules)
+	for (TTuple<FName, TArray<UCustomizationElementaryAsset*>>& MergeNamespaceAndModule : MergeNamespaceToModules)
 	{
 		ProcessMeshMergeModule(MergeNamespaceAndModule.Key, MergeNamespaceAndModule.Value, SkeletalMeshParentComponent,
-		                       MaterialNamespacesToData);
+		                       MaterialNamespacesToData, NewExternalAttachments);
 	}
 
 	// Processing mesh attaches
 	for (TTuple<FName, TArray<UCustomizationElementaryAsset*>> AttachSocketNameAndModule : AttachSocketNameToModules)
 	{
 		ProcessAttachmentModule(AttachSocketNameAndModule.Key, AttachSocketNameAndModule.Value,
-		                        SkeletalMeshParentComponent, MaterialNamespacesToData);
+		                        SkeletalMeshParentComponent, MaterialNamespacesToData, NewMaterialConfigsOverrides,
+		                        NewExternalAttachments);
 	}
 }
 
@@ -165,7 +168,7 @@ template <class ComponentClass>
 FName UCustomizationLoaderComponent::GetExistingSocketNameOrNameNone(const ComponentClass* Component,
                                                                      FName SocketName)
 {
-	if (SocketName == "" || SocketName == NAME_None)
+	if (SocketName.IsNone())
 	{
 		SocketName = NAME_None;
 	}
@@ -183,7 +186,7 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
 	                                                                        FCustomizationElementarySubmoduleSkeletal>&
                                                                         MeshesForAttach,
                                                                         const FString NameEnding,
-                                                                        TMap<FString, UCustomizationMaterialAsset*>&
+                                                                        TMap<FName, UCustomizationMaterialAsset*>&
                                                                         MaterialNamespacesToData)
 {
 	// Attaching skeletal meshes to sockets
@@ -192,7 +195,7 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
 	{
 		SocketName = GetExistingSocketNameOrNameNone(Component, SocketName);
 		USkeletalMeshComponent* SkeletalMeshComponent = SpawnChildComponent<USkeletalMeshComponent>(
-			Component, NameEnding + SocketName.ToString(),
+			Component, "",
 			SocketName, SocketTransform);
 		SkeletalMeshComponent->SetSkeletalMesh(SkeletalMesh);
 
@@ -204,7 +207,7 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
 		TArray<FName> MaterialSlotNames = SkeletalMeshComponent->GetMaterialSlotNames();
 		for (auto SlotName : MaterialSlotNames)
 		{
-			FString CustomizationNamespace = DefaultCustomizationNamespace;
+			FName CustomizationNamespace = DefaultCustomizationNamespace;
 			if (SlotNamesToNamespaces.Contains(SlotName))
 			{
 				CustomizationNamespace = SlotNamesToNamespaces[SlotName];
@@ -213,10 +216,24 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
 			if (MaterialNamespacesToData.Contains(CustomizationNamespace))
 			{
 				const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
+				if (bDebugLoading)
+				{
+					UE_LOG(LogTemp, Display, TEXT("DEBUG: Skeletal attach (%s): setting slot %s to namespace %s, CMA %s"),
+					       *(GetNameSafe(SkeletalMesh)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()), *(GetNameSafe(MaterialData)))
+				}
+
 				UCustomizationMaterialNameSpace::ApplyMaterialChanges(SkeletalMeshComponent,
 				                                                      MaterialData->ScalarParameters,
 				                                                      MaterialData->VectorParameters,
 				                                                      MaterialData->TextureParameters, {SlotName});
+			} else
+			{
+				if (bDebugLoading)
+				{
+					UE_LOG(LogTemp, Display, TEXT("DEBUG: Skeletal attach (%s): FAILURE setting slot %s to namespace %s, missing on dict with length %d"),
+						   *(GetNameSafe(SkeletalMesh)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()),
+						   MaterialNamespacesToData.Num())
+				}
 			}
 		}
 	}
@@ -227,7 +244,7 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
 	                                                                      FCustomizationElementarySubmoduleStatic>&
                                                                       MeshesForAttach,
                                                                       const FString NameEnding,
-                                                                      TMap<FString, UCustomizationMaterialAsset*>&
+                                                                      TMap<FName, UCustomizationMaterialAsset*>&
                                                                       MaterialNamespacesToData)
 {
 	// Attaching skeletal meshes to sockets
@@ -236,7 +253,7 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
 	{
 		SocketName = GetExistingSocketNameOrNameNone(Component, SocketName);
 		UStaticMeshComponent* StaticMeshComponent = SpawnChildComponent<UStaticMeshComponent>(
-			Component, NameEnding + SocketName.ToString(),
+			Component, "",
 			SocketName, SocketTransform);
 		StaticMeshComponent->SetStaticMesh(StaticMesh);
 
@@ -248,7 +265,7 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
 		TArray<FName> MaterialSlotNames = StaticMeshComponent->GetMaterialSlotNames();
 		for (auto SlotName : MaterialSlotNames)
 		{
-			FString CustomizationNamespace = DefaultCustomizationNamespace;
+			FName CustomizationNamespace = DefaultCustomizationNamespace;
 			if (SlotNamesToNamespaces.Contains(SlotName))
 			{
 				CustomizationNamespace = SlotNamesToNamespaces[SlotName];
@@ -258,27 +275,44 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
 			if (MaterialNamespacesToData.Contains(CustomizationNamespace))
 			{
 				const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
+				if (bDebugLoading)
+				{
+					UE_LOG(LogTemp, Display, TEXT("DEBUG: Static attach (%s): setting slot %s to namespace %s, CMA %s"),
+					       *(GetNameSafe(StaticMesh)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()),
+					       *(GetNameSafe(MaterialData)))
+				}
 				UCustomizationMaterialNameSpace::ApplyMaterialChanges(StaticMeshComponent,
 				                                                      MaterialData->ScalarParameters,
 				                                                      MaterialData->VectorParameters,
 				                                                      MaterialData->TextureParameters, {SlotName});
+			} else
+			{
+				if (bDebugLoading)
+				{
+					UE_LOG(LogTemp, Display, TEXT("DEBUG: Static attach (%s): FAILURE setting slot %s to namespace %s, missing on dict with length %d"),
+						   *(GetNameSafe(StaticMesh)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()),
+						   MaterialNamespacesToData.Num())
+				}
 			}
 		}
 	}
 }
 
 
-void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespace,
+void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FName Namespace,
                                                            TArray<UCustomizationElementaryAsset*>&
                                                            NamespaceAssets,
                                                            USkeletalMeshComponent* SkeletalMeshParentComponent,
-                                                           TMap<FString, UCustomizationMaterialAsset*>&
-                                                           MaterialNamespacesToData)
+                                                           TMap<FName, UCustomizationMaterialAsset*>&
+                                                           MaterialNamespacesToData,
+                                                           const TMap<UCustomizationElementaryAsset*,
+                                                                      FCustomizationAttachmentAssetArray>&
+                                                           NewExternalAttachments)
 {
 	TArray<USkeletalMesh*> MeshesForMerge;
 	TArray<FCustomizationElementarySubmoduleStatic> StaticMeshesForAttach;
 	TArray<FCustomizationElementarySubmoduleSkeletal> SkeletalMeshesForAttach;
-	TMap<FString, TArray<FName>> MaterialNamespacesToSlotNames;
+	TMap<FName, TArray<FName>> MaterialNamespacesToSlotNames;
 
 	for (const UCustomizationElementaryAsset* ElementaryAsset : NamespaceAssets)
 	{
@@ -287,7 +321,7 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 			MeshesForMerge.AddUnique(ElementaryAsset->BaseSkeletalMesh);
 		}
 
-		if (ElementaryAsset->MaterialCustomizationNamespace != "")
+		if (!ElementaryAsset->MaterialCustomizationNamespace.IsNone())
 		{
 			TArray<FName> NotOverridenSlotNames;
 			for (auto SlotName : ElementaryAsset->MaterialCustomizationSlotNames)
@@ -309,6 +343,19 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 
 		StaticMeshesForAttach.Append(ElementaryAsset->StaticAttachments);
 		SkeletalMeshesForAttach.Append(ElementaryAsset->SkeletalAttachments);
+
+		FCustomizationAttachmentAssetArray CAAArray = NewExternalAttachments.FindRef(ElementaryAsset);
+		if (!CAAArray.Array.IsEmpty())
+		{
+			for (UCustomizationAttachmentAsset* AttachmentAsset : CAAArray.Array)
+			{
+				if (AttachmentAsset)
+				{
+					StaticMeshesForAttach.Append(AttachmentAsset->StaticAttachments);
+					SkeletalMeshesForAttach.Append(AttachmentAsset->SkeletalAttachments);
+				}
+			}
+		}
 	}
 
 	USkeletalMesh* MergedSkeletalMesh = nullptr;
@@ -336,7 +383,7 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 
 	// Creating child component for merged mesh and setting merged mesh as its mesh
 	USkeletalMeshComponent* ChildComponent = SpawnChildComponent<USkeletalMeshComponent>(
-		SkeletalMeshParentComponent, Namespace);
+		SkeletalMeshParentComponent, "");
 	ChildComponent->SetSkeletalMesh(MergedSkeletalMesh);
 
 	if (!CollisionProfileName.IsNone())
@@ -353,10 +400,19 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 	}
 
 	// Applying materials
-	for (TTuple<FString, TArray<FName>> MaterialNamespaceAndSlotNames : MaterialNamespacesToSlotNames)
+	for (TTuple<FName, TArray<FName>> MaterialNamespaceAndSlotNames : MaterialNamespacesToSlotNames)
 	{
 		if (MaterialNamespacesToData.Contains(MaterialNamespaceAndSlotNames.Key))
 		{
+			if (bDebugLoading)
+			{
+				for (FName SlotName : MaterialNamespaceAndSlotNames.Value)
+				{
+					UE_LOG(LogTemp, Display, TEXT("DEBUG: Mesh merge: Setting slot %s to namespace %s"),
+					       *(SlotName.ToString()), *(MaterialNamespaceAndSlotNames.Key.ToString()))
+				}
+			}
+
 			const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[MaterialNamespaceAndSlotNames.
 				Key];
 			UCustomizationMaterialNameSpace::ApplyMaterialChanges(ChildComponent, MaterialData->ScalarParameters,
@@ -367,18 +423,24 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FString Namespa
 	}
 
 	// Process attaching static meshes to child component
-	ProcessStaticAttachesForComponent(ChildComponent, StaticMeshesForAttach, Namespace, MaterialNamespacesToData);
+	ProcessStaticAttachesForComponent(ChildComponent, StaticMeshesForAttach, "", MaterialNamespacesToData);
 
 	// Process attaching skeletal meshes to child component
-	ProcessSkeletalAttachesForComponent(ChildComponent, SkeletalMeshesForAttach, Namespace, MaterialNamespacesToData);
+	ProcessSkeletalAttachesForComponent(ChildComponent, SkeletalMeshesForAttach, "", MaterialNamespacesToData);
 }
 
 
 void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
                                                             TArray<UCustomizationElementaryAsset*>& SocketNameAssets,
                                                             USkeletalMeshComponent* SkeletalMeshParentComponent,
-                                                            TMap<FString, UCustomizationMaterialAsset*>&
-                                                            MaterialNamespacesToData)
+                                                            TMap<FName, UCustomizationMaterialAsset*>&
+                                                            MaterialNamespacesToData,
+                                                            const TMap<UCustomizationElementaryAsset*,
+                                                                       FCustomizationMaterialAssetMap>&
+                                                            NewMaterialConfigsOverrides,
+                                                            const TMap<UCustomizationElementaryAsset*,
+                                                                       FCustomizationAttachmentAssetArray>&
+                                                            NewExternalAttachments)
 {
 	for (const UCustomizationElementaryAsset* Asset : SocketNameAssets)
 	{
@@ -407,37 +469,83 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 		TArray<FName> MaterialSlotNames = ChildComponent->GetMaterialSlotNames();
 		for (auto SlotName : MaterialSlotNames)
 		{
-			if (MaterialNamespacesToData.Contains(Asset->MaterialCustomizationNamespace))
+			FName CustomizationNamespace = Asset->MaterialCustomizationNamespace;
+			if (Asset->SlotNamesToMaterialNamespaceOverrides.Contains(SlotName))
 			{
-				FString CustomizationNamespace = Asset->MaterialCustomizationNamespace;
-				if (Asset->SlotNamesToMaterialNamespaceOverrides.Contains(SlotName))
-				{
-					CustomizationNamespace = Asset->SlotNamesToMaterialNamespaceOverrides[SlotName];
-				}
+				CustomizationNamespace = Asset->SlotNamesToMaterialNamespaceOverrides[SlotName];
+			}
 
-				if (MaterialNamespacesToData.Contains(CustomizationNamespace))
+			if (bDebugLoading)
+			{
+				UE_LOG(LogTemp, Display, TEXT("DEBUG: CEA attachment (%s): setting slot %s to namespace %s"),
+				       *(GetNameSafe(Asset)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()))
+			}
+
+			const UCustomizationMaterialAsset* MaterialData = nullptr;
+			if (NewMaterialConfigsOverrides.FindRef(Asset).Map.Contains(CustomizationNamespace))
+			{
+				MaterialData = NewMaterialConfigsOverrides.FindRef(Asset).Map[CustomizationNamespace];
+				if (bDebugLoading)
 				{
-					const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
-					UCustomizationMaterialNameSpace::ApplyMaterialChanges(
-						ChildComponent, MaterialData->ScalarParameters,
-						MaterialData->VectorParameters,
-						MaterialData->TextureParameters, {SlotName});
-				}
-				else
-				{
-					UE_LOG(LogTemp, Warning, TEXT("Couldn't find material namespace %s for %s"),
-					       *CustomizationNamespace,
-					       *(UKismetSystemLibrary::GetDisplayName(this)))
+					UE_LOG(LogTemp, Display, TEXT("DEBUG: CEA attachment (%s): using overriden CMA %s"),
+					       *(GetNameSafe(Asset)), *(GetNameSafe(MaterialData)))
 				}
 			}
+			else if (MaterialNamespacesToData.Contains(CustomizationNamespace))
+			{
+				MaterialData = MaterialNamespacesToData[CustomizationNamespace];
+				if (bDebugLoading)
+				{
+					UE_LOG(LogTemp, Display, TEXT("DEBUG: CEA attachment (%s): using default CMA %s"),
+					       *(GetNameSafe(Asset)), *(GetNameSafe(MaterialData)))
+				}
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Couldn't find material namespace %s for %s"),
+				       *(CustomizationNamespace.ToString()),
+				       *(UKismetSystemLibrary::GetDisplayName(this)))
+			}
+
+			if (MaterialData)
+			{
+				UCustomizationMaterialNameSpace::ApplyMaterialChanges(
+					ChildComponent, MaterialData->ScalarParameters,
+					MaterialData->VectorParameters,
+					MaterialData->TextureParameters, {SlotName});
+			}
+		}
+
+		TMap<FName, UCustomizationMaterialAsset*> OverridenMaterialNamespacesToData = MaterialNamespacesToData;
+		// Overriding material data with override map
+		for (TTuple<FName, UCustomizationMaterialAsset*> MaterialOverrideTuple : NewMaterialConfigsOverrides.
+		     FindRef(Asset).Map)
+		{
+			OverridenMaterialNamespacesToData.Add(MaterialOverrideTuple.Key, MaterialOverrideTuple.Value);
 		}
 
 		// Process attaching static meshes to child component
 		ProcessStaticAttachesForComponent(ChildComponent, Asset->StaticAttachments, Namespace,
-		                                  MaterialNamespacesToData);
+		                                  OverridenMaterialNamespacesToData);
 
 		// Process attaching skeletal meshes to child component
 		ProcessSkeletalAttachesForComponent(ChildComponent, Asset->SkeletalAttachments, Namespace,
-		                                    MaterialNamespacesToData);
+		                                    OverridenMaterialNamespacesToData);
+
+		// Process external attachments (CAAs)
+		FCustomizationAttachmentAssetArray CustomizationAttachmentAssetArray = NewExternalAttachments.FindRef(Asset);
+		if (!CustomizationAttachmentAssetArray.Array.IsEmpty())
+		{
+			for (UCustomizationAttachmentAsset* CAA : CustomizationAttachmentAssetArray.Array)
+			{
+				if (CAA)
+				{
+					ProcessStaticAttachesForComponent(ChildComponent, CAA->StaticAttachments, Namespace,
+					                                  OverridenMaterialNamespacesToData);
+					ProcessSkeletalAttachesForComponent(ChildComponent, CAA->SkeletalAttachments, Namespace,
+					                                    OverridenMaterialNamespacesToData);
+				}
+			}
+		}
 	}
 }

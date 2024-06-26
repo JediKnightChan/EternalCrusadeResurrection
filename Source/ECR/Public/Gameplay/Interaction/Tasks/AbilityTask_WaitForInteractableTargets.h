@@ -21,6 +21,8 @@ class UGameplayAbility;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInteractableObjectsChangedEvent, const TArray<FInteractionOption>&,
                                             InteractableOptions);
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDebugStringChangedEvent);
+
 UCLASS(Abstract)
 class UAbilityTask_WaitForInteractableTargets : public UAbilityTask
 {
@@ -29,6 +31,9 @@ class UAbilityTask_WaitForInteractableTargets : public UAbilityTask
 public:
 	UPROPERTY(BlueprintAssignable)
 	FInteractableObjectsChangedEvent InteractableObjectsChanged;
+
+	UPROPERTY(BlueprintAssignable)
+	FDebugStringChangedEvent GrantingDebugStringChanged;
 
 protected:
 	void LineOrSweepTrace(FHitResult& OutHitResult, const UWorld* World, const FVector& Start, const FVector& End,
@@ -59,6 +64,9 @@ protected:
 
 private:
 	TMap<FObjectKey, FGameplayAbilitySpecHandle> ServerInteractionAbilityCache;
-	TMap<FGameplayAbilitySpecHandle, FObjectKey> AbilitiesToRemove;
-	TArray<FInteractionOption> LastUpdateOptions;
+
+	TArray<FInteractionOption> OwnerLastUpdateOptions;
+
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess=true))
+	FString GrantingDebugString;
 };

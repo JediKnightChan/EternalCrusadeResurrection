@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "Customization/CustomizationMaterialAsset.h"
 #include "CustomizationElementaryAsset.generated.h"
 
 
@@ -27,11 +28,11 @@ struct ECRCOMMON_API FCustomizationElementarySubmoduleStatic
 
 	/** Default customization namespace */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString CustomizationNamespace;
+	FName CustomizationNamespace;
 
 	/** Overrides of material namespace for concise slot names */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	TMap<FName, FString> SlotNamesToMaterialNamespaceOverrides;
+	TMap<FName, FName> SlotNamesToMaterialNamespaceOverrides;
 };
 
 
@@ -55,11 +56,11 @@ struct ECRCOMMON_API FCustomizationElementarySubmoduleSkeletal
 
 	/** Default customization namespace */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString CustomizationNamespace;
+	FName CustomizationNamespace;
 
 	/** Overrides of material namespace for concise slot names */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	TMap<FName, FString> SlotNamesToMaterialNamespaceOverrides;
+	TMap<FName, FName> SlotNamesToMaterialNamespaceOverrides;
 };
 
 
@@ -73,7 +74,7 @@ class ECRCOMMON_API UCustomizationElementaryAsset : public UPrimaryDataAsset
 
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
-	FString ModuleName;
+	FName ModuleName;
 
 	/** The base of this module - Skeletal mesh */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
@@ -85,11 +86,11 @@ public:
 
 	/** Namespace shared between modules that require to be merged together */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	FString MeshMergeNamespace;
+	FName MeshMergeNamespace;
 
 	/** Namespace shared between modules that require to be merged together */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	FString MaterialCustomizationNamespace;
+	FName MaterialCustomizationNamespace;
 
 	/** Slot names that will be used for applying materials if this mesh is going to be merged with others */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
@@ -97,7 +98,7 @@ public:
 
 	/** Overrides of material namespace for concise slot names */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	TMap<FName, FString> SlotNamesToMaterialNamespaceOverrides;
+	TMap<FName, FName> SlotNamesToMaterialNamespaceOverrides;
 	
 	/** Array of static attachments */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))

@@ -15,7 +15,8 @@ struct ECRCOMMON_API FCustomizationMaterialNamespaceData
 
 	FCustomizationMaterialNamespaceData()
 	{
-		RelativeSavePath = "";
+		CmaName = "";
+		CmaGroupOverride = "";
 		ScalarParameters = {};
 		VectorParameters = {};
 		TextureParameters = {};
@@ -27,9 +28,13 @@ struct ECRCOMMON_API FCustomizationMaterialNamespaceData
 		return (ScalarParameters.Num() == 0 && VectorParameters.Num() == 0 && TextureParameters.Num() == 0);
 	}
 
-	/** Relative path in CustomizationSavingNameSpace root directory to save asset to */
+	/** CMA instance name, eg MKVII (will appear in the end of the filename after save) */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
-	FString RelativeSavePath;
+	FString CmaName;
+
+	/** CMA group instance name override, eg Ultramarines */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	FString CmaGroupOverride;
 
 	/** Map of Scalar Material Parameter Name to its Value */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
@@ -62,22 +67,34 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString SaveDestinationRootDirectory;
 
+	/* Group of CMA assets (eg Ultramarines) */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FString CmaGroup;
+
 	/** Save destination filename for CLA asset (will be placed into <SaveDestinationRootDirectory>/CLA/ folder).
 	 *  Leave empty if you don't need to save loadout */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString SaveDestinationFilename;
 
+	/** This limits allowed namespaces for CMA */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TMap<FString, FCustomizationMaterialNamespaceData> MaterialCustomizationData;
+	TArray<FName> AllowedMaterialNamespaces;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TMap<FName, FCustomizationMaterialNamespaceData> MaterialCustomizationData;
 
 	/** This will be added to Elementary Module asset name (CEA_<CommonModuleNaming>_<ModuleName>).
 	 *  You can override it for specific modules in ModuleNamingMapping  */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString CommonModuleNaming;
 
+	/** This limits allowed CEA modules */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TArray<FName> AllowedModuleNames;
+
 	/** Overrides CommonModuleNaming for specific modules */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TMap<FString, FString> ModuleNamingMapping;
+	TMap<FName, FString> ModuleNamingMapping;
 
 	/** Save every child CustomizationElementaryModule, skipping if it already exists,
 	 * and produce CustomizationLoaderAsset */
@@ -85,4 +102,7 @@ public:
 	void SaveLoadoutSkippingExistingModules();
 
 	void SaveMaterialCustomizationData(bool bDoOverwrite) const;
+
+	void SaveCertainMaterialCustomizationData(FName Namespace, FCustomizationMaterialNamespaceData CustomizationData,
+	                                          bool bDoOverwrite) const;
 };

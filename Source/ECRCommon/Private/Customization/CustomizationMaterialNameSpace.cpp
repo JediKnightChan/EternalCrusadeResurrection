@@ -21,7 +21,7 @@ UCustomizationMaterialNameSpace::UCustomizationMaterialNameSpace()
 
 
 FCustomizationMaterialNamespaceData UCustomizationMaterialNameSpace::GetMaterialCustomizationData(
-	const FString NamespaceOverride) const
+	const FName NamespaceOverride) const
 {
 	const UCustomizationSavingNameSpace* SavingNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfType<
 		UCustomizationSavingNameSpace>(this);
@@ -32,13 +32,13 @@ FCustomizationMaterialNamespaceData UCustomizationMaterialNameSpace::GetMaterial
 		return {};
 	}
 
-	FString MyName = NamespaceOverride;
-	if (NamespaceOverride.IsEmpty())
+	FName MyName = NamespaceOverride;
+	if (NamespaceOverride.IsNone())
 	{
-		MyName = UCustomizationUtilsLibrary::GetDisplayNameEnd(this);
+		MyName = FName{UCustomizationUtilsLibrary::GetDisplayNameEnd(this)};
 	}
 
-	if (SavingNamespace->MaterialCustomizationData.Contains(MyName))
+	if (SavingNamespace->MaterialCustomizationData.Contains(MyName) && SavingNamespace->AllowedMaterialNamespaces.Contains(MyName))
 	{
 		return SavingNamespace->MaterialCustomizationData[MyName];
 	}
@@ -54,14 +54,14 @@ void UCustomizationMaterialNameSpace::OnChildAttached(USceneComponent* ChildComp
 
 	if (!IsGarbageCollecting())
 	{
-		FString ChildCustomizationNamespaceOverride = "";
-		TMap<FName, FString> SlotNamesCustomizationNamespacesOverride = {};
+		FName ChildCustomizationNamespaceOverride = NAME_None;
+		TMap<FName, FName> SlotNamesCustomizationNamespacesOverride = {};
 
 		if (UCustomizationElementaryModule* CustomizationElementaryModule = Cast<UCustomizationElementaryModule>(
 			ChildComponent))
 		{
-			FString SupposedOverride = CustomizationElementaryModule->GetCustomizationNamespaceOverride();
-			if (!SupposedOverride.IsEmpty())
+			FName SupposedOverride = CustomizationElementaryModule->GetCustomizationNamespaceOverride();
+			if (!SupposedOverride.IsNone())
 			{
 				ChildCustomizationNamespaceOverride = SupposedOverride;
 			}
@@ -75,7 +75,7 @@ void UCustomizationMaterialNameSpace::OnChildAttached(USceneComponent* ChildComp
 			TArray<FName> SlotNames = MeshComponent->GetMaterialSlotNames();
 			for (auto SlotName : SlotNames)
 			{
-				FString MaterialNamespace = ChildCustomizationNamespaceOverride;
+				FName MaterialNamespace = ChildCustomizationNamespaceOverride;
 				if (SlotNamesCustomizationNamespacesOverride.Contains(SlotName))
 				{
 					MaterialNamespace = SlotNamesCustomizationNamespacesOverride[SlotName];
@@ -192,5 +192,27 @@ void UCustomizationMaterialNameSpace::ApplyMaterialChanges(USceneComponent* Chil
 				}
 			}
 		}
+	}
+}
+
+void UCustomizationMaterialNameSpace::SaveCMA()
+{
+	const UCustomizationSavingNameSpace* SavingNamespace = UCustomizationUtilsLibrary::GetFirstParentComponentOfType<
+		UCustomizationSavingNameSpace>(this);
+
+	if (SavingNamespace)
+	{
+		FName MyName = FName{UCustomizationUtilsLibrary::GetDisplayNameEnd(this)};
+
+		if (SavingNamespace->MaterialCustomizationData.Contains(MyName))
+		{
+			SavingNamespace->SaveCertainMaterialCustomizationData(MyName, SavingNamespace->MaterialCustomizationData[MyName], true);
+		} else
+		{
+			UE_LOG(LogTemp, Error, TEXT("CustomizationMaterialNamespace %s not found in parent CustomizationSavingNamespace"), *(GetNameSafe(this)));
+		}
+	} else
+	{
+		UE_LOG(LogTemp, Error, TEXT("CustomizationMaterialNamespace %s doesn't have parent of type CustomizationSavingNamespace"), *(GetNameSafe(this)))
 	}
 }

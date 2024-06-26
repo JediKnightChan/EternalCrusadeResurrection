@@ -25,7 +25,7 @@ void UCustomizationMaterialLoaderComponent::LoadMaterialCustomization(
 	}
 
 	// Material namespace data
-	TMap<FString, UCustomizationMaterialAsset*> MaterialNamespacesToData;
+	TMap<FName, UCustomizationMaterialAsset*> MaterialNamespacesToData;
 	for (UCustomizationMaterialAsset* Config : MaterialConfigs)
 	{
 		if (!Config)
@@ -42,8 +42,8 @@ void UCustomizationMaterialLoaderComponent::LoadMaterialCustomization(
 
 	for (USceneComponent* ChildComponent : Children)
 	{
-		FString MaterialNamespace = UCustomizationUtilsLibrary::GetAttachmentMaterialCustomizationNamespace(
-			ChildComponent);
+		FName MaterialNamespace = FName{UCustomizationUtilsLibrary::GetAttachmentMaterialCustomizationNamespace(
+			ChildComponent)};
 		if (MaterialNamespacesToData.Contains(MaterialNamespace))
 		{
 			const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[MaterialNamespace];

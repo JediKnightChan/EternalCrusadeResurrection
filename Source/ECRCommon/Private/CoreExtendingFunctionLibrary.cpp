@@ -4,6 +4,7 @@
 #include "CoreExtendingFunctionLibrary.h"
 #include "Kismet/KismetMathLibrary.h"
 
+
 #if PLATFORM_WINDOWS
 #include "Windows/WindowsPlatformApplicationMisc.h"
 #endif
@@ -23,6 +24,16 @@ int64 UCoreExtendingFunctionLibrary::DateTimeToUnixTimestamp(FDateTime DateTime)
 	return DateTime.ToUnixTimestamp();
 }
 
+
+TMap<FUniqueNetIdRepl, int32> UCoreExtendingFunctionLibrary::SortPlayersToIntMap(TMap<FUniqueNetIdRepl, int32> MapToSort)
+{
+	MapToSort.ValueSort([](const int32& A, const int32& B)
+	{
+		// Sort numbers
+		return A < B;
+	});
+	return MapToSort;
+}
 
 TMap<UObject*, FString> UCoreExtendingFunctionLibrary::SortUObjectToStringMap(TMap<UObject*, FString> MapToSort)
 {
