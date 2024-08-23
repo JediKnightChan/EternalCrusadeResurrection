@@ -140,8 +140,11 @@ void UECRRangedWeaponInstance::RemoveHeat(float DeltaHeat)
 float UECRRangedWeaponInstance::GetDistanceAttenuation(float Distance, const FGameplayTagContainer* SourceTags,
                                                        const FGameplayTagContainer* TargetTags) const
 {
-	const FRichCurve* Curve = DistanceDamageFalloff.GetRichCurveConst();
-	return Curve->HasAnyData() ? Curve->Eval(Distance) : 1.0f;
+	const float DamageMultiplier = FMath::GetMappedRangeValueClamped(
+		/*InputRange=*/ FVector2D(DamageNearDistance, DamageFarDistance),
+		                /*OutputRange=*/ FVector2D(0.0f, 1.0f),
+		                /*Alpha=*/ Distance);
+	return DamageMultiplier;
 }
 
 float UECRRangedWeaponInstance::GetPhysicalMaterialAttenuation(const UPhysicalMaterial* PhysicalMaterial,

@@ -46,11 +46,11 @@ public:
 	UECREquipmentDefinition(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
 	// Class to spawn
-	UPROPERTY(EditDefaultsOnly, Category=Equipment)
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category=Equipment)
 	TSubclassOf<UECREquipmentInstance> InstanceType;
 
 	// Gameplay ability sets to grant when this is equipped
-	UPROPERTY(EditDefaultsOnly, Category=Equipment)
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category=Equipment)
 	TArray<TObjectPtr<const UECRAbilitySet>> AbilitySetsToGrant;
 
 	// Actors to spawn on the pawn when this is equipped
