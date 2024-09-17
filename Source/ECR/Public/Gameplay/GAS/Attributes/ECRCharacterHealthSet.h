@@ -25,6 +25,10 @@ class ECR_API UECRCharacterHealthSet : public UECRHealthSet
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData MaxShield;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_ShieldRegenDelay,
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData ShieldRegenDelay;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_BleedingHealth,
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData BleedingHealth;
@@ -64,6 +68,9 @@ protected:
 
 	UFUNCTION()
 	void OnRep_MaxShield(const FGameplayAttributeData& OldValue) const;
+	
+	UFUNCTION()
+	void OnRep_ShieldRegenDelay(const FGameplayAttributeData& OldValue) const;
 
 	UFUNCTION()
 	void OnRep_BleedingHealth(const FGameplayAttributeData& OldValue) const;
@@ -78,6 +85,7 @@ public:
 
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, Shield);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxShield);
+	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, ShieldRegenDelay);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, BleedingHealth);
 	ATTRIBUTE_ACCESSORS(UECRCharacterHealthSet, MaxBleedingHealth);
 

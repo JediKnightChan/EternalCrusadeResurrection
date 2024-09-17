@@ -181,10 +181,6 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params", meta=(ForceUnits=x))
 	float SpreadAngleMultiplier_Max = 5.0f;
 
-	// Rate at which we transition to/from the ASC multiplier (higher values are faster, though zero is instant; @see FInterpTo)
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params")
-	float TransitionRate_AscMultiplier = 5.0f;
-
 	// Spread multiplier while jumping/falling, smoothly blended to based on TransitionRate_JumpingOrFalling
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Spread|Player Params", meta=(ForceUnits=x))
 	float SpreadAngleMultiplier_JumpingOrFalling = 1.0f;
@@ -196,10 +192,6 @@ protected:
 	// Number of bullets to fire in a single cartridge (typically 1, but may be more for shotguns)
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config")
 	int32 BulletsPerCartridge = 1;
-
-	// Base damage of weapon in hit scan mode
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config")
-	float BaseDamage = 10.0f;
 
 	// The maximum distance at which this weapon can deal damage
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config", meta=(ForceUnits=cm))
@@ -218,8 +210,12 @@ protected:
 	float DamageFarDistance = 10000.0f;
 
 	// Multiplier of damage for distance equal to DamageFarDistance
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config", meta=(ForceUnits=cm))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config")
 	float DamageFarMultiplier = 1.0f;
+
+	// Time between shots
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config")
+	float AutoShotsInterval = 0.2f;
 
 	// Reload time when there is no ammo in magazine
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config")
@@ -252,9 +248,6 @@ private:
 
 	// The current *combined* spread angle multiplier
 	float CurrentSpreadAngleMultiplier = 1.0f;
-
-	// The current ASC multiplier for spread
-	float AscMultiplier = 1.0f;
 
 	// The current standing still multiplier
 	float StandingStillMultiplier = 1.0f;

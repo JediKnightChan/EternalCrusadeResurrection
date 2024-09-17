@@ -81,8 +81,13 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Animation)
 	FECRAnimMontageSelectionSet SwitchToMontageSet;
 
+	// Armor penetration (determines damage reduction to armor)
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Damage)
 	float ArmorPenetration;
+
+	// Base damage of weapon in hit scan mode
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config")
+	float BaseDamage = 10.0f;
 
 	double TimeLastEquipped = 0.0;
 	double TimeLastFired = 0.0;

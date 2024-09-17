@@ -88,6 +88,7 @@ protected:
 	bool bEquipped = false;
 
 public:
+	// Whether want actors for this EI visible when EI is equipped (eg false for hidden items)
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	bool bVisibleOnEquip = true;
 };
