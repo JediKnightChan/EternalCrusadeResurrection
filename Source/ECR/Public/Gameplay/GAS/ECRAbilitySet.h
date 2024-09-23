@@ -27,7 +27,6 @@ struct FECRAbilitySet_GameplayAbility
 	GENERATED_BODY()
 
 public:
-
 	// Gameplay ability to grant.
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	TSubclassOf<UECRGameplayAbility> Ability = nullptr;
@@ -53,13 +52,12 @@ struct FECRAbilitySet_GameplayEffect
 	GENERATED_BODY()
 
 public:
-
 	// Gameplay effect to grant.
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditAnywhere)
 	TSubclassOf<UGameplayEffect> GameplayEffect = nullptr;
 
 	// Level of gameplay effect to grant.
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditAnywhere)
 	float EffectLevel = 1.0f;
 };
 
@@ -77,7 +75,6 @@ public:
 	// Gameplay effect to grant.
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UAttributeSet> AttributeSet;
-
 };
 
 /**
@@ -91,7 +88,6 @@ struct FECRAbilitySet_GrantedHandles
 	GENERATED_BODY()
 
 public:
-
 	void AddAbilitySpecHandle(const FGameplayAbilitySpecHandle& Handle);
 	void AddGameplayEffectHandle(const FActiveGameplayEffectHandle& Handle);
 	void AddAttributeSet(UAttributeSet* Set);
@@ -99,7 +95,6 @@ public:
 	void TakeFromAbilitySystem(UECRAbilitySystemComponent* ECRASC);
 
 protected:
-
 	// Handles to the granted abilities.
 	UPROPERTY()
 	TArray<FGameplayAbilitySpecHandle> AbilitySpecHandles;
@@ -125,17 +120,17 @@ class UECRAbilitySet : public UPrimaryDataAsset
 	GENERATED_BODY()
 
 public:
-
 	UECRAbilitySet(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
 	// Grants the ability set to the specified ability system component.
 	// The returned handles can be used later to take away anything that was granted.
-	void GiveToAbilitySystem(UECRAbilitySystemComponent* ECRASC, FECRAbilitySet_GrantedHandles* OutGrantedHandles, UObject* SourceObject = nullptr) const;
+	void GiveToAbilitySystem(UECRAbilitySystemComponent* ECRASC, FECRAbilitySet_GrantedHandles* OutGrantedHandles,
+	                         UObject* SourceObject = nullptr) const;
 
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FECRAbilitySet_GameplayAbility GetGrantedAbilityByTag(FGameplayTagContainer InputTags);
-protected:
 
+protected:
 	// Gameplay abilities to grant when this ability set is granted.
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Gameplay Abilities", meta=(TitleProperty=Ability))
 	TArray<FECRAbilitySet_GameplayAbility> GrantedGameplayAbilities;
