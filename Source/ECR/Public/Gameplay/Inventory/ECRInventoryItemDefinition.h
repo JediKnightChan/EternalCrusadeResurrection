@@ -36,13 +36,13 @@ class UECRInventoryItemDefinition : public UObject
 public:
 	UECRInventoryItemDefinition(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category=Display)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Display)
 	FText DisplayName;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category=Display)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Display)
 	FName QuickBarChannelName;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category=Display, Instanced)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Display, Instanced)
 	TArray<TObjectPtr<UECRInventoryItemFragment>> Fragments;
 
 public:

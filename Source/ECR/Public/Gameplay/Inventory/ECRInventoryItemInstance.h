@@ -54,7 +54,15 @@ public:
 	}
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category=Inventory)
-	FName GetQuickBarChannelName() const { return QuickBarChannelName; }
+	FName GetQuickBarChannelName() const
+	{
+		if (QuickBarChannelName == NAME_None)
+		{
+			// If no quick bar channel specified, then make it unique for this item
+			return FName{FString::Printf(TEXT("Generated_%08x"), FCrc::StrCrc32(*GetPathName()))};
+		}
+		return QuickBarChannelName;
+	}
 
 private:
 	void SetItemDef(TSubclassOf<UECRInventoryItemDefinition> InDef);

@@ -8,6 +8,7 @@
 UECRCharacterHealthSet::UECRCharacterHealthSet()
 	: Shield(100.0f),
 	  MaxShield(100.0f),
+      ShieldRegenDelay(5.0f),
 	  BleedingHealth(100.0f),
 	  MaxBleedingHealth(100.0f)
 {
@@ -19,10 +20,14 @@ void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
+	// These attributes are important for everyone (for drawing health bars)
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, Shield, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxShield, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, BleedingHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, MaxBleedingHealth, COND_None, REPNOTIFY_Always);
+
+	// These attributes are relevant only to owner
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, ShieldRegenDelay, COND_OwnerOnly, REPNOTIFY_Always);
 }
 
 
@@ -202,6 +207,11 @@ void UECRCharacterHealthSet::OnRep_Shield(const FGameplayAttributeData& OldValue
 void UECRCharacterHealthSet::OnRep_MaxShield(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, MaxShield, OldValue)
+}
+
+void UECRCharacterHealthSet::OnRep_ShieldRegenDelay(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, ShieldRegenDelay, OldValue)
 }
 
 

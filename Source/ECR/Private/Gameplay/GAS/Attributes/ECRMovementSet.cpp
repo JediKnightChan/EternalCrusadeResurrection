@@ -14,7 +14,8 @@ UECRMovementSet::UECRMovementSet()
 	  Stamina(100.0f),
 	  MaxStamina(100.0f),
 	  EvasionStamina(3.0f),
-	  MaxEvasionStamina(3.0f)
+	  MaxEvasionStamina(3.0f),
+	  EvasionStaminaRegenDelayNormal(5.0f)
 {
 }
 
@@ -23,12 +24,16 @@ void UECRMovementSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
+	// These attributes are important for everyone (for movement prediction)
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, RootMotionScale, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, WalkSpeed, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, Stamina, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, MaxStamina, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, EvasionStamina, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, MaxEvasionStamina, COND_None, REPNOTIFY_Always);
+
+	// These attributes are important only for owner
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, Stamina, COND_OwnerOnly, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, MaxStamina, COND_OwnerOnly, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, EvasionStamina, COND_OwnerOnly, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, MaxEvasionStamina, COND_OwnerOnly, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, EvasionStaminaRegenDelayNormal, COND_OwnerOnly, REPNOTIFY_Always);
 }
 
 
@@ -128,4 +133,9 @@ void UECRMovementSet::OnRep_EvasionStamina(const FGameplayAttributeData& OldValu
 void UECRMovementSet::OnRep_MaxEvasionStamina(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRMovementSet, MaxEvasionStamina, OldValue)
+}
+
+void UECRMovementSet::OnRep_EvasionStaminaRegenDelayNormal(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRMovementSet, EvasionStaminaRegenDelayNormal, OldValue)
 }

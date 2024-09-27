@@ -14,7 +14,7 @@ class UInventoryFragment_SetStats : public UECRInventoryItemFragment
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditDefaultsOnly, Category=Equipment)
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category=Equipment)
 	TMap<FGameplayTag, int32> InitialItemStats;
 
 public:

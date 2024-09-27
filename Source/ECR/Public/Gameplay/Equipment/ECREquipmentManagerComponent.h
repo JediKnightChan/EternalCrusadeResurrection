@@ -138,6 +138,10 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	TArray<UECREquipmentInstance*> GetEquipmentInstancesOfType(TSubclassOf<UECREquipmentInstance> InstanceType) const;
 
+	/** Returns all equipped instances of a given type, or an empty array if none are found */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	TArray<UECREquipmentInstance_EquipmentMod*> GetEquipmentModifiersWithTags(FGameplayTagContainer ModifierTags) const;
+
 	template <typename T>
 	T* GetFirstInstanceOfType()
 	{

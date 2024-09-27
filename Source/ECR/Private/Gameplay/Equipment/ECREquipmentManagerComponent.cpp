@@ -8,6 +8,7 @@
 #include "Gameplay/Equipment/ECREquipmentDefinition.h"
 #include "Net/UnrealNetwork.h"
 #include "Engine/ActorChannel.h"
+#include "Gameplay/Equipment/ECREquipmentInstance_EquipmentMod.h"
 #include "System/ECRLogChannels.h"
 
 //////////////////////////////////////////////////////////////////////
@@ -280,6 +281,22 @@ TArray<UECREquipmentInstance*> UECREquipmentManagerComponent::GetEquipmentInstan
 			if (Instance->IsA(InstanceType))
 			{
 				Results.Add(Instance);
+			}
+		}
+	}
+	return Results;
+}
+
+TArray<UECREquipmentInstance_EquipmentMod*> UECREquipmentManagerComponent::GetEquipmentModifiersWithTags(FGameplayTagContainer ModifierTags) const
+{
+	TArray<UECREquipmentInstance_EquipmentMod*> Results;
+	for (const FECRAppliedEquipmentEntry& Entry : EquipmentList.Entries)
+	{
+		if (UECREquipmentInstance_EquipmentMod* ItemMod = Cast<UECREquipmentInstance_EquipmentMod>(Entry.Instance))
+		{
+			if (ItemMod->ModifierTags.HasAny(ModifierTags))
+			{
+				Results.Add(ItemMod);
 			}
 		}
 	}

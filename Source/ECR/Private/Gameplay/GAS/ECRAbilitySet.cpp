@@ -142,3 +142,15 @@ void UECRAbilitySet::GiveToAbilitySystem(UECRAbilitySystemComponent* ECRASC, FEC
 		}
 	}
 }
+
+FECRAbilitySet_GameplayAbility UECRAbilitySet::GetGrantedAbilityByTag(FGameplayTagContainer InputTags)
+{
+	for (FECRAbilitySet_GameplayAbility Ability : GrantedGameplayAbilities)
+	{
+		if (InputTags.HasTag(Ability.InputTag))
+		{
+			return Ability;
+		}
+	}
+	return FECRAbilitySet_GameplayAbility{};
+}

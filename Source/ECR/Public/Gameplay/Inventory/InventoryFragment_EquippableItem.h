@@ -14,6 +14,6 @@ class UInventoryFragment_EquippableItem : public UECRInventoryItemFragment
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, Category=ECR)
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category=ECR)
 	TSubclassOf<UECREquipmentDefinition> EquipmentDefinition;
 };

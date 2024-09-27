@@ -1,5 +1,6 @@
 ﻿#include "Gameplay/GAS/ECRAbilitySystemFunctionLibrary.h"
 #include "GameplayCueFunctionLibrary.h"
+#include "GameplayEffect.h"
 
 
 struct FECRGameplayEffectContext;
@@ -21,7 +22,18 @@ FGameplayCueParameters UECRAbilitySystemFunctionLibrary::MakeGameplayCueParamete
 	return CueParameters;
 }
 
-void UECRAbilitySystemFunctionLibrary::SetEffectContextSourceObject(FGameplayEffectContextHandle Handle, UObject* Object)
+void UECRAbilitySystemFunctionLibrary::SetEffectContextSourceObject(FGameplayEffectContextHandle Handle,
+                                                                    UObject* Object)
 {
 	Handle.AddSourceObject(Object);
+}
+
+FECRGameplayModifierInfoWrapper UECRAbilitySystemFunctionLibrary::ExtractGameplayModifierInfo(FGameplayModifierInfo Info)
+{
+	FECRGameplayModifierInfoWrapper InfoWrapper;
+
+	InfoWrapper.Attribute = Info.Attribute;
+	InfoWrapper.ModifierOp = Info.ModifierOp;
+	Info.ModifierMagnitude.GetStaticMagnitudeIfPossible(1, InfoWrapper.Magnitude);
+	return InfoWrapper;
 }
