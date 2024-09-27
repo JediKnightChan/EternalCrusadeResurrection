@@ -5,6 +5,8 @@
 #include "GameFramework/Character.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Gameplay/ECRGameplayTags.h"
+#include "Gameplay/Equipment/ECREquipmentInstance_EquipmentMod.h"
+#include "Gameplay/Equipment/ECREquipmentManagerComponent.h"
 #include "Gameplay/Weapons/ECRWeaponInstance.h"
 #include "Net/UnrealNetwork.h"
 
@@ -104,6 +106,23 @@ void UECREquipmentInstance::DestroyEquipmentActors()
 void UECREquipmentInstance::OnEquipped()
 {
 	bEquipped = true;
+
+	if (!MyModifiersTags.IsEmpty())
+	{
+		if (APawn* Pawn = GetPawn())
+		{
+			if (UECREquipmentManagerComponent* EquipmentManager = Pawn->FindComponentByClass<
+				UECREquipmentManagerComponent>())
+			{
+				TArray<UECREquipmentInstance_EquipmentMod*> Mods = EquipmentManager->GetEquipmentModifiersWithTags(MyModifiersTags);
+				for (UECREquipmentInstance_EquipmentMod* Mod : Mods)
+				{
+					Mod->ModifyWantedEquipmentInstance(this);
+				}
+			}
+		}
+	}
+
 	K2_OnEquipped();
 }
 

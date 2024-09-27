@@ -80,6 +80,9 @@ private:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess=true))
 	TArray<FName> VisibilityChannels;
 
+	/** Tags of modifiers for this item */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess=true))
+	FGameplayTagContainer MyModifiersTags;
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"), ReplicatedUsing=OnRep_bVisible)
 	bool bVisible = true;
