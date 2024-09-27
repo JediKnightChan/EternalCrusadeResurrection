@@ -53,11 +53,11 @@ struct FECRAbilitySet_GameplayEffect
 
 public:
 	// Gameplay effect to grant.
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TSubclassOf<UGameplayEffect> GameplayEffect = nullptr;
 
 	// Level of gameplay effect to grant.
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float EffectLevel = 1.0f;
 };
 
