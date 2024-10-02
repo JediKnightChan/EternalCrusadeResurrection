@@ -13,6 +13,7 @@ UECRMovementSet::UECRMovementSet()
 	  WalkSpeed(600.0f),
 	  Stamina(100.0f),
 	  MaxStamina(100.0f),
+	  StaminaRegenRate(10.0f),
 	  EvasionStamina(3.0f),
 	  MaxEvasionStamina(3.0f),
 	  EvasionStaminaRegenDelayNormal(5.0f)
@@ -31,6 +32,7 @@ void UECRMovementSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
 	// These attributes are important only for owner
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, Stamina, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, MaxStamina, COND_OwnerOnly, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, StaminaRegenRate, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, EvasionStamina, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, MaxEvasionStamina, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, EvasionStaminaRegenDelayNormal, COND_OwnerOnly, REPNOTIFY_Always);
@@ -121,6 +123,11 @@ void UECRMovementSet::OnRep_Stamina(const FGameplayAttributeData& OldValue) cons
 void UECRMovementSet::OnRep_MaxStamina(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRMovementSet, MaxStamina, OldValue)
+}
+
+void UECRMovementSet::OnRep_StaminaRegenRate(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRMovementSet, StaminaRegenRate, OldValue)
 }
 
 

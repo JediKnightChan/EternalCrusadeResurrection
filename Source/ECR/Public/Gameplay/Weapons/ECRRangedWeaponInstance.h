@@ -139,6 +139,18 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Spread|Fire Params")
 	bool bAllowFirstShotAccuracy = false;
 
+	// Multiplier for heat when getting spread based on current heat
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Spread|Fire Params", meta=(ForceUnits=x))
+	float HeatToSpreadMappingMultiplier = 1.0f;
+
+	// Multiplier when adding heat per shot
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Spread|Fire Params", meta=(ForceUnits=x))
+	float HeatPerShotMultiplier = 1.0f;
+	
+	// Multiplier applied by modifiers
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Spread|Player Params", meta=(ForceUnits=x))
+	float SpreadAngleMultiplier_Modifier = 1.0f;
+
 	// Multiplier when in an aiming camera mode
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Spread|Player Params", meta=(ForceUnits=x))
 	float SpreadAngleMultiplier_Aiming = 1.0f;
@@ -231,10 +243,13 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Config")
 	TMap<FGameplayTag, float> MaterialDamageMultiplier;
 
-	// Whether want weapon to be up and ready before shooting (for heavy weapons)
+	// Whether want to raise weapon before shooting (for heavy weapons)
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config")
 	bool bWantWeaponUp = false;
 
+	// Duration multiplier for raising weapon before shooting (for montage playing)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Weapon Config", meta=(ForceUnits=x))
+	float WeaponUpDurationMultiplier = 1.0f;
 private:
 	// The current heat
 	UPROPERTY(Replicated)

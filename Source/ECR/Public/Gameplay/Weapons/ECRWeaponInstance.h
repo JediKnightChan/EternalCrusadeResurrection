@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayEffect.h"
 #include "Gameplay/Equipment/ECREquipmentInstance.h"
 #include "Cosmetics/ECRCosmeticAnimationTypes.h"
 #include "Cosmetics/ECRPawnComponent_CharacterParts.h"
@@ -82,12 +83,16 @@ protected:
 	FECRAnimMontageSelectionSet SwitchToMontageSet;
 
 	// Armor penetration (determines damage reduction to armor)
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Damage)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Damage)
 	float ArmorPenetration;
 
 	// Base damage of weapon in hit scan mode
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon Config")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Damage)
 	float BaseDamage = 10.0f;
+
+	// Possible modifiable ailment effect when hit by weapon (eg poison mod for weapon)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Damage)
+	TSubclassOf<UGameplayEffect> AilmentEffect;
 
 	double TimeLastEquipped = 0.0;
 	double TimeLastFired = 0.0;

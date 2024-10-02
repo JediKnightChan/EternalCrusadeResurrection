@@ -33,6 +33,10 @@ class ECR_API UECRMovementSet : public UECRAttributeSet
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData MaxStamina;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_StaminaRegenRate,
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData StaminaRegenRate;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Attributes", ReplicatedUsing=OnRep_EvasionStamina,
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData EvasionStamina;
@@ -73,6 +77,9 @@ protected:
 	void OnRep_MaxStamina(const FGameplayAttributeData& OldValue) const;
 
 	UFUNCTION()
+	void OnRep_StaminaRegenRate(const FGameplayAttributeData& OldValue) const;
+
+	UFUNCTION()
 	void OnRep_EvasionStamina(const FGameplayAttributeData& OldValue) const;
 
 	UFUNCTION()
@@ -80,6 +87,7 @@ protected:
 
 	UFUNCTION()
 	void OnRep_EvasionStaminaRegenDelayNormal(const FGameplayAttributeData& OldValue) const;
+
 public:
 	UECRMovementSet();
 
@@ -87,6 +95,7 @@ public:
 	ATTRIBUTE_ACCESSORS(UECRMovementSet, WalkSpeed);
 	ATTRIBUTE_ACCESSORS(UECRMovementSet, Stamina);
 	ATTRIBUTE_ACCESSORS(UECRMovementSet, MaxStamina);
+	ATTRIBUTE_ACCESSORS(UECRMovementSet, StaminaRegenRate);
 	ATTRIBUTE_ACCESSORS(UECRMovementSet, EvasionStamina);
 	ATTRIBUTE_ACCESSORS(UECRMovementSet, MaxEvasionStamina);
 	ATTRIBUTE_ACCESSORS(UECRMovementSet, EvasionStaminaRegenDelayNormal);
