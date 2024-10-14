@@ -1,0 +1,23 @@
+{
+  "items_to_ignore_names": [
+    "SM_CaptureKey_Standard",
+    "SM_JumpPack_Efficient_Metadata",
+    "SM_JumpPack_Heavy_Metadata",
+    "SM_JumpPack_Standard_Metadata",
+    "SM_JumpPack_Standard"
+  ],
+  "items_to_ignore_prefixes": [
+    "SM_Standard"
+  ],
+  "default_granted_items": [
+    "SM_Armour_StandardPowerArmour",
+    "SM_HeavyBolter_Standard",
+    "SM_Chainsword_Standard",
+    "SM_Boltgun_Standard",
+    "SM_BoltPistol_Standard",
+    "SM_CombatKnife_Standard",
+    "SM_StdMedPack",
+    "SM_StdFragGrenade",
+    "SM_StdNartheciumVial"
+  ]
+}
