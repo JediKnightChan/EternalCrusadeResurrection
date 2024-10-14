@@ -76,6 +76,10 @@ public:
 	// Sets additional cosmetic tags that will be considered for montage selection, etc.
 	UFUNCTION(BlueprintCallable, Category=Cosmetics)
 	void SetAdditionalCosmeticTags(const FGameplayTagContainer NewTags);
+
+	// Sets additional actor selection tags for items
+	UFUNCTION(BlueprintCallable, Category=Cosmetics)
+	void SetAdditionalActorSelectionTags(const FGameplayTagContainer NewTags);
 protected:
 	UPROPERTY(EditAnywhere, Category=Cosmetics)
 	TArray<FECRControllerCharacterPartEntry> CharacterParts;
