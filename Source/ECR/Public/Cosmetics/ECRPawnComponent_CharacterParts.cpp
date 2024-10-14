@@ -183,7 +183,7 @@ bool FECRCharacterPartList::SpawnActorForEntry(FECRAppliedCharacterPartEntry& En
 			PartComponent->SetupAttachment(ComponentToAttachTo, Entry.Part.SocketName);
 			PartComponent->SetChildActorClass(Entry.Part.PartClass);
 			PartComponent->RegisterComponent();
-			
+
 			if (AActor* SpawnedActor = PartComponent->GetChildActor())
 			{
 				switch (Entry.Part.CollisionMode)
@@ -311,8 +311,8 @@ USkeletalMeshComponent* UECRPawnComponent_CharacterParts::GetParentMeshComponent
 				return CharMeshComponent;
 			}
 		}
-		
-		if (const APawn* OwningPawn  = Cast<APawn>(OwnerActor))
+
+		if (const APawn* OwningPawn = Cast<APawn>(OwnerActor))
 		{
 			if (USkeletalMeshComponent* PawnMeshComponent = OwningPawn->FindComponentByClass<USkeletalMeshComponent>())
 			{
@@ -344,6 +344,7 @@ FGameplayTagContainer UECRPawnComponent_CharacterParts::GetCombinedTags(FGamepla
 {
 	FGameplayTagContainer Result = CharacterPartList.CollectCombinedTags();
 	Result.AppendTags(AdditionalCosmeticTags);
+	Result.AppendTags(AdditionalActorSelectionTags);
 
 	if (RequiredPrefix.IsValid())
 	{
@@ -370,6 +371,11 @@ void UECRPawnComponent_CharacterParts::SetAdditionalCosmeticTags(const FGameplay
 {
 	AdditionalCosmeticTags = NewTags;
 	OnRep_AdditionalCosmeticTags();
+}
+
+void UECRPawnComponent_CharacterParts::SetAdditionalActorSelectionTags(const FGameplayTagContainer NewTags)
+{
+	AdditionalActorSelectionTags = NewTags;
 }
 
 void UECRPawnComponent_CharacterParts::OnRep_AdditionalCosmeticTags()

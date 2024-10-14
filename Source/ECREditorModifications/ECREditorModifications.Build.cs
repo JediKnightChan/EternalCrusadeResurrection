@@ -10,6 +10,11 @@ public class ECREditorModifications : ModuleRules
 			new string[]
 			{
 				"Core",
+				"CoreUObject",
+                "Engine",
+                "GameplayTags",
+                "UnrealEd",
+                "PythonScriptPlugin"
 			}
 		);
 

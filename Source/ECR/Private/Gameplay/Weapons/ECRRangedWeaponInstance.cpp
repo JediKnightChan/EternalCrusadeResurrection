@@ -60,7 +60,7 @@ void UECRRangedWeaponInstance::OnEquipped()
 	CurrentHeat = 0;
 
 	// Derive spread
-	CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat);
+	CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat * HeatToSpreadMappingMultiplier);
 
 	// Default the multipliers to 1x
 	CurrentSpreadAngleMultiplier = 1.0f;
@@ -115,11 +115,11 @@ void UECRRangedWeaponInstance::ComputeSpreadRange(float& MinSpread, float& MaxSp
 void UECRRangedWeaponInstance::AddSpread()
 {
 	// Sample the heat up curve
-	const float HeatPerShot = HeatToHeatPerShotCurve.GetRichCurveConst()->Eval(CurrentHeat);
+	const float HeatPerShot = HeatToHeatPerShotCurve.GetRichCurveConst()->Eval(CurrentHeat) * HeatPerShotMultiplier;
 	CurrentHeat = ClampHeat(CurrentHeat + HeatPerShot);
 
 	// Map the heat to the spread angle
-	CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat);
+	CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat * HeatToSpreadMappingMultiplier);
 
 #if WITH_EDITOR
 	UpdateDebugVisualization();
@@ -130,7 +130,7 @@ void UECRRangedWeaponInstance::RemoveHeat(float DeltaHeat)
 {
 	CurrentHeat = ClampHeat(CurrentHeat - DeltaHeat);
 	// Map the heat to the spread angle
-	CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat);
+	CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat * HeatToSpreadMappingMultiplier);
 
 #if WITH_EDITOR
 	UpdateDebugVisualization();
@@ -198,7 +198,7 @@ bool UECRRangedWeaponInstance::UpdateSpread(float DeltaSeconds)
 			CurrentHeat = ClampHeat(CurrentHeat - (CooldownRate * DeltaSeconds));
 		}
 
-		CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat);
+		CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat * HeatToSpreadMappingMultiplier);
 	}
 
 	float MinSpread;
@@ -280,7 +280,7 @@ bool UECRRangedWeaponInstance::UpdateMultipliers(float DeltaSeconds)
 
 	// Combine all the multipliers
 	const float CombinedMultiplier = AimingMultiplier * StandingStillMultiplier * CrouchingMultiplier *
-		JumpFallMultiplier * BracingMultiplier;
+		JumpFallMultiplier * BracingMultiplier * SpreadAngleMultiplier_Modifier;
 
 	// Clamping spread angle multiplier
 	CurrentSpreadAngleMultiplier = FMath::Clamp(CombinedMultiplier, SpreadAngleMultiplier_Min,

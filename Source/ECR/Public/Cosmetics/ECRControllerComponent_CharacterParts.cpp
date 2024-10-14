@@ -105,6 +105,14 @@ void UECRControllerComponent_CharacterParts::SetAdditionalCosmeticTags(const FGa
 	}
 }
 
+void UECRControllerComponent_CharacterParts::SetAdditionalActorSelectionTags(const FGameplayTagContainer NewTags)
+{
+	if (UECRPawnComponent_CharacterParts* PawnCustomizer = GetPawnCustomizer())
+	{
+		PawnCustomizer->SetAdditionalActorSelectionTags(NewTags);
+	}
+}
+
 void UECRControllerComponent_CharacterParts::OnPossessedPawnChanged(APawn* OldPawn, APawn* NewPawn)
 {
 	// Remove parts from the old pawn

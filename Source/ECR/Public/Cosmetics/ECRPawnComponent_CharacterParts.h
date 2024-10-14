@@ -166,6 +166,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetAdditionalCosmeticTags(const FGameplayTagContainer NewTags);
 
+	UFUNCTION(BlueprintCallable)
+	void SetAdditionalActorSelectionTags(const FGameplayTagContainer NewTags);
+
 public:
 	// Delegate that will be called when the list of spawned character parts has changed
 	UPROPERTY(BlueprintAssignable, Category=Cosmetics, BlueprintCallable)
@@ -180,7 +183,12 @@ private:
 	UPROPERTY(Replicated)
 	FECRCharacterPartList CharacterPartList;
 
-	// Additional cosmetic tags not depending on spawned character parts
-	UPROPERTY(ReplicatedUsing=OnRep_AdditionalCosmeticTags)
+	// Additional cosmetic tags not depending on spawned character parts, set manually during spawn
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"),
+		ReplicatedUsing=OnRep_AdditionalCosmeticTags)
 	FGameplayTagContainer AdditionalCosmeticTags;
+
+	// Additional actor selection tags, server only
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	FGameplayTagContainer AdditionalActorSelectionTags;
 };
