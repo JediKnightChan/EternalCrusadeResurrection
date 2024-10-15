@@ -25,7 +25,7 @@ struct FDamageStatics
 		ToughnessDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetToughnessAttribute(),
 		                                                         EGameplayEffectAttributeCaptureSource::Target,
 		                                                         true);
-		ToughnessDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetIncomingDamageMultiplierAttribute(),
+		IncomingDamageMultiplierDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetIncomingDamageMultiplierAttribute(),
 		                                                         EGameplayEffectAttributeCaptureSource::Target,
 		                                                         true);
 		ArmorDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetArmorAttribute(),

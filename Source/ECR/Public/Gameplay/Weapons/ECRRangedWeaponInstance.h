@@ -248,7 +248,7 @@ protected:
 	bool bWantWeaponUp = false;
 
 	// Duration multiplier for raising weapon before shooting (for montage playing)
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Weapon Config", meta=(ForceUnits=x))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weapon Config", meta=(ForceUnits=x))
 	float WeaponUpDurationMultiplier = 1.0f;
 private:
 	// The current heat
