@@ -16,9 +16,11 @@ def export_worker(data_object, output_dict):
     for value in l:
         if value == "DisplayName":
             output_dict["display_name"] = data_object["Value"]
+            output_dict["display_name_invariant"] = data_object["CultureInvariantString"]
 
         elif value == "Description":
             output_dict["description"] = data_object["Value"]
+            output_dict["description_invariant"] = data_object["CultureInvariantString"]
 
         elif value == "ItemImageUrl":
             output_dict["image"] = data_object["Value"]
@@ -67,7 +69,9 @@ def export_items(input_dir, dirs_to_ignore, output_fp):
                 try:
                     item["name"] = file.removesuffix(".json")
                     item["display_name"] = ""
+                    item["display_name_invariant"] = ""
                     item["description"] = ""
+                    item["description_invariant"] = ""
                     item["image"] = ""
                     item["lp_cost"] = 0
                     item["tier"] = ""
