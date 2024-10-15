@@ -74,6 +74,7 @@ private:
 	void BroadcastChangeMessage(FECRQuickBarChannel& Channel);
 	void UnequipItemInActiveSlot(FECRQuickBarChannel& Channel);
 	void EquipItemInActiveSlot(FECRQuickBarChannel& Channel);
+	void ClearChannels();
 
 	UECREquipmentManagerComponent* FindEquipmentManager() const;
 
@@ -110,6 +111,9 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	TArray<FName> GetChannels() const;
 
+	UFUNCTION(BlueprintCallable)
+	void ClearChannels();
+	
 	UFUNCTION(BlueprintCallable, Category="ECR")
 	void CycleActiveSlotForward(FName ChannelName);
 

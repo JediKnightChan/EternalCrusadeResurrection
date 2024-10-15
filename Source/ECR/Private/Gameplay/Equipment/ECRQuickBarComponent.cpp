@@ -105,6 +105,11 @@ void FECRQuickBar::EquipItemInActiveSlot(FECRQuickBarChannel& Channel)
 	}
 }
 
+void FECRQuickBar::ClearChannels()
+{
+	Channels.Empty();
+}
+
 UECREquipmentManagerComponent* FECRQuickBar::FindEquipmentManager() const
 {
 	// If it's on controller
@@ -170,6 +175,11 @@ TArray<FName> UECRQuickBarComponent::GetChannels() const
 		ChannelNames.AddUnique(Channel.ChannelName);
 	}
 	return ChannelNames;
+}
+
+void UECRQuickBarComponent::ClearChannels()
+{
+	ChannelData.ClearChannels();
 }
 
 void UECRQuickBarComponent::CycleActiveSlotForward(FName ChannelName)
@@ -288,7 +298,7 @@ int32 UECRQuickBarComponent::GetNextFreeItemSlot(FName ChannelName, bool bReturn
 void UECRQuickBarComponent::AddItemToSlot(int32 SlotIndex, UECRInventoryItemInstance* Item)
 {
 	const FName ChannelName = Item->GetQuickBarChannelName();
-	
+
 	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithNameOrCreate(ChannelName);
 	FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
 
