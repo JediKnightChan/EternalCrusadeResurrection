@@ -9,8 +9,11 @@ UECRCombatSet::UECRCombatSet()
 	  , BaseHeal(0.0f)
 	  , Toughness(100.0f)
 	  , IncomingDamageMultiplier(1.0f)
-	  , Armor(100.0f),
-	  RecoilMultiplier(1.0f)
+	  , Armor(100.0f)
+	  , RecoilMultiplier(1.0f)
+	  , OutgoingMeleeDamageMultiplier(1.0f)
+	  , IncomingMeleeDamageMitigation(1.0f)
+	  , IncomingNonMeleeDamageMitigation(1.0f)
 {
 }
 
@@ -28,6 +31,11 @@ void UECRCombatSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 	// These attributes are important for everyone
 	// Armor is used to draw non penetration marker when confirming hits
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, Armor, COND_None, REPNOTIFY_Always);
+
+	// Other attributes are not replicated:
+	// OutgoingMeleeDamageMultiplier
+	// IncomingMeleeDamageMitigation
+	// IncomingNonMeleeDamageMitigation
 }
 
 

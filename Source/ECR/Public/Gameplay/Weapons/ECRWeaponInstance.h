@@ -53,6 +53,7 @@ public:
 	                                             const FGameplayTagContainer* SourceTags = nullptr,
 	                                             const FGameplayTagContainer* TargetTags = nullptr) const override;
 	virtual float GetArmorPenetration() const override;
+	virtual bool GetIsDamageMelee() const override;
 	//~End of IECRAbilitySourceInterface interface
 protected:
 	// Choose the best layer from EquippedAnimSet or UnequippedAnimSet based on the specified gameplay tags
@@ -93,6 +94,10 @@ protected:
 	// Possible modifiable ailment effect when hit by weapon (eg poison mod for weapon)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Damage)
 	TSubclassOf<UGameplayEffect> AilmentEffect;
+
+	// Whether damage is melee
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Damage)
+	bool IsDamageMelee = false;
 
 	double TimeLastEquipped = 0.0;
 	double TimeLastFired = 0.0;

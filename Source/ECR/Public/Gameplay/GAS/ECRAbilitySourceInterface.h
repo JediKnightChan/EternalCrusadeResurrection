@@ -37,4 +37,7 @@ class IECRAbilitySourceInterface
 	virtual float GetPhysicalMaterialAttenuation(const UPhysicalMaterial* PhysicalMaterial, const FGameplayTagContainer* SourceTags = nullptr, const FGameplayTagContainer* TargetTags = nullptr) const = 0;
 
 	virtual float GetArmorPenetration() const = 0;
+
+	virtual bool GetIsDamageMelee() const = 0;
+
 };
