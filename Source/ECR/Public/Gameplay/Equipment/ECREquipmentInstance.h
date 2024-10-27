@@ -42,6 +42,9 @@ public:
 
 	UFUNCTION(BlueprintPure, Category=Equipment)
 	TArray<AActor*> GetSpawnedActors() const { return SpawnedActors; }
+    
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category=Equipment)
+    TMap<FName, double> DescribeEquipmentCharacteristics(bool bForEquipped);
 
 	FORCEINLINE TArray<FName> GetVisibilityChannels() { return VisibilityChannels; }
 
