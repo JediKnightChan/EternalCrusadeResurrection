@@ -54,6 +54,11 @@ float UECRWeaponInstance::GetArmorPenetration() const
 	return ArmorPenetration;
 }
 
+bool UECRWeaponInstance::GetIsDamageMelee() const
+{
+	return IsDamageMelee;
+}
+
 void UECRWeaponInstance::OnEquipped()
 {
 	Super::OnEquipped();

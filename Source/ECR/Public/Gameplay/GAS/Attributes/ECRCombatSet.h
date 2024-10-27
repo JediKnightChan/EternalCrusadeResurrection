@@ -30,7 +30,7 @@ class UECRCombatSet : public UECRAttributeSet
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData Toughness;
 
-	// Damage multiplier
+	// Damage multiplier to me
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_IncomingDamageMultiplier, Category="Attributes",
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData IncomingDamageMultiplier;
@@ -44,6 +44,18 @@ class UECRCombatSet : public UECRAttributeSet
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_RecoilMultiplier, Category="Attributes",
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData RecoilMultiplier;
+
+	// Melee damage multiplier from me
+	UPROPERTY(BlueprintReadOnly, Category="Attributes", Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData OutgoingMeleeDamageMultiplier;
+
+	// Melee damage reduction to me
+	UPROPERTY(BlueprintReadOnly, Category="Attributes", Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData IncomingMeleeDamageMitigation;
+
+	// Non melee damage reduction to me
+	UPROPERTY(BlueprintReadOnly, Category="Attributes", Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData IncomingNonMeleeDamageMitigation;
 
 protected:
 	UFUNCTION()
@@ -72,4 +84,7 @@ public:
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, IncomingDamageMultiplier);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, Armor);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, RecoilMultiplier);
+	ATTRIBUTE_ACCESSORS(UECRCombatSet, OutgoingMeleeDamageMultiplier);
+	ATTRIBUTE_ACCESSORS(UECRCombatSet, IncomingMeleeDamageMitigation);
+	ATTRIBUTE_ACCESSORS(UECRCombatSet, IncomingNonMeleeDamageMitigation);
 };

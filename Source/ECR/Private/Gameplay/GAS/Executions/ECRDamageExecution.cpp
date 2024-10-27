@@ -15,6 +15,9 @@ struct FDamageStatics
 	FGameplayEffectAttributeCaptureDefinition ToughnessDef;
 	FGameplayEffectAttributeCaptureDefinition IncomingDamageMultiplierDef;
 	FGameplayEffectAttributeCaptureDefinition ArmorDef;
+	FGameplayEffectAttributeCaptureDefinition OutgoingMeleeDamageMultiplierDef;
+	FGameplayEffectAttributeCaptureDefinition IncomingMeleeDamageMitigationDef;
+	FGameplayEffectAttributeCaptureDefinition IncomingNonMeleeDamageMitigationDef;
 
 	FDamageStatics()
 	{
@@ -25,12 +28,27 @@ struct FDamageStatics
 		ToughnessDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetToughnessAttribute(),
 		                                                         EGameplayEffectAttributeCaptureSource::Target,
 		                                                         true);
-		IncomingDamageMultiplierDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetIncomingDamageMultiplierAttribute(),
-		                                                         EGameplayEffectAttributeCaptureSource::Target,
-		                                                         true);
+		IncomingDamageMultiplierDef = FGameplayEffectAttributeCaptureDefinition(
+			UECRCombatSet::GetIncomingDamageMultiplierAttribute(),
+			EGameplayEffectAttributeCaptureSource::Target,
+			true);
 		ArmorDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetArmorAttribute(),
 		                                                     EGameplayEffectAttributeCaptureSource::Target,
 		                                                     true);
+
+		OutgoingMeleeDamageMultiplierDef = FGameplayEffectAttributeCaptureDefinition(
+			UECRCombatSet::GetOutgoingMeleeDamageMultiplierAttribute(),
+			EGameplayEffectAttributeCaptureSource::Source,
+			true);
+
+		IncomingMeleeDamageMitigationDef = FGameplayEffectAttributeCaptureDefinition(
+			UECRCombatSet::GetIncomingMeleeDamageMitigationAttribute(),
+			EGameplayEffectAttributeCaptureSource::Target,
+			true);
+		IncomingNonMeleeDamageMitigationDef = FGameplayEffectAttributeCaptureDefinition(
+			UECRCombatSet::GetIncomingNonMeleeDamageMitigationAttribute(),
+			EGameplayEffectAttributeCaptureSource::Target,
+			true);
 	}
 };
 
@@ -47,6 +65,9 @@ UECRDamageExecution::UECRDamageExecution()
 	RelevantAttributesToCapture.Add(DamageStatics().ToughnessDef);
 	RelevantAttributesToCapture.Add(DamageStatics().IncomingDamageMultiplierDef);
 	RelevantAttributesToCapture.Add(DamageStatics().ArmorDef);
+	RelevantAttributesToCapture.Add(DamageStatics().OutgoingMeleeDamageMultiplierDef);
+	RelevantAttributesToCapture.Add(DamageStatics().IncomingMeleeDamageMitigationDef);
+	RelevantAttributesToCapture.Add(DamageStatics().IncomingNonMeleeDamageMitigationDef);
 }
 
 void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
@@ -81,6 +102,21 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	float TargetArmor = 100.0f;
 	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().ArmorDef, EvaluateParameters,
 	                                                           TargetArmor);
+
+	float OutgoingMeleeDamageMultiplier = 1.0f;
+	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().OutgoingMeleeDamageMultiplierDef,
+	                                                           EvaluateParameters,
+	                                                           OutgoingMeleeDamageMultiplier);
+
+	float IncomingMeleeDamageMitigation = 1.0f;
+	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().IncomingMeleeDamageMitigationDef,
+	                                                           EvaluateParameters,
+	                                                           IncomingMeleeDamageMitigation);
+
+	float IncomingNonMeleeDamageMitigation = 1.0f;
+	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().IncomingNonMeleeDamageMitigationDef,
+	                                                           EvaluateParameters,
+	                                                           IncomingNonMeleeDamageMitigation);
 
 	const AActor* EffectCauser = TypedContext->GetEffectCauser();
 	const FHitResult* HitActorResult = TypedContext->GetHitResult();
@@ -136,6 +172,7 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	float PhysicalMaterialAttenuation = 1.0f;
 	float DistanceAttenuation = 1.0f;
 	float ToughnessAttenuation = 1.0f;
+	bool IsDamageMelee = false;
 
 	if (const IECRAbilitySourceInterface* AbilitySource = TypedContext->GetAbilitySource())
 	{
@@ -149,6 +186,18 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 
 		ToughnessAttenuation = UECRGameplayBlueprintLibrary::CalculateDamageAttenuationForArmorPenetration(
 			AbilitySource->GetArmorPenetration(), TargetToughness, TargetArmor);
+
+		IsDamageMelee = AbilitySource->GetIsDamageMelee();
+	}
+
+	if (IsDamageMelee)
+	{
+		TargetIncomingDamageMultiplier = TargetIncomingDamageMultiplier * OutgoingMeleeDamageMultiplier;
+		TargetIncomingDamageMultiplier = TargetIncomingDamageMultiplier * IncomingMeleeDamageMitigation;
+	}
+	else
+	{
+		TargetIncomingDamageMultiplier = TargetIncomingDamageMultiplier * IncomingNonMeleeDamageMitigation;
 	}
 
 	DistanceAttenuation = FMath::Max(DistanceAttenuation, 0.0f);
