@@ -14,4 +14,7 @@ class ECREDITORMODIFICATIONS_API UECRPythonHelpersLibrary : public UBlueprintFun
 public:
 	UFUNCTION(BlueprintCallable, Category = "GameplayTags", meta = (ScriptMethod))
 	static FGameplayTag ConvertStringToGameplayTag(const FString& TagName);
+
+	UFUNCTION(BlueprintCallable, Category = "Data Tables", meta = (ScriptMethod))
+	static void ExportDataTableAsCsv(UDataTable* DataTable, FString OutputPath);
 };

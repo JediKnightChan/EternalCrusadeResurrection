@@ -5,9 +5,9 @@ import unreal
 """
 
 # Change me!
-ASSET_DIR = "/Game/Characters/SpaceMarine/Weapons/Blueprints/AbilityItems/Accessories/LSM/"
+ASSET_DIR = "/Game/Characters/SpaceMarine/Weapons/Blueprints/AbilityItems/Accessories/CSM/"
 TABLE_PATH = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/ItemMigrationEC/data/ec/gameplay_items/" \
-             "lsm_accessories.csv"
+             "csm_accessories.csv"
 
 BFL = unreal.SubobjectDataBlueprintFunctionLibrary
 SDS = unreal.get_engine_subsystem(unreal.SubobjectDataSubsystem)

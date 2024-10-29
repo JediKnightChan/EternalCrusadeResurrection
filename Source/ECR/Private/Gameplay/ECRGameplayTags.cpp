@@ -74,9 +74,12 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddTag(SetByCaller_Damage, "SetByCaller.Damage", "SetByCaller tag used by damage gameplay effects.");
 	AddTag(SetByCaller_Heal, "SetByCaller.Heal", "SetByCaller tag used by healing gameplay effects.");
 
+	AddTag(Mod_AnyWeaponMod, "Mod.UniversalMod", "SetByCaller tag used by healing gameplay effects.");
+
 	AddTag(Status_Crouching, "Status.Crouching", "Target is crouching.");
 	AddTag(Status_ADS, "Status.ADS", "Target is in ADS mode.");
-	AddTag(Status_NoWeaponHeatRemove, "Status.Weapon.NoHeatRemove", "Target is in mode where heat must not be removed.");
+	AddTag(Status_NoWeaponHeatRemove, "Status.Weapon.NoHeatRemove",
+	       "Target is in mode where heat must not be removed.");
 	AddTag(Status_Bracing, "Status.Bracing", "Target is in bracing mode.");
 	AddTag(Status_AutoRunning, "Status.AutoRunning", "Target is auto-running.");
 	AddTag(Status_Death, "Status.Death", "Target has the death status.");

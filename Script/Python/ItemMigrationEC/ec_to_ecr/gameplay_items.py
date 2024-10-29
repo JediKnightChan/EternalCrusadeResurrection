@@ -116,6 +116,7 @@ def convert_csv_to_ingame_csv(in_csv, out_csv):
     rarity_mapping = {"Grey": 0, "Green": 1, "Blue": 2, "Purple": 3, "Gold": 4}
     df["Rarity Rank"] = df["Rarity"].map(rarity_mapping)
 
+    # Order of subcategories in categories
     categories_to_substrings = {
         "PrimaryRangedWeapon": ["Bolt", "Plasma", "Grav", "Melta", "Storm"],
         "PrimaryMeleeWeapon": ["Chain", "PowerSword", "Crozius", "Axe", "Maul", "Fist"],
@@ -145,6 +146,6 @@ def convert_csv_to_ingame_csv(in_csv, out_csv):
 
 
 if __name__ == '__main__':
-    in_csv = "../data/ec/gameplay_items/lsm.csv"
-    out_csv = "../data/ecr/gameplay_items/lsm.csv"
+    in_csv = "../data/ec/gameplay_items/csm.csv"
+    out_csv = "../data/ecr/gameplay_items/csm.csv"
     convert_csv_to_ingame_csv(in_csv, out_csv)

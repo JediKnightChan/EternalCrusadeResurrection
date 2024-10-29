@@ -8,6 +8,7 @@
 #include "Gameplay/Equipment/ECREquipmentDefinition.h"
 #include "Net/UnrealNetwork.h"
 #include "Engine/ActorChannel.h"
+#include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/Equipment/ECREquipmentInstance_EquipmentMod.h"
 #include "System/ECRLogChannels.h"
 
@@ -154,7 +155,8 @@ UECREquipmentInstance* UECREquipmentManagerComponent::EquipItem(TSubclassOf<UECR
 			if (Result->bVisibleOnEquip)
 			{
 				SetItemVisible(Result);
-			} else
+			}
+			else
 			{
 				Result->SetVisibility(false);
 			}
@@ -287,8 +289,11 @@ TArray<UECREquipmentInstance*> UECREquipmentManagerComponent::GetEquipmentInstan
 	return Results;
 }
 
-TArray<UECREquipmentInstance_EquipmentMod*> UECREquipmentManagerComponent::GetEquipmentModifiersWithTags(FGameplayTagContainer ModifierTags) const
+TArray<UECREquipmentInstance_EquipmentMod*> UECREquipmentManagerComponent::GetEquipmentModifiersWithTags(
+	FGameplayTagContainer ModifierTags) const
 {
+	ModifierTags.AddTag(FECRGameplayTags::Get().Mod_AnyWeaponMod);
+
 	TArray<UECREquipmentInstance_EquipmentMod*> Results;
 	for (const FECRAppliedEquipmentEntry& Entry : EquipmentList.Entries)
 	{
