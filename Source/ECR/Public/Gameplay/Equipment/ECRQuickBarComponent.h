@@ -113,7 +113,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void ClearChannels();
-	
+
 	UFUNCTION(BlueprintCallable, Category="ECR")
 	void CycleActiveSlotForward(FName ChannelName);
 
@@ -134,6 +134,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintPure=false)
 	int32 GetNextFreeItemSlot(FName ChannelName, bool bReturnZeroIfChannelMissing) const;
+
+	UFUNCTION(BlueprintCallable, BlueprintPure=false)
+	int32 GetItemAmountInChannel(FName ChannelName, bool bReturnZeroIfChannelMissing) const;
 
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void AddItemToSlot(int32 SlotIndex, UECRInventoryItemInstance* Item);
