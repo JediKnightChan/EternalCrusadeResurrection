@@ -155,4 +155,8 @@ public:
 private:
 	UPROPERTY(Replicated)
 	FECREquipmentList EquipmentList;
+
+public:
+	UPROPERTY(BlueprintReadWrite)
+	TMap<FString, float> SavedCurrentHeat;
 };
