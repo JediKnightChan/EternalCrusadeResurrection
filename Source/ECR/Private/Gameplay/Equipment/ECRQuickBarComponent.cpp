@@ -295,6 +295,31 @@ int32 UECRQuickBarComponent::GetNextFreeItemSlot(FName ChannelName, bool bReturn
 	return INDEX_NONE;
 }
 
+int32 UECRQuickBarComponent::GetItemAmountInChannel(FName ChannelName, bool bReturnZeroIfChannelMissing) const
+{
+	const int32 IndexOfChannel = ChannelData.GetIndexOfChannelWithName(ChannelName);
+	if (IndexOfChannel == INDEX_NONE)
+	{
+		if (bReturnZeroIfChannelMissing)
+		{
+			return 0;
+		}
+		return INDEX_NONE;
+	}
+	const FECRQuickBarChannel& Channel = ChannelData.Channels[IndexOfChannel];
+
+	int32 SlotAmount = 0;
+	for (TObjectPtr<UECRInventoryItemInstance> ItemPtr : Channel.Slots)
+	{
+		if (ItemPtr != nullptr)
+		{
+			++SlotAmount;
+		}
+	}
+
+	return SlotAmount;
+}
+
 void UECRQuickBarComponent::AddItemToSlot(int32 SlotIndex, UECRInventoryItemInstance* Item)
 {
 	const FName ChannelName = Item->GetQuickBarChannelName();

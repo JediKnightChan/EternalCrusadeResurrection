@@ -60,6 +60,8 @@ public:
 	FGameplayTag SetByCaller_Damage;
 	FGameplayTag SetByCaller_Heal;
 
+	FGameplayTag Mod_AnyWeaponMod;
+
 	FGameplayTag Status_Crouching;
 	FGameplayTag Status_ADS;
 	FGameplayTag Status_NoWeaponHeatRemove;

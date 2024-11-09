@@ -11,6 +11,7 @@
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Engine/StaticMesh.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "Particles/ParticleSystemComponent.h"
 #include "UObject/SavePackage.h"
 
 
@@ -342,6 +343,26 @@ UCustomizationElementaryAsset* UCustomizationElementaryModule::SaveToDataAsset(b
 			};
 			DataAssetSave->SkeletalAttachments.Add(SkeletalData);
 		}
+
+		// Checking if it's particle system
+		UParticleSystemComponent* ChildParticleSystemComponent = Cast<
+			UParticleSystemComponent>(ChildComponent);
+		if (ChildParticleSystemComponent != nullptr)
+		{
+			// If component present, but empty, skip
+			if (!ChildParticleSystemComponent->Template)
+			{
+				continue;
+			}
+
+			FName SocketName = ChildParticleSystemComponent->GetAttachSocketName();
+
+			FCustomizationElementarySubmoduleParticle ParticleData{
+				ChildParticleSystemComponent->Template, SocketName,
+				ChildParticleSystemComponent->GetRelativeTransform()
+			};
+			DataAssetSave->ParticleAttachments.Add(ParticleData);
+		}
 	}
 
 	// Saving package
@@ -506,6 +527,26 @@ UCustomizationAttachmentAsset* UCustomizationElementaryModule::SaveAttachmentsTo
 				ChildSkeletalMeshComponent->GetRelativeTransform(), ChildSkeletalMeshComponentMaterialNamespace
 			};
 			DataAssetSave->SkeletalAttachments.Add(SkeletalData);
+		}
+
+		// Checking if it's particle system
+		UParticleSystemComponent* ChildParticleSystemComponent = Cast<
+			UParticleSystemComponent>(ChildComponent);
+		if (ChildParticleSystemComponent != nullptr)
+		{
+			// If component present, but empty, skip
+			if (!ChildParticleSystemComponent->Template)
+			{
+				continue;
+			}
+
+			FName SocketName = ChildParticleSystemComponent->GetAttachSocketName();
+
+			FCustomizationElementarySubmoduleParticle ParticleData{
+				ChildParticleSystemComponent->Template, SocketName,
+				ChildParticleSystemComponent->GetRelativeTransform()
+			};
+			DataAssetSave->ParticleAttachments.Add(ParticleData);
 		}
 	}
 

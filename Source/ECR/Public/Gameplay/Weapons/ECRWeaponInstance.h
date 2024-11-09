@@ -95,6 +95,10 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Damage)
 	TSubclassOf<UGameplayEffect> AilmentEffect;
 
+	// Base life steal (fraction of damage that returns as healing to you)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Damage)
+	float BaseLifeSteal = 0.0f;
+
 	// Whether damage is melee
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Damage)
 	bool IsDamageMelee = false;

@@ -52,6 +52,10 @@ class EditorAssetLibrary:
     def load_asset(path):
         return Asset()
 
+    @classmethod
+    def rename_asset(cls, param, param1):
+        pass
+
 
 class AssetTools:
     def create_asset(self, *args):

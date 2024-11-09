@@ -252,7 +252,7 @@ protected:
 	float WeaponUpDurationMultiplier = 1.0f;
 private:
 	// The current heat
-	UPROPERTY(Replicated)
+	UPROPERTY()
 	float CurrentHeat = 0.0f;
 
 	// The current spread angle (in degrees, diametrical)
@@ -282,10 +282,14 @@ public:
 	//~End of UECREquipmentInstance interface
 
 	/** Add heat as 1 shot */
-	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
+	UFUNCTION(BlueprintCallable)
 	void AddSpread();
 
-	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
+	/** Override current heat. Eg on weapon switch to restore prev state */
+	UFUNCTION(BlueprintCallable)
+	void OverrideHeat(float NewHeat);
+
+	UFUNCTION(BlueprintCallable)
 	void RemoveHeat(float DeltaHeat);
 
 	//~IECRAbilitySourceInterface interface

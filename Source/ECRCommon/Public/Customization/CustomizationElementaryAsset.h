@@ -64,6 +64,25 @@ struct ECRCOMMON_API FCustomizationElementarySubmoduleSkeletal
 };
 
 
+/** Container to store cascade particle systems attached to UCustomizationElementaryModel */
+USTRUCT(BlueprintType)
+struct ECRCOMMON_API FCustomizationElementarySubmoduleParticle
+{
+	GENERATED_BODY()
+
+	/** Static mesh */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class UParticleSystem* EmitterTemplate = nullptr;
+
+	/** Socket name on UCustomizationElementaryModel to attach system to */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FName SocketName;
+
+	/** Relative transform */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FTransform AttachTransform;
+};
+
 /**
  * 
  */
@@ -107,4 +126,8 @@ public:
 	/** Array of skeletal attachments */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TArray<FCustomizationElementarySubmoduleSkeletal> SkeletalAttachments;
+
+	/** Array of particle attachments */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	TArray<FCustomizationElementarySubmoduleParticle> ParticleAttachments;
 };

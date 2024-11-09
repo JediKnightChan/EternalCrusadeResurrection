@@ -100,6 +100,11 @@ protected:
 	                                       const FString NameEnding,
 	                                       TMap<FName, UCustomizationMaterialAsset*>& MaterialNamespacesToData);
 
+	/** For given array of socket names and skeletal meshes for attachment, attach to the Component */
+	void ProcessParticleAttachesForComponent(USkeletalMeshComponent* Component,
+										   const TArray<FCustomizationElementarySubmoduleParticle>& ParticlesForAttach,
+										   const FString NameEnding);
+
 	/** Check if socket exists, if it does, return socket name, else return NAME_None and print warning */
 	template <class ComponentClass>
 	static FName GetExistingSocketNameOrNameNone(const ComponentClass* Component, FName SocketName);

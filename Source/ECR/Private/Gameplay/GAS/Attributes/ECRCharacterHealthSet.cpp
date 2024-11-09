@@ -8,7 +8,8 @@
 UECRCharacterHealthSet::UECRCharacterHealthSet()
 	: Shield(100.0f),
 	  MaxShield(100.0f),
-      ShieldRegenDelay(5.0f),
+	  ShieldRegenDelay(5.0f),
+	  ShieldRegenRate(20.0f),
 	  BleedingHealth(100.0f),
 	  MaxBleedingHealth(100.0f)
 {
@@ -28,6 +29,7 @@ void UECRCharacterHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 
 	// These attributes are relevant only to owner
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, ShieldRegenDelay, COND_OwnerOnly, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCharacterHealthSet, ShieldRegenRate, COND_OwnerOnly, REPNOTIFY_Always);
 }
 
 
@@ -65,7 +67,7 @@ void UECRCharacterHealthSet::CheckIfReadyToBecomeWounded(const FGameplayEffectMo
 		if (bLastTimeWasWounded)
 		{
 			bLastTimeWasWounded = false;
-			
+
 			if (OnReadyToBecomeUnwounded.IsBound())
 			{
 				const FGameplayEffectContextHandle& EffectContext = Data.EffectSpec.GetEffectContext();
@@ -212,6 +214,11 @@ void UECRCharacterHealthSet::OnRep_MaxShield(const FGameplayAttributeData& OldVa
 void UECRCharacterHealthSet::OnRep_ShieldRegenDelay(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, ShieldRegenDelay, OldValue)
+}
+
+void UECRCharacterHealthSet::OnRep_ShieldRegenRate(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCharacterHealthSet, ShieldRegenRate, OldValue)
 }
 
 

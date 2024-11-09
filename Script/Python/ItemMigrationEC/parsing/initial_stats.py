@@ -62,6 +62,6 @@ def export_items(input_dir, dirs_to_ignore, output_fp):
 if __name__ == '__main__':
     input_dir = "../data/ec_raw/data_assets_chars/lsm/"
     dirs_to_ignore = []
-    output_fp = "../data/ec/gameplay_items/lsm_initial_stats.csv"
+    output_fp = "../data/ec/gameplay_items/csm_initial_stats.csv"
 
     export_items(input_dir, dirs_to_ignore, output_fp)

@@ -15,6 +15,7 @@
   "Lascannon": "PrimaryHeavyWeapon",
   "Meltagun": "PrimaryRangedWeapon",
   "Multi-melta": "PrimaryHeavyWeapon",
+  "Autocannon": "PrimaryHeavyWeapon",
   "PlasmaCannon": "PrimaryHeavyWeapon",
   "PlasmaGun": "PrimaryRangedWeapon",
   "PlasmaPistol": "SecondaryRangedWeapon",
@@ -22,7 +23,11 @@
   "PowerFist": "PrimaryMeleeWeapon",
   "PowerMaul": "PrimaryMeleeWeapon",
   "PowerSword": "PrimaryMeleeWeapon",
+  "ForceSword": "PrimaryMeleeWeapon",
+  "ForceAxe": "PrimaryMeleeWeapon",
+  "Chainaxe": "PrimaryMeleeWeapon",
   "StormBolter": "PrimaryRangedWeapon",
+  "CombiBolter": "PrimaryRangedWeapon",
   "StormShield": "SecondaryRangedWeapon",
   "SM_Crozius": "PrimaryMeleeWeapon",
   "SM_Narthecium": "NartheciumMeleeWeapon",
@@ -31,5 +36,6 @@
   "SM_DamageBuffNartheciumVial": "NartheciumBuff",
   "SM_LongHealNartheciumVial": "NartheciumBuff",
   "SM_StdNartheciumVial": "NartheciumBuff",
-  "SM_SurvivalBuffNartheciumVial": "NartheciumBuff"
+  "SM_SurvivalBuffNartheciumVial": "NartheciumBuff",
+  "PsychicPower": "PsychicPower"
 }

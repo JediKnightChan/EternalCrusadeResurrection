@@ -25,4 +25,8 @@ public:
 	/** Array of skeletal attachments */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	TArray<FCustomizationElementarySubmoduleSkeletal> SkeletalAttachments;
+
+	/** Array of particle attachments */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	TArray<FCustomizationElementarySubmoduleParticle> ParticleAttachments;
 };

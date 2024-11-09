@@ -10,7 +10,9 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/Camera/ECRCameraComponent.h"
+#include "Gameplay/Equipment/ECREquipmentManagerComponent.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
+#include "Kismet/GameplayStatics.h"
 #include "Net/UnrealNetwork.h"
 #include "Physics/PhysicalMaterialWithTags.h"
 
@@ -57,7 +59,17 @@ void UECRRangedWeaponInstance::OnEquipped()
 	float MinHeatRange;
 	float MaxHeatRange;
 	ComputeHeatRange(/*out*/ MinHeatRange, /*out*/ MaxHeatRange);
+
 	CurrentHeat = 0;
+	if (APawn* Pawn = GetPawn())
+	{
+		if (UECREquipmentManagerComponent* Comp = Pawn->FindComponentByClass<UECREquipmentManagerComponent>())
+		{
+			CurrentHeat = Comp->SavedCurrentHeat.FindRef(
+				UKismetSystemLibrary::GetClassDisplayName(UGameplayStatics::GetObjectClass(this)));
+		}
+	}
+	UpdateFiringTime();
 
 	// Derive spread
 	CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat * HeatToSpreadMappingMultiplier);
@@ -126,6 +138,11 @@ void UECRRangedWeaponInstance::AddSpread()
 #endif
 }
 
+void UECRRangedWeaponInstance::OverrideHeat(float NewHeat)
+{
+	CurrentHeat = NewHeat;
+}
+
 void UECRRangedWeaponInstance::RemoveHeat(float DeltaHeat)
 {
 	CurrentHeat = ClampHeat(CurrentHeat - DeltaHeat);
@@ -170,7 +187,7 @@ void UECRRangedWeaponInstance::GetLifetimeReplicatedProps(TArray<FLifetimeProper
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME(ThisClass, CurrentHeat);
+	// DOREPLIFETIME(ThisClass, CurrentHeat);
 }
 
 bool UECRRangedWeaponInstance::UpdateSpread(float DeltaSeconds)
@@ -191,13 +208,7 @@ bool UECRRangedWeaponInstance::UpdateSpread(float DeltaSeconds)
 	if (TimeSinceFired > SpreadRecoveryCooldownDelay)
 	{
 		const float CooldownRate = HeatToCoolDownPerSecondCurve.GetRichCurveConst()->Eval(CurrentHeat);
-
-		// Update heat only on server
-		if (GetWorld()->GetNetMode() < NM_Client)
-		{
-			CurrentHeat = ClampHeat(CurrentHeat - (CooldownRate * DeltaSeconds));
-		}
-
+		CurrentHeat = ClampHeat(CurrentHeat - (CooldownRate * DeltaSeconds));
 		CurrentSpreadAngle = HeatToSpreadCurve.GetRichCurveConst()->Eval(CurrentHeat * HeatToSpreadMappingMultiplier);
 	}
 

@@ -65,7 +65,7 @@ def export_items(input_dir, dirs_to_ignore, output_fp):
         for file in files:
             item = {}
 
-            with open((os.path.join(root, file)), 'r') as f:
+            with open((os.path.join(root, file)), 'r', encoding="utf-8") as f:
                 try:
                     item["name"] = file.removesuffix(".json")
                     item["display_name"] = ""
@@ -98,8 +98,8 @@ def export_items(input_dir, dirs_to_ignore, output_fp):
 
 
 if __name__ == '__main__':
-    input_dir = "../data/ec_raw/gameplay_items/lsm/"
+    input_dir = "../data/ec_raw/gameplay_items/csm/"
     dirs_to_ignore = ['Appearance']
-    output_fp = "../data/ec/gameplay_items/lsm.csv"
+    output_fp = "../data/ec/gameplay_items/csm.csv"
 
     export_items(input_dir, dirs_to_ignore, output_fp)
