@@ -131,6 +131,10 @@
 		{
 			"Name": "SimpleActorPooling",
 			"Enabled": true
+		},
+                {
+			"Name": "DragonIKPlugin",
+			"Enabled": true
 		}
 	]
 }

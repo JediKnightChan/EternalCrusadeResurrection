@@ -10,7 +10,9 @@
 #include "CustomizationUtilsLibrary.h"
 #include "MeshMergeFunctionLibrary.h"
 #include "Customization/CustomizationAttachmentAsset.h"
+#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "Particles/ParticleSystemComponent.h"
 
 
 UCustomizationLoaderComponent::UCustomizationLoaderComponent()
@@ -218,21 +220,27 @@ void UCustomizationLoaderComponent::ProcessSkeletalAttachesForComponent(USkeleta
 				const UCustomizationMaterialAsset* MaterialData = MaterialNamespacesToData[CustomizationNamespace];
 				if (bDebugLoading)
 				{
-					UE_LOG(LogTemp, Display, TEXT("DEBUG: Skeletal attach (%s): setting slot %s to namespace %s, CMA %s"),
-					       *(GetNameSafe(SkeletalMesh)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()), *(GetNameSafe(MaterialData)))
+					UE_LOG(LogTemp, Display,
+					       TEXT("DEBUG: Skeletal attach (%s): setting slot %s to namespace %s, CMA %s"),
+					       *(GetNameSafe(SkeletalMesh)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()),
+					       *(GetNameSafe(MaterialData)))
 				}
 
 				UCustomizationMaterialNameSpace::ApplyMaterialChanges(SkeletalMeshComponent,
 				                                                      MaterialData->ScalarParameters,
 				                                                      MaterialData->VectorParameters,
 				                                                      MaterialData->TextureParameters, {SlotName});
-			} else
+			}
+			else
 			{
 				if (bDebugLoading)
 				{
-					UE_LOG(LogTemp, Display, TEXT("DEBUG: Skeletal attach (%s): FAILURE setting slot %s to namespace %s, missing on dict with length %d"),
-						   *(GetNameSafe(SkeletalMesh)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()),
-						   MaterialNamespacesToData.Num())
+					UE_LOG(LogTemp, Display,
+					       TEXT(
+						       "DEBUG: Skeletal attach (%s): FAILURE setting slot %s to namespace %s, missing on dict with length %d"
+					       ),
+					       *(GetNameSafe(SkeletalMesh)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()),
+					       MaterialNamespacesToData.Num())
 				}
 			}
 		}
@@ -285,15 +293,48 @@ void UCustomizationLoaderComponent::ProcessStaticAttachesForComponent(USkeletalM
 				                                                      MaterialData->ScalarParameters,
 				                                                      MaterialData->VectorParameters,
 				                                                      MaterialData->TextureParameters, {SlotName});
-			} else
+			}
+			else
 			{
 				if (bDebugLoading)
 				{
-					UE_LOG(LogTemp, Display, TEXT("DEBUG: Static attach (%s): FAILURE setting slot %s to namespace %s, missing on dict with length %d"),
-						   *(GetNameSafe(StaticMesh)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()),
-						   MaterialNamespacesToData.Num())
+					UE_LOG(LogTemp, Display,
+					       TEXT(
+						       "DEBUG: Static attach (%s): FAILURE setting slot %s to namespace %s, missing on dict with length %d"
+					       ),
+					       *(GetNameSafe(StaticMesh)), *(SlotName.ToString()), *(CustomizationNamespace.ToString()),
+					       MaterialNamespacesToData.Num())
 				}
 			}
+		}
+	}
+}
+
+void UCustomizationLoaderComponent::ProcessParticleAttachesForComponent(USkeletalMeshComponent* Component,
+                                                                        const TArray<
+	                                                                        FCustomizationElementarySubmoduleParticle>&
+                                                                        ParticlesForAttach, const FString NameEnding)
+{
+	// Attaching particles to sockets
+	for (auto [ParticleSystem, SocketName, SocketTransform] :
+	     ParticlesForAttach)
+	{
+		SocketName = GetExistingSocketNameOrNameNone(Component, SocketName);
+		UParticleSystemComponent* ParticleSystemComponent = UGameplayStatics::SpawnEmitterAttached(ParticleSystem,
+			Component,
+			SocketName,
+			SocketTransform.GetLocation(),
+			SocketTransform.Rotator(),
+			SocketTransform.GetScale3D(),
+			EAttachLocation::SnapToTarget,
+			false);
+		if (ParticleSystemComponent)
+		{
+			SpawnedComponents.Add(ParticleSystemComponent);
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("Empty particle system"));
 		}
 	}
 }
@@ -312,6 +353,7 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FName Namespace
 	TArray<USkeletalMesh*> MeshesForMerge;
 	TArray<FCustomizationElementarySubmoduleStatic> StaticMeshesForAttach;
 	TArray<FCustomizationElementarySubmoduleSkeletal> SkeletalMeshesForAttach;
+	TArray<FCustomizationElementarySubmoduleParticle> ParticlesForAttach;
 	TMap<FName, TArray<FName>> MaterialNamespacesToSlotNames;
 
 	for (const UCustomizationElementaryAsset* ElementaryAsset : NamespaceAssets)
@@ -343,6 +385,7 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FName Namespace
 
 		StaticMeshesForAttach.Append(ElementaryAsset->StaticAttachments);
 		SkeletalMeshesForAttach.Append(ElementaryAsset->SkeletalAttachments);
+		ParticlesForAttach.Append(ElementaryAsset->ParticleAttachments);
 
 		FCustomizationAttachmentAssetArray CAAArray = NewExternalAttachments.FindRef(ElementaryAsset);
 		if (!CAAArray.Array.IsEmpty())
@@ -353,6 +396,7 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FName Namespace
 				{
 					StaticMeshesForAttach.Append(AttachmentAsset->StaticAttachments);
 					SkeletalMeshesForAttach.Append(AttachmentAsset->SkeletalAttachments);
+					ParticlesForAttach.Append(AttachmentAsset->ParticleAttachments);
 				}
 			}
 		}
@@ -427,6 +471,9 @@ void UCustomizationLoaderComponent::ProcessMeshMergeModule(const FName Namespace
 
 	// Process attaching skeletal meshes to child component
 	ProcessSkeletalAttachesForComponent(ChildComponent, SkeletalMeshesForAttach, "", MaterialNamespacesToData);
+
+	// Process attaching particles
+	ProcessParticleAttachesForComponent(ChildComponent, ParticlesForAttach, "");
 }
 
 
@@ -532,6 +579,9 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 		ProcessSkeletalAttachesForComponent(ChildComponent, Asset->SkeletalAttachments, Namespace,
 		                                    OverridenMaterialNamespacesToData);
 
+		// Process attaching particle systems to child component
+		ProcessParticleAttachesForComponent(ChildComponent, Asset->ParticleAttachments, Namespace);
+
 		// Process external attachments (CAAs)
 		FCustomizationAttachmentAssetArray CustomizationAttachmentAssetArray = NewExternalAttachments.FindRef(Asset);
 		if (!CustomizationAttachmentAssetArray.Array.IsEmpty())
@@ -544,6 +594,7 @@ void UCustomizationLoaderComponent::ProcessAttachmentModule(FName SocketName,
 					                                  OverridenMaterialNamespacesToData);
 					ProcessSkeletalAttachesForComponent(ChildComponent, CAA->SkeletalAttachments, Namespace,
 					                                    OverridenMaterialNamespacesToData);
+					ProcessParticleAttachesForComponent(ChildComponent, CAA->ParticleAttachments, Namespace);
 				}
 			}
 		}
