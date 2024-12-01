@@ -8,7 +8,9 @@
 #include "ECRUtilsLibrary.h"
 #include "OnlineSubsystem.h"
 #include "Algo/Accumulate.h"
+#include "Interfaces/OnlineFriendsInterface.h"
 #include "Interfaces/OnlineIdentityInterface.h"
+#include "Interfaces/OnlinePresenceInterface.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
 
@@ -394,6 +396,50 @@ void UECRGameInstance::OnDestroySessionComplete(FName SessionName, bool bWasSucc
 	}
 }
 
+void UECRGameInstance::OnReadFriendsListComplete(int32 LocalUserNum, bool bWasSuccessful, const FString& ListName,
+                                                 const FString& ErrorStr)
+{
+	TArray<FECRFriendData> Result;
+	bool bResultSuccess = false;
+
+	if (bWasSuccessful)
+	{
+		if (OnlineSubsystem)
+		{
+			if (IOnlineFriendsPtr Friends = OnlineSubsystem->GetFriendsInterface())
+			{
+				bResultSuccess = true;
+
+				TArray<TSharedRef<FOnlineFriend>> FriendsArr;
+				Friends->GetFriendsList(0, TEXT(""), FriendsArr);
+				for (const TSharedRef<FOnlineFriend>& Friend : FriendsArr)
+				{
+					FOnlineUserPresence OnlineUserPresence = Friend->GetPresence();
+
+					FUniqueNetIdRepl SessionId;
+					FUniqueNetIdPtr SessionIdPtr = OnlineUserPresence.SessionId;
+					if (SessionIdPtr.IsValid())
+					{
+						SessionId = FUniqueNetIdRepl{SessionIdPtr.ToSharedRef().Get()};
+					}
+					FECRFriendData Data{
+						OnlineUserPresence.bIsPlayingThisGame != 0,
+						Friend->GetDisplayName(),
+						Friend->GetRealName(),
+						OnlineUserPresence.bIsJoinable != 0,
+						SessionId,
+						Friend->GetUserId().Get()
+					};
+
+					Result.Add(Data);
+				}
+			}
+		}
+	}
+
+	OnFriendListUpdated.Broadcast(bResultSuccess, Result);
+}
+
 FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 {
 	FOnlineSessionSettings SessionSettings;
@@ -496,6 +542,20 @@ FString UECRGameInstance::GetUserAuthToken()
 		}
 	}
 	return "";
+}
+
+void UECRGameInstance::QueueGettingFriendsList()
+{
+	if (OnlineSubsystem)
+	{
+		if (IOnlineFriendsPtr Friends = OnlineSubsystem->GetFriendsInterface())
+		{
+			Friends->ReadFriendsList(
+				0,TEXT(""),
+				FOnReadFriendsListComplete::CreateUObject(this, &UECRGameInstance::OnReadFriendsListComplete)
+			);
+		}
+	}
 }
 
 

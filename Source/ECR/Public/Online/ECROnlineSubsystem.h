@@ -71,6 +71,31 @@ struct FECRMatchResult
 };
 
 
+/** Friend data */
+USTRUCT(BlueprintType)
+struct FECRFriendData
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bIsPlayingThisGame;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString DisplayName;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString RealName;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bIsJoinAble;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FUniqueNetIdRepl CurrentSessionId;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FUniqueNetIdRepl UserId;
+};
+
 /** Data about match that will be saved in game instance to be available after match creation */
 USTRUCT(BlueprintType)
 // ReSharper disable once CppUE4CodingStandardNamingViolationWarning

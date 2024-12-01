@@ -8,6 +8,8 @@
 #include "ECRGameInstance.generated.h"
 
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnFriendListUpdated, bool, bSuccess, const TArray<FECRFriendData>&, Results);
+
 /**
  * 
  */
@@ -36,6 +38,8 @@ class ECR_API UECRGameInstance : public UGameInstance
 	static FString GetMatchFactionString(const TArray<FFactionAlliance>& FactionAlliances,
 	                                     const TMap<FName, FText>& FactionNamesToShortTexts);
 
+	UPROPERTY(BlueprintAssignable)
+	FOnFriendListUpdated OnFriendListUpdated;
 protected:
 	/** Login via selected login type */
 	void Login(FString PlayerName, FString LoginType, FString Id = "", FString Token = "");
@@ -57,6 +61,10 @@ protected:
 
 	/** When OnDestroySessionComplete fires, clear other delegates */
 	void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
+
+	/** Delegate to complete friends list read */
+	void OnReadFriendsListComplete(int32 LocalUserNum, bool bWasSuccessful, const FString& ListName,
+	                               const FString& ErrorStr);
 
 	FOnlineSessionSettings GetSessionSettings();
 
@@ -87,7 +95,7 @@ public:
 	                 const FName DayTimeName, const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
 	                 FactionNamesToCapacities, const TMap<FName, FText> FactionNamesToShortTexts);
 
-	/** Create match, by player (P2P) or dedicated server */
+	/** Find matches */
 	UFUNCTION(BlueprintCallable)
 	void FindMatches(const FString GameVersion = "", const FString MatchType = "",
 	                 const FString MatchMode = "", const FString MapName = "", const FString RegionName = "");
@@ -134,6 +142,10 @@ public:
 	/** Get player account auth token */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetUserAuthToken();
+
+	UFUNCTION(BlueprintCallable)
+	void QueueGettingFriendsList();
+
 public:
 	virtual void Init() override;
 
