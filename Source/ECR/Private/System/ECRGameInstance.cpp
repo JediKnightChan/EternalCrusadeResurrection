@@ -94,6 +94,7 @@ void UECRGameInstance::OnLoginComplete(int32 LocalUserNum, const bool bWasSucces
 		if (bWasSuccessful)
 		{
 			GUISupervisor->ShowMainMenu(true);
+			StartListeningForPartyEvents();
 		}
 		else
 		{
@@ -425,7 +426,6 @@ void UECRGameInstance::OnReadFriendsListComplete(int32 LocalUserNum, bool bWasSu
 					FECRFriendData Data{
 						OnlineUserPresence.bIsPlayingThisGame != 0,
 						Friend->GetDisplayName(),
-						Friend->GetRealName(),
 						OnlineUserPresence.bIsJoinable != 0,
 						SessionId,
 						Friend->GetUserId().Get()
@@ -437,7 +437,69 @@ void UECRGameInstance::OnReadFriendsListComplete(int32 LocalUserNum, bool bWasSu
 		}
 	}
 
-	OnFriendListUpdated.Broadcast(bResultSuccess, Result);
+	OnFriendListUpdated_BP.Broadcast(bResultSuccess, Result);
+}
+
+void UECRGameInstance::OnPartyCreationComplete(const FUniqueNetId& LocalUserId,
+                                               const TSharedPtr<const FOnlinePartyId>& PartyId,
+                                               const ECreatePartyCompletionResult Result)
+{
+	switch (Result)
+	{
+	case ECreatePartyCompletionResult::AlreadyCreatingParty:
+		break;
+	case ECreatePartyCompletionResult::Succeeded:
+		OnPartyCreationFinished_BP.Broadcast(true);
+		break;
+	default:
+		OnPartyCreationFinished_BP.Broadcast(false);
+		break;
+	}
+}
+
+void UECRGameInstance::OnKickPartyMemberComplete(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId,
+                                                 const FUniqueNetId& MemberId, const EKickMemberCompletionResult Result)
+{
+	bool bSuccess = Result == EKickMemberCompletionResult::Succeeded;
+	OnPartyMemberKickFinished_BP.Broadcast(bSuccess, MemberId);
+}
+
+void UECRGameInstance::OnPartyInviteReceived(const FUniqueNetId& LocalUserId, const IOnlinePartyJoinInfo& Invitation)
+{
+	FUniqueNetIdRepl SourceId = FUniqueNetIdRepl{Invitation.GetSourceUserId()};
+	FString SourceDisplayName = Invitation.GetSourceDisplayName();
+
+	OnPartyInviteReceived_BP.Broadcast(SourceId, SourceDisplayName);
+}
+
+void UECRGameInstance::OnJoinPartyComplete(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId,
+                                           const EJoinPartyCompletionResult Result, const int32 NotApprovedReason)
+{
+	bool bSuccess = Result == EJoinPartyCompletionResult::Succeeded;
+	OnPartyJoinFinished_BP.Broadcast(bSuccess);
+}
+
+void UECRGameInstance::OnPartyLeaveComplete(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId,
+                                            const ELeavePartyCompletionResult Result)
+{
+	OnPartyMembersChanged_BP.Broadcast();
+}
+
+void UECRGameInstance::OnPartyMemberJoined(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId)
+{
+	OnPartyMembersChanged_BP.Broadcast();
+}
+
+void UECRGameInstance::OnPartyMemberLeft(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId)
+{
+	OnPartyMembersChanged_BP.Broadcast();
+}
+
+void UECRGameInstance::OnPartyDataReceived(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId,
+                                           const FName& Namespace,
+                                           const FOnlinePartyData& PartyData)
+{
+	OnPartyDataUpdated_BP.Broadcast(PartyData.GetAllAttributesAsJsonObjectString());
 }
 
 FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
@@ -554,6 +616,327 @@ void UECRGameInstance::QueueGettingFriendsList()
 				0,TEXT(""),
 				FOnReadFriendsListComplete::CreateUObject(this, &UECRGameInstance::OnReadFriendsListComplete)
 			);
+		}
+	}
+}
+
+void UECRGameInstance::CreateParty()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				TSharedRef<FPartyConfiguration> Config = MakeShared<FPartyConfiguration>();
+				Config->bIsAcceptingMembers = true;
+				Config->MaxMembers = 4;
+				Config->bShouldRemoveOnDisconnection = true;
+
+				bool bPartyRes = Party->CreateParty(
+					*Identity->GetUniquePlayerId(0).Get(),
+					IOnlinePartySystem::GetPrimaryPartyTypeId(),
+					*Config,
+					FOnCreatePartyComplete::CreateUObject(this, &UECRGameInstance::OnPartyCreationComplete
+					)
+				);
+				UE_LOG(LogTemp, Warning, TEXT("Creating party %i"), bPartyRes ? 1: 0);
+			} else
+			{
+				UE_LOG(LogTemp, Error, TEXT("No party"));
+			}
+		} else
+		{
+			UE_LOG(LogTemp, Error, TEXT("No identity"));
+		}
+	} else {
+		UE_LOG(LogTemp, Error, TEXT("No online subsystem"));
+	}
+}
+
+bool UECRGameInstance::GetIsInParty()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				TArray<TSharedRef<const FOnlinePartyId>> MyParties;
+				Party->GetJoinedParties(*Identity->GetUniquePlayerId(0).Get(), MyParties);
+
+				return !MyParties.IsEmpty();
+			}
+		}
+	}
+	return false;
+}
+
+bool UECRGameInstance::GetIsPartyLeader()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				TArray<TSharedRef<const FOnlinePartyId>> MyParties;
+				Party->GetJoinedParties(*Identity->GetUniquePlayerId(0).Get(), MyParties);
+
+				if (MyParties.IsEmpty())
+				{
+					return false;
+				}
+
+				return Party->IsMemberLeader(*Identity->GetUniquePlayerId(0).Get(), *MyParties[0],
+				                             *Identity->GetUniquePlayerId(0).Get());
+			}
+		}
+	}
+	return false;
+}
+
+void UECRGameInstance::KickPartyMember(FUniqueNetIdRepl MemberId)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				TArray<TSharedRef<const FOnlinePartyId>> MyParties;
+				Party->GetJoinedParties(*Identity->GetUniquePlayerId(0).Get(), MyParties);
+
+				if (MyParties.IsEmpty())
+				{
+					return;
+				}
+
+				Party->KickMember(
+					*Identity->GetUniquePlayerId(0).Get(),
+					MyParties[0].Get(),
+					*MemberId.GetUniqueNetId().Get(), // The member to kick from the party.
+					FOnKickPartyMemberComplete::CreateLambda([](
+						const FUniqueNetId& LocalUserId,
+						const FOnlinePartyId& PartyId,
+						const FUniqueNetId& MemberId,
+						const EKickMemberCompletionResult Result
+					)
+						{
+						})
+				);
+			}
+		}
+	}
+}
+
+void UECRGameInstance::LeaveParty()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				TArray<TSharedRef<const FOnlinePartyId>> MyParties;
+				Party->GetJoinedParties(*Identity->GetUniquePlayerId(0).Get(), MyParties);
+
+				if (MyParties.IsEmpty())
+				{
+					return;
+				}
+
+				Party->LeaveParty(
+					*Identity->GetUniquePlayerId(0).Get(),
+					MyParties[0].Get(),
+					FOnLeavePartyComplete::CreateUObject(this, &UECRGameInstance::OnPartyLeaveComplete));
+			}
+		}
+	}
+}
+
+void UECRGameInstance::InviteToParty(FUniqueNetIdRepl PlayerId)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				TArray<TSharedRef<const FOnlinePartyId>> MyParties;
+				Party->GetJoinedParties(*Identity->GetUniquePlayerId(0).Get(), MyParties);
+
+				if (MyParties.IsEmpty())
+				{
+					return;
+				}
+
+				FPartyInvitationRecipient Recipient = FPartyInvitationRecipient(*(PlayerId.GetUniqueNetId().Get()));
+				// Send the invitation.
+				if (!Party->SendInvitation(
+					*Identity->GetUniquePlayerId(0).Get(), // The ID of the player sending the invite.
+					MyParties[0].Get(), // The party to invite the target player to.
+					Recipient,
+					FOnSendPartyInvitationComplete::CreateLambda([](
+						const FUniqueNetId& LocalUserId,
+						const FOnlinePartyId& PartyId,
+						const FUniqueNetId& RecipientId,
+						const ESendPartyInvitationCompletionResult Result)
+						{
+						})))
+				{
+				}
+			}
+		}
+	}
+}
+
+void UECRGameInstance::AcceptPartyInvite(FUniqueNetIdRepl PlayerId)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				TArray<IOnlinePartyJoinInfoConstRef> OutPendingInvites;
+				Party->GetPendingInvites(*Identity->GetUniquePlayerId(0).Get(), OutPendingInvites);
+
+				for (int i = OutPendingInvites.Num() - 1; i >= 0; i --)
+				{
+					IOnlinePartyJoinInfoConstRef OnlinePartyJoinInfo = OutPendingInvites[i];
+					if (OnlinePartyJoinInfo->GetSourceUserId() == PlayerId.GetUniqueNetId())
+					{
+						Party->JoinParty(
+							*Identity->GetUniquePlayerId(0).Get(),
+							*OnlinePartyJoinInfo,
+							FOnJoinPartyComplete::CreateUObject(this, &UECRGameInstance::OnJoinPartyComplete)
+						);
+						break;
+					}
+				}
+			}
+		}
+	}
+}
+
+void UECRGameInstance::DeclinePartyInvite(FUniqueNetIdRepl PlayerId)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				Party->RejectInvitation(*Identity->GetUniquePlayerId(0).Get(), *PlayerId.GetUniqueNetId());
+			}
+		}
+	}
+}
+
+TArray<FECRPartyMemberData> UECRGameInstance::GetPartyMembersList()
+{
+	TArray<FECRPartyMemberData> Result;
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				TArray<TSharedRef<const FOnlinePartyId>> MyParties;
+				Party->GetJoinedParties(*Identity->GetUniquePlayerId(0).Get(), MyParties);
+
+				if (MyParties.IsEmpty())
+				{
+					return Result;
+				}
+
+				TArray<FOnlinePartyMemberConstRef> PartyMembers;
+				Party->GetPartyMembers(
+					*Identity->GetUniquePlayerId(0).Get(),
+					*MyParties[0],
+					PartyMembers);
+
+				for (FOnlinePartyMemberConstRef PartyMember : PartyMembers)
+				{
+					bool bIsMemberLeader = Party->IsMemberLeader(
+						*Identity->GetUniquePlayerId(0).Get(),
+						*MyParties[0],
+						*PartyMember->GetUserId()
+					);
+					FECRPartyMemberData{
+						PartyMember->GetDisplayName(),
+						PartyMember->GetUserId(),
+						bIsMemberLeader
+					};
+				}
+			}
+		}
+	}
+	return Result;
+}
+
+bool UECRGameInstance::SetPartyData(FString Key, FString Value)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				TArray<TSharedRef<const FOnlinePartyId>> MyParties;
+				Party->GetJoinedParties(*Identity->GetUniquePlayerId(0).Get(), MyParties);
+
+				if (MyParties.IsEmpty())
+				{
+					return false;
+				}
+
+				auto ReadOnlyData = Party->GetPartyData(*Identity->GetUniquePlayerId(0).Get(), *MyParties[0],
+				                                        NAME_Default);
+				if (!ReadOnlyData.IsValid())
+				{
+					UE_LOG(LogTemp, Error, TEXT("Party data update failed: received not valid data"))
+					return false;
+				}
+				auto PartyData = MakeShared<FOnlinePartyData>(*ReadOnlyData);
+				PartyData->SetAttribute(Key, Value);
+				return Party->UpdatePartyData(*Identity->GetUniquePlayerId(0).Get(), *MyParties[0], NAME_Default,
+				                              *PartyData);
+			}
+		}
+	}
+	return false;
+}
+
+void UECRGameInstance::StartListeningForPartyEvents()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlinePartyPtr Party = OnlineSubsystem->GetPartyInterface())
+			{
+				// Invites
+				Party->ClearOnPartyInviteReceivedDelegates(this);
+				Party->AddOnPartyInviteReceivedExDelegate_Handle(
+					FOnPartyInviteReceivedExDelegate::CreateUObject(this, &UECRGameInstance::OnPartyInviteReceived));
+
+				// New member joins
+				Party->ClearOnPartyJoinedDelegates(this);
+				Party->AddOnPartyJoinedDelegate_Handle(
+					FOnPartyJoinedDelegate::CreateUObject(this, &UECRGameInstance::OnPartyMemberJoined));
+
+				// Current member exits
+				Party->ClearOnPartyExitedDelegates(this);
+				Party->AddOnPartyExitedDelegate_Handle(
+					FOnPartyExitedDelegate::CreateUObject(this, &UECRGameInstance::OnPartyMemberLeft));
+
+				// Party data updates
+				Party->ClearOnPartyDataReceivedDelegates(this);
+				Party->AddOnPartyDataReceivedDelegate_Handle(
+					FOnPartyDataReceivedDelegate::CreateUObject(this, &UECRGameInstance::OnPartyDataReceived));
+			}
 		}
 	}
 }

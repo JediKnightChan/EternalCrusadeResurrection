@@ -84,9 +84,6 @@ struct FECRFriendData
 	FString DisplayName;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString RealName;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bIsJoinAble;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -94,6 +91,22 @@ struct FECRFriendData
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FUniqueNetIdRepl UserId;
+};
+
+/** Party member data */
+USTRUCT(BlueprintType)
+struct FECRPartyMemberData
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString DisplayName;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FUniqueNetIdRepl UserId;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bIsLeader;
 };
 
 /** Data about match that will be saved in game instance to be available after match creation */
