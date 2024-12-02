@@ -12,7 +12,7 @@
 class UECRAbilitySet;
 class UECREquipmentInstance;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FECREquipmentActorToSpawn
 {
 	GENERATED_BODY()
@@ -21,13 +21,13 @@ struct FECREquipmentActorToSpawn
 	{
 	}
 
-	UPROPERTY(EditAnywhere, Category=Equipment)
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category=Equipment)
 	FECRActorSelectionSet ActorSelectionSet;
 
-	UPROPERTY(EditAnywhere, Category=Equipment)
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category=Equipment)
 	FName AttachSocket;
 
-	UPROPERTY(EditAnywhere, Category=Equipment)
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category=Equipment)
 	FTransform AttachTransform;
 };
 
@@ -54,6 +54,6 @@ public:
 	TArray<TObjectPtr<const UECRAbilitySet>> AbilitySetsToGrant;
 
 	// Actors to spawn on the pawn when this is equipped
-	UPROPERTY(EditAnywhere, Category=Equipment)
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category=Equipment)
 	TArray<FECREquipmentActorToSpawn> ActorsToSpawn;
 };

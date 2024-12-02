@@ -1,8 +1,8 @@
 import os
 import subprocess
 
-uasset_dir = "C:/Program Files (x86)\Steam/steamapps/common/Warhammer 40,000 - Eternal Crusade/extract/unpacked/EternalCrusade/Content/DataAssets/Characters/"
-output_dir = "../data/ec_raw/data_assets_chars/csm/"
+uasset_dir = "C:/Program Files (x86)\Steam/steamapps/common/Warhammer 40,000 - Eternal Crusade/extract/unpacked/EternalCrusade/Content/ProgressionTrees/ChaosAdvancements/"
+output_dir = "../data/ec_raw/progression_trees/csm/"
 test_mode = False
 
 for root, dirs, files in os.walk(uasset_dir, topdown=False):

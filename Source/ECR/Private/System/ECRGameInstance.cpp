@@ -8,7 +8,10 @@
 #include "ECRUtilsLibrary.h"
 #include "OnlineSubsystem.h"
 #include "Algo/Accumulate.h"
+#include "GameFramework/PlayerState.h"
+#include "Interfaces/OnlineFriendsInterface.h"
 #include "Interfaces/OnlineIdentityInterface.h"
+#include "Interfaces/OnlinePresenceInterface.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
 
@@ -92,6 +95,7 @@ void UECRGameInstance::OnLoginComplete(int32 LocalUserNum, const bool bWasSucces
 		if (bWasSuccessful)
 		{
 			GUISupervisor->ShowMainMenu(true);
+			StartListeningForPartyEvents();
 		}
 		else
 		{
@@ -175,6 +179,9 @@ void UECRGameInstance::CreateMatch(const FString GameVersion, const FName ModeNa
 				Alliances, FactionNamesToCapacities, FactionNamesToShortTexts
 			};
 			FOnlineSessionSettings SessionSettings = GetSessionSettings();
+
+			// Remove all previous delegates
+			OnlineSessionPtr->ClearOnCreateSessionCompleteDelegates(this);
 			OnlineSessionPtr->OnCreateSessionCompleteDelegates.AddUObject(
 				this, &UECRGameInstance::OnCreateMatchComplete);
 			OnlineSessionPtr->CreateSession(0, DEFAULT_SESSION_NAME, SessionSettings);
@@ -226,7 +233,7 @@ void UECRGameInstance::JoinMatch(const FBlueprintSessionResult Session)
 		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
 		{
 			// Remove all previous delegates
-			OnlineSessionPtr->ClearOnCreateSessionCompleteDelegates(this);
+			OnlineSessionPtr->ClearOnJoinSessionCompleteDelegates(this);
 
 			OnlineSessionPtr->OnJoinSessionCompleteDelegates.AddUObject(
 				this, &UECRGameInstance::OnJoinSessionComplete);
@@ -284,15 +291,6 @@ void UECRGameInstance::DestroySession()
 
 void UECRGameInstance::OnCreateMatchComplete(FName SessionName, const bool bWasSuccessful)
 {
-	if (OnlineSubsystem)
-	{
-		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
-		{
-			OnlineSessionPtr->ClearOnCreateSessionCompleteDelegates(this);
-		}
-	}
-
-
 	if (AECRGUIPlayerController* GUISupervisor = UECRUtilsLibrary::GetGUISupervisor(GetWorld()))
 	{
 		if (bWasSuccessful)
@@ -394,6 +392,136 @@ void UECRGameInstance::OnDestroySessionComplete(FName SessionName, bool bWasSucc
 	}
 }
 
+void UECRGameInstance::OnReadFriendsListComplete(int32 LocalUserNum, bool bWasSuccessful, const FString& ListName,
+                                                 const FString& ErrorStr)
+{
+	TArray<FECRFriendData> Result;
+	bool bResultSuccess = false;
+
+	if (bWasSuccessful)
+	{
+		if (OnlineSubsystem)
+		{
+			if (IOnlineFriendsPtr Friends = OnlineSubsystem->GetFriendsInterface())
+			{
+				bResultSuccess = true;
+
+				TArray<TSharedRef<FOnlineFriend>> FriendsArr;
+				Friends->GetFriendsList(0, TEXT(""), FriendsArr);
+				for (const TSharedRef<FOnlineFriend>& Friend : FriendsArr)
+				{
+					FOnlineUserPresence OnlineUserPresence = Friend->GetPresence();
+
+					FUniqueNetIdRepl SessionId;
+					FUniqueNetIdPtr SessionIdPtr = OnlineUserPresence.SessionId;
+					if (SessionIdPtr.IsValid())
+					{
+						SessionId = FUniqueNetIdRepl{SessionIdPtr.ToSharedRef().Get()};
+					}
+					FECRFriendData Data{
+						OnlineUserPresence.bIsPlayingThisGame != 0,
+						Friend->GetDisplayName(),
+						OnlineUserPresence.bIsJoinable != 0,
+						SessionId,
+						Friend->GetUserId().Get()
+					};
+
+					Result.Add(Data);
+				}
+			}
+		}
+	}
+
+	OnFriendListUpdated_BP.Broadcast(bResultSuccess, Result);
+}
+
+void UECRGameInstance::OnPartyCreationComplete(FName SessionName, bool bWasSuccessful)
+{
+	OnPartyCreationFinished_BP.Broadcast(bWasSuccessful);
+}
+
+void UECRGameInstance::OnKickPartyMemberComplete(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId,
+                                                 const FUniqueNetId& MemberId, const EKickMemberCompletionResult Result)
+{
+	bool bSuccess = Result == EKickMemberCompletionResult::Succeeded;
+	OnPartyMemberKickFinished_BP.Broadcast(bSuccess, MemberId);
+}
+
+void UECRGameInstance::OnPartyInviteReceived(const FUniqueNetId& UserId, const FUniqueNetId& FromId,
+                                             const FString& AppId,
+                                             const FOnlineSessionSearchResult& InviteResult)
+{
+	FUniqueNetIdRepl SourceId = FUniqueNetIdRepl{FromId};
+	FString SourceDisplayName = GetPartyMemberName(UserId);
+	OnPartyInviteReceived_BP.Broadcast(SourceId, SourceDisplayName);
+}
+
+void UECRGameInstance::OnJoinPartyComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result)
+{
+	const bool bSuccess = Result == EOnJoinSessionCompleteResult::Type::Success;
+	OnPartyJoinFinished_BP.Broadcast(bSuccess);
+}
+
+void UECRGameInstance::OnPartyLeaveComplete(FName SessionName, bool bSuccess)
+{
+	OnPartyMembersChanged_BP.Broadcast();
+}
+
+void UECRGameInstance::OnPartyMemberJoined(FName SessionName, const FUniqueNetId& UniqueId, bool bJoined)
+{
+	OnPartyMembersChanged_BP.Broadcast();
+}
+
+void UECRGameInstance::OnPartyMemberLeft(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId)
+{
+	OnPartyMembersChanged_BP.Broadcast();
+}
+
+void UECRGameInstance::OnPartyDataReceived(FName SessionName, const FOnlineSessionSettings& NewSettings)
+{
+	TSharedRef<FJsonObject> JsonObject = MakeShared<FJsonObject>();
+
+	for (TTuple<FName, FOnlineSessionSetting> SettingTuple : NewSettings.Settings)
+	{
+		FString OutValue;
+		SettingTuple.Value.Data.GetValue(OutValue);
+		JsonObject->SetStringField(SettingTuple.Key.ToString(), OutValue);
+	}
+
+	FString JsonString;
+	TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&JsonString);
+	if (FJsonSerializer::Serialize(JsonObject, Writer))
+	{
+		Writer->Close();
+	}
+
+	OnPartyDataUpdated_BP.Broadcast(JsonString);
+}
+
+void UECRGameInstance::OnFindFriendSessionComplete(int32 LocalUserNum, bool bWasSuccessful,
+                                                   const TArray<FOnlineSessionSearchResult>& SearchResult)
+{
+	if (bWasSuccessful && !SearchResult.IsEmpty())
+	{
+		FOnlineSessionSearchResult OnlineSessionSearchResult = SearchResult[0];
+		if (OnlineSubsystem)
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				if (OnlineSessionSearchResult.IsSessionInfoValid())
+				{
+					SessionInterface->ClearOnJoinSessionCompleteDelegates(this);
+					SessionInterface->AddOnJoinSessionCompleteDelegate_Handle(
+						FOnJoinSessionCompleteDelegate::CreateUObject(this, &UECRGameInstance::OnJoinPartyComplete));
+					SessionInterface->JoinSession(0, PARTY_LOBBY_SESSION_NAME, OnlineSessionSearchResult);
+					return;
+				}
+			}
+		}
+	}
+	OnPartyJoinFinished_BP.Broadcast(false);
+}
+
 FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 {
 	FOnlineSessionSettings SessionSettings;
@@ -409,6 +537,7 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	SessionSettings.bAllowJoinInProgress = true;
 	SessionSettings.bAllowJoinViaPresence = false;
 	SessionSettings.bUsesPresence = !bIsDedicatedServer;
+	SessionSettings.bUseLobbiesIfAvailable = false;
 
 	/** Custom settings **/
 	SessionSettings.Set(SETTING_GAMEMODE, MatchCreationSettings.GameMode.ToString(),
@@ -455,6 +584,19 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	return SessionSettings;
 }
 
+FOnlineSessionSettings UECRGameInstance::GetPartySessionSettings()
+{
+	FOnlineSessionSettings SessionSettings;
+	SessionSettings.NumPublicConnections = 4;
+	SessionSettings.bIsDedicated = false;
+	SessionSettings.bIsLANMatch = false;
+	SessionSettings.bAllowJoinInProgress = true;
+	SessionSettings.bAllowJoinViaPresence = false;
+	SessionSettings.bUsesPresence = false;
+	SessionSettings.bUseLobbiesIfAvailable = true;
+	return SessionSettings;
+}
+
 
 FString UECRGameInstance::GetPlayerNickname()
 {
@@ -496,6 +638,249 @@ FString UECRGameInstance::GetUserAuthToken()
 		}
 	}
 	return "";
+}
+
+void UECRGameInstance::QueueGettingFriendsList()
+{
+	if (OnlineSubsystem)
+	{
+		if (IOnlineFriendsPtr Friends = OnlineSubsystem->GetFriendsInterface())
+		{
+			Friends->ReadFriendsList(
+				0,TEXT(""),
+				FOnReadFriendsListComplete::CreateUObject(this, &UECRGameInstance::OnReadFriendsListComplete)
+			);
+		}
+	}
+}
+
+void UECRGameInstance::CreateParty()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				if (GetIsInParty())
+				{
+					OnPartyCreationComplete(PARTY_LOBBY_SESSION_NAME, true);
+				}
+				else
+				{
+					SessionInterface->CreateSession(0, PARTY_LOBBY_SESSION_NAME, GetPartySessionSettings());
+					SessionInterface->ClearOnCreateSessionCompleteDelegates(this);
+					SessionInterface->OnCreateSessionCompleteDelegates.AddUObject(
+						this, &UECRGameInstance::OnPartyCreationComplete);
+				}
+			}
+		}
+	}
+}
+
+bool UECRGameInstance::GetIsInParty()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				return SessionInterface->IsPlayerInSession(PARTY_LOBBY_SESSION_NAME, *Identity->GetUniquePlayerId(0).Get());
+			}
+		}
+	}
+	return false;
+}
+
+bool UECRGameInstance::GetIsPartyLeader()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				FNamedOnlineSession* NamedOnlineSession = SessionInterface->GetNamedSession(PARTY_LOBBY_SESSION_NAME);
+				if (NamedOnlineSession)
+				{
+					return NamedOnlineSession->bHosting;
+				}
+			}
+		}
+	}
+	return false;
+}
+
+FString UECRGameInstance::GetPartyMemberName(FUniqueNetIdRepl MemberId)
+{
+	if (OnlineSubsystem)
+	{
+		if (APlayerController* PC = GetPrimaryPlayerController())
+		{
+			if (APlayerState* PlayerState = PC->GetPlayerState<APlayerState>())
+			{
+				if (PlayerState->GetUniqueId() == MemberId)
+				{
+					return GetPlayerNickname();
+				}
+			}
+		}
+
+		if (const IOnlineFriendsPtr FriendInterface = OnlineSubsystem->GetFriendsInterface())
+		{
+			TSharedPtr<FOnlineFriend> OnlineFriend = FriendInterface->
+				GetFriend(0, *MemberId.GetUniqueNetId().Get(), "");
+			if (OnlineFriend)
+			{
+				return OnlineFriend->GetDisplayName();
+			}
+		}
+	}
+	return "";
+}
+
+void UECRGameInstance::KickPartyMember(FUniqueNetIdRepl MemberId)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				SessionInterface->
+					RemovePlayerFromSession(0, PARTY_LOBBY_SESSION_NAME, *MemberId.GetUniqueNetId().Get());
+			}
+		}
+	}
+}
+
+void UECRGameInstance::LeaveParty()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				SessionInterface->DestroySession(
+					PARTY_LOBBY_SESSION_NAME,
+					FOnDestroySessionCompleteDelegate::CreateUObject(
+						this, &UECRGameInstance::OnPartyLeaveComplete));
+			}
+		}
+	}
+}
+
+void UECRGameInstance::InviteToParty(FUniqueNetIdRepl PlayerId)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				SessionInterface->SendSessionInviteToFriend(0, PARTY_LOBBY_SESSION_NAME,
+				                                            *PlayerId.GetUniqueNetId().Get());
+			}
+		}
+	}
+}
+
+void UECRGameInstance::AcceptPartyInvite(FUniqueNetIdRepl PlayerId)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				SessionInterface->ClearOnFindFriendSessionCompleteDelegates(0, this);
+				SessionInterface->AddOnFindFriendSessionCompleteDelegate_Handle(
+					0, FOnFindFriendSessionCompleteDelegate::CreateUObject(
+						this, &UECRGameInstance::OnFindFriendSessionComplete));
+				SessionInterface->FindFriendSession(0, *PlayerId.GetUniqueNetId().Get());
+			}
+		}
+	}
+}
+
+void UECRGameInstance::DeclinePartyInvite(FUniqueNetIdRepl PlayerId)
+{
+}
+
+TArray<FECRPartyMemberData> UECRGameInstance::GetPartyMembersList()
+{
+	TArray<FECRPartyMemberData> Result;
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				FNamedOnlineSession* NamedOnlineSession = SessionInterface->GetNamedSession(PARTY_LOBBY_SESSION_NAME);
+				if (NamedOnlineSession)
+				{
+					for (TSharedRef<FUniqueNetId const, ESPMode::ThreadSafe> Member : NamedOnlineSession->
+					     RegisteredPlayers)
+					{
+						FECRPartyMemberData Data = FECRPartyMemberData{
+							GetPartyMemberName(Member),
+							Member,
+							Member == NamedOnlineSession->OwningUserId,
+						};
+						Result.Add(Data);
+					}
+				}
+			}
+		}
+	}
+	return Result;
+}
+
+bool UECRGameInstance::SetPartyData(FString Key, FString Value)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				FOnlineSessionSettings* OnlineSessionSettings = SessionInterface->GetSessionSettings(
+					PARTY_LOBBY_SESSION_NAME);
+				OnlineSessionSettings->Set(FName{Key}, Value);
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+void UECRGameInstance::StartListeningForPartyEvents()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				// Invites
+				SessionInterface->ClearOnSessionInviteReceivedDelegates(this);
+				SessionInterface->AddOnSessionInviteReceivedDelegate_Handle(
+					FOnSessionInviteReceivedDelegate::CreateUObject(this, &UECRGameInstance::OnPartyInviteReceived));
+
+				// Member changes
+				SessionInterface->ClearOnSessionParticipantsChangeDelegates(this);
+				SessionInterface->AddOnSessionParticipantsChangeDelegate_Handle(
+					FOnSessionParticipantsChangeDelegate::CreateUObject(this, &UECRGameInstance::OnPartyMemberJoined));
+
+				// Party data updates
+				SessionInterface->ClearOnSessionSettingsUpdatedDelegates(this);
+				SessionInterface->AddOnSessionSettingsUpdatedDelegate_Handle(
+					FOnSessionSettingsUpdatedDelegate::CreateUObject(this, &UECRGameInstance::OnPartyDataReceived));
+			}
+		}
+	}
 }
 
 

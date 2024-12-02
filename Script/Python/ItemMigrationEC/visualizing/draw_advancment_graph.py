@@ -138,7 +138,7 @@ if __name__ == "__main__":
 
     graph = {}
     text_dict = {}
-    df = pd.read_csv("./data/ec/advancements/lsm.csv")
+    df = pd.read_csv("../data/ec/advancements/csm.csv")
     df = df.fillna("")
 
     for i, row in df.iterrows():
@@ -153,5 +153,17 @@ if __name__ == "__main__":
 
         text_dict[my_node] = f"{my_node} ({row.get('Rank', 1)})<br>Name: {row.get('Name')}<br>Item: {row.get('ItemReward')}"
 
+    print(graph)
+    graph_new = graph.copy()
+    c = 0
+    for g1 in graph.keys():
+        does_meet = False
+        for g2, g2_items_l in graph.items():
+            if g1 in g2_items_l:
+                does_meet = True
+        if not does_meet:
+            graph_new[f"Start_{c}"] = [g1]
+            c += 1
+    print(graph_new)
     # Draw the graph and save it to an HTML file
-    draw_graph(graph, text_dict, "./data/ecr/advancements/lsm_graph.html")
+    draw_graph(graph_new, text_dict, "../data/ecr/advancements/csm_graph.html")

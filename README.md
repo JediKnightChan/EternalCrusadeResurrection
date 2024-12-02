@@ -18,7 +18,7 @@ Check out our [Wiki](https://github.com/JediKnightChan/EternalCrusadeResurrectio
 
 - C++ Unreal Engine 5 project
 - Customization system for modular characters (material customization, mesh customization)
-- Epic Online Services P2P matchmaking (users can create their own matches), including Linux Dedicated Servers
+- Epic Online Services P2P matchmaking (users can create their own matches), including Linux Dedicated Servers, Friends List, Parties
 - Python Scripts for automation of restoring non-exportable or hardly-exportable data for an unpacked UE4 game (socket
   data, maps data, materials, references to materials within meshes)
 - Enhanced Input Subsystem is used for input (borrowed from Lyra)
