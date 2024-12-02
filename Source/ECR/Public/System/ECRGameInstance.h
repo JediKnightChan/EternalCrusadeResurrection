@@ -108,35 +108,36 @@ protected:
 	                               const FString& ErrorStr);
 
 	/** Delegate to complete party creation */
-	void OnPartyCreationComplete(const FUniqueNetId& LocalUserId, const TSharedPtr<const FOnlinePartyId>& PartyId,
-	                             const ECreatePartyCompletionResult Result);
+	void OnPartyCreationComplete(FName SessionName, bool bWasSuccessful);
 
 	/** Delegate to complete party member kick */
 	void OnKickPartyMemberComplete(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId,
 	                               const FUniqueNetId& MemberId, const EKickMemberCompletionResult Result);
 
 	/** Delegate for receiving party invites */
-	void OnPartyInviteReceived(const FUniqueNetId& LocalUserId, const IOnlinePartyJoinInfo& Invitation);
+	void OnPartyInviteReceived(const FUniqueNetId& UserId, const FUniqueNetId& FromId, const FString& AppId,
+	                           const FOnlineSessionSearchResult& InviteResult);
 
 	/** Delegate to complete party joining */
-	void OnJoinPartyComplete(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId,
-	                         const EJoinPartyCompletionResult Result, const int32 NotApprovedReason);
+	void OnJoinPartyComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
 
 	/** Delegate to complete party leave */
-	void OnPartyLeaveComplete(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId,
-	                          const ELeavePartyCompletionResult Result);
+	void OnPartyLeaveComplete(FName SessionName, bool bSuccess);
 
 	/** Delegate for party join events */
-	void OnPartyMemberJoined(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId);
+	void OnPartyMemberJoined(FName SessionName, const FUniqueNetId& UniqueId, bool bJoined);
 
 	/** Delegate for party left events */
 	void OnPartyMemberLeft(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId);
 
 	/** Delegate for party data changes */
-	void OnPartyDataReceived(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId, const FName& Namespace,
-	                         const FOnlinePartyData& PartyData);
+	void OnPartyDataReceived(FName SessionName, const FOnlineSessionSettings& NewSettings);
 
+	void OnFindFriendSessionComplete(int32 LocalUserNum, bool bWasSuccessful, const TArray<FOnlineSessionSearchResult>& SearchResult);
+	
 	FOnlineSessionSettings GetSessionSettings();
+
+	FOnlineSessionSettings GetPartySessionSettings();
 
 public:
 	UECRGameInstance();
@@ -229,6 +230,10 @@ public:
 	/** Check if is party leader */
 	UFUNCTION(BlueprintCallable)
 	bool GetIsPartyLeader();
+
+	/** Get name of party member */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FString GetPartyMemberName(FUniqueNetIdRepl MemberId);
 
 	/* Kick party member */
 	UFUNCTION(BlueprintCallable)

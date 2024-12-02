@@ -47,7 +47,8 @@ public class ECR : ModuleRules
 			"NetCore", 
 			"Networking", 
 			"Slate", 
-			"SlateCore"
+			"SlateCore",
+			"Json"
 		});
 	}
 }
