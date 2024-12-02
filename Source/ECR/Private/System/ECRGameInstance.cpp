@@ -766,7 +766,7 @@ void UECRGameInstance::LeaveParty()
 				SessionInterface->DestroySession(
 					PARTY_LOBBY_SESSION_NAME,
 					FOnDestroySessionCompleteDelegate::CreateUObject(
-						this, &UECRGameInstance::OnDestroySessionComplete));
+						this, &UECRGameInstance::OnPartyLeaveComplete));
 			}
 		}
 	}
