@@ -16,14 +16,19 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyCreationFinished, bool, bSuc
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnPartyMemberKickFinished, bool, bSuccess, FUniqueNetIdRepl, Member);
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnPartyInvitationReceived, FUniqueNetIdRepl, SourceId, FString,
-                                             SourceDisplayName);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnPartyInvitationReceived, FUniqueNetIdRepl, SourceId, FString,
+                                               SourceDisplayName, FString, SessionData);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyJoinFinished, bool, bSuccess);
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyLeaveFinished, bool, bSuccess);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPartyMembersChanged);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyDataUpdated, FString, UpdatedJsonString);
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDisconnectedFromSession);
+
 
 /**
  * 
@@ -81,6 +86,14 @@ class ECR_API UECRGameInstance : public UGameInstance
 	UPROPERTY(BlueprintAssignable)
 	FOnPartyDataUpdated OnPartyDataUpdated_BP;
 
+	/** Broadcaster for leaving party */
+	UPROPERTY(BlueprintAssignable)
+	FOnPartyLeaveFinished OnPartyLeaveFinished_BP;
+
+	/** Broadcaster for leaving party */
+	UPROPERTY(BlueprintAssignable)
+	FOnDisconnectedFromSession OnDisconnectedFromSession_BP;
+
 protected:
 	/** Login via selected login type */
 	void Login(FString PlayerName, FString LoginType, FString Id = "", FString Token = "");
@@ -133,8 +146,13 @@ protected:
 	/** Delegate for party data changes */
 	void OnPartyDataReceived(FName SessionName, const FOnlineSessionSettings& NewSettings);
 
-	void OnFindFriendSessionComplete(int32 LocalUserNum, bool bWasSuccessful, const TArray<FOnlineSessionSearchResult>& SearchResult);
-	
+	/** Delegate for completing find friend session */
+	void OnFindFriendSessionComplete(int32 LocalUserNum, bool bWasSuccessful,
+	                                 const TArray<FOnlineSessionSearchResult>& SearchResult);
+
+	/** Delegate for session failures */
+	void OnSessionFailure(const FUniqueNetId& PlayerId, ESessionFailure::Type Reason);
+
 	FOnlineSessionSettings GetSessionSettings();
 
 	FOnlineSessionSettings GetPartySessionSettings();
@@ -221,7 +239,7 @@ public:
 
 	/** Create party */
 	UFUNCTION(BlueprintCallable)
-	void CreateParty();
+	void CreateParty(TMap<FString, FString> SessionData);
 
 	/** Check if in party */
 	UFUNCTION(BlueprintCallable)

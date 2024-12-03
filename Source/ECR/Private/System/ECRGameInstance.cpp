@@ -453,7 +453,8 @@ void UECRGameInstance::OnPartyInviteReceived(const FUniqueNetId& UserId, const F
 {
 	FUniqueNetIdRepl SourceId = FUniqueNetIdRepl{FromId};
 	FString SourceDisplayName = GetPartyMemberName(UserId);
-	OnPartyInviteReceived_BP.Broadcast(SourceId, SourceDisplayName);
+	FString SessionData = UECROnlineSubsystem::ConvertSessionSettingsToJson(InviteResult.Session.SessionSettings);
+	OnPartyInviteReceived_BP.Broadcast(SourceId, SourceDisplayName, SessionData);
 }
 
 void UECRGameInstance::OnJoinPartyComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result)
@@ -464,7 +465,7 @@ void UECRGameInstance::OnJoinPartyComplete(FName SessionName, EOnJoinSessionComp
 
 void UECRGameInstance::OnPartyLeaveComplete(FName SessionName, bool bSuccess)
 {
-	OnPartyMembersChanged_BP.Broadcast();
+	OnPartyLeaveFinished_BP.Broadcast(bSuccess);
 }
 
 void UECRGameInstance::OnPartyMemberJoined(FName SessionName, const FUniqueNetId& UniqueId, bool bJoined)
@@ -479,23 +480,7 @@ void UECRGameInstance::OnPartyMemberLeft(const FUniqueNetId& LocalUserId, const 
 
 void UECRGameInstance::OnPartyDataReceived(FName SessionName, const FOnlineSessionSettings& NewSettings)
 {
-	TSharedRef<FJsonObject> JsonObject = MakeShared<FJsonObject>();
-
-	for (TTuple<FName, FOnlineSessionSetting> SettingTuple : NewSettings.Settings)
-	{
-		FString OutValue;
-		SettingTuple.Value.Data.GetValue(OutValue);
-		JsonObject->SetStringField(SettingTuple.Key.ToString(), OutValue);
-	}
-
-	FString JsonString;
-	TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&JsonString);
-	if (FJsonSerializer::Serialize(JsonObject, Writer))
-	{
-		Writer->Close();
-	}
-
-	OnPartyDataUpdated_BP.Broadcast(JsonString);
+	OnPartyDataUpdated_BP.Broadcast(UECROnlineSubsystem::ConvertSessionSettingsToJson(NewSettings));
 }
 
 void UECRGameInstance::OnFindFriendSessionComplete(int32 LocalUserNum, bool bWasSuccessful,
@@ -520,6 +505,11 @@ void UECRGameInstance::OnFindFriendSessionComplete(int32 LocalUserNum, bool bWas
 		}
 	}
 	OnPartyJoinFinished_BP.Broadcast(false);
+}
+
+void UECRGameInstance::OnSessionFailure(const FUniqueNetId& PlayerId, ESessionFailure::Type Reason)
+{
+	OnDisconnectedFromSession_BP.Broadcast();
 }
 
 FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
@@ -654,7 +644,7 @@ void UECRGameInstance::QueueGettingFriendsList()
 	}
 }
 
-void UECRGameInstance::CreateParty()
+void UECRGameInstance::CreateParty(TMap<FString, FString> SessionData)
 {
 	if (OnlineSubsystem)
 	{
@@ -668,7 +658,14 @@ void UECRGameInstance::CreateParty()
 				}
 				else
 				{
-					SessionInterface->CreateSession(0, PARTY_LOBBY_SESSION_NAME, GetPartySessionSettings());
+					// Setting custom party data (eg faction)
+					FOnlineSessionSettings SessionSettings = GetPartySessionSettings();
+					for (TTuple<FString, FString> DataTuple : SessionData)
+					{
+						SessionSettings.Set(FName{DataTuple.Key}, DataTuple.Value);
+					}
+
+					SessionInterface->CreateSession(0, PARTY_LOBBY_SESSION_NAME, SessionSettings);
 					SessionInterface->ClearOnCreateSessionCompleteDelegates(this);
 					SessionInterface->OnCreateSessionCompleteDelegates.AddUObject(
 						this, &UECRGameInstance::OnPartyCreationComplete);
@@ -686,7 +683,8 @@ bool UECRGameInstance::GetIsInParty()
 		{
 			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
 			{
-				return SessionInterface->IsPlayerInSession(PARTY_LOBBY_SESSION_NAME, *Identity->GetUniquePlayerId(0).Get());
+				return SessionInterface->IsPlayerInSession(
+					PARTY_LOBBY_SESSION_NAME, *Identity->GetUniquePlayerId(0).Get());
 			}
 		}
 	}
@@ -878,6 +876,10 @@ void UECRGameInstance::StartListeningForPartyEvents()
 				SessionInterface->ClearOnSessionSettingsUpdatedDelegates(this);
 				SessionInterface->AddOnSessionSettingsUpdatedDelegate_Handle(
 					FOnSessionSettingsUpdatedDelegate::CreateUObject(this, &UECRGameInstance::OnPartyDataReceived));
+
+				SessionInterface->ClearOnSessionFailureDelegates(this);
+				SessionInterface->AddOnSessionFailureDelegate_Handle(
+					FOnSessionFailureDelegate::CreateUObject(this, &UECRGameInstance::OnSessionFailure));
 			}
 		}
 	}

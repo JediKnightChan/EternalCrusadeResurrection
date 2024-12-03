@@ -56,3 +56,23 @@ FString UECROnlineSubsystem::NetIdToString(const FUniqueNetIdRepl NetId)
 {
 	return NetId.ToString();
 }
+
+FString UECROnlineSubsystem::ConvertSessionSettingsToJson(const FOnlineSessionSettings& Settings)
+{
+	TSharedRef<FJsonObject> JsonObject = MakeShared<FJsonObject>();
+
+	for (TTuple<FName, FOnlineSessionSetting> SettingTuple : Settings.Settings)
+	{
+		FString OutValue;
+		SettingTuple.Value.Data.GetValue(OutValue);
+		JsonObject->SetStringField(SettingTuple.Key.ToString(), OutValue);
+	}
+
+	FString JsonString;
+	TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&JsonString);
+	if (FJsonSerializer::Serialize(JsonObject, Writer))
+	{
+		Writer->Close();
+	}
+	return JsonString;
+}

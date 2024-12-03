@@ -203,4 +203,7 @@ public:
 	/** Convert NetID to string */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static FString NetIdToString(FUniqueNetIdRepl NetId);
+
+	/** Convert session custom settings to JSON string */
+	static FString ConvertSessionSettingsToJson(const FOnlineSessionSettings& Settings);
 };
