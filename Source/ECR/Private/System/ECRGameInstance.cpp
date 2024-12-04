@@ -584,6 +584,7 @@ FOnlineSessionSettings UECRGameInstance::GetPartySessionSettings()
 	SessionSettings.bAllowJoinViaPresence = false;
 	SessionSettings.bUsesPresence = false;
 	SessionSettings.bUseLobbiesIfAvailable = true;
+	SessionSettings.bAllowInvites = true;
 	return SessionSettings;
 }
 
