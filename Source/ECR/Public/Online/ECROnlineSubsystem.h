@@ -85,7 +85,7 @@ struct FECRFriendData
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bIsJoinAble;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FUniqueNetIdRepl CurrentSessionId;
 
@@ -203,6 +203,9 @@ public:
 	/** Convert NetID to string */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static FString NetIdToString(FUniqueNetIdRepl NetId);
+
+	/** Convert string NetID to Structure */
+	static FUniqueNetIdRepl StringToNetId(FString String);
 
 	/** Convert session custom settings to JSON string */
 	static FString ConvertSessionSettingsToJson(const FOnlineSessionSettings& Settings);

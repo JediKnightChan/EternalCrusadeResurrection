@@ -1,5 +1,5 @@
 ﻿#include "ECROnlineBeaconHostObject.h"
-#include "ECROnlineBeaconClient.h"
+#include "ECROnlineBeacon.h"
 
 AECROnlineBeaconHostObject::AECROnlineBeaconHostObject(const FObjectInitializer& ObjectInitializer) :
 	Super(ObjectInitializer)
@@ -28,11 +28,22 @@ void AECROnlineBeaconHostObject::OnClientConnected(AOnlineBeaconClient* NewClien
 	Super::OnClientConnected(NewClientActor, ClientConnection);
 
 	//Cast to our actual APingBeacon
-	AECROnlineBeacon* BeaconClient = Cast<AECROnlineBeacon>(NewClientActor);
-	if (BeaconClient != NULL)
+	if (AECROnlineBeacon* BeaconClient = Cast<AECROnlineBeacon>(NewClientActor))
 	{
 		//It's good, so lets rpc back to the client and tell it we are ready
 		BeaconClient->Ready();
+		BeaconClient->GetNetConnection()->PlayerId;
+	}
+}
+
+void AECROnlineBeaconHostObject::NotifyClientDisconnected(AOnlineBeaconClient* LeavingClientActor)
+{
+	Super::NotifyClientDisconnected(LeavingClientActor);
+
+	if (AECROnlineBeacon* BeaconClient = Cast<AECROnlineBeacon>(LeavingClientActor))
+	{
+		//It's good, so lets rpc back to the client and tell it we are ready
+		OnClientLeft.Broadcast(BeaconClient->GetOwningPlayerId());
 	}
 }
 

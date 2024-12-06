@@ -57,6 +57,13 @@ FString UECROnlineSubsystem::NetIdToString(const FUniqueNetIdRepl NetId)
 	return NetId.ToString();
 }
 
+FUniqueNetIdRepl UECROnlineSubsystem::StringToNetId(FString String)
+{
+	FUniqueNetIdRepl NetId;
+	NetId.FromJson(String);
+	return NetId;
+}
+
 FString UECROnlineSubsystem::ConvertSessionSettingsToJson(const FOnlineSessionSettings& Settings)
 {
 	TSharedRef<FJsonObject> JsonObject = MakeShared<FJsonObject>();

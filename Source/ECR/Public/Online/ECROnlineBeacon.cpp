@@ -1,4 +1,4 @@
-﻿#include "ECROnlineBeaconClient.h"
+﻿#include "ECROnlineBeacon.h"
 
 DEFINE_LOG_CATEGORY(FBeaconLog);
 
@@ -15,78 +15,77 @@ void AECROnlineBeacon::OnFailure()
 	UE_LOG(FBeaconLog, Log, TEXT("Beacon Connection failure"));
 }
 
-/** The rpc client ping implementation */
-void AECROnlineBeacon::ClientPing_Implementation()
+FUniqueNetIdRepl AECROnlineBeacon::GetOwningPlayerId()
 {
-	UE_LOG(FBeaconLog, Log, TEXT("Ping RPC Called"));
+	FUniqueNetIdRepl PlayerId;
+	if (UNetConnection* NetConnection = GetNetConnection())
+	{
+		PlayerId = NetConnection->PlayerId;
+	}
+	return PlayerId;
+}
 
-	//Get our end time in Ticks
-	int64 endTime = FDateTime::Now().GetTicks();
-	//Find the difference in ticks.
-	int64 diff = endTime - startTime;
-
-	//Divide diff by 10,000 to convert to Milliseconds
-	//And cast to int32 while we are at
-	int32 ms = (int32)diff / 10000;
-
-	//Broadcast the ping complete
-	OnPingComplete.Broadcast(ms);
-
-	//For looping simply call Ready() again from right here
+/** The rpc client ping implementation */
+void AECROnlineBeacon::ClientPing_Implementation(const FString& RepServerData)
+{
+	OnReceivedUpdateFromServer.Broadcast(RepServerData, {});
 }
 
 /** The rpc client ready implementation */
 void AECROnlineBeacon::Ready_Implementation()
 {
-	UE_LOG(FBeaconLog, Log, TEXT("Ready RPC Called"));
-	//Set our initial start time in ticks
-	startTime = FDateTime::Now().GetTicks();
 	//Call server pong rpc
-	ServerPong();
+	ServerPong(InitCallClientData);
 }
 
-bool AECROnlineBeacon::ServerPong_Validate()
+bool AECROnlineBeacon::ServerPong_Validate(const FString& ClientData)
 {
 	return true;
 }
 
 /** ServerPong rpc implementation **/
-void AECROnlineBeacon::ServerPong_Implementation()
+void AECROnlineBeacon::ServerPong_Implementation(const FString& ClientData)
 {
-	UE_LOG(FBeaconLog, Log, TEXT("Pong RPC Called"));
-	//Send ping rpc back to client
-	ClientPing();
+	OnReceivedUpdateFromClient.Broadcast(ClientData, GetOwningPlayerId());
+	// Broadcast server data to client
+	ClientPing(ServerData);
 }
 
 /** Our blueprint helper for stuff **/
-bool AECROnlineBeacon::Start(FString address, int32 port, const bool portOverride)
+bool AECROnlineBeacon::Start(FString Address, int32 Port, const bool bOverridePort)
 {
 	//Address must be an IP or valid domain name such as epicgames.com or 127.0.0.1
 	//Do not include a port in the address! Beacons use a different port then the standard 7777 for connection
-	FURL url(nullptr, *address, ETravelType::TRAVEL_Absolute);
+	FURL Url(nullptr, *Address, ETravelType::TRAVEL_Absolute);
 
 	//overriding it with a user specified port?
-	if (portOverride)
+	if (bOverridePort)
 	{
-		url.Port = port;
+		Url.Port = Port;
 	}
 	//if not overriding just pull the config for it based on the beacon host ListenPort
 	else
 	{
-		int32 portConfig;
+		int32 PortFromConfig;
 		GConfig->GetInt(
-			TEXT("/Script/OnlineSubsystemUtils.OnlineBeaconHost"), TEXT("ListenPort"), portConfig, GEngineIni);
-		url.Port = portConfig;
+			TEXT("/Script/OnlineSubsystemUtils.OnlineBeaconHost"), TEXT("ListenPort"), PortFromConfig, GEngineIni);
+		Url.Port = PortFromConfig;
 	}
-	UE_LOG(LogTemp, Warning, TEXT("Url %s valid %d"), *url.ToString(), url.Valid ? 1:0)
+	UE_LOG(LogTemp, Warning, TEXT("Url %s valid %d"), *Url.ToString(), Url.Valid ? 1:0)
 	//Tell our beacon client to begin connection request to server address with our beacon port
-	return InitClient(url);
+	return InitClient(Url);
 }
 
 /** Our blueprint helper for disconnecting and destroying the beacon */
 void AECROnlineBeacon::Disconnect()
 {
 	DestroyBeacon();
+}
+
+void AECROnlineBeacon::SetServerData(FString NewServerData)
+{
+	ServerData = NewServerData;
+	ClientPing(ServerData);
 }
 
 bool AECROnlineBeacon::InitBase()
