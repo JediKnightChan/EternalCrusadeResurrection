@@ -234,7 +234,6 @@ void UECRGameInstance::JoinMatch(const FBlueprintSessionResult Session)
 		{
 			// Remove all previous delegates
 			OnlineSessionPtr->ClearOnJoinSessionCompleteDelegates(this);
-
 			OnlineSessionPtr->OnJoinSessionCompleteDelegates.AddUObject(
 				this, &UECRGameInstance::OnJoinSessionComplete);
 
@@ -351,30 +350,41 @@ void UECRGameInstance::OnJoinSessionComplete(const FName SessionName,
 			{
 				FString ConnectionString;
 				OnlineSessionPtr->GetResolvedConnectString(SessionName, ConnectionString);
+				const FString Address = FString::Printf(
+					TEXT("%s?DisplayName=%s"), *(ConnectionString), *(UserDisplayName));
 
-				switch (Result)
+				if (SessionName == DEFAULT_SESSION_NAME)
 				{
-				case EOnJoinSessionCompleteResult::Type::Success:
-					if (!ConnectionString.IsEmpty())
+					switch (Result)
 					{
-						const FString Address = FString::Printf(
-							TEXT("%s?DisplayName=%s"), *(ConnectionString), *(UserDisplayName));
-						GUISupervisor->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
-					}
-					else
-					{
+					case EOnJoinSessionCompleteResult::Type::Success:
+						if (!ConnectionString.IsEmpty())
+						{
+							GUISupervisor->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
+						}
+						else
+						{
+							GUISupervisor->HandleJoinMatchFailed(false, false);
+						}
+						break;
+					case EOnJoinSessionCompleteResult::Type::SessionIsFull:
+						GUISupervisor->HandleJoinMatchFailed(true, false);
+						break;
+					case EOnJoinSessionCompleteResult::Type::SessionDoesNotExist:
+						GUISupervisor->HandleJoinMatchFailed(false, true);
+						break;
+					default:
 						GUISupervisor->HandleJoinMatchFailed(false, false);
+						break;
 					}
-					break;
-				case EOnJoinSessionCompleteResult::Type::SessionIsFull:
-					GUISupervisor->HandleJoinMatchFailed(true, false);
-					break;
-				case EOnJoinSessionCompleteResult::Type::SessionDoesNotExist:
-					GUISupervisor->HandleJoinMatchFailed(false, true);
-					break;
-				default:
-					GUISupervisor->HandleJoinMatchFailed(false, false);
-					break;
+				}
+				else if (SessionName == PARTY_LOBBY_SESSION_NAME)
+				{
+					const bool bSuccess = Result == EOnJoinSessionCompleteResult::Type::Success;
+					UE_LOG(LogTemp, Warning, TEXT("Join party complete, success %d"), bSuccess ? 1 : 0);
+					OnPartyJoinFinished_BP.Broadcast(bSuccess);
+
+					// GUISupervisor->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
 				}
 			}
 		}
@@ -454,38 +464,47 @@ void UECRGameInstance::OnPartyInviteReceived(const FUniqueNetId& UserId, const F
 	FUniqueNetIdRepl SourceId = FUniqueNetIdRepl{FromId};
 	FString SourceDisplayName = GetPartyMemberName(UserId);
 	FString SessionData = UECROnlineSubsystem::ConvertSessionSettingsToJson(InviteResult.Session.SessionSettings);
+	UE_LOG(LogTemp, Warning, TEXT("Received party invite from %s"), *(SourceDisplayName));
 	OnPartyInviteReceived_BP.Broadcast(SourceId, SourceDisplayName, SessionData);
 }
 
-void UECRGameInstance::OnJoinPartyComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result)
-{
-	const bool bSuccess = Result == EOnJoinSessionCompleteResult::Type::Success;
-	OnPartyJoinFinished_BP.Broadcast(bSuccess);
-}
 
 void UECRGameInstance::OnPartyLeaveComplete(FName SessionName, bool bSuccess)
 {
 	OnPartyLeaveFinished_BP.Broadcast(bSuccess);
 }
 
-void UECRGameInstance::OnPartyMemberJoined(FName SessionName, const FUniqueNetId& UniqueId, bool bJoined)
+void UECRGameInstance::OnPartyMemberJoinedOrLeft(FName SessionName, const FUniqueNetId& UniqueId, bool bJoined)
 {
+	UE_LOG(LogTemp, Warning, TEXT("New party member joined or left: %d"), bJoined ? 1 : 0);
+	if (OnlineSubsystem)
+	{
+		if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+		{
+			if (bJoined)
+			{
+				SessionInterface->RegisterPlayer(SessionName, UniqueId, true);
+			}
+			else
+			{
+				SessionInterface->UnregisterPlayer(SessionName, UniqueId);
+			}
+		}
+	}
 	OnPartyMembersChanged_BP.Broadcast();
 }
 
-void UECRGameInstance::OnPartyMemberLeft(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId)
-{
-	OnPartyMembersChanged_BP.Broadcast();
-}
 
 void UECRGameInstance::OnPartyDataReceived(FName SessionName, const FOnlineSessionSettings& NewSettings)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Party data update received"));
 	OnPartyDataUpdated_BP.Broadcast(UECROnlineSubsystem::ConvertSessionSettingsToJson(NewSettings));
 }
 
 void UECRGameInstance::OnFindFriendSessionComplete(int32 LocalUserNum, bool bWasSuccessful,
                                                    const TArray<FOnlineSessionSearchResult>& SearchResult)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Find friend session complete"));
 	if (bWasSuccessful && !SearchResult.IsEmpty())
 	{
 		FOnlineSessionSearchResult OnlineSessionSearchResult = SearchResult[0];
@@ -495,21 +514,54 @@ void UECRGameInstance::OnFindFriendSessionComplete(int32 LocalUserNum, bool bWas
 			{
 				if (OnlineSessionSearchResult.IsSessionInfoValid())
 				{
+					UE_LOG(LogTemp, Warning, TEXT("Searching friend sessions"));
 					SessionInterface->ClearOnJoinSessionCompleteDelegates(this);
 					SessionInterface->AddOnJoinSessionCompleteDelegate_Handle(
-						FOnJoinSessionCompleteDelegate::CreateUObject(this, &UECRGameInstance::OnJoinPartyComplete));
+						FOnJoinSessionCompleteDelegate::CreateUObject(this, &UECRGameInstance::OnJoinSessionComplete));
 					SessionInterface->JoinSession(0, PARTY_LOBBY_SESSION_NAME, OnlineSessionSearchResult);
 					return;
 				}
 			}
 		}
 	}
+	UE_LOG(LogTemp, Warning, TEXT("Find friend session bad error"));
 	OnPartyJoinFinished_BP.Broadcast(false);
 }
 
 void UECRGameInstance::OnSessionFailure(const FUniqueNetId& PlayerId, ESessionFailure::Type Reason)
 {
 	OnDisconnectedFromSession_BP.Broadcast();
+}
+
+void UECRGameInstance::OnPartyInviteAcceptedByMe(const bool bWasSuccessful, const int32 ControllerId,
+                                                 FUniqueNetIdPtr UserId, const FOnlineSessionSearchResult& InviteResult)
+{
+	if (bWasSuccessful)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Success accepting invite"));
+		if (OnlineSubsystem)
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				FString ConnectionString;
+				SessionInterface->GetResolvedConnectString(InviteResult, NAME_BeaconPort, ConnectionString);
+				OnPartyJoinConnectionDiscovered.Broadcast(ConnectionString);
+
+				/*
+				// Remove all previous delegates
+				SessionInterface->ClearOnJoinSessionCompleteDelegates(this);
+				SessionInterface->OnJoinSessionCompleteDelegates.AddUObject(
+					this, &UECRGameInstance::OnJoinSessionComplete);
+
+				SessionInterface->JoinSession(0, DEFAULT_SESSION_NAME, InviteResult);
+				*/
+			}
+		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Error accepting invite"));
+	}
 }
 
 FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
@@ -525,8 +577,8 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	SessionSettings.bIsLANMatch = false;
 	SessionSettings.bShouldAdvertise = true;
 	SessionSettings.bAllowJoinInProgress = true;
-	SessionSettings.bAllowJoinViaPresence = false;
-	SessionSettings.bUsesPresence = !bIsDedicatedServer;
+	SessionSettings.bAllowJoinViaPresence = true;
+	SessionSettings.bUsesPresence = true;
 	SessionSettings.bUseLobbiesIfAvailable = false;
 
 	/** Custom settings **/
@@ -847,8 +899,12 @@ bool UECRGameInstance::SetPartyData(FString Key, FString Value)
 			{
 				FOnlineSessionSettings* OnlineSessionSettings = SessionInterface->GetSessionSettings(
 					PARTY_LOBBY_SESSION_NAME);
-				OnlineSessionSettings->Set(FName{Key}, Value);
-				return true;
+				if (OnlineSessionSettings)
+				{
+					OnlineSessionSettings->Set(FName{Key}, Value, EOnlineDataAdvertisementType::ViaOnlineService);
+					SessionInterface->UpdateSession(PARTY_LOBBY_SESSION_NAME, *OnlineSessionSettings, true);
+					return true;
+				}
 			}
 		}
 	}
@@ -863,7 +919,7 @@ void UECRGameInstance::StartListeningForPartyEvents()
 		{
 			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
 			{
-				// Invites
+				// Invites received
 				SessionInterface->ClearOnSessionInviteReceivedDelegates(this);
 				SessionInterface->AddOnSessionInviteReceivedDelegate_Handle(
 					FOnSessionInviteReceivedDelegate::CreateUObject(this, &UECRGameInstance::OnPartyInviteReceived));
@@ -871,16 +927,24 @@ void UECRGameInstance::StartListeningForPartyEvents()
 				// Member changes
 				SessionInterface->ClearOnSessionParticipantsChangeDelegates(this);
 				SessionInterface->AddOnSessionParticipantsChangeDelegate_Handle(
-					FOnSessionParticipantsChangeDelegate::CreateUObject(this, &UECRGameInstance::OnPartyMemberJoined));
+					FOnSessionParticipantsChangeDelegate::CreateUObject(
+						this, &UECRGameInstance::OnPartyMemberJoinedOrLeft));
 
 				// Party data updates
 				SessionInterface->ClearOnSessionSettingsUpdatedDelegates(this);
 				SessionInterface->AddOnSessionSettingsUpdatedDelegate_Handle(
 					FOnSessionSettingsUpdatedDelegate::CreateUObject(this, &UECRGameInstance::OnPartyDataReceived));
 
+				// Party disconnects
 				SessionInterface->ClearOnSessionFailureDelegates(this);
 				SessionInterface->AddOnSessionFailureDelegate_Handle(
 					FOnSessionFailureDelegate::CreateUObject(this, &UECRGameInstance::OnSessionFailure));
+
+				// Accepting invite to party
+				SessionInterface->ClearOnSessionUserInviteAcceptedDelegates(this);
+				SessionInterface->AddOnSessionUserInviteAcceptedDelegate_Handle(
+					FOnSessionUserInviteAcceptedDelegate::CreateUObject(
+						this, &UECRGameInstance::OnPartyInviteAcceptedByMe));
 			}
 		}
 	}
@@ -890,6 +954,20 @@ void UECRGameInstance::StartListeningForPartyEvents()
 void UECRGameInstance::Init()
 {
 	Super::Init();
+
+	for (auto& Definition : GEngine->NetDriverDefinitions)
+	{
+		if (Definition.DefName == NAME_BeaconNetDriver)
+		{
+			return;
+		}
+	}
+
+	FNetDriverDefinition BeaconDriverDefinition;
+	BeaconDriverDefinition.DefName = NAME_BeaconNetDriver;
+	BeaconDriverDefinition.DriverClassName = FName("OnlineSubsystemEOS.NetDriverEOS");
+	BeaconDriverDefinition.DriverClassNameFallback = FName("/Script/OnlineSubsystemUtils.IpNetDriver");
+	GEngine->NetDriverDefinitions.Add(BeaconDriverDefinition);
 }
 
 

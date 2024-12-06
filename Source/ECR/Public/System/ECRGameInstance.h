@@ -27,6 +27,8 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPartyMembersChanged);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyDataUpdated, FString, UpdatedJsonString);
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyJoinConnectionDiscovered, FString, ConnectionString);
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDisconnectedFromSession);
 
 
@@ -94,6 +96,10 @@ class ECR_API UECRGameInstance : public UGameInstance
 	UPROPERTY(BlueprintAssignable)
 	FOnDisconnectedFromSession OnDisconnectedFromSession_BP;
 
+	/** Broadcaster for starting ecr online beacon for parties */
+	UPROPERTY(BlueprintAssignable)
+	FOnPartyJoinConnectionDiscovered OnPartyJoinConnectionDiscovered;
+
 protected:
 	/** Login via selected login type */
 	void Login(FString PlayerName, FString LoginType, FString Id = "", FString Token = "");
@@ -131,17 +137,11 @@ protected:
 	void OnPartyInviteReceived(const FUniqueNetId& UserId, const FUniqueNetId& FromId, const FString& AppId,
 	                           const FOnlineSessionSearchResult& InviteResult);
 
-	/** Delegate to complete party joining */
-	void OnJoinPartyComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
-
 	/** Delegate to complete party leave */
 	void OnPartyLeaveComplete(FName SessionName, bool bSuccess);
 
 	/** Delegate for party join events */
-	void OnPartyMemberJoined(FName SessionName, const FUniqueNetId& UniqueId, bool bJoined);
-
-	/** Delegate for party left events */
-	void OnPartyMemberLeft(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId);
+	void OnPartyMemberJoinedOrLeft(FName SessionName, const FUniqueNetId& UniqueId, bool bJoined);
 
 	/** Delegate for party data changes */
 	void OnPartyDataReceived(FName SessionName, const FOnlineSessionSettings& NewSettings);
@@ -152,6 +152,10 @@ protected:
 
 	/** Delegate for session failures */
 	void OnSessionFailure(const FUniqueNetId& PlayerId, ESessionFailure::Type Reason);
+
+	/** Delegate for accepting invites via overlay */
+	void OnPartyInviteAcceptedByMe(const bool bWasSuccessful, const int32 ControllerId, FUniqueNetIdPtr UserId,
+	                               const FOnlineSessionSearchResult& InviteResult);
 
 	FOnlineSessionSettings GetSessionSettings();
 
