@@ -25,7 +25,7 @@ public class HTTPRequests : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core", "HTTP",
+				"Core", "HTTP", "WebSockets"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
