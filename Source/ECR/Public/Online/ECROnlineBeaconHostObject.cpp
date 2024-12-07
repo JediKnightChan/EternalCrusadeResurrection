@@ -33,6 +33,17 @@ void AECROnlineBeaconHostObject::UpdateServerData(FString NewData)
 	}
 }
 
+void AECROnlineBeaconHostObject::DisconnectClientBeacon(FUniqueNetIdRepl PlayerId)
+{
+	for (AECROnlineBeacon* Client : ConnectedClients)
+	{
+		if (Client->GetOwningPlayerId() == PlayerId)
+		{
+			DisconnectClient(Client);
+		}
+	}
+}
+
 void AECROnlineBeaconHostObject::OnReceivedUpdateFromClient(FString JsonString, FUniqueNetIdRepl UniqueNetId)
 {
 	OnReceivedUpdateFromClient_BP.Broadcast(JsonString, UniqueNetId);

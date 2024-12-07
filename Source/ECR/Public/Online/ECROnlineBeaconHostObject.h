@@ -28,6 +28,9 @@ class AECROnlineBeaconHostObject : public AOnlineBeaconHostObject
 	UFUNCTION(BlueprintCallable)
 	void UpdateServerData(FString NewData);
 
+	UFUNCTION(BlueprintCallable)
+	void DisconnectClientBeacon(FUniqueNetIdRepl PlayerId);
+
 	/** Client received update from client */
 	UPROPERTY(BlueprintAssignable, Category = "ECRBeacon|Server")
 	FOnClientLeft OnClientLeft_BP;
@@ -36,6 +39,7 @@ class AECROnlineBeaconHostObject : public AOnlineBeaconHostObject
 	UPROPERTY(BlueprintAssignable, Category = "ECRBeacon|Server")
 	FOnBeaconUpdateComplete OnReceivedUpdateFromClient_BP;
 
+	UFUNCTION()
 	void OnReceivedUpdateFromClient(FString JsonString, FUniqueNetIdRepl UniqueNetId);
 
 private:

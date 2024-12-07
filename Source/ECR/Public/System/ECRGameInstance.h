@@ -176,7 +176,7 @@ public:
 
 	// Party functionality
 
-	/** Create party */
+	/** Create party lobby. Other party members don't join this lobby, but connect via OnlineBeacon */
 	UFUNCTION(BlueprintCallable)
 	void CreateParty();
 

@@ -10,9 +10,7 @@ AECROnlineBeacon::AECROnlineBeacon(const FObjectInitializer& ObjectInitializer) 
 void AECROnlineBeacon::OnFailure()
 {
 	Super::OnFailure();
-
-	/** This is where you would call the delegate for failure if you had one */
-	UE_LOG(FBeaconLog, Log, TEXT("Beacon Connection failure"));
+	OnBeaconFailure.Broadcast();
 }
 
 FUniqueNetIdRepl AECROnlineBeacon::GetOwningPlayerId()

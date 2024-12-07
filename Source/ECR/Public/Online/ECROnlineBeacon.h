@@ -7,6 +7,8 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnBeaconUpdateComplete, FString, JsonString, FUniqueNetIdRepl,
                                              UniqueNetId);
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBeaconFailure);
+
 DECLARE_LOG_CATEGORY_EXTERN(FBeaconLog, Log, All);
 
 /**
@@ -61,6 +63,8 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "ECRBeacon|Server")
 	FOnBeaconUpdateComplete OnReceivedUpdateFromClient;
 
+	UPROPERTY(BlueprintAssignable, Category = "ECRBeacon|Client")
+	FOnBeaconFailure OnBeaconFailure;
 protected:
 	virtual bool InitBase() override;
 

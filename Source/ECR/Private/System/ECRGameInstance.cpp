@@ -94,8 +94,9 @@ void UECRGameInstance::OnLoginComplete(int32 LocalUserNum, const bool bWasSucces
 	{
 		if (bWasSuccessful)
 		{
-			GUISupervisor->ShowMainMenu(true);
+			// GUISupervisor->ShowMainMenu(true);
 			StartListeningForPartyEvents();
+			CreateParty();
 		}
 		else
 		{

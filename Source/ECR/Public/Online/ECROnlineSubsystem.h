@@ -107,6 +107,12 @@ struct FECRPartyMemberData
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bIsLeader;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FName Faction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bReady;
 };
 
 /** Data about match that will be saved in game instance to be available after match creation */
