@@ -21,6 +21,23 @@ bool AECROnlineBeaconHostObject::Init()
 	return true;
 }
 
+void AECROnlineBeaconHostObject::UpdateServerData(FString NewData)
+{
+	ServerData = NewData;
+	for (AECROnlineBeacon* Beacon : ConnectedClients)
+	{
+		if (Beacon)
+		{
+			Beacon->SetServerDataAndUpdate(NewData);
+		}
+	}
+}
+
+void AECROnlineBeaconHostObject::OnReceivedUpdateFromClient(FString JsonString, FUniqueNetIdRepl UniqueNetId)
+{
+	OnReceivedUpdateFromClient_BP.Broadcast(JsonString, UniqueNetId);
+}
+
 void AECROnlineBeaconHostObject::OnClientConnected(AOnlineBeaconClient* NewClientActor,
                                                    UNetConnection* ClientConnection)
 {
@@ -31,8 +48,11 @@ void AECROnlineBeaconHostObject::OnClientConnected(AOnlineBeaconClient* NewClien
 	if (AECROnlineBeacon* BeaconClient = Cast<AECROnlineBeacon>(NewClientActor))
 	{
 		//It's good, so lets rpc back to the client and tell it we are ready
+		BeaconClient->SetServerDataNoUpdate(ServerData);
+		BeaconClient->OnReceivedUpdateFromClient.AddDynamic(
+			this, &AECROnlineBeaconHostObject::OnReceivedUpdateFromClient);
 		BeaconClient->Ready();
-		BeaconClient->GetNetConnection()->PlayerId;
+		ConnectedClients.Add(BeaconClient);
 	}
 }
 
@@ -43,7 +63,8 @@ void AECROnlineBeaconHostObject::NotifyClientDisconnected(AOnlineBeaconClient* L
 	if (AECROnlineBeacon* BeaconClient = Cast<AECROnlineBeacon>(LeavingClientActor))
 	{
 		//It's good, so lets rpc back to the client and tell it we are ready
-		OnClientLeft.Broadcast(BeaconClient->GetOwningPlayerId());
+		OnClientLeft_BP.Broadcast(BeaconClient->GetOwningPlayerId());
+		ConnectedClients.Remove(BeaconClient);
 	}
 }
 

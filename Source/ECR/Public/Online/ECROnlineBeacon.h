@@ -4,7 +4,8 @@
 #include "OnlineBeaconClient.h"
 #include "ECROnlineBeacon.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnBeaconUpdateComplete, FString, JsonString, FUniqueNetIdRepl, UniqueNetId);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnBeaconUpdateComplete, FString, JsonString, FUniqueNetIdRepl,
+                                             UniqueNetId);
 
 DECLARE_LOG_CATEGORY_EXTERN(FBeaconLog, Log, All);
 
@@ -47,7 +48,10 @@ public:
 	void Disconnect();
 
 	UFUNCTION(BlueprintAuthorityOnly, Category = "ECRBeacon|Server")
-	void SetServerData(FString NewServerData);
+	void SetServerDataNoUpdate(FString NewServerData);
+
+	UFUNCTION(BlueprintAuthorityOnly, Category = "ECRBeacon|Server")
+	void SetServerDataAndUpdate(FString NewServerData);
 
 	/** Client received update from server */
 	UPROPERTY(BlueprintAssignable, Category = "ECRBeacon|Client")

@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "OnlineBeaconHostObject.h"
+#include "ECROnlineBeacon.h"
 #include "ECROnlineBeaconHostObject.generated.h"
 
 
@@ -23,7 +24,24 @@ class AECROnlineBeaconHostObject : public AOnlineBeaconHostObject
 	/** In case you ever want to do other things */
 	virtual bool Init();
 
+	/** Updates server data for connected clients */
+	UFUNCTION(BlueprintCallable)
+	void UpdateServerData(FString NewData);
+
 	/** Client received update from client */
 	UPROPERTY(BlueprintAssignable, Category = "ECRBeacon|Server")
-	FOnClientLeft OnClientLeft;
+	FOnClientLeft OnClientLeft_BP;
+
+	/** Client received update from client */
+	UPROPERTY(BlueprintAssignable, Category = "ECRBeacon|Server")
+	FOnBeaconUpdateComplete OnReceivedUpdateFromClient_BP;
+
+	void OnReceivedUpdateFromClient(FString JsonString, FUniqueNetIdRepl UniqueNetId);
+
+private:
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess))
+	TArray<AECROnlineBeacon*> ConnectedClients;
+
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess))
+	FString ServerData;
 };

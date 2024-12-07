@@ -82,10 +82,15 @@ void AECROnlineBeacon::Disconnect()
 	DestroyBeacon();
 }
 
-void AECROnlineBeacon::SetServerData(FString NewServerData)
+void AECROnlineBeacon::SetServerDataNoUpdate(FString NewServerData)
 {
 	ServerData = NewServerData;
-	ClientPing(ServerData);
+}
+
+void AECROnlineBeacon::SetServerDataAndUpdate(FString NewServerData)
+{
+	SetServerDataNoUpdate(NewServerData);
+	ClientPing(NewServerData);
 }
 
 bool AECROnlineBeacon::InitBase()

@@ -14,22 +14,9 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnFriendListUpdated, bool, bSucces
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyCreationFinished, bool, bSuccess);
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnPartyMemberKickFinished, bool, bSuccess, FUniqueNetIdRepl, Member);
-
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnPartyInvitationReceived, FUniqueNetIdRepl, SourceId, FString,
-                                               SourceDisplayName, FString, SessionData);
-
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyJoinFinished, bool, bSuccess);
-
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyLeaveFinished, bool, bSuccess);
-
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPartyMembersChanged);
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyDataUpdated, FString, UpdatedJsonString);
-
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyJoinConnectionDiscovered, FString, ConnectionString);
-
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDisconnectedFromSession);
 
 
 /**
@@ -68,34 +55,6 @@ class ECR_API UECRGameInstance : public UGameInstance
 	UPROPERTY(BlueprintAssignable)
 	FOnPartyCreationFinished OnPartyCreationFinished_BP;
 
-	/** Broadcaster for party kick events */
-	UPROPERTY(BlueprintAssignable)
-	FOnPartyMemberKickFinished OnPartyMemberKickFinished_BP;
-
-	/** Broadcaster for party invites */
-	UPROPERTY(BlueprintAssignable)
-	FOnPartyInvitationReceived OnPartyInviteReceived_BP;
-
-	/** Broadcaster for party joins result */
-	UPROPERTY(BlueprintAssignable)
-	FOnPartyJoinFinished OnPartyJoinFinished_BP;
-
-	/** Broadcaster for changes in the party */
-	UPROPERTY(BlueprintAssignable)
-	FOnPartyMembersChanged OnPartyMembersChanged_BP;
-
-	/** Broadcaster for changes in the party data */
-	UPROPERTY(BlueprintAssignable)
-	FOnPartyDataUpdated OnPartyDataUpdated_BP;
-
-	/** Broadcaster for leaving party */
-	UPROPERTY(BlueprintAssignable)
-	FOnPartyLeaveFinished OnPartyLeaveFinished_BP;
-
-	/** Broadcaster for leaving party */
-	UPROPERTY(BlueprintAssignable)
-	FOnDisconnectedFromSession OnDisconnectedFromSession_BP;
-
 	/** Broadcaster for starting ecr online beacon for parties */
 	UPROPERTY(BlueprintAssignable)
 	FOnPartyJoinConnectionDiscovered OnPartyJoinConnectionDiscovered;
@@ -128,30 +87,6 @@ protected:
 
 	/** Delegate to complete party creation */
 	void OnPartyCreationComplete(FName SessionName, bool bWasSuccessful);
-
-	/** Delegate to complete party member kick */
-	void OnKickPartyMemberComplete(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId,
-	                               const FUniqueNetId& MemberId, const EKickMemberCompletionResult Result);
-
-	/** Delegate for receiving party invites */
-	void OnPartyInviteReceived(const FUniqueNetId& UserId, const FUniqueNetId& FromId, const FString& AppId,
-	                           const FOnlineSessionSearchResult& InviteResult);
-
-	/** Delegate to complete party leave */
-	void OnPartyLeaveComplete(FName SessionName, bool bSuccess);
-
-	/** Delegate for party join events */
-	void OnPartyMemberJoinedOrLeft(FName SessionName, const FUniqueNetId& UniqueId, bool bJoined);
-
-	/** Delegate for party data changes */
-	void OnPartyDataReceived(FName SessionName, const FOnlineSessionSettings& NewSettings);
-
-	/** Delegate for completing find friend session */
-	void OnFindFriendSessionComplete(int32 LocalUserNum, bool bWasSuccessful,
-	                                 const TArray<FOnlineSessionSearchResult>& SearchResult);
-
-	/** Delegate for session failures */
-	void OnSessionFailure(const FUniqueNetId& PlayerId, ESessionFailure::Type Reason);
 
 	/** Delegate for accepting invites via overlay */
 	void OnPartyInviteAcceptedByMe(const bool bWasSuccessful, const int32 ControllerId, FUniqueNetIdPtr UserId,
@@ -243,45 +178,19 @@ public:
 
 	/** Create party */
 	UFUNCTION(BlueprintCallable)
-	void CreateParty(TMap<FString, FString> SessionData);
+	void CreateParty();
 
-	/** Check if in party */
-	UFUNCTION(BlueprintCallable)
-	bool GetIsInParty();
-
-	/** Check if is party leader */
-	UFUNCTION(BlueprintCallable)
-	bool GetIsPartyLeader();
+	/** Returns if is in party session */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	bool GetIsInPartySession();
 
 	/** Get name of party member */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetPartyMemberName(FUniqueNetIdRepl MemberId);
 
-	/* Kick party member */
-	UFUNCTION(BlueprintCallable)
-	void KickPartyMember(FUniqueNetIdRepl MemberId);
-
-	/** Leave party */
-	UFUNCTION(BlueprintCallable)
-	void LeaveParty();
-
 	/** Invite player to party */
 	UFUNCTION(BlueprintCallable)
 	void InviteToParty(FUniqueNetIdRepl PlayerId);
-
-	/** Accept party invite */
-	UFUNCTION(BlueprintCallable)
-	void AcceptPartyInvite(FUniqueNetIdRepl PlayerId);
-
-	/** Decline party invite */
-	UFUNCTION(BlueprintCallable)
-	void DeclinePartyInvite(FUniqueNetIdRepl PlayerId);
-
-	UFUNCTION(BlueprintCallable)
-	TArray<FECRPartyMemberData> GetPartyMembersList();
-
-	UFUNCTION(BlueprintCallable)
-	bool SetPartyData(FString Key, FString Value);
 
 	UFUNCTION(BlueprintCallable)
 	void StartListeningForPartyEvents();

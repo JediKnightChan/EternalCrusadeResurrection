@@ -378,14 +378,6 @@ void UECRGameInstance::OnJoinSessionComplete(const FName SessionName,
 						break;
 					}
 				}
-				else if (SessionName == PARTY_LOBBY_SESSION_NAME)
-				{
-					const bool bSuccess = Result == EOnJoinSessionCompleteResult::Type::Success;
-					UE_LOG(LogTemp, Warning, TEXT("Join party complete, success %d"), bSuccess ? 1 : 0);
-					OnPartyJoinFinished_BP.Broadcast(bSuccess);
-
-					// GUISupervisor->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
-				}
 			}
 		}
 	}
@@ -450,88 +442,6 @@ void UECRGameInstance::OnPartyCreationComplete(FName SessionName, bool bWasSucce
 	OnPartyCreationFinished_BP.Broadcast(bWasSuccessful);
 }
 
-void UECRGameInstance::OnKickPartyMemberComplete(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId,
-                                                 const FUniqueNetId& MemberId, const EKickMemberCompletionResult Result)
-{
-	bool bSuccess = Result == EKickMemberCompletionResult::Succeeded;
-	OnPartyMemberKickFinished_BP.Broadcast(bSuccess, MemberId);
-}
-
-void UECRGameInstance::OnPartyInviteReceived(const FUniqueNetId& UserId, const FUniqueNetId& FromId,
-                                             const FString& AppId,
-                                             const FOnlineSessionSearchResult& InviteResult)
-{
-	FUniqueNetIdRepl SourceId = FUniqueNetIdRepl{FromId};
-	FString SourceDisplayName = GetPartyMemberName(UserId);
-	FString SessionData = UECROnlineSubsystem::ConvertSessionSettingsToJson(InviteResult.Session.SessionSettings);
-	UE_LOG(LogTemp, Warning, TEXT("Received party invite from %s"), *(SourceDisplayName));
-	OnPartyInviteReceived_BP.Broadcast(SourceId, SourceDisplayName, SessionData);
-}
-
-
-void UECRGameInstance::OnPartyLeaveComplete(FName SessionName, bool bSuccess)
-{
-	OnPartyLeaveFinished_BP.Broadcast(bSuccess);
-}
-
-void UECRGameInstance::OnPartyMemberJoinedOrLeft(FName SessionName, const FUniqueNetId& UniqueId, bool bJoined)
-{
-	UE_LOG(LogTemp, Warning, TEXT("New party member joined or left: %d"), bJoined ? 1 : 0);
-	if (OnlineSubsystem)
-	{
-		if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
-		{
-			if (bJoined)
-			{
-				SessionInterface->RegisterPlayer(SessionName, UniqueId, true);
-			}
-			else
-			{
-				SessionInterface->UnregisterPlayer(SessionName, UniqueId);
-			}
-		}
-	}
-	OnPartyMembersChanged_BP.Broadcast();
-}
-
-
-void UECRGameInstance::OnPartyDataReceived(FName SessionName, const FOnlineSessionSettings& NewSettings)
-{
-	UE_LOG(LogTemp, Warning, TEXT("Party data update received"));
-	OnPartyDataUpdated_BP.Broadcast(UECROnlineSubsystem::ConvertSessionSettingsToJson(NewSettings));
-}
-
-void UECRGameInstance::OnFindFriendSessionComplete(int32 LocalUserNum, bool bWasSuccessful,
-                                                   const TArray<FOnlineSessionSearchResult>& SearchResult)
-{
-	UE_LOG(LogTemp, Warning, TEXT("Find friend session complete"));
-	if (bWasSuccessful && !SearchResult.IsEmpty())
-	{
-		FOnlineSessionSearchResult OnlineSessionSearchResult = SearchResult[0];
-		if (OnlineSubsystem)
-		{
-			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
-			{
-				if (OnlineSessionSearchResult.IsSessionInfoValid())
-				{
-					UE_LOG(LogTemp, Warning, TEXT("Searching friend sessions"));
-					SessionInterface->ClearOnJoinSessionCompleteDelegates(this);
-					SessionInterface->AddOnJoinSessionCompleteDelegate_Handle(
-						FOnJoinSessionCompleteDelegate::CreateUObject(this, &UECRGameInstance::OnJoinSessionComplete));
-					SessionInterface->JoinSession(0, PARTY_LOBBY_SESSION_NAME, OnlineSessionSearchResult);
-					return;
-				}
-			}
-		}
-	}
-	UE_LOG(LogTemp, Warning, TEXT("Find friend session bad error"));
-	OnPartyJoinFinished_BP.Broadcast(false);
-}
-
-void UECRGameInstance::OnSessionFailure(const FUniqueNetId& PlayerId, ESessionFailure::Type Reason)
-{
-	OnDisconnectedFromSession_BP.Broadcast();
-}
 
 void UECRGameInstance::OnPartyInviteAcceptedByMe(const bool bWasSuccessful, const int32 ControllerId,
                                                  FUniqueNetIdPtr UserId, const FOnlineSessionSearchResult& InviteResult)
@@ -546,15 +456,6 @@ void UECRGameInstance::OnPartyInviteAcceptedByMe(const bool bWasSuccessful, cons
 				FString ConnectionString;
 				SessionInterface->GetResolvedConnectString(InviteResult, NAME_BeaconPort, ConnectionString);
 				OnPartyJoinConnectionDiscovered.Broadcast(ConnectionString);
-
-				/*
-				// Remove all previous delegates
-				SessionInterface->ClearOnJoinSessionCompleteDelegates(this);
-				SessionInterface->OnJoinSessionCompleteDelegates.AddUObject(
-					this, &UECRGameInstance::OnJoinSessionComplete);
-
-				SessionInterface->JoinSession(0, DEFAULT_SESSION_NAME, InviteResult);
-				*/
 			}
 		}
 	}
@@ -697,7 +598,7 @@ void UECRGameInstance::QueueGettingFriendsList()
 	}
 }
 
-void UECRGameInstance::CreateParty(TMap<FString, FString> SessionData)
+void UECRGameInstance::CreateParty()
 {
 	if (OnlineSubsystem)
 	{
@@ -705,20 +606,13 @@ void UECRGameInstance::CreateParty(TMap<FString, FString> SessionData)
 		{
 			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
 			{
-				if (GetIsInParty())
+				if (GetIsInPartySession())
 				{
 					OnPartyCreationComplete(PARTY_LOBBY_SESSION_NAME, true);
 				}
 				else
 				{
-					// Setting custom party data (eg faction)
-					FOnlineSessionSettings SessionSettings = GetPartySessionSettings();
-					for (TTuple<FString, FString> DataTuple : SessionData)
-					{
-						SessionSettings.Set(FName{DataTuple.Key}, DataTuple.Value);
-					}
-
-					SessionInterface->CreateSession(0, PARTY_LOBBY_SESSION_NAME, SessionSettings);
+					SessionInterface->CreateSession(0, PARTY_LOBBY_SESSION_NAME, GetPartySessionSettings());
 					SessionInterface->ClearOnCreateSessionCompleteDelegates(this);
 					SessionInterface->OnCreateSessionCompleteDelegates.AddUObject(
 						this, &UECRGameInstance::OnPartyCreationComplete);
@@ -728,7 +622,7 @@ void UECRGameInstance::CreateParty(TMap<FString, FString> SessionData)
 	}
 }
 
-bool UECRGameInstance::GetIsInParty()
+bool UECRGameInstance::GetIsInPartySession()
 {
 	if (OnlineSubsystem)
 	{
@@ -738,25 +632,6 @@ bool UECRGameInstance::GetIsInParty()
 			{
 				return SessionInterface->IsPlayerInSession(
 					PARTY_LOBBY_SESSION_NAME, *Identity->GetUniquePlayerId(0).Get());
-			}
-		}
-	}
-	return false;
-}
-
-bool UECRGameInstance::GetIsPartyLeader()
-{
-	if (OnlineSubsystem)
-	{
-		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
-		{
-			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
-			{
-				FNamedOnlineSession* NamedOnlineSession = SessionInterface->GetNamedSession(PARTY_LOBBY_SESSION_NAME);
-				if (NamedOnlineSession)
-				{
-					return NamedOnlineSession->bHosting;
-				}
 			}
 		}
 	}
@@ -791,37 +666,6 @@ FString UECRGameInstance::GetPartyMemberName(FUniqueNetIdRepl MemberId)
 	return "";
 }
 
-void UECRGameInstance::KickPartyMember(FUniqueNetIdRepl MemberId)
-{
-	if (OnlineSubsystem)
-	{
-		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
-		{
-			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
-			{
-				SessionInterface->
-					RemovePlayerFromSession(0, PARTY_LOBBY_SESSION_NAME, *MemberId.GetUniqueNetId().Get());
-			}
-		}
-	}
-}
-
-void UECRGameInstance::LeaveParty()
-{
-	if (OnlineSubsystem)
-	{
-		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
-		{
-			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
-			{
-				SessionInterface->DestroySession(
-					PARTY_LOBBY_SESSION_NAME,
-					FOnDestroySessionCompleteDelegate::CreateUObject(
-						this, &UECRGameInstance::OnPartyLeaveComplete));
-			}
-		}
-	}
-}
 
 void UECRGameInstance::InviteToParty(FUniqueNetIdRepl PlayerId)
 {
@@ -838,78 +682,6 @@ void UECRGameInstance::InviteToParty(FUniqueNetIdRepl PlayerId)
 	}
 }
 
-void UECRGameInstance::AcceptPartyInvite(FUniqueNetIdRepl PlayerId)
-{
-	if (OnlineSubsystem)
-	{
-		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
-		{
-			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
-			{
-				SessionInterface->ClearOnFindFriendSessionCompleteDelegates(0, this);
-				SessionInterface->AddOnFindFriendSessionCompleteDelegate_Handle(
-					0, FOnFindFriendSessionCompleteDelegate::CreateUObject(
-						this, &UECRGameInstance::OnFindFriendSessionComplete));
-				SessionInterface->FindFriendSession(0, *PlayerId.GetUniqueNetId().Get());
-			}
-		}
-	}
-}
-
-void UECRGameInstance::DeclinePartyInvite(FUniqueNetIdRepl PlayerId)
-{
-}
-
-TArray<FECRPartyMemberData> UECRGameInstance::GetPartyMembersList()
-{
-	TArray<FECRPartyMemberData> Result;
-	if (OnlineSubsystem)
-	{
-		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
-		{
-			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
-			{
-				FNamedOnlineSession* NamedOnlineSession = SessionInterface->GetNamedSession(PARTY_LOBBY_SESSION_NAME);
-				if (NamedOnlineSession)
-				{
-					for (TSharedRef<FUniqueNetId const, ESPMode::ThreadSafe> Member : NamedOnlineSession->
-					     RegisteredPlayers)
-					{
-						FECRPartyMemberData Data = FECRPartyMemberData{
-							GetPartyMemberName(Member),
-							Member,
-							Member == NamedOnlineSession->OwningUserId,
-						};
-						Result.Add(Data);
-					}
-				}
-			}
-		}
-	}
-	return Result;
-}
-
-bool UECRGameInstance::SetPartyData(FString Key, FString Value)
-{
-	if (OnlineSubsystem)
-	{
-		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
-		{
-			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
-			{
-				FOnlineSessionSettings* OnlineSessionSettings = SessionInterface->GetSessionSettings(
-					PARTY_LOBBY_SESSION_NAME);
-				if (OnlineSessionSettings)
-				{
-					OnlineSessionSettings->Set(FName{Key}, Value, EOnlineDataAdvertisementType::ViaOnlineService);
-					SessionInterface->UpdateSession(PARTY_LOBBY_SESSION_NAME, *OnlineSessionSettings, true);
-					return true;
-				}
-			}
-		}
-	}
-	return false;
-}
 
 void UECRGameInstance::StartListeningForPartyEvents()
 {
@@ -919,27 +691,6 @@ void UECRGameInstance::StartListeningForPartyEvents()
 		{
 			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
 			{
-				// Invites received
-				SessionInterface->ClearOnSessionInviteReceivedDelegates(this);
-				SessionInterface->AddOnSessionInviteReceivedDelegate_Handle(
-					FOnSessionInviteReceivedDelegate::CreateUObject(this, &UECRGameInstance::OnPartyInviteReceived));
-
-				// Member changes
-				SessionInterface->ClearOnSessionParticipantsChangeDelegates(this);
-				SessionInterface->AddOnSessionParticipantsChangeDelegate_Handle(
-					FOnSessionParticipantsChangeDelegate::CreateUObject(
-						this, &UECRGameInstance::OnPartyMemberJoinedOrLeft));
-
-				// Party data updates
-				SessionInterface->ClearOnSessionSettingsUpdatedDelegates(this);
-				SessionInterface->AddOnSessionSettingsUpdatedDelegate_Handle(
-					FOnSessionSettingsUpdatedDelegate::CreateUObject(this, &UECRGameInstance::OnPartyDataReceived));
-
-				// Party disconnects
-				SessionInterface->ClearOnSessionFailureDelegates(this);
-				SessionInterface->AddOnSessionFailureDelegate_Handle(
-					FOnSessionFailureDelegate::CreateUObject(this, &UECRGameInstance::OnSessionFailure));
-
 				// Accepting invite to party
 				SessionInterface->ClearOnSessionUserInviteAcceptedDelegates(this);
 				SessionInterface->AddOnSessionUserInviteAcceptedDelegate_Handle(
