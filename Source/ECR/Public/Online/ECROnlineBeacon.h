@@ -28,7 +28,7 @@ public:
 
 	/** Send an update RPC to the client */
 	UFUNCTION(Client, Reliable)
-	virtual void ClientPing(const FString& ServerData);
+	virtual void ClientPing(const FString& RepServerData);
 
 	/** Let's us know the beacon is ready so we can prep the initial start time for ping round trip */
 	UFUNCTION(Client, Reliable)
