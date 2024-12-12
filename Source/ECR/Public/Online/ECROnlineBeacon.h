@@ -38,7 +38,7 @@ public:
 	virtual void Ready();
 
 	/** Send a pong RPC to the host */
-	UFUNCTION(Server, Reliable, WithValidation)
+	UFUNCTION(BlueprintCallable, Server, Reliable, WithValidation)
 	virtual void ServerPong(const FString& ClientData);
 
 	/** Provide Blueprint Access to Start the Beacon **/

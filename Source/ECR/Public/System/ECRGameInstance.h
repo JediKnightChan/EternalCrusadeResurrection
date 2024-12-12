@@ -184,6 +184,10 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	bool GetIsInPartySession();
 
+	/** Returns party session id */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FUniqueNetIdRepl GetPartySessionId();
+
 	/** Get name of party member */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetPartyMemberName(FUniqueNetIdRepl MemberId);

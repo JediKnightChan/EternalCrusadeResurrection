@@ -449,7 +449,6 @@ void UECRGameInstance::OnPartyInviteAcceptedByMe(const bool bWasSuccessful, cons
 {
 	if (bWasSuccessful)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Success accepting invite"));
 		if (OnlineSubsystem)
 		{
 			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
@@ -459,10 +458,6 @@ void UECRGameInstance::OnPartyInviteAcceptedByMe(const bool bWasSuccessful, cons
 				OnPartyJoinConnectionDiscovered.Broadcast(ConnectionString);
 			}
 		}
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Error accepting invite"));
 	}
 }
 
@@ -637,6 +632,30 @@ bool UECRGameInstance::GetIsInPartySession()
 		}
 	}
 	return false;
+}
+
+FUniqueNetIdRepl UECRGameInstance::GetPartySessionId()
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineIdentityPtr Identity = OnlineSubsystem->GetIdentityInterface())
+		{
+			if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
+			{
+				FNamedOnlineSession* NamedOnlineSession = SessionInterface->GetNamedSession(PARTY_LOBBY_SESSION_NAME);
+				if (NamedOnlineSession)
+				{
+					TSharedPtr<FOnlineSessionInfo>::ElementType* OnlineSessionInfo = NamedOnlineSession->SessionInfo.
+						Get();
+					if (OnlineSessionInfo)
+					{
+						return OnlineSessionInfo->GetSessionId();
+					}
+				}
+			}
+		}
+	}
+	return FUniqueNetIdRepl{};
 }
 
 FString UECRGameInstance::GetPartyMemberName(FUniqueNetIdRepl MemberId)
