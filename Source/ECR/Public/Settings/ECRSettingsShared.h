@@ -242,14 +242,14 @@ private:
 	////////////////////////////////////////////////////////
 	// Gamepad Sensitivity
 public:
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	EECRGamepadSensitivity GetGamepadLookSensitivityPreset() const { return GamepadLookSensitivityPreset; }
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void SetLookSensitivityPreset(EECRGamepadSensitivity NewValue) { ChangeValueAndDirty(GamepadLookSensitivityPreset, NewValue); ApplyInputSensitivity(); }
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	EECRGamepadSensitivity GetGamepadTargetingSensitivityPreset() const { return GamepadTargetingSensitivityPreset; }
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void SetGamepadTargetingSensitivityPreset(EECRGamepadSensitivity NewValue) { ChangeValueAndDirty(GamepadTargetingSensitivityPreset, NewValue); ApplyInputSensitivity(); }
 
 	void ApplyInputSensitivity();

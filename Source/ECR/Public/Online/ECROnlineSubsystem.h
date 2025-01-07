@@ -215,8 +215,4 @@ public:
 
 	/** Convert session custom settings to JSON string */
 	static FString ConvertSessionSettingsToJson(const FOnlineSessionSettings& Settings);
-
-	/** Convert FBlueprintSessionResult to string */
-	UFUNCTION(BlueprintCallable, BlueprintPure)
-	static FString SessionResultToString(FBlueprintSessionResult Result);
 };
