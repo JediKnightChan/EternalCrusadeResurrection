@@ -131,7 +131,8 @@ struct FECRMatchSettings
 	                  const FName& Region, const FName& WeatherName, const FName& DayTimeName, const double TimeDelta,
 	                  const TArray<FFactionAlliance>& Alliances,
 	                  const TMap<FName, int32>& FactionNamesToCapacities,
-	                  const TMap<FName, FText>& FactionNamesToShortTexts)
+	                  const TMap<FName, FText>& FactionNamesToShortTexts, 
+		              const bool& RangedFriendlyFire = false, const bool& MeleeFriendlyFire = false)
 		: GameVersion(GameVersion),
 		  GameMode(GameMode),
 		  MapName(MapName),
@@ -143,7 +144,9 @@ struct FECRMatchSettings
 		  TimeDelta(TimeDelta),
 		  Alliances(Alliances),
 		  FactionNamesToCapacities(FactionNamesToCapacities),
-		  FactionNamesToShortTexts(FactionNamesToShortTexts)
+		  FactionNamesToShortTexts(FactionNamesToShortTexts),
+		  RangedFriendlyFire(RangedFriendlyFire),
+		  MeleeFriendlyFire(MeleeFriendlyFire)
 	{
 		CurrentPlayerAmount = 1;
 		MatchStartedTime = 0.0f;
@@ -184,6 +187,12 @@ struct FECRMatchSettings
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TMap<FName, FText> FactionNamesToShortTexts;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool RangedFriendlyFire;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool MeleeFriendlyFire;
 
 	// Updatable stats
 

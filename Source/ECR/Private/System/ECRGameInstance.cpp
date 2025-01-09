@@ -154,7 +154,8 @@ void UECRGameInstance::CreateMatch(const FString GameVersion, const FName ModeNa
                                    const FName WeatherName, const FName DayTimeName,
                                    const TArray<FFactionAlliance> Alliances,
                                    const TMap<FName, int32> FactionNamesToCapacities,
-                                   const TMap<FName, FText> FactionNamesToShortTexts)
+                                   const TMap<FName, FText> FactionNamesToShortTexts,
+	                               const bool RangedFriendlyFire, const bool MeleeFriendlyFire)
 {
 	if (IsDedicatedServerInstance())
 	{
@@ -177,7 +178,7 @@ void UECRGameInstance::CreateMatch(const FString GameVersion, const FName ModeNa
 			// Saving match creation settings for use in delegate and after map load
 			MatchCreationSettings = FECRMatchSettings{
 				GameVersion, ModeName, MapName, MapPath, MissionName, RegionName, WeatherName, DayTimeName, TimeDelta,
-				Alliances, FactionNamesToCapacities, FactionNamesToShortTexts
+				Alliances, FactionNamesToCapacities, FactionNamesToShortTexts, RangedFriendlyFire, MeleeFriendlyFire
 			};
 			FOnlineSessionSettings SessionSettings = GetSessionSettings();
 

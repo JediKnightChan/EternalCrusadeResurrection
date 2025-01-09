@@ -121,7 +121,8 @@ public:
 	                 const FName MapName, const FString MapPath, const FName MissionName,
 	                 const FName RegionName, const double TimeDelta, const FName WeatherName,
 	                 const FName DayTimeName, const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
-	                 FactionNamesToCapacities, const TMap<FName, FText> FactionNamesToShortTexts);
+	                 FactionNamesToCapacities, const TMap<FName, FText> FactionNamesToShortTexts,
+		             const bool RangedFriendlyFire = false, const bool MeleeFriendlyFire = false);
 
 	/** Find matches */
 	UFUNCTION(BlueprintCallable)
