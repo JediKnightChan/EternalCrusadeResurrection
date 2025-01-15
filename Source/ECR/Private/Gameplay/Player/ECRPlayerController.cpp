@@ -60,9 +60,9 @@ void AECRPlayerController::BeginPlay()
 	if (IsLocalPlayerController())
 	{
 		const TSharedRef<FNavigationConfig> Navigation = MakeShared<FNavigationConfig>();
-		Navigation->bKeyNavigation = false;
+		Navigation->bKeyNavigation = true;
 		Navigation->bTabNavigation = false;
-		Navigation->bAnalogNavigation = false;
+		Navigation->bAnalogNavigation = true;
 		FSlateApplication::Get().SetNavigationConfig(Navigation);
 	}
 }
