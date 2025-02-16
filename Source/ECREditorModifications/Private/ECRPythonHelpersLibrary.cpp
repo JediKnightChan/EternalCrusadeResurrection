@@ -47,3 +47,9 @@ void UECRPythonHelpersLibrary::ExportDataTableAsCsv(UDataTable* DataTable, FStri
 		UE_LOG(LogTemp, Warning, TEXT("Failed to export DataTable to: %s"), *AbsolutePath);
 	}
 }
+
+
+UClass* UECRPythonHelpersLibrary::GetParentClass(UBlueprint* Blueprint)
+{
+	return Blueprint ? Blueprint->ParentClass : nullptr;
+}

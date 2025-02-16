@@ -17,4 +17,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Data Tables", meta = (ScriptMethod))
 	static void ExportDataTableAsCsv(UDataTable* DataTable, FString OutputPath);
+	
+	UFUNCTION(BlueprintCallable, Category="Blueprints", meta=(ScriptMethod))
+    static UClass* GetParentClass(UBlueprint* Blueprint);
 };
