@@ -37,6 +37,9 @@ FECRMatchResult::FECRMatchResult(const FBlueprintSessionResult BlueprintSessionI
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_DAYTIME_NAME, StringBuffer);
 	DayTime = FName{*StringBuffer};
 
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_IN_GAME_UNIQUE_ID_FOR_SEARCH, StringBuffer);
+	InGameUniqueIdForSearch = StringBuffer;
+
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_CURRENT_PLAYER_AMOUNT, CurrentPlayerAmount);
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_STARTED_TIME, MatchStartedTimestamp);
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_FACTIONS, FactionsString);
@@ -82,4 +85,10 @@ FString UECROnlineSubsystem::ConvertSessionSettingsToJson(const FOnlineSessionSe
 		Writer->Close();
 	}
 	return JsonString;
+}
+
+FString UECROnlineSubsystem::GetUniqueGuidString()
+{
+	const FGuid Guid = FGuid::NewGuid();
+	return Guid.ToString(EGuidFormats::DigitsWithHyphensLower);
 }

@@ -148,7 +148,8 @@ FString UECRGameInstance::GetMatchFactionString(
 }
 
 
-void UECRGameInstance::CreateMatch(const FString GameVersion, const FName ModeName, const FName MapName,
+void UECRGameInstance::CreateMatch(const FString GameVersion, const FString InGameUniqueIdForSearch,
+                                   const FName ModeName, const FName MapName,
                                    const FString MapPath, const FName MissionName,
                                    const FName RegionName, const double TimeDelta,
                                    const FName WeatherName, const FName DayTimeName,
@@ -176,7 +177,8 @@ void UECRGameInstance::CreateMatch(const FString GameVersion, const FName ModeNa
 		{
 			// Saving match creation settings for use in delegate and after map load
 			MatchCreationSettings = FECRMatchSettings{
-				GameVersion, ModeName, MapName, MapPath, MissionName, RegionName, WeatherName, DayTimeName, TimeDelta,
+				GameVersion, InGameUniqueIdForSearch, ModeName, MapName, MapPath, MissionName, RegionName, WeatherName,
+				DayTimeName, TimeDelta,
 				Alliances, FactionNamesToCapacities, FactionNamesToShortTexts
 			};
 			FOnlineSessionSettings SessionSettings = GetSessionSettings();
@@ -219,8 +221,35 @@ void UECRGameInstance::FindMatches(const FString GameVersion, const FString Matc
 				SessionSearchSettings->QuerySettings.Set(
 					SETTING_GAME_VERSION, GameVersion, EOnlineComparisonOp::Equals);
 
+			OnlineSessionPtr->ClearOnFindSessionsCompleteDelegates(this);
 			OnlineSessionPtr->OnFindSessionsCompleteDelegates.AddUObject(
 				this, &UECRGameInstance::OnFindMatchesComplete);
+			OnlineSessionPtr->FindSessions(0, SessionSearchSettings.ToSharedRef());
+		}
+	}
+}
+
+void UECRGameInstance::FindMatchByUniqueInGameId(const FString GameVersion, const FString MatchId)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
+		{
+			SessionSearchSettings = MakeShareable(new FOnlineSessionSearch{});
+			SessionSearchSettings->MaxSearchResults = 1;
+
+			// If specified parameters, do filter
+			if (GameVersion != "")
+				SessionSearchSettings->QuerySettings.Set(
+					SETTING_GAME_VERSION, GameVersion, EOnlineComparisonOp::Equals);
+
+			if (MatchId != "")
+				SessionSearchSettings->QuerySettings.Set(
+					SETTING_IN_GAME_UNIQUE_ID_FOR_SEARCH, MatchId, EOnlineComparisonOp::Equals);
+
+			OnlineSessionPtr->ClearOnFindSessionsCompleteDelegates(this);
+			OnlineSessionPtr->OnFindSessionsCompleteDelegates.AddUObject(
+				this, &UECRGameInstance::OnFindMatchByUniqueIdComplete);
 			OnlineSessionPtr->FindSessions(0, SessionSearchSettings.ToSharedRef());
 		}
 	}
@@ -239,6 +268,23 @@ void UECRGameInstance::JoinMatch(const FBlueprintSessionResult Session)
 				this, &UECRGameInstance::OnJoinSessionComplete);
 
 			OnlineSessionPtr->JoinSession(0, DEFAULT_SESSION_NAME, Session.OnlineResult);
+		}
+	}
+}
+
+void UECRGameInstance::JoinServerByConnectionString(FString ConnectionString)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
+		{
+			OnlineSessionPtr->ClearOnJoinSessionCompleteDelegates(this);
+			if (AECRGUIPlayerController* GUISupervisor = UECRUtilsLibrary::GetGUISupervisor(GetWorld()))
+			{
+				const FString Address = FString::Printf(
+					TEXT("%s?DisplayName=%s"), *(ConnectionString), *(UserDisplayName));
+				GUISupervisor->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
+			}
 		}
 	}
 }
@@ -312,14 +358,6 @@ void UECRGameInstance::OnCreateMatchComplete(FName SessionName, const bool bWasS
 
 void UECRGameInstance::OnFindMatchesComplete(const bool bWasSuccessful)
 {
-	if (OnlineSubsystem)
-	{
-		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
-		{
-			OnlineSessionPtr->ClearOnFindSessionsCompleteDelegates(this);
-		}
-	}
-
 	if (AECRGUIPlayerController* GUISupervisor = UECRUtilsLibrary::GetGUISupervisor(GetWorld()))
 	{
 		if (bWasSuccessful)
@@ -334,6 +372,26 @@ void UECRGameInstance::OnFindMatchesComplete(const bool bWasSuccessful)
 		else
 		{
 			GUISupervisor->HandleFindMatchesFailed();
+		}
+	}
+}
+
+void UECRGameInstance::OnFindMatchByUniqueIdComplete(bool bWasSuccessful)
+{
+	if (AECRGUIPlayerController* GUISupervisor = UECRUtilsLibrary::GetGUISupervisor(GetWorld()))
+	{
+		if (bWasSuccessful)
+		{
+			TArray<FECRMatchResult> SessionResults;
+			for (const FOnlineSessionSearchResult& SessionResult : SessionSearchSettings->SearchResults)
+			{
+				SessionResults.Add(FECRMatchResult{FBlueprintSessionResult{SessionResult}});
+			}
+			GUISupervisor->HandleFindUniqueMatchByIdOutcome(SessionResults, true);
+		}
+		else
+		{
+			GUISupervisor->HandleFindUniqueMatchByIdOutcome({}, false);
 		}
 	}
 }
@@ -479,6 +537,8 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	SessionSettings.bUseLobbiesIfAvailable = false;
 
 	/** Custom settings **/
+	SessionSettings.Set(SETTING_IN_GAME_UNIQUE_ID_FOR_SEARCH, MatchCreationSettings.InGameUniqueIdForSearch,
+	                    EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_GAMEMODE, MatchCreationSettings.GameMode.ToString(),
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_MAPNAME, MatchCreationSettings.MapName.ToString(),

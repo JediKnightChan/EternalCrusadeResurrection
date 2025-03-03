@@ -68,6 +68,9 @@ struct FECRMatchResult
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FString UserDisplayName;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString InGameUniqueIdForSearch;
 };
 
 
@@ -126,13 +129,15 @@ struct FECRMatchSettings
 	FECRMatchSettings();
 
 	// Real constructor
-	FECRMatchSettings(const FString& GameVersion, const FName& GameMode, const FName& MapName, const FString& MapPath,
+	FECRMatchSettings(const FString& GameVersion, const FString& InGameUniqueIdForSearch, const FName& GameMode,
+	                  const FName& MapName, const FString& MapPath,
 	                  const FName& GameMission,
 	                  const FName& Region, const FName& WeatherName, const FName& DayTimeName, const double TimeDelta,
 	                  const TArray<FFactionAlliance>& Alliances,
 	                  const TMap<FName, int32>& FactionNamesToCapacities,
 	                  const TMap<FName, FText>& FactionNamesToShortTexts)
 		: GameVersion(GameVersion),
+		  InGameUniqueIdForSearch(InGameUniqueIdForSearch),
 		  GameMode(GameMode),
 		  MapName(MapName),
 		  MapPath(MapPath),
@@ -151,6 +156,9 @@ struct FECRMatchSettings
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FString GameVersion;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString InGameUniqueIdForSearch;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FName GameMode;
@@ -215,4 +223,8 @@ public:
 
 	/** Convert session custom settings to JSON string */
 	static FString ConvertSessionSettingsToJson(const FOnlineSessionSettings& Settings);
+
+	/** Gets a new GUID as a string */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static FString GetUniqueGuidString();
 };

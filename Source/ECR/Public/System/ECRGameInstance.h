@@ -75,6 +75,9 @@ protected:
 	/** When OnFindSessionsComplete fires, pass matches data to GUISupervisor */
 	void OnFindMatchesComplete(bool bWasSuccessful);
 
+	/** When OnFindSessionsComplete fires, pass match data to GUISupervisor */
+	void OnFindMatchByUniqueIdComplete(bool bWasSuccessful);
+
 	/** When OnJoinSessionComplete fires, travel to the session map */
 	void OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
 
@@ -117,7 +120,7 @@ public:
 
 	/** Create match, by player (P2P) */
 	UFUNCTION(BlueprintCallable)
-	void CreateMatch(const FString GameVersion, const FName ModeName,
+	void CreateMatch(const FString GameVersion, const FString InGameUniqueIdForSearch, const FName ModeName,
 	                 const FName MapName, const FString MapPath, const FName MissionName,
 	                 const FName RegionName, const double TimeDelta, const FName WeatherName,
 	                 const FName DayTimeName, const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
@@ -128,9 +131,17 @@ public:
 	void FindMatches(const FString GameVersion = "", const FString MatchType = "",
 	                 const FString MatchMode = "", const FString MapName = "", const FString RegionName = "");
 
+	/** Find match by unique match id assigned by the game (used in parties custom implementation logic) */
+	UFUNCTION(BlueprintCallable)
+	void FindMatchByUniqueInGameId(const FString GameVersion = "", const FString MatchId = "");
+
 	/** Join match */
 	UFUNCTION(BlueprintCallable)
 	void JoinMatch(FBlueprintSessionResult Session);
+
+	/** Join match by connection string (eg IP) */
+	UFUNCTION(BlueprintCallable)
+	void JoinServerByConnectionString(FString ConnectionString);
 
 	UFUNCTION(BlueprintCallable)
 	void UpdateSessionSettings();

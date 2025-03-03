@@ -44,6 +44,10 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void HandleFindMatchesSuccess(const TArray<FECRMatchResult>& Results);
 
+	/** Handle outcome of FindUniqueMatchById */
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void HandleFindUniqueMatchByIdOutcome(const TArray<FECRMatchResult>& Results, bool bWasSuccessful);
+	
 	/** Handle success of logout */
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void HandleLogoutSuccess();
