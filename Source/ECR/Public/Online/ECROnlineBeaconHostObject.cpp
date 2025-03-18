@@ -44,9 +44,9 @@ void AECROnlineBeaconHostObject::DisconnectClientBeacon(FUniqueNetIdRepl PlayerI
 	}
 }
 
-void AECROnlineBeaconHostObject::OnReceivedUpdateFromClient(FString JsonString, FUniqueNetIdRepl UniqueNetId)
+void AECROnlineBeaconHostObject::OnReceivedUpdateFromClient(FString Channel, FString JsonString, FUniqueNetIdRepl UniqueNetId)
 {
-	OnReceivedUpdateFromClient_BP.Broadcast(JsonString, UniqueNetId);
+	OnReceivedUpdateFromClient_BP.Broadcast(Channel, JsonString, UniqueNetId);
 }
 
 void AECROnlineBeaconHostObject::OnClientConnected(AOnlineBeaconClient* NewClientActor,

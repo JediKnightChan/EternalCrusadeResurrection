@@ -95,6 +95,9 @@ protected:
 	void OnPartyInviteAcceptedByMe(const bool bWasSuccessful, const int32 ControllerId, FUniqueNetIdPtr UserId,
 	                               const FOnlineSessionSearchResult& InviteResult);
 
+	/** Delegate for finding friend party session */
+	void OnFindFriendPartyComplete(int32 LocalUserNum, bool bWasSuccessful, const TArray<FOnlineSessionSearchResult>& SearchResult);
+
 	FOnlineSessionSettings GetSessionSettings();
 
 	FOnlineSessionSettings GetPartySessionSettings();
@@ -191,6 +194,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void CreateParty();
 
+	UFUNCTION(BlueprintCallable)
+	void SearchForFriendParty(FUniqueNetIdRepl PlayerId);
+
+	/** Destroy party lobby */
+	UFUNCTION(BlueprintCallable)
+	void DestroyParty();
+
 	/** Returns if is in party session */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	bool GetIsInPartySession();
@@ -199,13 +209,13 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FUniqueNetIdRepl GetPartySessionId();
 
+	/** Returns party session connection string */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FString GetPartySessionConnectionString();
+
 	/** Get name of party member */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetPartyMemberName(FUniqueNetIdRepl MemberId);
-
-	/** Invite player to party */
-	UFUNCTION(BlueprintCallable)
-	void InviteToParty(FUniqueNetIdRepl PlayerId);
 
 	UFUNCTION(BlueprintCallable)
 	void StartListeningForPartyEvents();

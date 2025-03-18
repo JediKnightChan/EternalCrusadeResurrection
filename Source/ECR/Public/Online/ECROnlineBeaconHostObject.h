@@ -37,10 +37,10 @@ class AECROnlineBeaconHostObject : public AOnlineBeaconHostObject
 
 	/** Client received update from client */
 	UPROPERTY(BlueprintAssignable, Category = "ECRBeacon|Server")
-	FOnBeaconUpdateComplete OnReceivedUpdateFromClient_BP;
+	FOnBeaconChannelUpdateComplete OnReceivedUpdateFromClient_BP;
 
 	UFUNCTION()
-	void OnReceivedUpdateFromClient(FString JsonString, FUniqueNetIdRepl UniqueNetId);
+	void OnReceivedUpdateFromClient(FString Channel, FString JsonString, FUniqueNetIdRepl UniqueNetId);
 
 private:
 	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess))

@@ -7,7 +7,10 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnBeaconUpdateComplete, FString, JsonString, FUniqueNetIdRepl,
                                              UniqueNetId);
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBeaconFailure);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnBeaconChannelUpdateComplete, FString, Channel, FString, JsonString,
+                                               FUniqueNetIdRepl, UniqueNetId);
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBeaconFailure, FUniqueNetIdRepl, UniqueNetId);
 
 DECLARE_LOG_CATEGORY_EXTERN(FBeaconLog, Log, All);
 
@@ -39,11 +42,11 @@ public:
 
 	/** Send a pong RPC to the host */
 	UFUNCTION(BlueprintCallable, Server, Reliable, WithValidation)
-	virtual void ServerPong(const FString& ClientData);
+	virtual void ServerPong(const FString& Channel, const FString& ClientData);
 
 	/** Provide Blueprint Access to Start the Beacon **/
 	UFUNCTION(BlueprintCallable, Category = "ECRBeacon")
-	bool Start(FString Address, int32 Port, const bool bOverridePort);
+	bool Start(FString Address, int32 Port, const bool bOverridePort, const FUniqueNetIdRepl TargetPlayer);
 
 	/** Provide Blueprint access to disconnect and destroy the client beacon */
 	UFUNCTION(BlueprintCallable, Category = "ECRBeacon")
@@ -61,10 +64,11 @@ public:
 
 	/** Client received update from client */
 	UPROPERTY(BlueprintAssignable, Category = "ECRBeacon|Server")
-	FOnBeaconUpdateComplete OnReceivedUpdateFromClient;
+	FOnBeaconChannelUpdateComplete OnReceivedUpdateFromClient;
 
 	UPROPERTY(BlueprintAssignable, Category = "ECRBeacon|Client")
 	FOnBeaconFailure OnBeaconFailure;
+
 protected:
 	virtual bool InitBase() override;
 
@@ -72,6 +76,18 @@ private:
 	UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess, ExposeOnSpawn))
 	FString InitCallClientData;
 
+	UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess, ExposeOnSpawn))
+	FString InitCallChannel;
+
 	UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess))
 	FString ServerData;
+
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess))
+	FUniqueNetIdRepl CachedPlayerId;
+
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess))
+	bool bClientGotFirstServerData;
+
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess, ExposeOnSpawn))
+	FName DriverName;
 };

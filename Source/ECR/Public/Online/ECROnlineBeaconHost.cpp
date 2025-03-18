@@ -6,6 +6,7 @@ AECROnlineBeaconHost::AECROnlineBeaconHost(const FObjectInitializer& ObjectIniti
 {
 	//Set the beacon host state to allow requests
 	BeaconState = EBeaconState::AllowRequests;
+	DriverName = FName{TEXT("BeaconSession")};
 }
 
 bool AECROnlineBeaconHost::Start()
@@ -27,11 +28,9 @@ void AECROnlineBeaconHost::AddHost(AOnlineBeaconHostObject* HostObject)
 
 bool AECROnlineBeaconHost::InitBase()
 {
-	static const FName NAME_BeaconName(TEXT("BeaconSession"));
+	GEngine->CreateNamedNetDriver(GetWorld(), DriverName, NetDriverDefinitionName);
 
-	GEngine->CreateNamedNetDriver(GetWorld(), NAME_BeaconName, NetDriverDefinitionName);
-
-	UNetDriver* DriverSearchResult = GEngine->FindNamedNetDriver(GetWorld(), NAME_BeaconName);
+	UNetDriver* DriverSearchResult = GEngine->FindNamedNetDriver(GetWorld(), DriverName);
 	if (DriverSearchResult)
 	{
 		NetDriver = DriverSearchResult;

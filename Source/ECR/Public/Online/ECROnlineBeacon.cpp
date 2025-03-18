@@ -5,12 +5,14 @@ DEFINE_LOG_CATEGORY(FBeaconLog);
 AECROnlineBeacon::AECROnlineBeacon(const FObjectInitializer& ObjectInitializer) :
 	Super(ObjectInitializer)
 {
+	bClientGotFirstServerData = false;
+	DriverName = FName{TEXT("BeaconSession")};
 }
 
 void AECROnlineBeacon::OnFailure()
 {
+	OnBeaconFailure.Broadcast(CachedPlayerId);
 	Super::OnFailure();
-	OnBeaconFailure.Broadcast();
 }
 
 FUniqueNetIdRepl AECROnlineBeacon::GetOwningPlayerId()
@@ -26,32 +28,38 @@ FUniqueNetIdRepl AECROnlineBeacon::GetOwningPlayerId()
 /** The rpc client ping implementation */
 void AECROnlineBeacon::ClientPing_Implementation(const FString& RepServerData)
 {
-	OnReceivedUpdateFromServer.Broadcast(RepServerData, {});
+	OnReceivedUpdateFromServer.Broadcast(RepServerData, CachedPlayerId);
 }
 
 /** The rpc client ready implementation */
 void AECROnlineBeacon::Ready_Implementation()
 {
 	//Call server pong rpc
-	ServerPong(InitCallClientData);
+	ServerPong(InitCallChannel, InitCallClientData);
 }
 
-bool AECROnlineBeacon::ServerPong_Validate(const FString& ClientData)
+bool AECROnlineBeacon::ServerPong_Validate(const FString& Channel, const FString& ClientData)
 {
 	return true;
 }
 
 /** ServerPong rpc implementation **/
-void AECROnlineBeacon::ServerPong_Implementation(const FString& ClientData)
+void AECROnlineBeacon::ServerPong_Implementation(const FString& Channel, const FString& ClientData)
 {
-	OnReceivedUpdateFromClient.Broadcast(ClientData, GetOwningPlayerId());
-	// Broadcast server data to client
-	ClientPing(ServerData);
+	OnReceivedUpdateFromClient.Broadcast(Channel, ClientData, GetOwningPlayerId());
+	// Broadcast server data to client, if it's first communication
+	if (!bClientGotFirstServerData)
+	{
+		ClientPing(ServerData);
+		bClientGotFirstServerData = true;
+	}
 }
 
 /** Our blueprint helper for stuff **/
-bool AECROnlineBeacon::Start(FString Address, int32 Port, const bool bOverridePort)
+bool AECROnlineBeacon::Start(FString Address, int32 Port, const bool bOverridePort, const FUniqueNetIdRepl TargetPlayer)
 {
+	CachedPlayerId = TargetPlayer;
+
 	//Address must be an IP or valid domain name such as epicgames.com or 127.0.0.1
 	//Do not include a port in the address! Beacons use a different port then the standard 7777 for connection
 	FURL Url(nullptr, *Address, ETravelType::TRAVEL_Absolute);
@@ -93,11 +101,9 @@ void AECROnlineBeacon::SetServerDataAndUpdate(FString NewServerData)
 
 bool AECROnlineBeacon::InitBase()
 {
-	static const FName NAME_BeaconName(TEXT("BeaconSession"));
+	GEngine->CreateNamedNetDriver(GetWorld(), DriverName, NetDriverDefinitionName);
 
-	GEngine->CreateNamedNetDriver(GetWorld(), NAME_BeaconName, NetDriverDefinitionName);
-
-	UNetDriver* DriverSearchResult = GEngine->FindNamedNetDriver(GetWorld(), NAME_BeaconName);
+	UNetDriver* DriverSearchResult = GEngine->FindNamedNetDriver(GetWorld(), DriverName);
 	if (DriverSearchResult)
 	{
 		NetDriver = DriverSearchResult;

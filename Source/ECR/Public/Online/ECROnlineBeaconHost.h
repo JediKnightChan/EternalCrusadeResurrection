@@ -25,6 +25,11 @@ public:
 protected:
 	/** If we successfully started are not */
 	bool IsReady;
+
 protected:
 	virtual bool InitBase() override;
+
+private:
+	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess, ExposeOnSpawn))
+	FName DriverName;
 };
