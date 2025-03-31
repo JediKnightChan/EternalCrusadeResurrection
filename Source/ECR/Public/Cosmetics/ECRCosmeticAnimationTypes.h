@@ -139,7 +139,7 @@ struct FECRActorSelectionSet
 	GENERATED_BODY()
 
 	// List of actor rules to apply, first one that matches will be used
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Actor))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=ActorClass))
 	TArray<FECRActorSelectionEntry> ActorRules;
 
 	// The actor to use if none of the ActorRules matches
@@ -173,7 +173,7 @@ struct FECRMeshSelectionSet
 	GENERATED_BODY()
 
 	// List of mesh rules to apply, first one that matches will be used
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=Mesh))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(TitleProperty=RequiredTags))
 	TArray<FECRMeshSelectionEntry> MeshRules;
 
 	// The mesh to use if none of the MeshRules matches

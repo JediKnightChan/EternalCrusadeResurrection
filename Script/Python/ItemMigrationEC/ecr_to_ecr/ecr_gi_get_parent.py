@@ -3,7 +3,7 @@ import os
 
 import pandas as pd
 
-df = pd.read_csv("../data/ecr/gameplay_items/lsm.csv", encoding="utf-16")
+df = pd.read_csv("../data/ecr/gameplay_items/csm.csv", encoding="utf-16")
 df = df.fillna("")
 
 item_names = list(df["---"])
@@ -53,5 +53,5 @@ for i, row in df.iterrows():
             "file": new_id[1],
         }
 
-with open("lsm_id_map.json", "w") as f:
+with open("сsm_id_map.json", "w") as f:
     json.dump(result, f, indent=4)

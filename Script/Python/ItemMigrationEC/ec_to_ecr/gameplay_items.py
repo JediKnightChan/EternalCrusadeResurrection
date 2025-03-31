@@ -3,6 +3,8 @@ import os
 
 import pandas as pd
 
+from common_gi_table import sort_table
+
 
 def make_ecr_gameplay_item_row(raw_name, text_name, category, lp_cost, description, rarity, preview_image,
                                is_granted_by_default=False):
@@ -112,35 +114,8 @@ def convert_csv_to_ingame_csv(in_csv, out_csv):
 
     df = pd.DataFrame(data=new_data)
 
-    # Sorting items
-    rarity_mapping = {"Grey": 0, "Green": 1, "Blue": 2, "Purple": 3, "Gold": 4}
-    df["Rarity Rank"] = df["Rarity"].map(rarity_mapping)
-
-    # Order of subcategories in categories
-    categories_to_substrings = {
-        "PrimaryRangedWeapon": ["Bolt", "Plasma", "Grav", "Melta", "Storm"],
-        "PrimaryMeleeWeapon": ["Chain", "PowerSword", "Crozius", "Axe", "Maul", "Fist"],
-        "PrimaryHeavyWeapon": ["Bolt", "Plasma", "Grav", "Melta", "Las"],
-        "SecondaryRangedWeapon": ["Bolt", "Plasma", "Grav"],
-    }
-
-    def get_substring_rank(row):
-        value = row["---"]
-        substrings = categories_to_substrings.get(row.get("Customization Slot Category"), [])
-        res_i = len(substrings)
-        for i, substring in enumerate(substrings):
-            if substring in value:
-                res_i = i
-                break
-        return res_i  # Non-matching entries get a high rank
-
-    df["Substring Rank"] = df.apply(get_substring_rank, axis=1)
-    df = df.sort_values(
-        by=["Customization Slot Category", "Rarity Rank", "Substring Rank", "LP Cost", "---"],
-        ascending=[True, True, True, True, True]
-    )
-    df[["---", "Rarity Rank", "LP Cost", "Substring Rank"]].to_csv("../data/temp.csv", index=False)
-    df = df.drop(columns=["Rarity Rank", "Substring Rank"])
+    # Sort table
+    df = sort_table(df)
 
     df.to_csv(out_csv, index=False)
 

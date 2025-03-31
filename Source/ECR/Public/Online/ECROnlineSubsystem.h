@@ -68,6 +68,9 @@ struct FECRMatchResult
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FString UserDisplayName;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString InGameUniqueIdForSearch;
 };
 
 
@@ -85,7 +88,7 @@ struct FECRFriendData
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bIsJoinAble;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FUniqueNetIdRepl CurrentSessionId;
 
@@ -107,6 +110,12 @@ struct FECRPartyMemberData
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bIsLeader;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FName Faction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bReady;
 };
 
 /** Data about match that will be saved in game instance to be available after match creation */
@@ -120,13 +129,15 @@ struct FECRMatchSettings
 	FECRMatchSettings();
 
 	// Real constructor
-	FECRMatchSettings(const FString& GameVersion, const FName& GameMode, const FName& MapName, const FString& MapPath,
+	FECRMatchSettings(const FString& GameVersion, const FString& InGameUniqueIdForSearch, const FName& GameMode,
+	                  const FName& MapName, const FString& MapPath,
 	                  const FName& GameMission,
 	                  const FName& Region, const FName& WeatherName, const FName& DayTimeName, const double TimeDelta,
 	                  const TArray<FFactionAlliance>& Alliances,
 	                  const TMap<FName, int32>& FactionNamesToCapacities,
 	                  const TMap<FName, FText>& FactionNamesToShortTexts)
 		: GameVersion(GameVersion),
+		  InGameUniqueIdForSearch(InGameUniqueIdForSearch),
 		  GameMode(GameMode),
 		  MapName(MapName),
 		  MapPath(MapPath),
@@ -145,6 +156,9 @@ struct FECRMatchSettings
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FString GameVersion;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString InGameUniqueIdForSearch;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FName GameMode;
@@ -203,4 +217,15 @@ public:
 	/** Convert NetID to string */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static FString NetIdToString(FUniqueNetIdRepl NetId);
+
+	/** Convert string NetID to Structure */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static FUniqueNetIdRepl StringToNetId(const FString& String);
+
+	/** Convert session custom settings to JSON string */
+	static FString ConvertSessionSettingsToJson(const FOnlineSessionSettings& Settings);
+
+	/** Gets a new GUID as a string */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static FString GetUniqueGuidString();
 };

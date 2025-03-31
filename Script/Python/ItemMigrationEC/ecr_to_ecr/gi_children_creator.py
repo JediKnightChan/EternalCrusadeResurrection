@@ -8,7 +8,7 @@ import unreal
 """Creates Blueprint Classes for weapon skins
 """
 
-MAPPING_PATH = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/ItemMigrationEC/ecr_to_ecr/lsm_id_map.json"
+MAPPING_PATH = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/ItemMigrationEC/ecr_to_ecr/temp.json"
 
 BFL = unreal.SubobjectDataBlueprintFunctionLibrary
 SDS = unreal.get_engine_subsystem(unreal.SubobjectDataSubsystem)
@@ -55,6 +55,9 @@ def create_item(child_id_name, parent_id_name, id_dir, item_row_name):
     parent_wi_gen_class = parent_ed_gen_class_cdo.get_editor_property("InstanceType")
     parent_default_weapon_actor_gen_class = parent_ed_gen_class_cdo.get_editor_property("ActorsToSpawn")[
         0].get_editor_property("ActorSelectionSet").get_editor_property("default_actor_class")
+
+    parent_default_weapon_actor_gen_class = unreal.EditorAssetLibrary.load_blueprint_class(
+        parent_default_weapon_actor_gen_class.get_path_name()[:-2].replace("_SM_", "_CSM_"))
 
     new_weapon_actor_suffix = "_" + "_".join(item_row_name.split("_")[2:])
     new_weapon_actor_suffix = new_weapon_actor_suffix.replace("_T2", "_MasterCrafted")
@@ -148,4 +151,3 @@ with open(MAPPING_PATH, "r") as f:
 
 for item_name, item_data in mapping.items():
     create_item(item_data["file"], item_data["parent_file"], item_data["dir"], item_name)
-

@@ -37,6 +37,9 @@ FECRMatchResult::FECRMatchResult(const FBlueprintSessionResult BlueprintSessionI
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_DAYTIME_NAME, StringBuffer);
 	DayTime = FName{*StringBuffer};
 
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_IN_GAME_UNIQUE_ID_FOR_SEARCH, StringBuffer);
+	InGameUniqueIdForSearch = StringBuffer;
+
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_CURRENT_PLAYER_AMOUNT, CurrentPlayerAmount);
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_STARTED_TIME, MatchStartedTimestamp);
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_FACTIONS, FactionsString);
@@ -55,4 +58,55 @@ FECRMatchSettings::FECRMatchSettings()
 FString UECROnlineSubsystem::NetIdToString(const FUniqueNetIdRepl NetId)
 {
 	return NetId.ToString();
+}
+
+
+FUniqueNetIdRepl UECROnlineSubsystem::StringToNetId(const FString& String)
+{
+	FUniqueNetIdRepl NetId;
+	NetId.FromJson(String);
+	return NetId;
+}
+
+
+FString UECROnlineSubsystem::ConvertSessionSettingsToJson(const FOnlineSessionSettings& Settings)
+{
+	TSharedRef<FJsonObject> JsonObject = MakeShared<FJsonObject>();
+
+	for (TTuple<FName, FOnlineSessionSetting> SettingTuple : Settings.Settings)
+	{
+		FString OutValue;
+		SettingTuple.Value.Data.GetValue(OutValue);
+		JsonObject->SetStringField(SettingTuple.Key.ToString(), OutValue);
+	}
+
+	TSharedRef<FJsonObject> PlayersSettingsJson = MakeShared<FJsonObject>();
+	for (TTuple<FUniqueNetIdRef, FSessionSettings> PlayerSettingsTuple : Settings.MemberSettings)
+	{
+		TSharedRef<FJsonObject> PlayerSettingsJson = MakeShared<FJsonObject>();
+		for (TTuple<FName, FOnlineSessionSetting> SettingTuple : PlayerSettingsTuple.Value)
+		{
+			FString OutValue;
+			SettingTuple.Value.Data.GetValue(OutValue);
+			PlayerSettingsJson->SetStringField(SettingTuple.Key.ToString(), OutValue);
+		}
+		PlayersSettingsJson->SetObjectField(PlayerSettingsTuple.Key.Get().ToString(), PlayerSettingsJson);
+	}
+
+	JsonObject->SetObjectField("members", PlayersSettingsJson);
+
+	FString JsonString;
+	TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&JsonString);
+	if (FJsonSerializer::Serialize(JsonObject, Writer))
+	{
+		Writer->Close();
+	}
+	return JsonString;
+}
+
+
+FString UECROnlineSubsystem::GetUniqueGuidString()
+{
+	const FGuid Guid = FGuid::NewGuid();
+	return Guid.ToString(EGuidFormats::DigitsWithHyphensLower);
 }

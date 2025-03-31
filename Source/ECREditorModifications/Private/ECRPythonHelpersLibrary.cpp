@@ -2,10 +2,11 @@
 
 #include "Misc/FileHelper.h"
 
-FGameplayTag UECRPythonHelpersLibrary::ConvertStringToGameplayTag(const FString& TagName)
+
+FGameplayTag UECRPythonHelpersLibrary::ConvertStringToGameplayTag(UObject* AnyObject, FString TagName)
 {
 	// Get the GameplayTagsManager instance
-	FGameplayTag Tag = FGameplayTag::RequestGameplayTag(FName(*TagName));
+	FGameplayTag Tag = FGameplayTag::RequestGameplayTag(FName(TagName));
 
 	// Optional: Check if the tag exists
 	if (!Tag.IsValid())
@@ -45,4 +46,10 @@ void UECRPythonHelpersLibrary::ExportDataTableAsCsv(UDataTable* DataTable, FStri
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Failed to export DataTable to: %s"), *AbsolutePath);
 	}
+}
+
+
+UClass* UECRPythonHelpersLibrary::GetParentClass(UBlueprint* Blueprint)
+{
+	return Blueprint ? Blueprint->ParentClass : nullptr;
 }

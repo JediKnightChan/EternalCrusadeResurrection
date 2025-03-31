@@ -29,6 +29,7 @@ class ECR_API AECRGUIPlayerController : public AECRPlayerController
 	// Reference to game instance
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	class UECRGameInstance* GameInstance;
+
 public:
 	// Handlers for events that refer to GUI - blueprint implementable
 
@@ -44,6 +45,14 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void HandleFindMatchesSuccess(const TArray<FECRMatchResult>& Results);
 
+	/** Handle outcome of FindUniqueMatchById */
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void HandleFindUniqueMatchByIdOutcome(const TArray<FECRMatchResult>& Results, bool bWasSuccessful);
+
+	/** Handle outcome of Find Friend Party Lobby */
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void HandleFindFriendParty(bool bSuccess, const FString& ConnectionString, const FUniqueNetIdRepl Friend);
+
 	/** Handle success of logout */
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void HandleLogoutSuccess();
@@ -51,7 +60,7 @@ public:
 	/** Handle failure of logout */
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void HandleLogoutFailure();
-	
+
 	/** Handle error of FindMatches */
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void HandleFindMatchesFailed();
