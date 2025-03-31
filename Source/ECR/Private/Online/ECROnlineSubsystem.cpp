@@ -60,12 +60,14 @@ FString UECROnlineSubsystem::NetIdToString(const FUniqueNetIdRepl NetId)
 	return NetId.ToString();
 }
 
-FUniqueNetIdRepl UECROnlineSubsystem::StringToNetId(FString String)
+
+FUniqueNetIdRepl UECROnlineSubsystem::StringToNetId(const FString& String)
 {
 	FUniqueNetIdRepl NetId;
 	NetId.FromJson(String);
 	return NetId;
 }
+
 
 FString UECROnlineSubsystem::ConvertSessionSettingsToJson(const FOnlineSessionSettings& Settings)
 {
@@ -78,6 +80,21 @@ FString UECROnlineSubsystem::ConvertSessionSettingsToJson(const FOnlineSessionSe
 		JsonObject->SetStringField(SettingTuple.Key.ToString(), OutValue);
 	}
 
+	TSharedRef<FJsonObject> PlayersSettingsJson = MakeShared<FJsonObject>();
+	for (TTuple<FUniqueNetIdRef, FSessionSettings> PlayerSettingsTuple : Settings.MemberSettings)
+	{
+		TSharedRef<FJsonObject> PlayerSettingsJson = MakeShared<FJsonObject>();
+		for (TTuple<FName, FOnlineSessionSetting> SettingTuple : PlayerSettingsTuple.Value)
+		{
+			FString OutValue;
+			SettingTuple.Value.Data.GetValue(OutValue);
+			PlayerSettingsJson->SetStringField(SettingTuple.Key.ToString(), OutValue);
+		}
+		PlayersSettingsJson->SetObjectField(PlayerSettingsTuple.Key.Get().ToString(), PlayerSettingsJson);
+	}
+
+	JsonObject->SetObjectField("members", PlayersSettingsJson);
+
 	FString JsonString;
 	TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&JsonString);
 	if (FJsonSerializer::Serialize(JsonObject, Writer))
@@ -86,6 +103,7 @@ FString UECROnlineSubsystem::ConvertSessionSettingsToJson(const FOnlineSessionSe
 	}
 	return JsonString;
 }
+
 
 FString UECROnlineSubsystem::GetUniqueGuidString()
 {

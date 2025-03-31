@@ -219,7 +219,8 @@ public:
 	static FString NetIdToString(FUniqueNetIdRepl NetId);
 
 	/** Convert string NetID to Structure */
-	static FUniqueNetIdRepl StringToNetId(FString String);
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static FUniqueNetIdRepl StringToNetId(const FString& String);
 
 	/** Convert session custom settings to JSON string */
 	static FString ConvertSessionSettingsToJson(const FOnlineSessionSettings& Settings);
