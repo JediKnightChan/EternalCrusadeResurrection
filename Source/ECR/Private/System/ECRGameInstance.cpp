@@ -615,6 +615,20 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	SessionSettings.bUsesPresence = false;
 	SessionSettings.bUseLobbiesIfAvailable = false;
 
+	// For dedicated server set listen port if it was specified in launch arguments
+	if (bIsDedicatedServer)
+	{
+		int32 PortOverride;
+		if (FParse::Value(FCommandLine::Get(), TEXT("port="), PortOverride))
+		{
+			SessionSettings.Set(FName{TEXT("PORT_OVERRIDE")}, FString::FromInt(PortOverride),
+			                    EOnlineDataAdvertisementType::ViaOnlineService);
+		} else
+		{
+			UE_LOG(LogECR, Warning, TEXT("Couldn't parse argument 'port' on dedicated server to set it on session settings"))
+		}
+	}
+
 	/** Custom settings **/
 	SessionSettings.Set(SETTING_IN_GAME_UNIQUE_ID_FOR_SEARCH, MatchCreationSettings.InGameUniqueIdForSearch,
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
