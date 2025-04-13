@@ -81,7 +81,7 @@ class ECR_API UECRGameInstance : public UGameInstance
 	/** Broadcaster for player removals */
 	UPROPERTY(BlueprintAssignable)
 	FOnPartyMemberRemoved OnPartyMemberRemoved_BP;
-	
+
 	/** Broadcaster for being disconnected from session */
 	UPROPERTY(BlueprintAssignable)
 	FOnDisconnectedFromSession OnDisconnectedFromSession_BP;
@@ -173,20 +173,20 @@ public:
 
 	// Match functionality
 
-	/** Create match, by player (P2P) */
+	/** Create match */
 	UFUNCTION(BlueprintCallable)
-	void CreateMatch(const FString GameVersion, const FString InGameUniqueIdForSearch, const FName ModeName,
-	                 const FName MapName, const FString MapPath, const FName MissionName,
-	                 const FName RegionName, const double TimeDelta, const FName WeatherName,
-	                 const FName DayTimeName, const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
-	                 FactionNamesToCapacities, const TMap<FName, FText> FactionNamesToShortTexts);
+	void CreateMatch(FECRMatchSettings MatchSettings);
+
+	/** Server travel to next match */
+	UFUNCTION(BlueprintCallable)
+	void TravelToNewMatch(FECRMatchSettings MatchSettings, FString NewLevel);
 
 	/** Find matches */
 	UFUNCTION(BlueprintCallable)
 	void FindMatches(const FString GameVersion = "", const FString MatchType = "",
 	                 const FString MatchMode = "", const FString MapName = "", const FString RegionName = "");
 
-	/** Find match by unique match id assigned by the game (used in parties custom implementation logic) */
+	/** Find match by unique match id assigned by external entity (e. g. matchmaking service) */
 	UFUNCTION(BlueprintCallable)
 	void FindMatchByUniqueInGameId(const FString GameVersion = "", const FString MatchId = "");
 

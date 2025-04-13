@@ -151,14 +151,7 @@ FString UECRGameInstance::GetMatchFactionString(
 }
 
 
-void UECRGameInstance::CreateMatch(const FString GameVersion, const FString InGameUniqueIdForSearch,
-                                   const FName ModeName, const FName MapName,
-                                   const FString MapPath, const FName MissionName,
-                                   const FName RegionName, const double TimeDelta,
-                                   const FName WeatherName, const FName DayTimeName,
-                                   const TArray<FFactionAlliance> Alliances,
-                                   const TMap<FName, int32> FactionNamesToCapacities,
-                                   const TMap<FName, FText> FactionNamesToShortTexts)
+void UECRGameInstance::CreateMatch(FECRMatchSettings MatchSettings)
 {
 	if (IsDedicatedServerInstance())
 	{
@@ -179,11 +172,7 @@ void UECRGameInstance::CreateMatch(const FString GameVersion, const FString InGa
 		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
 		{
 			// Saving match creation settings for use in delegate and after map load
-			MatchCreationSettings = FECRMatchSettings{
-				GameVersion, InGameUniqueIdForSearch, ModeName, MapName, MapPath, MissionName, RegionName, WeatherName,
-				DayTimeName, TimeDelta,
-				Alliances, FactionNamesToCapacities, FactionNamesToShortTexts
-			};
+			MatchCreationSettings = MatchSettings;
 			FOnlineSessionSettings SessionSettings = GetSessionSettings();
 
 			// Remove all previous delegates
@@ -192,6 +181,24 @@ void UECRGameInstance::CreateMatch(const FString GameVersion, const FString InGa
 				this, &UECRGameInstance::OnCreateMatchComplete);
 			OnlineSessionPtr->CreateSession(0, DEFAULT_SESSION_NAME, SessionSettings);
 		}
+	}
+}
+
+void UECRGameInstance::TravelToNewMatch(FECRMatchSettings MatchSettings, FString NewLevel)
+{
+	if (OnlineSubsystem)
+	{
+		if (const IOnlineSessionPtr OnlineSessionPtr = OnlineSubsystem->GetSessionInterface())
+		{
+			// Saving match creation settings for use in delegate and after map load
+			MatchCreationSettings = MatchSettings;
+			UpdateSessionSettings();
+		}
+	}
+
+	if (UWorld* World = GetWorld())
+	{
+		World->ServerTravel(NewLevel);
 	}
 }
 
