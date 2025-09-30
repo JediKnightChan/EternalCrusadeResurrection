@@ -25,6 +25,8 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyDataUpdated, FString, Update
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDisconnectedFromSession);
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnTitleStorageFileRead, bool, bSuccess, FString, FileName);
+
 /**
  * 
  */
@@ -94,6 +96,9 @@ class ECR_API UECRGameInstance : public UGameInstance
 	UPROPERTY(BlueprintAssignable)
 	FOnDisconnectedFromSession OnDisconnectedFromSession_BP;
 
+	/** Broadcaster for completion of reading file from title storage */
+	UPROPERTY(BlueprintAssignable)
+	FOnTitleStorageFileRead OnTitleStorageFileRead_BP;
 protected:
 	/** Login via selected login type */
 	void Login(FString PlayerName, FString LoginType, FString Id = "", FString Token = "");
@@ -317,6 +322,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void StartListeningForPartyEvents();
 
+	// Title storage functionality
+
+	/** Queue file to be read from Title Storage */
+	UFUNCTION(BlueprintCallable)
+	void QueueReadTitleStorageFile(const FString& FileName);
+
+	/** Callback for file being read from Title Storage */
+	void HandleReadTitleStorageFileCompleted(bool bWasSuccessful, const FString& FileName); 
 public:
 	virtual void Init() override;
 

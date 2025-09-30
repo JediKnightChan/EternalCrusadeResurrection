@@ -12,6 +12,7 @@
 #include "Interfaces/OnlineFriendsInterface.h"
 #include "Interfaces/OnlineIdentityInterface.h"
 #include "Interfaces/OnlinePresenceInterface.h"
+#include "Interfaces/OnlineTitleFileInterface.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 
@@ -625,9 +626,11 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 		{
 			SessionSettings.Set(FName{TEXT("PORT_OVERRIDE")}, FString::FromInt(PortOverride),
 			                    EOnlineDataAdvertisementType::ViaOnlineService);
-		} else
+		}
+		else
 		{
-			UE_LOG(LogECR, Warning, TEXT("Couldn't parse argument 'port' on dedicated server to set it on session settings"))
+			UE_LOG(LogECR, Warning,
+			       TEXT("Couldn't parse argument 'port' on dedicated server to set it on session settings"))
 		}
 	}
 
@@ -1162,6 +1165,65 @@ void UECRGameInstance::StartListeningForPartyEvents()
 			}
 		}
 	}
+}
+
+void UECRGameInstance::QueueReadTitleStorageFile(const FString& FileName)
+{
+	if (OnlineSubsystem)
+	{
+		if (IOnlineTitleFilePtr TitleFile = OnlineSubsystem->GetTitleFileInterface())
+		{
+			TitleFile->ClearOnReadFileCompleteDelegates(this);
+			TitleFile->AddOnReadFileCompleteDelegate_Handle(
+				FOnReadFileCompleteDelegate::CreateUObject(
+					this, &UECRGameInstance::HandleReadTitleStorageFileCompleted));
+			TitleFile->ReadFile(FileName);
+		}
+	}
+}
+
+void UECRGameInstance::HandleReadTitleStorageFileCompleted(bool bWasSuccessful, const FString& FileName)
+{
+	if (OnlineSubsystem)
+	{
+		if (IOnlineTitleFilePtr TitleFile = OnlineSubsystem->GetTitleFileInterface())
+		{
+			if (bWasSuccessful)
+			{
+				TArray<uint8> FileContents;
+				if (TitleFile->GetFileContents(FileName, FileContents))
+				{
+					// Construct a full path where you want to save the image
+					// Example: Saved/Downloaded/<FileName>
+					FString SaveDir = FPaths::ProjectSavedDir() / TEXT("Downloaded");
+					IFileManager::Get().MakeDirectory(*SaveDir, true);
+					FString SavePath = SaveDir / FileName;
+
+					if (FFileHelper::SaveArrayToFile(FileContents, *SavePath))
+					{
+						UE_LOG(LogTemp, Log, TEXT("Saved file %s (%d bytes) to %s"), *FileName, FileContents.Num(),
+						       *SavePath);
+					}
+					else
+					{
+						UE_LOG(LogTemp, Error, TEXT("Failed to save file %s to %s"), *FileName, *SavePath);
+					}
+				}
+				else
+				{
+					UE_LOG(LogTemp, Error, TEXT("Failed to get file contents for file named: %s."), *FileName);
+				}
+			}
+
+			// Clear delegate handle
+			if (TitleFile.IsValid())
+			{
+				TitleFile->ClearOnReadFileCompleteDelegates(this);
+			}
+		}
+	}
+
+	OnTitleStorageFileRead_BP.Broadcast(bWasSuccessful, FileName);
 }
 
 
