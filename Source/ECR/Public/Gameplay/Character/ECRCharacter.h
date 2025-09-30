@@ -168,7 +168,7 @@ private:
 
 	static const FName NAME_ECRAbilityReady;
 
-	UPROPERTY(ReplicatedUsing = OnRep_PawnData, EditAnywhere, BlueprintReadOnly,
+	UPROPERTY(ReplicatedUsing = OnRep_PawnData, EditAnywhere, BlueprintReadWrite,
 		meta=(AllowPrivateAccess="true", ExposeOnSpawn="true"))
 	const UECRPawnData* PawnData;
 

@@ -58,9 +58,6 @@ void UECRGameInstance::LoginViaDevTool(const FString PlayerName, const FString A
 
 void UECRGameInstance::Login(FString PlayerName, FString LoginType, FString Id, FString Token)
 {
-	// Setting player display name
-	UserDisplayName = PlayerName;
-
 	// Login
 	if (OnlineSubsystem)
 	{
@@ -354,8 +351,7 @@ void UECRGameInstance::OnCreateMatchComplete(FName SessionName, const bool bWasS
 			// Display loading screen as loading map
 			GUISupervisor->ShowLoadingScreen(LoadingMap);
 			// Load map with listen parameter
-			const FString Address = FString::Printf(TEXT("%s?listen?DisplayName=%s"),
-			                                        *(MatchCreationSettings.MapPath), *(UserDisplayName));
+			const FString Address = GetConnectionStringWithParams(MatchCreationSettings.MapPath, true);
 			GetWorld()->ServerTravel(Address);
 		}
 		else
@@ -425,8 +421,7 @@ void UECRGameInstance::OnJoinSessionComplete(const FName SessionName,
 				case EOnJoinSessionCompleteResult::Type::Success:
 					if (!ConnectionString.IsEmpty())
 					{
-						const FString Address = FString::Printf(
-							TEXT("%s?DisplayName=%s"), *(ConnectionString), *(UserDisplayName));
+						const FString Address = GetConnectionStringWithParams(ConnectionString, false);
 						GUISupervisor->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
 					}
 					else
@@ -697,6 +692,20 @@ FOnlineSessionSettings UECRGameInstance::GetPartySessionSettings()
 	SessionSettings.bUseLobbiesIfAvailable = true;
 	SessionSettings.bAllowInvites = true;
 	return SessionSettings;
+}
+
+FString UECRGameInstance::GetConnectionStringWithParams(FString ConnectString, bool bListen)
+{
+	if (bListen)
+	{
+		ConnectString += "?listen";
+	}
+
+	ConnectString += "?DisplayName=" + UserDisplayName;
+	ConnectString += "?DesiredFaction=" + UserDesiredFaction;
+	ConnectString += "?DesiredCharId=" + UserCharId;
+
+	return ConnectString;
 }
 
 

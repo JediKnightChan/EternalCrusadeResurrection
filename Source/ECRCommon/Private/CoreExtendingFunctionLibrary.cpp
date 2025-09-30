@@ -2,6 +2,8 @@
 
 
 #include "CoreExtendingFunctionLibrary.h"
+
+#include "GameplayTagContainer.h"
 #include "Kismet/KismetMathLibrary.h"
 
 
@@ -90,9 +92,7 @@ FName UCoreExtendingFunctionLibrary::GetRandomName(TMap<FName, float> NamesToWei
 	}
 
 	// Getting [0, 1] random fraction
-	const FDateTime DateTime = FDateTime::Now();
-	const FRandomStream RandomStream{DateTime.GetMillisecond()};
-	const float Fraction = RandomStream.GetFraction();
+	const float Fraction = UKismetMathLibrary::RandomFloat();
 
 	for (int i = 0; i < CumBreaks.Num() - 1; i++)
 	{
@@ -172,4 +172,29 @@ FString UCoreExtendingFunctionLibrary::GetStringFromClipboard()
 #else
 	return "";
 #endif
+}
+
+bool UCoreExtendingFunctionLibrary::DoesChildContainerMatchConditions(
+	const TArray<FGameplayTagContainer>& ParentContainers, const FGameplayTagContainer& ChildContainer)
+{
+	for (const FGameplayTagContainer& ParentContainer : ParentContainers)
+	{
+		bool bAllMatched = true;
+
+		for (const FGameplayTag& ParentTag : ParentContainer)
+		{
+			if (!ChildContainer.HasTag(ParentTag))
+			{
+				bAllMatched = false;
+				break;
+			}
+		}
+
+		if (bAllMatched)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }

@@ -86,6 +86,10 @@ private:
 	/** Tags of modifiers for this item */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess=true))
 	FGameplayTagContainer MyModifiersTags;
+
+	/** Tags for achievements that can be unlocked with this weapon, e.g. Achievements.Weapon.Melee */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess=true))
+	FGameplayTagContainer AchievementsTags;
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"), ReplicatedUsing=OnRep_bVisible)
 	bool bVisible = true;

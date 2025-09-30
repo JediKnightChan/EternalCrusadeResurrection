@@ -33,10 +33,18 @@ class ECR_API UECRGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 
-	/** Name assigned to player that will be shown in matches */
+	/** Match join parameter: display name */
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
 	FString UserDisplayName;
 
+	/** Match join parameter: desired faction */
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
+	FString UserDesiredFaction;
+
+	/** Match join parameter: char id */
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
+	FString UserCharId;
+	
 	/** Match settings, not only for creation, but also real time updates */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	FECRMatchSettings MatchCreationSettings;
@@ -150,6 +158,9 @@ protected:
 	/** Retrieve session settings for party lobby */
 	FOnlineSessionSettings GetPartySessionSettings();
 
+	/** Format connection string with all required parameters */
+	FString GetConnectionStringWithParams(FString ConnectString, bool bListen);
+
 public:
 	UECRGameInstance();
 
@@ -159,15 +170,15 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void LogOut();
 
-	/** Login user via Epic Account */
+	/** Login user via Epic Account. PlayerName is deprecated */
 	UFUNCTION(BlueprintCallable)
 	void LoginViaEpic(FString PlayerName);
 
-	/** Login user via Device ID */
+	/** Login user via Device ID. PlayerName is deprecated */
 	UFUNCTION(BlueprintCallable)
 	void LoginPersistent(FString PlayerName);
 
-	/** Login user via DevTool */
+	/** Login user via DevTool. PlayerName is deprecated */
 	UFUNCTION(BlueprintCallable)
 	void LoginViaDevTool(FString PlayerName, FString Address, FString CredName);
 

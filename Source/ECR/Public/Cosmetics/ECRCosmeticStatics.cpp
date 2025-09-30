@@ -49,8 +49,14 @@ TSubclassOf<UAnimInstance> UECRCosmeticStatics::SelectBestAnimInstance(const FEC
 	return Set.SelectBestAnimInstance(CosmeticTags);
 }
 
-TSoftObjectPtr<UTexture2D> UECRCosmeticStatics::SelectBestSoftTexture(const FECRSoftTexture2DSelectionSet Set,
+TSubclassOf<UAnimInstance> UECRCosmeticStatics::SelectBestAnimLayer(const FECRAnimLayerSelectionSet Set,
 	FGameplayTagContainer CosmeticTags)
+{
+	return Set.SelectBestLayer(CosmeticTags);
+}
+
+TSoftObjectPtr<UTexture2D> UECRCosmeticStatics::SelectBestSoftTexture(const FECRSoftTexture2DSelectionSet Set,
+                                                                      FGameplayTagContainer CosmeticTags)
 {
 	return Set.SelectBestTexture(CosmeticTags);
 }

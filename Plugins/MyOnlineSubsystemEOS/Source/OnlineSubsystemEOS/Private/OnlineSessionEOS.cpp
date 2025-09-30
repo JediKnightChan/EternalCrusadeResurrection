@@ -3605,6 +3605,12 @@ uint32_t FOnlineSessionEOS::GetLobbyMaxMembersFromSessionSettings(const FOnlineS
 
 uint32 FOnlineSessionEOS::CreateLobbySession(int32 HostingPlayerNum, FNamedOnlineSession* Session)
 {
+	if (!ISocketSubsystem::Get(EOS_SOCKETSUBSYSTEM))
+	{
+		UE_LOG_ONLINE_SESSION(Error, TEXT("[FOnlineSessionEOS::CreateLobbySession] EOS_SOCKETSUBSYSTEM not initialized"))
+		return ONLINE_FAIL;
+	}
+
 	check(Session != nullptr);
 
 	Session->SessionState = EOnlineSessionState::Creating;

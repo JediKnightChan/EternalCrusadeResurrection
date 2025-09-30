@@ -69,4 +69,8 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	static FString GetStringFromClipboard();
+
+	/** Checks that in any container from parent containers all tags have a child in child container */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static bool DoesChildContainerMatchConditions(const TArray<FGameplayTagContainer>& ParentContainers, const FGameplayTagContainer& ChildContainer); 
 };
