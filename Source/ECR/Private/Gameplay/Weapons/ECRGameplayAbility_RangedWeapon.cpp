@@ -67,7 +67,8 @@ bool UECRGameplayAbility_RangedWeapon::CanActivateAbility(const FGameplayAbility
 
 	if (bResult)
 	{
-		const FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->FindAbilitySpecFromHandle(Handle);
+		const FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->
+		                                                     FindAbilitySpecFromHandle(Handle);
 		if (GetWeaponInstance(AbilitySpec->SourceObject.Get()) == nullptr)
 		{
 			UE_LOG(LogECRAbilitySystem, Error,
@@ -123,6 +124,20 @@ void UECRGameplayAbility_RangedWeapon::AddAdditionalTraceIgnoreActors(FCollision
 ECollisionChannel UECRGameplayAbility_RangedWeapon::DetermineTraceChannel(
 	FCollisionQueryParams& TraceParams, bool bIsSimulated) const
 {
+	if (const UECRRangedWeaponInstance* Weapon = GetWeaponInstance())
+	{
+		switch (Weapon->GetTraceChannel())
+		{
+		case 0:
+			return ECR_TraceChannel_Weapon;
+		case 1:
+			return ECR_TraceChannel_Weapon_Capsule;
+		case 2:
+			return ECR_TraceChannel_Weapon_Multi;
+		default:
+			return ECR_TraceChannel_Weapon;
+		}
+	}
 	return ECR_TraceChannel_Weapon;
 }
 
@@ -442,8 +457,9 @@ void UECRGameplayAbility_RangedWeapon::TraceBulletsInCartridge(const FRangedWeap
 
 		const float HalfSpreadAngleInRadians = FMath::DegreesToRadians(ActualSpreadAngle * 0.5f);
 
-		const FVector BulletDir = UECRGameplayBlueprintLibrary::VRandConeNormalDistribution(InputData.AimDir, HalfSpreadAngleInRadians,
-		                                                      WeaponData->GetSpreadExponent());
+		const FVector BulletDir = UECRGameplayBlueprintLibrary::VRandConeNormalDistribution(
+			InputData.AimDir, HalfSpreadAngleInRadians,
+			WeaponData->GetSpreadExponent());
 
 		const FVector EndTrace = InputData.StartTrace + (BulletDir * WeaponData->GetMaxDamageRange());
 		FVector HitLocation = EndTrace;
