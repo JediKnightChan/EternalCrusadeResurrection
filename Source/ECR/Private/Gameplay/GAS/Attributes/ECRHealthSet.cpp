@@ -55,6 +55,7 @@ void UECRHealthSet::SendDamageMessage(const FGameplayEffectModCallbackData& Dama
 	Message.Verb = TAG_ECR_Damage_Message;
 	Message.Instigator = DamageData.EffectSpec.GetEffectContext().GetEffectCauser();
 	Message.InstigatorTags = *DamageData.EffectSpec.CapturedSourceTags.GetAggregatedTags();
+	Message.Object1 = DamageData.EffectSpec.GetEffectContext().GetSourceObject();
 	Message.Target = GetOwningActor();
 	Message.TargetTags = *DamageData.EffectSpec.CapturedTargetTags.GetAggregatedTags();
 	//@TODO: Fill out context tags, and any non-ability-system source/instigator tags

@@ -23,6 +23,12 @@ struct FECRVerbMessage
 	UObject* Target = nullptr;
 
 	UPROPERTY(BlueprintReadWrite, Category=Gameplay)
+	UObject* Object1 = nullptr;
+	
+	UPROPERTY(BlueprintReadWrite, Category=Gameplay)
+	UObject* Object2 = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, Category=Gameplay)
 	FGameplayTagContainer InstigatorTags;
 
 	UPROPERTY(BlueprintReadWrite, Category=Gameplay)
