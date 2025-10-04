@@ -42,6 +42,8 @@ public:
 	FGameplayTag InputTag_Vehicle_Steer;
 	FGameplayTag InputTag_Vehicle_Brake;
 
+	FGameplayTag GameplayEffect_DamageIgnoresShield;
+
 	FGameplayTag GameplayEvent_Death;
 	FGameplayTag GameplayEvent_Landed;
 	FGameplayTag GameplayEvent_MovementModeChanged;

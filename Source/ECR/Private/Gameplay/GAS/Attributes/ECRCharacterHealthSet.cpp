@@ -3,6 +3,7 @@
 
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "GameplayEffectExtension.h"
+#include "Gameplay/ECRGameplayTags.h"
 #include "Net/UnrealNetwork.h"
 
 UECRCharacterHealthSet::UECRCharacterHealthSet()
@@ -92,7 +93,11 @@ void UECRCharacterHealthSet::PostGameplayEffectExecute(const FGameplayEffectModC
 			SendDamageMessage(Data);
 		}
 		float DamageToApplyValue = GetDamage();
-		if (GetShield() > 0)
+
+		FGameplayTagContainer EffectTags;
+		Data.EffectSpec.GetAllAssetTags(EffectTags);
+
+		if (GetShield() > 0 && !EffectTags.HasTag(FECRGameplayTags::Get().GameplayEffect_DamageIgnoresShield))
 		{
 			// Convert into -Shield and then clamp
 			const float ShieldValue = GetShield();

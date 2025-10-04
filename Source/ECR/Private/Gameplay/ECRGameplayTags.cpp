@@ -55,6 +55,9 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddTag(InputTag_Vehicle_Steer, "InputTag.Vehicle.Steer", "Steer input.");
 	AddTag(InputTag_Vehicle_Brake, "InputTag.Vehicle.Brake", "Brake input.");
 
+	AddTag(GameplayEffect_DamageIgnoresShield, "GameplayEffect.Special.DamageIgnoresShield",
+		   "Damage effects having this tag will ignore shield");
+
 	AddTag(GameplayEvent_Death, "GameplayEvent.Death",
 	       "Event that fires on death. This event only fires on the server.");
 
