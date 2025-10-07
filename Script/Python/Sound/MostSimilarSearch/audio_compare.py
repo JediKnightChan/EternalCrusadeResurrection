@@ -8,10 +8,10 @@ import os
 from threading import Thread
 
 ROOT_DIR = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/Sound/Files/Windows/"
-SNB_DIR = os.path.join(ROOT_DIR, "SNB_ChainSword_IM")
+SNB_DIR = os.path.join(ROOT_DIR, "SNB_Grenade_CM")
 AUDIO_DATAFILE = os.path.join(SNB_DIR, "audio_data.pickle")
 
-MP3_TO_COMPARE = "C:/Users/JediKnight/Desktop/157.ogg"
+MP3_TO_COMPARE = "C:/Users/JediKnight/Desktop/flies.mp3"
 
 
 class ThreadWithReturnValue(Thread):

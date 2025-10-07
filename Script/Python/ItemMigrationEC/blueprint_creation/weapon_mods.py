@@ -8,9 +8,9 @@ import unreal
 # Change me!
 ASSET_DIR = "/Game/Characters/SpaceMarine/Weapons/Blueprints/AbilityItems/WeaponMods/LSM/"
 TABLE_PATH = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/ItemMigrationEC/data/ec/gameplay_items/" \
-             "lsm_weapon_mods.csv"
+             "csm_weapon_mods.csv"
 GENERAL_TABLE_PATH = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/ItemMigrationEC/data/ec/gameplay_items/" \
-                     "lsm.csv"
+                     "csm.csv"
 
 
 BFL = unreal.SubobjectDataBlueprintFunctionLibrary
@@ -47,7 +47,7 @@ def create_item(asset_name, asset_dir, item_tags):
     # Convert strings to gameplay tags
     tag_container = unreal.GameplayTagContainer()
     for tag_str in item_tags:
-        gameplay_tag = unreal.ECRPythonHelpersLibrary.convert_string_to_gameplay_tag(tag_str)
+        gameplay_tag = unreal.ECRPythonHelpersLibrary.convert_string_to_gameplay_tag(None, tag_str)
         print("TAGS VALUE", unreal.GameplayTagLibrary.get_debug_string_from_gameplay_tag(gameplay_tag))
         tag_container = unreal.GameplayTagLibrary.add_gameplay_tag_to_container(tag_container, gameplay_tag)
 
