@@ -2826,37 +2826,19 @@ bool GetConnectStringFromSessionInfo_BEACONHACK(TSharedPtr<FOnlineSessionInfoEOS
 	return true;
 }
 
-int32 GetGamePortFromSessionSettings(const FOnlineSessionSettings& SessionSettings)
+int32 GetGamePortOverrideFromSessionSettings(const FOnlineSessionSettings& SessionSettings)
 {
-	TSharedRef<FJsonObject> JsonObject = MakeShared<FJsonObject>();
+	int32 GameListenPortOverride = 0;
+	FString StringBuffer;
+	const bool bGetSuccess = SessionSettings.Get(FName(TEXT("PORT_OVERRIDE")), StringBuffer);
+	const bool bParseSuccess = LexTryParseString(GameListenPortOverride, *StringBuffer);
 
-	for (TTuple<FName, FOnlineSessionSetting> SettingTuple : SessionSettings.Settings)
+	if (!bGetSuccess || !bParseSuccess)
 	{
-		FString OutValue;
-		SettingTuple.Value.Data.GetValue(OutValue);
-		JsonObject->SetStringField(SettingTuple.Key.ToString(), OutValue);
+		GameListenPortOverride = 0;
 	}
 
-	FString JsonString;
-	TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&JsonString);
-	if (FJsonSerializer::Serialize(JsonObject, Writer))
-	{
-		Writer->Close();
-	}
-
-	UE_LOG(LogTemp, Warning, TEXT("Trying get port, session settings %s"), *JsonString);
-	
-	int32 GameListenPort = FURL::UrlConfig.DefaultPort;
-	FString GamePortOverride;
-	const bool bGetSuccess = SessionSettings.Get(FName(TEXT("PORT_OVERRIDE")), GamePortOverride);
-	UE_LOG(LogTemp, Warning, TEXT("Port %s, get success %d"), *GamePortOverride, bGetSuccess ? 1: 0)
-	const bool bParseSuccess = LexTryParseString(GameListenPort, *GamePortOverride);
-	if (!bGetSuccess || !bParseSuccess || GameListenPort <= 0)
-	{
-		// Reset the default BeaconListenPort back to FURL::UrlConfig.DefaultPort because the SessionSettings value does not exist or was not valid
-		GameListenPort = FURL::UrlConfig.DefaultPort;
-	}
-	return GameListenPort;
+	return GameListenPortOverride;
 }
 
 bool FOnlineSessionEOS::GetResolvedConnectString(FName SessionName, FString& ConnectInfo, FName PortType)
@@ -2874,8 +2856,8 @@ bool FOnlineSessionEOS::GetResolvedConnectString(FName SessionName, FString& Con
 		}
 		else if (PortType == NAME_GamePort)
 		{
-			int32 GameListenPort = GetGamePortFromSessionSettings(Session->SessionSettings);
-			bSuccess = GetConnectStringFromSessionInfo(SessionInfo, ConnectInfo, GameListenPort);
+			int32 GameListenPortOverride = GetGamePortOverrideFromSessionSettings(Session->SessionSettings);
+			bSuccess = GetConnectStringFromSessionInfo(SessionInfo, ConnectInfo, GameListenPortOverride);
 		}
 
 		if (!bSuccess)
@@ -2908,8 +2890,8 @@ bool FOnlineSessionEOS::GetResolvedConnectString(const FOnlineSessionSearchResul
 		}
 		else if (PortType == NAME_GamePort)
 		{
-			int32 GameListenPort = GetGamePortFromSessionSettings(SearchResult.Session.SessionSettings);
-			bSuccess = GetConnectStringFromSessionInfo(SessionInfo, ConnectInfo, GameListenPort);
+			int32 GameListenPortOverride = GetGamePortOverrideFromSessionSettings(SearchResult.Session.SessionSettings);
+			bSuccess = GetConnectStringFromSessionInfo(SessionInfo, ConnectInfo, GameListenPortOverride);
 		}
 	}
 	
