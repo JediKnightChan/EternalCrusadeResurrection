@@ -41,4 +41,7 @@ public:
 	
 	UFUNCTION(BlueprintPure)
 	static FECRGameplayModifierInfoWrapper ExtractGameplayModifierInfo(FGameplayModifierInfo Info);
+
+	UFUNCTION(BlueprintPure)
+	static FECRGameplayModifierInfoWrapper ExtractGameplayModifierInfoFromExecution(FGameplayEffectExecutionDefinition Info, int32 Index);
 };

@@ -28,7 +28,8 @@ void UECRAbilitySystemFunctionLibrary::SetEffectContextSourceObject(FGameplayEff
 	Handle.AddSourceObject(Object);
 }
 
-FECRGameplayModifierInfoWrapper UECRAbilitySystemFunctionLibrary::ExtractGameplayModifierInfo(FGameplayModifierInfo Info)
+FECRGameplayModifierInfoWrapper UECRAbilitySystemFunctionLibrary::ExtractGameplayModifierInfo(
+	FGameplayModifierInfo Info)
 {
 	FECRGameplayModifierInfoWrapper InfoWrapper;
 
@@ -36,4 +37,18 @@ FECRGameplayModifierInfoWrapper UECRAbilitySystemFunctionLibrary::ExtractGamepla
 	InfoWrapper.ModifierOp = Info.ModifierOp;
 	Info.ModifierMagnitude.GetStaticMagnitudeIfPossible(1, InfoWrapper.Magnitude);
 	return InfoWrapper;
+}
+
+FECRGameplayModifierInfoWrapper UECRAbilitySystemFunctionLibrary::ExtractGameplayModifierInfoFromExecution(
+	FGameplayEffectExecutionDefinition Info, int32 Index)
+{
+	if (Index >= 0 && Index < Info.CalculationModifiers.Num())
+	{
+		FECRGameplayModifierInfoWrapper InfoWrapper;
+		FGameplayEffectExecutionScopedModifierInfo OutInfo = Info.CalculationModifiers[Index];
+		InfoWrapper.ModifierOp = OutInfo.ModifierOp;
+		OutInfo.ModifierMagnitude.GetStaticMagnitudeIfPossible(1, InfoWrapper.Magnitude);
+		return InfoWrapper;
+	}
+	return FECRGameplayModifierInfoWrapper{};
 }
