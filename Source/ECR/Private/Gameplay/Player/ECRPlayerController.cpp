@@ -9,6 +9,7 @@
 #include "Framework/Application/NavigationConfig.h"
 #include "Gameplay/Camera/ECRPlayerCameraManager.h"
 #include "Gameplay/Player/ECRPlayerState.h"
+#include "System/ECRNavigationConfig.h"
 
 
 AECRPlayerController::AECRPlayerController(const FObjectInitializer& ObjectInitializer)
@@ -59,7 +60,7 @@ void AECRPlayerController::BeginPlay()
 
 	if (IsLocalPlayerController())
 	{
-		const TSharedRef<FNavigationConfig> Navigation = MakeShared<FNavigationConfig>();
+		const TSharedRef<FECRNavigationConfig> Navigation = MakeShared<FECRNavigationConfig>();
 		Navigation->bKeyNavigation = true;
 		Navigation->bTabNavigation = false;
 		Navigation->bAnalogNavigation = true;
