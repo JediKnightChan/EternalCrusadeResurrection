@@ -52,3 +52,28 @@ FECRGameplayModifierInfoWrapper UECRAbilitySystemFunctionLibrary::ExtractGamepla
 	}
 	return FECRGameplayModifierInfoWrapper{};
 }
+
+float UECRAbilitySystemFunctionLibrary::ExtractDurationFromGameplayEffect(TSubclassOf<UGameplayEffect> EffectClass)
+{
+	if (!EffectClass)
+	{
+		return 0;
+	}
+
+	UGameplayEffect* EffectCDO = EffectClass->GetDefaultObject<UGameplayEffect>();
+	if (!EffectCDO)
+	{
+		return 0;
+	}
+
+	if (EffectCDO->DurationPolicy == EGameplayEffectDurationType::Instant)
+	{
+		return 0;
+	}
+	if (EffectCDO->DurationPolicy == EGameplayEffectDurationType::Infinite)
+	{
+		return -1;
+	}
+	float OutValue = 0;
+	return EffectCDO->DurationMagnitude.GetStaticMagnitudeIfPossible(1, OutValue);
+}

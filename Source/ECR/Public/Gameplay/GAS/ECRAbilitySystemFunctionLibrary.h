@@ -44,4 +44,7 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	static FECRGameplayModifierInfoWrapper ExtractGameplayModifierInfoFromExecution(FGameplayEffectExecutionDefinition Info, int32 Index);
+
+	UFUNCTION(BlueprintPure)
+	static float ExtractDurationFromGameplayEffect(TSubclassOf<UGameplayEffect> EffectClass);
 };
