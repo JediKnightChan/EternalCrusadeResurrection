@@ -75,5 +75,6 @@ float UECRAbilitySystemFunctionLibrary::ExtractDurationFromGameplayEffect(TSubcl
 		return -1;
 	}
 	float OutValue = 0;
-	return EffectCDO->DurationMagnitude.GetStaticMagnitudeIfPossible(1, OutValue);
+	EffectCDO->DurationMagnitude.GetStaticMagnitudeIfPossible(1, OutValue);
+	return OutValue;
 }
