@@ -155,7 +155,7 @@ void UECRPawnControlComponent::InitInputAndCamera()
 		PawnData = PawnExtComp->GetPawnData<UECRPawnData>();
 	}
 
-	if (bIsLocallyControlled && PawnData)
+	if (PawnData)
 	{
 		if (UECRCameraComponent* CameraComponent = UECRCameraComponent::FindCameraComponent(Pawn))
 		{
