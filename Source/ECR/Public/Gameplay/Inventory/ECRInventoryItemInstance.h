@@ -39,6 +39,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category=Inventory)
 	bool HasStatTag(FGameplayTag Tag) const;
 
+    UFUNCTION(BlueprintCallable, Category=Inventory)
 	TSubclassOf<UECRInventoryItemDefinition> GetItemDef() const
 	{
 		return ItemDef;

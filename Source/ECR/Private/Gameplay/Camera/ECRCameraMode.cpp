@@ -93,7 +93,7 @@ FVector UECRCameraMode::GetPivotLocation() const
 
 	if (bUseParentActorAsTargetOnlyForPivotLoc)
 	{
-		if (AActor* ParentActor = TargetActor->GetParentActor())
+		if (AActor* ParentActor = TargetActor->GetAttachParentActor())
 		{
 			TargetActor = ParentActor;
 		}
