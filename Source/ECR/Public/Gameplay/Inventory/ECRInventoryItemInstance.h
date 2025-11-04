@@ -45,6 +45,18 @@ public:
 		return ItemDef;
 	}
 
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category=Inventory)
+	FGameplayTagStackContainer CopyStatTags() const
+    {
+    	return StatTags;
+    }
+
+	UFUNCTION(BlueprintCallable, Category=Inventory)
+	void PasteStatTags(const FGameplayTagStackContainer NewStatTags)
+    {
+    	StatTags = NewStatTags;
+    }
+
 	UFUNCTION(BlueprintCallable, BlueprintPure=false, meta=(DeterminesOutputType=FragmentClass))
 	const UECRInventoryItemFragment* FindFragmentByClass(TSubclassOf<UECRInventoryItemFragment> FragmentClass) const;
 
