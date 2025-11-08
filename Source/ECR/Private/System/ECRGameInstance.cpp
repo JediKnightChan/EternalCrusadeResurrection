@@ -140,8 +140,8 @@ FString UECRGameInstance::GetMatchFactionString(
 		TArray<FString> SideFactions;
 		for (FName FactionName : Alliance.FactionNames)
 		{
-			const FText* FactionShortNameText = FactionNamesToShortTexts.Find(FactionName);
-			SideFactions.Add(FactionShortNameText->ToString());
+			const FText FactionShortNameText = FactionNamesToShortTexts.FindRef(FactionName);
+			SideFactions.Add(FactionShortNameText.ToString());
 		}
 		Sides.Add(FString::Join(SideFactions, TEXT(", ")));
 	}

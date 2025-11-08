@@ -129,14 +129,15 @@ struct FECRMatchSettings
 	FECRMatchSettings();
 
 	// Real constructor
-	FECRMatchSettings(const FString& GameVersion, const FString& InGameUniqueIdForSearch, const FName& GameMode,
+	FECRMatchSettings(const bool& bSettingsWereSetUp, const FString& GameVersion, const FString& InGameUniqueIdForSearch, const FName& GameMode,
 	                  const FName& MapName, const FString& MapPath,
 	                  const FName& GameMission,
 	                  const FName& Region, const FName& WeatherName, const FName& DayTimeName, const double TimeDelta,
 	                  const TArray<FFactionAlliance>& Alliances,
 	                  const TMap<FName, int32>& FactionNamesToCapacities,
 	                  const TMap<FName, FText>& FactionNamesToShortTexts)
-		: GameVersion(GameVersion),
+		: bSettingsWereSetUp(bSettingsWereSetUp),
+	      GameVersion(GameVersion),
 		  InGameUniqueIdForSearch(InGameUniqueIdForSearch),
 		  GameMode(GameMode),
 		  MapName(MapName),
@@ -153,6 +154,9 @@ struct FECRMatchSettings
 		CurrentPlayerAmount = 1;
 		MatchStartedTime = 0.0f;
 	}
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bSettingsWereSetUp;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString GameVersion;
