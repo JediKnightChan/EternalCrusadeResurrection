@@ -7,6 +7,7 @@
 #include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 #include "Framework/Application/NavigationConfig.h"
+#include "GameFramework/Character.h"
 #include "Gameplay/Camera/ECRPlayerCameraManager.h"
 #include "Gameplay/Player/ECRPlayerState.h"
 #include "System/ECRNavigationConfig.h"
@@ -109,6 +110,40 @@ void AECRPlayerController::PlayerTick(float DeltaTime)
 	// Interpolating camera distance multiplier
 	CameraDistanceMultiplier = FMath::FInterpTo(CameraDistanceMultiplier, DesiredCameraDistanceMultiplier, DeltaTime,
 	                                            CameraDistanceInterpolationSpeed);
+}
+
+void AECRPlayerController::GetPlayerViewPoint(FVector& out_Location, FRotator& out_Rotation) const
+{
+	if (IsInState(NAME_Spectating) && HasAuthority() && !IsLocalController())
+	{
+		// Server uses the synced location from clients. Important for view relevancy checks.
+		out_Location = LastSpectatorSyncLocation;
+		out_Rotation = LastSpectatorSyncRotation;
+	}
+	// There is a serious issue with relevancy while possessing non char pawns, caused by server camera not synced, so
+	// don't use camera manager on server for autonomous proxies
+	else if ((IsLocalController() || (GetPawn() && GetPawn()->IsA(ACharacter::StaticClass()))) && PlayerCameraManager != NULL && 
+		PlayerCameraManager->GetCameraCacheTime() > 0.f) // Whether camera was updated at least once)
+			{
+		PlayerCameraManager->GetCameraViewPoint(out_Location, out_Rotation);
+			}
+	else
+	{
+		AActor* TheViewTarget = GetViewTarget();
+
+		if( TheViewTarget != NULL )
+		{
+			out_Location = TheViewTarget->GetActorLocation();
+			out_Rotation = TheViewTarget->GetActorRotation();
+		}
+		else
+		{
+			Super::GetPlayerViewPoint(out_Location,out_Rotation);
+		}
+
+		out_Location.DiagnosticCheckNaN(*FString::Printf(TEXT("APlayerController::GetPlayerViewPoint: out_Location, ViewTarget=%s"), *GetNameSafe(TheViewTarget)));
+		out_Rotation.DiagnosticCheckNaN(*FString::Printf(TEXT("APlayerController::GetPlayerViewPoint: out_Rotation, ViewTarget=%s"), *GetNameSafe(TheViewTarget)));
+	}
 }
 
 void AECRPlayerController::OnPossess(APawn* InPawn)
