@@ -72,5 +72,9 @@ public:
 
 	/** Checks that in any container from parent containers all tags have a child in child container */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	static bool DoesChildContainerMatchConditions(const TArray<FGameplayTagContainer>& ParentContainers, const FGameplayTagContainer& ChildContainer); 
+	static bool DoesChildContainerMatchConditions(const TArray<FGameplayTagContainer>& ParentContainers, const FGameplayTagContainer& ChildContainer);
+
+	/** Crash out game for testing crashes */
+	UFUNCTION(BlueprintCallable)
+	static void CrashOutWithNullPointerException();
 };

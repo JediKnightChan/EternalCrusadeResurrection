@@ -198,3 +198,9 @@ bool UCoreExtendingFunctionLibrary::DoesChildContainerMatchConditions(
 
 	return false;
 }
+
+void UCoreExtendingFunctionLibrary::CrashOutWithNullPointerException()
+{
+	const AActor* NullPointerActor = nullptr;
+	FVector Loc = NullPointerActor->GetActorLocation();
+}
