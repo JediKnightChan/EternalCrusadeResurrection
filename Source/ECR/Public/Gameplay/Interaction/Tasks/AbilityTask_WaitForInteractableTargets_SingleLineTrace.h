@@ -22,7 +22,7 @@ class UAbilityTask_WaitForInteractableTargets_SingleLineTrace : public UAbilityT
 	static UAbilityTask_WaitForInteractableTargets_SingleLineTrace* WaitForInteractableTargets_SingleLineTrace(
 		UGameplayAbility* OwningAbility, FInteractionQuery InteractionQuery,
 		FGameplayAbilityTargetingLocationInfo StartLocation, float InteractionScanRange = 100.0f,
-		float InteractionScanRate = 0.100f, float SweepRadius = 0.0f, bool bShowDebug = false);
+		float InteractionScanRate = 0.100f, float SweepRadius = 0.0f, bool bAimWithCamera = true, bool bShowDebug = false);
 
 private:
 	virtual void OnDestroy(bool AbilityEnded) override;
@@ -38,6 +38,7 @@ private:
 	float InteractionScanRange = 100.0f;
 	float InteractionScanRate = 0.100f;
 	float SweepRadius = 0.0f;
+	bool bAimWithCamera = true;
 	bool bShowDebug = false;
 
 	FTimerHandle TimerHandle;

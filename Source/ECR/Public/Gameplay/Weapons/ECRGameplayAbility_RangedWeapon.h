@@ -114,6 +114,8 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnRangedWeaponTargetDataReady(const FGameplayAbilityTargetDataHandle& TargetData);
 
+	UFUNCTION(BlueprintNativeEvent)
+	FVector GetBotFocusTargetOffset() const;
 private:
 	FDelegateHandle OnTargetDataReadyCallbackDelegateHandle;
 
