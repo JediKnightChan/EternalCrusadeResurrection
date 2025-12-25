@@ -127,6 +127,11 @@ void UECRGameplayAbility::ToggleMovementEnabled(const bool bNewEnabled)
 	}
 }
 
+bool UECRGameplayAbility::ShouldBeUIHighlighted_Implementation(UECRAbilitySystemComponent* AbilitySystem)
+{
+	return false;
+}
+
 void UECRGameplayAbility::NativeOnAbilityFailedToActivate(const FGameplayTagContainer& FailedReason) const
 {
 	bool bSimpleFailureFound = false;

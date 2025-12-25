@@ -204,3 +204,8 @@ void UCoreExtendingFunctionLibrary::CrashOutWithNullPointerException()
 	const AActor* NullPointerActor = nullptr;
 	FVector Loc = NullPointerActor->GetActorLocation();
 }
+
+void UCoreExtendingFunctionLibrary::DedicatedServerExit()
+{
+	FGenericPlatformMisc::RequestExit(false);
+}

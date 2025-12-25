@@ -77,4 +77,8 @@ public:
 	/** Crash out game for testing crashes */
 	UFUNCTION(BlueprintCallable)
 	static void CrashOutWithNullPointerException();
+	
+	/** Make dedicated server quit game */
+	UFUNCTION(BlueprintCallable)
+	static void DedicatedServerExit();
 };

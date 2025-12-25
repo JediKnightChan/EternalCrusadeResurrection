@@ -1,6 +1,10 @@
 ﻿#include "Gameplay/GAS/ECRAbilitySystemFunctionLibrary.h"
+
+#include "AbilitySystemComponent.h"
 #include "GameplayCueFunctionLibrary.h"
 #include "GameplayEffect.h"
+#include "GameplayEffectUIData.h"
+#include "Gameplay/GAS/Abilities/ECRGameplayAbility.h"
 
 
 struct FECRGameplayEffectContext;
@@ -77,4 +81,134 @@ float UECRAbilitySystemFunctionLibrary::ExtractDurationFromGameplayEffect(TSubcl
 	float OutValue = 0;
 	EffectCDO->DurationMagnitude.GetStaticMagnitudeIfPossible(1, OutValue);
 	return OutValue;
+}
+
+const UGameplayEffectUIData* UECRAbilitySystemFunctionLibrary::GetGameplayAbilityUIData(
+	TSubclassOf<UECRGameplayAbility> AbilityClass, TSubclassOf<UGameplayEffectUIData> DataType)
+{
+	if (UClass* ActualPtr = AbilityClass.Get())
+	{
+		const UGameplayEffectUIData* UIData = GetDefault<UECRGameplayAbility>(ActualPtr)->UIData;
+		if ((UIData != nullptr) && (DataType != nullptr) && UIData->IsA(DataType))
+		{
+			return UIData;
+		}
+	}
+	return nullptr;
+}
+
+UObject* UECRAbilitySystemFunctionLibrary::ExtractSourceFromEffectHandle(FActiveGameplayEffectHandle Handle)
+{
+	UAbilitySystemComponent* OwningAbilitySystemComponent = Handle.GetOwningAbilitySystemComponent();
+	if (OwningAbilitySystemComponent)
+	{
+		FGameplayEffectContextHandle EffectContext = OwningAbilitySystemComponent->GetEffectContextFromActiveGEHandle(Handle);
+		return EffectContext.GetSourceObject();
+	}
+	return nullptr;
+}
+
+UObject* UECRAbilitySystemFunctionLibrary::ExtractInstigatorFromEffectHandle(FActiveGameplayEffectHandle Handle)
+{
+	UAbilitySystemComponent* OwningAbilitySystemComponent = Handle.GetOwningAbilitySystemComponent();
+	if (OwningAbilitySystemComponent)
+	{
+		FGameplayEffectContextHandle EffectContext = OwningAbilitySystemComponent->GetEffectContextFromActiveGEHandle(Handle);
+		return EffectContext.GetInstigator();
+	}
+	return nullptr;
+}
+
+UObject* UECRAbilitySystemFunctionLibrary::ExtractEffectCauserFromEffectHandle(FActiveGameplayEffectHandle Handle)
+{
+	UAbilitySystemComponent* OwningAbilitySystemComponent = Handle.GetOwningAbilitySystemComponent();
+	if (OwningAbilitySystemComponent)
+	{
+		FGameplayEffectContextHandle EffectContext = OwningAbilitySystemComponent->GetEffectContextFromActiveGEHandle(Handle);
+		return EffectContext.GetEffectCauser();
+	}
+	return nullptr;
+}
+
+bool UECRAbilitySystemFunctionLibrary::GetIsAbilityActive(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle)
+{
+	if (AbilitySystem)
+	{
+		FGameplayAbilitySpec* AbilitySpec = AbilitySystem->FindAbilitySpecFromHandle(Handle);
+		if (AbilitySpec)
+		{
+			return AbilitySpec->IsActive();
+		}
+	}
+	return false;
+}
+
+bool UECRAbilitySystemFunctionLibrary::GetIsAbilityActivatable(UAbilitySystemComponent* AbilitySystem,
+	FGameplayAbilitySpecHandle Handle)
+{
+	if (AbilitySystem)
+	{
+		FGameplayAbilitySpec* AbilitySpec = AbilitySystem->FindAbilitySpecFromHandle(Handle);
+		if (AbilitySpec)
+		{
+			TObjectPtr<UGameplayAbility> GameplayAbility = AbilitySpec->Ability;
+			if (GameplayAbility)
+			{
+				FGameplayTagContainer OutTags;
+				AbilitySystem->GetOwnedGameplayTags(OutTags);
+				if (const FGameplayAbilityActorInfo* ActorInfo = AbilitySystem->AbilityActorInfo.Get())
+				{
+					return GameplayAbility->CanActivateAbility(Handle, ActorInfo, &OutTags);
+				} else
+				{
+					UE_LOG(LogTemp, Warning, TEXT("ActorInfo nullptr"))
+				}
+				
+			} else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Gameplay ability nullptr"))
+			}
+		} else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Ability spec nullptr"))
+		}
+	}
+	return false;
+}
+
+float UECRAbilitySystemFunctionLibrary::GetAbilityTotalCooldown(UAbilitySystemComponent* AbilitySystem,
+                                                                FGameplayAbilitySpecHandle Handle)
+{
+	if (AbilitySystem)
+	{
+		FGameplayAbilitySpec* AbilitySpec = AbilitySystem->FindAbilitySpecFromHandle(Handle);
+		if (AbilitySpec)
+		{
+			TObjectPtr<UGameplayAbility> GameplayAbility = AbilitySpec->Ability;
+			if (GameplayAbility)
+			{
+				const FGameplayTagContainer* CooldownTags = GameplayAbility->GetCooldownTags();
+				if (CooldownTags && CooldownTags->Num() > 0)
+				{
+					FGameplayEffectQuery const Query = FGameplayEffectQuery::MakeQuery_MatchAnyOwningTags(*CooldownTags);
+					TArray< TPair<float,float> > DurationAndTimeRemaining = AbilitySystem->GetActiveEffectsTimeRemainingAndDuration(Query);
+					if (DurationAndTimeRemaining.Num() > 0)
+					{
+						int32 BestIdx = 0;
+						float LongestTime = DurationAndTimeRemaining[0].Key;
+						for (int32 Idx = 1; Idx < DurationAndTimeRemaining.Num(); ++Idx)
+						{
+							if (DurationAndTimeRemaining[Idx].Key > LongestTime)
+							{
+								LongestTime = DurationAndTimeRemaining[Idx].Key;
+								BestIdx = Idx;
+							}
+						}
+						return DurationAndTimeRemaining[BestIdx].Value;
+					}
+				}
+			}
+		}
+	}
+	return 0.0f;
 }

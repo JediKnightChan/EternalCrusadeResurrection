@@ -139,6 +139,12 @@ public:
 		ScriptOnAbilityFailedToActivate(FailedReason);
 	}
 
+	/** Data for the UI representation of this ability. This should include things like text, icons, etc. Not available in server-only builds. */
+	UPROPERTY(EditDefaultsOnly, Instanced, BlueprintReadOnly, Category = Display)
+	TObjectPtr<class UGameplayEffectUIData> UIData;
+
+	UFUNCTION(BlueprintPure, BlueprintNativeEvent)
+	bool ShouldBeUIHighlighted(UECRAbilitySystemComponent* AbilitySystem);
 protected:
 	// Called when the ability fails to activate
 	virtual void NativeOnAbilityFailedToActivate(const FGameplayTagContainer& FailedReason) const;
