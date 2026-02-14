@@ -774,23 +774,18 @@ void FUserManagerEOS::RefreshConnectLogin(int32 LocalUserNum)
 	if (Settings.bUseEAS)
 	{
 		EOS_EpicAccountId AccountId = UserNumToAccountIdMap[LocalUserNum];
-		EOS_Auth_Token* AuthToken = nullptr;
-		EOS_Auth_CopyUserAuthTokenOptions CopyOptions = { };
-		CopyOptions.ApiVersion = EOS_AUTH_COPYUSERAUTHTOKEN_API_LATEST;
-
-		EOS_EResult CopyResult = EOS_Auth_CopyUserAuthToken(EOSSubsystem->AuthHandle, &CopyOptions, AccountId, &AuthToken);
-		if (CopyResult == EOS_EResult::EOS_Success)
+		const FString AccessToken = GetAuthToken(LocalUserNum);
+		if (!AccessToken.IsEmpty())
 		{
 			// We update the auth token cached in the user account, along with the user information
 			const FUniqueNetIdEOSPtr UniqueNetId = UserNumToNetIdMap.FindChecked(LocalUserNum);
 			const FUserOnlineAccountEOSRef UserAccountRef = StringToUserAccountMap.FindChecked(UniqueNetId->ToString());
-			UserAccountRef->SetAuthAttribute(AUTH_ATTR_ID_TOKEN, AuthToken->AccessToken);
+
 			UpdateUserInfo(UserAccountRef, AccountId, AccountId);
 
 			EOS_Connect_Credentials Credentials = { };
 			Credentials.ApiVersion = EOS_CONNECT_CREDENTIALS_API_LATEST;
 			Credentials.Type = EOS_EExternalCredentialType::EOS_ECT_EPIC;
-			Credentials.Token = AuthToken->AccessToken;
 
 			EOS_Connect_LoginOptions Options = { };
 			Options.ApiVersion = EOS_CONNECT_LOGIN_API_LATEST;
@@ -806,12 +801,10 @@ void FUserManagerEOS::RefreshConnectLogin(int32 LocalUserNum)
 				}
 			};
 			EOS_Connect_Login(EOSSubsystem->ConnectHandle, &Options, CallbackObj, CallbackObj->GetCallbackPtr());
-
-			EOS_Auth_Token_Release(AuthToken);
 		}
 		else
 		{
-			UE_LOG_ONLINE(Error, TEXT("Failed to refresh ConnectLogin(%d) failed with EOS result code (%s)"), LocalUserNum, ANSI_TO_TCHAR(EOS_EResult_ToString(CopyResult)));
+			UE_LOG_ONLINE(Error, TEXT("[FUserManagerEOS::RefreshConnectLogin] AccessToken for user [%d] is empty"), LocalUserNum);
 			Logout(LocalUserNum);
 		}
 	}
@@ -1041,7 +1034,7 @@ void FUserManagerEOS::AddLocalUser(int32 LocalUserNum, EOS_EpicAccountId EpicAcc
 
 	FUniqueNetIdEOSRef UserNetId = FUniqueNetIdEOSRegistry::FindOrAdd(EpicAccountId, UserId).ToSharedRef();
 	const FString& NetId = UserNetId->ToString();
-	FUserOnlineAccountEOSRef UserAccountRef(new FUserOnlineAccountEOS(UserNetId));
+	FUserOnlineAccountEOSRef UserAccountRef(new FUserOnlineAccountEOS(UserNetId, *EOSSubsystem));
 
 	UserNumToNetIdMap.Emplace(LocalUserNum, UserNetId);
 	UserNumToAccountIdMap.Emplace(LocalUserNum, EpicAccountId);
@@ -1070,18 +1063,7 @@ void FUserManagerEOS::AddLocalUser(int32 LocalUserNum, EOS_EpicAccountId EpicAcc
 	NetIdStringToRecentPlayerListMap.Emplace(NetId, RecentPlayersList);
 
 	// Get auth token info
-	EOS_Auth_Token* AuthToken = nullptr;
-	EOS_Auth_CopyUserAuthTokenOptions Options = { };
-	Options.ApiVersion = EOS_AUTH_COPYUSERAUTHTOKEN_API_LATEST;
-
-	EOS_EResult CopyResult = EOS_Auth_CopyUserAuthToken(EOSSubsystem->AuthHandle, &Options, EpicAccountId, &AuthToken);
-	if (CopyResult == EOS_EResult::EOS_Success)
-	{
-		UserAccountRef->SetAuthAttribute(AUTH_ATTR_ID_TOKEN, AuthToken->AccessToken);
-		EOS_Auth_Token_Release(AuthToken);
-
-		UpdateUserInfo(UserAccountRef, EpicAccountId, EpicAccountId);
-	}
+	UpdateUserInfo(UserAccountRef, EpicAccountId, EpicAccountId);
 }
 
 void FUserManagerEOS::UpdateUserInfo(IAttributeAccessInterfaceRef AttributeAccessRef, EOS_EpicAccountId LocalId, EOS_EpicAccountId AccountId)
@@ -1525,15 +1507,26 @@ FString FUserManagerEOS::GetPlayerNickname(const FUniqueNetId& UserId) const
 
 FString FUserManagerEOS::GetAuthToken(int32 LocalUserNum) const
 {
-	FUniqueNetIdPtr UserId = GetUniquePlayerId(LocalUserNum);
-	if (UserId.IsValid())
+	const EOS_EpicAccountId AccountId = GetLocalEpicAccountId(LocalUserNum);
+
+	EOS_Auth_Token* AuthToken = nullptr;
+	EOS_Auth_CopyUserAuthTokenOptions CopyOptions = { };
+	CopyOptions.ApiVersion = 1;
+
+	const EOS_EResult CopyResult = EOS_Auth_CopyUserAuthToken(EOSSubsystem->AuthHandle, &CopyOptions, AccountId, &AuthToken);
+	if (CopyResult == EOS_EResult::EOS_Success)
 	{
-		TSharedPtr<FUserOnlineAccount> UserAccount = GetUserAccount(*UserId);
-		if (UserAccount.IsValid())
-		{
-			return UserAccount->GetAccessToken();
-		}
+		const FString AuthTokenStr(UTF8_TO_TCHAR(AuthToken->AccessToken));
+		EOS_Auth_Token_Release(AuthToken);
+
+		return AuthTokenStr;
+
 	}
+	else
+	{
+		UE_LOG_ONLINE(Verbose, TEXT("[FUserManagerEOS::GetAuthToken] EOS_Auth_CopyUserAuthToken failed with EOS result code (%s) for user (%d)"), ANSI_TO_TCHAR(EOS_EResult_ToString(CopyResult)), LocalUserNum);
+	}
+
 	return FString();
 }
 
