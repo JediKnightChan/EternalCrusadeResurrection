@@ -42,8 +42,8 @@ class FUserOnlineAccountEOS :
 	public TUserOnlineAccountEOS<FUserOnlineAccount>
 {
 public:
-	FUserOnlineAccountEOS(FUniqueNetIdEOSRef InUserId, FOnlineSubsystemEOS& InSubsystem)
-		: TUserOnlineAccountEOS<FUserOnlineAccount>(InUserId, InSubsystem)
+	FUserOnlineAccountEOS(FUniqueNetIdEOSRef InUserId)
+		: TUserOnlineAccountEOS<FUserOnlineAccount>(InUserId)
 	{
 	}
 	virtual ~FUserOnlineAccountEOS() = default;
