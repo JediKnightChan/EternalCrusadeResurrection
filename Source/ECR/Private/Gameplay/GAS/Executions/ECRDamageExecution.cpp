@@ -2,12 +2,17 @@
 
 #include "Gameplay/GAS/Executions/ECRDamageExecution.h"
 #include "GameplayEffectTypes.h"
+#include "GameFramework/GameplayMessageSubsystem.h"
 #include "Gameplay/ECRGameplayBlueprintLibrary.h"
+#include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Gameplay/GAS/ECRGameplayEffectContext.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
 #include "System/ECRLogChannels.h"
+#include "System/Messages/ECRVerbMessage.h"
+
+UE_DEFINE_GAMEPLAY_TAG(TAG_ECR_Reflect_Message, "ECR.Reflect.Message");
 
 struct FDamageStatics
 {
@@ -27,14 +32,14 @@ struct FDamageStatics
 		                                                          true);
 		ToughnessDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetToughnessAttribute(),
 		                                                         EGameplayEffectAttributeCaptureSource::Target,
-		                                                         true);
+		                                                         false);
 		IncomingDamageMultiplierDef = FGameplayEffectAttributeCaptureDefinition(
 			UECRCombatSet::GetIncomingDamageMultiplierAttribute(),
 			EGameplayEffectAttributeCaptureSource::Target,
-			true);
+			false);
 		ArmorDef = FGameplayEffectAttributeCaptureDefinition(UECRCombatSet::GetArmorAttribute(),
 		                                                     EGameplayEffectAttributeCaptureSource::Target,
-		                                                     true);
+		                                                     false);
 
 		OutgoingMeleeDamageMultiplierDef = FGameplayEffectAttributeCaptureDefinition(
 			UECRCombatSet::GetOutgoingMeleeDamageMultiplierAttribute(),
@@ -44,11 +49,11 @@ struct FDamageStatics
 		IncomingMeleeDamageMitigationDef = FGameplayEffectAttributeCaptureDefinition(
 			UECRCombatSet::GetIncomingMeleeDamageMitigationAttribute(),
 			EGameplayEffectAttributeCaptureSource::Target,
-			true);
+			false);
 		IncomingNonMeleeDamageMitigationDef = FGameplayEffectAttributeCaptureDefinition(
 			UECRCombatSet::GetIncomingNonMeleeDamageMitigationAttribute(),
 			EGameplayEffectAttributeCaptureSource::Target,
-			true);
+			false);
 	}
 };
 
@@ -79,9 +84,14 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	FECRGameplayEffectContext* TypedContext = FECRGameplayEffectContext::ExtractEffectContext(Spec.GetContext());
 	check(TypedContext);
 
+	FGameplayTagContainer AssetTags;
+	Spec.GetAllAssetTags(AssetTags);
+	
+	const UAbilitySystemComponent* TargetAsc = ExecutionParams.GetTargetAbilitySystemComponent();
+	const UAbilitySystemComponent* SourceAsc = ExecutionParams.GetSourceAbilitySystemComponent();
+
 	const FGameplayTagContainer* SourceTags = Spec.CapturedSourceTags.GetAggregatedTags();
 	const FGameplayTagContainer* TargetTags = Spec.CapturedTargetTags.GetAggregatedTags();
-	// ExecutionParams.GetOwningSpec().GetModifierMagnitude(0, false);
 
 	FAggregatorEvaluateParameters EvaluateParameters;
 	EvaluateParameters.SourceTags = SourceTags;
@@ -138,10 +148,9 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	}
 
 	// Handle case of no hit result or hit result not actually returning an actor
-	UAbilitySystemComponent* TargetAbilitySystemComponent = ExecutionParams.GetTargetAbilitySystemComponent();
 	if (!HitActor)
 	{
-		HitActor = TargetAbilitySystemComponent ? TargetAbilitySystemComponent->GetAvatarActor_Direct() : nullptr;
+		HitActor = TargetAsc ? TargetAsc->GetAvatarActor_Direct() : nullptr;
 		if (HitActor)
 		{
 			ImpactLocation = HitActor->GetActorLocation();
@@ -186,7 +195,6 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 
 		ToughnessAttenuation = UECRGameplayBlueprintLibrary::CalculateDamageAttenuationForArmorPenetration(
 			AbilitySource->GetArmorPenetration(), TargetToughness, TargetArmor);
-
 		IsDamageMelee = AbilitySource->GetIsDamageMelee();
 	}
 
@@ -204,12 +212,64 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	ToughnessAttenuation = FMath::Max(ToughnessAttenuation, 0.0f);
 	TargetIncomingDamageMultiplier = FMath::Max(TargetIncomingDamageMultiplier, 0.0f);
 
-	const float AttenuatedDamage = FMath::Max(
+	float AttenuatedDamage = FMath::Max(
 		0, BaseDamage * DistanceAttenuation * PhysicalMaterialAttenuation * ToughnessAttenuation *
 		TargetIncomingDamageMultiplier);
+
+	// Special rules for damage
+	if (SourceTags)
+	{
+		// Reduced damage only for 1 attack
+		if (SourceTags->HasTag(FECRGameplayTags::Get().Gameplay_Special_ReducedDamage))
+		{
+			AttenuatedDamage = AttenuatedDamage * 0.75;
+			if (UAbilitySystemComponent* SourceASC = ExecutionParams.GetSourceAbilitySystemComponent())
+			{
+				FGameplayTagContainer Container;
+				Container.AddTag(FECRGameplayTags::Get().Gameplay_Special_ReducedDamage);
+				SourceASC->RemoveActiveEffectsWithGrantedTags(Container);
+			}
+		}
+	}
+	if (TargetTags)
+	{
+		// Reflect
+		if (TargetTags->HasTag(FECRGameplayTags::Get().Gameplay_Special_Reflect) && !AssetTags.HasTag(
+			FECRGameplayTags::Get().GameplayEffect_NoReflect) && SourceAsc != TargetAsc)
+		{
+			double ReflectValue = 1.0f;
+			if (TargetTags->HasTag(FECRGameplayTags::Get().Gameplay_Special_Reflect_50))
+			{
+				ReflectValue = 0.5f;
+			}
+			
+			SendReflectMessage(Spec, TargetAsc ? TargetAsc->GetAvatarActor_Direct() : nullptr,
+			                   AttenuatedDamage * ReflectValue);
+		}
+	}
+
 	OutExecutionOutput.AddOutputModifier(
 		FGameplayModifierEvaluatedData(UECRHealthSet::GetDamageAttribute(), EGameplayModOp::Additive,
 		                               AttenuatedDamage));
 
 #endif // #if WITH_SERVER_CODE
+}
+
+void UECRDamageExecution::SendReflectMessage(const FGameplayEffectSpec& Spec, AActor* Target,
+                                             double Magnitude) const
+{
+	if (AActor* Instigator = Spec.GetEffectContext().GetEffectCauser())
+	{
+		FECRVerbMessage Message;
+		Message.Verb = TAG_ECR_Reflect_Message;
+		Message.Instigator = Instigator;
+		Message.InstigatorTags = *Spec.CapturedSourceTags.GetAggregatedTags();
+		Message.Object1 = Spec.GetEffectContext().GetSourceObject();
+		Message.Target = Target;
+		Message.TargetTags = *Spec.CapturedTargetTags.GetAggregatedTags();
+		Message.Magnitude = Magnitude;
+
+		UGameplayMessageSubsystem& MessageSystem = UGameplayMessageSubsystem::Get(Instigator->GetWorld());
+		MessageSystem.BroadcastMessage(Message.Verb, Message);
+	}
 }

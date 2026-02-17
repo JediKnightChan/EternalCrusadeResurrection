@@ -34,6 +34,11 @@ class UECRCombatSet : public UECRAttributeSet
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_IncomingDamageMultiplier, Category="Attributes",
 		Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData IncomingDamageMultiplier;
+
+	// Healing multiplier to me
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_IncomingHealingMultiplier, Category="Attributes",
+		Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData IncomingHealingMultiplier;
 	
 	// If Armor > WeaponArmorPenetration, then no damage at all
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_Armor, Category="Attributes",
@@ -48,6 +53,10 @@ class UECRCombatSet : public UECRAttributeSet
 	// Melee damage multiplier from me
 	UPROPERTY(BlueprintReadOnly, Category="Attributes", Meta=(AllowPrivateAccess="true"))
 	FGameplayAttributeData OutgoingMeleeDamageMultiplier;
+
+	// Healing multiplier from me
+	UPROPERTY(BlueprintReadOnly, Category="Attributes", Meta=(AllowPrivateAccess="true"))
+	FGameplayAttributeData OutgoingHealingMultiplier;
 
 	// Melee damage reduction to me
 	UPROPERTY(BlueprintReadOnly, Category="Attributes", Meta=(AllowPrivateAccess="true"))
@@ -69,6 +78,9 @@ protected:
 
 	UFUNCTION()
 	void OnRep_IncomingDamageMultiplier(const FGameplayAttributeData& OldValue) const;
+
+	UFUNCTION()
+	void OnRep_IncomingHealingMultiplier(const FGameplayAttributeData& OldValue) const;
 	
 	UFUNCTION()
 	void OnRep_Armor(const FGameplayAttributeData& OldValue) const;
@@ -82,9 +94,11 @@ public:
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, BaseHeal);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, Toughness);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, IncomingDamageMultiplier);
+	ATTRIBUTE_ACCESSORS(UECRCombatSet, IncomingHealingMultiplier);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, Armor);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, RecoilMultiplier);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, OutgoingMeleeDamageMultiplier);
+	ATTRIBUTE_ACCESSORS(UECRCombatSet, OutgoingHealingMultiplier);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, IncomingMeleeDamageMitigation);
 	ATTRIBUTE_ACCESSORS(UECRCombatSet, IncomingNonMeleeDamageMitigation);
 };

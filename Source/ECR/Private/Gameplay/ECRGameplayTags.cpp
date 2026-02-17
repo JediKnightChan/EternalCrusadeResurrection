@@ -55,8 +55,16 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddTag(InputTag_Vehicle_Steer, "InputTag.Vehicle.Steer", "Steer input.");
 	AddTag(InputTag_Vehicle_Brake, "InputTag.Vehicle.Brake", "Brake input.");
 
+	AddTag(Gameplay_Special_ReducedDamage, "Gameplay.Special.ReducedDamage", "Reduced damage for 1 attack");
+	AddTag(Gameplay_Special_Reflect, "Gameplay.Special.Reflect", "Damage is reflected back to attacker");
+	AddTag(Gameplay_Special_Reflect_50, "Gameplay.Special.Reflect.Half", "Damage is reflected back to attacker (half)");
+
 	AddTag(GameplayEffect_DamageIgnoresShield, "GameplayEffect.Special.DamageIgnoresShield",
-		   "Damage effects having this tag will ignore shield");
+	       "Damage effects having this tag will ignore shield");
+    AddTag(GameplayEffect_NoReflect, "GameplayEffect.Special.NoReflect",
+           "Damage effects having this tag will not be reflected");
+	AddTag(GameplayEffect_HealingIgnoresMultipliers, "GameplayEffect.Special.HealingIgnoresMultipliers", 
+"Healing effects having this tags will ignore healing multipliers");
 
 	AddTag(GameplayEvent_Death, "GameplayEvent.Death",
 	       "Event that fires on death. This event only fires on the server.");

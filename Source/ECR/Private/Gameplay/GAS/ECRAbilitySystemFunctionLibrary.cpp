@@ -97,6 +97,11 @@ const UGameplayEffectUIData* UECRAbilitySystemFunctionLibrary::GetGameplayAbilit
 	return nullptr;
 }
 
+int64 UECRAbilitySystemFunctionLibrary::ExtractIdFromEffectHandle(FActiveGameplayEffectHandle Handle)
+{
+	return static_cast<int64>(GetTypeHash(Handle));
+}
+
 UObject* UECRAbilitySystemFunctionLibrary::ExtractSourceFromEffectHandle(FActiveGameplayEffectHandle Handle)
 {
 	UAbilitySystemComponent* OwningAbilitySystemComponent = Handle.GetOwningAbilitySystemComponent();
@@ -144,7 +149,7 @@ bool UECRAbilitySystemFunctionLibrary::GetIsAbilityActive(UAbilitySystemComponen
 }
 
 bool UECRAbilitySystemFunctionLibrary::GetIsAbilityActivatable(UAbilitySystemComponent* AbilitySystem,
-	FGameplayAbilitySpecHandle Handle)
+	FGameplayAbilitySpecHandle Handle, bool bIgnoreTags)
 {
 	if (AbilitySystem)
 	{
@@ -154,23 +159,20 @@ bool UECRAbilitySystemFunctionLibrary::GetIsAbilityActivatable(UAbilitySystemCom
 			TObjectPtr<UGameplayAbility> GameplayAbility = AbilitySpec->Ability;
 			if (GameplayAbility)
 			{
-				FGameplayTagContainer OutTags;
-				AbilitySystem->GetOwnedGameplayTags(OutTags);
 				if (const FGameplayAbilityActorInfo* ActorInfo = AbilitySystem->AbilityActorInfo.Get())
 				{
+					if (bIgnoreTags)
+					{
+						if (UECRGameplayAbility* EcrAbility = Cast<UECRGameplayAbility>(GameplayAbility))
+						{
+							return EcrAbility->CanActivateAbilityNotMindingTags(Handle, ActorInfo);
+						}
+					}
+					FGameplayTagContainer OutTags;
+					AbilitySystem->GetOwnedGameplayTags(OutTags);
 					return GameplayAbility->CanActivateAbility(Handle, ActorInfo, &OutTags);
-				} else
-				{
-					UE_LOG(LogTemp, Warning, TEXT("ActorInfo nullptr"))
 				}
-				
-			} else
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Gameplay ability nullptr"))
 			}
-		} else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Ability spec nullptr"))
 		}
 	}
 	return false;

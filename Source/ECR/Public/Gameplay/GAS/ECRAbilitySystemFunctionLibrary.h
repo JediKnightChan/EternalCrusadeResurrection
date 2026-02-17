@@ -53,6 +53,9 @@ public:
 	static const UGameplayEffectUIData* GetGameplayAbilityUIData(TSubclassOf<UECRGameplayAbility> AbilityClass, TSubclassOf<UGameplayEffectUIData> DataType);
 
 	UFUNCTION(BlueprintPure)
+	static int64 ExtractIdFromEffectHandle(FActiveGameplayEffectHandle Handle);
+
+	UFUNCTION(BlueprintPure)
 	static UObject* ExtractSourceFromEffectHandle(FActiveGameplayEffectHandle Handle);
 
 	UFUNCTION(BlueprintPure)
@@ -65,7 +68,7 @@ public:
 	static bool GetIsAbilityActive(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle);
 
 	UFUNCTION(BlueprintPure)
-	static bool GetIsAbilityActivatable(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle);
+	static bool GetIsAbilityActivatable(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle, bool bIgnoreTags);
 
 	UFUNCTION(BlueprintPure)
 	static float GetAbilityTotalCooldown(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle);

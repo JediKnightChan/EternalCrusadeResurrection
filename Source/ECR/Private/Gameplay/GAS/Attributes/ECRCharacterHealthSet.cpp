@@ -120,6 +120,12 @@ void UECRCharacterHealthSet::PostGameplayEffectExecute(const FGameplayEffectModC
 	}
 	else if (Data.EvaluatedData.Attribute == GetHealingAttribute())
 	{
+		// Send a standardized verb message that other systems can observe
+		if (Data.EvaluatedData.Magnitude > 0.0f)
+		{
+			SendHealingMessage(Data);
+		}
+
 		float HealingToApplyValue = GetHealing();
 		if (GetBleedingHealth() < GetMaxBleedingHealth())
 		{

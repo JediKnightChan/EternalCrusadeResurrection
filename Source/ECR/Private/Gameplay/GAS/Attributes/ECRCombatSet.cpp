@@ -9,9 +9,11 @@ UECRCombatSet::UECRCombatSet()
 	  , BaseHeal(0.0f)
 	  , Toughness(100.0f)
 	  , IncomingDamageMultiplier(1.0f)
+      , IncomingHealingMultiplier(1.0f)
 	  , Armor(100.0f)
 	  , RecoilMultiplier(1.0f)
 	  , OutgoingMeleeDamageMultiplier(1.0f)
+      , OutgoingHealingMultiplier(1.0f)
 	  , IncomingMeleeDamageMitigation(1.0f)
 	  , IncomingNonMeleeDamageMitigation(1.0f)
 {
@@ -27,6 +29,7 @@ void UECRCombatSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, RecoilMultiplier, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, Toughness, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, IncomingDamageMultiplier, COND_OwnerOnly, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UECRCombatSet, IncomingHealingMultiplier, COND_OwnerOnly, REPNOTIFY_Always);
 
 	// These attributes are important for everyone
 	// Armor is used to draw non penetration marker when confirming hits
@@ -34,6 +37,7 @@ void UECRCombatSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 
 	// Other attributes are not replicated:
 	// OutgoingMeleeDamageMultiplier
+	// OutgoingHealingMultiplier
 	// IncomingMeleeDamageMitigation
 	// IncomingNonMeleeDamageMitigation
 }
@@ -58,6 +62,11 @@ void UECRCombatSet::OnRep_Toughness(const FGameplayAttributeData& OldValue) cons
 void UECRCombatSet::OnRep_IncomingDamageMultiplier(const FGameplayAttributeData& OldValue) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCombatSet, IncomingDamageMultiplier, OldValue);
+}
+
+void UECRCombatSet::OnRep_IncomingHealingMultiplier(const FGameplayAttributeData& OldValue) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UECRCombatSet, IncomingHealingMultiplier, OldValue);
 }
 
 void UECRCombatSet::OnRep_Armor(const FGameplayAttributeData& OldValue) const

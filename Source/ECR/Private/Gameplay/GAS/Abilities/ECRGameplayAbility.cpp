@@ -132,6 +132,71 @@ bool UECRGameplayAbility::ShouldBeUIHighlighted_Implementation(UECRAbilitySystem
 	return false;
 }
 
+bool UECRGameplayAbility::CanActivateAbilityNotMindingTags(const FGameplayAbilitySpecHandle Handle,
+	const FGameplayAbilityActorInfo* ActorInfo)
+{
+	// Don't set the actor info, CanActivate is called on the CDO
+
+	// A valid AvatarActor is required. Simulated proxy check means only authority or autonomous proxies should be executing abilities.
+	AActor* const AvatarActor = ActorInfo ? ActorInfo->AvatarActor.Get() : nullptr;
+	if (AvatarActor == nullptr || !ShouldActivateAbility(AvatarActor->GetLocalRole()))
+	{
+		return false;
+	}
+
+	//make into a reference for simplicity
+	static FGameplayTagContainer DummyContainer;
+	DummyContainer.Reset();
+
+	FGameplayTagContainer& OutTags = DummyContainer;
+
+	// make sure the ability system component is valid, if not bail out.
+	UAbilitySystemComponent* const AbilitySystemComponent = ActorInfo->AbilitySystemComponent.Get();
+	if (!AbilitySystemComponent)
+	{
+		return false;
+	}
+
+	if (AbilitySystemComponent->GetUserAbilityActivationInhibited())
+	{
+		return false;
+	}
+	
+	UAbilitySystemGlobals& AbilitySystemGlobals = UAbilitySystemGlobals::Get();
+
+	if (!AbilitySystemGlobals.ShouldIgnoreCooldowns() && !CheckCooldown(Handle, ActorInfo))
+	{
+		return false;
+	}
+
+	if (!AbilitySystemGlobals.ShouldIgnoreCosts() && !CheckCost(Handle, ActorInfo))
+	{
+		return false;
+	}
+
+	FGameplayAbilitySpec* Spec = AbilitySystemComponent->FindAbilitySpecFromHandle(Handle);
+	if (!Spec)
+	{
+		return false;
+	}
+
+	// Check if this ability's input binding is currently blocked
+	if (AbilitySystemComponent->IsAbilityInputBlocked(Spec->InputID))
+	{
+		return false;
+	}
+
+	if (bHasBlueprintCanUse)
+	{
+		if (K2_CanActivateAbility(*ActorInfo, Handle, OutTags) == false)
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
 void UECRGameplayAbility::NativeOnAbilityFailedToActivate(const FGameplayTagContainer& FailedReason) const
 {
 	bool bSimpleFailureFound = false;

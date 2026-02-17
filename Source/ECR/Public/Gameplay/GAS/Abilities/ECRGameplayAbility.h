@@ -145,6 +145,8 @@ public:
 
 	UFUNCTION(BlueprintPure, BlueprintNativeEvent)
 	bool ShouldBeUIHighlighted(UECRAbilitySystemComponent* AbilitySystem);
+
+	bool CanActivateAbilityNotMindingTags(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo);
 protected:
 	// Called when the ability fails to activate
 	virtual void NativeOnAbilityFailedToActivate(const FGameplayTagContainer& FailedReason) const;

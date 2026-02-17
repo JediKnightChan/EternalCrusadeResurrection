@@ -66,6 +66,9 @@ public:
 	                                        const FGameplayAbilityTargetDataHandle& InTargetData,
 	                                        const TArray<FHitResult>& FoundHits);
 
+	UFUNCTION(BlueprintCallable, Client, Reliable)
+	void ClientDrawServerHit(FVector WorldHitLocation, EHitSuccess HitSuccess, FGameplayTag HitZone);
+
 	/** Updates this player's last damage instigated time */
 	void UpdateDamageInstigatedTime(const FGameplayEffectContextHandle& EffectContext);
 

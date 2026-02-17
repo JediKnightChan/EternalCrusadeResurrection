@@ -283,6 +283,11 @@ void UECRGameInstance::JoinMatch(const FBlueprintSessionResult Session)
 
 bool UECRGameInstance::TogglePlayerRegistrationInMatch(FUniqueNetIdRepl Player, bool bRegister)
 {
+	if (!Player.IsValid())
+	{
+		return false;
+	}
+
 	if (OnlineSubsystem)
 	{
 		if (const IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())

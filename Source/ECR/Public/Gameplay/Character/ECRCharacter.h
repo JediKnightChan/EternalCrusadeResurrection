@@ -87,6 +87,9 @@ public:
 
 	void ToggleCrouch();
 
+	UFUNCTION(BlueprintCallable)
+	void GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySets) const;
+
 	//~AActor interface
 	virtual void PreInitializeComponents() override;
 	virtual void PostInitializeComponents() override;
@@ -118,7 +121,6 @@ protected:
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
 	void InitializeGameplayTags();
-	void GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySets) const;
 
 	virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
 

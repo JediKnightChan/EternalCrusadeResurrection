@@ -118,6 +118,36 @@ void UECRWeaponStateComponent::AddUnconfirmedServerSideHitMarkers(const UObject*
 	}
 }
 
+void UECRWeaponStateComponent::ClientDrawServerHit_Implementation(FVector WorldHitLocation, EHitSuccess HitSuccess,
+	FGameplayTag HitZone)
+{
+	APlayerController* OwnerPC = GetController<APlayerController>();
+	if (!OwnerPC)
+	{
+		return;
+	}
+
+	FVector2D ScreenLocation;
+	if (!UGameplayStatics::ProjectWorldToScreen(
+			OwnerPC,
+			WorldHitLocation,
+			ScreenLocation,
+			/*bPlayerViewportRelative=*/ false))
+	{
+		return;
+	}
+
+	// Update damage timing (groups hit markers correctly)
+	ActuallyUpdateDamageInstigatedTime();
+
+	FECRScreenSpaceHitLocation& Entry =
+		LastWeaponDamageScreenLocations.AddDefaulted_GetRef();
+
+	Entry.Location = ScreenLocation;
+	Entry.HitSuccess = HitSuccess;
+	Entry.HitZone = HitZone;
+}
+
 void UECRWeaponStateComponent::UpdateDamageInstigatedTime(const FGameplayEffectContextHandle& EffectContext)
 {
 	if (ShouldUpdateDamageInstigatedTime(EffectContext))

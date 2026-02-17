@@ -8,10 +8,10 @@ import os
 from threading import Thread
 
 ROOT_DIR = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/Sound/Files/Windows/"
-SNB_DIR = os.path.join(ROOT_DIR, "SNB_Grenade_CM")
+SNB_DIR = os.path.join(ROOT_DIR, "English(US)")
 AUDIO_DATAFILE = os.path.join(SNB_DIR, "audio_data.pickle")
 
-MP3_TO_COMPARE = "C:/Users/JediKnight/Desktop/flies.mp3"
+MP3_TO_COMPARE = "C:/Users/JediKnight/Desktop/exec2.mp3"
 
 
 class ThreadWithReturnValue(Thread):
@@ -143,7 +143,7 @@ with open(AUDIO_DATAFILE, "rb") as f:
     data = pickle.load(f)
 
 if __name__ == '__main__':
-    res = get_closests(MP3_TO_COMPARE, 10)
+    res = get_closests(MP3_TO_COMPARE, 300)
     closest_fps = []
     for k, v in res.items():
         print(v[1])
