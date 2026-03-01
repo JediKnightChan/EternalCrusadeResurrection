@@ -135,6 +135,10 @@
 		{
 			"Name": "DragonIKPlugin",
 			"Enabled": true
+		},
+		{
+			"Name": "ReplicationGraph",
+			"Enabled": true
 		}
 	]
 }

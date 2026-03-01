@@ -25,6 +25,7 @@ public class ECR : ModuleRules
 			"PhysicsCore", 
 			"SignificanceManager", 
 			"ChaosVehicles",
+			"ReplicationGraph", 
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[]
@@ -48,7 +49,8 @@ public class ECR : ModuleRules
 			"Networking", 
 			"Slate", 
 			"SlateCore",
-			"Json"
+			"Json",
+			"GameplayDebugger"
 		});
 	}
 }

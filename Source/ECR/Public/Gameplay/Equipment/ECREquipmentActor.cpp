@@ -3,5 +3,5 @@
 AECREquipmentActor::AECREquipmentActor(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	bReplicates = false;
+	bReplicates = true;
 }
