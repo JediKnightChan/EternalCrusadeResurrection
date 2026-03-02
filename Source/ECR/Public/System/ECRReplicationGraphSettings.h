@@ -21,10 +21,13 @@ public:
 public:
 
 	UPROPERTY(config, EditAnywhere, Category = ReplicationGraph)
-	bool bDisableReplicationGraph = true;
+	bool bEnableReplicationGraph = true;
 	
 	UPROPERTY(config, EditAnywhere, Category = ReplicationGraph)
 	bool bEnableDynamicSpatializationFrequency = false;
+
+	UPROPERTY(config, EditAnywhere, Category = ReplicationGraph)
+	int32 AssumedTickRate = 30;
 
 	UPROPERTY(config, EditAnywhere, Category = ReplicationGraph, meta = (MetaClass = "/Script/ECRGame.ECRReplicationGraph"))
 	FSoftClassPath DefaultReplicationGraphClass;
@@ -34,7 +37,7 @@ public:
 
 	// How much bandwidth to use for FastShared movement updates. This is counted independently of the NetDriver's target bandwidth.
 	UPROPERTY(EditAnywhere, Category = FastSharedPath, meta = (ForceUnits=Kilobytes, ConsoleVariable = "ECR.RepGraph.TargetKBytesSecFastSharedPath"))
-	int32 TargetKBytesSecFastSharedPath = 10;
+	int32 TargetKBytesSecFastSharedPath = 200;
 
 	UPROPERTY(EditAnywhere, Category = FastSharedPath, meta = (ConsoleVariable = "ECR.RepGraph.FastSharedPathCullDistPct"))
 	float FastSharedPathCullDistPct = 0.80f;

@@ -132,7 +132,7 @@ namespace ECR::RepGraph
 		TEXT("ECR.RepGraph.LogLazyInitClasses"), LogLazyInitClasses, TEXT(""), ECVF_Default);
 
 	// How much bandwidth to use for FastShared movement updates. This is counted independently of the NetDriver's target bandwidth.
-	int32 TargetKBytesSecFastSharedPath = 10;
+	int32 TargetKBytesSecFastSharedPath = 200;
 	static FAutoConsoleVariableRef CVarECRRepTargetKBytesSecFastSharedPath(
 		TEXT("ECR.RepGraph.TargetKBytesSecFastSharedPath"), TargetKBytesSecFastSharedPath, TEXT(""), ECVF_Default);
 
@@ -152,7 +152,7 @@ namespace ECR::RepGraph
 			const UECRReplicationGraphSettings* ECRRepGraphSettings = GetDefault<UECRReplicationGraphSettings>();
 
 			// Enable/Disable via developer settings
-			if (ECRRepGraphSettings && ECRRepGraphSettings->bDisableReplicationGraph)
+			if (ECRRepGraphSettings && !ECRRepGraphSettings->bEnableReplicationGraph)
 			{
 				UE_LOG(LogECRRepGraph, Display, TEXT("Replication graph is disabled via ECRReplicationGraphSettings."));
 				return nullptr;
@@ -521,6 +521,37 @@ void UECRReplicationGraph::InitGlobalActorClassSettings()
 		ECR::RepGraph::EnableFastSharedPath > 0);
 	UReplicationGraphNode_ActorListFrequencyBuckets::DefaultSettings.FastPathFrameModulo = 1;
 
+	// ---------------------------------------------------------------------
+	// Setting dynamic frequency settings (not true dynamic frequency, as to closest player, not per player)
+	int32 AssumedTickRate = 30;
+	if (ECRRepGraphSettings)
+	{
+		AssumedTickRate = ECRRepGraphSettings->AssumedTickRate;
+		UE_LOG(LogECRRepGraph, Display, TEXT("Assuming server tick rate %d"), AssumedTickRate);
+	}
+	UReplicationGraphNode_DynamicSpatialFrequency::FSettings Settings;
+
+	static TArray<UReplicationGraphNode_DynamicSpatialFrequency::FSpatializationZone> Zones;
+	Zones.Reset();
+	Zones.Emplace(   0.00f, 0.05f, 0.50f,  5.f,       1.f,                20.f,      5.f,           AssumedTickRate);	// Behind viewer
+	Zones.Emplace(   0.71f, 0.05f, 0.50f,  5.f,       1.f,                20.f,      8.f,           AssumedTickRate);	// In front but not quite in FOV
+	Zones.Emplace(   1.00f, 0.10f, 0.50f,  5.f,       1.f,               20.f,      10.f,          AssumedTickRate);	// Directly in viewer's FOV
+	Settings.ZoneSettings = Zones;
+
+	static TArray<UReplicationGraphNode_DynamicSpatialFrequency::FSpatializationZone> Zones_NoFastShared;
+	Zones_NoFastShared.Reset();
+	Zones_NoFastShared.Emplace(   0.00f, 0.10f, 0.50f,   20.f,      5.f,               0.f,        0.f,          AssumedTickRate);	// Behind viewer
+	Zones_NoFastShared.Emplace(   0.71f, 0.10f, 0.50f,  20.f,      8.f,               0.f,        0.f,          AssumedTickRate);	// In front but not quite in FOV
+	Zones_NoFastShared.Emplace(   1.00f, 0.10f, 0.50f,  20.f,      10.f,               0.f,        0.f,          AssumedTickRate);	// Directly in viewer's FOV
+	Settings.ZoneSettings_NonFastSharedActors = Zones_NoFastShared;
+
+	Settings.MaxBitsPerFrame = (int32)((float)(ECR::RepGraph::TargetKBytesSecFastSharedPath * 1024 * 8) /
+		NetDriver->NetServerMaxTickRate);
+
+	// Apply globally before creating any DSF nodes
+	UReplicationGraphNode_DynamicSpatialFrequency::DefaultSettings = Settings;
+
+	// ---------------------------------------------------------------------
 	RPCSendPolicyMap.Reset();
 
 	// Set FClassReplicationInfo based on legacy settings from all replicated classes
