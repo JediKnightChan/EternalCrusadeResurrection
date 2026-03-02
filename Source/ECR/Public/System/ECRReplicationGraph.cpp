@@ -636,7 +636,20 @@ void UECRReplicationGraph::InitGlobalGraphNodes()
 	const UECRReplicationGraphSettings* ECRRepGraphSettings = GetDefault<UECRReplicationGraphSettings>();
 
 	// If using dynamic spatial frequency, set its node as grid cell dynamic node
+	bool bEnableDynamicSpatializationFrequency = false;
 	if (ECRRepGraphSettings && ECRRepGraphSettings->bEnableDynamicSpatializationFrequency)
+	{
+		bEnableDynamicSpatializationFrequency = true;
+	}
+
+	int32 CmdEnableDynamicSpatializationFrequencyOverride = 0;
+	if (FParse::Value(FCommandLine::Get(), TEXT("dynamicupdatefreq="), CmdEnableDynamicSpatializationFrequencyOverride))
+	{
+		UE_LOG(LogECRRepGraph, Display, TEXT("Received override for enabling dynamic update frequency %d"), CmdEnableDynamicSpatializationFrequencyOverride);
+		bEnableDynamicSpatializationFrequency = CmdEnableDynamicSpatializationFrequencyOverride != 0;
+	}
+
+	if (bEnableDynamicSpatializationFrequency)
 	{
 		UE_LOG(LogECRRepGraph, Display, TEXT("Enabling dynamic spatialization frequency"));
 
