@@ -151,6 +151,8 @@ public:
 
 	// Last FSharedRepMovement we sent, to avoid sending repeatedly.
 	FSharedRepMovement LastSharedReplication;
+	// Last time we performed a shared rep send
+	float LastSharedReplicationTimestamp = 0.0f;
 
 	virtual bool UpdateSharedReplication();
 protected:

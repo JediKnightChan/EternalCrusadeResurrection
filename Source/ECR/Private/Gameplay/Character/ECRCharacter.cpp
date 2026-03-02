@@ -598,10 +598,12 @@ bool AECRCharacter::UpdateSharedReplication()
 		// Skipping this call will cause replication to reuse the same bunch that we previously
 		// produced, but not send it to clients that already received. (But a new client who has not received
 		// it, will get it this frame)
-		if (!SharedMovement.Equals(LastSharedReplication, this))
+		float MinTimeToUpdate = (MinNetUpdateFrequency != 0) ? (1 / MinNetUpdateFrequency) : 0.5f;
+		if ((GetGameTimeSinceCreation() - LastSharedReplicationTimestamp >= MinTimeToUpdate) || !SharedMovement.Equals(LastSharedReplication, this))
 		{
 			LastSharedReplication = SharedMovement;
 			ReplicatedMovementMode = SharedMovement.RepMovementMode;
+			LastSharedReplicationTimestamp = GetGameTimeSinceCreation();
 
 			FastSharedMovementReplication(SharedMovement);
 		}
