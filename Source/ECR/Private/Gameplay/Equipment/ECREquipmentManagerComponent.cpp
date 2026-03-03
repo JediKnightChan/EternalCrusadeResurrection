@@ -258,6 +258,11 @@ void UECREquipmentManagerComponent::UninitializeComponent()
 UECREquipmentInstance* UECREquipmentManagerComponent::GetFirstInstanceOfType(
 	TSubclassOf<UECREquipmentInstance> InstanceType)
 {
+	if (!IsValid(InstanceType))
+	{
+		return nullptr;
+	}
+
 	for (FECRAppliedEquipmentEntry& Entry : EquipmentList.Entries)
 	{
 		if (UECREquipmentInstance* Instance = Entry.Instance)

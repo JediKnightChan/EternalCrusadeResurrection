@@ -140,10 +140,6 @@ namespace ECR::RepGraph
 	static FAutoConsoleVariableRef CVarECRRepFastSharedPathCullDistPct(
 		TEXT("ECR.RepGraph.FastSharedPathCullDistPct"), FastSharedPathCullDistPct, TEXT(""), ECVF_Default);
 
-	int32 EnableFastSharedPath = 1;
-	static FAutoConsoleVariableRef CVarECRRepEnableFastSharedPath(
-		TEXT("ECR.RepGraph.EnableFastSharedPath"), EnableFastSharedPath, TEXT(""), ECVF_Default);
-
 	UReplicationDriver* ConditionalCreateReplicationDriver(UNetDriver* ForNetDriver, UWorld* World)
 	{
 		// Only create for GameNetDriver
@@ -458,6 +454,19 @@ void UECRReplicationGraph::InitGlobalActorClassSettings()
 	};
 	ExplicitlySetClasses.Reset();
 
+	bool bEnableFastSharedPath = false;
+	if (ECRRepGraphSettings && ECRRepGraphSettings->bEnableFastSharedPath)
+	{
+		bEnableFastSharedPath = true;
+	}
+
+	int32 CmdEnableFastSharedPathOverride = 0;
+	if (FParse::Value(FCommandLine::Get(), TEXT("fastshared="), CmdEnableFastSharedPathOverride))
+	{
+		UE_LOG(LogECRRepGraph, Display, TEXT("Received override for enabling fast shared replication %d"), CmdEnableFastSharedPathOverride);
+		bEnableFastSharedPath = CmdEnableFastSharedPathOverride != 0;
+	}
+
 	FClassReplicationInfo CharacterClassRepInfo;
 	CharacterClassRepInfo.DistancePriorityScale = 1.f;
 	CharacterClassRepInfo.StarvationPriorityScale = 1.f;
@@ -494,17 +503,23 @@ void UECRReplicationGraph::InitGlobalActorClassSettings()
 	//	Setup FastShared replication for pawns. This is called up to once per frame per pawn to see if it wants
 	//	to send a FastShared update to all relevant connections.
 	// ------------------------------------------------------------------------------------------------------
-	CharacterClassRepInfo.FastSharedReplicationFunc = [](AActor* Actor)
-	{
-		bool bSuccess = false;
-		if (AECRCharacter* Character = Cast<AECRCharacter>(Actor))
-		{
-			bSuccess = Character->UpdateSharedReplication();
-		}
-		return bSuccess;
-	};
 
-	CharacterClassRepInfo.FastSharedReplicationFuncName = FName(TEXT("FastSharedReplication"));
+	if (bEnableFastSharedPath)
+	{
+		UE_LOG(LogECRRepGraph, Display, TEXT("Enabling fast shared replication"));
+
+		CharacterClassRepInfo.FastSharedReplicationFunc = [](AActor* Actor)
+		{
+			bool bSuccess = false;
+			if (AECRCharacter* Character = Cast<AECRCharacter>(Actor))
+			{
+				bSuccess = Character->UpdateSharedReplication();
+			}
+			return bSuccess;
+		};
+
+		CharacterClassRepInfo.FastSharedReplicationFuncName = FName(TEXT("FastSharedReplication"));
+	}
 
 	FastSharedPathConstants.MaxBitsPerFrame = (int32)((float)(ECR::RepGraph::TargetKBytesSecFastSharedPath * 1024 * 8) /
 		NetDriver->NetServerMaxTickRate);
@@ -517,8 +532,7 @@ void UECRReplicationGraph::InitGlobalActorClassSettings()
 	UReplicationGraphNode_ActorListFrequencyBuckets::DefaultSettings.NumBuckets =
 		ECR::RepGraph::DynamicActorFrequencyBuckets;
 	UReplicationGraphNode_ActorListFrequencyBuckets::DefaultSettings.BucketThresholds.Reset();
-	UReplicationGraphNode_ActorListFrequencyBuckets::DefaultSettings.EnableFastPath = (
-		ECR::RepGraph::EnableFastSharedPath > 0);
+	UReplicationGraphNode_ActorListFrequencyBuckets::DefaultSettings.EnableFastPath = bEnableFastSharedPath;
 	UReplicationGraphNode_ActorListFrequencyBuckets::DefaultSettings.FastPathFrameModulo = 1;
 
 	// ---------------------------------------------------------------------
@@ -529,19 +543,20 @@ void UECRReplicationGraph::InitGlobalActorClassSettings()
 		AssumedTickRate = ECRRepGraphSettings->AssumedTickRate;
 		UE_LOG(LogECRRepGraph, Display, TEXT("Assuming server tick rate %d"), AssumedTickRate);
 	}
+
 	UReplicationGraphNode_DynamicSpatialFrequency::FSettings Settings;
 
 	static TArray<UReplicationGraphNode_DynamicSpatialFrequency::FSpatializationZone> Zones;
 	Zones.Reset();
-	Zones.Emplace(   0.00f, 0.10f, 0.50f,  0.f,       0.f,                20.f,      5.f,           AssumedTickRate);	// Behind viewer
-	Zones.Emplace(   0.71f, 0.15f, 0.60f,  0.f,       0.f,                20.f,      10.f,           AssumedTickRate);	// In front but not quite in FOV
+	Zones.Emplace(   0.00f, 0.05f, 0.25f,  0.f,       0.f,                20.f,      5.f,           AssumedTickRate);	// Behind viewer
+	Zones.Emplace(   0.71f, 0.10f, 0.50f,  0.f,       0.f,                20.f,      10.f,           AssumedTickRate);	// In front but not quite in FOV
 	Zones.Emplace(   1.00f, 0.20f, 0.75f,  0.f,       0.f,               20.f,      15.f,          AssumedTickRate);	// Directly in viewer's FOV
 	Settings.ZoneSettings = Zones;
 
 	static TArray<UReplicationGraphNode_DynamicSpatialFrequency::FSpatializationZone> Zones_NoFastShared;
 	Zones_NoFastShared.Reset();
-	Zones_NoFastShared.Emplace(   0.00f, 0.10f, 0.50f,   20.f,      5.f,               0.f,        0.f,          AssumedTickRate);	// Behind viewer
-	Zones_NoFastShared.Emplace(   0.71f, 0.15f, 0.60f,  20.f,      10.f,               0.f,        0.f,          AssumedTickRate);	// In front but not quite in FOV
+	Zones_NoFastShared.Emplace(   0.00f, 0.05f, 0.25f,   20.f,      5.f,               0.f,        0.f,          AssumedTickRate);	// Behind viewer
+	Zones_NoFastShared.Emplace(   0.71f, 0.10f, 0.50f,  20.f,      10.f,               0.f,        0.f,          AssumedTickRate);	// In front but not quite in FOV
 	Zones_NoFastShared.Emplace(   1.00f, 0.20f, 0.75f,  20.f,      15.f,               0.f,        0.f,          AssumedTickRate);	// Directly in viewer's FOV
 	Settings.ZoneSettings_NonFastSharedActors = Zones_NoFastShared;
 
