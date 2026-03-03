@@ -29,7 +29,7 @@ public:
 	UPROPERTY(config, EditAnywhere, Category = ReplicationGraph)
 	int32 AssumedTickRate = 30;
 
-	UPROPERTY(config, EditAnywhere, Category = ReplicationGraph, meta = (MetaClass = "/Script/ECRGame.ECRReplicationGraph"))
+	UPROPERTY(config, EditAnywhere, Category = ReplicationGraph, meta = (MetaClass = "/Script/ECR.ECRReplicationGraph"))
 	FSoftClassPath DefaultReplicationGraphClass;
 
 	UPROPERTY(EditAnywhere, Category = FastSharedPath, meta = (ConsoleVariable = "ECR.RepGraph.EnableFastSharedPath"))

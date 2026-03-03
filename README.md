@@ -27,8 +27,9 @@ Check out our [Wiki](https://github.com/JediKnightChan/EternalCrusadeResurrectio
 - Replay Subsystem with all needed functions for Blueprint replay setup
 - Gameplay Analytics Subsystem in a separate plugin for collecting them and sending to API endpoint
 - Cross-platform code (was built for Windows, Linux, Android)
+- Replication graph is used by default to achieve higher player counts, with additional optimizations by movement replication using Fast Shared Path and dynamic net update frequencies based on distance to viewer and camera orientation
 
-### GAS differences from Lyra (5.0)
+### Differences from Lyra (5.0)
 
 #### Large changes
 
@@ -37,6 +38,7 @@ Check out our [Wiki](https://github.com/JediKnightChan/EternalCrusadeResurrectio
   allows to grab input while another ability (like stun) is active
 - PawnData elements are defined in GameState and on Character as a spawn option, so it can be customizable, unlike Lyra,
   where it's defined by experience and is the same for all players
+- Replication Graph uses dynamic spatial frequency nodes within grid nodes to reduce server CPU load by throttling far and invisible actors updates
 
 #### Medium changes
 
