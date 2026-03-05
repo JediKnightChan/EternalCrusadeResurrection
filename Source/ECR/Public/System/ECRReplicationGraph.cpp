@@ -34,12 +34,7 @@
 *		This is the node for connection specific always relevant actors. This node does not maintain a persistent list but builds it each frame. This is possible because (currently)
 *		these actors are all easily accessed from the PlayerController. A persistent list would require notifications to be broadcast when these actors change, which would be possible
 *		but currently not necessary.
-*		
-*		UECRReplicationGraphNode_PlayerStateFrequencyLimiter
-*		A custom node for handling player state replication. This replicates a small rolling set of player states (currently 2/frame). This is so player states replicate
-*		to simulated connections at a low, steady frequency, and to take advantage of serialization sharing. Auto proxy player states are replicated at higher frequency (to the
-*		owning connection only) via UECRReplicationGraphNode_AlwaysRelevant_ForConnection.
-*		
+*
 *		UReplicationGraphNode_TearOff_ForConnection
 *		Connection specific node for handling tear off actors. This is created and managed in the base implementation of Replication Graph.
 *		
@@ -132,7 +127,7 @@ namespace ECR::RepGraph
 		TEXT("ECR.RepGraph.LogLazyInitClasses"), LogLazyInitClasses, TEXT(""), ECVF_Default);
 
 	// How much bandwidth to use for FastShared movement updates. This is counted independently of the NetDriver's target bandwidth.
-	int32 TargetKBytesSecFastSharedPath = 200;
+	int32 TargetKBytesSecFastSharedPath = 2000;
 	static FAutoConsoleVariableRef CVarECRRepTargetKBytesSecFastSharedPath(
 		TEXT("ECR.RepGraph.TargetKBytesSecFastSharedPath"), TargetKBytesSecFastSharedPath, TEXT(""), ECVF_Default);
 
@@ -148,9 +143,23 @@ namespace ECR::RepGraph
 			const UECRReplicationGraphSettings* ECRRepGraphSettings = GetDefault<UECRReplicationGraphSettings>();
 
 			// Enable/Disable via developer settings
+			bool bEnableReplicationGraph = true;
+
 			if (ECRRepGraphSettings && !ECRRepGraphSettings->bEnableReplicationGraph)
 			{
-				UE_LOG(LogECRRepGraph, Display, TEXT("Replication graph is disabled via ECRReplicationGraphSettings."));
+				bEnableReplicationGraph = false;
+			}
+
+			int32 CmdEnableReplicationGraphOverride = 0;
+			if (FParse::Value(FCommandLine::Get(), TEXT("repgraph="), CmdEnableReplicationGraphOverride))
+			{
+				UE_LOG(LogECRRepGraph, Display, TEXT("Received override for enabling replication graph %d"), CmdEnableReplicationGraphOverride);
+				bEnableReplicationGraph = bEnableReplicationGraph != 0;
+			}
+
+			if (!bEnableReplicationGraph)
+			{
+				UE_LOG(LogECRRepGraph, Display, TEXT("Replication graph is disabled via ECRReplicationGraphSettings or CMD."));
 				return nullptr;
 			}
 
@@ -442,6 +451,13 @@ void UECRReplicationGraph::InitGlobalActorClassSettings()
 
 		RegisterClassRepNodeMapping(Class);
 	}
+	
+    int32 AssumedTickRate = 30;
+    if (ECRRepGraphSettings)
+    {
+        AssumedTickRate = ECRRepGraphSettings->AssumedTickRate;
+        UE_LOG(LogECRRepGraph, Display, TEXT("Assuming server tick rate %d"), AssumedTickRate);
+    }
 
 	// -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	// Setup FClassReplicationInfo. This is essentially the per class replication settings. Some we set explicitly, the rest we are setting via looking at the legacy settings on AActor.
@@ -522,7 +538,7 @@ void UECRReplicationGraph::InitGlobalActorClassSettings()
 	}
 
 	FastSharedPathConstants.MaxBitsPerFrame = (int32)((float)(ECR::RepGraph::TargetKBytesSecFastSharedPath * 1024 * 8) /
-		NetDriver->NetServerMaxTickRate);
+		AssumedTickRate);
 	FastSharedPathConstants.DistanceRequirementPct = ECR::RepGraph::FastSharedPathCullDistPct;
 
 	SetClassInfo(AECRCharacter::StaticClass(), CharacterClassRepInfo);
@@ -537,12 +553,6 @@ void UECRReplicationGraph::InitGlobalActorClassSettings()
 
 	// ---------------------------------------------------------------------
 	// Setting dynamic frequency settings
-	int32 AssumedTickRate = 30;
-	if (ECRRepGraphSettings)
-	{
-		AssumedTickRate = ECRRepGraphSettings->AssumedTickRate;
-		UE_LOG(LogECRRepGraph, Display, TEXT("Assuming server tick rate %d"), AssumedTickRate);
-	}
 
 	UReplicationGraphNode_DynamicSpatialFrequency::FSettings Settings;
 
@@ -696,12 +706,8 @@ void UECRReplicationGraph::InitGlobalGraphNodes()
 	AlwaysRelevantNode = CreateNewNode<UReplicationGraphNode_ActorList>();
 	AddGlobalGraphNode(AlwaysRelevantNode);
 
-	// -----------------------------------------------
-	//	Player State specialization. This will return a rolling subset of the player states to replicate
-	// -----------------------------------------------
-	UECRReplicationGraphNode_PlayerStateFrequencyLimiter* PlayerStateNode = CreateNewNode<
-		UECRReplicationGraphNode_PlayerStateFrequencyLimiter>();
-	AddGlobalGraphNode(PlayerStateNode);
+	PlayerStatesNode = CreateNewNode<UReplicationGraphNode_ActorListFrequencyBuckets>();
+	AddGlobalGraphNode(PlayerStatesNode);
 }
 
 void UECRReplicationGraph::InitConnectionGraphNodes(UNetReplicationGraphConnection* RepGraphConnection)
@@ -742,7 +748,13 @@ void UECRReplicationGraph::RouteAddNetworkActorToNodes(const FNewReplicatedActor
 		{
 			if (ActorInfo.StreamingLevelName == NAME_None)
 			{
-				AlwaysRelevantNode->NotifyAddNetworkActor(ActorInfo);
+				if (ActorInfo.Class == APlayerState::StaticClass())
+				{
+					PlayerStatesNode->NotifyAddNetworkActor(ActorInfo);
+				} else
+				{
+					AlwaysRelevantNode->NotifyAddNetworkActor(ActorInfo);
+				}
 			}
 			else
 			{
@@ -787,7 +799,13 @@ void UECRReplicationGraph::RouteRemoveNetworkActorToNodes(const FNewReplicatedAc
 		{
 			if (ActorInfo.StreamingLevelName == NAME_None)
 			{
-				AlwaysRelevantNode->NotifyRemoveNetworkActor(ActorInfo);
+				if (ActorInfo.Class == APlayerState::StaticClass())
+				{
+					PlayerStatesNode->NotifyRemoveNetworkActor(ActorInfo);
+				} else
+				{
+					AlwaysRelevantNode->NotifyRemoveNetworkActor(ActorInfo);
+				}
 			}
 			else
 			{
@@ -936,7 +954,7 @@ void UECRReplicationGraphNode_AlwaysRelevant_ForConnection::GatherActorListsForC
 				2);
 			if (bReplicatePS)
 			{
-				// Always return the player state to the owning player. Simulated proxy player states are handled by UECRReplicationGraphNode_PlayerStateFrequencyLimiter
+				// Always return the player state to the owning player
 				if (APlayerState* PS = PC->PlayerState)
 				{
 					if (!bInitializedPlayerState)
@@ -1089,69 +1107,6 @@ void UECRReplicationGraphNode_AlwaysRelevant_ForConnection::LogNode(FReplication
 				DebugInfo, FString::Printf(TEXT("AlwaysRelevant StreamingLevel List: %s"), *LevelName.ToString()),
 				*RepList);
 		}
-	}
-
-	DebugInfo.PopIndent();
-}
-
-// ------------------------------------------------------------------------------
-
-UECRReplicationGraphNode_PlayerStateFrequencyLimiter::UECRReplicationGraphNode_PlayerStateFrequencyLimiter()
-{
-	bRequiresPrepareForReplicationCall = true;
-}
-
-void UECRReplicationGraphNode_PlayerStateFrequencyLimiter::PrepareForReplication()
-{
-	ReplicationActorLists.Reset();
-	ForceNetUpdateReplicationActorList.Reset();
-
-	ReplicationActorLists.AddDefaulted();
-	FActorRepListRefView* CurrentList = &ReplicationActorLists[0];
-
-	// We rebuild our lists of player states each frame. This is not as efficient as it could be but its the simplest way
-	// to handle players disconnecting and keeping the lists compact. If the lists were persistent we would need to defrag them as players left.
-
-	for (TActorIterator<APlayerState> It(GetWorld()); It; ++It)
-	{
-		APlayerState* PS = *It;
-		if (IsActorValidForReplicationGather(PS) == false)
-		{
-			continue;
-		}
-
-		if (CurrentList->Num() >= TargetActorsPerFrame)
-		{
-			ReplicationActorLists.AddDefaulted();
-			CurrentList = &ReplicationActorLists.Last();
-		}
-
-		CurrentList->Add(PS);
-	}
-}
-
-void UECRReplicationGraphNode_PlayerStateFrequencyLimiter::GatherActorListsForConnection(
-	const FConnectionGatherActorListParameters& Params)
-{
-	const int32 ListIdx = Params.ReplicationFrameNum % ReplicationActorLists.Num();
-	Params.OutGatheredReplicationLists.AddReplicationActorList(ReplicationActorLists[ListIdx]);
-
-	if (ForceNetUpdateReplicationActorList.Num() > 0)
-	{
-		Params.OutGatheredReplicationLists.AddReplicationActorList(ForceNetUpdateReplicationActorList);
-	}
-}
-
-void UECRReplicationGraphNode_PlayerStateFrequencyLimiter::LogNode(FReplicationGraphDebugInfo& DebugInfo,
-                                                                   const FString& NodeName) const
-{
-	DebugInfo.Log(NodeName);
-	DebugInfo.PushIndent();
-
-	int32 i = 0;
-	for (const FActorRepListRefView& List : ReplicationActorLists)
-	{
-		LogActorRepList(DebugInfo, FString::Printf(TEXT("Bucket[%d]"), i++), List);
 	}
 
 	DebugInfo.PopIndent();

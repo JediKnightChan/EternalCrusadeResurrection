@@ -36,6 +36,9 @@ public:
 	UPROPERTY()
 	TObjectPtr<UReplicationGraphNode_ActorList> AlwaysRelevantNode;
 
+	UPROPERTY()
+	TObjectPtr<UReplicationGraphNode_ActorListFrequencyBuckets> PlayerStatesNode;
+
 	TMap<FName, FActorRepListRefView> AlwaysRelevantStreamingLevelActors;
 
 #if WITH_GAMEPLAY_DEBUGGER
@@ -90,33 +93,4 @@ private:
 	TArray<FName, TInlineAllocator<64> > AlwaysRelevantStreamingLevelsNeedingReplication;
 
 	bool bInitializedPlayerState = false;
-};
-
-/** 
-	This is a specialized node for handling PlayerState replication in a frequency limited fashion. It tracks all player states but only returns a subset of them to the replication driver each frame. 
-	This is an optimization for large player connection counts, and not a requirement.
-*/
-UCLASS()
-class UECRReplicationGraphNode_PlayerStateFrequencyLimiter : public UReplicationGraphNode
-{
-	GENERATED_BODY()
-
-	UECRReplicationGraphNode_PlayerStateFrequencyLimiter();
-
-	virtual void NotifyAddNetworkActor(const FNewReplicatedActorInfo& Actor) override { }
-	virtual bool NotifyRemoveNetworkActor(const FNewReplicatedActorInfo& ActorInfo, bool bWarnIfNotFound=true) override { return false; }
-
-	virtual void GatherActorListsForConnection(const FConnectionGatherActorListParameters& Params) override;
-
-	virtual void PrepareForReplication() override;
-
-	virtual void LogNode(FReplicationGraphDebugInfo& DebugInfo, const FString& NodeName) const override;
-
-	/** How many actors we want to return to the replication driver per frame. Will not suppress ForceNetUpdate. */
-	int32 TargetActorsPerFrame = 2;
-
-private:
-	
-	TArray<FActorRepListRefView> ReplicationActorLists;
-	FActorRepListRefView ForceNetUpdateReplicationActorList;
 };

@@ -723,3 +723,26 @@ bool FSharedRepMovement::Equals(const FSharedRepMovement& Other, ACharacter* Cha
 
 	return true;
 }
+
+bool FSharedRepMovement::NetSerialize(FArchive& Ar, class UPackageMap* Map, bool& bOutSuccess)
+{
+	bOutSuccess = true;
+	RepMovement.NetSerialize(Ar, Map, bOutSuccess);
+	Ar << RepMovementMode;
+	Ar << bProxyIsJumpForceApplied;
+	Ar << bIsCrouched;
+
+	// Timestamp, if non-zero.
+	uint8 bHasTimeStamp = (RepTimeStamp != 0.f);
+	Ar.SerializeBits(&bHasTimeStamp, 1);
+	if (bHasTimeStamp)
+	{
+		Ar << RepTimeStamp;
+	}
+	else
+	{
+		RepTimeStamp = 0.f;
+	}
+
+	return true;
+}
