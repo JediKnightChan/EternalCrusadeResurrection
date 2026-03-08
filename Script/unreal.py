@@ -134,3 +134,12 @@ class StaticMeshEditorSubsystem:
 
 def get_editor_subsystem(subsystem):
     pass
+
+class EditorLevelLibrary:
+    pass
+
+class Vector:
+    def __init__(self, x, y, z):
+        pass
+
+    pass

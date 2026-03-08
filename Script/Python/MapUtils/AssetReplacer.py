@@ -37,5 +37,5 @@ for asset_to_replace_from, asset_to_replace_to in data.items():
     for i in reversed(range(len(actors_to_replace))):
         actor, loc, rot, scale = actors_to_replace[i]
         unreal.EditorLevelLibrary.destroy_actor(actor)
-        actor = unreal.EditorLevelLibrary.spawn_actor_from_object(new_asset, loc, rot)
-        actor.set_actor_scale3d(scale)
+        # actor = unreal.EditorLevelLibrary.spawn_actor_from_object(new_asset, loc, rot)
+        # actor.set_actor_scale3d(scale)

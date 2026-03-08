@@ -8,7 +8,7 @@ import re
 
 # Change me!
 map_data_filepath = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                    "MapData/Maps/Usual/HiveComplex01/r05.json"
+                    "MapData/Maps/Usual/PegasusSand/pegasus_static3.json"
 PATH_TO_FILTER = None
 EXCLUDE_ENGINE_ASSETS = False
 level_library = unreal.EditorLevelLibrary
@@ -24,6 +24,9 @@ with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsR
 
 with open(map_data_filepath, "rb") as f:
     data = json.load(f)
+
+data = data[0:2000]
+print(len(data))
 
 for element in data:
     path, transform = element["path"], element["transform"]
