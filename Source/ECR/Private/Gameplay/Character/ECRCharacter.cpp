@@ -23,6 +23,7 @@
 #include "Gameplay/GAS/ECRAbilitySet.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
+#include "Gameplay/GAS/Attributes/ECRManaSet.h"
 #include "Gameplay/GAS/Attributes/ECRMovementSet.h"
 #include "Gameplay/GAS/Components/ECRCharacterHealthComponent.h"
 #include "Gameplay/Interaction/InteractionQuery.h"
@@ -54,6 +55,7 @@ AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 	CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("CharacterHealthSet"));
 	CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatSet"));
 	CreateDefaultSubobject<UECRMovementSet>(TEXT("MovementSet"));
+	CreateDefaultSubobject<UECRManaSet>(TEXT("ManaSet"));
 
 	UCapsuleComponent* CapsuleComp = GetCapsuleComponent();
 	check(CapsuleComp);
@@ -573,4 +575,174 @@ void AECRCharacter::InitPawnDataAndAbilities()
 
 void AECRCharacter::OnRep_PawnData()
 {
+}
+
+
+bool AECRCharacter::UpdateSharedReplication()
+{
+	if (GetLocalRole() == ROLE_Authority)
+	{
+		if (IsPlayingNetworkedRootMotionMontage())
+		{
+			return false;
+		}
+
+		// Movement
+		FSharedRepMovement SharedMovement;
+		if (!SharedMovement.FillForCharacter(this))
+		{
+			return false;
+		}
+
+		// Only call FastSharedReplication if data has changed since the last frame.
+		// Skipping this call will cause replication to reuse the same bunch that we previously
+		// produced, but not send it to clients that already received. (But a new client who has not received
+		// it, will get it this frame)
+		float MinTimeToUpdate = (MinNetUpdateFrequency != 0) ? (1 / MinNetUpdateFrequency) : 0.5f;
+		if ((GetGameTimeSinceCreation() - LastSharedReplicationTimestamp >= MinTimeToUpdate) || !SharedMovement.Equals(LastSharedReplication, this))
+		{
+			LastSharedReplication = SharedMovement;
+			ReplicatedMovementMode = SharedMovement.RepMovementMode;
+			LastSharedReplicationTimestamp = GetGameTimeSinceCreation();
+
+			FastSharedMovementReplication(SharedMovement);
+		}
+
+		return true;
+	}
+
+	// We cannot fastrep right now. Don't send anything.
+	return false;
+}
+
+void AECRCharacter::FastSharedMovementReplication_Implementation(const FSharedRepMovement& SharedRepMovement)
+{
+	if (GetWorld()->IsPlayingReplay())
+	{
+		return;
+	}
+
+	// Timestamp is checked to reject old moves.
+	if (GetLocalRole() == ROLE_SimulatedProxy)
+	{
+		// Timestamp
+		ReplicatedServerLastTransformUpdateTimeStamp = SharedRepMovement.RepTimeStamp;
+
+		// Movement mode
+		if (ReplicatedMovementMode != SharedRepMovement.RepMovementMode)
+		{
+			ReplicatedMovementMode = SharedRepMovement.RepMovementMode;
+			GetCharacterMovement()->bNetworkMovementModeChanged = true;
+			GetCharacterMovement()->bNetworkUpdateReceived = true;
+		}
+
+		// Location, Rotation, Velocity, etc.
+		FRepMovement& MutableRepMovement = GetReplicatedMovement_Mutable();
+		MutableRepMovement = SharedRepMovement.RepMovement;
+
+		// This also sets LastRepMovement
+		OnRep_ReplicatedMovement();
+
+		// Jump force
+		bProxyIsJumpForceApplied = SharedRepMovement.bProxyIsJumpForceApplied;
+
+		// Crouch
+		if (bIsCrouched != SharedRepMovement.bIsCrouched)
+		{
+			bIsCrouched = SharedRepMovement.bIsCrouched;
+			OnRep_IsCrouched();
+		}
+	}
+}
+
+FSharedRepMovement::FSharedRepMovement()
+{
+	RepMovement.LocationQuantizationLevel = EVectorQuantization::RoundTwoDecimals;
+}
+
+bool FSharedRepMovement::FillForCharacter(ACharacter* Character)
+{
+	if (USceneComponent* PawnRootComponent = Character->GetRootComponent())
+	{
+		UCharacterMovementComponent* CharacterMovement = Character->GetCharacterMovement();
+
+		RepMovement.Location = FRepMovement::RebaseOntoZeroOrigin(PawnRootComponent->GetComponentLocation(), Character);
+		RepMovement.Rotation = PawnRootComponent->GetComponentRotation();
+		RepMovement.LinearVelocity = CharacterMovement->Velocity;
+		RepMovementMode = CharacterMovement->PackNetworkMovementMode();
+		bProxyIsJumpForceApplied = Character->bProxyIsJumpForceApplied || (Character->JumpForceTimeRemaining > 0.0f);
+		bIsCrouched = Character->bIsCrouched;
+
+		// Timestamp is sent as zero if unused
+		if ((CharacterMovement->NetworkSmoothingMode == ENetworkSmoothingMode::Linear) || CharacterMovement->
+			bNetworkAlwaysReplicateTransformUpdateTimestamp)
+		{
+			RepTimeStamp = CharacterMovement->GetServerLastTransformUpdateTimeStamp();
+		}
+		else
+		{
+			RepTimeStamp = 0.f;
+		}
+
+		return true;
+	}
+	return false;
+}
+
+bool FSharedRepMovement::Equals(const FSharedRepMovement& Other, ACharacter* Character) const
+{
+	if (RepMovement.Location != Other.RepMovement.Location)
+	{
+		return false;
+	}
+
+	if (RepMovement.Rotation != Other.RepMovement.Rotation)
+	{
+		return false;
+	}
+
+	if (RepMovement.LinearVelocity != Other.RepMovement.LinearVelocity)
+	{
+		return false;
+	}
+
+	if (RepMovementMode != Other.RepMovementMode)
+	{
+		return false;
+	}
+
+	if (bProxyIsJumpForceApplied != Other.bProxyIsJumpForceApplied)
+	{
+		return false;
+	}
+
+	if (bIsCrouched != Other.bIsCrouched)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool FSharedRepMovement::NetSerialize(FArchive& Ar, class UPackageMap* Map, bool& bOutSuccess)
+{
+	bOutSuccess = true;
+	RepMovement.NetSerialize(Ar, Map, bOutSuccess);
+	Ar << RepMovementMode;
+	Ar << bProxyIsJumpForceApplied;
+	Ar << bIsCrouched;
+
+	// Timestamp, if non-zero.
+	uint8 bHasTimeStamp = (RepTimeStamp != 0.f);
+	Ar.SerializeBits(&bHasTimeStamp, 1);
+	if (bHasTimeStamp)
+	{
+		Ar << RepTimeStamp;
+	}
+	else
+	{
+		RepTimeStamp = 0.f;
+	}
+
+	return true;
 }

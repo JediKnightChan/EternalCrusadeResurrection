@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameplayEffectExecutionCalculation.h"
-#include "ECRDamageExecution.generated.h"
+#include "ECRHealingExecution.generated.h"
 
 class AECRCharacter;
 
@@ -13,16 +13,14 @@ class AECRCharacter;
  * 
  */
 UCLASS()
-class ECR_API UECRDamageExecution : public UGameplayEffectExecutionCalculation
+class ECR_API UECRHealingExecution : public UGameplayEffectExecutionCalculation
 {
 	GENERATED_BODY()
 
 public:
-	UECRDamageExecution();
+	UECRHealingExecution();
 
 protected:
 	virtual void Execute_Implementation(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
 	                                    FGameplayEffectCustomExecutionOutput& OutExecutionOutput) const override;
-
-	void SendReflectMessage(const FGameplayEffectSpec& Spec, AActor* Target, double Magnitude) const;
 };

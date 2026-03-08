@@ -12,9 +12,9 @@ class AECRGameMode : public AGameMode
 {
 	GENERATED_BODY()
 
-	/** Storage for display names passed via map parameters */
+	/** Storage for options passed via join parameters */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
-	TMap<AController*, FString> ControllersToDisplayNames;
+	TMap<AController*, FString> ControllersToJoinOptions;
 
 	/** Was overriden not to notify online session about match start, because it removes match then
 	 * (even with join in progress set to true) */

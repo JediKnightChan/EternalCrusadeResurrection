@@ -55,6 +55,7 @@ UECRCameraMode::UECRCameraMode()
 
 	bAlwaysZeroRoll = true;
 	bUseParentActorAsTarget = false;
+	bUseParentActorAsTargetOnlyForPivotLoc = false;
 	PivotOffset = {0.0f, 0.0f, 0.0f};
 	BlendTime = 0.5f;
 	BlendFunction = EECRCameraModeBlendFunction::EaseOut;
@@ -77,25 +78,24 @@ AActor* UECRCameraMode::GetTargetActor() const
 {
 	const UECRCameraComponent* ECRCameraComponent = GetECRCameraComponent();
 
-	return ECRCameraComponent->GetTargetActor();
-}
-
-AActor* UECRCameraMode::GetTargetActorParent() const
-{
-	AActor* TargetActor = GetTargetActor();
-	return TargetActor ? TargetActor->GetParentActor() : nullptr;
+	AActor* TargetActor = ECRCameraComponent->GetTargetActor();
+	if (bUseParentActorAsTarget)
+	{
+		AActor* ParentActor = TargetActor->GetAttachParentActor();
+		return ParentActor ? ParentActor : TargetActor;
+	}
+	return TargetActor;
 }
 
 FVector UECRCameraMode::GetPivotLocation() const
 {
 	const AActor* TargetActor = GetTargetActor();
 
-	if (bUseParentActorAsTarget)
+	if (bUseParentActorAsTargetOnlyForPivotLoc)
 	{
-		TargetActor = GetTargetActorParent();
-		if (!TargetActor)
+		if (AActor* ParentActor = TargetActor->GetAttachParentActor())
 		{
-			TargetActor = GetTargetActor();
+			TargetActor = ParentActor;
 		}
 	}
 

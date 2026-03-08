@@ -63,9 +63,10 @@ void UECRWeaponInstance::OnEquipped()
 {
 	Super::OnEquipped();
 
-	UWorld* World = GetWorld();
-	check(World);
-	TimeLastEquipped = World->GetTimeSeconds();
+	if (UWorld* World = GetWorld())
+	{
+		TimeLastEquipped = World->GetTimeSeconds();
+	}
 
 	LoadMontages();
 

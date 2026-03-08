@@ -126,6 +126,10 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "View")
 	bool bUseParentActorAsTarget;
 
+	// Whether instead of target actor use its parent only for defining pivot location
+	UPROPERTY(EditDefaultsOnly, Category = "View")
+	bool bUseParentActorAsTargetOnlyForPivotLoc;
+
 	// Offset to the pivot itself
 	UPROPERTY(EditDefaultsOnly, Category = "View")
 	FVector PivotOffset;

@@ -42,6 +42,14 @@ public:
 	FGameplayTag InputTag_Vehicle_Steer;
 	FGameplayTag InputTag_Vehicle_Brake;
 
+	FGameplayTag Gameplay_Special_ReducedDamage;
+	FGameplayTag Gameplay_Special_Reflect;
+	FGameplayTag Gameplay_Special_Reflect_50;
+
+	FGameplayTag GameplayEffect_DamageIgnoresShield;
+	FGameplayTag GameplayEffect_NoReflect;
+	FGameplayTag GameplayEffect_HealingIgnoresMultipliers;
+
 	FGameplayTag GameplayEvent_Death;
 	FGameplayTag GameplayEvent_Landed;
 	FGameplayTag GameplayEvent_MovementModeChanged;

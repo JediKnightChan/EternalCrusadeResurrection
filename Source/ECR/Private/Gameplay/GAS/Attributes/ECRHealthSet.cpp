@@ -12,7 +12,7 @@ UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_DamageImmunity, "Gameplay.DamageImmunity");
 UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_DamageSelfDestruct, "Gameplay.Damage.Reason.SelfDestruct");
 UE_DEFINE_GAMEPLAY_TAG(TAG_Gameplay_FellOutOfWorld, "Gameplay.Damage.Reason.FellOutOfWorld");
 UE_DEFINE_GAMEPLAY_TAG(TAG_ECR_Damage_Message, "ECR.Damage.Message");
-
+UE_DEFINE_GAMEPLAY_TAG(TAG_ECR_Healing_Message, "ECR.Healing.Message");
 
 UECRHealthSet::UECRHealthSet()
 	: Health(100.0f),
@@ -55,11 +55,25 @@ void UECRHealthSet::SendDamageMessage(const FGameplayEffectModCallbackData& Dama
 	Message.Verb = TAG_ECR_Damage_Message;
 	Message.Instigator = DamageData.EffectSpec.GetEffectContext().GetEffectCauser();
 	Message.InstigatorTags = *DamageData.EffectSpec.CapturedSourceTags.GetAggregatedTags();
+	Message.Object1 = DamageData.EffectSpec.GetEffectContext().GetSourceObject();
 	Message.Target = GetOwningActor();
 	Message.TargetTags = *DamageData.EffectSpec.CapturedTargetTags.GetAggregatedTags();
-	//@TODO: Fill out context tags, and any non-ability-system source/instigator tags
-	//@TODO: Determine if it's an opposing team kill, self-own, team kill, etc...
 	Message.Magnitude = DamageData.EvaluatedData.Magnitude;
+
+	UGameplayMessageSubsystem& MessageSystem = UGameplayMessageSubsystem::Get(GetWorld());
+	MessageSystem.BroadcastMessage(Message.Verb, Message);
+}
+
+void UECRHealthSet::SendHealingMessage(const FGameplayEffectModCallbackData& HealingData) const
+{
+	FECRVerbMessage Message;
+	Message.Verb = TAG_ECR_Healing_Message;
+	Message.Instigator = HealingData.EffectSpec.GetEffectContext().GetEffectCauser();
+	Message.InstigatorTags = *HealingData.EffectSpec.CapturedSourceTags.GetAggregatedTags();
+	Message.Object1 = HealingData.EffectSpec.GetEffectContext().GetSourceObject();
+	Message.Target = GetOwningActor();
+	Message.TargetTags = *HealingData.EffectSpec.CapturedTargetTags.GetAggregatedTags();
+	Message.Magnitude = HealingData.EvaluatedData.Magnitude;
 
 	UGameplayMessageSubsystem& MessageSystem = UGameplayMessageSubsystem::Get(GetWorld());
 	MessageSystem.BroadcastMessage(Message.Verb, Message);
@@ -107,6 +121,12 @@ void UECRHealthSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackDa
 	}
 	else if (Data.EvaluatedData.Attribute == GetHealingAttribute())
 	{
+		// Send a standardized verb message that other systems can observe
+		if (Data.EvaluatedData.Magnitude > 0.0f)
+		{
+			SendHealingMessage(Data);
+		}
+
 		SetHealth(FMath::Clamp(GetHealth() + GetHealing(), 0, GetMaxHealth()));
 		SetHealing(0.0f);
 	}

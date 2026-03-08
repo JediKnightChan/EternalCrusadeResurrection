@@ -45,6 +45,7 @@ public:
 
 	//~APlayerController interface
 	virtual void PlayerTick(float DeltaTime) override;
+	virtual void GetPlayerViewPoint(FVector& out_Location, FRotator& out_Rotation) const override;
 	//~End of APlayerController interface
 
 	//~ACommonPlayerController interface

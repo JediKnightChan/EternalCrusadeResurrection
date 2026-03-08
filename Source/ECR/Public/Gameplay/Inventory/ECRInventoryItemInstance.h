@@ -39,10 +39,23 @@ public:
 	UFUNCTION(BlueprintCallable, Category=Inventory)
 	bool HasStatTag(FGameplayTag Tag) const;
 
+    UFUNCTION(BlueprintCallable, Category=Inventory)
 	TSubclassOf<UECRInventoryItemDefinition> GetItemDef() const
 	{
 		return ItemDef;
 	}
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category=Inventory)
+	FGameplayTagStackContainer CopyStatTags() const
+    {
+    	return StatTags;
+    }
+
+	UFUNCTION(BlueprintCallable, Category=Inventory)
+	void PasteStatTags(const FGameplayTagStackContainer NewStatTags)
+    {
+    	StatTags = NewStatTags;
+    }
 
 	UFUNCTION(BlueprintCallable, BlueprintPure=false, meta=(DeterminesOutputType=FragmentClass))
 	const UECRInventoryItemFragment* FindFragmentByClass(TSubclassOf<UECRInventoryItemFragment> FragmentClass) const;

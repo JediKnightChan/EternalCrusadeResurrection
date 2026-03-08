@@ -9,6 +9,7 @@ public class ECRServerTarget : TargetRules
     {
         Type = TargetType.Server;
         DefaultBuildSettings = BuildSettingsVersion.V2;
+        bWithPushModel = true;
         ExtraModuleNames.Add("ECR");
         RegisterModulesCreatedByRider();
     }

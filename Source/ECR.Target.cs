@@ -9,6 +9,7 @@ public class ECRTarget : TargetRules
 	{
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
+		bWithPushModel = true;
 
 		// Enable logs for Shipping builds
 		if (Configuration == UnrealTargetConfiguration.Shipping)

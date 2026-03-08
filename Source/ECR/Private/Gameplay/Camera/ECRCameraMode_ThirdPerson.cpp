@@ -22,8 +22,8 @@ void UECRCameraMode_ThirdPerson::UpdateView(float DeltaTime)
 	APawn* TargetPawn = Cast<APawn>(TargetActor);
 	AController* TargetController = TargetPawn ? TargetPawn->GetController() : nullptr;
 
-	CurrentPivotLocation = FMath::VInterpTo(CurrentPivotLocation, GetPivotLocation(), DeltaTime, 20.f);
-	CurrentPivotRotation = FMath::RInterpTo(CurrentPivotRotation, GetPivotRotation(), DeltaTime, 20.f);
+	CurrentPivotLocation = FMath::VInterpTo(CurrentPivotLocation, GetPivotLocation(), DeltaTime, InterpSpeedLocation);
+	CurrentPivotRotation = FMath::RInterpTo(CurrentPivotRotation, GetPivotRotation(), DeltaTime, InterpSpeedRotation);
 
 	FVector PivotLocation = (!TargetController ? CurrentPivotLocation : GetPivotLocation()) + CurrentCrouchOffset;
 	FRotator PivotRotation = (!TargetController ? CurrentPivotRotation : GetPivotRotation());

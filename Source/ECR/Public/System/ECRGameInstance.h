@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
 #include "Online/ECROnlineSubsystem.h"
-#include "Interfaces/OnlinePartyInterface.h"
 #include "ECRGameInstance.generated.h"
 
 
@@ -14,18 +13,19 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnFriendListUpdated, bool, bSucces
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyCreationFinished, bool, bSuccess);
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnPartyInvitationReceived, FUniqueNetIdRepl, SourceId, FString,
-                                               SourceDisplayName, FString, SessionData);
-
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyJoinFinished, bool, bSuccess);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyLeaveFinished, bool, bSuccess);
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyMemberRemoved, FUniqueNetIdRepl, Player);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPartyMembersChanged);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPartyDataUpdated, FString, UpdatedJsonString);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDisconnectedFromSession);
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnTitleStorageFileRead, bool, bSuccess, FString, FileName);
 
 /**
  * 
@@ -35,10 +35,19 @@ class ECR_API UECRGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 
-	/** Name assigned to player that will be shown in matches */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	/** Match join parameter: display name */
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
 	FString UserDisplayName;
 
+	/** Match join parameter: desired faction */
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
+	FString UserDesiredFaction;
+
+	/** Match join parameter: char id */
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
+	FString UserCharId;
+	
+	/** Match settings, not only for creation, but also real time updates */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
 	FECRMatchSettings MatchCreationSettings;
 
@@ -63,10 +72,6 @@ class ECR_API UECRGameInstance : public UGameInstance
 	UPROPERTY(BlueprintAssignable)
 	FOnPartyCreationFinished OnPartyCreationFinished_BP;
 
-	/** Broadcaster for party invites */
-	UPROPERTY(BlueprintAssignable)
-	FOnPartyInvitationReceived OnPartyInviteReceived_BP;
-
 	/** Broadcaster for party joins result */
 	UPROPERTY(BlueprintAssignable)
 	FOnPartyJoinFinished OnPartyJoinFinished_BP;
@@ -83,10 +88,17 @@ class ECR_API UECRGameInstance : public UGameInstance
 	UPROPERTY(BlueprintAssignable)
 	FOnPartyLeaveFinished OnPartyLeaveFinished_BP;
 
-	/** Broadcaster for leaving party */
+	/** Broadcaster for player removals */
+	UPROPERTY(BlueprintAssignable)
+	FOnPartyMemberRemoved OnPartyMemberRemoved_BP;
+
+	/** Broadcaster for being disconnected from session */
 	UPROPERTY(BlueprintAssignable)
 	FOnDisconnectedFromSession OnDisconnectedFromSession_BP;
 
+	/** Broadcaster for completion of reading file from title storage */
+	UPROPERTY(BlueprintAssignable)
+	FOnTitleStorageFileRead OnTitleStorageFileRead_BP;
 protected:
 	/** Login via selected login type */
 	void Login(FString PlayerName, FString LoginType, FString Id = "", FString Token = "");
@@ -136,8 +148,8 @@ protected:
 	void OnPartyMemberDataChanged(FName SessionName, const FUniqueNetId& TargetUniqueNetId,
 	                              const FOnlineSessionSettings& SessionSettings);
 
-	/** Delegate for party left events */
-	void OnPartyMemberLeft(const FUniqueNetId& LocalUserId, const FOnlinePartyId& PartyId);
+	/** Delegate for party member removals */
+	void OnPartyMemberRemoved(FName SessionName, const FUniqueNetId& Player);
 
 	/** Delegate for party data changes */
 	void OnPartyDataReceived(FName SessionName, const FOnlineSessionSettings& NewSettings);
@@ -145,43 +157,52 @@ protected:
 	/** Delegate for session failures */
 	void OnSessionFailure(const FUniqueNetId& PlayerId, ESessionFailure::Type Reason);
 
+	/** Retrieve session settings for match */
 	FOnlineSessionSettings GetSessionSettings();
 
+	/** Retrieve session settings for party lobby */
 	FOnlineSessionSettings GetPartySessionSettings();
+
+	/** Format connection string with all required parameters */
+	FString GetConnectionStringWithParams(FString ConnectString, bool bListen);
 
 public:
 	UECRGameInstance();
+
+	// Login functionality
 
 	/** Log Out */
 	UFUNCTION(BlueprintCallable)
 	void LogOut();
 
-	/** Login user via Epic Account */
+	/** Login user via Epic Account. PlayerName is deprecated */
 	UFUNCTION(BlueprintCallable)
 	void LoginViaEpic(FString PlayerName);
 
-	/** Login user via Device ID */
+	/** Login user via Device ID. PlayerName is deprecated */
 	UFUNCTION(BlueprintCallable)
 	void LoginPersistent(FString PlayerName);
 
-	/** Login user via DevTool */
+	/** Login user via DevTool. PlayerName is deprecated */
 	UFUNCTION(BlueprintCallable)
 	void LoginViaDevTool(FString PlayerName, FString Address, FString CredName);
 
-	/** Create match, by player (P2P) */
+	// Match functionality
+
+	/** Create match */
 	UFUNCTION(BlueprintCallable)
-	void CreateMatch(const FString GameVersion, const FString InGameUniqueIdForSearch, const FName ModeName,
-	                 const FName MapName, const FString MapPath, const FName MissionName,
-	                 const FName RegionName, const double TimeDelta, const FName WeatherName,
-	                 const FName DayTimeName, const TArray<FFactionAlliance> Alliances, const TMap<FName, int32>
-	                 FactionNamesToCapacities, const TMap<FName, FText> FactionNamesToShortTexts);
+	void CreateMatch(FECRMatchSettings MatchSettings);
+
+	/** Server travel to next match */
+	UFUNCTION(BlueprintCallable)
+	void TravelToNewMatch(FECRMatchSettings MatchSettings, FString NewLevel);
 
 	/** Find matches */
 	UFUNCTION(BlueprintCallable)
 	void FindMatches(const FString GameVersion = "", const FString MatchType = "",
 	                 const FString MatchMode = "", const FString MapName = "", const FString RegionName = "");
 
-	/** Find match by unique match id assigned by the game (used in parties custom implementation logic) */
+	/** Find match by unique match id assigned by external entity (e. g. matchmaking service) */
 	UFUNCTION(BlueprintCallable)
 	void FindMatchByUniqueInGameId(const FString GameVersion = "", const FString MatchId = "");
 
@@ -189,6 +210,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void JoinMatch(FBlueprintSessionResult Session);
 
+	/** Register or unregister player in match */
+	UFUNCTION(BlueprintCallable)
+	bool TogglePlayerRegistrationInMatch(FUniqueNetIdRepl Player, bool bRegister);
+
+	/** Updates default session (match) settings after modifying them in MatchCreationSettings property */
 	UFUNCTION(BlueprintCallable)
 	void UpdateSessionSettings();
 
@@ -212,6 +238,8 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FORCEINLINE bool GetDeprecatedIsLoggedIn() const { return bDeprecatedIsLoggedIn; }
 
+	// Identity functionality
+
 	/** Get player nickname */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetPlayerNickname();
@@ -228,6 +256,7 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetUserAuthToken();
 
+	/** Queues retrieving friends list from online sybsystem */
 	UFUNCTION(BlueprintCallable)
 	void QueueGettingFriendsList();
 
@@ -249,7 +278,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool GetIsInClientPartySession();
 
-	/** Get name of party member */
+	/** Get name of party member (WARNING: only works for myself or friends, better use custom attribute in member settings) */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetPartyMemberName(FUniqueNetIdRepl MemberId);
 
@@ -257,7 +286,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void KickPartyMember(FUniqueNetIdRepl MemberId);
 
-	/** Leave party */
+	/** Leave party (as client) */
 	UFUNCTION(BlueprintCallable)
 	void LeaveParty();
 
@@ -265,21 +294,42 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void InviteToParty(FUniqueNetIdRepl PlayerId);
 
+	/** Retrieves list of players in the party */
 	UFUNCTION(BlueprintCallable)
 	TArray<FUniqueNetIdRepl> GetPartyMembersList(bool bForClient);
 
+	/** Sets custom attribute on party */
 	UFUNCTION(BlueprintCallable)
 	bool SetPartyData(FString Key, FString Value);
 
+	/** Toggles whether party uses presence (online subsystem term) or not */
+	UFUNCTION(BlueprintCallable)
+	bool TogglePartyPresence(bool bWantPresence);
+
+	/** Sets party member (me only) custom attribute to value */
 	UFUNCTION(BlueprintCallable)
 	bool SetPartyMemberData(FString Key, FString Value, bool bForClient);
 
+	/** Sets party member (me only) custom attributes to values */
+	UFUNCTION(BlueprintCallable)
+	bool SetPartyMemberDataInBatch(TMap<FString, FString> Data, bool bForClient);
+
+	/** Returns JSON serialized party data */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetPartyData(bool bForClient);
 
+	/** Subscribing for delegates related to parties */
 	UFUNCTION(BlueprintCallable)
 	void StartListeningForPartyEvents();
 
+	// Title storage functionality
+
+	/** Queue file to be read from Title Storage */
+	UFUNCTION(BlueprintCallable)
+	void QueueReadTitleStorageFile(const FString& FileName);
+
+	/** Callback for file being read from Title Storage */
+	void HandleReadTitleStorageFileCompleted(bool bWasSuccessful, const FString& FileName); 
 public:
 	virtual void Init() override;
 

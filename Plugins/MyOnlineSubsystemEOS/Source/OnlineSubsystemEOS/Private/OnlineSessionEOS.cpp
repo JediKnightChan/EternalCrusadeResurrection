@@ -2826,6 +2826,21 @@ bool GetConnectStringFromSessionInfo_BEACONHACK(TSharedPtr<FOnlineSessionInfoEOS
 	return true;
 }
 
+int32 GetGamePortOverrideFromSessionSettings(const FOnlineSessionSettings& SessionSettings)
+{
+	int32 GameListenPortOverride = 0;
+	FString StringBuffer;
+	const bool bGetSuccess = SessionSettings.Get(FName(TEXT("PORT_OVERRIDE")), StringBuffer);
+	const bool bParseSuccess = LexTryParseString(GameListenPortOverride, *StringBuffer);
+
+	if (!bGetSuccess || !bParseSuccess)
+	{
+		GameListenPortOverride = 0;
+	}
+
+	return GameListenPortOverride;
+}
+
 bool FOnlineSessionEOS::GetResolvedConnectString(FName SessionName, FString& ConnectInfo, FName PortType)
 {
 	bool bSuccess = false;
@@ -2841,7 +2856,8 @@ bool FOnlineSessionEOS::GetResolvedConnectString(FName SessionName, FString& Con
 		}
 		else if (PortType == NAME_GamePort)
 		{
-			bSuccess = GetConnectStringFromSessionInfo(SessionInfo, ConnectInfo);
+			int32 GameListenPortOverride = GetGamePortOverrideFromSessionSettings(Session->SessionSettings);
+			bSuccess = GetConnectStringFromSessionInfo(SessionInfo, ConnectInfo, GameListenPortOverride);
 		}
 
 		if (!bSuccess)
@@ -2874,7 +2890,8 @@ bool FOnlineSessionEOS::GetResolvedConnectString(const FOnlineSessionSearchResul
 		}
 		else if (PortType == NAME_GamePort)
 		{
-			bSuccess = GetConnectStringFromSessionInfo(SessionInfo, ConnectInfo);
+			int32 GameListenPortOverride = GetGamePortOverrideFromSessionSettings(SearchResult.Session.SessionSettings);
+			bSuccess = GetConnectStringFromSessionInfo(SessionInfo, ConnectInfo, GameListenPortOverride);
 		}
 	}
 	
@@ -3570,6 +3587,12 @@ uint32_t FOnlineSessionEOS::GetLobbyMaxMembersFromSessionSettings(const FOnlineS
 
 uint32 FOnlineSessionEOS::CreateLobbySession(int32 HostingPlayerNum, FNamedOnlineSession* Session)
 {
+	if (!ISocketSubsystem::Get(EOS_SOCKETSUBSYSTEM))
+	{
+		UE_LOG_ONLINE_SESSION(Error, TEXT("[FOnlineSessionEOS::CreateLobbySession] EOS_SOCKETSUBSYSTEM not initialized"))
+		return ONLINE_FAIL;
+	}
+
 	check(Session != nullptr);
 
 	Session->SessionState = EOnlineSessionState::Creating;

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Curves/CurveFloat.h"
-
+#include "Physics/ECRCollisionChannels.h"
 #include "ECRWeaponInstance.h"
 
 #include "ECRRangedWeaponInstance.generated.h"
@@ -31,6 +31,11 @@ public:
 
 	void UpdateDebugVisualization();
 #endif
+
+	int32 GetTraceChannel() const
+	{
+		return TraceChannel;
+	}
 
 	int32 GetBulletsPerCartridge() const
 	{
@@ -140,15 +145,15 @@ protected:
 	bool bAllowFirstShotAccuracy = false;
 
 	// Multiplier for heat when getting spread based on current heat
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Spread|Fire Params", meta=(ForceUnits=x))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Spread|Fire Params", meta=(ForceUnits=x))
 	float HeatToSpreadMappingMultiplier = 1.0f;
 
 	// Multiplier when adding heat per shot
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Spread|Fire Params", meta=(ForceUnits=x))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Spread|Fire Params", meta=(ForceUnits=x))
 	float HeatPerShotMultiplier = 1.0f;
-	
+
 	// Multiplier applied by modifiers
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Spread|Player Params", meta=(ForceUnits=x))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Spread|Player Params", meta=(ForceUnits=x))
 	float SpreadAngleMultiplier_Modifier = 1.0f;
 
 	// Multiplier when in an aiming camera mode
@@ -201,6 +206,10 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Spread|Player Params")
 	float TransitionRate_JumpingOrFalling = 5.0f;
 
+	// Collision channel used for ranged weapon tracing (0 - ECR_TraceChannel_Weapon, 1 - ECR_TraceChannel_Weapon_Capsule, 2 - ECR_TraceChannel_Weapon_Multi)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weapon Config")
+	int32 TraceChannel = 0;
+
 	// Number of bullets to fire in a single cartridge (typically 1, but may be more for shotguns)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weapon Config")
 	int32 BulletsPerCartridge = 1;
@@ -250,6 +259,7 @@ protected:
 	// Duration multiplier for raising weapon before shooting (for montage playing)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weapon Config", meta=(ForceUnits=x))
 	float WeaponUpDurationMultiplier = 1.0f;
+
 private:
 	// The current heat
 	UPROPERTY()

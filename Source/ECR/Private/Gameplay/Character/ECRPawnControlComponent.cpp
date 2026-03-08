@@ -268,7 +268,7 @@ void UECRPawnControlComponent::InitializePlayerInput(UInputComponent* PlayerInpu
 		}
 	}
 
-	if (ensure(!bReadyToBindInputs))
+	if (!bReadyToBindInputs)
 	{
 		bReadyToBindInputs = true;
 	}

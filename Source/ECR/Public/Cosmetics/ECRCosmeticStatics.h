@@ -40,6 +40,12 @@ public:
 	static TSubclassOf<UAnimInstance> SelectBestAnimInstance(const FECRAnimInstanceSelectionSet Set,
 	                                                         FGameplayTagContainer CosmeticTags);
 
+	// Choose the best anim layer given the tags
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static TSubclassOf<UAnimInstance> SelectBestAnimLayer(const FECRAnimLayerSelectionSet Set,
+															 FGameplayTagContainer CosmeticTags);
+	
+
 	// Choose the best soft texture given the tags
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static TSoftObjectPtr<UTexture2D> SelectBestSoftTexture(const FECRSoftTexture2DSelectionSet Set,

@@ -42,6 +42,34 @@ struct FECRReplicatedAcceleration
 	int8 AccelZ = 0; // Raw Z accel rate component, quantized to represent [-MaxAcceleration, MaxAcceleration]
 };
 
+/** The type we use to send FastShared movement updates. */
+USTRUCT()
+struct FSharedRepMovement
+{
+	GENERATED_BODY()
+
+	FSharedRepMovement();
+
+	bool FillForCharacter(ACharacter* Character);
+	bool Equals(const FSharedRepMovement& Other, ACharacter* Character) const;
+
+	bool NetSerialize(FArchive& Ar, class UPackageMap* Map, bool& bOutSuccess);
+
+	UPROPERTY(Transient)
+	FRepMovement RepMovement;
+
+	UPROPERTY(Transient)
+	float RepTimeStamp = 0.0f;
+
+	UPROPERTY(Transient)
+	uint8 RepMovementMode = 0;
+
+	UPROPERTY(Transient)
+	bool bProxyIsJumpForceApplied = false;
+
+	UPROPERTY(Transient)
+	bool bIsCrouched = false;
+};
 
 /**
  * AECRCharacter
@@ -85,7 +113,18 @@ public:
 		return OrientationToMovementOrientedRequirementAlpha;
 	}
 
+	/** Function for dirty fix of Root Motion Montages desync for sim proxies: each tick, when playing root motion,
+	 * we'll check if distance from this transform exceeds threshold, then correct it */
+	UFUNCTION(BlueprintPure)
+	FORCEINLINE FTransform GetLatestReplicatedTransform() const
+	{
+		return FTransform{GetReplicatedMovement().Rotation, GetReplicatedMovement().Location};
+	}
+
 	void ToggleCrouch();
+
+	UFUNCTION(BlueprintCallable)
+	void GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySets) const;
 
 	//~AActor interface
 	virtual void PreInitializeComponents() override;
@@ -105,6 +144,17 @@ public:
 	virtual void GatherInteractionOptions(const FInteractionQuery& InteractQuery,
 	                                      FInteractionOptionBuilder& OptionBuilder) override;
 	//~End of IInteractableTarget interface
+
+	/** RPCs that is called on frames when default property replication is skipped. This replicates a single movement update to everyone. */
+	UFUNCTION(NetMulticast, unreliable)
+	void FastSharedMovementReplication(const FSharedRepMovement& SharedRepMovement);
+
+	// Last FSharedRepMovement we sent, to avoid sending repeatedly.
+	FSharedRepMovement LastSharedReplication;
+	// Last time we performed a shared rep send
+	float LastSharedReplicationTimestamp = 0.0f;
+
+	virtual bool UpdateSharedReplication();
 protected:
 	virtual void OnAbilitySystemInitialized();
 	virtual void OnAbilitySystemUninitialized();
@@ -118,7 +168,6 @@ protected:
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
 	void InitializeGameplayTags();
-	void GrantAbilitySets(TArray<UECRAbilitySet*> AbilitySets) const;
 
 	virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
 
@@ -168,7 +217,7 @@ private:
 
 	static const FName NAME_ECRAbilityReady;
 
-	UPROPERTY(ReplicatedUsing = OnRep_PawnData, EditAnywhere, BlueprintReadOnly,
+	UPROPERTY(ReplicatedUsing = OnRep_PawnData, EditAnywhere, BlueprintReadWrite,
 		meta=(AllowPrivateAccess="true", ExposeOnSpawn="true"))
 	const UECRPawnData* PawnData;
 

@@ -12,7 +12,7 @@ with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/ItemM
 
 # mode = "weapon"
 mode = "accessory_or_weapon_mod"
-
+do_clicks = True
 
 def move_and_click(x, y, button="left", ctrl=False, shift=False, alt=False):
     """
@@ -27,6 +27,9 @@ def move_and_click(x, y, button="left", ctrl=False, shift=False, alt=False):
     """
     # Move the mouse to the position
     pyautogui.moveTo(x, y, duration=0)
+
+    if not do_clicks:
+        return
 
     # Press modifier keys if needed
     if ctrl:

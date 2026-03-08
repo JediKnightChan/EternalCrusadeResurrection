@@ -50,6 +50,13 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Third Person")
 	float CrouchOffsetBlendMultiplier = 5.0f;
 
+	// Interpolation speed for location
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Third Person")
+	float InterpSpeedLocation = 20.0f;
+
+	// Interpolation speed for rotation
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Third Person")
+	float InterpSpeedRotation = 20.0f;
 protected:
 	void SetTargetCrouchOffset(FVector NewTargetOffset);
 	void UpdateCrouchOffset(float DeltaTime);

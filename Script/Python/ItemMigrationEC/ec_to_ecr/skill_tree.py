@@ -35,7 +35,7 @@ def convert_csv_to_ingame_csv(in_csv, out_csv, faction_dir):
         elif "classnode" in row.get("Progression").lower():
             node_type = "ClassUnlock"
         else:
-            node_type = "TimeUnlock"
+            raise ValueError("Couldn't determine node type")
 
         rel_texture_fp = row.get("Progression")
         if isinstance(rel_texture_fp, str):

@@ -67,7 +67,8 @@ bool UECRGameplayAbility_RangedWeapon::CanActivateAbility(const FGameplayAbility
 
 	if (bResult)
 	{
-		const FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->FindAbilitySpecFromHandle(Handle);
+		const FGameplayAbilitySpec* AbilitySpec = ActorInfo->AbilitySystemComponent.Get()->
+		                                                     FindAbilitySpecFromHandle(Handle);
 		if (GetWeaponInstance(AbilitySpec->SourceObject.Get()) == nullptr)
 		{
 			UE_LOG(LogECRAbilitySystem, Error,
@@ -123,6 +124,20 @@ void UECRGameplayAbility_RangedWeapon::AddAdditionalTraceIgnoreActors(FCollision
 ECollisionChannel UECRGameplayAbility_RangedWeapon::DetermineTraceChannel(
 	FCollisionQueryParams& TraceParams, bool bIsSimulated) const
 {
+	if (const UECRRangedWeaponInstance* Weapon = GetWeaponInstance())
+	{
+		switch (Weapon->GetTraceChannel())
+		{
+		case 0:
+			return ECR_TraceChannel_Weapon;
+		case 1:
+			return ECR_TraceChannel_Weapon_Capsule;
+		case 2:
+			return ECR_TraceChannel_Weapon_Multi;
+		default:
+			return ECR_TraceChannel_Weapon;
+		}
+	}
 	return ECR_TraceChannel_Weapon;
 }
 
@@ -290,8 +305,15 @@ FTransform UECRGameplayAbility_RangedWeapon::GetTargetingTransform(APawn* Source
 	if (bFoundFocus && ((Source == EECRAbilityTargetingSource::PawnTowardsFocus) || (Source ==
 		EECRAbilityTargetingSource::WeaponTowardsFocus)))
 	{
-		// Return a rotator pointing at the focal point from the source
-		return FTransform((FocalLoc - SourceLoc).Rotation(), SourceLoc);
+		FVector FinalFocalLoc = FocalLoc;
+
+		// Apply offset ONLY for AI
+		if (Cast<AAIController>(Controller))
+		{
+			FinalFocalLoc += GetBotFocusTargetOffset();
+		}
+
+		return FTransform((FinalFocalLoc - SourceLoc).Rotation(), SourceLoc);
 	}
 
 	// If we got here, either we don't have a camera or we don't want to use it, either way go forward
@@ -397,9 +419,9 @@ void UECRGameplayAbility_RangedWeapon::PerformLocalTargeting(OUT TArray<FHitResu
 			AvatarPawn, TargetingSource);
 		InputData.StartTrace = TargetTransform.GetTranslation();
 
-		if (TargetingSource == EECRAbilityTargetingSource::CameraTowardsFocus || TargetingSource ==
+		if (!AvatarPawn->IsBotControlled() & (TargetingSource == EECRAbilityTargetingSource::CameraTowardsFocus || TargetingSource ==
 			EECRAbilityTargetingSource::PawnTowardsFocus || TargetingSource ==
-			EECRAbilityTargetingSource::WeaponTowardsFocus)
+			EECRAbilityTargetingSource::WeaponTowardsFocus))
 		{
 			// Aim to point where camera hit.
 			InputData.EndAim = GetSingleCameraTraceHitLocation(AvatarPawn, WeaponData);
@@ -442,8 +464,9 @@ void UECRGameplayAbility_RangedWeapon::TraceBulletsInCartridge(const FRangedWeap
 
 		const float HalfSpreadAngleInRadians = FMath::DegreesToRadians(ActualSpreadAngle * 0.5f);
 
-		const FVector BulletDir = UECRGameplayBlueprintLibrary::VRandConeNormalDistribution(InputData.AimDir, HalfSpreadAngleInRadians,
-		                                                      WeaponData->GetSpreadExponent());
+		const FVector BulletDir = UECRGameplayBlueprintLibrary::VRandConeNormalDistribution(
+			InputData.AimDir, HalfSpreadAngleInRadians,
+			WeaponData->GetSpreadExponent());
 
 		const FVector EndTrace = InputData.StartTrace + (BulletDir * WeaponData->GetMaxDamageRange());
 		FVector HitLocation = EndTrace;
@@ -668,4 +691,9 @@ void UECRGameplayAbility_RangedWeapon::StartRangedWeaponTargeting()
 
 	// Process the target data immediately
 	OnTargetDataReadyCallback(TargetData, FGameplayTag());
+}
+
+FVector UECRGameplayAbility_RangedWeapon::GetBotFocusTargetOffset_Implementation() const
+{
+	return FVector::Zero();
 }

@@ -60,10 +60,8 @@ void AECRGameMode::HandleMatchHasStarted()
 FString AECRGameMode::InitNewPlayer(APlayerController* NewPlayerController, const FUniqueNetIdRepl& UniqueId,
                                     const FString& Options, const FString& Portal)
 {
-	// Setting player display name according to options
-	const FString PlayerName = UGameplayStatics::ParseOption(Options, TEXT("DisplayName"));
-	ControllersToDisplayNames.Add(NewPlayerController, PlayerName);
-
+	// Storing options for further blueprint usage
+	ControllersToJoinOptions.Add(NewPlayerController, Options);
 	return Super::InitNewPlayer(NewPlayerController, UniqueId, Options, Portal);
 }
 

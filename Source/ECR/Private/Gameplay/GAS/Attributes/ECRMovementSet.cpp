@@ -25,11 +25,9 @@ void UECRMovementSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	// These attributes are important for everyone (for movement prediction)
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, RootMotionScale, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, WalkSpeed, COND_None, REPNOTIFY_Always);
-
 	// These attributes are important only for owner
+		DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, RootMotionScale, COND_OwnerOnly, REPNOTIFY_Always);
+    	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, WalkSpeed, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, Stamina, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, MaxStamina, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UECRMovementSet, StaminaRegenRate, COND_OwnerOnly, REPNOTIFY_Always);

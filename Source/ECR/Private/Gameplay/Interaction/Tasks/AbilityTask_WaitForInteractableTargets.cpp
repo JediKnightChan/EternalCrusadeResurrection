@@ -48,8 +48,8 @@ void UAbilityTask_WaitForInteractableTargets::LineOrSweepTrace(FHitResult& OutHi
 void UAbilityTask_WaitForInteractableTargets::AimWithPlayerController(const AActor* InSourceActor,
                                                                       FCollisionQueryParams Params,
                                                                       const FVector& TraceStart, float MaxRange,
-                                                                      float SweepRadius, FVector& OutTraceEnd,
-                                                                      bool bIgnorePitch) const
+                                                                      float SweepRadius, bool bAimWithCamera,
+                                                                      FVector& OutTraceEnd, bool bIgnorePitch) const
 {
 	if (!Ability) // Server and launching client only
 	{
@@ -60,6 +60,12 @@ void UAbilityTask_WaitForInteractableTargets::AimWithPlayerController(const AAct
 	if (AvatarPawn && AvatarPawn->Controller)
 	{
 		TObjectPtr<AController> PC = AvatarPawn->Controller;
+
+		if (!bAimWithCamera)
+		{
+			OutTraceEnd = AvatarPawn->GetActorLocation() + (AvatarPawn->GetActorForwardVector() * MaxRange);
+			return;
+		}
 
 		FVector ViewStart;
 		FRotator ViewRot;

@@ -132,8 +132,12 @@
 			"Name": "SimpleActorPooling",
 			"Enabled": true
 		},
-                {
+		{
 			"Name": "DragonIKPlugin",
+			"Enabled": true
+		},
+		{
+			"Name": "ReplicationGraph",
 			"Enabled": true
 		}
 	]

@@ -48,6 +48,9 @@ protected:
 	/** Send message about damage to other subsystems */
 	void SendDamageMessage(const FGameplayEffectModCallbackData& DamageData) const;
 
+	/** Send message about healing to other subsystems */
+	void SendHealingMessage(const FGameplayEffectModCallbackData& DamageData) const;
+
 	/** Return if character is ready ti die */
 	virtual bool GetIsReadyToDie() const;
 

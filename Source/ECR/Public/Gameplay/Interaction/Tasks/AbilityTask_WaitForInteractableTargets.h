@@ -40,7 +40,7 @@ protected:
 	                      float SweepRadius, const FCollisionQueryParams Params) const;
 
 	void AimWithPlayerController(const AActor* InSourceActor, FCollisionQueryParams Params, const FVector& TraceStart,
-	                             float MaxRange, float SweepRadius, FVector& OutTraceEnd,
+	                             float MaxRange, float SweepRadius, bool bAimWithCamera, FVector& OutTraceEnd, 
 	                             bool bIgnorePitch = false) const;
 
 	static bool ClipCameraRayToAbilityRange(FVector CameraLocation, FVector CameraDirection, FVector AbilityCenter,

@@ -19,7 +19,7 @@ UAbilityTask_WaitForInteractableTargets_SingleLineTrace*
 UAbilityTask_WaitForInteractableTargets_SingleLineTrace::WaitForInteractableTargets_SingleLineTrace(
 	UGameplayAbility* OwningAbility, FInteractionQuery InteractionQuery,
 	FGameplayAbilityTargetingLocationInfo StartLocation, float InteractionScanRange, float InteractionScanRate,
-	float SweepRadius, bool bShowDebug)
+	float SweepRadius, bool bAimWithCamera, bool bShowDebug)
 {
 	UAbilityTask_WaitForInteractableTargets_SingleLineTrace* MyObj = NewAbilityTask<
 		UAbilityTask_WaitForInteractableTargets_SingleLineTrace>(OwningAbility);
@@ -28,6 +28,7 @@ UAbilityTask_WaitForInteractableTargets_SingleLineTrace::WaitForInteractableTarg
 	MyObj->SweepRadius = SweepRadius;
 	MyObj->StartLocation = StartLocation;
 	MyObj->InteractionQuery = InteractionQuery;
+	MyObj->bAimWithCamera = bAimWithCamera;
 	MyObj->bShowDebug = bShowDebug;
 
 	return MyObj;
@@ -69,7 +70,7 @@ void UAbilityTask_WaitForInteractableTargets_SingleLineTrace::PerformTrace()
 
 	FVector TraceStart = StartLocation.GetTargetingTransform().GetLocation();
 	FVector TraceEnd;
-	AimWithPlayerController(AvatarActor, Params, TraceStart, InteractionScanRange, SweepRadius, OUT TraceEnd);
+	AimWithPlayerController(AvatarActor, Params, TraceStart, InteractionScanRange, SweepRadius, bAimWithCamera, OUT TraceEnd);
 
 	FHitResult OutHitResult;
 	// Trace
