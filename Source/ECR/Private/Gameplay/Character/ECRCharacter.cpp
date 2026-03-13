@@ -173,6 +173,83 @@ void AECRCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, PawnData, SharedParams);
 }
 
+void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker)
+{
+	// In this method fix for root motion desync is implemented from https://github.com/EpicGames/UnrealEngine/commit/fe450c1057b2da0ff5a6d65936a4e3778ce1aa40
+	APawn::PreReplication(ChangedPropertyTracker);
+
+	if (GetCharacterMovement()->CurrentRootMotion.HasActiveRootMotionSources() || IsPlayingNetworkedRootMotionMontage())
+	{
+		const FAnimMontageInstance* RootMotionMontageInstance = GetRootMotionAnimMontageInstance();
+
+		RepRootMotion.bIsActive = true;
+		// Is position stored in local space?
+		RepRootMotion.bRelativePosition = BasedMovement.HasRelativeLocation();
+		RepRootMotion.bRelativeRotation = BasedMovement.HasRelativeRotation();
+		RepRootMotion.Location			= RepRootMotion.bRelativePosition ? BasedMovement.Location : FRepMovement::RebaseOntoZeroOrigin(GetActorLocation(), GetWorld()->OriginLocation);
+		RepRootMotion.Rotation			= RepRootMotion.bRelativeRotation ? BasedMovement.Rotation : GetActorRotation();
+		RepRootMotion.MovementBase		= BasedMovement.MovementBase;
+		RepRootMotion.MovementBaseBoneName = BasedMovement.BoneName;
+		if (RootMotionMontageInstance)
+		{
+			RepRootMotion.AnimMontage		= RootMotionMontageInstance->Montage;
+			RepRootMotion.Position			= RootMotionMontageInstance->GetPosition();
+		}
+		else
+		{
+			RepRootMotion.AnimMontage = nullptr;
+		}
+
+		RepRootMotion.AuthoritativeRootMotion = GetCharacterMovement()->CurrentRootMotion;
+		RepRootMotion.Acceleration = GetCharacterMovement()->GetCurrentAcceleration();
+		RepRootMotion.LinearVelocity = GetCharacterMovement()->Velocity;
+
+		DOREPLIFETIME_ACTIVE_OVERRIDE_FAST( ACharacter, RepRootMotion, true );
+	}
+	else
+	{
+		const bool bWasRootMotionPreviouslyActive = RepRootMotion.bIsActive;
+		RepRootMotion.Clear();
+
+		// Replicate RepRootMotion one last time when root motion ends, so that clients see the change.
+		// Then deactivate subsequent property comparisons and replication updates until root motion starts again.
+		DOREPLIFETIME_ACTIVE_OVERRIDE_FAST( ACharacter, RepRootMotion, bWasRootMotionPreviouslyActive );
+	}
+
+	bProxyIsJumpForceApplied = (JumpForceTimeRemaining > 0.0f);
+	ReplicatedMovementMode = GetCharacterMovement()->PackNetworkMovementMode();	
+	ReplicatedBasedMovement = BasedMovement;
+
+	// Optimization: only update and replicate these values if they are actually going to be used.
+	if (BasedMovement.HasRelativeLocation())
+	{
+		// When velocity becomes zero, force replication so the position is updated to match the server (it may have moved due to simulation on the client).
+		ReplicatedBasedMovement.bServerHasVelocity = !GetCharacterMovement()->Velocity.IsZero();
+
+		// Make sure absolute rotations are updated in case rotation occurred after the base info was saved.
+		if (!BasedMovement.HasRelativeRotation())
+		{
+			ReplicatedBasedMovement.Rotation = GetActorRotation();
+		}
+	}
+
+	// Save bandwidth by not replicating this value unless it is necessary, since it changes every update.
+	if ((GetCharacterMovement()->NetworkSmoothingMode == ENetworkSmoothingMode::Linear) || GetCharacterMovement()->bNetworkAlwaysReplicateTransformUpdateTimestamp)
+	{
+		ReplicatedServerLastTransformUpdateTimeStamp = GetCharacterMovement()->GetServerLastTransformUpdateTimeStamp();
+	}
+	else
+	{
+		ReplicatedServerLastTransformUpdateTimeStamp = 0.f;
+	}
+}
+
+void AECRCharacter::GetReplicatedCustomConditionState(FCustomPropertyConditionState& OutActiveState) const
+{
+	// Ignore condition for RepRootMotion replication from ACharacter
+	APawn::GetReplicatedCustomConditionState(OutActiveState);
+}
+
 void AECRCharacter::GatherInteractionOptions(const FInteractionQuery& InteractQuery,
                                              FInteractionOptionBuilder& OptionBuilder)
 {

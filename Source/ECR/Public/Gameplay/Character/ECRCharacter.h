@@ -23,25 +23,6 @@ class UECRCameraComponent;
 class UECRPawnData;
 class UECRAbilitySet;
 
-
-/**
- * FECRReplicatedAcceleration: Compressed representation of acceleration
- */
-USTRUCT()
-struct FECRReplicatedAcceleration
-{
-	GENERATED_BODY()
-
-	UPROPERTY()
-	uint8 AccelXYRadians = 0; // Direction of XY accel component, quantized to represent [0, 2*pi]
-
-	UPROPERTY()
-	uint8 AccelXYMagnitude = 0; //Accel rate of XY component, quantized to represent [0, MaxAcceleration]
-
-	UPROPERTY()
-	int8 AccelZ = 0; // Raw Z accel rate component, quantized to represent [-MaxAcceleration, MaxAcceleration]
-};
-
 /** The type we use to send FastShared movement updates. */
 USTRUCT()
 struct FSharedRepMovement
@@ -133,6 +114,8 @@ public:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void Reset() override;
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	virtual void PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker) override;
+	virtual void GetReplicatedCustomConditionState(FCustomPropertyConditionState& OutActiveState) const override;
 	//~End of AActor interface
 
 	// Interactions

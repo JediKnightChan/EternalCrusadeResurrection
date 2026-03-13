@@ -558,16 +558,16 @@ void UECRReplicationGraph::InitGlobalActorClassSettings()
 
 	static TArray<UReplicationGraphNode_DynamicSpatialFrequency::FSpatializationZone> Zones;
 	Zones.Reset();
-	Zones.Emplace(   0.00f, 0.05f, 0.25f,  0.f,       0.f,                20.f,      5.f,           AssumedTickRate);	// Behind viewer
-	Zones.Emplace(   0.71f, 0.10f, 0.50f,  0.f,       0.f,                20.f,      10.f,           AssumedTickRate);	// In front but not quite in FOV
-	Zones.Emplace(   1.00f, 0.20f, 0.75f,  0.f,       0.f,               20.f,      15.f,          AssumedTickRate);	// Directly in viewer's FOV
+	Zones.Emplace(   0.00f, 0.10f, 0.50f,  0.f,       0.f,                7.f,      1.f,           AssumedTickRate);	// Behind viewer
+	Zones.Emplace(   0.71f, 0.10f, 0.50f,  0.f,       0.f,                7.f,      2.f,           AssumedTickRate);	// In front but not quite in FOV
+	Zones.Emplace(   1.00f, 0.50f, 1.00f,  0.f,       0.f,               7.f,      3.f,          AssumedTickRate);	// Directly in viewer's FOV
 	Settings.ZoneSettings = Zones;
 
 	static TArray<UReplicationGraphNode_DynamicSpatialFrequency::FSpatializationZone> Zones_NoFastShared;
 	Zones_NoFastShared.Reset();
-	Zones_NoFastShared.Emplace(   0.00f, 0.05f, 0.25f,   20.f,      5.f,               0.f,        0.f,          AssumedTickRate);	// Behind viewer
-	Zones_NoFastShared.Emplace(   0.71f, 0.10f, 0.50f,  20.f,      10.f,               0.f,        0.f,          AssumedTickRate);	// In front but not quite in FOV
-	Zones_NoFastShared.Emplace(   1.00f, 0.20f, 0.75f,  20.f,      15.f,               0.f,        0.f,          AssumedTickRate);	// Directly in viewer's FOV
+	Zones_NoFastShared.Emplace(   0.00f, 0.10f, 0.50f,   7.f,      1.f,               0.f,        0.f,          AssumedTickRate);	// Behind viewer
+	Zones_NoFastShared.Emplace(   0.71f, 0.10f, 0.50f,  7.f,      2.f,               0.f,        0.f,          AssumedTickRate);	// In front but not quite in FOV
+	Zones_NoFastShared.Emplace(   1.00f, 0.50f, 1.00f,  7.f,      3.f,               0.f,        0.f,          AssumedTickRate);	// Directly in viewer's FOV
 	Settings.ZoneSettings_NonFastSharedActors = Zones_NoFastShared;
 
 	Settings.MaxBitsPerFrame = (int32)((float)(ECR::RepGraph::TargetKBytesSecFastSharedPath * 1024 * 8) /
