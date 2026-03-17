@@ -154,7 +154,7 @@ namespace ECR::RepGraph
 			if (FParse::Value(FCommandLine::Get(), TEXT("repgraph="), CmdEnableReplicationGraphOverride))
 			{
 				UE_LOG(LogECRRepGraph, Display, TEXT("Received override for enabling replication graph %d"), CmdEnableReplicationGraphOverride);
-				bEnableReplicationGraph = bEnableReplicationGraph != 0;
+				bEnableReplicationGraph = CmdEnableReplicationGraphOverride != 0;
 			}
 
 			if (!bEnableReplicationGraph)
