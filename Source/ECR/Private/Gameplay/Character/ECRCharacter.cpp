@@ -171,6 +171,7 @@ void AECRCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 	FDoRepLifetimeParams SharedParams;
 	SharedParams.bIsPushBased = true;
 	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, PawnData, SharedParams);
+	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, MainAnimLayer, SharedParams);
 }
 
 void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker)
@@ -208,7 +209,7 @@ void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTr
 	}
 	else
 	{
-		const bool bWasRootMotionPreviouslyActive = RepRootMotion.bIsActive;
+		bWasRootMotionPreviouslyActive = RepRootMotion.bIsActive;
 		RepRootMotion.Clear();
 
 		// Replicate RepRootMotion one last time when root motion ends, so that clients see the change.
@@ -248,6 +249,8 @@ void AECRCharacter::GetReplicatedCustomConditionState(FCustomPropertyConditionSt
 {
 	// Ignore condition for RepRootMotion replication from ACharacter
 	APawn::GetReplicatedCustomConditionState(OutActiveState);
+
+	DOREPCUSTOMCONDITION_ACTIVE_FAST(ACharacter, RepRootMotion, GetCharacterMovement()->CurrentRootMotion.HasActiveRootMotionSources() || IsPlayingNetworkedRootMotionMontage() || bWasRootMotionPreviouslyActive);
 }
 
 void AECRCharacter::GatherInteractionOptions(const FInteractionQuery& InteractQuery,
@@ -414,6 +417,12 @@ bool AECRCharacter::HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagC
 	}
 
 	return false;
+}
+
+void AECRCharacter::SetMainAnimLayer(TSubclassOf<UAnimInstance> InLayer)
+{
+	MainAnimLayer = InLayer;
+	MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, MainAnimLayer, this);
 }
 
 void AECRCharacter::FellOutOfWorld(const class UDamageType& dmgType)
@@ -652,6 +661,17 @@ void AECRCharacter::InitPawnDataAndAbilities()
 
 void AECRCharacter::OnRep_PawnData()
 {
+}
+
+void AECRCharacter::OnRep_MainAnimLayer()
+{
+	if (GetLocalRole() == ROLE_SimulatedProxy)
+	{
+		if (USkeletalMeshComponent* MyMesh = GetMesh())
+		{
+			MyMesh->LinkAnimClassLayers(MainAnimLayer);
+		}
+	}
 }
 
 

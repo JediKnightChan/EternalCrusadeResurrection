@@ -87,6 +87,8 @@ public:
 	virtual bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override;
 	virtual bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override;
 
+	void SetMainAnimLayer(TSubclassOf<UAnimInstance> InLayer);
+
 	FORCEINLINE float GetGoingBackwardMultiplier() const { return GoingBackwardMultiplier; }
 	FORCEINLINE float GetGoingSidewaysMultiplier() const { return GoingSidewaysMultiplier; }
 	FORCEINLINE float GetOrientationToMovementOrientedRequirementAlpha() const
@@ -137,7 +139,10 @@ public:
 	// Last time we performed a shared rep send
 	float LastSharedReplicationTimestamp = 0.0f;
 
+	bool bWasRootMotionPreviouslyActive;
+
 	virtual bool UpdateSharedReplication();
+
 protected:
 	virtual void OnAbilitySystemInitialized();
 	virtual void OnAbilitySystemUninitialized();
@@ -204,6 +209,9 @@ private:
 		meta=(AllowPrivateAccess="true", ExposeOnSpawn="true"))
 	const UECRPawnData* PawnData;
 
+	UPROPERTY(ReplicatedUsing = OnRep_MainAnimLayer)
+	TSubclassOf<UAnimInstance> MainAnimLayer;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
 	float StartedFallingTime;
 
@@ -225,4 +233,7 @@ private:
 private:
 	UFUNCTION()
 	void OnRep_PawnData();
+
+	UFUNCTION()
+	void OnRep_MainAnimLayer();
 };

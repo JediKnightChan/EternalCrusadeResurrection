@@ -44,7 +44,7 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category=Animation)
 	UAnimMontage* GetVictimExecutionMontage(AActor* TargetActor) const;
 
-	void LinkAnimLayer() const;
+	void LinkAnimLayer();
 
 	//~IECRAbilitySourceInterface interface
 	virtual float GetDistanceAttenuation(float Distance, const FGameplayTagContainer* SourceTags = nullptr,

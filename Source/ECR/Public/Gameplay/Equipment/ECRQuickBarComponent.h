@@ -85,7 +85,7 @@ private:
 	friend UECRQuickBarComponent;
 
 private:
-	// Replicated list of channels
+	// List of channels
 	UPROPERTY()
 	TArray<FECRQuickBarChannel> Channels;
 
@@ -145,7 +145,7 @@ public:
 	UECRInventoryItemInstance* RemoveItemFromSlot(FName ChannelName, int32 SlotIndex);
 
 private:
-	UPROPERTY(Replicated)
+	UPROPERTY()
 	FECRQuickBar ChannelData;
 };
 

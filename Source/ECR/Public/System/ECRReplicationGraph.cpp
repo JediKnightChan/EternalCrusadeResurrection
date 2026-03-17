@@ -703,7 +703,7 @@ void UECRReplicationGraph::InitGlobalGraphNodes()
 	// -----------------------------------------------
 	//	Always Relevant (to everyone) Actors
 	// -----------------------------------------------
-	AlwaysRelevantNode = CreateNewNode<UReplicationGraphNode_ActorList>();
+	AlwaysRelevantNode = CreateNewNode<UReplicationGraphNode_ActorListFrequencyBuckets>();
 	AddGlobalGraphNode(AlwaysRelevantNode);
 
 	PlayerStatesNode = CreateNewNode<UReplicationGraphNode_ActorListFrequencyBuckets>();

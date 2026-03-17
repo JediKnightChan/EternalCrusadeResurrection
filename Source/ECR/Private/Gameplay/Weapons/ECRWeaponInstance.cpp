@@ -17,20 +17,24 @@ UECRWeaponInstance::UECRWeaponInstance(const FObjectInitializer& ObjectInitializ
 	ArmorPenetration = 100.0f;
 }
 
-void UECRWeaponInstance::LinkAnimLayer() const
+void UECRWeaponInstance::LinkAnimLayer()
 {
 	if (const UECRPawnComponent_CharacterParts* CosmeticComponent =
 		UECRCosmeticStatics::GetPawnCustomizationComponentFromActor(GetPawn()))
 	{
 		const TSubclassOf<UAnimInstance> AnimClass = PickBestAnimLayer(
 			CosmeticComponent->GetCombinedTags(FECRGameplayTags::Get().Cosmetic_AnimStyle));
-		const AECRCharacter* Character = Cast<AECRCharacter>(GetPawn());
+		AECRCharacter* Character = Cast<AECRCharacter>(GetPawn());
 
 		if (AnimClass && Character)
 		{
 			if (USkeletalMeshComponent* Mesh = Character->GetMesh())
 			{
 				Mesh->LinkAnimClassLayers(AnimClass);
+				if (Character->HasAuthority())
+				{
+					Character->SetMainAnimLayer(AnimClass);
+				}
 			}
 		}
 	}

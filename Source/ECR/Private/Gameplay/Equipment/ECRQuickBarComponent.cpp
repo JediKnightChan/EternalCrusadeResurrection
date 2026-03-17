@@ -164,7 +164,7 @@ UECRQuickBarComponent::UECRQuickBarComponent(const FObjectInitializer& ObjectIni
 	Super(ObjectInitializer),
 	ChannelData(this)
 {
-	SetIsReplicatedByDefault(true);
+	SetIsReplicatedByDefault(false);
 }
 
 TArray<FName> UECRQuickBarComponent::GetChannels() const
@@ -387,11 +387,4 @@ void UECRQuickBarComponent::SetActiveSlotIndex_Implementation(FName ChannelName,
 		ChannelData.EquipItemInActiveSlot(Channel);
 		ChannelData.MarkItemDirty(Channel);
 	}
-}
-
-void UECRQuickBarComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
-{
-	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
-	DOREPLIFETIME(ThisClass, ChannelData);
 }

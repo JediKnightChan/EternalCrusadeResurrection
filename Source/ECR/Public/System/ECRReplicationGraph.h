@@ -34,7 +34,7 @@ public:
 	TObjectPtr<UReplicationGraphNode_GridSpatialization2D> GridNode;
 
 	UPROPERTY()
-	TObjectPtr<UReplicationGraphNode_ActorList> AlwaysRelevantNode;
+	TObjectPtr<UReplicationGraphNode_ActorListFrequencyBuckets> AlwaysRelevantNode;
 
 	UPROPERTY()
 	TObjectPtr<UReplicationGraphNode_ActorListFrequencyBuckets> PlayerStatesNode;
