@@ -18,6 +18,7 @@
 #include "Net/UnrealNetwork.h"
 #include "TimerManager.h"
 #include "Components/GameFrameworkComponentManager.h"
+#include "Engine/ActorChannel.h"
 #include "Gameplay/ECRGameState.h"
 #include "Gameplay/Character/ECRPawnData.h"
 #include "Gameplay/GAS/ECRAbilitySet.h"
@@ -119,6 +120,9 @@ void AECRCharacter::PostInitializeComponents()
 
 	check(AbilitySystemComponent);
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+
+	ActiveGameplayCues.bMinimalReplication = false;
+	ActiveGameplayCues.SetOwner(AbilitySystemComponent);	
 }
 
 void AECRCharacter::BeginPlay()
@@ -172,6 +176,53 @@ void AECRCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 	SharedParams.bIsPushBased = true;
 	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, PawnData, SharedParams);
 	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, MainAnimLayer, SharedParams);
+	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, RepAnimMontageInfo, SharedParams);
+	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, ActiveGameplayCues, SharedParams);
+
+	// Replicate MinimalAscState only to sim proxies
+	FDoRepLifetimeParams AscReplicationParams;
+	AscReplicationParams.bIsPushBased = true;
+	AscReplicationParams.Condition = COND_SimulatedOnly;
+	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, MinimalAscState, AscReplicationParams);
+
+}
+
+bool AECRCharacter::ReplicateSubobjects(UActorChannel* Channel, FOutBunch* Bunch, FReplicationFlags* RepFlags)
+{
+	check(Channel);
+	check(Bunch);
+	check(RepFlags);
+
+	bool WroteSomething = false;
+	for (UActorComponent* ActorComp : ReplicatedComponents)
+	{
+		if (ActorComp && ActorComp->GetIsReplicated())
+		{
+			// Replicate everything except ASC for simulated proxies 
+			if (ActorComp != AbilitySystemComponent || RepFlags->bNetOwner || !AbilitySystemComponent->
+				ReplicationProxyEnabled)
+			{
+				UActorChannel::SetCurrentSubObjectOwner(ActorComp);
+				WroteSomething |= ActorComp->ReplicateSubobjects(Channel, Bunch, RepFlags);
+				// Lets the component add subobjects before replicating its own properties.
+				UActorChannel::SetCurrentSubObjectOwner(this);
+				WroteSomething |= Channel->ReplicateSubobject(ActorComp, *Bunch, *RepFlags);
+				// (this makes those subobjects 'supported', and from here on those objects may have reference replicated)	
+			}
+			else
+			{
+				// For sim proxies, use MinimalAscState to replicate attributes and tags
+				MinimalAscState.FillForCharacter(this);
+				if (!MinimalAscState.Equals(LastSharedAscState))
+				{
+					LastSharedAscState = MinimalAscState;
+					MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, MinimalAscState, this);
+				}
+			}
+		}
+	}
+
+	return WroteSomething;
 }
 
 void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker)
@@ -187,14 +238,17 @@ void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTr
 		// Is position stored in local space?
 		RepRootMotion.bRelativePosition = BasedMovement.HasRelativeLocation();
 		RepRootMotion.bRelativeRotation = BasedMovement.HasRelativeRotation();
-		RepRootMotion.Location			= RepRootMotion.bRelativePosition ? BasedMovement.Location : FRepMovement::RebaseOntoZeroOrigin(GetActorLocation(), GetWorld()->OriginLocation);
-		RepRootMotion.Rotation			= RepRootMotion.bRelativeRotation ? BasedMovement.Rotation : GetActorRotation();
-		RepRootMotion.MovementBase		= BasedMovement.MovementBase;
+		RepRootMotion.Location = RepRootMotion.bRelativePosition
+			                         ? BasedMovement.Location
+			                         : FRepMovement::RebaseOntoZeroOrigin(
+				                         GetActorLocation(), GetWorld()->OriginLocation);
+		RepRootMotion.Rotation = RepRootMotion.bRelativeRotation ? BasedMovement.Rotation : GetActorRotation();
+		RepRootMotion.MovementBase = BasedMovement.MovementBase;
 		RepRootMotion.MovementBaseBoneName = BasedMovement.BoneName;
 		if (RootMotionMontageInstance)
 		{
-			RepRootMotion.AnimMontage		= RootMotionMontageInstance->Montage;
-			RepRootMotion.Position			= RootMotionMontageInstance->GetPosition();
+			RepRootMotion.AnimMontage = RootMotionMontageInstance->Montage;
+			RepRootMotion.Position = RootMotionMontageInstance->GetPosition();
 		}
 		else
 		{
@@ -205,7 +259,7 @@ void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTr
 		RepRootMotion.Acceleration = GetCharacterMovement()->GetCurrentAcceleration();
 		RepRootMotion.LinearVelocity = GetCharacterMovement()->Velocity;
 
-		DOREPLIFETIME_ACTIVE_OVERRIDE_FAST( ACharacter, RepRootMotion, true );
+		DOREPLIFETIME_ACTIVE_OVERRIDE_FAST(ACharacter, RepRootMotion, true);
 	}
 	else
 	{
@@ -214,11 +268,11 @@ void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTr
 
 		// Replicate RepRootMotion one last time when root motion ends, so that clients see the change.
 		// Then deactivate subsequent property comparisons and replication updates until root motion starts again.
-		DOREPLIFETIME_ACTIVE_OVERRIDE_FAST( ACharacter, RepRootMotion, bWasRootMotionPreviouslyActive );
+		DOREPLIFETIME_ACTIVE_OVERRIDE_FAST(ACharacter, RepRootMotion, bWasRootMotionPreviouslyActive);
 	}
 
 	bProxyIsJumpForceApplied = (JumpForceTimeRemaining > 0.0f);
-	ReplicatedMovementMode = GetCharacterMovement()->PackNetworkMovementMode();	
+	ReplicatedMovementMode = GetCharacterMovement()->PackNetworkMovementMode();
 	ReplicatedBasedMovement = BasedMovement;
 
 	// Optimization: only update and replicate these values if they are actually going to be used.
@@ -235,7 +289,8 @@ void AECRCharacter::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTr
 	}
 
 	// Save bandwidth by not replicating this value unless it is necessary, since it changes every update.
-	if ((GetCharacterMovement()->NetworkSmoothingMode == ENetworkSmoothingMode::Linear) || GetCharacterMovement()->bNetworkAlwaysReplicateTransformUpdateTimestamp)
+	if ((GetCharacterMovement()->NetworkSmoothingMode == ENetworkSmoothingMode::Linear) || GetCharacterMovement()->
+		bNetworkAlwaysReplicateTransformUpdateTimestamp)
 	{
 		ReplicatedServerLastTransformUpdateTimeStamp = GetCharacterMovement()->GetServerLastTransformUpdateTimeStamp();
 	}
@@ -250,8 +305,205 @@ void AECRCharacter::GetReplicatedCustomConditionState(FCustomPropertyConditionSt
 	// Ignore condition for RepRootMotion replication from ACharacter
 	APawn::GetReplicatedCustomConditionState(OutActiveState);
 
-	DOREPCUSTOMCONDITION_ACTIVE_FAST(ACharacter, RepRootMotion, GetCharacterMovement()->CurrentRootMotion.HasActiveRootMotionSources() || IsPlayingNetworkedRootMotionMontage() || bWasRootMotionPreviouslyActive);
+	DOREPCUSTOMCONDITION_ACTIVE_FAST(ACharacter, RepRootMotion,
+	                                 GetCharacterMovement()->CurrentRootMotion.HasActiveRootMotionSources() ||
+	                                 IsPlayingNetworkedRootMotionMontage() || bWasRootMotionPreviouslyActive);
 }
+
+void AECRCharacter::ForceReplication()
+{
+	ForceNetUpdate();
+}
+
+void AECRCharacter::Call_InvokeGameplayCueExecuted_FromSpec(const FGameplayEffectSpecForRPC Spec,
+	FPredictionKey PredictionKey)
+{
+	// Don't allow cue executions from periodic effects each periodic tick, as it's network spam and leads to looping cues removal
+	if (Spec.Def && Spec.Def->DurationPolicy == EGameplayEffectDurationType::HasDuration && Spec.Def->Period.GetValue() > 0)
+	{
+		return;
+	}
+
+	IECRAbilitySystemReplicationProxyInterface::Call_InvokeGameplayCueExecuted_FromSpec(Spec, PredictionKey);
+}
+
+void AECRCharacter::Call_InvokeGameplayCueAdded(const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey,
+	FGameplayEffectContextHandle EffectContext)
+{
+}
+
+void AECRCharacter::Call_InvokeGameplayCueAdded_WithParams(const FGameplayTag GameplayCueTag,
+	FPredictionKey PredictionKey, FGameplayCueParameters Parameters)
+{
+}
+
+void AECRCharacter::Call_InvokeGameplayCueAddedAndWhileActive_FromSpec(const FGameplayEffectSpecForRPC& Spec,
+	FPredictionKey PredictionKey)
+{
+}
+
+void AECRCharacter::Call_InvokeGameplayCueAddedAndWhileActive_WithParams(const FGameplayTag GameplayCueTag,
+	FPredictionKey PredictionKey, FGameplayCueParameters GameplayCueParameters)
+{
+}
+
+void AECRCharacter::Call_InvokeGameplayCuesAddedAndWhileActive_WithParams(const FGameplayTagContainer GameplayCueTags,
+	FPredictionKey PredictionKey, FGameplayCueParameters GameplayCueParameters)
+{
+}
+
+void AECRCharacter::NetMulticast_InvokeGameplayCueExecuted_FromSpec_Implementation(
+	const FGameplayEffectSpecForRPC Spec, FPredictionKey PredictionKey)
+{
+	if (HasAuthority() || PredictionKey.IsLocalClientKey() == false)
+	{
+		GetAbilitySystemComponent()->InvokeGameplayCueEvent(Spec, EGameplayCueEvent::Executed);
+	}
+}
+
+void AECRCharacter::NetMulticast_InvokeGameplayCueExecuted_Implementation(
+	const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey, FGameplayEffectContextHandle EffectContext)
+{
+	if (HasAuthority() || PredictionKey.IsLocalClientKey() == false)
+	{
+		GetAbilitySystemComponent()->InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::Executed, EffectContext);
+	}
+}
+
+void AECRCharacter::NetMulticast_InvokeGameplayCuesExecuted_Implementation(
+	const FGameplayTagContainer GameplayCueTags, FPredictionKey PredictionKey,
+	FGameplayEffectContextHandle EffectContext)
+{
+	if (HasAuthority() || PredictionKey.IsLocalClientKey() == false)
+	{
+		for (const FGameplayTag& GameplayCueTag : GameplayCueTags)
+		{
+			GetAbilitySystemComponent()->InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::Executed,
+			                                                    EffectContext);
+		}
+	}
+}
+
+void AECRCharacter::NetMulticast_InvokeGameplayCueExecuted_WithParams_Implementation(
+	const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey, FGameplayCueParameters GameplayCueParameters)
+{
+	if (HasAuthority() || PredictionKey.IsLocalClientKey() == false)
+	{
+		GetAbilitySystemComponent()->InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::Executed,
+		                                                    GameplayCueParameters);
+	}
+}
+
+void AECRCharacter::NetMulticast_InvokeGameplayCuesExecuted_WithParams_Implementation(
+	const FGameplayTagContainer GameplayCueTags, FPredictionKey PredictionKey,
+	FGameplayCueParameters GameplayCueParameters)
+{
+	if (HasAuthority() || PredictionKey.IsLocalClientKey() == false)
+	{
+		for (const FGameplayTag& GameplayCueTag : GameplayCueTags)
+		{
+			GetAbilitySystemComponent()->InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::Executed,
+			                                                    GameplayCueParameters);
+		}
+	}
+}
+
+void AECRCharacter::NetMulticast_InvokeGameplayCueAdded_Implementation(const FGameplayTag GameplayCueTag,
+                                                                       FPredictionKey PredictionKey,
+                                                                       FGameplayEffectContextHandle EffectContext)
+{
+	// if (HasAuthority() || PredictionKey.IsLocalClientKey() == false)
+	// {
+	// 	GetAbilitySystemComponent()->InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::OnActive, EffectContext);
+	// }
+}
+
+void AECRCharacter::NetMulticast_InvokeGameplayCueAdded_WithParams_Implementation(
+	const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey, FGameplayCueParameters Parameters)
+{
+	// If server generated prediction key and auto proxy, skip this message. 
+	// This is an RPC from mixed replication mode code, we will get the "real" message from our OnRep on the autonomous proxy
+	// See UAbilitySystemComponent::AddGameplayCue_Internal for more info.
+
+	// bool bIsMixedReplicationFromServer = (GetAbilitySystemComponent()->ReplicationMode ==
+	// 	EGameplayEffectReplicationMode::Mixed && PredictionKey.IsServerInitiatedKey() && IsLocallyControlled());
+	//
+	// if (HasAuthority() || (PredictionKey.IsLocalClientKey() == false && !bIsMixedReplicationFromServer))
+	// {
+	// 	GetAbilitySystemComponent()->InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::OnActive, Parameters);
+	// }
+}
+
+
+void AECRCharacter::NetMulticast_InvokeGameplayCueAddedAndWhileActive_FromSpec_Implementation(
+	const FGameplayEffectSpecForRPC& Spec, FPredictionKey PredictionKey)
+{
+	// if (HasAuthority() || PredictionKey.IsLocalClientKey() == false)
+	// {
+	// 	GetAbilitySystemComponent()->InvokeGameplayCueEvent(Spec, EGameplayCueEvent::OnActive);
+	// 	GetAbilitySystemComponent()->InvokeGameplayCueEvent(Spec, EGameplayCueEvent::WhileActive);
+	// }
+}
+
+void AECRCharacter::NetMulticast_InvokeGameplayCueAddedAndWhileActive_WithParams_Implementation(
+	const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey, FGameplayCueParameters GameplayCueParameters)
+{
+	// if (HasAuthority() || PredictionKey.IsLocalClientKey() == false)
+	// {
+	// 	GetAbilitySystemComponent()->InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::OnActive,
+	// 	                                                    GameplayCueParameters);
+	// 	GetAbilitySystemComponent()->InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::WhileActive,
+	// 	                                                    GameplayCueParameters);
+	// }
+}
+
+void AECRCharacter::NetMulticast_InvokeGameplayCuesAddedAndWhileActive_WithParams_Implementation(
+	const FGameplayTagContainer GameplayCueTags, FPredictionKey PredictionKey,
+	FGameplayCueParameters GameplayCueParameters)
+{
+	// if (HasAuthority() || PredictionKey.IsLocalClientKey() == false)
+	// {
+	// 	for (const FGameplayTag& GameplayCueTag : GameplayCueTags)
+	// 	{
+	// 		GetAbilitySystemComponent()->InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::OnActive,
+	// 		                                                    GameplayCueParameters);
+	// 		GetAbilitySystemComponent()->InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::WhileActive,
+	// 		                                                    GameplayCueParameters);
+	// 	}
+	// }
+}
+
+void AECRCharacter::Call_ReliableGameplayCueAdded_WithParams(const FGameplayTag GameplayCueTag,
+	FPredictionKey PredictionKey, FGameplayCueParameters Parameters)
+{
+	ForceReplication();
+	ActiveGameplayCues.AddCue(GameplayCueTag, PredictionKey, Parameters);
+}
+
+void AECRCharacter::Call_ReliableGameplayCueRemoved(const FGameplayTag GameplayCueTag)
+{
+	ForceReplication();
+	ActiveGameplayCues.RemoveCue(GameplayCueTag);
+}
+
+FGameplayAbilityRepAnimMontage& AECRCharacter::Call_GetRepAnimMontageInfo_Mutable()
+{
+	MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, RepAnimMontageInfo, this);
+	return RepAnimMontageInfo;
+}
+
+void AECRCharacter::Call_OnRep_ReplicatedAnimMontage()
+{
+	UECRAbilitySystemComponent* ASC = GetECRAbilitySystemComponent();
+	if (ASC)
+	{
+		// Update ASC client version of RepAnimMontageInfo
+		ASC->SetRepAnimMontageInfoAccessor(RepAnimMontageInfo);
+		// Call OnRep of AnimMontageInfo
+		ASC->ReplicatedAnimMontageOnRepAccesor();
+	}
+}
+
 
 void AECRCharacter::GatherInteractionOptions(const FInteractionQuery& InteractQuery,
                                              FInteractionOptionBuilder& OptionBuilder)
@@ -674,6 +926,40 @@ void AECRCharacter::OnRep_MainAnimLayer()
 	}
 }
 
+void AECRCharacter::OnRep_MinimalAscState()
+{
+	if (GetLocalRole() == ROLE_SimulatedProxy)
+	{
+		UECRAbilitySystemComponent* ASC = GetECRAbilitySystemComponent();
+		if (ASC)
+		{
+			// Update ASC client attributes
+			ASC->SetNumericAttributeBase(UECRCharacterHealthSet::GetShieldAttribute(), MinimalAscState.Shield);
+			ASC->SetNumericAttributeBase(UECRCharacterHealthSet::GetMaxShieldAttribute(), 100.0f);
+			ASC->SetNumericAttributeBase(UECRCharacterHealthSet::GetHealthAttribute(), MinimalAscState.Health);
+			ASC->SetNumericAttributeBase(UECRCharacterHealthSet::GetMaxHealthAttribute(), 100.0f);
+			ASC->SetNumericAttributeBase(UECRCharacterHealthSet::GetBleedingHealthAttribute(),
+			                             MinimalAscState.BleedingHealth);
+			ASC->SetNumericAttributeBase(UECRCharacterHealthSet::GetMaxBleedingHealthAttribute(), 100.0f);
+			ASC->SetNumericAttributeBase(UECRCombatSet::GetArmorAttribute(), 100.0f);
+
+			// Update gameplay tags
+			const TArray<FGameplayTag>& RepTags = FECRGameplayTags::Get().SimProxyReplicatedTags;
+			for (int32 i = 0; i < RepTags.Num(); i++)
+			{
+				if ((MinimalAscState.GameplayTagsBitMask & (1 << i)) != 0)
+				{
+					ASC->SetLooseGameplayTagCount(RepTags[i], 1);
+				}
+				else
+				{
+					ASC->SetLooseGameplayTagCount(RepTags[i], 0);
+				}
+			}
+		}
+	}
+}
+
 
 bool AECRCharacter::UpdateSharedReplication()
 {
@@ -696,7 +982,8 @@ bool AECRCharacter::UpdateSharedReplication()
 		// produced, but not send it to clients that already received. (But a new client who has not received
 		// it, will get it this frame)
 		float MinTimeToUpdate = (MinNetUpdateFrequency != 0) ? (1 / MinNetUpdateFrequency) : 0.5f;
-		if ((GetGameTimeSinceCreation() - LastSharedReplicationTimestamp >= MinTimeToUpdate) || !SharedMovement.Equals(LastSharedReplication, this))
+		if ((GetGameTimeSinceCreation() - LastSharedReplicationTimestamp >= MinTimeToUpdate) || !SharedMovement.Equals(
+			LastSharedReplication, this))
 		{
 			LastSharedReplication = SharedMovement;
 			ReplicatedMovementMode = SharedMovement.RepMovementMode;
@@ -839,6 +1126,152 @@ bool FSharedRepMovement::NetSerialize(FArchive& Ar, class UPackageMap* Map, bool
 	else
 	{
 		RepTimeStamp = 0.f;
+	}
+
+	return true;
+}
+
+FMinimalASCState::FMinimalASCState()
+{
+}
+
+uint8 ConvertForNetToPercent(float Value, float MaxValue)
+{
+	const float Percent = MaxValue != 0 ? (Value / MaxValue * 100) : 0;
+	return FMath::Clamp(FMath::RoundToInt(Percent), 0, 100);
+}
+
+bool FMinimalASCState::FillForCharacter(AECRCharacter* Character)
+{
+	if (UECRAbilitySystemComponent* ASC = Character->GetECRAbilitySystemComponent())
+	{
+		// Health, shield and bleeding health for sim proxies only need percents (0-100) to display progress bars, so use uint8
+		Health = ConvertForNetToPercent(ASC->GetNumericAttribute(UECRCharacterHealthSet::GetHealthAttribute()),
+		                                ASC->GetNumericAttribute(UECRCharacterHealthSet::GetMaxHealthAttribute()));
+		Shield = ConvertForNetToPercent(ASC->GetNumericAttribute(UECRCharacterHealthSet::GetShieldAttribute()),
+		                                ASC->GetNumericAttribute(UECRCharacterHealthSet::GetMaxShieldAttribute()));
+		BleedingHealth = ConvertForNetToPercent(
+			ASC->GetNumericAttribute(UECRCharacterHealthSet::GetBleedingHealthAttribute()),
+			ASC->GetNumericAttribute(UECRCharacterHealthSet::GetMaxBleedingHealthAttribute()));
+		// Armor needs full float value, but will be optimized in NetSerialize since in 99.9% cases it's 100
+		Armor = ASC->GetNumericAttribute(UECRCombatSet::GetArmorAttribute());
+
+		// Filling mask of gameplay tags for sim proxies
+		uint16 NewMask = 0;
+		const TArray<FGameplayTag>& RepTags = FECRGameplayTags::Get().SimProxyReplicatedTags;
+		for (int32 i = 0; i < FMath::Min(RepTags.Num(), 16); i++)
+		{
+			if (ASC->HasMatchingGameplayTag(RepTags[i]))
+			{
+				NewMask |= (1 << i);
+			}
+		}
+		GameplayTagsBitMask = NewMask;
+
+		return true;
+	}
+
+	return false;
+}
+
+bool FMinimalASCState::Equals(const FMinimalASCState& Other) const
+{
+	if (GameplayTagsBitMask != Other.GameplayTagsBitMask)
+	{
+		return false;
+	}
+
+	if (Shield != Other.Shield)
+	{
+		return false;
+	}
+
+	if (Health != Other.Health)
+	{
+		return false;
+	}
+
+	if (BleedingHealth != Other.BleedingHealth)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool FMinimalASCState::NetSerialize(FArchive& Ar, UPackageMap* Map, bool& bOutSuccess)
+{
+	bOutSuccess = true;
+
+	// Always send tag mask (cheap, important for gameplay)
+	Ar << GameplayTagsBitMask;
+
+	// -------------------------------------------------
+	// Pack presence flags into 1 nibble (4 bits)
+	// -------------------------------------------------
+	uint8 PresenceFlags = 0;
+
+	// bit 0: Health != 100%
+	// bit 1: Shield != 100%
+	// bit 2: BleedingHealth != 100%
+	// bit 3: Armor != 100
+
+	if (Ar.IsSaving())
+	{
+		PresenceFlags |= (Health != 100) << 0;
+		PresenceFlags |= (Shield != 100) << 1;
+		PresenceFlags |= (BleedingHealth != 100) << 2;
+		PresenceFlags |= (!FMath::IsNearlyEqual(Armor, 100.0f, 0.1f)) << 3;
+	}
+
+	Ar.SerializeBits(&PresenceFlags, 4);
+
+	// -------------------------------------------------
+	// HEALTH
+	// -------------------------------------------------
+	if (PresenceFlags & (1 << 0))
+	{
+		Ar << Health;
+	}
+	else if (Ar.IsLoading())
+	{
+		Health = 100;
+	}
+
+	// -------------------------------------------------
+	// SHIELD
+	// -------------------------------------------------
+	if (PresenceFlags & (1 << 1))
+	{
+		Ar << Shield;
+	}
+	else if (Ar.IsLoading())
+	{
+		Shield = 100;
+	}
+
+	// -------------------------------------------------
+	// BLEEDING
+	// -------------------------------------------------
+	if (PresenceFlags & (1 << 2))
+	{
+		Ar << BleedingHealth;
+	}
+	else if (Ar.IsLoading())
+	{
+		BleedingHealth = 100;
+	}
+
+	// -------------------------------------------------
+	// ARMOR
+	// -------------------------------------------------
+	if (PresenceFlags & (1 << 3))
+	{
+		Ar << Armor;
+	}
+	else if (Ar.IsLoading())
+	{
+		Armor = 100.f;
 	}
 
 	return true;

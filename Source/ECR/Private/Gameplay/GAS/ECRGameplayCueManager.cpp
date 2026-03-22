@@ -122,6 +122,18 @@ bool UECRGameplayCueManager::ShouldAsyncLoadMissingGameplayCues() const
 	return true;
 }
 
+void UECRGameplayCueManager::HandleGameplayCue(AActor* TargetActor, FGameplayTag GameplayCueTag,
+	EGameplayCueEvent::Type EventType, const FGameplayCueParameters& Parameters, EGameplayCueExecutionOptions Options)
+{
+	// Treat while active as on active, as we only receive looping cues from replicated array ActiveGameplayCues
+	// on ECRCharacter, no multicasts for them (after ASC for sim proxies optimization)
+	if (EventType == EGameplayCueEvent::WhileActive)
+	{
+		EventType = EGameplayCueEvent::OnActive;
+	}
+	Super::HandleGameplayCue(TargetActor, GameplayCueTag, EventType, Parameters, Options);
+}
+
 void UECRGameplayCueManager::DumpGameplayCues(const TArray<FString>& Args)
 {
 	UECRGameplayCueManager* GCM = Cast<UECRGameplayCueManager>(UAbilitySystemGlobals::Get().GetGameplayCueManager());

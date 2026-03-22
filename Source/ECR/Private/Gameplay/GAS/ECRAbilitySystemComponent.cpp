@@ -20,6 +20,8 @@ UECRAbilitySystemComponent::UECRAbilitySystemComponent(const FObjectInitializer&
 	AbilityQueueSystemLastInputTagTime = 0;
 	AbilityQueueSystemDeltaTime = 0;
 
+	ReplicationProxyEnabled = true;
+
 	InputPressedSpecHandles.Reset();
 	InputReleasedSpecHandles.Reset();
 	InputHeldSpecHandles.Reset();
@@ -33,6 +35,199 @@ void UECRAbilitySystemComponent::EndPlay(const EEndPlayReason::Type EndPlayReaso
 	{
 		GlobalAbilitySystem->UnregisterASC(this);
 	}
+}
+
+IECRAbilitySystemReplicationProxyInterface* UECRAbilitySystemComponent::GetExtendedReplicationInterface()
+{
+	if (ReplicationProxyEnabled)
+	{
+		// Note the expectation is that when the avatar actor is null (e.g during a respawn) that we do return null and calling code handles this (by probably not replicating whatever it was going to)
+		return Cast<IECRAbilitySystemReplicationProxyInterface>(GetAvatarActor_Direct());
+	}
+
+	return nullptr;
+}
+
+void UECRAbilitySystemComponent::ReplicatedAnimMontageOnRepAccesor()
+{
+	OnRep_ReplicatedAnimMontage();
+}
+
+void UECRAbilitySystemComponent::SetRepAnimMontageInfoAccessor(
+	const FGameplayAbilityRepAnimMontage& NewRepAnimMontageInfo)
+{
+	SetRepAnimMontageInfo(NewRepAnimMontageInfo);
+}
+
+float UECRAbilitySystemComponent::PlayMontage(UGameplayAbility* InAnimatingAbility, FGameplayAbilityActivationInfo ActivationInfo, UAnimMontage* NewAnimMontage, float InPlayRate, FName StartSectionName, float StartTimeSeconds)
+{
+	float Duration = -1.f;
+
+	UAnimInstance* AnimInstance = AbilityActorInfo.IsValid() ? AbilityActorInfo->GetAnimInstance() : nullptr;
+	if (AnimInstance && NewAnimMontage)
+	{
+		Duration = AnimInstance->Montage_Play(NewAnimMontage, InPlayRate, EMontagePlayReturnType::MontageLength, StartTimeSeconds);
+		if (Duration > 0.f)
+		{
+			if (LocalAnimMontageInfo.AnimatingAbility && LocalAnimMontageInfo.AnimatingAbility != InAnimatingAbility)
+			{
+				// The ability that was previously animating will have already gotten the 'interrupted' callback.
+				// It may be a good idea to make this a global policy and 'cancel' the ability.
+				// 
+				// For now, we expect it to end itself when this happens.
+			}
+
+			if (NewAnimMontage->HasRootMotion() && AnimInstance->GetOwningActor())
+			{
+				UE_LOG(LogRootMotion, Log, TEXT("UAbilitySystemComponent::PlayMontage %s, Role: %s")
+					, *GetNameSafe(NewAnimMontage)
+					, *UEnum::GetValueAsString(TEXT("Engine.ENetRole"), AnimInstance->GetOwningActor()->GetLocalRole())
+				);
+			}
+
+			LocalAnimMontageInfo.AnimMontage = NewAnimMontage;
+			LocalAnimMontageInfo.AnimatingAbility = InAnimatingAbility;
+			LocalAnimMontageInfo.PlayInstanceId = (LocalAnimMontageInfo.PlayInstanceId < UINT8_MAX ? LocalAnimMontageInfo.PlayInstanceId + 1 : 0);
+
+			if (InAnimatingAbility)
+			{
+				InAnimatingAbility->SetCurrentMontage(NewAnimMontage);
+			}
+
+			// Start at a given Section.
+			if (StartSectionName != NAME_None)
+			{
+				AnimInstance->Montage_JumpToSection(StartSectionName, NewAnimMontage);
+			}
+
+			// Replicate to non owners
+			if (IsOwnerActorAuthoritative())
+			{
+				IECRAbilitySystemReplicationProxyInterface* ReplicationInterface = GetExtendedReplicationInterface();
+				FGameplayAbilityRepAnimMontage& MutableRepAnimMontageInfo = ReplicationInterface ? ReplicationInterface->Call_GetRepAnimMontageInfo_Mutable() : GetRepAnimMontageInfo_Mutable();
+
+				// Those are static parameters, they are only set when the montage is played. They are not changed after that.
+				MutableRepAnimMontageInfo.AnimMontage = NewAnimMontage;
+				MutableRepAnimMontageInfo.PlayInstanceId = (MutableRepAnimMontageInfo.PlayInstanceId < UINT8_MAX ? MutableRepAnimMontageInfo.PlayInstanceId + 1 : 0);
+
+				MutableRepAnimMontageInfo.SectionIdToPlay = 0;
+				if (MutableRepAnimMontageInfo.AnimMontage && StartSectionName != NAME_None)
+				{
+					// we add one so INDEX_NONE can be used in the on rep
+					MutableRepAnimMontageInfo.SectionIdToPlay = MutableRepAnimMontageInfo.AnimMontage->GetSectionIndex(StartSectionName) + 1;
+				}
+
+				// Update parameters that change during Montage life time.
+				AnimMontage_UpdateReplicatedData(MutableRepAnimMontageInfo);
+
+				// Force net update on our avatar actor
+				if (AbilityActorInfo->AvatarActor != nullptr)
+				{
+					AbilityActorInfo->AvatarActor->ForceNetUpdate();
+				}
+			}
+			else
+			{
+				// If this prediction key is rejected, we need to end the preview
+				FPredictionKey PredictionKey = GetPredictionKeyForNewAction();
+				if (PredictionKey.IsValidKey())
+				{
+					PredictionKey.NewRejectedDelegate().BindUObject(this, &UECRAbilitySystemComponent::OnPredictiveMontageRejected, NewAnimMontage);
+				}
+			}
+		}
+	}
+
+	return Duration;
+}
+
+void UECRAbilitySystemComponent::CurrentMontageStop(float OverrideBlendOutTime /*= -1.0f*/)
+{
+	UAnimInstance* AnimInstance = AbilityActorInfo.IsValid() ? AbilityActorInfo->GetAnimInstance() : nullptr;
+	UAnimMontage* MontageToStop = LocalAnimMontageInfo.AnimMontage;
+	bool bShouldStopMontage = AnimInstance && MontageToStop && !AnimInstance->Montage_GetIsStopped(MontageToStop);
+
+	if (bShouldStopMontage)
+	{
+		const float BlendOutTime = (OverrideBlendOutTime >= 0.0f ? OverrideBlendOutTime : MontageToStop->BlendOut.GetBlendTime());
+
+		AnimInstance->Montage_Stop(BlendOutTime, MontageToStop);
+
+		if (IsOwnerActorAuthoritative())
+		{
+			IECRAbilitySystemReplicationProxyInterface* ReplicationInterface = GetExtendedReplicationInterface();
+			FGameplayAbilityRepAnimMontage& MutableRepAnimMontageInfo = ReplicationInterface ? ReplicationInterface->Call_GetRepAnimMontageInfo_Mutable() : GetRepAnimMontageInfo_Mutable();
+			AnimMontage_UpdateReplicatedData(MutableRepAnimMontageInfo);
+		}
+	}
+}
+
+void UECRAbilitySystemComponent::AddGameplayCue_Internal(const FGameplayTag GameplayCueTag,
+	const FGameplayCueParameters& GameplayCueParameters, FActiveGameplayCueContainer& GameplayCueContainer)
+{
+	if (IsOwnerActorAuthoritative())
+	{
+		bool bWasInList = HasMatchingGameplayTag(GameplayCueTag);
+
+		// If extended replication interface, use its own replicated cues array
+		if (IECRAbilitySystemReplicationProxyInterface* ReplicationInterface = GetExtendedReplicationInterface())
+		{
+			ReplicationInterface->Call_ReliableGameplayCueAdded_WithParams(GameplayCueTag, ScopedPredictionKey, GameplayCueParameters);
+		} else {
+			bIsNetDirty = true;
+			ForceReplication();
+			GameplayCueContainer.AddCue(GameplayCueTag, ScopedPredictionKey, GameplayCueParameters);
+		}
+
+		if (!bWasInList)
+		{
+			// Call on server here, clients get it from repnotify
+			InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::WhileActive, GameplayCueParameters);
+		}
+	}
+	else if (ScopedPredictionKey.IsLocalClientKey())
+	{
+		GameplayCueContainer.PredictiveAdd(GameplayCueTag, ScopedPredictionKey);
+
+		// Allow for predictive gameplaycue events? Needs more thought
+		InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::OnActive, GameplayCueParameters);
+		InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::WhileActive, GameplayCueParameters);
+	}
+}
+
+void UECRAbilitySystemComponent::RemoveGameplayCue_Internal(const FGameplayTag GameplayCueTag,
+	FActiveGameplayCueContainer& GameplayCueContainer)
+{
+	if (IsOwnerActorAuthoritative())
+    {
+    	bool bWasInList = HasMatchingGameplayTag(GameplayCueTag);
+
+		// If extended replication interface, use its own replicated cues array
+		if (IECRAbilitySystemReplicationProxyInterface* ReplicationInterface = GetExtendedReplicationInterface())
+		{
+			ReplicationInterface->Call_ReliableGameplayCueRemoved(GameplayCueTag);
+		} else
+		{
+			// Force replication so GameplayCue removals are properly replicated to all clients during Mixed and Minimal replication modes
+			bIsNetDirty = true;
+			ForceReplication();
+			GameplayCueContainer.RemoveCue(GameplayCueTag);
+		}
+		
+    	if (bWasInList)
+    	{
+    		FGameplayCueParameters Parameters;
+    		InitDefaultGameplayCueParameters(Parameters);
+
+    		// Call on server here, clients get it from repnotify
+    		InvokeGameplayCueEvent(GameplayCueTag, EGameplayCueEvent::Removed, Parameters);
+    	}
+    	// Don't need to multicast broadcast this, ActiveGameplayCues replication handles it
+    }
+    else if (ScopedPredictionKey.IsLocalClientKey())
+    {
+    	GameplayCueContainer.PredictiveRemove(GameplayCueTag);
+    }
 }
 
 void UECRAbilitySystemComponent::InitAbilityActorInfo(AActor* InOwnerActor, AActor* InAvatarActor)

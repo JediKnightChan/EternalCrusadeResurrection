@@ -16,6 +16,27 @@ struct FGameplayAbilitySpec;
 
 ECR_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_AbilityInputBlocked);
 
+/** Interface for replication of ASC */
+UINTERFACE(meta = (CannotImplementInterfaceInBlueprint))
+class ECR_API UECRAbilitySystemReplicationProxyInterface : public UAbilitySystemReplicationProxyInterface
+{
+	GENERATED_BODY()
+};
+
+class ECR_API IECRAbilitySystemReplicationProxyInterface : public IAbilitySystemReplicationProxyInterface
+{
+	GENERATED_BODY()
+
+public:
+	virtual void Call_ReliableGameplayCueAdded_WithParams(const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey, FGameplayCueParameters Parameters) = 0;
+	virtual void Call_ReliableGameplayCueRemoved(const FGameplayTag GameplayCueTag) = 0;
+
+	virtual FGameplayAbilityRepAnimMontage& Call_GetRepAnimMontageInfo_Mutable() = 0;
+
+	virtual void Call_OnRep_ReplicatedAnimMontage() = 0;
+};
+
+
 /**
  * UECRAbilitySystemComponent
  *
@@ -27,16 +48,28 @@ class UECRAbilitySystemComponent : public UAbilitySystemComponent
 	GENERATED_BODY()
 
 public:
-
 	UECRAbilitySystemComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
 	//~UActorComponent interface
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	//~End of UActorComponent interface
 
+	//~Replication proxy helpers and accessors
+	IECRAbilitySystemReplicationProxyInterface* GetExtendedReplicationInterface();
+	void ReplicatedAnimMontageOnRepAccesor();
+	void SetRepAnimMontageInfoAccessor(const FGameplayAbilityRepAnimMontage& NewRepAnimMontageInfo);
+	virtual float PlayMontage(UGameplayAbility* AnimatingAbility, FGameplayAbilityActivationInfo ActivationInfo,
+	                          UAnimMontage* Montage, float InPlayRate, FName StartSectionName = NAME_None,
+	                          float StartTimeSeconds = 0.0f) override;
+	virtual void CurrentMontageStop(float OverrideBlendOutTime = -1.0f) override;
+	//~End of replication proxy helpers and accessors
+
+	virtual void AddGameplayCue_Internal(const FGameplayTag GameplayCueTag, const FGameplayCueParameters& GameplayCueParameters, FActiveGameplayCueContainer& GameplayCueContainer) override;
+	virtual void RemoveGameplayCue_Internal(const FGameplayTag GameplayCueTag, FActiveGameplayCueContainer& GameplayCueContainer) override;
 	virtual void InitAbilityActorInfo(AActor* InOwnerActor, AActor* InAvatarActor) override;
 
-	typedef TFunctionRef<bool(const UECRGameplayAbility* ECRAbility, FGameplayAbilitySpecHandle Handle)> TShouldCancelAbilityFunc;
+	typedef TFunctionRef<bool(const UECRGameplayAbility* ECRAbility, FGameplayAbilitySpecHandle Handle)>
+	TShouldCancelAbilityFunc;
 	void CancelAbilitiesByFunc(TShouldCancelAbilityFunc ShouldCancelFunc, bool bReplicateCancelAbility);
 
 	void CancelInputActivatedAbilities(bool bReplicateCancelAbility);
@@ -50,7 +83,8 @@ public:
 	bool IsActivationGroupBlocked(EECRAbilityActivationGroup Group) const;
 	void AddAbilityToActivationGroup(EECRAbilityActivationGroup Group, UECRGameplayAbility* ECRAbility);
 	void RemoveAbilityFromActivationGroup(EECRAbilityActivationGroup Group, UECRGameplayAbility* ECRAbility);
-	void CancelActivationGroupAbilities(EECRAbilityActivationGroup Group, UECRGameplayAbility* IgnoreECRAbility, bool bReplicateCancelAbility);
+	void CancelActivationGroupAbilities(EECRAbilityActivationGroup Group, UECRGameplayAbility* IgnoreECRAbility,
+	                                    bool bReplicateCancelAbility);
 
 	// Uses a gameplay effect to add the specified dynamic granted tag.
 	void AddDynamicTagGameplayEffect(const FGameplayTag& Tag);
@@ -59,37 +93,48 @@ public:
 	void RemoveDynamicTagGameplayEffect(const FGameplayTag& Tag);
 
 	/** Gets the ability target data associated with the given ability handle and activation info */
-	void GetAbilityTargetData(const FGameplayAbilitySpecHandle AbilityHandle, FGameplayAbilityActivationInfo ActivationInfo, FGameplayAbilityTargetDataHandle& OutTargetDataHandle);
+	void GetAbilityTargetData(const FGameplayAbilitySpecHandle AbilityHandle,
+	                          FGameplayAbilityActivationInfo ActivationInfo,
+	                          FGameplayAbilityTargetDataHandle& OutTargetDataHandle);
 
 	/** Sets the current tag relationship mapping, if null it will clear it out */
 	void SetTagRelationshipMapping(UECRAbilityTagRelationshipMapping* NewMapping);
-	
+
 	/** Looks at ability tags and gathers additional required and blocking tags */
-	void GetAdditionalActivationTagRequirements(const FGameplayTagContainer& AbilityTags, FGameplayTagContainer& OutActivationRequired, FGameplayTagContainer& OutActivationBlocked) const;
+	void GetAdditionalActivationTagRequirements(const FGameplayTagContainer& AbilityTags,
+	                                            FGameplayTagContainer& OutActivationRequired,
+	                                            FGameplayTagContainer& OutActivationBlocked) const;
 
 	/** Clear abilities that are not explicitly specified as surviving death */
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category="Gameplay Abilities")
 	void ClearAllResettingOnDeathAbilities();
-protected:
 
+	FORCEINLINE FActiveGameplayCueContainer GetActiveGameplayCues() {return ActiveGameplayCues;}
+protected:
 	void TryActivateAbilitiesOnSpawn();
 
 	virtual void AbilitySpecInputPressed(FGameplayAbilitySpec& Spec) override;
 	virtual void AbilitySpecInputReleased(FGameplayAbilitySpec& Spec) override;
 
 	virtual void NotifyAbilityActivated(const FGameplayAbilitySpecHandle Handle, UGameplayAbility* Ability) override;
-	virtual void NotifyAbilityFailed(const FGameplayAbilitySpecHandle Handle, UGameplayAbility* Ability, const FGameplayTagContainer& FailureReason) override;
-	virtual void NotifyAbilityEnded(FGameplayAbilitySpecHandle Handle, UGameplayAbility* Ability, bool bWasCancelled) override;
-	virtual void ApplyAbilityBlockAndCancelTags(const FGameplayTagContainer& AbilityTags, UGameplayAbility* RequestingAbility, bool bEnableBlockTags, const FGameplayTagContainer& BlockTags, bool bExecuteCancelTags, const FGameplayTagContainer& CancelTags) override;
-	virtual void HandleChangeAbilityCanBeCanceled(const FGameplayTagContainer& AbilityTags, UGameplayAbility* RequestingAbility, bool bCanBeCanceled) override;
+	virtual void NotifyAbilityFailed(const FGameplayAbilitySpecHandle Handle, UGameplayAbility* Ability,
+	                                 const FGameplayTagContainer& FailureReason) override;
+	virtual void NotifyAbilityEnded(FGameplayAbilitySpecHandle Handle, UGameplayAbility* Ability,
+	                                bool bWasCancelled) override;
+	virtual void ApplyAbilityBlockAndCancelTags(const FGameplayTagContainer& AbilityTags,
+	                                            UGameplayAbility* RequestingAbility, bool bEnableBlockTags,
+	                                            const FGameplayTagContainer& BlockTags, bool bExecuteCancelTags,
+	                                            const FGameplayTagContainer& CancelTags) override;
+	virtual void HandleChangeAbilityCanBeCanceled(const FGameplayTagContainer& AbilityTags,
+	                                              UGameplayAbility* RequestingAbility, bool bCanBeCanceled) override;
 
 	/** Notify client that an ability failed to activate */
 	UFUNCTION(Client, Unreliable)
 	void ClientNotifyAbilityFailed(const UGameplayAbility* Ability, const FGameplayTagContainer& FailureReason);
 
 	void HandleAbilityFailed(const UGameplayAbility* Ability, const FGameplayTagContainer& FailureReason);
-protected:
 
+protected:
 	// If set, this table is used to look up tag relationships for activate and cancel
 	UPROPERTY()
 	UECRAbilityTagRelationshipMapping* TagRelationshipMapping;
@@ -105,16 +150,16 @@ protected:
 
 	// Number of abilities running in each activation group.
 	int32 ActivationGroupCounts[(uint8)EECRAbilityActivationGroup::MAX];
-	
+
 public:
 	// Ability Queue System
-	
+
 	// Latest input tag received
 	FGameplayTag AbilityQueueSystemLastInputTag;
-	
+
 	// Time when received
 	double AbilityQueueSystemLastInputTagTime;
-	
+
 	// Delta time
 	double AbilityQueueSystemDeltaTime;
 };

@@ -38,6 +38,21 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddTag(Ability_Behavior_SurvivesDeath, "Ability.Behavior.SurvivesDeath",
 	       "An ability with this type tag should not be removed due to death.");
 
+	/* Only these tags will be replicated for simulated proxies in ECRCharacter.cpp */
+	AddSimProxyReplicatedTag(Event_Movement_ADS, "Event.Movement.ADS","ADS. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_Sprint, "Event.Movement.Sprint","Sprint. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_Wounded, "Event.Movement.Wounded","Wounded. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_Evade, "Event.Movement.Evade","Evade. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_Dying, "Event.Movement.Dying","Dying. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_JumpFlying, "Event.Movement.JumpFlying","JumpFlying. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_Bracing, "Event.Movement.Bracing","Bracing. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_SprintEnd, "Event.Movement.SprintEnd","SprintEnd. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_JumpPackEvading, "Event.Movement.JumpPack.Evading","JPA Evade. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_DirtyChargedAttackFix, "Event.Movement.DirtyChargedAttackFix","Mirroring lower body bones for charged attack. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_WoundedCancel, "Event.Movement.WoundedCancel","Wounded cancel. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Event_Movement_ExecutionVictim, "Event.Movement.ExecutionVictim","Execution victim. Will be replicated to sim proxies");
+	/* */
+
 	AddTag(Cosmetic_Montage, "Cosmetic.Montage", "Prefix for montage customization");
 	AddTag(Cosmetic_AnimStyle, "Cosmetic.AnimationStyle", "Prefix for animation style customization");
 	AddTag(Cosmetic_ActorSubclass, "Cosmetic.ActorSubclass", "Prefix for actor subclass customization");
@@ -114,6 +129,19 @@ void FECRGameplayTags::AddTag(FGameplayTag& OutTag, const ANSICHAR* TagName, con
 {
 	OutTag = UGameplayTagsManager::Get().AddNativeGameplayTag(FName(TagName),
 	                                                          FString(TEXT("(Native) ")) + FString(TagComment));
+}
+
+void FECRGameplayTags::AddSimProxyReplicatedTag(FGameplayTag& OutTag, const ANSICHAR* TagName,
+	const ANSICHAR* TagComment)
+{
+	AddTag(OutTag, TagName, TagComment);
+	if (SimProxyReplicatedTags.Num() < 16)
+	{
+		SimProxyReplicatedTags.AddUnique(OutTag);
+	} else
+	{
+		UE_LOG(LogECR, Fatal, TEXT("Amount of simulation proxy replicated tags exceeded 16, max size of bitmask"));
+	}
 }
 
 void FECRGameplayTags::AddMovementModeTag(FGameplayTag& OutTag, const ANSICHAR* TagName, uint8 MovementMode)

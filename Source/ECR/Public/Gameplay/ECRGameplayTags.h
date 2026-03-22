@@ -32,6 +32,20 @@ public:
 
 	FGameplayTag Ability_Behavior_SurvivesDeath;
 
+	// Only these tags block will be replicated to sim proxies
+	FGameplayTag Event_Movement_ADS;
+	FGameplayTag Event_Movement_Sprint;
+	FGameplayTag Event_Movement_Wounded;
+	FGameplayTag Event_Movement_Evade;
+	FGameplayTag Event_Movement_Dying;
+	FGameplayTag Event_Movement_JumpFlying;
+	FGameplayTag Event_Movement_Bracing;
+	FGameplayTag Event_Movement_SprintEnd;
+	FGameplayTag Event_Movement_JumpPackEvading;
+	FGameplayTag Event_Movement_DirtyChargedAttackFix;
+	FGameplayTag Event_Movement_WoundedCancel;
+	FGameplayTag Event_Movement_ExecutionVictim;
+
 	FGameplayTag InputTag_Move;
 	FGameplayTag InputTag_Look_Mouse;
 	FGameplayTag InputTag_Look_Stick;
@@ -93,10 +107,11 @@ public:
 
 	TMap<uint8, FGameplayTag> MovementModeTagMap;
 	TMap<uint8, FGameplayTag> CustomMovementModeTagMap;
-
+	TArray<FGameplayTag> SimProxyReplicatedTags;
 protected:
 	void AddAllTags(UGameplayTagsManager& Manager);
 	void AddTag(FGameplayTag& OutTag, const ANSICHAR* TagName, const ANSICHAR* TagComment);
+	void AddSimProxyReplicatedTag(FGameplayTag& OutTag, const ANSICHAR* TagName, const ANSICHAR* TagComment);
 	void AddMovementModeTag(FGameplayTag& OutTag, const ANSICHAR* TagName, uint8 MovementMode);
 	void AddCustomMovementModeTag(FGameplayTag& OutTag, const ANSICHAR* TagName, uint8 CustomMovementMode);
 
