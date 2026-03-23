@@ -52,6 +52,7 @@ AECRCharacter::AECRCharacter(const FObjectInitializer& ObjectInitializer)
 		this, TEXT("AbilitySystemComponent"));
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
+	AbilitySystemComponent->ReplicationProxyEnabled = true;
 
 	CreateDefaultSubobject<UECRCharacterHealthSet>(TEXT("CharacterHealthSet"));
 	CreateDefaultSubobject<UECRCombatSet>(TEXT("CombatSet"));

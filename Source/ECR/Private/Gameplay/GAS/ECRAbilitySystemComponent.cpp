@@ -20,8 +20,6 @@ UECRAbilitySystemComponent::UECRAbilitySystemComponent(const FObjectInitializer&
 	AbilityQueueSystemLastInputTagTime = 0;
 	AbilityQueueSystemDeltaTime = 0;
 
-	ReplicationProxyEnabled = true;
-
 	InputPressedSpecHandles.Reset();
 	InputReleasedSpecHandles.Reset();
 	InputHeldSpecHandles.Reset();
