@@ -6,6 +6,7 @@
 #include "Gameplay/GAS/ECRGlobalAbilitySystem.h"
 #include "GameplayTagContainer.h"
 #include "GameplayAbilitySpec.h"
+#include "TickableAttributeSetInterface.h"
 #include "Gameplay/GAS/Abilities/ECRGameplayAbility.h"
 #include "Animation/ECRAnimInstance.h"
 #include "Gameplay/GAS/ECRAbilityTagRelationshipMapping.h"
@@ -25,6 +26,28 @@ UECRAbilitySystemComponent::UECRAbilitySystemComponent(const FObjectInitializer&
 	InputHeldSpecHandles.Reset();
 
 	FMemory::Memset(ActivationGroupCounts, 0, sizeof(ActivationGroupCounts));
+}
+
+void UECRAbilitySystemComponent::TickComponent(float DeltaTime, ELevelTick TickType,
+	FActorComponentTickFunction* ThisTickFunction)
+{
+	if (IsOwnerActorAuthoritative())
+	{
+		IECRAbilitySystemReplicationProxyInterface* ReplicationInterface = GetExtendedReplicationInterface();
+		FGameplayAbilityRepAnimMontage& MutableRepAnimMontageInfo = ReplicationInterface ? ReplicationInterface->Call_GetRepAnimMontageInfo_Mutable() : GetRepAnimMontageInfo_Mutable();
+		AnimMontage_UpdateReplicatedData(MutableRepAnimMontageInfo);
+	}
+
+	UGameplayTasksComponent::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	for (UAttributeSet* AttributeSet : GetSpawnedAttributes())
+	{
+		ITickableAttributeSetInterface* TickableSet = Cast<ITickableAttributeSetInterface>(AttributeSet);
+		if (TickableSet)
+		{
+			TickableSet->Tick(DeltaTime);
+		}
+	}
 }
 
 void UECRAbilitySystemComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
