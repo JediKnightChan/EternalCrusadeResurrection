@@ -21,6 +21,7 @@
 #include "Engine/ActorChannel.h"
 #include "Gameplay/ECRGameState.h"
 #include "Gameplay/Character/ECRPawnData.h"
+#include "Gameplay/Equipment/ECREquipmentManagerComponent.h"
 #include "Gameplay/GAS/ECRAbilitySet.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
@@ -199,9 +200,28 @@ bool AECRCharacter::ReplicateSubobjects(UActorChannel* Channel, FOutBunch* Bunch
 	{
 		if (ActorComp && ActorComp->GetIsReplicated())
 		{
-			// Replicate everything except ASC for simulated proxies 
-			if (ActorComp != AbilitySystemComponent || RepFlags->bNetOwner || !AbilitySystemComponent->
+			if (ActorComp == AbilitySystemComponent && !RepFlags->bNetOwner && AbilitySystemComponent->
 				ReplicationProxyEnabled)
+			{
+				// Don't replicate ASC for simulated proxies, if ReplicationProxyEnabled
+				// For sim proxies, we'll use MinimalAscState to replicate attributes and tags
+				MinimalAscState.FillForCharacter(this);
+				if (!MinimalAscState.Equals(LastSharedAscState))
+				{
+					LastSharedAscState = MinimalAscState;
+					MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, MinimalAscState, this);
+				}
+			} else if (ActorComp->IsA(UECREquipmentManagerComponent::StaticClass()) && !RepFlags->bNetOwner)
+			{
+				// Don't replicate UECREquipmentManagerComponent to sim proxies
+			} else if (ActorComp->IsA(UECRPawnExtensionComponent::StaticClass()) && !RepFlags->bNetOwner)
+			{
+				// Don't replicate UECRPawnExtensionComponent to sim proxies
+			} else if (ActorComp->IsA(UECRHealthComponent::StaticClass()) && !RepFlags->bNetOwner)
+			{
+				// Don't replicate UECRHealthComponent to sim proxies
+			}
+			else
 			{
 				UActorChannel::SetCurrentSubObjectOwner(ActorComp);
 				WroteSomething |= ActorComp->ReplicateSubobjects(Channel, Bunch, RepFlags);
@@ -209,16 +229,6 @@ bool AECRCharacter::ReplicateSubobjects(UActorChannel* Channel, FOutBunch* Bunch
 				UActorChannel::SetCurrentSubObjectOwner(this);
 				WroteSomething |= Channel->ReplicateSubobject(ActorComp, *Bunch, *RepFlags);
 				// (this makes those subobjects 'supported', and from here on those objects may have reference replicated)	
-			}
-			else
-			{
-				// For sim proxies, use MinimalAscState to replicate attributes and tags
-				MinimalAscState.FillForCharacter(this);
-				if (!MinimalAscState.Equals(LastSharedAscState))
-				{
-					LastSharedAscState = MinimalAscState;
-					MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, MinimalAscState, this);
-				}
 			}
 		}
 	}

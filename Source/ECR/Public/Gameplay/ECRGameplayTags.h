@@ -45,6 +45,7 @@ public:
 	FGameplayTag Event_Movement_DirtyChargedAttackFix;
 	FGameplayTag Event_Movement_WoundedCancel;
 	FGameplayTag Event_Movement_ExecutionVictim;
+	FGameplayTag Status_VisibleToEnemy;
 
 	FGameplayTag InputTag_Move;
 	FGameplayTag InputTag_Look_Mouse;

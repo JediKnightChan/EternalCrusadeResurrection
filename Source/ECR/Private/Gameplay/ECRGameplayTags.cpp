@@ -51,6 +51,7 @@ void FECRGameplayTags::AddAllTags(UGameplayTagsManager& Manager)
 	AddSimProxyReplicatedTag(Event_Movement_DirtyChargedAttackFix, "Event.Movement.DirtyChargedAttackFix","Mirroring lower body bones for charged attack. Will be replicated to sim proxies");
 	AddSimProxyReplicatedTag(Event_Movement_WoundedCancel, "Event.Movement.WoundedCancel","Wounded cancel. Will be replicated to sim proxies");
 	AddSimProxyReplicatedTag(Event_Movement_ExecutionVictim, "Event.Movement.ExecutionVictim","Execution victim. Will be replicated to sim proxies");
+	AddSimProxyReplicatedTag(Status_VisibleToEnemy, "Status.VisibleToEnemy", "Visible to enemy (show GUI marker). Will be replicated to sim proxies");
 	/* */
 
 	AddTag(Cosmetic_Montage, "Cosmetic.Montage", "Prefix for montage customization");
