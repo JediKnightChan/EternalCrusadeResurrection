@@ -43,9 +43,7 @@ SceneComponentClass* UCustomizationLoaderComponent::SpawnChildComponent(USkeleta
 	SceneComponentClass* ChildComponent = NewObject<SceneComponentClass>(
 		Component, SceneComponentClass::StaticClass(), NAME_None);
 
-	// Don't tick every frame customization component
-	ChildComponent->SetComponentTickInterval(1.0f);
-
+	ChildComponent->PrimaryComponentTick.bCanEverTick = false;
 	ChildComponent->RegisterComponent();
 	ChildComponent->SetRelativeTransform(RelativeTransform);
 	if (!SocketName.IsNone())
