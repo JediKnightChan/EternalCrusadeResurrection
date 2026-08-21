@@ -1,8 +1,8 @@
 import json
 import os.path
 
-raw_filename = "Raw/PegasusSand/pegasus_vfx.raw.json"
-new_filename = "Usual/PegasusSand/pegasus_vfx.json"
+raw_filename = "Raw/Garrison/garrison_static3.raw.json"
+new_filename = "Usual/Garrison/garrison_static3.json"
 
 need_log = False
 log_content = ""

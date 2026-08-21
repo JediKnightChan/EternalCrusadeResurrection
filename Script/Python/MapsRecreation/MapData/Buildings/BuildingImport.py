@@ -13,7 +13,7 @@ ASSET_DIR = "/Game/Buildings/Blueprints/"
 # ASSET_DIR = "/Game/PROPS/Ambiance/"
 # ASSET_DIR = "/Game/Graybox/GB_Promethium/"
 JSON_FILEPATH = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                "MapData/Buildings/Files/BP_CapturePoint_Wall.json"
+                "MapData/Buildings/Files/BP_SIG_ControlCenter_Garrison.json"
 ASSET_NAME_OVERRIDE = ""
 if ASSET_NAME_OVERRIDE:
     ASSET_NAME = ASSET_NAME_OVERRIDE

@@ -193,7 +193,7 @@ void UECRWeaponInstance::LoadMontages()
 
 	if (MontagesToLoad.Num() > 0)
 	{
-		UAssetManager::GetStreamableManager().RequestAsyncLoad(MontagesToLoad);
+		UAssetManager::GetStreamableManager().RequestAsyncLoad(MontagesToLoad, FStreamableDelegate(), 0, true);
 	}
 }
 

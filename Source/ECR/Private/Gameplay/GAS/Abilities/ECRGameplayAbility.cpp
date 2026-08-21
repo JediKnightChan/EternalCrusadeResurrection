@@ -672,7 +672,7 @@ void UECRGameplayAbility::LoadMontages()
 	{
 		if (UAssetManager::IsValid())
 		{
-			UAssetManager::GetStreamableManager().RequestAsyncLoad(MontagesToLoad);
+			UAssetManager::GetStreamableManager().RequestAsyncLoad(MontagesToLoad, FStreamableDelegate(), 0, true);
 		}
 	}
 }

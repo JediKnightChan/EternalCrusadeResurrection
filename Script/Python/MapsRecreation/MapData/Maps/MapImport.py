@@ -8,7 +8,7 @@ import re
 
 # Change me!
 map_data_filepath = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                    "MapData/Maps/Usual/PegasusSand/pegasus_static3.json"
+                    "MapData/Maps/Usual/Garrison/garrison.json"
 PATH_TO_FILTER = None
 EXCLUDE_ENGINE_ASSETS = False
 level_library = unreal.EditorLevelLibrary
@@ -16,7 +16,7 @@ editor_asset_library = unreal.EditorAssetLibrary
 relative_offset_loc = unreal.Vector(0, 0, 0)  # + unreal.Vector(25400,
 #              -76200,
 #             0)
-# relative_offset_loc = unreal.Vector(0, 0, 0)
+# relative_offset_loc = unreal.Vector(25400*31, 25400*31, 0)
 
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/"
           "MapData/Maps/path_replacing_map.json", "r") as f:
@@ -24,9 +24,6 @@ with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsR
 
 with open(map_data_filepath, "rb") as f:
     data = json.load(f)
-
-data = data[0:2000]
-print(len(data))
 
 for element in data:
     path, transform = element["path"], element["transform"]
