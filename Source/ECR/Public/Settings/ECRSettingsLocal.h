@@ -15,7 +15,7 @@ class UECRLocalPlayer;
 /**
  * UECRSettingsLocal
  */
-UCLASS()
+UCLASS(BlueprintType)
 class UECRSettingsLocal : public UGameUserSettings
 {
 	GENERATED_BODY()
@@ -96,6 +96,12 @@ public:
 	/** Array of custom key mappings that have been set by the player. Empty by default. */
 	UPROPERTY(Config)
 	TMap<FName, FKey> CustomKeyboardConfig;
+
+	UPROPERTY(Config, BlueprintReadWrite)
+	bool bUseTapForSprint = false;
+
+	UPROPERTY(Config, BlueprintReadWrite)
+	bool bUseTapForADS = true;
 
 	//////////////////////////////////////////////////////////////////
 	// Audio - Volume
