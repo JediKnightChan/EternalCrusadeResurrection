@@ -43,74 +43,46 @@ void UECRWeaponStateComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 	}
 }
 
-void UECRWeaponStateComponent::ClientConfirmTargetData_Implementation(uint16 UniqueId, bool bSuccess,
-                                                                      const TArray<uint8>& HitReplaces)
+void UECRWeaponStateComponent::AddLocalSideHitMarkers(const UObject* SourceObject,
+                                                      const TArray<FHitResult>& FoundHits)
 {
-	for (int i = 0; i < UnconfirmedServerSideHitMarkers.Num(); i++)
-	{
-		FECRServerSideHitMarkerBatch& Batch = UnconfirmedServerSideHitMarkers[i];
-		if (Batch.UniqueId == UniqueId)
-		{
-			if (bSuccess && (HitReplaces.Num() != Batch.Markers.Num()))
-			{
-				UWorld* World = GetWorld();
-				bool bFoundShowAsSuccessHit = false;
-
-				int32 HitLocationIndex = 0;
-				for (const FECRScreenSpaceHitLocation& Entry : Batch.Markers)
-				{
-					if (!HitReplaces.Contains(HitLocationIndex) && Entry.HitSuccess)
-					{
-						// Only need to do this once
-						if (!bFoundShowAsSuccessHit)
-						{
-							ActuallyUpdateDamageInstigatedTime();
-						}
-
-						bFoundShowAsSuccessHit = true;
-
-						LastWeaponDamageScreenLocations.Add(Entry);
-					}
-					++HitLocationIndex;
-				}
-			}
-
-			UnconfirmedServerSideHitMarkers.RemoveAt(i);
-			break;
-		}
-	}
-}
-
-void UECRWeaponStateComponent::AddUnconfirmedServerSideHitMarkers(const UObject* SourceObject,
-                                                                  const FGameplayAbilityTargetDataHandle& InTargetData,
-                                                                  const TArray<FHitResult>& FoundHits)
-{
-	FECRServerSideHitMarkerBatch& NewUnconfirmedHitMarker = UnconfirmedServerSideHitMarkers.Emplace_GetRef(
-		InTargetData.UniqueId);
-
 	if (APlayerController* OwnerPC = GetController<APlayerController>())
 	{
+		bool bUpdatedInstigatedTime = false;
+
 		for (const FHitResult& Hit : FoundHits)
 		{
 			FVector2D HitScreenLocation;
-			if (UGameplayStatics::ProjectWorldToScreen(OwnerPC, Hit.Location, /*out*/ HitScreenLocation,
-			                                           /*bPlayerViewportRelative=*/ false))
+			if (!UGameplayStatics::ProjectWorldToScreen(OwnerPC, Hit.Location, /*out*/ HitScreenLocation,
+			                                            /*bPlayerViewportRelative=*/ false))
 			{
-				FECRScreenSpaceHitLocation& Entry = NewUnconfirmedHitMarker.Markers.AddDefaulted_GetRef();
-				Entry.Location = HitScreenLocation;
-				Entry.HitSuccess = ShouldShowHitAsSuccess(SourceObject, Hit);
+				continue;
+			}
 
-				// Determine the hit zone
-				if (const UPhysicalMaterialWithTags* PhysMatWithTags = Cast<const UPhysicalMaterialWithTags>(
+			// Only need to do this once
+			if (!bUpdatedInstigatedTime)
+			{
+				ActuallyUpdateDamageInstigatedTime();
+				bUpdatedInstigatedTime = true;
+			}
+
+			FECRScreenSpaceHitLocation& Entry =
+				LastWeaponDamageScreenLocations.AddDefaulted_GetRef();
+
+			Entry.Location = HitScreenLocation;
+			Entry.HitSuccess = ShouldShowHitAsSuccess(SourceObject, Hit);
+
+			if (const UPhysicalMaterialWithTags* PhysMatWithTags =
+				Cast<const UPhysicalMaterialWithTags>(
 					Hit.PhysMaterial.Get()))
+			{
+				for (const FGameplayTag MaterialTag :
+				     PhysMatWithTags->Tags)
 				{
-					for (const FGameplayTag MaterialTag : PhysMatWithTags->Tags)
+					if (MaterialTag.MatchesTag(TAG_Gameplay_Zone))
 					{
-						if (MaterialTag.MatchesTag(TAG_Gameplay_Zone))
-						{
-							Entry.HitZone = MaterialTag;
-							break;
-						}
+						Entry.HitZone = MaterialTag;
+						break;
 					}
 				}
 			}
