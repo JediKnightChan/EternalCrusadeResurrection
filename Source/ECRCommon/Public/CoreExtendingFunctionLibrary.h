@@ -81,4 +81,7 @@ public:
 	/** Make dedicated server quit game */
 	UFUNCTION(BlueprintCallable)
 	static void DedicatedServerExit();
+
+	UFUNCTION(BlueprintPure)
+	static bool IsPlayingInsidePie(APlayerController* PC);
 };

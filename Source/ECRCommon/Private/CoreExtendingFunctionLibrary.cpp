@@ -4,6 +4,7 @@
 #include "CoreExtendingFunctionLibrary.h"
 
 #include "GameplayTagContainer.h"
+#include "GameFramework/PlayerController.h"
 #include "Kismet/KismetMathLibrary.h"
 
 
@@ -208,4 +209,17 @@ void UCoreExtendingFunctionLibrary::CrashOutWithNullPointerException()
 void UCoreExtendingFunctionLibrary::DedicatedServerExit()
 {
 	FGenericPlatformMisc::RequestExit(false);
+}
+
+bool UCoreExtendingFunctionLibrary::IsPlayingInsidePie(APlayerController* PC)
+{
+	if (PC)
+	{
+		if (UWorld* World = PC->GetWorld())
+		{
+			return World->IsPlayInEditor();
+		}
+	}
+
+	return false;
 }
