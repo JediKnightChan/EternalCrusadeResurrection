@@ -4,6 +4,7 @@
 #include "CoreExtendingFunctionLibrary.h"
 
 #include "GameplayTagContainer.h"
+#include "GameFramework/Character.h"
 #include "GameFramework/PlayerController.h"
 #include "Kismet/KismetMathLibrary.h"
 
@@ -222,4 +223,41 @@ bool UCoreExtendingFunctionLibrary::IsPlayingInsidePie(APlayerController* PC)
 	}
 
 	return false;
+}
+
+USkeletalMesh* UCoreExtendingFunctionLibrary::GetDefaultSkeletalMeshFromClass(TSubclassOf<ACharacter> CharacterClass)
+{
+	if (!CharacterClass) return nullptr;
+
+	// Get the Class Default Object (CDO)
+	if (ACharacter* DefaultCharacter = Cast<ACharacter>(CharacterClass->GetDefaultObject()))
+	{
+		// Access the default mesh component and return its assigned asset
+		if (USkeletalMeshComponent* MeshComp = DefaultCharacter->GetMesh())
+		{
+			return MeshComp->GetSkeletalMeshAsset();
+		}
+	}
+	return nullptr;
+}
+
+TSubclassOf<UAnimInstance> UCoreExtendingFunctionLibrary::GetDefaultAnimBlueprintFromClass(
+	TSubclassOf<ACharacter> CharacterClass)
+{
+	if (!CharacterClass) return nullptr;
+
+	// Access the Class Default Object (CDO)
+	if (ACharacter* DefaultCharacter = Cast<ACharacter>(CharacterClass->GetDefaultObject()))
+	{
+		// Access the default mesh component
+		if (USkeletalMeshComponent* MeshComp = DefaultCharacter->GetMesh())
+		{
+			// Verify that the mesh is actually set to use an Animation Blueprint
+			if (MeshComp->GetAnimationMode() == EAnimationMode::AnimationBlueprint)
+			{
+				return MeshComp->AnimClass;
+			}
+		}
+	}
+	return nullptr;
 }
