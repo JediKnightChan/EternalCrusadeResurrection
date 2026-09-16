@@ -29,8 +29,11 @@ void UECRGameInstance::LogOut()
 	{
 		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
 		{
-			LeaveParty();
-			DestroyParty();
+			if (!GetIsLoggedInViaDeviceId())
+			{
+				LeaveParty();
+				DestroyParty();
+			}
 			OnlineIdentityPtr->OnLogoutCompleteDelegates->AddUObject(this, &UECRGameInstance::OnLogoutComplete);
 			OnlineIdentityPtr->Logout(0);
 		}
@@ -42,6 +45,12 @@ void UECRGameInstance::LoginViaEpic(const FString PlayerName)
 {
 	// ReSharper disable once StringLiteralTypo
 	Login(PlayerName, "accountportal");
+}
+
+void UECRGameInstance::LoginViaDeviceId(const FString PlayerName)
+{
+	// ReSharper disable once StringLiteralTypo
+	Login(PlayerName, "deviceid");
 }
 
 
@@ -93,11 +102,17 @@ void UECRGameInstance::OnLoginComplete(int32 LocalUserNum, const bool bWasSucces
 	{
 		if (bWasSuccessful)
 		{
-			// GUISupervisor->ShowMainMenu(true);
-			StartListeningForPartyEvents();
-			TMap<FString, FString> TestMap;
-			TestMap.Add("Test", "Test");
-			CreateParty(TestMap);
+			// Check that we are in PIE or are temporary logged in
+			if (GetIsLoggedInViaDeviceId() || (GetWorld() && GetWorld()->IsPlayInEditor()))
+			{
+				GUISupervisor->ShowMainMenu(true);
+			} else
+			{
+				StartListeningForPartyEvents();
+				TMap<FString, FString> TestMap;
+				TestMap.Add("Test", "Test");
+				CreateParty(TestMap);
+			}
 		}
 		else
 		{
@@ -732,6 +747,13 @@ FString UECRGameInstance::GetPlayerNickname()
 bool UECRGameInstance::GetIsLoggedIn()
 {
 	return UKismetSystemLibrary::IsLoggedIn(GetPrimaryPlayerController());
+}
+
+bool UECRGameInstance::GetIsLoggedInViaDeviceId()
+{
+	FString Left, Right = "";
+	GetUserAccountID().Split("|", &Left, &Right);
+	return GetIsLoggedIn() && Left.TrimStart().TrimEnd().IsEmpty();
 }
 
 FString UECRGameInstance::GetUserAccountID()

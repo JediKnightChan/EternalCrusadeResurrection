@@ -179,6 +179,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void LoginViaEpic(FString PlayerName);
 
+	/** Login user via Epic Account. PlayerName is deprecated */
+	UFUNCTION(BlueprintCallable)
+	void LoginViaDeviceId(FString PlayerName);
+
 	/** Login user via Device ID. PlayerName is deprecated */
 	UFUNCTION(BlueprintCallable)
 	void LoginPersistent(FString PlayerName);
@@ -247,6 +251,10 @@ public:
 	/** Get if player is logged in */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	bool GetIsLoggedIn();
+
+	/** Get if player is logged in via DeviceId */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	bool GetIsLoggedInViaDeviceId();
 
 	/** Get player account id */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
