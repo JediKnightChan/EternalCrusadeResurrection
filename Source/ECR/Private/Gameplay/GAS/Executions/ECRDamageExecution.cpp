@@ -5,6 +5,7 @@
 #include "GameFramework/GameplayMessageSubsystem.h"
 #include "Gameplay/ECRGameplayBlueprintLibrary.h"
 #include "Gameplay/ECRGameplayTags.h"
+#include "Gameplay/ECRGameState.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Gameplay/GAS/ECRGameplayEffectContext.h"
 #include "Gameplay/GAS/ECRAbilitySourceInterface.h"
@@ -212,9 +213,18 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	ToughnessAttenuation = FMath::Max(ToughnessAttenuation, 0.0f);
 	TargetIncomingDamageMultiplier = FMath::Max(TargetIncomingDamageMultiplier, 0.0f);
 
+	float GlobalDamageMultiplier = 1.0f;
+	if (TargetAsc && TargetAsc->GetWorld())
+	{
+		if (AECRGameState* GS = Cast<AECRGameState>(TargetAsc->GetWorld()->GetGameState()))
+		{
+			GlobalDamageMultiplier = GS->GetGlobalDamageMultiplier();
+		}
+	}
+
 	float AttenuatedDamage = FMath::Max(
 		0, BaseDamage * DistanceAttenuation * PhysicalMaterialAttenuation * ToughnessAttenuation *
-		TargetIncomingDamageMultiplier);
+		TargetIncomingDamageMultiplier * GlobalDamageMultiplier);
 
 	// Special rules for damage
 	if (SourceTags)

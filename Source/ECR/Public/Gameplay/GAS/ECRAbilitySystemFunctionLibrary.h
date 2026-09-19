@@ -16,11 +16,11 @@ struct FECRGameplayModifierInfoWrapper
 
 	// Modifier type
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TEnumAsByte<EGameplayModOp::Type> ModifierOp;
+	TEnumAsByte<EGameplayModOp::Type> ModifierOp = EGameplayModOp::Type::Additive;
 
 	// Magnitude
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float Magnitude;
+	float Magnitude = 0.0f;
 };
 
 

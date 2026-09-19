@@ -310,10 +310,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool SetPartyData(FString Key, FString Value);
 
-	/** Toggles whether party uses presence (online subsystem term) or not */
-	UFUNCTION(BlueprintCallable)
-	bool TogglePartyPresence(bool bWantPresence);
-
 	/** Sets party member (me only) custom attribute to value */
 	UFUNCTION(BlueprintCallable)
 	bool SetPartyMemberData(FString Key, FString Value, bool bForClient);

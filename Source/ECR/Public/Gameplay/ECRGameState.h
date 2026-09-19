@@ -40,4 +40,7 @@ protected:
 public:
 	/** Get CommonCharacterAbilitySets */
 	FORCEINLINE TArray<UECRAbilitySet*> GetCommonCharacterAbilitySets() { return CommonCharacterAbilitySets; }
+
+	UFUNCTION(BlueprintNativeEvent)
+	float GetGlobalDamageMultiplier();
 };
