@@ -21,7 +21,7 @@ void AECRGameState::HandleMatchIsWaitingToStart()
 	OnMatchWaitingToStart();
 }
 
-float AECRGameState::GetGlobalDamageMultiplier_Implementation()
+float AECRGameState::GetGlobalDamageMultiplier_Implementation(const UAbilitySystemComponent* SourceAsc, const UAbilitySystemComponent* TargetAsc)
 {
 	return 1.0f;
 }

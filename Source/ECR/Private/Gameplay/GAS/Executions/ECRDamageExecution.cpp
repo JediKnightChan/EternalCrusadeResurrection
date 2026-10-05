@@ -218,7 +218,7 @@ void UECRDamageExecution::Execute_Implementation(const FGameplayEffectCustomExec
 	{
 		if (AECRGameState* GS = Cast<AECRGameState>(TargetAsc->GetWorld()->GetGameState()))
 		{
-			GlobalDamageMultiplier = GS->GetGlobalDamageMultiplier();
+			GlobalDamageMultiplier = GS->GetGlobalDamageMultiplier(SourceAsc, TargetAsc);
 		}
 	}
 

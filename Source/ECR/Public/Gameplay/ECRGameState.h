@@ -42,5 +42,5 @@ public:
 	FORCEINLINE TArray<UECRAbilitySet*> GetCommonCharacterAbilitySets() { return CommonCharacterAbilitySets; }
 
 	UFUNCTION(BlueprintNativeEvent)
-	float GetGlobalDamageMultiplier();
+	float GetGlobalDamageMultiplier(const UAbilitySystemComponent* SourceAsc, const UAbilitySystemComponent* TargetAsc);
 };

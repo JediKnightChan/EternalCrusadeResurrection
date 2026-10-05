@@ -1,6 +1,7 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "InputModifiers.h"
+#include "InputTriggers.h"
 #include "ECRInputModifiers.generated.h"
 
 class UEnhancedPlayerInput;
@@ -139,3 +140,18 @@ class UECRInputModifierAimInversion : public UInputModifier
 protected:
 	virtual FInputActionValue ModifyRaw_Implementation(const UEnhancedPlayerInput* PlayerInput, FInputActionValue CurrentValue, float DeltaTime) override;	
 };
+
+/**
+ * UInverseInputTriggerChordAction
+ * Like UInputTriggerChordAction, but inversed condition
+*/
+UCLASS(NotBlueprintable, MinimalAPI, meta = (DisplayName = "Inverse Chorded Action", NotInputConfigurable = "true"))
+class UInverseInputTriggerChordAction : public UInputTriggerChordAction
+{
+	GENERATED_BODY()
+
+protected:
+	// Implicit, so action cannot fire unless this is firing.
+	virtual ETriggerType GetTriggerType_Implementation() const override { return ETriggerType::Blocker; }
+};
+

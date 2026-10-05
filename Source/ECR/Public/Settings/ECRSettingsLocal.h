@@ -98,15 +98,27 @@ public:
 	TMap<FName, FKey> CustomKeyboardConfig;
 
 	UPROPERTY(Config, BlueprintReadWrite)
+	FName GamepadPlatform = NAME_None;
+
+	UPROPERTY(Config, BlueprintReadWrite)
 	bool bUseTapForSprint = false;
 
 	UPROPERTY(Config, BlueprintReadWrite)
 	bool bUseTapForADS = true;
 
+	UPROPERTY(Config, BlueprintReadWrite)
+	bool bAutoSwitchToTapADSInPve = true;
+
+	UPROPERTY(Config, BlueprintReadWrite)
+	bool bEnableAbilityQueue = true;
+
+	UPROPERTY(Config, BlueprintReadWrite)
+	float CameraShakeStrength = 1.0f;
+
 	//////////////////////////////////////////////////////////////////
 	// Audio - Volume
 public:
-	DECLARE_EVENT_OneParam(ULyraSettingsLocal, FAudioDeviceChanged, const FString& /*DeviceId*/);
+	DECLARE_EVENT_OneParam(UECRSettingsLocal, FAudioDeviceChanged, const FString& /*DeviceId*/);
 
 	FAudioDeviceChanged OnAudioOutputDeviceChanged;
 };

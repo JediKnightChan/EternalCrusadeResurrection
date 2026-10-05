@@ -64,6 +64,9 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category="ECR|Network")
 	int32 GetOutPacketLoss() const;
 
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	bool IsUsingGamepad() const;
+
 protected:
 	//~APlayerController interface
 	virtual void PostProcessInput(const float DeltaTime, const bool bGamePaused) override;
