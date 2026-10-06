@@ -3,7 +3,7 @@ import os.path
 import re
 
 
-raw_filename = "Files/BP_SIG_PromethiumPump_01_Int.raw.json"
+raw_filename = "Files/BP_SIG_ControlCenter_Garrison.raw.json"
 filename = raw_filename.replace(".raw.json", ".json")
 PATH_REPLACING_JSON = "../../../MapUtils/assets_to_replace.json"
 

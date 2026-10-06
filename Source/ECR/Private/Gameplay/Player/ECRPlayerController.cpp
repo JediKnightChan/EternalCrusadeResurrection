@@ -197,6 +197,35 @@ int32 AECRPlayerController::GetOutPacketLoss() const
 	return 0;
 }
 
+bool AECRPlayerController::IsUsingGamepad() const
+{
+#if PLATFORM_WINDOWS
+	if (!FSlateApplication::IsInitialized())
+	{
+		return false;
+	}
+
+	const TSharedPtr<GenericApplication> PlatformApp =
+		FSlateApplication::Get().GetPlatformApplication();
+
+	if (!PlatformApp.IsValid())
+	{
+		return false;
+	}
+
+	return PlatformApp->IsGamepadAttached();
+
+#elif PLATFORM_LINUX || PLATFORM_MAC || PLATFORM_ANDROID || PLATFORM_IOS
+	// PC/mobile non-Windows: no gamepad detection implemented here.
+	return false;
+
+#else
+	// All other platforms (consoles, or any custom platform builds):
+	// assume gamepad input.
+	return true;
+#endif
+}
+
 void AECRPlayerController::PostProcessInput(const float DeltaTime, const bool bGamePaused)
 {
 	if (UECRAbilitySystemComponent* ECRASC = GetECRAbilitySystemComponent())

@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "FindSessionsCallbackProxy.h"
+#include "Gameplay/ECRMissionSettingsBlueprintLibrary.h"
 #include "ECROnlineSubsystem.generated.h"
 
 
@@ -71,6 +72,12 @@ struct FECRMatchResult
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FString InGameUniqueIdForSearch;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bCustomMissionSettings;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TMap<FName, FString> CustomMissionSettings;
 };
 
 
@@ -81,13 +88,13 @@ struct FECRFriendData
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bIsPlayingThisGame;
+	bool bIsPlayingThisGame = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString DisplayName;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bIsJoinAble;
+	bool bIsJoinAble = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FUniqueNetIdRepl CurrentSessionId;
@@ -109,13 +116,13 @@ struct FECRPartyMemberData
 	FUniqueNetIdRepl UserId;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bIsLeader;
+	bool bIsLeader = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FName Faction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bReady;
+	bool bReady = false;
 };
 
 /** Data about match that will be saved in game instance to be available after match creation */
@@ -129,16 +136,18 @@ struct FECRMatchSettings
 	FECRMatchSettings();
 
 	// Real constructor
-	FECRMatchSettings(const bool& bSettingsWereSetUp, const FString& GameVersion, const FString& InGameUniqueIdForSearch, const FName& GameMode,
+	FECRMatchSettings(const bool& bSettingsWereSetUp, const FString& GameVersion, const FString& InGameUniqueIdForSearch,
+		              const FName& GameMode, const bool& bIsPrivate,
 	                  const FName& MapName, const FString& MapPath,
 	                  const FName& GameMission,
 	                  const FName& Region, const FName& WeatherName, const FName& DayTimeName, const double TimeDelta,
 	                  const TArray<FFactionAlliance>& Alliances,
 	                  const TMap<FName, int32>& FactionNamesToCapacities,
-	                  const TMap<FName, FText>& FactionNamesToShortTexts)
+	                  const TMap<FName, FText>& FactionNamesToShortTexts, const FMissionSettings& MissionSettings)
 		: bSettingsWereSetUp(bSettingsWereSetUp),
 	      GameVersion(GameVersion),
 		  InGameUniqueIdForSearch(InGameUniqueIdForSearch),
+	      bIsPrivate(bIsPrivate),
 		  GameMode(GameMode),
 		  MapName(MapName),
 		  MapPath(MapPath),
@@ -149,20 +158,24 @@ struct FECRMatchSettings
 		  TimeDelta(TimeDelta),
 		  Alliances(Alliances),
 		  FactionNamesToCapacities(FactionNamesToCapacities),
-		  FactionNamesToShortTexts(FactionNamesToShortTexts)
+		  FactionNamesToShortTexts(FactionNamesToShortTexts),
+          MissionSettings(MissionSettings)
 	{
 		CurrentPlayerAmount = 1;
 		MatchStartedTime = 0.0f;
 	}
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bSettingsWereSetUp;
+	bool bSettingsWereSetUp = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString GameVersion;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString InGameUniqueIdForSearch;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bIsPrivate = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FName GameMode;
@@ -196,6 +209,9 @@ struct FECRMatchSettings
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TMap<FName, FText> FactionNamesToShortTexts;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FMissionSettings MissionSettings;
 
 	// Updatable stats
 

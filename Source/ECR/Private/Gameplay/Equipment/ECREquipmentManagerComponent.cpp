@@ -8,6 +8,7 @@
 #include "Gameplay/Equipment/ECREquipmentDefinition.h"
 #include "Net/UnrealNetwork.h"
 #include "Engine/ActorChannel.h"
+#include "GameFramework/Character.h"
 #include "Gameplay/ECRGameplayTags.h"
 #include "Gameplay/Equipment/ECREquipmentInstance_EquipmentMod.h"
 #include "System/ECRLogChannels.h"
@@ -140,7 +141,13 @@ void UECREquipmentManagerComponent::GetLifetimeReplicatedProps(TArray<FLifetimeP
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME(ThisClass, EquipmentList);
+	if (Cast<ACharacter>(GetOwner()))
+	{
+		DOREPLIFETIME_CONDITION(ThisClass, EquipmentList, COND_OwnerOnly);
+	} else
+	{
+		DOREPLIFETIME(ThisClass, EquipmentList);
+	}
 }
 
 UECREquipmentInstance* UECREquipmentManagerComponent::EquipItem(TSubclassOf<UECREquipmentDefinition> EquipmentClass)
@@ -218,6 +225,12 @@ bool UECREquipmentManagerComponent::ReplicateSubobjects(UActorChannel* Channel, 
                                                         FReplicationFlags* RepFlags)
 {
 	bool WroteSomething = Super::ReplicateSubobjects(Channel, Bunch, RepFlags);
+
+	// Don't replicate chars equipment to sim proxies
+	if (Cast<ACharacter>(GetOwner()) && !RepFlags->bNetOwner)
+	{
+		return WroteSomething;
+	}
 
 	for (FECRAppliedEquipmentEntry& Entry : EquipmentList.Entries)
 	{

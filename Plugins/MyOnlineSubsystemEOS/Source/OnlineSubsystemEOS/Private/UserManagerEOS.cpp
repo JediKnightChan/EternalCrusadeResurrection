@@ -303,6 +303,108 @@ FString FUserManagerEOS::GetPlatformDisplayName(int32 LocalUserNum) const
 typedef TEOSCallback<EOS_Auth_OnLoginCallback, EOS_Auth_LoginCallbackInfo, FUserManagerEOS> FLoginCallback;
 typedef TEOSCallback<EOS_Connect_OnLoginCallback, EOS_Connect_LoginCallbackInfo, FUserManagerEOS> FConnectLoginCallback;
 typedef TEOSCallback<EOS_Auth_OnDeletePersistentAuthCallback, EOS_Auth_DeletePersistentAuthCallbackInfo, FUserManagerEOS> FDeletePersistentAuthCallback;
+typedef TEOSCallback<EOS_Connect_OnCreateDeviceIdCallback, EOS_Connect_CreateDeviceIdCallbackInfo, FUserManagerEOS> FCreateDeviceIDCallback;
+
+static void CreateDeviceID(FUserManagerEOS* UserManager, FOnlineSubsystemEOS* EOSSubsystem);
+
+static void LoginWithDeviceID(FUserManagerEOS* UserManager, FOnlineSubsystemEOS* EOSSubsystem)
+{
+
+	UE_LOG_ONLINE(Display, TEXT("Starting LoginWithDeviceID..."));
+	FConnectLoginCallback* LoginCallback = new FConnectLoginCallback(UserManager->AsWeak());
+
+	EOS_Connect_Credentials UserCredentials{};
+	UserCredentials.ApiVersion = EOS_CONNECT_CREDENTIALS_API_LATEST;
+	UserCredentials.Type = EOS_EExternalCredentialType::EOS_ECT_DEVICEID_ACCESS_TOKEN;
+	UserCredentials.Token = nullptr;
+
+	EOS_Connect_UserLoginInfo UserLoginInfo{};
+	UserLoginInfo.ApiVersion = EOS_CONNECT_USERLOGININFO_API_LATEST;
+	UserLoginInfo.DisplayName = "Unidentified";
+
+	EOS_Connect_LoginOptions LoginOptions{};
+	LoginOptions.ApiVersion = EOS_CONNECT_LOGIN_API_LATEST;
+	LoginOptions.Credentials = &UserCredentials;
+	LoginOptions.UserLoginInfo = &UserLoginInfo;
+
+	int32 LocalUserNum = 0;
+	LoginCallback->CallbackLambda =
+		[LocalUserNum, EOSSubsystem, UserManager](const EOS_Connect_LoginCallbackInfo* Data)
+		{
+
+			UE_LOG_ONLINE(Display, TEXT("LoginWithDeviceID callback: %s"), *LexToString(Data->ResultCode));
+			if (Data->ResultCode == EOS_EResult::EOS_Success)
+			{
+				auto EpicAccountId = EOS_Auth_GetLoggedInAccountByIndex(EOSSubsystem->AuthHandle, 0);
+				UserManager->FullLoginCallback(LocalUserNum, EpicAccountId, Data->LocalUserId);
+
+				auto NetIDEos = UserManager->GetLocalUniqueNetIdEOS(LocalUserNum);
+				UE_LOG_ONLINE(Display, TEXT("User ID = %s. NetID = %s"),
+					*LexToString(NetIDEos->GetProductUserId()),
+					*(NetIDEos->ToString()));
+			}
+			else if (Data->ResultCode == EOS_EResult::EOS_NotFound)
+			{
+				UE_LOG_ONLINE(Display, TEXT("Calling CreateDeviceID..."));
+				CreateDeviceID(UserManager, EOSSubsystem);
+			}
+			else
+			{
+				UE_LOG_ONLINE(Error, TEXT("EOS Login by Device ID failed. Result Code = %s"), *LexToString(Data->ResultCode));
+				UserManager->TriggerOnLoginCompleteDelegates(LocalUserNum, false, *FUniqueNetIdEOS::EmptyId(), FString(TEXT("EOS Login failed")));
+			}
+		};
+
+	EOS_Connect_Login(EOSSubsystem->ConnectHandle, &LoginOptions, (void*)LoginCallback, LoginCallback->GetCallbackPtr());
+}
+
+static void CreateDeviceID(FUserManagerEOS* UserManager, FOnlineSubsystemEOS* EOSSubsystem)
+{
+	UE_LOG_ONLINE(Display, TEXT("Starting CreateDeviceID..."));
+	EOS_Connect_CreateDeviceIdOptions DeviceIDOptions{};
+	DeviceIDOptions.ApiVersion = EOS_CONNECT_CREATEDEVICEID_API_LATEST;
+	DeviceIDOptions.DeviceModel = "My Device";
+
+	FCreateDeviceIDCallback* CreateDeviceIDCallback = new FCreateDeviceIDCallback(UserManager->AsWeak());
+
+	CreateDeviceIDCallback->CallbackLambda =
+		[UserManager, EOSSubsystem](const EOS_Connect_CreateDeviceIdCallbackInfo* Data)
+		{
+			UE_LOG_ONLINE(Display, TEXT("CreateDeviceID callback: %s"), ANSI_TO_TCHAR(EOS_EResult_ToString(Data->ResultCode)));
+			if (Data->ResultCode == EOS_EResult::EOS_Success || (Data->ResultCode == EOS_EResult::EOS_DuplicateNotAllowed))
+			{
+				UE_LOG_ONLINE(Display, TEXT("Device ID Created, calling LoginWithDeviceID..."));
+				LoginWithDeviceID(UserManager, EOSSubsystem);
+			}
+			else
+			{
+				UE_LOG_ONLINE(Error, TEXT("Device ID creation failed. Result Code = %s"), ANSI_TO_TCHAR(EOS_EResult_ToString(Data->ResultCode)));
+			}
+		};
+
+	EOS_Connect_CreateDeviceId(EOSSubsystem->ConnectHandle, &DeviceIDOptions, (void*)CreateDeviceIDCallback, CreateDeviceIDCallback->GetCallbackPtr());
+}
+
+static void DeleteDeviceID(FOnlineSubsystemEOS* EOSSubsystem)
+{
+	EOS_Connect_DeleteDeviceIdOptions DeleteDeviceIdOptions{};
+	DeleteDeviceIdOptions.ApiVersion = EOS_CONNECT_DELETEDEVICEID_API_LATEST;
+
+	EOS_Connect_OnDeleteDeviceIdCallback DeleteDeviceIdCallback = [](const EOS_Connect_DeleteDeviceIdCallbackInfo* Data)
+		{
+			if (Data->ResultCode == EOS_EResult::EOS_Success)
+			{
+				UE_LOG_ONLINE(Display, TEXT("Device ID deleted."));
+			}
+			else
+			{
+				UE_LOG_ONLINE(Error, TEXT("Failed to delete Device ID. Result Code = %s"), *LexToString(Data->ResultCode));
+			}
+		};
+
+	EOS_Connect_DeleteDeviceId(EOSSubsystem->ConnectHandle, &DeleteDeviceIdOptions, nullptr, DeleteDeviceIdCallback);
+}
+
 
 // Chose arbitrarily since the SDK doesn't define it
 #define EOS_MAX_TOKEN_SIZE 4096
@@ -396,6 +498,18 @@ bool FUserManagerEOS::Login(int32 LocalUserNum, const FOnlineAccountCredentials&
 	LocalUserNumToLastLoginCredentials.Emplace(LocalUserNum, MakeShared<FOnlineAccountCredentials>(AccountCredentials));
 
 	FEOSSettings Settings = UEOSSettings::GetSettings();
+
+	if (AccountCredentials.Type == "deviceid")
+	{
+		bWasLastLoginViaDeviceId = true;
+		// FLocalUserEOS& LocalUser = AddLocalUser(LocalUserNum); // assert fails on line 756 otherwise
+		//LoginWithDeviceID(this, EOSSubsystem);
+		CreateDeviceID(this, EOSSubsystem);
+		return true;
+	} else
+	{
+		bWasLastLoginViaDeviceId = false;
+	}
 
 	// Are we configured to run at all?
 	if (!EOSSubsystem->bIsDefaultOSS && !EOSSubsystem->bIsPlatformOSS && !Settings.bUseEAS && !Settings.bUseEOSConnect)
@@ -1000,6 +1114,10 @@ bool FUserManagerEOS::Logout(int32 LocalUserNum)
 	LogoutOptions.ApiVersion = EOS_AUTH_LOGOUT_API_LATEST;
 	LogoutOptions.LocalUserId = UserId->GetEpicAccountId();
 
+	// Probably want to save DeviceID for possible later use after LogOut
+	// DeleteDeviceID(EOSSubsystem);
+	bWasLastLoginViaDeviceId = false;
+
 	EOS_Auth_Logout(EOSSubsystem->AuthHandle, &LogoutOptions, CallbackObj, CallbackObj->GetCallbackPtr());
 
 	LocalUserNumToLastLoginCredentials.Remove(LocalUserNum);
@@ -1462,7 +1580,7 @@ ELoginStatus::Type FUserManagerEOS::GetLoginStatus(const FUniqueNetIdEOS& UserId
 {
 	FEOSSettings Settings = UEOSSettings::GetSettings();
 	// If the user isn't using EAS, then only check for a product user id
-	if (!Settings.bUseEAS)
+	if (!Settings.bUseEAS || bWasLastLoginViaDeviceId)
 	{
 		const EOS_ProductUserId ProductUserId = UserId.GetProductUserId();
 		if (ProductUserId != nullptr)

@@ -179,6 +179,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void LoginViaEpic(FString PlayerName);
 
+	/** Login user via Epic Account. PlayerName is deprecated */
+	UFUNCTION(BlueprintCallable)
+	void LoginViaDeviceId(FString PlayerName);
+
 	/** Login user via Device ID. PlayerName is deprecated */
 	UFUNCTION(BlueprintCallable)
 	void LoginPersistent(FString PlayerName);
@@ -248,6 +252,10 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	bool GetIsLoggedIn();
 
+	/** Get if player is logged in via DeviceId */
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	bool GetIsLoggedInViaDeviceId();
+
 	/** Get player account id */
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetUserAccountID();
@@ -301,10 +309,6 @@ public:
 	/** Sets custom attribute on party */
 	UFUNCTION(BlueprintCallable)
 	bool SetPartyData(FString Key, FString Value);
-
-	/** Toggles whether party uses presence (online subsystem term) or not */
-	UFUNCTION(BlueprintCallable)
-	bool TogglePartyPresence(bool bWantPresence);
 
 	/** Sets party member (me only) custom attribute to value */
 	UFUNCTION(BlueprintCallable)

@@ -482,6 +482,9 @@ private:
 
 	/** Last Login Credentials used for a login attempt */
 	TMap<int32, TSharedRef<FOnlineAccountCredentials>> LocalUserNumToLastLoginCredentials;
+
+	/***/
+	bool bWasLastLoginViaDeviceId = false;
 };
 
 typedef TSharedPtr<FUserManagerEOS, ESPMode::ThreadSafe> FUserManagerEOSPtr;

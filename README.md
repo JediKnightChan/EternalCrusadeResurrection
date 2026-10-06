@@ -27,7 +27,8 @@ Check out our [Wiki](https://github.com/JediKnightChan/EternalCrusadeResurrectio
 - Replay Subsystem with all needed functions for Blueprint replay setup
 - Gameplay Analytics Subsystem in a separate plugin for collecting them and sending to API endpoint
 - Cross-platform code (was built for Windows, Linux, Android)
-- Replication graph is used by default to achieve higher player counts, with additional optimizations by movement replication using Fast Shared Path and dynamic net update frequencies based on distance to viewer and camera orientation
+- Replication graph is used by default to achieve higher player counts, with additional optimizations with dynamic net update frequencies based on distance to viewer and camera orientation
+- Network optimizations to reduce CPU and bandwidth costs for replication to Simulated Proxies
 
 ### Differences from Lyra (5.0)
 
@@ -38,7 +39,9 @@ Check out our [Wiki](https://github.com/JediKnightChan/EternalCrusadeResurrectio
   allows to grab input while another ability (like stun) is active
 - PawnData elements are defined in GameState and on Character as a spawn option, so it can be customizable, unlike Lyra,
   where it's defined by experience and is the same for all players
-- Replication Graph uses dynamic spatial frequency nodes within grid nodes to reduce server CPU load by throttling far and invisible actors updates
+- Replication Graph uses dynamic spatial frequency nodes within grid nodes to reduce server CPU load by throttling far and invisible actors updates and has no bug with PS replication
+- Root motion desync fixed, while [official fix only in 5.4](https://github.com/EpicGames/UnrealEngine/commit/fe450c1057b2da0ff5a6d65936a4e3778ce1aa40#diff-064baad3356f4281581577ea45b6122b631bdd93b5b03f5904719a30030ef119)
+- Network optimizations: [equipment instances are not replicated to sim proxies](https://github.com/JediKnightChan/EternalCrusadeResurrection/commit/03701217a7c38fa9c22cf1f6fd27e7e52dc4d9ad), GAS component replication to sim proxies [heavily optimized](https://github.com/JediKnightChan/EternalCrusadeResurrection/commit/742c044a572e6b584e5f5d0f7e74a16c194bdeee), as it uses only minimal struct of attributes and tags with max size 10 bytes, min size 3 bytes + unavoidable montage and active gameplay cues data
 
 #### Medium changes
 

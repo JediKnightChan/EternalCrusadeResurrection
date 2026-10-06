@@ -81,4 +81,13 @@ public:
 	/** Make dedicated server quit game */
 	UFUNCTION(BlueprintCallable)
 	static void DedicatedServerExit();
+
+	UFUNCTION(BlueprintPure)
+	static bool IsPlayingInsidePie(APlayerController* PC);
+
+	UFUNCTION(BlueprintPure, Category = "Class Defaults")
+	static USkeletalMesh* GetDefaultSkeletalMeshFromClass(TSubclassOf<ACharacter> CharacterClass);
+
+	UFUNCTION(BlueprintPure, Category = "Class Defaults")
+	static TSubclassOf<UAnimInstance> GetDefaultAnimBlueprintFromClass(TSubclassOf<ACharacter> CharacterClass);
 };

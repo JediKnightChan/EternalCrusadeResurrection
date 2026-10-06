@@ -587,38 +587,6 @@ void UECRGameplayAbility_RangedWeapon::OnTargetDataReadyCallback(const FGameplay
 
 		bool bProjectileWeapon = false;
 
-#if WITH_SERVER_CODE
-		if (!bProjectileWeapon)
-		{
-			if (AController* Controller = GetControllerFromActorInfo())
-			{
-				if (Controller->GetLocalRole() == ROLE_Authority)
-				{
-					// Confirm hit markers
-					if (UECRWeaponStateComponent* WeaponStateComponent = Controller->FindComponentByClass<
-						UECRWeaponStateComponent>())
-					{
-						TArray<uint8> HitReplaces;
-						for (uint8 i = 0; (i < LocalTargetDataHandle.Num()) && (i < 255); ++i)
-						{
-							if (FGameplayAbilityTargetData_SingleTargetHit* SingleTargetHit = static_cast<
-								FGameplayAbilityTargetData_SingleTargetHit*>(LocalTargetDataHandle.Get(i)))
-							{
-								if (SingleTargetHit->bHitReplaced)
-								{
-									HitReplaces.Add(i);
-								}
-							}
-						}
-
-						WeaponStateComponent->ClientConfirmTargetData(LocalTargetDataHandle.UniqueId,
-						                                              bIsTargetDataValid, HitReplaces);
-					}
-				}
-			}
-		}
-#endif //WITH_SERVER_CODE
-
 
 		// See if we still have ammo
 		if (bIsTargetDataValid && CommitAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo))
@@ -665,7 +633,6 @@ void UECRGameplayAbility_RangedWeapon::StartRangedWeaponTargeting()
 
 	// Fill out the target data from the hit results
 	FGameplayAbilityTargetDataHandle TargetData;
-	TargetData.UniqueId = WeaponStateComponent ? WeaponStateComponent->GetUnconfirmedServerSideHitMarkerCount() : 0;
 
 	if (FoundHits.Num() > 0)
 	{
@@ -686,7 +653,7 @@ void UECRGameplayAbility_RangedWeapon::StartRangedWeaponTargeting()
 	const bool bProjectileWeapon = false;
 	if (!bProjectileWeapon && (WeaponStateComponent != nullptr))
 	{
-		WeaponStateComponent->AddUnconfirmedServerSideHitMarkers(GetCurrentSourceObject(), TargetData, FoundHits);
+		WeaponStateComponent->AddLocalSideHitMarkers(GetCurrentSourceObject(), FoundHits);
 	}
 
 	// Process the target data immediately

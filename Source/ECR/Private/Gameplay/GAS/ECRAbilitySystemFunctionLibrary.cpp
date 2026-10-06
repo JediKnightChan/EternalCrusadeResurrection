@@ -2,9 +2,13 @@
 
 #include "AbilitySystemComponent.h"
 #include "GameplayCueFunctionLibrary.h"
+#include "GameplayCueNotify_Looping.h"
+#include "GameplayCueNotify_Static.h"
 #include "GameplayEffect.h"
 #include "GameplayEffectUIData.h"
+#include "NiagaraSystem.h"
 #include "Gameplay/GAS/Abilities/ECRGameplayAbility.h"
+#include "Particles/ParticleSystem.h"
 
 
 struct FECRGameplayEffectContext;
@@ -107,7 +111,8 @@ UObject* UECRAbilitySystemFunctionLibrary::ExtractSourceFromEffectHandle(FActive
 	UAbilitySystemComponent* OwningAbilitySystemComponent = Handle.GetOwningAbilitySystemComponent();
 	if (OwningAbilitySystemComponent)
 	{
-		FGameplayEffectContextHandle EffectContext = OwningAbilitySystemComponent->GetEffectContextFromActiveGEHandle(Handle);
+		FGameplayEffectContextHandle EffectContext = OwningAbilitySystemComponent->
+			GetEffectContextFromActiveGEHandle(Handle);
 		return EffectContext.GetSourceObject();
 	}
 	return nullptr;
@@ -118,7 +123,8 @@ UObject* UECRAbilitySystemFunctionLibrary::ExtractInstigatorFromEffectHandle(FAc
 	UAbilitySystemComponent* OwningAbilitySystemComponent = Handle.GetOwningAbilitySystemComponent();
 	if (OwningAbilitySystemComponent)
 	{
-		FGameplayEffectContextHandle EffectContext = OwningAbilitySystemComponent->GetEffectContextFromActiveGEHandle(Handle);
+		FGameplayEffectContextHandle EffectContext = OwningAbilitySystemComponent->
+			GetEffectContextFromActiveGEHandle(Handle);
 		return EffectContext.GetInstigator();
 	}
 	return nullptr;
@@ -129,13 +135,15 @@ UObject* UECRAbilitySystemFunctionLibrary::ExtractEffectCauserFromEffectHandle(F
 	UAbilitySystemComponent* OwningAbilitySystemComponent = Handle.GetOwningAbilitySystemComponent();
 	if (OwningAbilitySystemComponent)
 	{
-		FGameplayEffectContextHandle EffectContext = OwningAbilitySystemComponent->GetEffectContextFromActiveGEHandle(Handle);
+		FGameplayEffectContextHandle EffectContext = OwningAbilitySystemComponent->
+			GetEffectContextFromActiveGEHandle(Handle);
 		return EffectContext.GetEffectCauser();
 	}
 	return nullptr;
 }
 
-bool UECRAbilitySystemFunctionLibrary::GetIsAbilityActive(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle)
+bool UECRAbilitySystemFunctionLibrary::GetIsAbilityActive(UAbilitySystemComponent* AbilitySystem,
+                                                          FGameplayAbilitySpecHandle Handle)
 {
 	if (AbilitySystem)
 	{
@@ -149,7 +157,7 @@ bool UECRAbilitySystemFunctionLibrary::GetIsAbilityActive(UAbilitySystemComponen
 }
 
 bool UECRAbilitySystemFunctionLibrary::GetIsAbilityActivatable(UAbilitySystemComponent* AbilitySystem,
-	FGameplayAbilitySpecHandle Handle, bool bIgnoreTags)
+                                                               FGameplayAbilitySpecHandle Handle, bool bIgnoreTags)
 {
 	if (AbilitySystem)
 	{
@@ -192,8 +200,10 @@ float UECRAbilitySystemFunctionLibrary::GetAbilityTotalCooldown(UAbilitySystemCo
 				const FGameplayTagContainer* CooldownTags = GameplayAbility->GetCooldownTags();
 				if (CooldownTags && CooldownTags->Num() > 0)
 				{
-					FGameplayEffectQuery const Query = FGameplayEffectQuery::MakeQuery_MatchAnyOwningTags(*CooldownTags);
-					TArray< TPair<float,float> > DurationAndTimeRemaining = AbilitySystem->GetActiveEffectsTimeRemainingAndDuration(Query);
+					FGameplayEffectQuery const Query =
+						FGameplayEffectQuery::MakeQuery_MatchAnyOwningTags(*CooldownTags);
+					TArray<TPair<float, float>> DurationAndTimeRemaining = AbilitySystem->
+						GetActiveEffectsTimeRemainingAndDuration(Query);
 					if (DurationAndTimeRemaining.Num() > 0)
 					{
 						int32 BestIdx = 0;
@@ -213,4 +223,66 @@ float UECRAbilitySystemFunctionLibrary::GetAbilityTotalCooldown(UAbilitySystemCo
 		}
 	}
 	return 0.0f;
+}
+
+void UECRAbilitySystemFunctionLibrary::GetAllParticleSystemsFromCues(TSet<UParticleSystem*>& OutParticlesBurst,
+                                                                     TSet<UNiagaraSystem*>& OutNiagarasBurst,
+                                                                     TSet<UParticleSystem*>& OutParticlesLooping,
+																	 TSet<UNiagaraSystem*>& OutNiagarasLooping)
+{
+	// 1. Get all loaded UGameplayCueNotify_Static classes
+	for (TObjectIterator<UClass> It; It; ++It)
+	{
+		if (It->IsChildOf(UGameplayCueNotify_Static::StaticClass()) && !It->HasAnyClassFlags(CLASS_Abstract))
+		{
+			UClass* CueClass = *It;
+
+			
+			// 2. Get the Class Default Object (CDO)
+			UGameplayCueNotify_Static* CueCDOBurst = Cast<UGameplayCueNotify_Static>(CueClass->GetDefaultObject());
+			AGameplayCueNotify_Looping* CueCDOLooping = Cast<AGameplayCueNotify_Looping>(CueClass->GetDefaultObject());
+			if (!CueCDOBurst && !CueCDOLooping)
+			{
+				continue;
+			}
+
+			bool bIsBurst = CueCDOBurst != nullptr;
+			
+			// 3. Find any UParticleSystem properties hidden inside this CDO
+			for (TFieldIterator<FObjectProperty> PropIt(CueClass); PropIt; ++PropIt)
+			{
+				if (PropIt->PropertyClass->IsChildOf(UParticleSystem::StaticClass()))
+				{
+					UParticleSystem* FoundParticle = Cast<UParticleSystem>(
+						PropIt->GetObjectPropertyValue_InContainer(CueClass->GetDefaultObject()));
+					if (FoundParticle)
+					{
+						if (bIsBurst)
+						{
+							OutParticlesBurst.Add(FoundParticle);
+						} else
+						{
+							OutParticlesLooping.Add(FoundParticle);
+						}
+						
+					}
+				}
+				else if (PropIt->PropertyClass->IsChildOf(UNiagaraSystem::StaticClass()))
+				{
+					UNiagaraSystem* FoundParticle = Cast<UNiagaraSystem>(
+						PropIt->GetObjectPropertyValue_InContainer(CueClass->GetDefaultObject()));
+					if (FoundParticle)
+					{
+						if (bIsBurst)
+						{
+							OutNiagarasBurst.Add(FoundParticle);
+						} else
+						{
+							OutNiagarasLooping.Add(FoundParticle);
+						}
+					}
+				}
+			}
+		}
+	}
 }

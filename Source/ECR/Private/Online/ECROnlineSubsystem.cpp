@@ -44,6 +44,16 @@ FECRMatchResult::FECRMatchResult(const FBlueprintSessionResult BlueprintSessionI
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_STARTED_TIME, MatchStartedTimestamp);
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_FACTIONS, FactionsString);
 	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_USER_DISPLAY_NAME, UserDisplayName);
+	BlueprintSession.OnlineResult.Session.SessionSettings.Get(SETTING_USES_CUSTOM_MISSION_SETTINGS, bCustomMissionSettings);
+
+	for (TTuple<FName, FOnlineSessionSetting> Pair : BlueprintSession.OnlineResult.Session.SessionSettings.Settings)
+	{
+		if (Pair.Key.ToString().ToUpper().StartsWith("UI_"))
+		{
+			BlueprintSession.OnlineResult.Session.SessionSettings.Get(Pair.Key, StringBuffer);
+			CustomMissionSettings.Add(Pair.Key, StringBuffer);
+		}
+	}
 }
 
 

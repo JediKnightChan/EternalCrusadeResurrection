@@ -27,6 +27,11 @@ public:
 	virtual bool ShouldAsyncLoadRuntimeObjectLibraries() const override;
 	virtual bool ShouldSyncLoadMissingGameplayCues() const override;
 	virtual bool ShouldAsyncLoadMissingGameplayCues() const override;
+	/** In HandleGameplayCue, Treat WhileActive event as OnActive event, as
+	 * we only receive WhileActive from ASC sim proxy skip from replicated ActiveGameplayCues on char */
+	virtual void HandleGameplayCue(AActor* TargetActor, FGameplayTag GameplayCueTag, EGameplayCueEvent::Type EventType,
+	                               const FGameplayCueParameters& Parameters,
+	                               EGameplayCueExecutionOptions Options) override;
 	//~End of UGameplayCueManager interface
 
 	static void DumpGameplayCues(const TArray<FString>& Args);
@@ -54,8 +59,14 @@ private:
 		FGameplayTag Tag;
 		TWeakObjectPtr<UObject> WeakOwner;
 
-		FLoadedGameplayTagToProcessData() {}
-		FLoadedGameplayTagToProcessData(const FGameplayTag& InTag, const TWeakObjectPtr<UObject>& InWeakOwner) : Tag(InTag), WeakOwner(InWeakOwner) {}
+		FLoadedGameplayTagToProcessData()
+		{
+		}
+
+		FLoadedGameplayTagToProcessData(const FGameplayTag& InTag,
+		                                const TWeakObjectPtr<UObject>& InWeakOwner) : Tag(InTag), WeakOwner(InWeakOwner)
+		{
+		}
 	};
 
 private:

@@ -20,3 +20,8 @@ void AECRGameState::HandleMatchIsWaitingToStart()
 	Super::HandleMatchIsWaitingToStart();
 	OnMatchWaitingToStart();
 }
+
+float AECRGameState::GetGlobalDamageMultiplier_Implementation(const UAbilitySystemComponent* SourceAsc, const UAbilitySystemComponent* TargetAsc)
+{
+	return 1.0f;
+}

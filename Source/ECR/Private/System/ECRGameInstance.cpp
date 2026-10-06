@@ -29,8 +29,11 @@ void UECRGameInstance::LogOut()
 	{
 		if (const IOnlineIdentityPtr OnlineIdentityPtr = OnlineSubsystem->GetIdentityInterface())
 		{
-			LeaveParty();
-			DestroyParty();
+			if (!GetIsLoggedInViaDeviceId())
+			{
+				LeaveParty();
+				DestroyParty();
+			}
 			OnlineIdentityPtr->OnLogoutCompleteDelegates->AddUObject(this, &UECRGameInstance::OnLogoutComplete);
 			OnlineIdentityPtr->Logout(0);
 		}
@@ -42,6 +45,12 @@ void UECRGameInstance::LoginViaEpic(const FString PlayerName)
 {
 	// ReSharper disable once StringLiteralTypo
 	Login(PlayerName, "accountportal");
+}
+
+void UECRGameInstance::LoginViaDeviceId(const FString PlayerName)
+{
+	// ReSharper disable once StringLiteralTypo
+	Login(PlayerName, "deviceid");
 }
 
 
@@ -93,11 +102,17 @@ void UECRGameInstance::OnLoginComplete(int32 LocalUserNum, const bool bWasSucces
 	{
 		if (bWasSuccessful)
 		{
-			// GUISupervisor->ShowMainMenu(true);
-			StartListeningForPartyEvents();
-			TMap<FString, FString> TestMap;
-			TestMap.Add("Test", "Test");
-			CreateParty(TestMap);
+			// Check that we are in PIE or are temporary logged in
+			if (GetIsLoggedInViaDeviceId() || (GetWorld() && GetWorld()->IsPlayInEditor()))
+			{
+				GUISupervisor->ShowMainMenu(true);
+			} else
+			{
+				StartListeningForPartyEvents();
+				TMap<FString, FString> TestMap;
+				TestMap.Add("Test", "Test");
+				CreateParty(TestMap);
+			}
 		}
 		else
 		{
@@ -550,12 +565,6 @@ void UECRGameInstance::OnPartyInviteAcceptedByMe(const bool bWasSuccessful, cons
 							}
 						}
 					}
-
-					// If party I host uses presence, toggle it off, since other party may use presence
-					if (HostSession->SessionSettings.bUsesPresence)
-					{
-						TogglePartyPresence(false);
-					}
 				}
 
 
@@ -617,11 +626,13 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	SessionSettings.NumPublicConnections = Algo::Accumulate(FactionCapacities, 0);
 	SessionSettings.bIsDedicated = bIsDedicatedServer;
 	SessionSettings.bIsLANMatch = false;
-	SessionSettings.bShouldAdvertise = true;
+	SessionSettings.bShouldAdvertise = !MatchCreationSettings.bIsPrivate || bIsDedicatedServer;
 	SessionSettings.bAllowJoinInProgress = true;
-	SessionSettings.bAllowJoinViaPresence = false;
-	SessionSettings.bUsesPresence = false;
+	SessionSettings.bAllowJoinViaPresence = !bIsDedicatedServer;
+	SessionSettings.bUsesPresence = !bIsDedicatedServer;
+	SessionSettings.bAllowJoinViaPresenceFriendsOnly = !bIsDedicatedServer;
 	SessionSettings.bUseLobbiesIfAvailable = false;
+	SessionSettings.bAllowInvites = !bIsDedicatedServer;
 
 	// For dedicated server set listen port if it was specified in launch arguments
 	if (bIsDedicatedServer)
@@ -681,6 +692,14 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	SessionSettings.Set(SETTING_STARTED_TIME, MatchCreationSettings.MatchStartedTime,
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
 
+	// Custom mission settings
+	SessionSettings.Set(SETTING_USES_CUSTOM_MISSION_SETTINGS, !MatchCreationSettings.MissionSettings.Values.IsEmpty(), EOnlineDataAdvertisementType::ViaOnlineService);
+	for (FMissionSettingValue Value : MatchCreationSettings.MissionSettings.Values)
+	{
+		SessionSettings.Set(Value.PropertyName, Value.Value,
+						EOnlineDataAdvertisementType::ViaOnlineService);
+	}
+
 	/** Custom settings end */
 
 	return SessionSettings;
@@ -732,6 +751,13 @@ FString UECRGameInstance::GetPlayerNickname()
 bool UECRGameInstance::GetIsLoggedIn()
 {
 	return UKismetSystemLibrary::IsLoggedIn(GetPrimaryPlayerController());
+}
+
+bool UECRGameInstance::GetIsLoggedInViaDeviceId()
+{
+	FString Left, Right = "";
+	GetUserAccountID().Split("|", &Left, &Right);
+	return GetIsLoggedIn() && Left.TrimStart().TrimEnd().IsEmpty();
 }
 
 FString UECRGameInstance::GetUserAccountID()
@@ -1007,26 +1033,6 @@ bool UECRGameInstance::SetPartyData(FString Key, FString Value)
 					return SessionInterface->UpdateSession(
 						PARTY_LOBBY_SESSION_NAME, *OnlineSessionSettings, true);
 				}
-			}
-		}
-	}
-	return false;
-}
-
-bool UECRGameInstance::TogglePartyPresence(bool bWantPresence)
-{
-	if (OnlineSubsystem)
-	{
-		if (IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface())
-		{
-			FOnlineSessionSettings* OnlineSessionSettings = SessionInterface->GetSessionSettings(
-				PARTY_LOBBY_SESSION_NAME);
-			if (OnlineSessionSettings)
-			{
-				OnlineSessionSettings->bUsesPresence = bWantPresence;
-				// Also disable invites for session we host when it's inactive (we joined party as client)
-				OnlineSessionSettings->bAllowInvites = bWantPresence;
-				return SessionInterface->UpdateSession(PARTY_LOBBY_SESSION_NAME, *OnlineSessionSettings, true);
 			}
 		}
 	}

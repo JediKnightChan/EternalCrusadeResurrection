@@ -150,7 +150,7 @@ void UECREquipmentInstance::OnRep_bVisible()
 
 	if (bEquipped && bVisible)
 	{
-		if (const UECRWeaponInstance* WeaponInstance = Cast<UECRWeaponInstance>(this))
+		if (UECRWeaponInstance* WeaponInstance = Cast<UECRWeaponInstance>(this))
 		{
 			WeaponInstance->LinkAnimLayer();
 		}

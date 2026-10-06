@@ -8,7 +8,7 @@ import re
 
 # Change me!
 map_data_filepath = "C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/" \
-                    "MapData/Maps/Usual/HiveComplex01/r05.json"
+                    "MapData/Maps/Usual/Garrison/garrison.json"
 PATH_TO_FILTER = None
 EXCLUDE_ENGINE_ASSETS = False
 level_library = unreal.EditorLevelLibrary
@@ -16,7 +16,7 @@ editor_asset_library = unreal.EditorAssetLibrary
 relative_offset_loc = unreal.Vector(0, 0, 0)  # + unreal.Vector(25400,
 #              -76200,
 #             0)
-# relative_offset_loc = unreal.Vector(0, 0, 0)
+# relative_offset_loc = unreal.Vector(25400*31, 25400*31, 0)
 
 with open("C:/Users/JediKnight/Documents/Unreal Projects/ECR/Script/Python/MapsRecreation/"
           "MapData/Maps/path_replacing_map.json", "r") as f:

@@ -7,6 +7,7 @@
 #include "GameplayCueInterface.h"
 #include "GameplayTagAssetInterface.h"
 #include "GameFramework/Character.h"
+#include "Gameplay/GAS/ECRAbilitySystemComponent.h"
 #include "Gameplay/Interaction/InteractionQuery.h"
 #include "Gameplay/Interaction/IInteractableTarget.h"
 
@@ -22,25 +23,6 @@ class UECRCharacterHealthComponent;
 class UECRCameraComponent;
 class UECRPawnData;
 class UECRAbilitySet;
-
-
-/**
- * FECRReplicatedAcceleration: Compressed representation of acceleration
- */
-USTRUCT()
-struct FECRReplicatedAcceleration
-{
-	GENERATED_BODY()
-
-	UPROPERTY()
-	uint8 AccelXYRadians = 0; // Direction of XY accel component, quantized to represent [0, 2*pi]
-
-	UPROPERTY()
-	uint8 AccelXYMagnitude = 0; //Accel rate of XY component, quantized to represent [0, MaxAcceleration]
-
-	UPROPERTY()
-	int8 AccelZ = 0; // Raw Z accel rate component, quantized to represent [-MaxAcceleration, MaxAcceleration]
-};
 
 /** The type we use to send FastShared movement updates. */
 USTRUCT()
@@ -71,6 +53,35 @@ struct FSharedRepMovement
 	bool bIsCrouched = false;
 };
 
+/** The minimal ASC data (for simulated proxies). */
+USTRUCT()
+struct ECR_API FMinimalASCState
+{
+	GENERATED_BODY()
+
+	FMinimalASCState();
+
+	bool FillForCharacter(AECRCharacter* Character);
+	bool Equals(const FMinimalASCState& Other) const;
+
+	bool NetSerialize(FArchive& Ar, class UPackageMap* Map, bool& bOutSuccess);
+
+	UPROPERTY(Transient)
+	uint16 GameplayTagsBitMask = 0;
+
+	UPROPERTY(Transient)
+	uint8 Health = 0;
+
+	UPROPERTY(Transient)
+	uint8 Shield = 0;
+
+	UPROPERTY(Transient)
+	uint8 BleedingHealth = 0;
+
+	UPROPERTY(Transient)
+	float Armor = 0;
+};
+
 /**
  * AECRCharacter
  *
@@ -79,7 +90,8 @@ struct FSharedRepMovement
  *	New behavior should be added via pawn components when possible.
  */
 UCLASS(Config = Game, Meta = (ShortTooltip = "The base character pawn class used by this project."))
-class AECRCharacter : public ACharacter, public IAbilitySystemInterface, public IGameplayCueInterface,
+class AECRCharacter : public ACharacter, public IAbilitySystemInterface,
+                      public IECRAbilitySystemReplicationProxyInterface, public IGameplayCueInterface,
                       public IGameplayTagAssetInterface, public IInteractableTarget
 {
 	GENERATED_BODY()
@@ -105,6 +117,8 @@ public:
 	virtual bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const override;
 	virtual bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override;
 	virtual bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override;
+
+	void SetMainAnimLayer(TSubclassOf<UAnimInstance> InLayer);
 
 	FORCEINLINE float GetGoingBackwardMultiplier() const { return GoingBackwardMultiplier; }
 	FORCEINLINE float GetGoingSidewaysMultiplier() const { return GoingSidewaysMultiplier; }
@@ -133,7 +147,83 @@ public:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void Reset() override;
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	virtual bool ReplicateSubobjects(UActorChannel* Channel, FOutBunch* Bunch, FReplicationFlags* RepFlags) override;
+	virtual void PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker) override;
+	virtual void GetReplicatedCustomConditionState(FCustomPropertyConditionState& OutActiveState) const override;
 	//~End of AActor interface
+
+	// Begin: IAbilitySystemReplicationProxyInterface ~~ 
+	virtual void ForceReplication() override;
+
+	// Periodic effects should not trigger multicast for burst cues every period
+	virtual void Call_InvokeGameplayCueExecuted_FromSpec(const FGameplayEffectSpecForRPC Spec, FPredictionKey PredictionKey) override;
+
+	// Don't call multicasts for added gameplay cues, we use rep array ActiveGameplayCues on char
+
+	virtual void Call_InvokeGameplayCueAdded(const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey, FGameplayEffectContextHandle EffectContext) override;
+	virtual void Call_InvokeGameplayCueAdded_WithParams(const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey, FGameplayCueParameters Parameters) override;
+	virtual void Call_InvokeGameplayCueAddedAndWhileActive_FromSpec(const FGameplayEffectSpecForRPC& Spec, FPredictionKey PredictionKey) override;
+	virtual void Call_InvokeGameplayCueAddedAndWhileActive_WithParams(const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey, FGameplayCueParameters GameplayCueParameters) override;
+	virtual void Call_InvokeGameplayCuesAddedAndWhileActive_WithParams(const FGameplayTagContainer GameplayCueTags, FPredictionKey PredictionKey, FGameplayCueParameters GameplayCueParameters) override;
+
+	// Actual multicasts for gameplay cues
+
+	UFUNCTION(NetMulticast, unreliable)
+	virtual void NetMulticast_InvokeGameplayCueExecuted_FromSpec(const FGameplayEffectSpecForRPC Spec,
+	                                                             FPredictionKey PredictionKey) override;
+
+	UFUNCTION(NetMulticast, unreliable)
+	virtual void NetMulticast_InvokeGameplayCueExecuted(const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey,
+	                                                    FGameplayEffectContextHandle EffectContext) override;
+
+	UFUNCTION(NetMulticast, unreliable)
+	virtual void NetMulticast_InvokeGameplayCuesExecuted(const FGameplayTagContainer GameplayCueTags,
+	                                                     FPredictionKey PredictionKey,
+	                                                     FGameplayEffectContextHandle EffectContext) override;
+
+	UFUNCTION(NetMulticast, unreliable)
+	virtual void NetMulticast_InvokeGameplayCueExecuted_WithParams(const FGameplayTag GameplayCueTag,
+	                                                               FPredictionKey PredictionKey,
+	                                                               FGameplayCueParameters
+	                                                               GameplayCueParameters) override;
+
+	UFUNCTION(NetMulticast, unreliable)
+	virtual void NetMulticast_InvokeGameplayCuesExecuted_WithParams(const FGameplayTagContainer GameplayCueTags,
+	                                                                FPredictionKey PredictionKey,
+	                                                                FGameplayCueParameters
+	                                                                GameplayCueParameters) override;
+
+	UFUNCTION(NetMulticast, unreliable)
+	virtual void NetMulticast_InvokeGameplayCueAdded(const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey,
+	                                                 FGameplayEffectContextHandle EffectContext) override;
+
+	UFUNCTION(NetMulticast, unreliable)
+	virtual void NetMulticast_InvokeGameplayCueAdded_WithParams(const FGameplayTag GameplayCueTag,
+	                                                            FPredictionKey PredictionKey,
+	                                                            FGameplayCueParameters Parameters) override;
+
+	UFUNCTION(NetMulticast, unreliable)
+	virtual void NetMulticast_InvokeGameplayCueAddedAndWhileActive_FromSpec(
+		const FGameplayEffectSpecForRPC& Spec, FPredictionKey PredictionKey) override;
+
+	UFUNCTION(NetMulticast, unreliable)
+	virtual void NetMulticast_InvokeGameplayCueAddedAndWhileActive_WithParams(
+		const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey,
+		FGameplayCueParameters GameplayCueParameters) override;
+
+	UFUNCTION(NetMulticast, unreliable)
+	virtual void NetMulticast_InvokeGameplayCuesAddedAndWhileActive_WithParams(
+		const FGameplayTagContainer GameplayCueTags, FPredictionKey PredictionKey,
+		FGameplayCueParameters GameplayCueParameters) override;
+
+	virtual void Call_ReliableGameplayCueAdded_WithParams(const FGameplayTag GameplayCueTag, FPredictionKey PredictionKey, FGameplayCueParameters Parameters) override;
+	virtual void Call_ReliableGameplayCueRemoved(const FGameplayTag GameplayCueTag) override;
+
+	virtual FGameplayAbilityRepAnimMontage& Call_GetRepAnimMontageInfo_Mutable() override;
+
+	UFUNCTION()
+	virtual void Call_OnRep_ReplicatedAnimMontage() override;
+	// End: IAbilitySystemReplicationProxyInterface ~~
 
 	// Interactions
 	/** Blueprint implementable event to get interaction options (like reviving, executing in wounded state) */
@@ -154,7 +244,14 @@ public:
 	// Last time we performed a shared rep send
 	float LastSharedReplicationTimestamp = 0.0f;
 
+	// Last FMinimalASCState we sent, to avoid sending repeatedly.
+	FMinimalASCState LastSharedAscState;
+
+	// Whether root motion ended in this frame, required to fix RM replication engine issue
+	bool bWasRootMotionPreviouslyActive;
+
 	virtual bool UpdateSharedReplication();
+
 protected:
 	virtual void OnAbilitySystemInitialized();
 	virtual void OnAbilitySystemUninitialized();
@@ -217,9 +314,26 @@ private:
 
 	static const FName NAME_ECRAbilityReady;
 
+	/** Information about the pawn derived from Lyra */
 	UPROPERTY(ReplicatedUsing = OnRep_PawnData, EditAnywhere, BlueprintReadWrite,
 		meta=(AllowPrivateAccess="true", ExposeOnSpawn="true"))
 	const UECRPawnData* PawnData;
+
+	/** Animation layer linked to character currently (changed with weapon) */
+	UPROPERTY(ReplicatedUsing = OnRep_MainAnimLayer)
+	TSubclassOf<UAnimInstance> MainAnimLayer;
+
+	/** Minimal replicated ASC data for sim proxies */
+	UPROPERTY(ReplicatedUsing = OnRep_MinimalAscState)
+	FMinimalASCState MinimalAscState;
+
+	/** List of all active gameplay cues, stored on char instead of ASC due to ASC not replicated to sim proxies */
+	UPROPERTY(BlueprintReadOnly, Replicated, meta=(AllowPrivateAccess="true"))
+	FActiveGameplayCueContainer ActiveGameplayCues;
+
+	/** Replicated anim montage info for ASC */
+	UPROPERTY(ReplicatedUsing = Call_OnRep_ReplicatedAnimMontage)
+	FGameplayAbilityRepAnimMontage RepAnimMontageInfo;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "ECR|Character", Meta = (AllowPrivateAccess = "true"))
 	float StartedFallingTime;
@@ -242,4 +356,10 @@ private:
 private:
 	UFUNCTION()
 	void OnRep_PawnData();
+
+	UFUNCTION()
+	void OnRep_MainAnimLayer();
+
+	UFUNCTION()
+	void OnRep_MinimalAscState();
 };

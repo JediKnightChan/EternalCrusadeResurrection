@@ -31,22 +31,6 @@ struct FECRScreenSpaceHitLocation
 	EHitSuccess HitSuccess = None;
 };
 
-struct FECRServerSideHitMarkerBatch
-{
-	FECRServerSideHitMarkerBatch()
-	{
-	}
-
-	FECRServerSideHitMarkerBatch(uint8 InUniqueId) :
-		UniqueId(InUniqueId)
-	{
-	}
-
-	TArray<FECRScreenSpaceHitLocation> Markers;
-
-	uint8 UniqueId = 0;
-};
-
 // Tracks weapon state and recent confirmed hit markers to display on screen
 UCLASS(BlueprintType, Meta=(BlueprintSpawnableComponent))
 class UECRWeaponStateComponent : public UControllerComponent
@@ -59,12 +43,8 @@ public:
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType,
 	                           FActorComponentTickFunction* ThisTickFunction) override;
 
-	UFUNCTION(Client, Reliable)
-	void ClientConfirmTargetData(uint16 UniqueId, bool bSuccess, const TArray<uint8>& HitReplaces);
-
-	void AddUnconfirmedServerSideHitMarkers(const UObject* SourceObject,
-	                                        const FGameplayAbilityTargetDataHandle& InTargetData,
-	                                        const TArray<FHitResult>& FoundHits);
+	void AddLocalSideHitMarkers(const UObject* SourceObject,
+	                            const TArray<FHitResult>& FoundHits);
 
 	UFUNCTION(BlueprintCallable, Client, Reliable)
 	void ClientDrawServerHit(FVector WorldHitLocation, EHitSuccess HitSuccess, FGameplayTag HitZone);
@@ -80,11 +60,6 @@ public:
 
 	/** Returns the elapsed time since the last (outgoing) damage hit notification occurred */
 	double GetTimeSinceLastHitNotification() const;
-
-	int32 GetUnconfirmedServerSideHitMarkerCount() const
-	{
-		return UnconfirmedServerSideHitMarkers.Num();
-	}
 
 protected:
 	// This is called to filter hit results to determine whether they should be considered as a successful hit or not
@@ -104,7 +79,4 @@ private:
 
 	/** Screen-space locations of our most recently instigated weapon damage (the confirmed hits) */
 	TArray<FECRScreenSpaceHitLocation> LastWeaponDamageScreenLocations;
-
-	/** The unconfirmed hits */
-	TArray<FECRServerSideHitMarkerBatch> UnconfirmedServerSideHitMarkers;
 };

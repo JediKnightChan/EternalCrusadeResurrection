@@ -49,7 +49,8 @@ public class ECR : ModuleRules
 			"Networking", 
 			"Slate", 
 			"SlateCore",
-			"Json"
+			"Json",
+			"JsonUtilities"
 		});
 
 		SetupGameplayDebuggerSupport(Target);

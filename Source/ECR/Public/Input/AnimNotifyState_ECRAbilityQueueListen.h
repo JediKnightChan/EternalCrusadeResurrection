@@ -20,6 +20,9 @@ class ECR_API UAnimNotifyState_ECRAbilityQueueListen : public UAnimNotifyState
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	double AbilityQueueDeltaTime = 0;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	bool bRespectsDisableSetting = true;
+
 public:
 	virtual void NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation) override;
 	virtual void NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float TotalDuration,

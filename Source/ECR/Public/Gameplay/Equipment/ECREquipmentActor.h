@@ -19,4 +19,10 @@ class AECREquipmentActor : public AActor
 
 public:
 	AECREquipmentActor(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
+
+	virtual void PostInitializeComponents() override;
+
+private:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	bool bDisableChildComponentsTickOnDedicatedServer = true;
 };
