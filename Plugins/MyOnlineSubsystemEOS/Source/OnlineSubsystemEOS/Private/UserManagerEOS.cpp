@@ -878,6 +878,48 @@ bool FUserManagerEOS::ConnectLoginEAS(int32 LocalUserNum, EOS_EpicAccountId Acco
 
 void FUserManagerEOS::RefreshConnectLogin(int32 LocalUserNum)
 {
+	// Device ID users are Connect-only users and do not have an Epic Account ID.
+	// Refresh them with the Device ID credential; EOS retains that credential in
+	// its local keychain and issues a fresh Connect access token on Login.
+	const TSharedRef<FOnlineAccountCredentials>* LastCredentials = LocalUserNumToLastLoginCredentials.Find(LocalUserNum);
+	if (LastCredentials != nullptr && (*LastCredentials)->Type.Equals(TEXT("deviceid"), ESearchCase::IgnoreCase))
+	{
+		if (!UserNumToProductUserIdMap.Contains(LocalUserNum))
+		{
+			UE_LOG_ONLINE(Warning, TEXT("Can't refresh Device ID ConnectLogin(%d) since the user is not logged in"), LocalUserNum);
+			return;
+		}
+
+		EOS_Connect_Credentials Credentials = { };
+		Credentials.ApiVersion = EOS_CONNECT_CREDENTIALS_API_LATEST;
+		Credentials.Type = EOS_EExternalCredentialType::EOS_ECT_DEVICEID_ACCESS_TOKEN;
+		Credentials.Token = nullptr;
+
+		EOS_Connect_LoginOptions Options = { };
+		Options.ApiVersion = EOS_CONNECT_LOGIN_API_LATEST;
+		Options.Credentials = &Credentials;
+
+		EOS_Connect_UserLoginInfo UserLoginInfo = { };
+		UserLoginInfo.ApiVersion = EOS_CONNECT_USERLOGININFO_API_LATEST;
+		UserLoginInfo.DisplayName = "Unidentified";
+		Options.UserLoginInfo = &UserLoginInfo;
+
+		FConnectLoginCallback* CallbackObj = new FConnectLoginCallback(AsWeak());
+		CallbackObj->CallbackLambda = [LocalUserNum](const EOS_Connect_LoginCallbackInfo* Data)
+		{
+			if (Data->ResultCode == EOS_EResult::EOS_Success)
+			{
+				UE_LOG_ONLINE(Verbose, TEXT("Successfully refreshed Device ID ConnectLogin(%d)"), LocalUserNum);
+			}
+			else
+			{
+				UE_LOG_ONLINE(Error, TEXT("Failed to refresh Device ID ConnectLogin(%d): %s"), LocalUserNum, ANSI_TO_TCHAR(EOS_EResult_ToString(Data->ResultCode)));
+			}
+		};
+		EOS_Connect_Login(EOSSubsystem->ConnectHandle, &Options, CallbackObj, CallbackObj->GetCallbackPtr());
+		return;
+	}
+
 	if (!UserNumToAccountIdMap.Contains(LocalUserNum))
 	{
 		UE_LOG_ONLINE(Error, TEXT("Can't refresh ConnectLogin(%d) since (%d) is not logged in"), LocalUserNum, LocalUserNum);
