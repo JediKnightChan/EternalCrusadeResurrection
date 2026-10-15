@@ -3,6 +3,7 @@
 #include "Gameplay/GAS/Executions/ECRHealingExecution.h"
 #include "GameplayEffectTypes.h"
 #include "Gameplay/ECRGameplayTags.h"
+#include "Gameplay/ECRGameState.h"
 #include "Gameplay/GAS/Attributes/ECRCharacterHealthSet.h"
 #include "Gameplay/GAS/ECRGameplayEffectContext.h"
 #include "Gameplay/GAS/Attributes/ECRCombatSet.h"
@@ -57,6 +58,9 @@ void UECRHealingExecution::Execute_Implementation(const FGameplayEffectCustomExe
 	const FGameplayTagContainer* TargetTags = Spec.CapturedTargetTags.GetAggregatedTags();
 	// ExecutionParams.GetOwningSpec().GetModifierMagnitude(0, false);
 
+	const UAbilitySystemComponent* TargetAsc = ExecutionParams.GetTargetAbilitySystemComponent();
+	const UAbilitySystemComponent* SourceAsc = ExecutionParams.GetSourceAbilitySystemComponent();
+
 	FGameplayTagContainer AssetTags;
 	Spec.GetAllAssetTags(AssetTags);
 
@@ -83,10 +87,18 @@ void UECRHealingExecution::Execute_Implementation(const FGameplayEffectCustomExe
 		SourceOutgoingHealingMultiplier = 1.0f;
 	}
 
-	const float AttenuatedHealing = FMath::Max(
-		0, BaseHealing * SourceOutgoingHealingMultiplier * TargetIncomingHealingMultiplier);
+	float GlobalHealingMultiplier = 1.0f;
+	if (TargetAsc && TargetAsc->GetWorld())
+	{
+		if (AECRGameState* GS = Cast<AECRGameState>(TargetAsc->GetWorld()->GetGameState()))
+		{
+			GlobalHealingMultiplier = GS->GetGlobalHealingMultiplier(SourceAsc, TargetAsc);
+		}
+	}
 
-    UE_LOG(LogTemp, Warning, TEXT("Res healing %f"), AttenuatedHealing)
+	const float AttenuatedHealing = FMath::Max(
+		0, BaseHealing * SourceOutgoingHealingMultiplier * TargetIncomingHealingMultiplier 
+		* GlobalHealingMultiplier);
 
 	OutExecutionOutput.AddOutputModifier(
 		FGameplayModifierEvaluatedData(UECRHealthSet::GetHealingAttribute(), EGameplayModOp::Additive,
