@@ -43,4 +43,7 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent)
 	float GetGlobalDamageMultiplier(const UAbilitySystemComponent* SourceAsc, const UAbilitySystemComponent* TargetAsc);
+
+	UFUNCTION(BlueprintNativeEvent)
+	float GetGlobalHealingMultiplier(const UAbilitySystemComponent* SourceAsc, const UAbilitySystemComponent* TargetAsc);
 };
