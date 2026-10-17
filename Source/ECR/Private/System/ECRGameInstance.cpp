@@ -244,6 +244,9 @@ void UECRGameInstance::FindMatches(const FString GameVersion, const FString Matc
 				SessionSearchSettings->QuerySettings.Set(
 					SETTING_GAME_VERSION, GameVersion, EOnlineComparisonOp::Equals);
 
+			SessionSearchSettings->QuerySettings.Set(
+					SETTING_IS_PRIVATE, false, EOnlineComparisonOp::Equals);
+
 			OnlineSessionPtr->ClearOnFindSessionsCompleteDelegates(this);
 			OnlineSessionPtr->OnFindSessionsCompleteDelegates.AddUObject(
 				this, &UECRGameInstance::OnFindMatchesComplete);
@@ -622,15 +625,17 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	TArray<int32> FactionCapacities;
 	MatchCreationSettings.FactionNamesToCapacities.GenerateValueArray(FactionCapacities);
 
+	UE_LOG(LogTemp, Warning, TEXT("MatchCreationSettings.bIsPrivate %d"), MatchCreationSettings.bIsPrivate ? 1 : 0);
+
 	const bool bIsDedicatedServer = IsDedicatedServerInstance();
 	SessionSettings.NumPublicConnections = Algo::Accumulate(FactionCapacities, 0);
 	SessionSettings.bIsDedicated = bIsDedicatedServer;
 	SessionSettings.bIsLANMatch = false;
-	SessionSettings.bShouldAdvertise = !MatchCreationSettings.bIsPrivate || bIsDedicatedServer;
+	SessionSettings.bShouldAdvertise = true;
 	SessionSettings.bAllowJoinInProgress = true;
-	SessionSettings.bAllowJoinViaPresence = !bIsDedicatedServer;
+	SessionSettings.bAllowJoinViaPresence = !bIsDedicatedServer && !MatchCreationSettings.bIsPrivate;
 	SessionSettings.bUsesPresence = !bIsDedicatedServer;
-	SessionSettings.bAllowJoinViaPresenceFriendsOnly = !bIsDedicatedServer;
+	SessionSettings.bAllowJoinViaPresenceFriendsOnly = !bIsDedicatedServer && !MatchCreationSettings.bIsPrivate;
 	SessionSettings.bUseLobbiesIfAvailable = false;
 	SessionSettings.bAllowInvites = !bIsDedicatedServer;
 
@@ -653,6 +658,8 @@ FOnlineSessionSettings UECRGameInstance::GetSessionSettings()
 	/** Custom settings **/
 	SessionSettings.Set(SETTING_IN_GAME_UNIQUE_ID_FOR_SEARCH, MatchCreationSettings.InGameUniqueIdForSearch,
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
+	SessionSettings.Set(SETTING_IS_PRIVATE, MatchCreationSettings.bIsPrivate,
+						EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_GAMEMODE, MatchCreationSettings.GameMode.ToString(),
 	                    EOnlineDataAdvertisementType::ViaOnlineService);
 	SessionSettings.Set(SETTING_MAPNAME, MatchCreationSettings.MapName.ToString(),
